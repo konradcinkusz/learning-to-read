@@ -1,0 +1,1125 @@
+{
+  "_comentario": "Datos de origen para tools/gen_days.py. Este fichero SI se edita a mano; content/generated-days.tex NO (se regenera con `make generate`). Trimestre 3 completo: dias 131-195 (semanas 27-39).",
+  "dias": [
+    {
+      "dia": 131,
+      "semana": 27,
+      "trimestre": 3,
+      "tema": "Toby se pierde en el parque",
+      "oraciones": [
+        "La familia va al parque el sábado.",
+        "Toby corre libre entre los árboles.",
+        "De repente, Toby desaparece detrás de los matorrales y nadie lo ve."
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Dibuja el parque grande, con los árboles donde se escondió Toby."
+      }
+    },
+    {
+      "dia": 132,
+      "semana": 27,
+      "trimestre": 3,
+      "tema": "Toby se pierde en el parque",
+      "oraciones": [
+        "Lucía y Dani buscan a Toby por el parque.",
+        "Papá mira detrás de los bancos y pregunta.",
+        "Nadie ha visto un perro marrón de orejas largas."
+      ],
+      "actividad": {
+        "tipo": "completa",
+        "diagrama": "lineas-ondas"
+      }
+    },
+    {
+      "dia": 133,
+      "semana": 27,
+      "trimestre": 3,
+      "tema": "Toby se pierde en el parque",
+      "oraciones": [
+        "Lucía tiene una idea: silba la canción de Toby.",
+        "Desde lejos, se oye un ladrido conocido.",
+        "Toby estaba atrapado entre dos rocas grandes."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "pregunta": "¿Cómo encuentra Lucía a Toby?"
+      }
+    },
+    {
+      "dia": 134,
+      "semana": 27,
+      "trimestre": 3,
+      "tema": "Toby se pierde en el parque",
+      "oraciones": [
+        "Papá saca a Toby de entre las rocas.",
+        "Toby mueve la cola muy rápido y feliz.",
+        "Toda la familia lo abraza muy fuerte."
+      ],
+      "actividad": {
+        "tipo": "relaciona",
+        "pares": [
+          [
+            "Lucía",
+            "silba la canción"
+          ],
+          [
+            "Papá",
+            "saca a Toby de las rocas"
+          ],
+          [
+            "Toby",
+            "estaba atrapado"
+          ],
+          [
+            "Mamá",
+            "pregunta a la gente"
+          ]
+        ]
+      }
+    },
+    {
+      "dia": 135,
+      "semana": 27,
+      "trimestre": 3,
+      "tema": "Toby se pierde en el parque",
+      "oraciones": [
+        "Desde ese día, Toby siempre lleva correa nueva.",
+        "Lucía dice que fue el susto más grande de su vida.",
+        "Pero encontrarlo fue el momento más feliz."
+      ],
+      "actividad": {
+        "tipo": "crea",
+        "prompt": "Cuenta o dibuja: ¿qué harías tú si se te perdiera tu mascota?"
+      }
+    },
+    {
+      "dia": 136,
+      "semana": 28,
+      "trimestre": 3,
+      "tema": "A Dani se le cae un diente",
+      "oraciones": [
+        "Dani come una manzana y nota algo raro.",
+        "Un diente se mueve y Dani se asusta mucho.",
+        "Mamá le explica que es normal y bueno."
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Dibuja a Dani con su manzana y su diente que se mueve."
+      }
+    },
+    {
+      "dia": 137,
+      "semana": 28,
+      "trimestre": 3,
+      "tema": "A Dani se le cae un diente",
+      "oraciones": [
+        "Esa noche, el diente de Dani se cae por fin.",
+        "Lucía le dice: ponlo bajo tu almohada.",
+        "Dani no está muy seguro de hacerlo."
+      ],
+      "actividad": {
+        "tipo": "completa",
+        "diagrama": "lineas-circulo"
+      }
+    },
+    {
+      "dia": 138,
+      "semana": 28,
+      "trimestre": 3,
+      "tema": "A Dani se le cae un diente",
+      "oraciones": [
+        "A Lucía también se le cayeron dientes.",
+        "Un ratoncito los cambia por monedas.",
+        "Dani decide poner su diente bajo la almohada, con un poco de miedo."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "pregunta": "¿Qué le explica Lucía a Dani sobre perder los dientes?"
+      }
+    },
+    {
+      "dia": 139,
+      "semana": 28,
+      "trimestre": 3,
+      "tema": "A Dani se le cae un diente",
+      "oraciones": [
+        "Por la mañana, Dani busca rápido bajo la almohada.",
+        "Encuentra una moneda brillante y bonita.",
+        "Corre a enseñársela a toda la familia, muy orgulloso."
+      ],
+      "actividad": {
+        "tipo": "adivina",
+        "adivinanza": "De noche vengo sin hacer ruido, me llevo un diente y dejo un brillo escondido. ¿Quién soy?"
+      }
+    },
+    {
+      "dia": 140,
+      "semana": 28,
+      "trimestre": 3,
+      "tema": "A Dani se le cae un diente",
+      "oraciones": [
+        "El sábado, Dani cuenta la historia a la abuela.",
+        "A ella también le pasó, hace años.",
+        "Dani quiere que se le caiga otro diente."
+      ],
+      "actividad": {
+        "tipo": "repasa",
+        "checklist": [
+          "Sé por qué se asustó Dani al principio.",
+          "Sé qué le dijo Lucía sobre perder los dientes.",
+          "Sé qué encontró Dani debajo de la almohada."
+        ],
+        "prompt": "Dibuja el ratoncito que se lleva los dientes, como tú te lo imaginas.",
+        "banner": "¡140 páginas leídas! Ya estás en la segunda mitad del curso."
+      }
+    },
+    {
+      "dia": 141,
+      "semana": 29,
+      "trimestre": 3,
+      "tema": "El Día del Libro",
+      "oraciones": [
+        "El colegio celebra el Día del Libro con una fiesta.",
+        "Cada alumno trae un libro de su casa.",
+        "Lucía busca el libro perfecto para regalárselo a Dani."
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Dibuja la fiesta del Día del Libro en el colegio de Lucía."
+      }
+    },
+    {
+      "dia": 142,
+      "semana": 29,
+      "trimestre": 3,
+      "tema": "El Día del Libro",
+      "oraciones": [
+        "Lucía mira montones de libros en la biblioteca del colegio.",
+        "Unos le parecen difíciles, otros aburridos.",
+        "Cuando ya casi se rinde, ve una estantería nueva."
+      ],
+      "actividad": {
+        "tipo": "completa",
+        "diagrama": "lineas-ondas"
+      }
+    },
+    {
+      "dia": 143,
+      "semana": 29,
+      "trimestre": 3,
+      "tema": "El Día del Libro",
+      "oraciones": [
+        "La bibliotecaria se acerca y le pregunta qué busca.",
+        "—Un cuento fácil, con dibujos, para mi hermano —explica Lucía.",
+        "La bibliotecaria sonríe y le enseña un libro."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "pregunta": "¿Qué le pide Lucía a la bibliotecaria?"
+      }
+    },
+    {
+      "dia": 144,
+      "semana": 29,
+      "trimestre": 3,
+      "tema": "El Día del Libro",
+      "oraciones": [
+        "Lucía envuelve el libro con papel de colores.",
+        "Hace un marcapáginas con la silueta de Toby recortada.",
+        "Esa tarde, le da el regalo a Dani."
+      ],
+      "actividad": {
+        "tipo": "relaciona",
+        "pares": [
+          [
+            "Lucía",
+            "envuelve el libro"
+          ],
+          [
+            "Dani",
+            "recibe el regalo"
+          ],
+          [
+            "la bibliotecaria",
+            "recomienda el cuento"
+          ],
+          [
+            "Toby",
+            "está en el marcapáginas"
+          ]
+        ]
+      }
+    },
+    {
+      "dia": 145,
+      "semana": 29,
+      "trimestre": 3,
+      "tema": "El Día del Libro",
+      "oraciones": [
+        "Dani abre el libro con mucho cuidado.",
+        "Se sienta junto a Lucía y leen juntos la primera página.",
+        "El dragón ya es su personaje favorito."
+      ],
+      "actividad": {
+        "tipo": "crea",
+        "prompt": "Dibuja el marcapáginas que te gustaría hacer tú. ¿Qué dibujo tendría?"
+      }
+    },
+    {
+      "dia": 146,
+      "semana": 30,
+      "trimestre": 3,
+      "tema": "Empieza la Semana Santa",
+      "oraciones": [
+        "El colegio cierra una semana entera por Semana Santa.",
+        "Lucía y Dani se levantan tarde, sin prisa ninguna.",
+        "La abuela Rosa viene a pasar unos días con ellos."
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Dibuja a la abuela Rosa llegando a pasar la Semana Santa con la familia."
+      }
+    },
+    {
+      "dia": 147,
+      "semana": 30,
+      "trimestre": 3,
+      "tema": "Empieza la Semana Santa",
+      "oraciones": [
+        "La abuela trae una cesta llena de pan del día anterior.",
+        "Va a enseñarles a hacer torrijas, su postre favorito.",
+        "Lucía nunca las ha probado y tiene muchas ganas."
+      ],
+      "actividad": {
+        "tipo": "busca",
+        "instruccion": "Busca en el texto qué postre va a enseñar a hacer la abuela."
+      }
+    },
+    {
+      "dia": 148,
+      "semana": 30,
+      "trimestre": 3,
+      "tema": "Empieza la Semana Santa",
+      "oraciones": [
+        "Mojan el pan en leche con canela y azúcar.",
+        "Después lo fríen con cuidado en una sartén grande.",
+        "Toda la cocina huele a canela durante toda la tarde."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "pregunta": "¿En qué mojan el pan para hacer las torrijas?"
+      }
+    },
+    {
+      "dia": 149,
+      "semana": 30,
+      "trimestre": 3,
+      "tema": "Empieza la Semana Santa",
+      "oraciones": [
+        "Dani se mancha la cara entera de azúcar y canela.",
+        "Papá dice que ha comido más torrijas que nadie.",
+        "Todos se ríen y piden a la abuela que haga más."
+      ],
+      "actividad": {
+        "tipo": "adivina",
+        "adivinanza": "Nazco de un pan ya duro, con leche, canela y azúcar me curo. ¿Qué soy?"
+      }
+    },
+    {
+      "dia": 150,
+      "semana": 30,
+      "trimestre": 3,
+      "tema": "Empieza la Semana Santa",
+      "oraciones": [
+        "El domingo, la Semana Santa se acaba y vuelven a la rutina.",
+        "Lucía guarda la receta en su cuaderno.",
+        "Dice que el año que viene las hará ella sola."
+      ],
+      "actividad": {
+        "tipo": "repasa",
+        "checklist": [
+          "Sé qué trajo la abuela para hacer.",
+          "Sé con qué mojan el pan.",
+          "Sé quién comió más torrijas."
+        ],
+        "prompt": "Dibuja tu propia torrija, con mucha canela por encima.",
+        "banner": "¡150 páginas leídas! Ya has leído más de la mitad del libro."
+      }
+    },
+    {
+      "dia": 151,
+      "semana": 31,
+      "trimestre": 3,
+      "tema": "El huerto del colegio",
+      "oraciones": [
+        "De vuelta al colegio, Marta tiene una sorpresa para la clase.",
+        "Han hecho un huerto pequeño en el patio, con tierra nueva.",
+        "Cada niño va a trasplantar su planta de la maceta."
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Dibuja el huerto nuevo del patio del colegio."
+      }
+    },
+    {
+      "dia": 152,
+      "semana": 31,
+      "trimestre": 3,
+      "tema": "El huerto del colegio",
+      "oraciones": [
+        "Lucía saca su planta de judía con mucho cuidado.",
+        "Las raíces ya son largas y blancas como hilos.",
+        "La coloca en un hueco de tierra fresca y oscura."
+      ],
+      "actividad": {
+        "tipo": "completa",
+        "diagrama": "lineas-ondas"
+      }
+    },
+    {
+      "dia": 153,
+      "semana": 31,
+      "trimestre": 3,
+      "tema": "El huerto del colegio",
+      "oraciones": [
+        "Marta explica que ahora la planta tendrá más espacio para crecer.",
+        "También necesitará sol, agua y mucha paciencia.",
+        "Lucía promete venir a regarla cada mañana antes de clase."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "pregunta": "¿Qué tres cosas dice Marta que necesitará la planta?"
+      }
+    },
+    {
+      "dia": 154,
+      "semana": 31,
+      "trimestre": 3,
+      "tema": "El huerto del colegio",
+      "oraciones": [
+        "Cada niño pone un palito con su nombre junto a su planta.",
+        "Así todos saben cuál es la suya en el huerto.",
+        "Dani pregunta si él también podrá plantar algo pronto."
+      ],
+      "actividad": {
+        "tipo": "relaciona",
+        "pares": [
+          [
+            "Lucía",
+            "trasplanta su judía"
+          ],
+          [
+            "Marta",
+            "organiza el huerto"
+          ],
+          [
+            "Cada planta",
+            "tiene un palito con su nombre"
+          ],
+          [
+            "Dani",
+            "quiere plantar también"
+          ]
+        ]
+      }
+    },
+    {
+      "dia": 155,
+      "semana": 31,
+      "trimestre": 3,
+      "tema": "El huerto del colegio: la semana",
+      "oraciones": null,
+      "actividad": {
+        "tipo": "relee",
+        "prompt": "Dibuja cómo crees que estará el huerto dentro de unas semanas."
+      }
+    },
+    {
+      "dia": 156,
+      "semana": 32,
+      "trimestre": 3,
+      "tema": "Lucía aprende a montar en bici",
+      "oraciones": [
+        "El sábado, Papá quita los ruedines de la bici de Lucía.",
+        "Ella se pone un poco nerviosa al verla sin ellos.",
+        "Papá le promete que la sujetará todo el tiempo."
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Dibuja la bici de Lucía sin los ruedines."
+      }
+    },
+    {
+      "dia": 157,
+      "semana": 32,
+      "trimestre": 3,
+      "tema": "Lucía aprende a montar en bici",
+      "oraciones": [
+        "Al principio, Lucía se cae varias veces seguidas al suelo.",
+        "Se levanta cada vez, aunque le duelen un poco las rodillas.",
+        "Papá la anima diciendo que así aprenden todos los niños."
+      ],
+      "actividad": {
+        "tipo": "busca",
+        "instruccion": "Busca en el texto qué le duele un poco a Lucía."
+      }
+    },
+    {
+      "dia": 158,
+      "semana": 32,
+      "trimestre": 3,
+      "tema": "Lucía aprende a montar en bici",
+      "oraciones": [
+        "De repente, Papá deja de sujetar el sillín sin que ella lo note.",
+        "Lucía pedalea sola durante varios metros seguidos.",
+        "Cuando mira atrás y lo ve lejos, casi se cae de la sorpresa."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "pregunta": "¿Qué hace Papá sin que Lucía se dé cuenta?"
+      }
+    },
+    {
+      "dia": 159,
+      "semana": 32,
+      "trimestre": 3,
+      "tema": "Lucía aprende a montar en bici",
+      "oraciones": [
+        "Esa tarde, Lucía da vueltas y vueltas por todo el parque.",
+        "Toby corre a su lado, ladrando contento por la novedad.",
+        "Dani aplaude cada vez que su hermana pasa delante de él."
+      ],
+      "actividad": {
+        "tipo": "adivina",
+        "adivinanza": "Tengo dos ruedas y un timbre que suena, y me pedaleas cuando el sol calienta. ¿Qué soy?"
+      }
+    },
+    {
+      "dia": 160,
+      "semana": 32,
+      "trimestre": 3,
+      "tema": "Lucía aprende a montar en bici",
+      "oraciones": [
+        "Por la noche, Lucía cuenta a toda la familia cómo aprendió.",
+        "Papá le regala un timbre nuevo para la bici.",
+        "Lucía dice que mañana quiere ir en bici hasta el colegio."
+      ],
+      "actividad": {
+        "tipo": "repasa",
+        "checklist": [
+          "Sé qué le quitó Papá a la bici de Lucía.",
+          "Sé qué le dolía un poco al principio.",
+          "Sé qué le regaló Papá al final."
+        ],
+        "prompt": "Dibuja a Lucía montando en bici ella sola.",
+        "banner": "¡160 páginas leídas! Cada semana lees un poquito mejor."
+      }
+    },
+    {
+      "dia": 161,
+      "semana": 33,
+      "trimestre": 3,
+      "tema": "Lucía se apunta a natación",
+      "oraciones": [
+        "Este mes, Lucía empieza clases de natación los martes y jueves.",
+        "Al principio le da un poco de miedo meter la cabeza en el agua.",
+        "Mamá le dice que todos los niños empiezan así."
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Dibuja a Lucía con su bañador y su gorro de piscina."
+      }
+    },
+    {
+      "dia": 162,
+      "semana": 33,
+      "trimestre": 3,
+      "tema": "Lucía se apunta a natación",
+      "oraciones": [
+        "El profesor de natación se llama Javier y es muy paciente.",
+        "Le enseña primero a flotar boca arriba, sin miedo.",
+        "Lucía traga un poco de agua y se ríe de sí misma."
+      ],
+      "actividad": {
+        "tipo": "completa",
+        "diagrama": "lineas-circulo"
+      }
+    },
+    {
+      "dia": 163,
+      "semana": 33,
+      "trimestre": 3,
+      "tema": "Lucía se apunta a natación",
+      "oraciones": [
+        "Ya sabe mover bien los brazos y las piernas en el agua.",
+        "Javier le cuenta que los peces respiran por agallas, no por la nariz.",
+        "Piensa que algún día le gustaría nadar como un pez."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "pregunta": "¿Qué dato curioso le cuenta Javier sobre los peces?"
+      }
+    },
+    {
+      "dia": 164,
+      "semana": 33,
+      "trimestre": 3,
+      "tema": "Lucía se apunta a natación",
+      "oraciones": [
+        "Después de dos meses, Lucía ya nada sola de un lado a otro.",
+        "Javier le regala una pegatina de estrella por su esfuerzo.",
+        "Se la pega en la bolsa de natación, muy orgullosa."
+      ],
+      "actividad": {
+        "tipo": "relaciona",
+        "pares": [
+          [
+            "Javier",
+            "es el profesor de natación"
+          ],
+          [
+            "Lucía",
+            "aprende a nadar sola"
+          ],
+          [
+            "La pegatina",
+            "es una estrella"
+          ],
+          [
+            "Mamá",
+            "la anima cada semana"
+          ]
+        ]
+      }
+    },
+    {
+      "dia": 165,
+      "semana": 33,
+      "trimestre": 3,
+      "tema": "Lucía se apunta a natación: la semana",
+      "oraciones": null,
+      "actividad": {
+        "tipo": "relee",
+        "prompt": "Dibuja a Lucía nadando en la piscina, ya sin miedo."
+      }
+    },
+    {
+      "dia": 166,
+      "semana": 34,
+      "trimestre": 3,
+      "tema": "El día de la madre",
+      "oraciones": [
+        "El domingo es el día de la madre y hay que preparar algo especial.",
+        "Lucía y Dani deciden hacerle un regalo entre los dos.",
+        "Papá les ayuda a comprar cartulina y pinturas de colores."
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Dibuja el regalo que Lucía y Dani están preparando para Mamá."
+      }
+    },
+    {
+      "dia": 167,
+      "semana": 34,
+      "trimestre": 3,
+      "tema": "El día de la madre",
+      "oraciones": [
+        "Dani dibuja a toda la familia, incluido Toby, muy grande.",
+        "Lucía escribe una frase bonita debajo del dibujo de su hermano.",
+        "Entre los dos, doblan la cartulina como si fuera una tarjeta."
+      ],
+      "actividad": {
+        "tipo": "busca",
+        "instruccion": "Busca en el texto qué escribe Lucía debajo del dibujo de Dani."
+      }
+    },
+    {
+      "dia": 168,
+      "semana": 34,
+      "trimestre": 3,
+      "tema": "El día de la madre",
+      "oraciones": [
+        "El domingo por la mañana, Mamá se despierta con el desayuno en la cama.",
+        "Papá lleva la bandeja, y los niños llevan el regalo detrás.",
+        "Mamá se emociona mucho al abrir la tarjeta hecha a mano."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "pregunta": "¿Con qué se despierta Mamá el domingo por la mañana?"
+      }
+    },
+    {
+      "dia": 169,
+      "semana": 34,
+      "trimestre": 3,
+      "tema": "El día de la madre",
+      "oraciones": [
+        "Mamá cuelga el dibujo de Dani en la puerta de la nevera.",
+        "Dice que es el regalo más bonito que le han hecho nunca.",
+        "Toby también recibe un abrazo, por salir también en el dibujo."
+      ],
+      "actividad": {
+        "tipo": "adivina",
+        "adivinanza": "Te cuido, te quiero y te enseño a leer cada día. ¿Quién soy yo?"
+      }
+    },
+    {
+      "dia": 170,
+      "semana": 34,
+      "trimestre": 3,
+      "tema": "El día de la madre",
+      "oraciones": [
+        "Por la tarde, la familia come junta en el jardín de la abuela.",
+        "Lucía piensa que Mamá se merece un buen día todos los días.",
+        "Antes de dormir, le da un beso más de lo normal."
+      ],
+      "actividad": {
+        "tipo": "repasa",
+        "checklist": [
+          "Sé qué regalo hicieron Lucía y Dani.",
+          "Sé dónde colgó Mamá el dibujo.",
+          "Sé dónde comió la familia por la tarde."
+        ],
+        "prompt": "Dibuja el mejor recuerdo que tengas con tu madre o alguien que cuide de ti.",
+        "banner": "¡170 páginas leídas! Cada día que lees, aprendes algo nuevo."
+      }
+    },
+    {
+      "dia": 171,
+      "semana": 35,
+      "trimestre": 3,
+      "tema": "Dani ya reconoce casi todas las letras",
+      "oraciones": [
+        "Por las tardes, Lucía juega con Dani a un juego de letras.",
+        "Le enseña una tarjeta y él tiene que decir qué letra es.",
+        "Cada vez acierta más rápido, casi sin pensarlo mucho."
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Dibuja a Lucía y Dani jugando con las tarjetas de letras."
+      }
+    },
+    {
+      "dia": 172,
+      "semana": 35,
+      "trimestre": 3,
+      "tema": "Dani ya reconoce casi todas las letras",
+      "oraciones": [
+        "Dani ya conoce casi todas las letras del abecedario completo.",
+        "Solo le cuestan todavía un poco la ge y la jota.",
+        "Lucía le dice que a ella también le costaron mucho al principio."
+      ],
+      "actividad": {
+        "tipo": "completa",
+        "diagrama": "lineas-ondas"
+      }
+    },
+    {
+      "dia": 173,
+      "semana": 35,
+      "trimestre": 3,
+      "tema": "Dani ya reconoce casi todas las letras",
+      "oraciones": [
+        "Una tarde, Dani coge un cuento y empieza a juntar las letras despacio.",
+        "Lucía se sienta a su lado, sin ayudarle todavía.",
+        "Dani junta la primera palabra él solo: —Sol —dice, sin creérselo."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "pregunta": "¿Qué palabra junta Dani él solo por primera vez?"
+      }
+    },
+    {
+      "dia": 174,
+      "semana": 35,
+      "trimestre": 3,
+      "tema": "Dani ya reconoce casi todas las letras",
+      "oraciones": [
+        "Esa noche, Dani le cuenta orgulloso a Papá lo que ha hecho.",
+        "Papá lo abraza fuerte y le dice que será un gran lector.",
+        "Lucía piensa que pronto podrán leer el mismo libro juntos."
+      ],
+      "actividad": {
+        "tipo": "relaciona",
+        "pares": [
+          [
+            "Dani",
+            "lee su primera palabra"
+          ],
+          [
+            "Lucía",
+            "le enseña las letras"
+          ],
+          [
+            "Papá",
+            "se pone muy orgulloso"
+          ],
+          [
+            "Mamá",
+            "los escucha desde la cocina"
+          ]
+        ]
+      }
+    },
+    {
+      "dia": 175,
+      "semana": 35,
+      "trimestre": 3,
+      "tema": "Dani ya reconoce casi todas las letras: la semana",
+      "oraciones": null,
+      "actividad": {
+        "tipo": "relee",
+        "prompt": "Dibuja a Dani leyendo su primera palabra él solo."
+      }
+    },
+    {
+      "dia": 176,
+      "semana": 36,
+      "trimestre": 3,
+      "tema": "Se acerca el fin de curso",
+      "oraciones": [
+        "En el colegio, Marta anuncia que ya casi se acaba el curso.",
+        "La clase va a organizar una pequeña fiesta de despedida.",
+        "Cada niño tiene que preparar algo para ese último día especial."
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Dibuja cómo te imaginas la fiesta de fin de curso de Lucía."
+      }
+    },
+    {
+      "dia": 177,
+      "semana": 36,
+      "trimestre": 3,
+      "tema": "Se acerca el fin de curso",
+      "oraciones": [
+        "Sofía y Lucía deciden preparar juntas un baile bastante sencillo.",
+        "Ensayan cada tarde en el salón grande de la casa de Lucía.",
+        "Toby las mira sentado, ladrando cada vez que dan una vuelta."
+      ],
+      "actividad": {
+        "tipo": "busca",
+        "instruccion": "Busca en el texto quién ayuda a Lucía a preparar el baile."
+      }
+    },
+    {
+      "dia": 178,
+      "semana": 36,
+      "trimestre": 3,
+      "tema": "Se acerca el fin de curso",
+      "oraciones": [
+        "Dani quiere participar también, aunque todavía es muy pequeño para el baile.",
+        "Marta le da un papel especial: será el que abra la fiesta.",
+        "Dani se pone muy contento con su nueva tarea importante."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "pregunta": "¿Qué tarea especial le da Marta a Dani?"
+      }
+    },
+    {
+      "dia": 179,
+      "semana": 36,
+      "trimestre": 3,
+      "tema": "Se acerca el fin de curso",
+      "oraciones": [
+        "La profesora pide a todas las familias que traigan algo de comer.",
+        "Mamá decide preparar su famosa tarta de chocolate para todos.",
+        "Lucía cuenta los días que aún faltan en un calendario pequeño."
+      ],
+      "actividad": {
+        "tipo": "adivina",
+        "adivinanza": "Se acerca cada junio, con abrazos y con canciones, y despide otro curso. ¿Qué es?"
+      }
+    },
+    {
+      "dia": 180,
+      "semana": 36,
+      "trimestre": 3,
+      "tema": "Se acerca el fin de curso",
+      "oraciones": [
+        "Ya solo queda una semana para la fiesta de fin de curso.",
+        "Lucía y Sofía ensayan el baile por última vez, muy nerviosas.",
+        "Dani repite su frase una y otra vez, para no olvidarla."
+      ],
+      "actividad": {
+        "tipo": "repasa",
+        "checklist": [
+          "Sé qué van a preparar Lucía y Sofía.",
+          "Sé qué tarea le dio Marta a Dani.",
+          "Sé qué va a llevar Mamá a la fiesta."
+        ],
+        "prompt": "Dibuja el baile que están preparando Lucía y Sofía.",
+        "banner": "¡180 páginas leídas! Ya casi se acaba el curso, y el libro."
+      }
+    },
+    {
+      "dia": 181,
+      "semana": 37,
+      "trimestre": 3,
+      "tema": "La oruga se convierte en mariposa",
+      "oraciones": [
+        "En clase, Lucía y sus compañeros cuidan una oruga pequeña y verde.",
+        "Cada mañana le cambian las hojas frescas con mucho cuidado.",
+        "Un día, la oruga deja de moverse y se cuelga boca abajo."
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Dibuja la oruga colgada, formando su crisálida."
+      }
+    },
+    {
+      "dia": 182,
+      "semana": 37,
+      "trimestre": 3,
+      "tema": "La oruga se convierte en mariposa",
+      "oraciones": [
+        "—Se está formando la crisálida —explica Marta a toda la clase.",
+        "Dentro, el cuerpo de la oruga empieza a cambiar poco a poco.",
+        "Por fuera, sin embargo, la crisálida se queda quieta varios días."
+      ],
+      "actividad": {
+        "tipo": "completa",
+        "diagrama": "lineas-circulo"
+      }
+    },
+    {
+      "dia": 183,
+      "semana": 37,
+      "trimestre": 3,
+      "tema": "La oruga se convierte en mariposa",
+      "oraciones": [
+        "Marta cuenta un dato curioso sobre las mariposas.",
+        "Lucía mira el bote cada tarde, esperando ver algo nuevo.",
+        "Una mañana de mayo, por fin, algo empieza a moverse dentro."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "pregunta": "¿Qué dato curioso les cuenta Marta sobre las mariposas?"
+      }
+    },
+    {
+      "dia": 184,
+      "semana": 37,
+      "trimestre": 3,
+      "tema": "La oruga se convierte en mariposa",
+      "oraciones": [
+        "Sale una mariposa de color naranja y negro, con las alas arrugadas.",
+        "—¡Ha nacido, ha nacido! —grita Lucía, llamando a todos sus compañeros.",
+        "Sus alas necesitan varias horas al sol para secarse del todo."
+      ],
+      "actividad": {
+        "tipo": "relaciona",
+        "pares": [
+          [
+            "La oruga",
+            "se cuelga y forma la crisálida"
+          ],
+          [
+            "Marta",
+            "explica el proceso a la clase"
+          ],
+          [
+            "La mariposa",
+            "nace con las alas arrugadas"
+          ],
+          [
+            "Lucía",
+            "es la primera en verla"
+          ]
+        ]
+      }
+    },
+    {
+      "dia": 185,
+      "semana": 37,
+      "trimestre": 3,
+      "tema": "La oruga se convierte en mariposa: la semana",
+      "oraciones": null,
+      "actividad": {
+        "tipo": "relee",
+        "prompt": "Dibuja las tres partes: oruga, crisálida y mariposa."
+      }
+    },
+    {
+      "dia": 186,
+      "semana": 38,
+      "trimestre": 3,
+      "tema": "La feria del libro de fin de curso",
+      "oraciones": [
+        "El colegio organiza una feria del libro para todo el fin de curso.",
+        "Cada niño trae su cuento favorito para enseñarlo a los demás.",
+        "Dani, que ya reconoce muchas palabras, quiere participar también este año."
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Dibuja la mesa de libros de la feria del colegio."
+      }
+    },
+    {
+      "dia": 187,
+      "semana": 38,
+      "trimestre": 3,
+      "tema": "La feria del libro de fin de curso",
+      "oraciones": [
+        "Esa mañana, Lucía ayuda a Dani a elegir un cuento corto y fácil.",
+        "La biblioteca del colegio tiene más de dos mil libros distintos.",
+        "Lucía nunca había pensado antes en cuántos podría llegar a leer."
+      ],
+      "actividad": {
+        "tipo": "busca",
+        "instruccion": "Busca en el texto cuántos libros tiene la biblioteca del colegio."
+      }
+    },
+    {
+      "dia": 188,
+      "semana": 38,
+      "trimestre": 3,
+      "tema": "La feria del libro de fin de curso",
+      "oraciones": [
+        "—Tardaría casi cuarenta años en leerlos todos enteros —calcula Lucía en voz alta.",
+        "Dani se ríe muy fuerte y dice que él quiere empezar ya mismo.",
+        "Marta les explica que precisamente para eso está la feria de hoy."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "pregunta": "¿Cuánto tardaría Lucía en leer todos los libros de la biblioteca?"
+      }
+    },
+    {
+      "dia": 189,
+      "semana": 38,
+      "trimestre": 3,
+      "tema": "La feria del libro de fin de curso",
+      "oraciones": [
+        "Cada compañero de la clase cuenta su cuento por turnos, delante de todos.",
+        "A Lucía le toca la última, casi sin tiempo para prepararse.",
+        "Respira hondo, mira a toda la clase y empieza a leer."
+      ],
+      "actividad": {
+        "tipo": "adivina",
+        "adivinanza": "Tiene páginas, no hojas, y cuenta historias sin hablar. ¿Qué es?"
+      }
+    },
+    {
+      "dia": 190,
+      "semana": 38,
+      "trimestre": 3,
+      "tema": "La feria del libro de fin de curso",
+      "oraciones": [
+        "La clase aplaude fuerte y Marta le guiña un ojo a Lucía.",
+        "Esa noche, Lucía cuenta a toda la familia cómo fue la feria.",
+        "Papá dice que está muy orgulloso de lo bien que lee ya."
+      ],
+      "actividad": {
+        "tipo": "repasa",
+        "checklist": [
+          "Sé qué feria organiza el colegio.",
+          "Sé qué cuento eligió Dani.",
+          "Sé qué le dijo Papá a Lucía esa noche."
+        ],
+        "prompt": "Dibuja la portada del libro que tú leerías delante de toda tu clase.",
+        "banner": "¡190 páginas leídas! Lees tan bien como Lucía al final del curso."
+      }
+    },
+    {
+      "dia": 191,
+      "semana": 39,
+      "trimestre": 3,
+      "tema": "Último día de colegio",
+      "oraciones": [
+        "Por fin llega el último día de colegio de todo este curso escolar.",
+        "Lucía se despierta pronto, con muchas ganas y también un poco de pena.",
+        "Hoy se despide ya de su primer curso de primaria."
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Dibuja a Lucía el último día de colegio, con su mochila."
+      }
+    },
+    {
+      "dia": 192,
+      "semana": 39,
+      "trimestre": 3,
+      "tema": "Último día de colegio",
+      "oraciones": [
+        "En clase, Marta reparte un sobre con las notas.",
+        "También da a cada niño un diploma de fin de curso.",
+        "Lucía guarda el suyo con mucho cuidado."
+      ],
+      "actividad": {
+        "tipo": "completa",
+        "diagrama": "lineas-ondas"
+      }
+    },
+    {
+      "dia": 193,
+      "semana": 39,
+      "trimestre": 3,
+      "tema": "Último día de colegio",
+      "oraciones": [
+        "De camino a casa, Lucía piensa en todo lo que ha aprendido este año.",
+        "Al llegar, le enseña el diploma a Mamá, muy orgullosa.",
+        "Mamá lo cuelga en la puerta de la nevera, junto a los demás."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "pregunta": "¿Dónde cuelga Mamá el diploma de Lucía?"
+      }
+    },
+    {
+      "dia": 194,
+      "semana": 39,
+      "trimestre": 3,
+      "tema": "Último día de colegio",
+      "oraciones": [
+        "Esa tarde, Mamá saca una foto vieja de Lucía, de hace un año.",
+        "Lucía se ve pequeña y compara todo lo que ha crecido.",
+        "Piensa que ahora lee mucho mejor, corre más rápido y sabe nadar."
+      ],
+      "actividad": {
+        "tipo": "relaciona",
+        "pares": [
+          [
+            "Lucía",
+            "ha aprendido a leer mucho mejor"
+          ],
+          [
+            "Dani",
+            "casi sabe leer solo"
+          ],
+          [
+            "Mamá",
+            "guarda la foto de hace un año"
+          ],
+          [
+            "Toby",
+            "ha estado en todas las fotos"
+          ]
+        ]
+      }
+    },
+    {
+      "dia": 195,
+      "semana": 39,
+      "trimestre": 3,
+      "tema": "Fin del tercer trimestre",
+      "oraciones": [
+        "Esa noche, toda la familia cena en el jardín de la abuela Rosa.",
+        "Lucía piensa que este trimestre ha sido el más bonito de todos.",
+        "Ahora solo queda por delante todo un verano larguísimo para disfrutar."
+      ],
+      "actividad": {
+        "tipo": "repasa",
+        "checklist": [
+          "Sé qué le dieron a Lucía el último día de colegio.",
+          "Sé qué vio Lucía en la foto de hace un año.",
+          "Sé qué estación empieza ahora."
+        ],
+        "prompt": "Dibuja tu recuerdo favorito de este trimestre.",
+        "banner": "¡195 páginas leídas! Fin del tercer trimestre -- ¡hola, verano!"
+      }
+    }
+  ]
+}

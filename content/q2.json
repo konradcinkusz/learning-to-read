@@ -1,0 +1,1055 @@
+{
+  "_comentario": "Datos de origen para tools/gen_days.py. Este fichero SI se edita a mano; content/generated-days.tex NO (se regenera con `make generate`). Trimestre 2 completo: dias 66-130 (semanas 14-26).",
+  "dias": [
+    {
+      "dia": 66,
+      "semana": 14,
+      "trimestre": 2,
+      "tema": "El frío de enero",
+      "oraciones": [
+        "Empieza el invierno, hace frío.",
+        "Lucía se pone la bufanda de la abuela."
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Dibuja a Lucía con su bufanda roja."
+      }
+    },
+    {
+      "dia": 67,
+      "semana": 14,
+      "trimestre": 2,
+      "tema": "El frío de enero",
+      "oraciones": [
+        "A Dani le gusta la nieve, no el frío.",
+        "Por eso lleva guantes."
+      ],
+      "actividad": {
+        "tipo": "completa",
+        "diagrama": "lineas-ondas"
+      }
+    },
+    {
+      "dia": 68,
+      "semana": 14,
+      "trimestre": 2,
+      "tema": "El frío de enero",
+      "oraciones": [
+        "Toby duerme junto al fuego: hace calor.",
+        "Lucía lo llama; no se mueve."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "pregunta": "¿Por qué Toby duerme junto al fuego?"
+      }
+    },
+    {
+      "dia": 69,
+      "semana": 14,
+      "trimestre": 2,
+      "tema": "El frío de enero",
+      "oraciones": [
+        "Dani quiere aprender a leer como Lucía.",
+        "Lucía le ayuda por las tardes."
+      ],
+      "actividad": {
+        "tipo": "relaciona",
+        "pares": [
+          [
+            "Lucía",
+            "ya lee sola"
+          ],
+          [
+            "Dani",
+            "está aprendiendo"
+          ],
+          [
+            "Toby",
+            "no sabe leer"
+          ],
+          [
+            "Abuela Rosa",
+            "les lee cuentos"
+          ]
+        ]
+      }
+    },
+    {
+      "dia": 70,
+      "semana": 14,
+      "trimestre": 2,
+      "tema": "El frío de enero",
+      "oraciones": [
+        "El sábado ven la nieve.",
+        "Lucía y Dani hacen un muñeco de nieve."
+      ],
+      "actividad": {
+        "tipo": "crea",
+        "prompt": "Dibuja tu propio muñeco de nieve. ¿Qué le pondrías de nariz?"
+      }
+    },
+    {
+      "dia": 71,
+      "semana": 15,
+      "trimestre": 2,
+      "tema": "El cumpleaños de Papá",
+      "oraciones": [
+        "Hoy es el cumpleaños de Papá.",
+        "Mamá hace una tarta de chocolate."
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Dibuja la tarta de cumpleaños de Papá."
+      }
+    },
+    {
+      "dia": 72,
+      "semana": 15,
+      "trimestre": 2,
+      "tema": "El cumpleaños de Papá",
+      "oraciones": [
+        "Dani esconde los globos bajo la mesa.",
+        "Toby persigue un globo por el salón."
+      ],
+      "actividad": {
+        "tipo": "completa",
+        "diagrama": "lineas-circulo"
+      }
+    },
+    {
+      "dia": 73,
+      "semana": 15,
+      "trimestre": 2,
+      "tema": "El cumpleaños de Papá",
+      "oraciones": [
+        "Papá abre la puerta de casa.",
+        "—¡Sorpresa! —grita toda la familia."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "pregunta": "¿Qué grita la familia cuando Papá abre la puerta?"
+      }
+    },
+    {
+      "dia": 74,
+      "semana": 15,
+      "trimestre": 2,
+      "tema": "El cumpleaños de Papá",
+      "oraciones": [
+        "El regalo de Dani es un dibujo.",
+        "Papá dice que es un regalo precioso."
+      ],
+      "actividad": {
+        "tipo": "adivina",
+        "adivinanza": "Una vez al año llego, con velas y tarta te alegro. ¿Quién soy?"
+      }
+    },
+    {
+      "dia": 75,
+      "semana": 15,
+      "trimestre": 2,
+      "tema": "El cumpleaños de Papá",
+      "oraciones": [
+        "Esa noche, Lucía escribe en su cuaderno.",
+        "Dice que el invierno empieza bien."
+      ],
+      "actividad": {
+        "tipo": "repasa",
+        "checklist": [
+          "Sé por qué Toby duerme junto al fuego.",
+          "Sé qué tarta hizo Mamá para Papá.",
+          "Sé cómo ayuda Lucía a Dani a leer."
+        ],
+        "prompt": "Dibuja tu recuerdo favorito de estas dos semanas.",
+        "banner": "¡75 páginas leídas! Ya estás en el segundo trimestre."
+      }
+    },
+    {
+      "dia": 76,
+      "semana": 16,
+      "trimestre": 2,
+      "tema": "El disfraz de Carnaval",
+      "oraciones": [
+        "El viernes hay desfile de Carnaval.",
+        "Lucía quiere ir de mariposa, con alas de colores."
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Dibuja a Lucía disfrazada de mariposa, con sus alas de colores."
+      }
+    },
+    {
+      "dia": 77,
+      "semana": 16,
+      "trimestre": 2,
+      "tema": "El disfraz de Carnaval",
+      "oraciones": [
+        "La abuela Rosa cose las alas de Lucía.",
+        "Dani también quiere un disfraz."
+      ],
+      "actividad": {
+        "tipo": "completa",
+        "diagrama": "lineas-ondas"
+      }
+    },
+    {
+      "dia": 78,
+      "semana": 16,
+      "trimestre": 2,
+      "tema": "El disfraz de Carnaval",
+      "oraciones": [
+        "Lucía se prueba las alas.",
+        "—¡Pareces una mariposa de verdad! —dice Papá."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "pregunta": "¿Qué le dice Papá cuando ve a Lucía con las alas puestas?"
+      }
+    },
+    {
+      "dia": 79,
+      "semana": 16,
+      "trimestre": 2,
+      "tema": "El disfraz de Carnaval",
+      "oraciones": [
+        "Llega el viernes: Dani va de dragón verde.",
+        "Toby lleva un pañuelo de rayas."
+      ],
+      "actividad": {
+        "tipo": "relaciona",
+        "pares": [
+          [
+            "Lucía",
+            "va de mariposa"
+          ],
+          [
+            "Dani",
+            "va de dragón"
+          ],
+          [
+            "Toby",
+            "lleva un pañuelo"
+          ],
+          [
+            "Abuela Rosa",
+            "cose las alas"
+          ]
+        ]
+      }
+    },
+    {
+      "dia": 80,
+      "semana": 16,
+      "trimestre": 2,
+      "tema": "El disfraz de Carnaval",
+      "oraciones": [
+        "En el desfile, todos cantan y bailan.",
+        "La profesora reparte una piruleta a cada niño."
+      ],
+      "actividad": {
+        "tipo": "crea",
+        "prompt": "Dibuja tu propio disfraz. ¿De qué te gustaría disfrazarte a ti?"
+      }
+    },
+    {
+      "dia": 81,
+      "semana": 17,
+      "trimestre": 2,
+      "tema": "El Día de la Paz",
+      "oraciones": [
+        "Hoy el colegio celebra el Día de la Paz.",
+        "Marta enseña a hacer palomas de papel."
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Dibuja la paloma de papel que hace la clase de Lucía."
+      }
+    },
+    {
+      "dia": 82,
+      "semana": 17,
+      "trimestre": 2,
+      "tema": "El Día de la Paz",
+      "oraciones": [
+        "Cada niño pinta su paloma de un color distinto.",
+        "Dani pinta la suya de color azul."
+      ],
+      "actividad": {
+        "tipo": "completa",
+        "diagrama": "lineas-ondas"
+      }
+    },
+    {
+      "dia": 83,
+      "semana": 17,
+      "trimestre": 2,
+      "tema": "El Día de la Paz",
+      "oraciones": [
+        "Al final, cuelgan las palomas en el pasillo.",
+        "El pasillo queda blanco, como si fuera nieve."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "pregunta": "¿De qué color queda el pasillo al final?"
+      }
+    },
+    {
+      "dia": 84,
+      "semana": 17,
+      "trimestre": 2,
+      "tema": "El Día de la Paz",
+      "oraciones": [
+        "La paz es un día tranquilo y feliz.",
+        "Se cuida ayudando siempre a los demás."
+      ],
+      "actividad": {
+        "tipo": "adivina",
+        "adivinanza": "No se compra ni se vende, y toda la clase la entiende. ¿Qué es?"
+      }
+    },
+    {
+      "dia": 85,
+      "semana": 17,
+      "trimestre": 2,
+      "tema": "El Día de la Paz: la semana",
+      "oraciones": null,
+      "actividad": {
+        "tipo": "relee",
+        "prompt": "Dibuja algo bonito que puedas hacer tú por la paz."
+      }
+    },
+    {
+      "dia": 86,
+      "semana": 18,
+      "trimestre": 2,
+      "tema": "Lucía se pone mala",
+      "oraciones": [
+        "Lucía se despierta con la nariz tapada y tos.",
+        "Mamá le toma la temperatura y tiene fiebre."
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Dibuja a Lucía en la cama, con la bufanda puesta."
+      }
+    },
+    {
+      "dia": 87,
+      "semana": 18,
+      "trimestre": 2,
+      "tema": "Lucía se pone mala",
+      "oraciones": [
+        "Se queda todo el día en la cama.",
+        "Papá le prepara un zumo de naranja caliente."
+      ],
+      "actividad": {
+        "tipo": "busca",
+        "instruccion": "Busca en el texto qué le prepara Papá a Lucía."
+      }
+    },
+    {
+      "dia": 88,
+      "semana": 18,
+      "trimestre": 2,
+      "tema": "Lucía se pone mala",
+      "oraciones": [
+        "Dani le deja su peluche favorito.",
+        "Lucía sonríe, aunque le cuesta hablar por la tos."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "pregunta": "¿Qué le deja Dani a Lucía para que se mejore?"
+      }
+    },
+    {
+      "dia": 89,
+      "semana": 18,
+      "trimestre": 2,
+      "tema": "Lucía se pone mala",
+      "oraciones": [
+        "Poco a poco, Lucía va mejorando cada día.",
+        "El viernes ya puede levantarse y jugar un rato."
+      ],
+      "actividad": {
+        "tipo": "relaciona",
+        "pares": [
+          [
+            "Mamá",
+            "le toma la temperatura"
+          ],
+          [
+            "Papá",
+            "le prepara un zumo"
+          ],
+          [
+            "Dani",
+            "le deja su peluche"
+          ],
+          [
+            "Lucía",
+            "se queda en la cama"
+          ]
+        ]
+      }
+    },
+    {
+      "dia": 90,
+      "semana": 18,
+      "trimestre": 2,
+      "tema": "Lucía se pone mala",
+      "oraciones": [
+        "El sábado, Lucía ya está curada del todo.",
+        "Sale al parque con Toby, contenta de correr."
+      ],
+      "actividad": {
+        "tipo": "repasa",
+        "checklist": [
+          "Sé qué tenía Lucía cuando se puso mala.",
+          "Sé qué le preparó Papá.",
+          "Sé qué le dejó Dani para que se mejorase."
+        ],
+        "prompt": "Dibuja a Lucía ya curada, jugando con Toby en el parque.",
+        "banner": "¡90 páginas leídas! Muy bien, sigue leyendo cada día."
+      }
+    },
+    {
+      "dia": 91,
+      "semana": 19,
+      "trimestre": 2,
+      "tema": "Un domingo de manualidades con la abuela",
+      "oraciones": [
+        "El domingo, la abuela Rosa trae lana de colores.",
+        "Va a enseñar a Lucía a tejer."
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Dibuja los ovillos de lana de colores de la abuela."
+      }
+    },
+    {
+      "dia": 92,
+      "semana": 19,
+      "trimestre": 2,
+      "tema": "Un domingo de manualidades con la abuela",
+      "oraciones": [
+        "Lucía coge dos agujas y un ovillo azul.",
+        "Al principio, se le enredan mucho los hilos."
+      ],
+      "actividad": {
+        "tipo": "completa",
+        "diagrama": "lineas-ondas"
+      }
+    },
+    {
+      "dia": 93,
+      "semana": 19,
+      "trimestre": 2,
+      "tema": "Un domingo de manualidades con la abuela",
+      "oraciones": [
+        "Dani prefiere hacer bolitas suaves de lana.",
+        "La abuela se ríe y le ayuda a hacerlas."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "pregunta": "¿Qué prefiere hacer Dani en vez de tejer?"
+      }
+    },
+    {
+      "dia": 94,
+      "semana": 19,
+      "trimestre": 2,
+      "tema": "Un domingo de manualidades con la abuela",
+      "oraciones": [
+        "Al final del día, Lucía tiene una bufanda pequeña.",
+        "Está torcida, pero a ella le encanta igual."
+      ],
+      "actividad": {
+        "tipo": "adivina",
+        "adivinanza": "Con dos agujas y mucho hilo, te abrigo el cuello en invierno frío. ¿Qué soy?"
+      }
+    },
+    {
+      "dia": 95,
+      "semana": 19,
+      "trimestre": 2,
+      "tema": "Un domingo de manualidades con la abuela: la semana",
+      "oraciones": null,
+      "actividad": {
+        "tipo": "relee",
+        "prompt": "Dibuja la bufanda que le gustaría tejer a Lucía la próxima vez."
+      }
+    },
+    {
+      "dia": 96,
+      "semana": 20,
+      "trimestre": 2,
+      "tema": "La biblioteca del barrio",
+      "oraciones": [
+        "Cerca de casa hay una biblioteca pequeña y tranquila.",
+        "Lucía va cada sábado a cambiar sus libros."
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Dibuja la biblioteca del barrio de Lucía."
+      }
+    },
+    {
+      "dia": 97,
+      "semana": 20,
+      "trimestre": 2,
+      "tema": "La biblioteca del barrio",
+      "oraciones": [
+        "El bibliotecario conoce a Lucía por su nombre.",
+        "Le guarda libros de animales, que son sus favoritos."
+      ],
+      "actividad": {
+        "tipo": "busca",
+        "instruccion": "Busca en el texto qué tipo de libros le guarda el bibliotecario a Lucía."
+      }
+    },
+    {
+      "dia": 98,
+      "semana": 20,
+      "trimestre": 2,
+      "tema": "La biblioteca del barrio",
+      "oraciones": [
+        "Este sábado, Lucía busca un libro para Dani.",
+        "Quiere uno con dibujos grandes, porque él aún no lee."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "pregunta": "¿Por qué Lucía busca un libro con dibujos grandes para Dani?"
+      }
+    },
+    {
+      "dia": 99,
+      "semana": 20,
+      "trimestre": 2,
+      "tema": "La biblioteca del barrio",
+      "oraciones": [
+        "Encuentra uno de un perro que vuelve a casa.",
+        "A Dani le va a encantar, porque piensa en Toby."
+      ],
+      "actividad": {
+        "tipo": "relaciona",
+        "pares": [
+          [
+            "Lucía",
+            "busca un libro para Dani"
+          ],
+          [
+            "El bibliotecario",
+            "guarda libros de animales"
+          ],
+          [
+            "El libro",
+            "habla de un perro"
+          ],
+          [
+            "Dani",
+            "aún no lee"
+          ]
+        ]
+      }
+    },
+    {
+      "dia": 100,
+      "semana": 20,
+      "trimestre": 2,
+      "tema": "La biblioteca del barrio",
+      "oraciones": [
+        "Dani abraza el libro nuevo nada más verlo.",
+        "Esa noche, Lucía se lo lee entero antes de dormir."
+      ],
+      "actividad": {
+        "tipo": "repasa",
+        "checklist": [
+          "Sé qué tipo de libros le gustan a Lucía.",
+          "Sé qué libro encontró para Dani.",
+          "Sé de qué trataba el libro."
+        ],
+        "prompt": "Dibuja la portada del libro que le regalarías tú a alguien.",
+        "banner": "¡100 páginas leídas! Ya has leído el libro entero hasta aquí."
+      }
+    },
+    {
+      "dia": 101,
+      "semana": 21,
+      "trimestre": 2,
+      "tema": "El cumpleaños de Toby",
+      "oraciones": [
+        "Hoy hace un año que Toby llegó a esta familia.",
+        "Papá dice que hay que celebrarlo con una fiesta pequeña."
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Dibuja a Toby el día que llegó a la familia."
+      }
+    },
+    {
+      "dia": 102,
+      "semana": 21,
+      "trimestre": 2,
+      "tema": "El cumpleaños de Toby",
+      "oraciones": [
+        "Lucía le hace una corona de cartón con orejas.",
+        "Toby no para quieto y se la quita enseguida."
+      ],
+      "actividad": {
+        "tipo": "completa",
+        "diagrama": "lineas-circulo"
+      }
+    },
+    {
+      "dia": 103,
+      "semana": 21,
+      "trimestre": 2,
+      "tema": "El cumpleaños de Toby",
+      "oraciones": [
+        "Dani le regala su pelota más querida, la roja.",
+        "Toby la esconde debajo del sofá enseguida, como siempre."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "pregunta": "¿Qué le regala Dani a Toby por su cumpleaños?"
+      }
+    },
+    {
+      "dia": 104,
+      "semana": 21,
+      "trimestre": 2,
+      "tema": "El cumpleaños de Toby",
+      "oraciones": [
+        "Por la tarde, Mamá le da una galleta especial de perro.",
+        "Toby mueve la cola tan fuerte que tira un cojín."
+      ],
+      "actividad": {
+        "tipo": "adivina",
+        "adivinanza": "Muevo la cola cuando soy feliz, y ladro fuerte si llaman a la puerta. ¿Quién soy?"
+      }
+    },
+    {
+      "dia": 105,
+      "semana": 21,
+      "trimestre": 2,
+      "tema": "El cumpleaños de Toby: la semana",
+      "oraciones": null,
+      "actividad": {
+        "tipo": "relee",
+        "prompt": "Dibuja la fiesta de cumpleaños de Toby, con su corona y su galleta."
+      }
+    },
+    {
+      "dia": 106,
+      "semana": 22,
+      "trimestre": 2,
+      "tema": "Un día de mucho viento",
+      "oraciones": [
+        "Esta mañana sopla un viento fortísimo por todo el barrio.",
+        "Las hojas y los papeles vuelan por la calle."
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Dibuja las hojas y los papeles volando por la calle."
+      }
+    },
+    {
+      "dia": 107,
+      "semana": 22,
+      "trimestre": 2,
+      "tema": "Un día de mucho viento",
+      "oraciones": [
+        "A Lucía casi se le vuela el gorro nuevo.",
+        "Lo agarra justo a tiempo, antes de que se escape del todo."
+      ],
+      "actividad": {
+        "tipo": "busca",
+        "instruccion": "Busca en el texto qué está a punto de perder Lucía."
+      }
+    },
+    {
+      "dia": 108,
+      "semana": 22,
+      "trimestre": 2,
+      "tema": "Un día de mucho viento",
+      "oraciones": [
+        "En el parque, el viento mueve fuerte los columpios vacíos.",
+        "Dani dice que parece que los empuja un fantasma."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "pregunta": "¿Qué dice Dani que parece que empuja los columpios?"
+      }
+    },
+    {
+      "dia": 109,
+      "semana": 22,
+      "trimestre": 2,
+      "tema": "Un día de mucho viento",
+      "oraciones": [
+        "Toby ladra al viento, como si fuera un animal invisible.",
+        "Todos se ríen y vuelven pronto a casa, muy despeinados."
+      ],
+      "actividad": {
+        "tipo": "relaciona",
+        "pares": [
+          [
+            "Lucía",
+            "casi pierde el gorro"
+          ],
+          [
+            "Dani",
+            "habla de un fantasma"
+          ],
+          [
+            "Toby",
+            "ladra al viento"
+          ],
+          [
+            "Todos",
+            "vuelven despeinados a casa"
+          ]
+        ]
+      }
+    },
+    {
+      "dia": 110,
+      "semana": 22,
+      "trimestre": 2,
+      "tema": "Un día de mucho viento",
+      "oraciones": [
+        "Por la noche, el viento por fin se calma del todo.",
+        "Lucía escribe en su cuaderno: hoy ha sido un día loco."
+      ],
+      "actividad": {
+        "tipo": "repasa",
+        "checklist": [
+          "Sé qué casi pierde Lucía con el viento.",
+          "Sé qué dijo Dani sobre los columpios.",
+          "Sé cómo reaccionó Toby al viento."
+        ],
+        "prompt": "Dibuja tu propio día de viento: ¿qué se vuela por el aire?",
+        "banner": "¡110 páginas leídas! Cada vez lees frases más largas."
+      }
+    },
+    {
+      "dia": 111,
+      "semana": 23,
+      "trimestre": 2,
+      "tema": "El proyecto de plantas de Marta",
+      "oraciones": [
+        "En el colegio, Marta reparte una maceta pequeña a cada niño.",
+        "Cada uno planta tres semillas de judía en la tierra."
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Dibuja tu maceta con las semillas recién plantadas."
+      }
+    },
+    {
+      "dia": 112,
+      "semana": 23,
+      "trimestre": 2,
+      "tema": "El proyecto de plantas de Marta",
+      "oraciones": [
+        "Lucía riega su maceta todas las mañanas, sin olvidarse ni un día.",
+        "La deja siempre en la ventana, donde le da el sol."
+      ],
+      "actividad": {
+        "tipo": "completa",
+        "diagrama": "lineas-ondas"
+      }
+    },
+    {
+      "dia": 113,
+      "semana": 23,
+      "trimestre": 2,
+      "tema": "El proyecto de plantas de Marta",
+      "oraciones": [
+        "Al cabo de unos días, sale un brote pequeño y verde.",
+        "Lucía se lo enseña a Dani con mucho orgullo."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "pregunta": "¿Qué le sale a la maceta de Lucía al cabo de unos días?"
+      }
+    },
+    {
+      "dia": 114,
+      "semana": 23,
+      "trimestre": 2,
+      "tema": "El proyecto de plantas de Marta",
+      "oraciones": [
+        "Dani también quiere plantar algo en una maceta suya.",
+        "La abuela le regala unas pipas de girasol para probar."
+      ],
+      "actividad": {
+        "tipo": "adivina",
+        "adivinanza": "Nazco pequeña y verde, y si me cuidas, crezco hacia el cielo cada mes. ¿Qué soy?"
+      }
+    },
+    {
+      "dia": 115,
+      "semana": 23,
+      "trimestre": 2,
+      "tema": "El proyecto de plantas de Marta: la semana",
+      "oraciones": null,
+      "actividad": {
+        "tipo": "relee",
+        "prompt": "Dibuja cómo te imaginas que estará tu planta dentro de un mes."
+      }
+    },
+    {
+      "dia": 116,
+      "semana": 24,
+      "trimestre": 2,
+      "tema": "Dani rompe el dinosaurio de Lucía",
+      "oraciones": [
+        "Dani juega con el dinosaurio favorito de Lucía sin pedirle permiso.",
+        "Se le cae al suelo y se le rompe una pata."
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Dibuja el dinosaurio de Lucía, antes de que se le rompiera la pata."
+      }
+    },
+    {
+      "dia": 117,
+      "semana": 24,
+      "trimestre": 2,
+      "tema": "Dani rompe el dinosaurio de Lucía",
+      "oraciones": [
+        "Lucía se enfada mucho y le grita a su hermano.",
+        "Dani se pone muy triste y empieza a llorar despacio."
+      ],
+      "actividad": {
+        "tipo": "busca",
+        "instruccion": "Busca en el texto qué hace Dani después de que Lucía le grite."
+      }
+    },
+    {
+      "dia": 118,
+      "semana": 24,
+      "trimestre": 2,
+      "tema": "Dani rompe el dinosaurio de Lucía",
+      "oraciones": [
+        "Mamá les explica que romper algo no es tan grave.",
+        "Lo importante es pedir perdón y arreglarlo entre los dos."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "pregunta": "¿Qué les explica Mamá sobre romper las cosas?"
+      }
+    },
+    {
+      "dia": 119,
+      "semana": 24,
+      "trimestre": 2,
+      "tema": "Dani rompe el dinosaurio de Lucía",
+      "oraciones": [
+        "Entre los dos pegan la pata con un poco de pegamento.",
+        "Dani promete pedir las cosas antes de cogerlas la próxima vez."
+      ],
+      "actividad": {
+        "tipo": "relaciona",
+        "pares": [
+          [
+            "Dani",
+            "rompe el dinosaurio"
+          ],
+          [
+            "Lucía",
+            "se enfada y grita"
+          ],
+          [
+            "Mamá",
+            "explica que hay que pedir perdón"
+          ],
+          [
+            "Los dos",
+            "pegan la pata juntos"
+          ]
+        ]
+      }
+    },
+    {
+      "dia": 120,
+      "semana": 24,
+      "trimestre": 2,
+      "tema": "Dani rompe el dinosaurio de Lucía",
+      "oraciones": [
+        "Por la noche, Lucía y Dani ya se han hecho las paces.",
+        "Duermen juntos en la misma habitación, como cuando eran más pequeños."
+      ],
+      "actividad": {
+        "tipo": "repasa",
+        "checklist": [
+          "Sé qué se le rompió al dinosaurio.",
+          "Sé qué les explicó Mamá.",
+          "Sé cómo arreglaron el dinosaurio entre los dos."
+        ],
+        "prompt": "Dibuja a Lucía y Dani haciendo las paces.",
+        "banner": "¡120 páginas leídas! Perdonar también es hacerse mayor."
+      }
+    },
+    {
+      "dia": 121,
+      "semana": 25,
+      "trimestre": 2,
+      "tema": "Huele a primavera",
+      "oraciones": [
+        "Un sábado de paseo, Lucía nota que el aire ya huele distinto.",
+        "Los almendros del parque están llenos de flores blancas."
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Dibuja los almendros en flor del parque."
+      }
+    },
+    {
+      "dia": 122,
+      "semana": 25,
+      "trimestre": 2,
+      "tema": "Huele a primavera",
+      "oraciones": [
+        "Dani recoge unos pétalos caídos y se los da a Lucía.",
+        "Ella los guarda con cuidado dentro de su cuaderno de lectura."
+      ],
+      "actividad": {
+        "tipo": "completa",
+        "diagrama": "lineas-circulo"
+      }
+    },
+    {
+      "dia": 123,
+      "semana": 25,
+      "trimestre": 2,
+      "tema": "Huele a primavera",
+      "oraciones": [
+        "También ven las primeras golondrinas volando muy alto en el cielo.",
+        "Toby las mira y ladra fuerte, aunque nunca las alcanza."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "pregunta": "¿Qué hace Toby cuando ve pasar a las golondrinas?"
+      }
+    },
+    {
+      "dia": 124,
+      "semana": 25,
+      "trimestre": 2,
+      "tema": "Huele a primavera",
+      "oraciones": [
+        "Por el camino de vuelta, cuentan cuántas flores nuevas han visto.",
+        "Lucía dice que la primavera es su estación preferida del año."
+      ],
+      "actividad": {
+        "tipo": "adivina",
+        "adivinanza": "Traigo flores, traigo sol, y las golondrinas vuelven con mi llegada. ¿Quién soy?"
+      }
+    },
+    {
+      "dia": 125,
+      "semana": 25,
+      "trimestre": 2,
+      "tema": "Huele a primavera: la semana",
+      "oraciones": null,
+      "actividad": {
+        "tipo": "relee",
+        "prompt": "Dibuja tu señal favorita de que ha llegado la primavera."
+      }
+    },
+    {
+      "dia": 126,
+      "semana": 26,
+      "trimestre": 2,
+      "tema": "Despedida del segundo trimestre",
+      "oraciones": [
+        "El domingo, toda la familia va de paseo al parque grande.",
+        "Ya no hace tanto frío y el sol calienta un poco."
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Dibuja a la familia paseando por el parque en primavera."
+      }
+    },
+    {
+      "dia": 127,
+      "semana": 26,
+      "trimestre": 2,
+      "tema": "Despedida del segundo trimestre",
+      "oraciones": [
+        "Lucía piensa en todo lo que ha pasado este trimestre.",
+        "Se puso mala, aprendió a tejer y cumplió un año más con Toby."
+      ],
+      "actividad": {
+        "tipo": "busca",
+        "instruccion": "Busca en el texto qué aprendió a hacer Lucía este trimestre."
+      }
+    },
+    {
+      "dia": 128,
+      "semana": 26,
+      "trimestre": 2,
+      "tema": "Despedida del segundo trimestre",
+      "oraciones": [
+        "Dani está muy orgulloso: casi ha aprendido a leer él solo.",
+        "Lucía dice que muy pronto podrán leer juntos el mismo libro."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "pregunta": "¿Qué dice Lucía que podrán hacer pronto ella y Dani?"
+      }
+    },
+    {
+      "dia": 129,
+      "semana": 26,
+      "trimestre": 2,
+      "tema": "Despedida del segundo trimestre",
+      "oraciones": [
+        "Toby corre feliz entre los árboles, oliendo las flores nuevas.",
+        "Papá dice que el próximo trimestre va a ser el más bonito."
+      ],
+      "actividad": {
+        "tipo": "relaciona",
+        "pares": [
+          [
+            "Lucía",
+            "aprendió a tejer"
+          ],
+          [
+            "Dani",
+            "casi sabe leer solo"
+          ],
+          [
+            "Toby",
+            "corre entre los árboles"
+          ],
+          [
+            "Papá",
+            "habla del próximo trimestre"
+          ]
+        ]
+      }
+    },
+    {
+      "dia": 130,
+      "semana": 26,
+      "trimestre": 2,
+      "tema": "Fin del segundo trimestre",
+      "oraciones": [
+        "Antes de irse, todos se sientan un rato bajo un árbol grande.",
+        "Lucía piensa que la primavera acaba de empezar, y con ella algo nuevo."
+      ],
+      "actividad": {
+        "tipo": "repasa",
+        "checklist": [
+          "Sé qué le pasó a Lucía este trimestre.",
+          "Sé qué casi ha aprendido a hacer Dani.",
+          "Sé qué estación empieza ahora."
+        ],
+        "prompt": "Dibuja tu recuerdo favorito de este trimestre.",
+        "banner": "¡130 páginas leídas! Fin del segundo trimestre -- empieza la primavera."
+      }
+    }
+  ]
+}

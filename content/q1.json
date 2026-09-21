@@ -1,100 +1,154 @@
 {
-  "_comentario": "Datos de origen para tools/gen_days.py. Este fichero SÍ se edita a mano; content/generated-days.tex NO (se regenera con `make generate`). De momento contiene los días 1-15 (Trimestre 1, semanas 1-3). El resto de las semanas del Trimestre 1 se describe en notes/01-curriculum.md y se va añadiendo aquí, día a día, en pasadas futuras.",
+  "_comentario": "Datos de origen para tools/gen_days.py. Este fichero SI se edita a mano; content/generated-days.tex NO (se regenera con `make generate`). Trimestre 1 completo: dias 1-65 (semanas 1-13).",
   "personajes": {
     "Lucía": "protagonista, 6 años",
     "Dani": "su hermano pequeño, 4 años",
     "Toby": "el perro de la familia",
-    "Abuela Rosa": "la abuela materna"
+    "Abuela Rosa": "la abuela materna",
+    "Pedro": "el vecino, tiene una gata",
+    "Luna": "la gata de Pedro"
   },
   "dias": [
     {
-      "dia": 1, "semana": 1, "trimestre": 1,
+      "dia": 1,
+      "semana": 1,
+      "trimestre": 1,
       "tema": "La familia de Lucía",
-      "oraciones": ["Lucía tiene seis años y le encanta leer."],
+      "oraciones": [
+        "Lucía tiene seis años y le encanta leer."
+      ],
       "actividad": {
         "tipo": "dibuja",
         "prompt": "Dibuja a Lucía leyendo su cuento favorito."
       }
     },
     {
-      "dia": 2, "semana": 1, "trimestre": 1,
+      "dia": 2,
+      "semana": 1,
+      "trimestre": 1,
       "tema": "La familia de Lucía",
-      "oraciones": ["Dani es su hermano pequeño y quiere jugar."],
+      "oraciones": [
+        "Dani es su hermano pequeño y quiere jugar."
+      ],
       "actividad": {
         "tipo": "completa",
         "diagrama": "lineas-ondas"
       }
     },
     {
-      "dia": 3, "semana": 1, "trimestre": 1,
+      "dia": 3,
+      "semana": 1,
+      "trimestre": 1,
       "tema": "La familia de Lucía",
-      "oraciones": ["Toby es un perro marrón de orejas largas."],
+      "oraciones": [
+        "Toby es un perro marrón de orejas largas."
+      ],
       "actividad": {
         "tipo": "copia"
       }
     },
     {
-      "dia": 4, "semana": 1, "trimestre": 1,
+      "dia": 4,
+      "semana": 1,
+      "trimestre": 1,
       "tema": "La familia de Lucía",
-      "oraciones": ["Los domingos van a casa de la abuela."],
+      "oraciones": [
+        "Los domingos van a casa de la abuela."
+      ],
       "actividad": {
         "tipo": "relaciona",
         "pares": [
-          ["Lucía", "niña"],
-          ["Dani", "niño pequeño"],
-          ["Toby", "perro"],
-          ["Abuela Rosa", "abuela"]
+          [
+            "Lucía",
+            "niña"
+          ],
+          [
+            "Dani",
+            "niño pequeño"
+          ],
+          [
+            "Toby",
+            "perro"
+          ],
+          [
+            "Abuela Rosa",
+            "abuela"
+          ]
         ]
       }
     },
     {
-      "dia": 5, "semana": 1, "trimestre": 1,
+      "dia": 5,
+      "semana": 1,
+      "trimestre": 1,
       "tema": "La familia de Lucía",
-      "oraciones": ["A Lucía le gusta mucho su familia."],
+      "oraciones": [
+        "A Lucía le gusta mucho su familia."
+      ],
       "actividad": {
         "tipo": "crea",
         "prompt": "Dibuja a tu propia familia. Cuéntale a un adulto qué es lo que más te gusta hacer juntos."
       }
     },
     {
-      "dia": 6, "semana": 2, "trimestre": 1,
+      "dia": 6,
+      "semana": 2,
+      "trimestre": 1,
       "tema": "Toby, el perro juguetón",
-      "oraciones": ["Toby corre muy rápido detrás de su pelota."],
+      "oraciones": [
+        "Toby corre muy rápido detrás de su pelota."
+      ],
       "actividad": {
         "tipo": "dibuja",
         "prompt": "Dibuja a Toby corriendo detrás de su pelota roja."
       }
     },
     {
-      "dia": 7, "semana": 2, "trimestre": 1,
+      "dia": 7,
+      "semana": 2,
+      "trimestre": 1,
       "tema": "Toby, el perro juguetón",
-      "oraciones": ["Dani y Toby juegan juntos en el jardín."],
+      "oraciones": [
+        "Dani y Toby juegan juntos en el jardín."
+      ],
       "actividad": {
         "tipo": "completa",
         "diagrama": "lineas-circulo"
       }
     },
     {
-      "dia": 8, "semana": 2, "trimestre": 1,
+      "dia": 8,
+      "semana": 2,
+      "trimestre": 1,
       "tema": "Toby, el perro juguetón",
-      "oraciones": ["A veces Toby se esconde bajo la cama."],
+      "oraciones": [
+        "A veces Toby se esconde bajo la cama."
+      ],
       "actividad": {
         "tipo": "copia"
       }
     },
     {
-      "dia": 9, "semana": 2, "trimestre": 1,
+      "dia": 9,
+      "semana": 2,
+      "trimestre": 1,
       "tema": "Toby, el perro juguetón",
-      "oraciones": ["Lucía le da un hueso a Toby."],
+      "oraciones": [
+        "Lucía le da un hueso a Toby."
+      ],
       "actividad": {
         "tipo": "adivina",
         "adivinanza": "Tengo cuatro patas, muevo la cola y ladro fuerte. ¿Quién soy?"
       }
     },
     {
-      "dia": 10, "semana": 2, "trimestre": 1,
+      "dia": 10,
+      "semana": 2,
+      "trimestre": 1,
       "tema": "Toby, el perro juguetón",
-      "oraciones": ["Toby es el mejor amigo de la familia."],
+      "oraciones": [
+        "Toby es el mejor amigo de la familia."
+      ],
       "actividad": {
         "tipo": "repasa",
         "checklist": [
@@ -107,52 +161,889 @@
       }
     },
     {
-      "dia": 11, "semana": 3, "trimestre": 1,
+      "dia": 11,
+      "semana": 3,
+      "trimestre": 1,
       "tema": "El colegio de Lucía",
-      "oraciones": ["Lucía va al colegio con su mochila azul."],
+      "oraciones": [
+        "Lucía va al colegio con su mochila azul."
+      ],
       "actividad": {
         "tipo": "dibuja",
         "prompt": "Dibuja a Lucía de camino al colegio con su mochila."
       }
     },
     {
-      "dia": 12, "semana": 3, "trimestre": 1,
+      "dia": 12,
+      "semana": 3,
+      "trimestre": 1,
       "tema": "El colegio de Lucía",
-      "oraciones": ["Su profesora, Marta, empieza con un cuento."],
+      "oraciones": [
+        "Su profesora, Marta, empieza con un cuento."
+      ],
       "actividad": {
         "tipo": "completa",
         "diagrama": "lineas-ondas"
       }
     },
     {
-      "dia": 13, "semana": 3, "trimestre": 1,
+      "dia": 13,
+      "semana": 3,
+      "trimestre": 1,
       "tema": "El colegio de Lucía",
-      "oraciones": ["Lucía juega con Sofía, su amiga nueva."],
+      "oraciones": [
+        "Lucía juega con Sofía, su amiga nueva."
+      ],
       "actividad": {
         "tipo": "copia"
       }
     },
     {
-      "dia": 14, "semana": 3, "trimestre": 1,
+      "dia": 14,
+      "semana": 3,
+      "trimestre": 1,
       "tema": "El colegio de Lucía",
-      "oraciones": ["Lucía cuelga su abrigo en una percha."],
+      "oraciones": [
+        "Lucía cuelga su abrigo en una percha."
+      ],
       "actividad": {
         "tipo": "relaciona",
         "pares": [
-          ["Lucía", "tiene mochila azul"],
-          ["Marta", "es la profesora"],
-          ["Sofía", "es su amiga nueva"],
-          ["Dani", "es el hermano pequeño"]
+          [
+            "Lucía",
+            "tiene mochila azul"
+          ],
+          [
+            "Marta",
+            "es la profesora"
+          ],
+          [
+            "Sofía",
+            "es su amiga nueva"
+          ],
+          [
+            "Dani",
+            "es el hermano pequeño"
+          ]
         ]
       }
     },
     {
-      "dia": 15, "semana": 3, "trimestre": 1,
+      "dia": 15,
+      "semana": 3,
+      "trimestre": 1,
       "tema": "El colegio de Lucía",
-      "oraciones": ["Lucía le cuenta todo a Mamá."],
+      "oraciones": [
+        "Lucía le cuenta todo a Mamá."
+      ],
       "actividad": {
         "tipo": "crea",
         "prompt": "Dibuja tu clase o cuéntale a un adulto qué es lo que más te gusta de ir al colegio."
+      }
+    },
+    {
+      "dia": 16,
+      "semana": 4,
+      "trimestre": 1,
+      "tema": "El barrio y el parque",
+      "oraciones": [
+        "Lucía y Dani van al parque con Toby."
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Dibuja el parque del barrio de Lucía."
+      }
+    },
+    {
+      "dia": 17,
+      "semana": 4,
+      "trimestre": 1,
+      "tema": "El barrio y el parque",
+      "oraciones": [
+        "En el parque hay un tobogán muy alto."
+      ],
+      "actividad": {
+        "tipo": "busca",
+        "instruccion": "Busca en el texto la palabra que dice qué hay en el parque."
+      }
+    },
+    {
+      "dia": 18,
+      "semana": 4,
+      "trimestre": 1,
+      "tema": "El barrio y el parque",
+      "oraciones": [
+        "Toby juega con otros perros del barrio."
+      ],
+      "actividad": {
+        "tipo": "verdadero_falso",
+        "afirmaciones": [
+          "Toby juega con otros perros.",
+          "Lucía se queda en casa.",
+          "El parque está vacío."
+        ]
+      }
+    },
+    {
+      "dia": 19,
+      "semana": 4,
+      "trimestre": 1,
+      "tema": "El barrio y el parque",
+      "oraciones": [
+        "Dani sube al columpio y se ríe mucho."
+      ],
+      "actividad": {
+        "tipo": "adivina",
+        "adivinanza": "Vuelo sin alas, subo y bajo, pero nunca me voy muy lejos. ¿Quién soy?"
+      }
+    },
+    {
+      "dia": 20,
+      "semana": 4,
+      "trimestre": 1,
+      "tema": "El barrio y el parque",
+      "oraciones": [
+        "Al volver a casa, todos están cansados."
+      ],
+      "actividad": {
+        "tipo": "repasa",
+        "checklist": [
+          "Sé qué hay en el parque.",
+          "Sé con quién juega Toby.",
+          "Sé quién sube al columpio."
+        ],
+        "prompt": "Dibuja tu parque favorito.",
+        "banner": "¡20 páginas leídas! Ya vas por el barrio de Lucía."
+      }
+    },
+    {
+      "dia": 21,
+      "semana": 5,
+      "trimestre": 1,
+      "tema": "La comida en casa",
+      "oraciones": [
+        "A Lucía le encanta la tortilla de patata."
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Dibuja el plato de comida que más te gusta a ti."
+      }
+    },
+    {
+      "dia": 22,
+      "semana": 5,
+      "trimestre": 1,
+      "tema": "La comida en casa",
+      "oraciones": [
+        "A Dani no le gustan nada las espinacas."
+      ],
+      "actividad": {
+        "tipo": "completa",
+        "diagrama": "lineas-circulo"
+      }
+    },
+    {
+      "dia": 23,
+      "semana": 5,
+      "trimestre": 1,
+      "tema": "La comida en casa",
+      "oraciones": [
+        "Los domingos, la abuela cocina un guiso muy rico."
+      ],
+      "actividad": {
+        "tipo": "rodea",
+        "pregunta": "¿Quién cocina el guiso de los domingos?",
+        "opciones": [
+          "La abuela",
+          "Mamá",
+          "Toby"
+        ]
+      }
+    },
+    {
+      "dia": 24,
+      "semana": 5,
+      "trimestre": 1,
+      "tema": "La comida en casa",
+      "oraciones": [
+        "Toby espera siempre debajo de la mesa."
+      ],
+      "actividad": {
+        "tipo": "relaciona",
+        "pares": [
+          [
+            "Lucía",
+            "tortilla de patata"
+          ],
+          [
+            "Dani",
+            "no le gustan las espinacas"
+          ],
+          [
+            "Toby",
+            "espera bajo la mesa"
+          ],
+          [
+            "Abuela Rosa",
+            "cocina los domingos"
+          ]
+        ]
+      }
+    },
+    {
+      "dia": 25,
+      "semana": 5,
+      "trimestre": 1,
+      "tema": "La comida en casa: la semana",
+      "actividad": {
+        "tipo": "relee",
+        "prompt": "Dibuja la comida que prepararías tú para toda la familia."
+      }
+    },
+    {
+      "dia": 26,
+      "semana": 6,
+      "trimestre": 1,
+      "tema": "Llega el otoño",
+      "oraciones": [
+        "Las hojas de los árboles se vuelven naranjas."
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Dibuja un árbol con hojas de otoño."
+      }
+    },
+    {
+      "dia": 27,
+      "semana": 6,
+      "trimestre": 1,
+      "tema": "Llega el otoño",
+      "oraciones": [
+        "El viento frío empieza a soplar por las tardes."
+      ],
+      "actividad": {
+        "tipo": "busca",
+        "instruccion": "Busca en el texto la palabra que dice qué empieza a soplar."
+      }
+    },
+    {
+      "dia": 28,
+      "semana": 6,
+      "trimestre": 1,
+      "tema": "Llega el otoño",
+      "oraciones": [
+        "Lucía saca del armario su abrigo y su bufanda."
+      ],
+      "actividad": {
+        "tipo": "verdadero_falso",
+        "afirmaciones": [
+          "Lucía saca su abrigo.",
+          "Hace mucho calor.",
+          "Las hojas son verdes todavía."
+        ]
+      }
+    },
+    {
+      "dia": 29,
+      "semana": 6,
+      "trimestre": 1,
+      "tema": "Llega el otoño",
+      "oraciones": [
+        "Dani hace un montón de hojas y salta dentro."
+      ],
+      "actividad": {
+        "tipo": "adivina",
+        "adivinanza": "Caigo de los árboles, soy naranja o marrón, y crujo cuando me pisas. ¿Quién soy?"
+      }
+    },
+    {
+      "dia": 30,
+      "semana": 6,
+      "trimestre": 1,
+      "tema": "Llega el otoño",
+      "oraciones": [
+        "El otoño ya se nota en todo el barrio."
+      ],
+      "actividad": {
+        "tipo": "repasa",
+        "checklist": [
+          "Sé de qué color son las hojas.",
+          "Sé qué saca Lucía del armario.",
+          "Sé qué hace Dani con las hojas."
+        ],
+        "prompt": "Dibuja tu rincón favorito en otoño.",
+        "banner": "¡30 páginas leídas! El otoño ya está aquí."
+      }
+    },
+    {
+      "dia": 31,
+      "semana": 7,
+      "trimestre": 1,
+      "tema": "Los juguetes de Dani",
+      "oraciones": [
+        "Dani tiene una caja llena de coches pequeños."
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Dibuja el juguete favorito de Dani."
+      }
+    },
+    {
+      "dia": 32,
+      "semana": 7,
+      "trimestre": 1,
+      "tema": "Los juguetes de Dani",
+      "oraciones": [
+        "Su coche favorito es rojo y muy rápido."
+      ],
+      "actividad": {
+        "tipo": "completa",
+        "diagrama": "lineas-ondas"
+      }
+    },
+    {
+      "dia": 33,
+      "semana": 7,
+      "trimestre": 1,
+      "tema": "Los juguetes de Dani",
+      "oraciones": [
+        "A veces, Dani deja sus coches por todo el salón."
+      ],
+      "actividad": {
+        "tipo": "rodea",
+        "pregunta": "¿Dónde deja Dani sus coches a veces?",
+        "opciones": [
+          "Por todo el salón",
+          "En el jardín",
+          "En el colegio"
+        ]
+      }
+    },
+    {
+      "dia": 34,
+      "semana": 7,
+      "trimestre": 1,
+      "tema": "Los juguetes de Dani",
+      "oraciones": [
+        "Lucía le ayuda a guardarlos antes de cenar."
+      ],
+      "actividad": {
+        "tipo": "relaciona",
+        "pares": [
+          [
+            "Dani",
+            "tiene coches pequeños"
+          ],
+          [
+            "El coche favorito",
+            "es rojo y rápido"
+          ],
+          [
+            "Lucía",
+            "le ayuda a guardar"
+          ],
+          [
+            "Toby",
+            "también quiere jugar"
+          ]
+        ]
+      }
+    },
+    {
+      "dia": 35,
+      "semana": 7,
+      "trimestre": 1,
+      "tema": "Los juguetes de Dani: la semana",
+      "actividad": {
+        "tipo": "relee",
+        "prompt": "Dibuja un juguete que te gustaría regalarle a Dani."
+      }
+    },
+    {
+      "dia": 36,
+      "semana": 8,
+      "trimestre": 1,
+      "tema": "Castañas y Todos los Santos",
+      "oraciones": [
+        "El primero de noviembre, la familia come castañas asadas."
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Dibuja un puñado de castañas asadas."
+      }
+    },
+    {
+      "dia": 37,
+      "semana": 8,
+      "trimestre": 1,
+      "tema": "Castañas y Todos los Santos",
+      "oraciones": [
+        "Papá las asa fuera, en una sartén con agujeros."
+      ],
+      "actividad": {
+        "tipo": "busca",
+        "instruccion": "Busca en el texto la palabra que dice dónde asa Papá las castañas."
+      }
+    },
+    {
+      "dia": 38,
+      "semana": 8,
+      "trimestre": 1,
+      "tema": "Castañas y Todos los Santos",
+      "oraciones": [
+        "Las castañas queman, así que hay que esperar un poco."
+      ],
+      "actividad": {
+        "tipo": "verdadero_falso",
+        "afirmaciones": [
+          "Las castañas queman al principio.",
+          "Hay que comerlas heladas.",
+          "Papá las asa dentro del coche."
+        ]
+      }
+    },
+    {
+      "dia": 39,
+      "semana": 8,
+      "trimestre": 1,
+      "tema": "Castañas y Todos los Santos",
+      "oraciones": [
+        "Dani se mancha los dedos y se ríe mucho."
+      ],
+      "actividad": {
+        "tipo": "adivina",
+        "adivinanza": "Soy marrón por fuera, blanca por dentro, y en noviembre te caliento las manos. ¿Quién soy?"
+      }
+    },
+    {
+      "dia": 40,
+      "semana": 8,
+      "trimestre": 1,
+      "tema": "Castañas y Todos los Santos",
+      "oraciones": [
+        "Esa noche, toda la casa huele a castañas."
+      ],
+      "actividad": {
+        "tipo": "repasa",
+        "checklist": [
+          "Sé qué día comen castañas.",
+          "Sé dónde las asa Papá.",
+          "Sé por qué hay que esperar antes de comerlas."
+        ],
+        "prompt": "Dibuja tu merienda favorita de otoño.",
+        "banner": "¡40 páginas leídas! Ya huele a castañas por todo el barrio."
+      }
+    },
+    {
+      "dia": 41,
+      "semana": 9,
+      "trimestre": 1,
+      "tema": "El cumpleaños de Lucía",
+      "oraciones": [
+        "Mañana es el cumpleaños de Lucía y está muy emocionada."
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Dibuja cómo te imaginas la fiesta de Lucía."
+      }
+    },
+    {
+      "dia": 42,
+      "semana": 9,
+      "trimestre": 1,
+      "tema": "El cumpleaños de Lucía",
+      "oraciones": [
+        "Hoy Lucía cumple siete años, un año más."
+      ],
+      "actividad": {
+        "tipo": "completa",
+        "diagrama": "lineas-circulo"
+      }
+    },
+    {
+      "dia": 43,
+      "semana": 9,
+      "trimestre": 1,
+      "tema": "El cumpleaños de Lucía",
+      "oraciones": [
+        "Mamá le prepara una tarta de fresa, su favorita."
+      ],
+      "actividad": {
+        "tipo": "rodea",
+        "pregunta": "¿De qué sabor es la tarta de Lucía?",
+        "opciones": [
+          "De fresa",
+          "De chocolate",
+          "De limón"
+        ]
+      }
+    },
+    {
+      "dia": 44,
+      "semana": 9,
+      "trimestre": 1,
+      "tema": "El cumpleaños de Lucía",
+      "oraciones": [
+        "Sofía y Marta vienen a merendar y a cantarle."
+      ],
+      "actividad": {
+        "tipo": "relaciona",
+        "pares": [
+          [
+            "Lucía",
+            "cumple siete años"
+          ],
+          [
+            "Sofía",
+            "viene a la fiesta"
+          ],
+          [
+            "Marta",
+            "viene a la fiesta"
+          ],
+          [
+            "Mamá",
+            "prepara la tarta"
+          ]
+        ]
+      }
+    },
+    {
+      "dia": 45,
+      "semana": 9,
+      "trimestre": 1,
+      "tema": "El cumpleaños de Lucía: la semana",
+      "actividad": {
+        "tipo": "relee",
+        "prompt": "Dibuja la tarta de cumpleaños que te gustaría tener tú."
+      }
+    },
+    {
+      "dia": 46,
+      "semana": 10,
+      "trimestre": 1,
+      "tema": "Los animales del barrio",
+      "oraciones": [
+        "El vecino Pedro tiene una gata blanca llamada Luna."
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Dibuja a Luna, la gata del vecino Pedro."
+      }
+    },
+    {
+      "dia": 47,
+      "semana": 10,
+      "trimestre": 1,
+      "tema": "Los animales del barrio",
+      "oraciones": [
+        "Luna se sube siempre al muro del jardín de Pedro."
+      ],
+      "actividad": {
+        "tipo": "busca",
+        "instruccion": "Busca en el texto la palabra que dice dónde se sube Luna."
+      }
+    },
+    {
+      "dia": 48,
+      "semana": 10,
+      "trimestre": 1,
+      "tema": "Los animales del barrio",
+      "oraciones": [
+        "Toby y Luna no se llevan muy bien todavía."
+      ],
+      "actividad": {
+        "tipo": "verdadero_falso",
+        "afirmaciones": [
+          "Toby y Luna no se llevan bien.",
+          "Luna es un perro.",
+          "Pedro es el vecino de Lucía."
+        ]
+      }
+    },
+    {
+      "dia": 49,
+      "semana": 10,
+      "trimestre": 1,
+      "tema": "Los animales del barrio",
+      "oraciones": [
+        "En el parque, los pájaros cantan cada mañana temprano."
+      ],
+      "actividad": {
+        "tipo": "adivina",
+        "adivinanza": "Tengo alas, hago un nido y canto por las mañanas. ¿Quién soy?"
+      }
+    },
+    {
+      "dia": 50,
+      "semana": 10,
+      "trimestre": 1,
+      "tema": "Los animales del barrio",
+      "oraciones": [
+        "A Lucía le gustan todos los animales del barrio."
+      ],
+      "actividad": {
+        "tipo": "repasa",
+        "checklist": [
+          "Sé cómo se llama la gata de Pedro.",
+          "Sé dónde se sube Luna.",
+          "Sé qué animales cantan en el parque."
+        ],
+        "prompt": "Dibuja tu animal favorito del barrio.",
+        "banner": "¡50 páginas leídas! Ya conoces a todo el barrio."
+      }
+    },
+    {
+      "dia": 51,
+      "semana": 11,
+      "trimestre": 1,
+      "tema": "Un día de lluvia",
+      "oraciones": [
+        "Hoy llueve mucho y no se puede salir al parque."
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Dibuja la lluvia cayendo sobre el barrio."
+      }
+    },
+    {
+      "dia": 52,
+      "semana": 11,
+      "trimestre": 1,
+      "tema": "Un día de lluvia",
+      "oraciones": [
+        "Lucía se pone las botas y el impermeable amarillo."
+      ],
+      "actividad": {
+        "tipo": "completa",
+        "diagrama": "lineas-ondas"
+      }
+    },
+    {
+      "dia": 53,
+      "semana": 11,
+      "trimestre": 1,
+      "tema": "Un día de lluvia",
+      "oraciones": [
+        "Dani prefiere quedarse en casa jugando con sus coches."
+      ],
+      "actividad": {
+        "tipo": "rodea",
+        "pregunta": "¿Qué prefiere hacer Dani cuando llueve?",
+        "opciones": [
+          "Quedarse en casa jugando",
+          "Salir a la calle",
+          "Ir al parque"
+        ]
+      }
+    },
+    {
+      "dia": 54,
+      "semana": 11,
+      "trimestre": 1,
+      "tema": "Un día de lluvia",
+      "oraciones": [
+        "Toby odia mojarse y se esconde bajo la mesa."
+      ],
+      "actividad": {
+        "tipo": "relaciona",
+        "pares": [
+          [
+            "Lucía",
+            "se pone botas e impermeable"
+          ],
+          [
+            "Dani",
+            "juega con sus coches"
+          ],
+          [
+            "Toby",
+            "se esconde bajo la mesa"
+          ],
+          [
+            "La lluvia",
+            "no deja salir al parque"
+          ]
+        ]
+      }
+    },
+    {
+      "dia": 55,
+      "semana": 11,
+      "trimestre": 1,
+      "tema": "Un día de lluvia: la semana",
+      "actividad": {
+        "tipo": "relee",
+        "prompt": "Dibuja qué te gusta hacer en casa los días de lluvia."
+      }
+    },
+    {
+      "dia": 56,
+      "semana": 12,
+      "trimestre": 1,
+      "tema": "Ir al mercado con Mamá",
+      "oraciones": [
+        "El sábado, Lucía va al mercado con Mamá y Dani."
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Dibuja los puestos de fruta del mercado."
+      }
+    },
+    {
+      "dia": 57,
+      "semana": 12,
+      "trimestre": 1,
+      "tema": "Ir al mercado con Mamá",
+      "oraciones": [
+        "En el mercado huele a mandarinas, a turrón y a pan."
+      ],
+      "actividad": {
+        "tipo": "busca",
+        "instruccion": "Busca en el texto la palabra que dice a qué huele el mercado."
+      }
+    },
+    {
+      "dia": 58,
+      "semana": 12,
+      "trimestre": 1,
+      "tema": "Ir al mercado con Mamá",
+      "oraciones": [
+        "Mamá compra mandarinas, turrón y unas luces bonitas para el árbol."
+      ],
+      "actividad": {
+        "tipo": "verdadero_falso",
+        "afirmaciones": [
+          "Mamá compra turrón en el mercado.",
+          "Ya es verano.",
+          "Compra luces para el árbol de Navidad."
+        ]
+      }
+    },
+    {
+      "dia": 59,
+      "semana": 12,
+      "trimestre": 1,
+      "tema": "Ir al mercado con Mamá",
+      "oraciones": [
+        "Dani pide un juguete nuevo, pero Mamá le dice que espere."
+      ],
+      "actividad": {
+        "tipo": "adivina",
+        "adivinanza": "Llego en diciembre, lleno de luces, y toda la familia me espera. ¿Quién soy?"
+      }
+    },
+    {
+      "dia": 60,
+      "semana": 12,
+      "trimestre": 1,
+      "tema": "Ir al mercado con Mamá",
+      "oraciones": [
+        "Al volver a casa, en el barrio ya huele a Navidad."
+      ],
+      "actividad": {
+        "tipo": "repasa",
+        "checklist": [
+          "Sé a qué huele el mercado.",
+          "Sé qué compra Mamá.",
+          "Sé qué le pide Dani a Mamá."
+        ],
+        "prompt": "Dibuja tu puesto favorito del mercado.",
+        "banner": "¡60 páginas leídas! Ya casi es Navidad."
+      }
+    },
+    {
+      "dia": 61,
+      "semana": 13,
+      "trimestre": 1,
+      "tema": "Nochebuena",
+      "oraciones": [
+        "Faltan pocos días para la Nochebuena y la casa se decora."
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Dibuja el árbol de Navidad de la casa de Lucía."
+      }
+    },
+    {
+      "dia": 62,
+      "semana": 13,
+      "trimestre": 1,
+      "tema": "Nochebuena",
+      "oraciones": [
+        "Lucía y Dani cuelgan bolas rojas y doradas en el árbol."
+      ],
+      "actividad": {
+        "tipo": "completa",
+        "diagrama": "lineas-circulo"
+      }
+    },
+    {
+      "dia": 63,
+      "semana": 13,
+      "trimestre": 1,
+      "tema": "Nochebuena",
+      "oraciones": [
+        "La abuela Rosa viene a pasar la Nochebuena con la familia."
+      ],
+      "actividad": {
+        "tipo": "rodea",
+        "pregunta": "¿Quién viene a pasar la Nochebuena con la familia?",
+        "opciones": [
+          "La abuela Rosa",
+          "La profesora Marta",
+          "Sofía"
+        ]
+      }
+    },
+    {
+      "dia": 64,
+      "semana": 13,
+      "trimestre": 1,
+      "tema": "Nochebuena",
+      "oraciones": [
+        "Todos cenan juntos y después cantan villancicos en el salón."
+      ],
+      "actividad": {
+        "tipo": "relaciona",
+        "pares": [
+          [
+            "La abuela Rosa",
+            "viene a Nochebuena"
+          ],
+          [
+            "Lucía y Dani",
+            "cuelgan bolas en el árbol"
+          ],
+          [
+            "Toda la familia",
+            "cena junta"
+          ],
+          [
+            "Después de cenar",
+            "cantan villancicos"
+          ]
+        ]
+      }
+    },
+    {
+      "dia": 65,
+      "semana": 13,
+      "trimestre": 1,
+      "tema": "Fin del primer trimestre",
+      "oraciones": [
+        "Lucía piensa que ha sido un otoño precioso y nuevo."
+      ],
+      "actividad": {
+        "tipo": "repasa",
+        "checklist": [
+          "Sé qué comió la familia en Todos los Santos.",
+          "Sé cuántos años cumplió Lucía.",
+          "Sé cómo se llama la gata del vecino Pedro.",
+          "Sé quién viene a la Nochebuena."
+        ],
+        "prompt": "Dibuja tu recuerdo favorito de este trimestre.",
+        "banner": "¡65 páginas leídas! Fin del primer trimestre -- feliz Navidad."
       }
     }
   ]

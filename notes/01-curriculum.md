@@ -53,9 +53,9 @@ precisamente cuando más se agradece no perder el ritmo de lectura. Ver
 
 | Trimestre | Semanas | Días | Frases/día | Época | Qué pasa |
 |---|---|---|---|---|---|
-| 1 | 1–13 | 1–65 | 1 | septiembre–diciembre | Se presenta a la familia y el entorno cercano (casa, colegio, barrio); llega el otoño y el trimestre cierra con la Navidad (semana 13). Frases independientes. Ya escrito: semanas 1–3 (días 1–15). |
-| 2 | 14–26 | 66–130 | 2 | diciembre–marzo | Abre con Nochebuena y Reyes (semanas 14–17), sigue con la nieve y el Carnaval. Pequeñas escenas de dos frases; empiezan los conectores (`y`, `pero`, `porque`, `cuando`) y algún diálogo suelto. |
-| 3 | 27–39 | 131–195 | 3 | marzo–junio | Semana Santa, el Día del Libro (semanas 31–32), y el fin del curso escolar cerrando el trimestre (excursión final, feria del libro). Mini-historias de tres frases por semana, con principio y final. |
+| 1 | 1–13 | 1–65 | 1 | septiembre–diciembre | Se presenta a la familia y el entorno cercano (casa, colegio, barrio); llega el otoño y el trimestre cierra con la Navidad (semana 13). Frases independientes. |
+| 2 | 14–26 | 66–130 | 2 | diciembre–marzo | Abre con el frío de enero y el Carnaval (semana 16), sigue con la vuelta a la rutina y la llegada de la primavera (semana 25). Pequeñas escenas de dos frases; empiezan los conectores (`y`, `pero`, `porque`, `cuando`) y algún diálogo suelto. |
+| 3 | 27–39 | 131–195 | 3 | marzo–junio | El Día del Libro (semana 29) y la Semana Santa (semana 30), y el fin del curso escolar cerrando el trimestre (oruga-mariposa, feria del libro, último día de colegio, semanas 37–39). Mini-historias de tres frases por semana, con principio y final. |
 | 4 | 40–52 | 196–260 | 4 | junio–septiembre | Vacaciones de verano: el pueblo de la abuela Rosa, la playa, tormentas de verano. La última semana es la vuelta al cole, con Dani empezando a leer — cierre de la serie. Historias más largas, diálogo con raya. |
 
 ## Escalera de progresión
@@ -86,38 +86,56 @@ escrito contra su semana -- `make check` y el job `gates` de CI fallan
 si algún día supera `palabras_max` o `frase_max` (avisan, sin fallar,
 si supera `nuevas_max`).
 
-### Semanas ya escritas (Trimestre 1)
+### Las 52 semanas
 
-- **Semana 1 — "La familia de Lucía"** (días 1–5): se presentan Lucía,
-  Dani, Toby y la abuela Rosa, uno por día.
-- **Semana 2 — "Toby, el perro juguetón"** (días 6–10): una semana
-  entera centrada en el perro, cerrando con una página de repaso.
-- **Semana 3 — "El colegio de Lucía"** (días 11–15): se presenta el
-  colegio, la profesora (Marta) y una amiga nueva (Sofía).
+Un tema por semana: un personaje o escenario nuevo se presenta, se
+explora durante la semana, y el viernes hay repaso/celebración cada dos
+semanas (o relee/soltura, según el ciclo objetivo de más abajo). Del
+Trimestre 3 en adelante las frases de una semana empiezan a encadenarse
+como una mini-historia con principio y final, no solo frases sueltas
+sobre el mismo tema.
 
-### Semanas siguientes del Trimestre 1 (esquema, sin frases escritas aún)
+**Trimestre 1** (semanas 1–13, días 1–65, septiembre–diciembre):
+1. La familia de Lucía · 2. Toby, el perro juguetón · 3. El colegio de
+Lucía · 4. El barrio y el parque · 5. La comida en casa · 6. Llega el
+otoño · 7. Los juguetes de Dani · 8. Castañas y Todos los Santos ·
+9. El cumpleaños de Lucía (cumple 7 años) · 10. Los animales del barrio
+· 11. Un día de lluvia · 12. Ir al mercado con Mamá · 13. Nochebuena.
 
-Un tema por semana, siguiendo el patrón de las tres primeras (un
-personaje o escenario nuevo se presenta, se explora durante la semana, y
-el viernes hay repaso/celebración cada dos semanas). Las semanas 4–13
-caen entre finales de septiembre y diciembre (ver la tabla de arriba):
-de ahí que la Navidad cierre el trimestre y no haya ninguna semana de
-playa, que ya no encajaría en el calendario:
+**Trimestre 2** (semanas 14–26, días 66–130, diciembre–marzo):
+14. El frío de enero · 15. El cumpleaños de Papá · 16. El disfraz de
+Carnaval · 17. El Día de la Paz · 18. Lucía se pone mala · 19. Un
+domingo de manualidades con la abuela · 20. La biblioteca del barrio ·
+21. El cumpleaños de Toby · 22. Un día de mucho viento · 23. El
+proyecto de plantas de Marta · 24. Dani rompe el dinosaurio de Lucía ·
+25. Huele a primavera · 26. Despedida del segundo trimestre.
 
-4. El barrio y el parque
-5. La comida en casa (algo que le gusta, algo que no)
-6. Llega el otoño (las hojas, el viento, la ropa de abrigo)
-7. Los juguetes de Dani
-8. Castañas y Todos los Santos
-9. El cumpleaños de Lucía (cumple 7 años)
-10. Los animales del barrio (el gato del vecino, los pájaros)
-11. Un día de lluvia
-12. Ir al mercado con Mamá — ya huele a Navidad
-13. Nochebuena — repaso de fin de trimestre + puente hacia el Trimestre 2
+**Trimestre 3** (semanas 27–39, días 131–195, marzo–junio):
+27. Toby se pierde en el parque · 28. A Dani se le cae un diente ·
+29. El Día del Libro · 30. Empieza la Semana Santa · 31. El huerto del
+colegio · 32. Lucía aprende a montar en bici · 33. Lucía se apunta a
+natación · 34. El día de la madre · 35. Dani ya reconoce casi todas las
+letras · 36. Se acerca el fin de curso · 37. La oruga se convierte en
+mariposa · 38. La feria del libro de fin de curso · 39. Último día de
+colegio.
 
-Cada semana son 5 frases independientes (una por día) sobre el mismo
-tema; no hace falta que se sigan unas a otras como una historia
-continua todavía — eso empieza a tener más peso en el Trimestre 3.
+**Trimestre 4** (semanas 40–52, días 196–260, junio–septiembre):
+40. Empieza el verano · 41. Llegada al pueblo de la abuela Rosa ·
+42. Andrés, el vecino, y su gato Bigotes · 43. Un día en el río del
+pueblo · 44. El huerto de la abuela · 45. Una tormenta de verano ·
+46. La excursión a la playa · 47. La verbena del pueblo · 48. Dani se
+hace amigo de Martín · 49. Vuelta a la ciudad · 50. Preparativos para
+la vuelta al cole · 51. Dani practica para leer en voz alta · 52.
+Vuelta al cole — Lucía empieza 2º, Dani empieza a leer solo, cierre de
+la serie.
+
+Las semanas 37–39 (oruga-mariposa, feria del libro, último día de
+colegio) adaptan lo que en un primer borrador vivía al principio del
+Trimestre 4 bajo el título "el último trimestre" — un resto del
+calendario escolar antiguo, antes de que el Trimestre 4 pasara a ser
+verano puro (ver `notes/02-revision-y-plan.md`, punto 1). El sitio
+correcto de esa trama de fin de curso era aquí, cerrando el Trimestre
+3, no abriendo el 4.
 
 ## Vocabulario: crecimiento controlado, sin restricción de letras
 
@@ -175,15 +193,19 @@ vez. El ciclo pensado para sustituirlo:
 | Jueves | Relaciona / Adivina | vocabulario (sin cambios) |
 | Viernes | Relee la semana + Crea; cada 2 semanas, Repasa | soltura — relee las frases de lunes a jueves compuestas como un texto |
 
-`tools/gen_days.py` ya sabe generar los cinco tipos que le faltaban
-(`rodea`, `verdadero_falso`, `busca`, `ordena`, `relee` — este último
-compone el texto de la semana solo, a partir de los días anteriores
-con la misma `semana`, sin repetirlo en el JSON) — la Etapa 2 del plan
-de desarrollo los implementó y los probó con contenido de prueba, pero
-**ningún día real usa ninguno todavía**: `content/q*.json` y
-`content/muestra/` siguen con el ciclo de arriba porque escribir estos
-días es trabajo de contenido (Etapa 3), no del motor. Al escribir una
-semana nueva, ya se puede usar el ciclo objetivo directamente.
+`tools/gen_days.py` sabe generar cinco tipos además de los del ciclo
+original (`rodea`, `verdadero_falso`, `busca`, `ordena`, `relee` — este
+último compone el texto de la semana solo, a partir de los días
+anteriores con la misma `semana`, sin repetirlo en el JSON). Las
+semanas 1–3 (T1) y 14–16 (T2) se quedaron con el ciclo original de
+arriba, por ser las primeras que se escribieron; el resto del libro
+(semana 4 en adelante) ya usa el ciclo objetivo: lunes *Dibuja*,
+martes *Busca*/*Completa* alternando, miércoles *Rodea*/*Verdadero-Falso*
+alternando en T1 o *Responde* desde T2, jueves *Relaciona*/*Adivina*
+alternando, y viernes *Relee* (soltura) o *Repasa* (cada dos semanas,
+con el banner de páginas leídas), alternando entre sí. `ordena` es el
+único tipo que ningún día real usa todavía — encaja mejor con
+historias de varios sucesos encadenados, del Trimestre 3 en adelante.
 
 ## Estructura técnica (resumen; ver el propio código para el detalle)
 
@@ -195,7 +217,6 @@ content/generated-days.tex            -- GENERADO, no tocar a mano
 tools/gen_days.py                     -- JSON -> LaTeX, valida antes de escribir
 tools/check_pages.py                  -- después de compilar: 1 día = 1 página, exacto
 diagrams/*.tex                        -- dibujos de línea en TikZ, para las páginas "Completa"
-main-muestra.tex, tools/gen_muestra.py, content/muestra/  -- ver "La muestra de progresión" abajo
 ```
 
 `tools/gen_days.py --check` falla si: los días no son consecutivos, un
@@ -210,51 +231,28 @@ desajuste se detecta).
 de saber si un día se ha desbordado a una segunda página sin mirar las
 260 páginas del PDF una por una.
 
-## La muestra de progresión
-
-`main-muestra.tex` (`make muestra`) no es el cuaderno: son 60 páginas,
-los 15 primeros días **reales** de cada trimestre uno detrás de otro
-(1–15, 66–80, 131–145, 196–210), para ver de un vistazo cómo sube el
-nivel — más frases, frases más largas, aparece el diálogo, cambia el
-tipo de actividad de miércoles (`copia` en T1, `responde` desde T2).
-
-Los tres bloques que no son T1 viven en `content/muestra/q{2,3,4}.json`,
-**no** en `content/q{2,3,4}.json` — a propósito: el glob `q*.json` que
-usa el libro real (`tools/gen_days.py`) exige continuidad 1..260 sin
-huecos, y estos tres bloques dejan huecos deliberados (16–65, 81–130,
-146–195) porque esas semanas todavía no están escritas. Es contenido
-real, con su número de día, semana y trimestre definitivo — no un
-borrador desechable — así que cuando se escriban las semanas que faltan
-alrededor de cada bloque, el fichero correspondiente se traslada tal
-cual a `content/qN.json` y no hay que rehacer nada.
-
-`tools/check_pages.py --allow-gaps` es la misma comprobación de siempre
-(el salto de página entre dos días seguidos tiene que ser exactamente
-1) sin la parte que exige que los números de día sean consecutivos —
-necesaria aquí porque los cuatro bloques, tomados juntos, tienen huecos
-por diseño.
-
 ## Qué queda pendiente
 
 Ver `notes/02-revision-y-plan.md` para la revisión completa del
-cuaderno (qué mejorar y en qué orden) — esta lista es solo la de
-contenido por escribir.
+cuaderno (qué mejorar y en qué orden) y el estado de cada etapa del
+plan de desarrollo. Los 260 días están escritos; lo que queda es
+mantenimiento e ilustración, no contenido nuevo:
 
-1. **Escribir las semanas 4–13 del Trimestre 1** (días 16–65) siguiendo
-   el esquema de temas de arriba y la escalera de progresión.
-2. **Escribir los Trimestres 2, 3 y 4** (`content/q2.json`, `q3.json`,
-   `q4.json`) — cada uno con su propio arco narrativo más largo. **Las
-   primeras 15 jornadas reales de cada uno ya están escritas**, en
-   `content/muestra/q{2,3,4}.json` (ver arriba); lo que falta es el
-   resto de cada trimestre y trasladar estos tres ficheros a su sitio
-   definitivo cuando ese resto exista. La muestra de T4 todavía da por
-   hecho un calendario que no cuadra (`notes/02-revision-y-plan.md`,
-   punto 1) y hay que reescribirla como verano antes de darla por buena.
-3. **Más ilustraciones** en `diagrams/` a medida que aparecen escenarios
+1. ~~Escribir el Trimestre 1~~, ~~Trimestres 2, 3 y 4~~ — hecho: los
+   260 días compilan como un cuaderno completo (`make all-formats`).
+2. **Más ilustraciones** en `diagrams/` a medida que aparecen escenarios
    nuevos (el colegio, la playa, el cumpleaños...). Las de `completa`
    (`lineas-ondas`, `lineas-circulo`) son deliberadamente genéricas —
    unas pocas líneas sin forma — y sirven para cualquier día sin
    necesitar un dibujo nuevo cada vez.
-4. ~~Automatizar el aviso de "palabra nueva"~~ — hecho: `tools/metricas.py`.
-5. ~~CI (GitHub Actions) que compile el PDF en cada cambio~~ — hecho:
+3. ~~Automatizar el aviso de "palabra nueva"~~ — hecho: `tools/metricas.py`.
+4. ~~CI (GitHub Actions) que compile el PDF en cada cambio~~ — hecho:
    `.github/workflows/build.yml` y `pages.yml`.
+
+Durante el desarrollo, mientras cada trimestre se iba escribiendo,
+existió un mecanismo aparte (`content/muestra/`, `tools/gen_muestra.py`,
+`main-muestra.tex`) para tener una muestra de progresión sin romper la
+continuidad 1..260 que exige el libro real. Se retiró en cuanto dejó de
+hacer falta, tal como decía su propia cabecera: con los cuatro
+trimestres completos, comparar el nivel de un trimestre a otro es tan
+simple como abrir `main.pdf` por las páginas 1, 66, 131 y 196.

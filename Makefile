@@ -1,10 +1,8 @@
 LATEX  = latexmk -pdf -interaction=nonstopmode -file-line-error
 MAIN   = main
 BW     = main-bw
-MUESTRA = main-muestra
 
-.PHONY: all all-formats generate build build-bw check check-bw clean watch \
-        generate-muestra build-muestra check-muestra muestra
+.PHONY: all all-formats generate build build-bw check check-bw clean watch
 
 # El color y el blanco-y-negro comparten el mismo body.tex y el mismo
 # content/generated-days.tex -- lo único que cambia es \bookcolor, fijado
@@ -37,24 +35,7 @@ check-bw:
 clean:
 	latexmk -C $(MAIN).tex
 	latexmk -C $(BW).tex
-	latexmk -C $(MUESTRA).tex
-	rm -f content/generated-days.tex content/generated-muestra.tex
+	rm -f content/generated-days.tex
 
 watch:
 	$(LATEX) -pvc $(MAIN).tex
-
-# NO es el libro -- 60 páginas (15 días reales de cada trimestre) para
-# comparar el nivel de un vistazo. Ver tools/gen_muestra.py. No entra en
-# `all` / `all-formats` porque no forma parte del cuaderno que se publica.
-generate-muestra:
-	python3 tools/gen_muestra.py
-
-build-muestra:
-	$(LATEX) $(MUESTRA).tex
-
-check-muestra:
-	python3 tools/checklog.py $(MUESTRA).log
-	python3 tools/check_pages.py --allow-gaps $(MUESTRA).aux
-	python3 tools/gen_muestra.py --check
-
-muestra: generate-muestra build-muestra check-muestra
