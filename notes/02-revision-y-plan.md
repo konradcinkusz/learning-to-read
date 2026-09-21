@@ -259,12 +259,15 @@ T4 predicción, resumen en 1–2 frases, opinión.
   llega a `PLANTILLA_DIA`. La niña ve "Día 12 (Semana 3 · Trimestre 1)"
   pero no "El colegio de Lucía". Añadirlo como subtítulo; ayuda a
   anticipar de qué va el texto.
-- **La tipografía**: Latin Modern Sans tiene una "a" de doble piso, y la
-  "I" mayúscula y la "l" minúscula son casi idénticas. Para quien
-  empieza a leer va mejor una fuente con "a"/"g" de un solo piso
-  (Andika, ABeeZee — ambas OFL). Exige LuaLaTeX + `fontspec` y subir la
-  fuente al repositorio (`fonts/`); la acción de CI ya admite
-  `latexmk_use_lualatex`. Decisión aparte, prioridad media.
+- ~~**La tipografía**: Latin Modern Sans tiene una "a" de doble piso, y
+  la "I" mayúscula y la "l" minúscula son casi idénticas~~ -- **hecho**:
+  el cuaderno usa Andika (SIL, OFL), con "a"/"g" de un solo piso, vía
+  LuaLaTeX + `fontspec` (`fonts/andika/`, ver preamble.tex). La fuente
+  más ancha que Latin Modern Sans hizo desbordar 16 días (los tipos
+  `completa` y `relee`, los más densos de texto) a una segunda página;
+  se resolvió recortando el espacio en blanco reservado para dibujar en
+  esos dos tipos (`\espacioDibujo`), no el tamaño de la frase de
+  lectura. `latexmk_use_lualatex: true` en `.github/workflows/build.yml`.
 - El campo "Notas: ____ 55 mm" no sirve como diario de progreso.
   Cambiarlo por tres casillas "Leído: ☐ sola ☐ con ayuda ☐ con
   dificultad" + una línea corta — al cabo del año queda un registro de
@@ -445,8 +448,9 @@ crecen de forma lineal, semana a semana.
   Etapa 3 escriba el primer viernes de T4 con contenido real — la
   comprobación (`tools/check_pages.py`) ya es genérica, no necesita
   cambios, solo hace falta contenido real que la ejercite.
-- Decisión aparte, sin tocar: LuaLaTeX + tipografía para primeros
-  lectores (Andika/ABeeZee) — sigue pendiente.
+- ~~Decisión aparte, sin tocar: LuaLaTeX + tipografía para primeros
+  lectores (Andika/ABeeZee)~~ -- **hecho**, fuera de las Etapas 0-3: ver
+  el punto 5 más arriba.
 - Sin tocar, fuera del alcance de esta Etapa (punto 5, pero no listado
   en los bullets de la Etapa 2): el tamaño de letra de lo que lee la
   niña en `relaciona`/`adivina`/`repasa` (sigue en 11–14 pt) y el ~40 %

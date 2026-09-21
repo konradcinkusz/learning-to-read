@@ -24,10 +24,22 @@ from string import Template
 ROOT = Path(__file__).resolve().parent.parent
 CONTENT_DIR = ROOT / "content"
 OUTPUT_FILE = CONTENT_DIR / "generated-days.tex"
+CLAVE_FILE = CONTENT_DIR / "generated-clave.tex"
 
 TOTAL_DIAS = 260
 FRASES_POR_TRIMESTRE = {1: 1, 2: 2, 3: 3, 4: 4}
 RANGO_TRIMESTRE = {1: (1, 65), 2: (66, 130), 3: (131, 195), 4: (196, 260)}
+
+# Medalla de fin de trimestre (recompensa intermedia, no solo el diploma
+# del día 260 -- ver la revisión de un lector externo: un único hito a
+# 260 días es una motivación demasiado lejana para 5-7 años). El
+# trimestre 4 no lleva medalla propia: termina en el diploma final de
+# backmatter/diploma.tex. La estación de cada medalla viene del mismo
+# calendario que ya fija RANGO_TRIMESTRE (ver notes/02-revision-y-plan.md,
+# punto 1); el texto exacto lo pone el "banner" del día repasa que cierra
+# cada trimestre -- ya existe en el JSON, no hace falta duplicarlo.
+NOMBRE_MEDALLA_TRIMESTRE = {1: "Otoño", 2: "Invierno", 3: "Primavera"}
+ULTIMO_DIA_TRIMESTRE = {t: hi for t, (lo, hi) in RANGO_TRIMESTRE.items()}
 
 TIPOS_VALIDOS = {
     "dibuja", "completa", "copia", "responde", "relaciona", "adivina", "crea",
@@ -119,7 +131,7 @@ PLANTILLA_COMPLETA = Template(
 \footnotesize\color{colorGris}\lblInstruccionCompleta
 \par\vspace{3mm}\normalfont\normalsize\color{black}
 \centering\resizebox{0.97\linewidth}{!}{\input{diagrams/$diagrama}}\par
-\espacioDibujo[6cm]
+\espacioDibujo[4.3cm]
 }"""
 )
 
@@ -159,6 +171,33 @@ PLANTILLA_ADIVINA = Template(
 \lineaRespuesta
 \vspace{5mm}
 }"""
+)
+
+# Página de medalla al final de un trimestre (T1-T3) -- ver
+# NOMBRE_MEDALLA_TRIMESTRE arriba. No usa \diapagina (no es un día del
+# libro, no lleva \label{dia:N}) así que tools/check_pages.py necesita
+# saber que esta página extra es intencionada, no un desbordamiento --
+# ver SALTOS_ESPERADOS en tools/check_pages.py.
+PLANTILLA_MEDALLA = Template(
+    r"""\begin{center}
+\vspace*{2.2cm}
+
+\begin{tikzpicture}[line width=1.4pt, line cap=round, line join=round, color=colorCrea]
+  \draw (0,0) circle (0.9);
+  \draw (0,0) circle (0.68);
+  \node at (0,0) {\bfseries $dia};
+  \draw (-0.28,-0.85) -- (-0.56,-1.75) -- (-0.12,-1.4) -- cycle;
+  \draw (0.28,-0.85)  -- (0.56,-1.75)  -- (0.12,-1.4)  -- cycle;
+\end{tikzpicture}
+
+\vspace{7mm}
+{\fontsize{26}{31}\selectfont\bfseries\color{colorLectura} $titulo}\\[6mm]
+{\Large\color{colorGris} $banner}\\[10mm]
+{\large ¡Sigue así, \rule{55mm}{0.4pt}!}
+\end{center}
+\vspace*{\fill}
+\newpage
+"""
 )
 
 PLANTILLA_CREA = Template(
@@ -227,7 +266,7 @@ PLANTILLA_RELEE = Template(
 \footnotesize\color{colorGris}\lblInstruccionRelee
 \par\vspace{3mm}\normalfont\normalsize\color{black}
 $prompt
-\espacioDibujo
+\espacioDibujo[7cm]
 }"""
 )
 
@@ -293,7 +332,13 @@ def render_actividad(dia_num, actividad):
         return PLANTILLA_RELACIONA.substitute(filas=filas)
 
     if tipo == "adivina":
-        _campos_requeridos(dia_num, actividad, ["adivinanza"])
+        # "respuesta" no se imprime en la página del día -- la niña
+        # escribe su propia respuesta en \lineaRespuesta, sin verla --
+        # pero es obligatoria para poder generar content/generated-clave.tex
+        # (ver generar_clave más abajo): sin una clave para el adulto,
+        # no hay forma de saber si acertó sin resolver la adivinanza uno
+        # mismo. Ver la revisión de un lector externo.
+        _campos_requeridos(dia_num, actividad, ["adivinanza", "respuesta"])
         return PLANTILLA_ADIVINA.substitute(
             adivinanza=escapar(actividad["adivinanza"])
         )
@@ -527,7 +572,50 @@ def generar_tex(dias):
                 actividad=actividad_tex,
             )
         )
+
+        if d["dia"] == ULTIMO_DIA_TRIMESTRE.get(d["trimestre"]) and d["trimestre"] in NOMBRE_MEDALLA_TRIMESTRE:
+            banner = d["actividad"].get("banner")
+            if not banner:
+                raise ErrorDeContenido(
+                    f"día {d['dia']}: cierra el trimestre {d['trimestre']} "
+                    "y necesita un 'banner' (en su actividad 'repasa') "
+                    "para la medalla de fin de trimestre"
+                )
+            piezas.append(
+                PLANTILLA_MEDALLA.substitute(
+                    dia=d["dia"],
+                    titulo=f"¡Medalla de {NOMBRE_MEDALLA_TRIMESTRE[d['trimestre']]}!",
+                    banner=escapar(banner),
+                )
+            )
     return "\n".join(piezas)
+
+
+def generar_clave(dias):
+    """content/generated-clave.tex: la respuesta de cada 'adivina' y los
+    pares correctos de cada 'relaciona', para que un adulto pueda
+    comprobar sin resolverlas él mismo -- ver la revisión de un lector
+    externo. No se imprime en la página del día (ver PLANTILLA_ADIVINA);
+    vive aparte, en backmatter/clave-respuestas.tex."""
+    piezas = [
+        "% content/generated-clave.tex\n",
+        "% GENERADO por tools/gen_days.py a partir de content/q*.json.\n",
+        "% NO EDITAR A MANO -- los cambios se perderán en la siguiente\n",
+        "% ejecución de `make generate`. Edita content/q*.json en su lugar.\n\n",
+    ]
+    for d in dias:
+        actividad = d["actividad"]
+        tipo = actividad.get("tipo")
+        if tipo == "adivina":
+            texto = escapar(actividad["respuesta"])
+            piezas.append(f"\\claveEntrada{{{d['dia']}}}{{\\lblAdivina}}{{{texto}}}\n")
+        elif tipo == "relaciona":
+            texto = " \\quad ".join(
+                f"{escapar(i)} $\\rightarrow$ {escapar(j)}"
+                for i, j in actividad["pares"]
+            )
+            piezas.append(f"\\claveEntrada{{{d['dia']}}}{{\\lblRelaciona}}{{{texto}}}\n")
+    return "".join(piezas)
 
 
 def main():
@@ -537,24 +625,29 @@ def main():
         dias = cargar_dias()
         validar_dias(dias)
         tex = generar_tex(dias)
+        clave = generar_clave(dias)
     except ErrorDeContenido as exc:
         print(f"ERROR: {exc}", file=sys.stderr)
         return 1
 
+    salidas = [(OUTPUT_FILE, tex), (CLAVE_FILE, clave)]
+
     if check_only:
-        actual = OUTPUT_FILE.read_text(encoding="utf-8") if OUTPUT_FILE.exists() else None
-        if actual != tex:
-            print(
-                "DESACTUALIZADO: content/generated-days.tex no coincide con "
-                "content/q*.json -- ejecuta `make generate`.",
-                file=sys.stderr,
-            )
-            return 1
-        print(f"OK: {len(dias)} días validados, content/generated-days.tex al día.")
+        for ruta, contenido in salidas:
+            actual = ruta.read_text(encoding="utf-8") if ruta.exists() else None
+            if actual != contenido:
+                print(
+                    f"DESACTUALIZADO: {ruta} no coincide con "
+                    "content/q*.json -- ejecuta `make generate`.",
+                    file=sys.stderr,
+                )
+                return 1
+        print(f"OK: {len(dias)} días validados, {OUTPUT_FILE.name} y {CLAVE_FILE.name} al día.")
         return 0
 
-    OUTPUT_FILE.write_text(tex, encoding="utf-8")
-    print(f"Escrito {OUTPUT_FILE} con {len(dias)} días.")
+    for ruta, contenido in salidas:
+        ruta.write_text(contenido, encoding="utf-8")
+    print(f"Escrito {OUTPUT_FILE} con {len(dias)} días, y {CLAVE_FILE}.")
     return 0
 
 

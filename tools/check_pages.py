@@ -19,6 +19,12 @@ from pathlib import Path
 
 PATRON_LABEL = re.compile(r"\\newlabel\{dia:(\d+)\}\{\{[^{}]*\}\{(\d+)\}")
 
+# Fin de trimestre (T1-T3): tools/gen_days.py inserta una página de
+# medalla, sin \label propio, justo después del último día del
+# trimestre (ver PLANTILLA_MEDALLA) -- el salto hasta el primer día del
+# trimestre siguiente es de 2 páginas a propósito, no un desbordamiento.
+SALTOS_ESPERADOS = {65: 2, 130: 2, 195: 2}
+
 
 def leer_paginas(ruta_aux):
     texto = ruta_aux.read_text(encoding="utf-8", errors="replace")
@@ -61,11 +67,13 @@ def main():
 
     for a, b in zip(dias_ordenados, dias_ordenados[1:]):
         salto = paginas[b] - paginas[a]
-        if salto != 1:
+        esperado_salto = SALTOS_ESPERADOS.get(a, 1)
+        if salto != esperado_salto:
             problemas.append(
                 f"día {a} (página {paginas[a]}) -> día {b} (página {paginas[b]}): "
-                f"salto de {salto} página(s), debería ser exactamente 1 "
-                f"-- el día {a} probablemente se ha desbordado a una segunda página"
+                f"salto de {salto} página(s), debería ser exactamente "
+                f"{esperado_salto} -- el día {a} probablemente se ha "
+                "desbordado a una segunda página"
             )
 
     print(

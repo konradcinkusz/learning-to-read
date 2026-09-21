@@ -8,8 +8,9 @@
 *.pdf
 
 # Generado por tools/gen_days.py a partir del JSON -- la fuente de
-# verdad es el JSON, no este fichero.
+# verdad es el JSON, no estos ficheros.
 content/generated-days.tex
+content/generated-clave.tex
 
 # Python
 __pycache__/

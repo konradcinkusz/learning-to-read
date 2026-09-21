@@ -141,7 +141,8 @@
       ],
       "actividad": {
         "tipo": "adivina",
-        "adivinanza": "Una vez al año llego, con velas y tarta te alegro. ¿Quién soy?"
+        "adivinanza": "Una vez al año llego, con velas y tarta te alegro. ¿Quién soy?",
+        "respuesta": "El cumpleaños."
       }
     },
     {
@@ -304,7 +305,8 @@
       ],
       "actividad": {
         "tipo": "adivina",
-        "adivinanza": "No se compra ni se vende, y toda la clase la entiende. ¿Qué es?"
+        "adivinanza": "No se compra ni se vende, y toda la clase la entiende. ¿Qué es?",
+        "respuesta": "La paz."
       }
     },
     {
@@ -464,7 +466,8 @@
       ],
       "actividad": {
         "tipo": "adivina",
-        "adivinanza": "Con dos agujas y mucho hilo, te abrigo el cuello en invierno frío. ¿Qué soy?"
+        "adivinanza": "Con dos agujas y mucho hilo, te abrigo el cuello en invierno frío. ¿Qué soy?",
+        "respuesta": "La bufanda."
       }
     },
     {
@@ -624,7 +627,8 @@
       ],
       "actividad": {
         "tipo": "adivina",
-        "adivinanza": "Muevo la cola cuando soy feliz, y ladro fuerte si llaman a la puerta. ¿Quién soy?"
+        "adivinanza": "Muevo la cola cuando soy feliz, y ladro fuerte si llaman a la puerta. ¿Quién soy?",
+        "respuesta": "El perro."
       }
     },
     {
@@ -784,7 +788,8 @@
       ],
       "actividad": {
         "tipo": "adivina",
-        "adivinanza": "Nazco pequeña y verde, y si me cuidas, crezco hacia el cielo cada mes. ¿Qué soy?"
+        "adivinanza": "Nazco pequeña y verde, y si me cuidas, crezco hacia el cielo cada mes. ¿Qué soy?",
+        "respuesta": "La planta."
       }
     },
     {
@@ -944,7 +949,8 @@
       ],
       "actividad": {
         "tipo": "adivina",
-        "adivinanza": "Traigo flores, traigo sol, y las golondrinas vuelven con mi llegada. ¿Quién soy?"
+        "adivinanza": "Traigo flores, traigo sol, y las golondrinas vuelven con mi llegada. ¿Quién soy?",
+        "respuesta": "La primavera."
       }
     },
     {

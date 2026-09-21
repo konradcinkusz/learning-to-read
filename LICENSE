@@ -36,7 +36,16 @@ Creative Commons Atribución-NoComercial-CompartirIgual 4.0 Internacional
 (CC BY-NC-SA 4.0). Ver LICENSE-CONTENT para el alcance exacto y el texto
 completo.
 
+La LETRA del cuaderno -- Andika (fonts/andika/*.ttf), de SIL
+International -- tiene una tercera licencia, independiente de las dos
+anteriores: SIL Open Font License 1.1. Ver fonts/andika/OFL.txt para el
+texto completo; en resumen, se puede usar, copiar y redistribuir
+libremente (incluso junto a software bajo otra licencia, como este
+repositorio), pero no venderse por sí sola ni redistribuirse bajo un
+nombre que no sea el suyo.
+
 En resumen: el motor es tuyo para reutilizar con tu propio hijo o hija
 (cambia los nombres, escribe tus propias frases) bajo MIT. La historia
 concreta de esta familia no se puede usar comercialmente y cualquier
-adaptación tiene que compartirse bajo la misma licencia CC.
+adaptación tiene que compartirse bajo la misma licencia CC. La letra
+Andika se puede reutilizar igual de libremente, bajo su propia OFL.
