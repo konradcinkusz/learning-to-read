@@ -73,11 +73,13 @@ body.tex                              -- orden del documento
 frontmatter/                          -- portada, instrucciones, mapa del curso
 content/q1.json                       -- días 1-15 escritos (Trimestre 1, semanas 1-3)
 content/generated-days.tex            -- GENERADO por tools/gen_days.py, no editar
+content/progresion.json               -- objetivos semanales de la escalera de progresión (52 filas)
 diagrams/                             -- dibujos de línea (TikZ) para las páginas "Completa"
 backmatter/diploma.tex                -- página final
 tools/gen_days.py                     -- JSON -> LaTeX + validación
 tools/check_pages.py                  -- comprueba que cada día ocupa una sola página
 tools/checklog.py                     -- lee el .log de pdflatex correctamente (nunca grep '^!')
+tools/metricas.py                     -- mide palabras/frase/vocabulario nuevo contra content/progresion.json
 main-muestra.tex, tools/gen_muestra.py, content/muestra/  -- muestra de progresión, no el libro (ver notes/01-curriculum.md)
 docs/index.html                       -- la página que publica .github/workflows/pages.yml
 assets/logo.tex, logo.png, logo.svg   -- logo del repositorio (standalone TikZ, reutiliza el icono de portada.tex)

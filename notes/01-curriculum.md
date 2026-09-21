@@ -65,8 +65,7 @@ la progresión, pero no la única: dentro de cada trimestre, la longitud
 de las frases, el vocabulario nuevo y el tipo de comprensión que se pide
 también tienen que subir, semana a semana, no solo en el salto de
 trimestre. Objetivos al final de cada trimestre (ver
-`notes/02-revision-y-plan.md`, Parte C, para el detalle y el plan de
-`tools/metricas.py` que los comprobará):
+`notes/02-revision-y-plan.md`, Parte C, para el detalle):
 
 | Dimensión | inicio T1 | final T1 | final T2 | final T3 | final T4 |
 |---|---|---|---|---|---|
@@ -80,9 +79,12 @@ trimestre. Objetivos al final de cada trimestre (ver
 | soltura | viernes: texto de la semana | viernes: texto de la semana | + medición cada 4 semanas | lectura con expresión | primero en silencio |
 | escritura | Copia ×1 con liniatura | Copia ×1 | respuesta corta | 1 frase propia | 2 frases propias |
 
-Esta tabla todavía no se comprueba automáticamente — es la Etapa 1 del
-plan de `notes/02-revision-y-plan.md` (`content/progresion.json` +
-`tools/metricas.py`).
+Esta tabla ya se comprueba automáticamente: `content/progresion.json`
+tiene los 52 objetivos semanales (interpolados linealmente entre los
+puntos de control de arriba) y `tools/metricas.py` mide cada día
+escrito contra su semana -- `make check` y el job `gates` de CI fallan
+si algún día supera `palabras_max` o `frase_max` (avisan, sin fallar,
+si supera `nuevas_max`).
 
 ### Semanas ya escritas (Trimestre 1)
 
@@ -130,10 +132,11 @@ vocabulario de forma deliberada en vez de aleatoria:
 - Evitar vocabulario muy raro o regional salvo que sea relevante para el
   tema de la semana.
 
-Esto se puede automatizar más adelante (una lista de "palabras vistas"
-en `tools/gen_days.py` que avise si una palabra nueva no se ha visto
-antes, a modo de nota informativa, no de error bloqueante) — de momento
-es una disciplina editorial, no una regla que el generador compruebe.
+Ya no es solo una disciplina editorial: `tools/metricas.py` cuenta los
+lemas de contenido nuevos de cada día (sin lematización de verdad,
+"simple" a propósito -- ver su cabecera) y avisa si se supera
+`nuevas_max` de `content/progresion.json`, aunque no bloquea `make
+check` -- ver `notes/02-revision-y-plan.md`, punto 6.
 
 ## Rotación de actividades
 
@@ -144,25 +147,25 @@ en los días 1–15):
 |---|---|---|
 | Lunes | **Dibuja** | Comprensión, vía dibujo libre de lo leído |
 | Martes | **Completa** | Creatividad, no motricidad fina — unas pocas líneas sin forma, y ella inventa el dibujo a partir de ahí (nunca un dibujo ya cerrado para colorear dentro de los márgenes, eso no exige nada) |
-| Miércoles | **Copia** (T1) / **Responde** (T2 en adelante) | T1: copiar la frase, tres veces — practica la letra, no exige componer una respuesta, que a esta edad todavía no sabe hacer sola. Desde T2: pregunta corta con respuesta objetiva, comprensión explícita |
+| Miércoles | **Copia** (T1) / **Responde** (T2 en adelante) | T1: copiar la frase una vez — practica la letra, no exige componer una respuesta, que a esta edad todavía no sabe hacer sola. Desde T2: pregunta corta con respuesta objetiva, comprensión explícita |
 | Jueves | **Relaciona** / **Adivina** | Vocabulario — emparejar palabras, o una adivinanza sencilla |
 | Viernes | **Crea** | Tarea abierta; cada dos viernes es además **Repasa** (checklist + celebración) |
 
-`tools/gen_days.py` ya sabe generar los ocho tipos (`dibuja`,
-`completa`, `copia`, `responde`, `relaciona`, `adivina`, `crea`,
-`repasa`); añadir más días solo requiere añadir entradas al JSON, no
-tocar el generador, salvo que se necesite un tipo de actividad
-genuinamente nuevo. `responde` está bloqueado en el trimestre 1 por el
-propio validador (`TRIMESTRES_SIN_RESPONDE`) — no es solo una
-convención editorial, `tools/gen_days.py --check` falla si un día de T1
-lo usa.
+`tools/gen_days.py` ya sabe generar trece tipos de actividad: los ocho
+de este ciclo (`dibuja`, `completa`, `copia`, `responde`, `relaciona`,
+`adivina`, `crea`, `repasa`) y los cinco del ciclo objetivo de más
+abajo (`rodea`, `verdadero_falso`, `busca`, `ordena`, `relee`); añadir
+más días solo requiere añadir entradas al JSON, no tocar el generador,
+salvo que se necesite un tipo de actividad genuinamente nuevo.
+`responde` está bloqueado en el trimestre 1 por el propio validador
+(`TRIMESTRES_SIN_RESPONDE`) — no es solo una convención editorial,
+`tools/gen_days.py --check` falla si un día de T1 lo usa.
 
-### Ciclo objetivo (pendiente de implementar — ver `notes/02-revision-y-plan.md`, punto 3)
+### Ciclo objetivo (el motor ya lo soporta — ver `notes/02-revision-y-plan.md`, punto 3)
 
 El ciclo de arriba ejercita el dibujo mucho más que la lectura: dos de
 cada cinco días (*Dibuja*, *Completa*) no exigen volver al texto ni una
-vez. El ciclo pensado para sustituirlo, cuando existan los tipos de
-actividad nuevos que necesita (Etapa 2 del plan de desarrollo):
+vez. El ciclo pensado para sustituirlo:
 
 | Día | Actividad | Qué entrena |
 |---|---|---|
@@ -172,10 +175,15 @@ actividad nuevos que necesita (Etapa 2 del plan de desarrollo):
 | Jueves | Relaciona / Adivina | vocabulario (sin cambios) |
 | Viernes | Relee la semana + Crea; cada 2 semanas, Repasa | soltura — relee las frases de lunes a jueves compuestas como un texto |
 
-Necesita los tipos `rodea`, `verdadero_falso`, `busca`, `ordena` y
-`relee` en `tools/gen_days.py`, que todavía no existen — hasta entonces
-sigue valiendo el ciclo de arriba, y los días ya escritos no hace falta
-retocarlos.
+`tools/gen_days.py` ya sabe generar los cinco tipos que le faltaban
+(`rodea`, `verdadero_falso`, `busca`, `ordena`, `relee` — este último
+compone el texto de la semana solo, a partir de los días anteriores
+con la misma `semana`, sin repetirlo en el JSON) — la Etapa 2 del plan
+de desarrollo los implementó y los probó con contenido de prueba, pero
+**ningún día real usa ninguno todavía**: `content/q*.json` y
+`content/muestra/` siguen con el ciclo de arriba porque escribir estos
+días es trabajo de contenido (Etapa 3), no del motor. Al escribir una
+semana nueva, ya se puede usar el ciclo objetivo directamente.
 
 ## Estructura técnica (resumen; ver el propio código para el detalle)
 
@@ -247,7 +255,6 @@ contenido por escribir.
    (`lineas-ondas`, `lineas-circulo`) son deliberadamente genéricas —
    unas pocas líneas sin forma — y sirven para cualquier día sin
    necesitar un dibujo nuevo cada vez.
-4. Automatizar el aviso de "palabra nueva" descrito arriba —
-   `tools/metricas.py`, ver `notes/02-revision-y-plan.md`, Etapa 1.
+4. ~~Automatizar el aviso de "palabra nueva"~~ — hecho: `tools/metricas.py`.
 5. ~~CI (GitHub Actions) que compile el PDF en cada cambio~~ — hecho:
    `.github/workflows/build.yml` y `pages.yml`.

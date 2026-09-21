@@ -5,6 +5,13 @@
 % sin tocar el contenido generado.
 % -----------------------------------------------------------------------
 
+% Total de días del cuaderno -- única fuente de verdad en el lado LaTeX
+% (preamble.tex, backmatter/diploma.tex). tools/gen_days.py --check
+% comprueba que este número coincide con su propia constante TOTAL_DIAS,
+% así que si cambia uno, el otro tiene que cambiar también (ver
+% notes/02-revision-y-plan.md, punto 9).
+\newcommand{\totaldias}{260}
+
 \newcommand{\lblFecha}{Fecha}
 \newcommand{\lblNotas}{Notas}
 \newcommand{\lblDia}{Día}
@@ -12,7 +19,20 @@
 \newcommand{\lblTrimestre}{Trimestre}
 \newcommand{\lblRespuesta}{Respuesta}
 
-\newcommand{\lblInstruccionLectura}{Lee en voz alta, despacio, señalando cada palabra}
+\newcommand{\lblLeido}{Leído}
+\newcommand{\lblLeidoSola}{sola}
+\newcommand{\lblLeidoConAyuda}{con ayuda}
+\newcommand{\lblLeidoConDificultad}{con dificultad}
+
+% Una instrucción de lectura distinta por trimestre -- ver
+% notes/02-revision-y-plan.md, punto 5: "despacio, señalando cada
+% palabra" tiene sentido en T1, pero es lo contrario de lo que se espera
+% de quien ya lee con soltura en T4. tools/gen_days.py elige cuál usar
+% según el trimestre de cada día (PLANTILLA_DIA, título de cajaLectura).
+\newcommand{\lblInstruccionLecturaUno}{Lee en voz alta, despacio, señalando cada palabra con el dedo}
+\newcommand{\lblInstruccionLecturaDos}{Lee la frase en voz alta -- dos veces}
+\newcommand{\lblInstruccionLecturaTres}{Lee en voz alta, como si fueras el personaje}
+\newcommand{\lblInstruccionLecturaCuatro}{Lee primero para ti, en silencio. Luego, en voz alta}
 
 \newcommand{\lblDibuja}{Dibuja}
 \newcommand{\lblCompleta}{Completa}
@@ -22,9 +42,21 @@
 \newcommand{\lblAdivina}{Adivina}
 \newcommand{\lblCrea}{Crea}
 \newcommand{\lblRepasa}{Repasa}
+\newcommand{\lblRodea}{Rodea}
+\newcommand{\lblVerdaderoFalso}{Verdadero o falso}
+\newcommand{\lblBusca}{Busca}
+\newcommand{\lblOrdena}{Ordena}
+\newcommand{\lblRelee}{Relee}
 
-\newcommand{\lblInstruccionCopia}{Copia la frase de hoy, tres veces, una en cada línea.}
+\newcommand{\lblVerdadero}{V}
+\newcommand{\lblFalso}{F}
+
+\newcommand{\lblInstruccionCopia}{Copia la frase de hoy en la línea.}
 \newcommand{\lblInstruccionCompleta}{Convierte estas líneas en un dibujo. ¡Usa tu imaginación!}
+\newcommand{\lblInstruccionRodea}{Rodea la respuesta correcta.}
+\newcommand{\lblInstruccionVerdaderoFalso}{¿Verdadero o falso? Rodea la casilla correcta en cada frase.}
+\newcommand{\lblInstruccionOrdena}{Estos sucesos están desordenados. Escribe 1, 2 y 3 en cada casilla, en el orden en que pasaron.}
+\newcommand{\lblInstruccionRelee}{Esta semana, todo junto. Léelo otra vez, de principio a fin.}
 
 \newcommand{\lblTituloPortada}{Aprendo a leer}
 \newcommand{\lblSubtituloPortada}{Un capítulo nuevo cada día}

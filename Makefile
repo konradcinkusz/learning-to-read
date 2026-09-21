@@ -28,6 +28,7 @@ check:
 	python3 tools/checklog.py $(MAIN).log
 	python3 tools/check_pages.py $(MAIN).aux
 	python3 tools/gen_days.py --check
+	python3 tools/metricas.py
 
 check-bw:
 	python3 tools/checklog.py $(BW).log
