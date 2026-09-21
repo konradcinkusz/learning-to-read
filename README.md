@@ -56,7 +56,7 @@ make build        # solo compila la versión en color (asume que ya está genera
 make build-bw     # solo compila la versión en blanco y negro
 make check        # lee main.log + 1 día = 1 página (lee main.aux) + valida el JSON
 make check-bw     # lo mismo, sobre main-bw.log / main-bw.aux
-make muestra      # 40 páginas -- los 10 primeros días reales de cada trimestre, para
+make muestra      # 60 páginas -- los 15 primeros días reales de cada trimestre, para
                   # comparar el nivel; NO es el cuaderno, ver notes/01-curriculum.md
 make clean
 ```
@@ -68,7 +68,7 @@ main.tex, main-bw.tex                 -- color y blanco-y-negro; solo fijan \boo
 preamble.tex, lang/es.tex             -- el motor LaTeX (la paleta de main-bw.tex está en preamble.tex)
 body.tex                              -- orden del documento
 frontmatter/                          -- portada, instrucciones, mapa del curso
-content/q1.json                       -- días 1-10 escritos (Trimestre 1, semanas 1-2)
+content/q1.json                       -- días 1-15 escritos (Trimestre 1, semanas 1-3)
 content/generated-days.tex            -- GENERADO por tools/gen_days.py, no editar
 diagrams/                             -- dibujos de línea (TikZ) para las páginas "Completa"
 backmatter/diploma.tex                -- página final
@@ -105,8 +105,8 @@ aquí.
 
 ## Estado
 
-Días 1–10 (Trimestre 1) escritos y con sus actividades -- son los que
-publica el cuaderno real. Los 10 primeros días reales de cada uno de
+Días 1–15 (Trimestre 1) escritos y con sus actividades -- son los que
+publica el cuaderno real. Los 15 primeros días reales de cada uno de
 los Trimestres 2, 3 y 4 también están escritos, como muestra de
 progresión (`content/muestra/`, `make muestra`) -- no forman parte
 todavía del cuaderno real porque las semanas que faltan entre medias no

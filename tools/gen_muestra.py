@@ -4,14 +4,14 @@ trimestre, para comparar de un vistazo cómo sube el nivel a lo largo del
 curso (1/2/3/4 frases, la complejidad, el tipo de actividad).
 
 NO es contenido de producción y NO afecta al cuaderno real (main.tex /
-main-bw.tex): reutiliza los días 1-10 ya escritos de content/q1.json (el
+main-bw.tex): reutiliza los días 1-15 ya escritos de content/q1.json (el
 verdadero Trimestre 1) más content/muestra/q2.json, q3.json, q4.json --
-los días 66-75, 131-140 y 196-205 reales de los otros tres trimestres,
+los días 66-80, 131-145 y 196-210 reales de los otros tres trimestres,
 escritos ya con su número de día, semana y trimestre definitivos, pero
 guardados fuera de content/ (en content/muestra/) a propósito: el glob
 `content/q*.json` que usa tools/gen_days.py para el libro real NO debe
-verlos mientras los días que faltan entre medias (11-65, 76-130,
-141-195) no existan -- si los viera, el libro real fallaría su propia
+verlos mientras los días que faltan entre medias (16-65, 81-130,
+146-195) no existan -- si los viera, el libro real fallaría su propia
 comprobación de continuidad (`validar_dias`, 1..260 sin huecos).
 
 Cuando se escriban esas semanas que faltan, el contenido de

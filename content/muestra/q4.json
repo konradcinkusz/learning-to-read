@@ -1,5 +1,5 @@
 {
-  "_comentario": "MUESTRA, no producción: los días reales 196-205 (primeras dos semanas del Trimestre 4) -- ver content/muestra/q2.json para la explicación completa del mecanismo.",
+  "_comentario": "MUESTRA, no producción: los días reales 196-210 (primeras tres semanas del Trimestre 4) -- ver content/muestra/q2.json para la explicación completa del mecanismo.",
   "dias": [
     {
       "dia": 196, "semana": 40, "trimestre": 4,
@@ -151,6 +151,81 @@
         ],
         "prompt": "Dibuja tu momento favorito de estos diez días de lectura.",
         "banner": "¡205 páginas leídas! Cada vez falta menos para el final del curso."
+      }
+    },
+    {
+      "dia": 206, "semana": 42, "trimestre": 4,
+      "tema": "La oruga se convierte en mariposa",
+      "oraciones": [
+        "En clase, Lucía y sus compañeros llevan semanas cuidando una oruga muy pequeña en un bote de cristal.",
+        "Cada mañana le cambian las hojas frescas y anotan en un cuaderno cómo va creciendo.",
+        "Un día, la oruga deja de moverse y se cuelga boca abajo de una ramita.",
+        "\"Se está formando la crisálida\", explica la profesora a toda la clase."
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Dibuja el bote de cristal con la oruga y su ramita."
+      }
+    },
+    {
+      "dia": 207, "semana": 42, "trimestre": 4,
+      "tema": "La oruga se convierte en mariposa",
+      "oraciones": [
+        "Durante varios días, la crisálida no se mueve y parece que no pasa nada por fuera.",
+        "Pero dentro, el cuerpo de la oruga se está transformando por completo.",
+        "Un dato curioso: algunas mariposas tardan solo diez días en completar este cambio.",
+        "Lucía mira el bote cada tarde, esperando ver algo nuevo."
+      ],
+      "actividad": {
+        "tipo": "completa",
+        "diagrama": "lineas-ondas"
+      }
+    },
+    {
+      "dia": 208, "semana": 42, "trimestre": 4,
+      "tema": "La oruga se convierte en mariposa",
+      "oraciones": [
+        "El miércoles por la mañana, algo se mueve dentro de la crisálida transparente.",
+        "Poco a poco, sale una mariposa naranja y negra, con las alas todavía arrugadas.",
+        "\"¡Ha nacido, ha nacido!\", le cuenta Lucía a Dani nada más llegar a casa.",
+        "Sus alas necesitan unas horas para secarse antes de que pueda volar."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "pregunta": "¿De qué colores es la mariposa que nace en clase de Lucía?"
+      }
+    },
+    {
+      "dia": 209, "semana": 42, "trimestre": 4,
+      "tema": "La oruga se convierte en mariposa",
+      "oraciones": [
+        "Toda la clase decide soltar a la mariposa en el patio, ahora que ya puede volar.",
+        "La profesora abre el bote con cuidado y todos se quedan muy quietos, mirando.",
+        "La mariposa vuela despacio al principio y después se eleva por encima del patio.",
+        "Lucía piensa que se parece un poco a ella: primero costaba, y ahora vuela sola."
+      ],
+      "actividad": {
+        "tipo": "relaciona",
+        "pares": [
+          ["la oruga", "come hojas frescas"],
+          ["la crisálida", "no se mueve por fuera"],
+          ["la mariposa", "vuela por el patio"],
+          ["Lucía", "cuida el bote cada tarde"]
+        ]
+      }
+    },
+    {
+      "dia": 210, "semana": 42, "trimestre": 4,
+      "tema": "La oruga se convierte en mariposa",
+      "oraciones": [
+        "Esa noche, Lucía escribe en su cuaderno todo el proceso: oruga, crisálida y mariposa.",
+        "Dani le pide que le enseñe las fotos que hizo la profesora durante esas semanas.",
+        "Papá dice que pronto llegará el verano, y con él, las vacaciones de todos.",
+        "Lucía sonríe y piensa que este curso ha sido el mejor de todos, hasta ahora."
+      ],
+      "actividad": {
+        "tipo": "crea",
+        "prompt": "Dibuja las tres fases: la oruga, la crisálida y la mariposa. ¿Cuál te gusta más?"
       }
     }
   ]

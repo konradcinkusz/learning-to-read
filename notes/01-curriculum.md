@@ -43,7 +43,7 @@ dependencia técnica de que se llame "Lucía".
 
 | Trimestre | Días | Frases/día | Arco narrativo |
 |---|---|---|---|
-| 1 | 1–65 | 1 | Frases independientes que presentan a la familia y el entorno cercano (casa, colegio, barrio, estaciones). Ya escrito: semanas 1–2 (días 1–10). |
+| 1 | 1–65 | 1 | Frases independientes que presentan a la familia y el entorno cercano (casa, colegio, barrio, estaciones). Ya escrito: semanas 1–3 (días 1–15). |
 | 2 | 66–130 | 2 | Pequeñas escenas de dos frases; empiezan los conectores (`y`, `pero`, `porque`, `cuando`) y algún diálogo suelto. |
 | 3 | 131–195 | 3 | Mini-historias de tres frases por semana, con principio y final (problema/solución sencillo). |
 | 4 | 196–260 | 4 | Historias más largas, diálogo con comillas, alguna nota informativa curiosa, final de curso con la última semana cerrando la serie. |
@@ -54,14 +54,15 @@ dependencia técnica de que se llame "Lucía".
   Dani, Toby y la abuela Rosa, uno por día.
 - **Semana 2 — "Toby, el perro juguetón"** (días 6–10): una semana
   entera centrada en el perro, cerrando con una página de repaso.
+- **Semana 3 — "El colegio de Lucía"** (días 11–15): se presenta el
+  colegio, la profesora (Marta) y una amiga nueva (Sofía).
 
 ### Semanas siguientes del Trimestre 1 (esquema, sin frases escritas aún)
 
-Un tema por semana, siguiendo el patrón de las dos primeras (un
+Un tema por semana, siguiendo el patrón de las tres primeras (un
 personaje o escenario nuevo se presenta, se explora durante la semana, y
 el viernes hay repaso/celebración cada dos semanas):
 
-3. El colegio de Lucía (la clase, la profesora, un amigo/a nuevo)
 4. El barrio y el parque
 5. La comida en casa (algo que le gusta, algo que no)
 6. Las estaciones — llega el otoño
@@ -98,7 +99,7 @@ es una disciplina editorial, no una regla que el generador compruebe.
 ## Rotación de actividades
 
 Un ciclo de 5 días, repetido cada semana con contenido distinto (visto
-en los días 1–10):
+en los días 1–15):
 
 | Día | Actividad | Qué comprueba |
 |---|---|---|
@@ -144,17 +145,17 @@ de saber si un día se ha desbordado a una segunda página sin mirar las
 
 ## La muestra de progresión
 
-`main-muestra.tex` (`make muestra`) no es el cuaderno: son 40 páginas,
-los 10 primeros días **reales** de cada trimestre uno detrás de otro
-(1–10, 66–75, 131–140, 196–205), para ver de un vistazo cómo sube el
+`main-muestra.tex` (`make muestra`) no es el cuaderno: son 60 páginas,
+los 15 primeros días **reales** de cada trimestre uno detrás de otro
+(1–15, 66–80, 131–145, 196–210), para ver de un vistazo cómo sube el
 nivel — más frases, frases más largas, aparece el diálogo, cambia el
 tipo de actividad de miércoles (`copia` en T1, `responde` desde T2).
 
 Los tres bloques que no son T1 viven en `content/muestra/q{2,3,4}.json`,
 **no** en `content/q{2,3,4}.json` — a propósito: el glob `q*.json` que
 usa el libro real (`tools/gen_days.py`) exige continuidad 1..260 sin
-huecos, y estos tres bloques dejan huecos deliberados (11–65, 76–130,
-141–195) porque esas semanas todavía no están escritas. Es contenido
+huecos, y estos tres bloques dejan huecos deliberados (16–65, 81–130,
+146–195) porque esas semanas todavía no están escritas. Es contenido
 real, con su número de día, semana y trimestre definitivo — no un
 borrador desechable — así que cuando se escriban las semanas que faltan
 alrededor de cada bloque, el fichero correspondiente se traslada tal
@@ -168,11 +169,11 @@ por diseño.
 
 ## Qué queda pendiente
 
-1. **Escribir las semanas 3–13 del Trimestre 1** (días 11–65) siguiendo
+1. **Escribir las semanas 4–13 del Trimestre 1** (días 16–65) siguiendo
    el esquema de temas de arriba.
 2. **Escribir los Trimestres 2, 3 y 4** (`content/q2.json`, `q3.json`,
-   `q4.json`) — cada uno con su propio arco narrativo más largo. **Los
-   primeros 10 días reales de cada uno ya están escritos**, en
+   `q4.json`) — cada uno con su propio arco narrativo más largo. **Las
+   primeras 15 jornadas reales de cada uno ya están escritas**, en
    `content/muestra/q{2,3,4}.json` (ver arriba); lo que falta es el
    resto de cada trimestre y trasladar estos tres ficheros a su sitio
    definitivo cuando ese resto exista.

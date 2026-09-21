@@ -1,5 +1,5 @@
 {
-  "_comentario": "Datos de origen para tools/gen_days.py. Este fichero SÍ se edita a mano; content/generated-days.tex NO (se regenera con `make generate`). De momento contiene los días 1-10 (Trimestre 1, semanas 1-2). El resto de las semanas del Trimestre 1 se describe en notes/01-curriculum.md y se va añadiendo aquí, día a día, en pasadas futuras.",
+  "_comentario": "Datos de origen para tools/gen_days.py. Este fichero SÍ se edita a mano; content/generated-days.tex NO (se regenera con `make generate`). De momento contiene los días 1-15 (Trimestre 1, semanas 1-3). El resto de las semanas del Trimestre 1 se describe en notes/01-curriculum.md y se va añadiendo aquí, día a día, en pasadas futuras.",
   "personajes": {
     "Lucía": "protagonista, 6 años",
     "Dani": "su hermano pequeño, 4 años",
@@ -104,6 +104,55 @@
         ],
         "prompt": "Dibuja tu propia mascota, real o imaginaria.",
         "banner": "¡10 páginas leídas! ¡Sigue así!"
+      }
+    },
+    {
+      "dia": 11, "semana": 3, "trimestre": 1,
+      "tema": "El colegio de Lucía",
+      "oraciones": ["Lucía va cada mañana al colegio con su mochila azul favorita."],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Dibuja a Lucía de camino al colegio con su mochila."
+      }
+    },
+    {
+      "dia": 12, "semana": 3, "trimestre": 1,
+      "tema": "El colegio de Lucía",
+      "oraciones": ["Su profesora se llama Marta y siempre empieza la clase con un cuento."],
+      "actividad": {
+        "tipo": "completa",
+        "diagrama": "lineas-ondas"
+      }
+    },
+    {
+      "dia": 13, "semana": 3, "trimestre": 1,
+      "tema": "El colegio de Lucía",
+      "oraciones": ["En el recreo, Lucía juega con su nueva amiga Sofía a saltar a la comba."],
+      "actividad": {
+        "tipo": "copia"
+      }
+    },
+    {
+      "dia": 14, "semana": 3, "trimestre": 1,
+      "tema": "El colegio de Lucía",
+      "oraciones": ["Cada niño de la clase cuelga su abrigo en una percha con su nombre."],
+      "actividad": {
+        "tipo": "relaciona",
+        "pares": [
+          ["Lucía", "tiene mochila azul"],
+          ["Marta", "es la profesora"],
+          ["Sofía", "es su amiga nueva"],
+          ["Dani", "va a la clase de los pequeños"]
+        ]
+      }
+    },
+    {
+      "dia": 15, "semana": 3, "trimestre": 1,
+      "tema": "El colegio de Lucía",
+      "oraciones": ["A la salida, Lucía le cuenta a Mamá todo lo que ha aprendido ese día."],
+      "actividad": {
+        "tipo": "crea",
+        "prompt": "Dibuja tu clase o cuéntale a un adulto qué es lo que más te gusta de ir al colegio."
       }
     }
   ]

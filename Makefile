@@ -42,7 +42,7 @@ clean:
 watch:
 	$(LATEX) -pvc $(MAIN).tex
 
-# NO es el libro -- 40 páginas (10 días reales de cada trimestre) para
+# NO es el libro -- 60 páginas (15 días reales de cada trimestre) para
 # comparar el nivel de un vistazo. Ver tools/gen_muestra.py. No entra en
 # `all` / `all-formats` porque no forma parte del cuaderno que se publica.
 generate-muestra:
