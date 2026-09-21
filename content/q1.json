@@ -21,8 +21,8 @@
       "tema": "La familia de Lucía",
       "oraciones": ["Dani es su hermano pequeño y siempre quiere jugar con ella."],
       "actividad": {
-        "tipo": "colorea",
-        "diagrama": "ninos-jugando"
+        "tipo": "completa",
+        "diagrama": "lineas-ondas"
       }
     },
     {
@@ -30,8 +30,7 @@
       "tema": "La familia de Lucía",
       "oraciones": ["Toby es un perro marrón con las orejas muy largas."],
       "actividad": {
-        "tipo": "responde",
-        "pregunta": "¿De qué color es Toby?"
+        "tipo": "copia"
       }
     },
     {
@@ -71,8 +70,8 @@
       "tema": "Toby, el perro juguetón",
       "oraciones": ["Cada tarde, Dani y Toby juegan juntos en el jardín."],
       "actividad": {
-        "tipo": "colorea",
-        "diagrama": "nino-perro-jardin"
+        "tipo": "completa",
+        "diagrama": "lineas-circulo"
       }
     },
     {
@@ -80,8 +79,7 @@
       "tema": "Toby, el perro juguetón",
       "oraciones": ["A veces, Toby se esconde debajo de la cama y no quiere salir."],
       "actividad": {
-        "tipo": "responde",
-        "pregunta": "¿Dónde se esconde Toby a veces?"
+        "tipo": "copia"
       }
     },
     {

@@ -48,10 +48,24 @@ jobs:
         run: python3 tools/gen_days.py --check
 
   build:
-    name: PDF
+    name: PDF (${{ matrix.variant }})
     needs: gates
     runs-on: ubuntu-latest
     timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      # Color y blanco-y-negro comparten body.tex y content/generated-days.tex
+      # letra por letra -- lo único que cambia es \bookcolor (ver
+      # preamble.tex), fijado por main.tex/main-bw.tex antes de
+      # \input{preamble}. Una matriz en vez de un job duplicado: un cambio
+      # que solo rompe uno de los dos formatos tiene que ser tan visible
+      # como uno que rompe los dos.
+      matrix:
+        include:
+          - variant: color
+            root: main
+          - variant: bw
+            root: main-bw
     steps:
       - uses: actions/checkout@v4
 
@@ -66,7 +80,7 @@ jobs:
       - name: Compila el cuaderno
         uses: xu-cheng/latex-action@v3
         with:
-          root_file: main.tex
+          root_file: ${{ matrix.root }}.tex
           latexmk_use_lualatex: false
           args: -pdf -interaction=nonstopmode -file-line-error
 
@@ -75,21 +89,24 @@ jobs:
       # encima del error, así que el código de salida y el PDF dicen los
       # dos que todo ha ido bien. Ver tools/checklog.py.
       - name: Lee el log correctamente
-        run: python3 tools/checklog.py main.log
+        run: python3 tools/checklog.py ${{ matrix.root }}.log
 
       # El diseño de cada página da por hecho que un día cabe en una sola
       # cara A4. Esto lo comprueba leyendo las páginas reales del .aux.
+      # El color y el blanco-y-negro tienen que dar la misma respuesta --
+      # cambiar un color no mueve un solo salto de página -- pero se
+      # comprueba en los dos, nunca solo en uno.
       - name: Cada día ocupa exactamente una página
-        run: python3 tools/check_pages.py main.aux
+        run: python3 tools/check_pages.py ${{ matrix.root }}.aux
 
       - name: Resumen
         if: always()
         run: |
-          pages=$(grep -oE "Output written on main\.pdf \([0-9]+ pages?" main.log \
+          pages=$(grep -oE "Output written on ${{ matrix.root }}\.pdf \([0-9]+ pages?" ${{ matrix.root }}.log \
                   | grep -oE "[0-9]+" | tail -1)
-          bytes=$(stat -c%s main.pdf 2>/dev/null || echo 0)
+          bytes=$(stat -c%s ${{ matrix.root }}.pdf 2>/dev/null || echo 0)
           {
-            echo "## Build"
+            echo "## Build (${{ matrix.variant }})"
             echo "| | |"
             echo "|---|---|"
             echo "| Páginas | ${pages:-desconocido} |"
@@ -99,8 +116,8 @@ jobs:
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: pdf
-          path: main.pdf
+          name: pdf-${{ matrix.variant }}
+          path: ${{ matrix.root }}.pdf
           if-no-files-found: error
           retention-days: 30
 
@@ -109,7 +126,7 @@ jobs:
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: log
-          path: main.log
+          name: log-${{ matrix.variant }}
+          path: ${{ matrix.root }}.log
           if-no-files-found: warn
           retention-days: 30

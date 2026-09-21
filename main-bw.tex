@@ -1,0 +1,13 @@
+% main-bw.tex -- misma cuaderno, sin color. Mismo body.tex, mismo
+% preamble.tex; solo cambia \bookcolor, fijado ANTES de \input{preamble}
+% para que la paleta (ver preamble.tex) elija los tonos negro/gris en vez
+% de los saturados. Ningún otro fichero sabe que existe este main -- ese
+% es el punto: una versión pensada para imprimirse en una impresora sin
+% color (o para no gastar tinta de color en 260 páginas) sin mantener una
+% segunda copia del libro.
+\documentclass[11pt]{article}
+\def\bookcolor{bw}
+\input{preamble}
+\begin{document}
+\input{body}
+\end{document}

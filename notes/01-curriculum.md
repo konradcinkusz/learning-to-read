@@ -103,15 +103,19 @@ en los días 1–10):
 | Día | Actividad | Qué comprueba |
 |---|---|---|
 | Lunes | **Dibuja** | Comprensión, vía dibujo libre de lo leído |
-| Martes | **Colorea** | Motivación / descanso — un dibujo de línea relacionado con la escena |
-| Miércoles | **Responde** | Comprensión explícita — una pregunta corta con respuesta objetiva |
+| Martes | **Completa** | Creatividad, no motricidad fina — unas pocas líneas sin forma, y ella inventa el dibujo a partir de ahí (nunca un dibujo ya cerrado para colorear dentro de los márgenes, eso no exige nada) |
+| Miércoles | **Copia** (T1) / **Responde** (T2 en adelante) | T1: copiar la frase, tres veces — practica la letra, no exige componer una respuesta, que a esta edad todavía no sabe hacer sola. Desde T2: pregunta corta con respuesta objetiva, comprensión explícita |
 | Jueves | **Relaciona** / **Adivina** | Vocabulario — emparejar palabras, o una adivinanza sencilla |
 | Viernes | **Crea** | Tarea abierta; cada dos viernes es además **Repasa** (checklist + celebración) |
 
-`tools/gen_days.py` ya sabe generar los siete tipos (`dibuja`,
-`colorea`, `responde`, `relaciona`, `adivina`, `crea`, `repasa`); añadir
-más días solo requiere añadir entradas al JSON, no tocar el generador,
-salvo que se necesite un tipo de actividad genuinamente nuevo.
+`tools/gen_days.py` ya sabe generar los ocho tipos (`dibuja`,
+`completa`, `copia`, `responde`, `relaciona`, `adivina`, `crea`,
+`repasa`); añadir más días solo requiere añadir entradas al JSON, no
+tocar el generador, salvo que se necesite un tipo de actividad
+genuinamente nuevo. `responde` está bloqueado en el trimestre 1 por el
+propio validador (`TRIMESTRES_SIN_RESPONDE`) — no es solo una
+convención editorial, `tools/gen_days.py --check` falla si un día de T1
+lo usa.
 
 ## Estructura técnica (resumen; ver el propio código para el detalle)
 
@@ -122,7 +126,7 @@ content/q1.json, q2.json, ...         -- UN fichero por trimestre, editado a man
 content/generated-days.tex            -- GENERADO, no tocar a mano
 tools/gen_days.py                     -- JSON -> LaTeX, valida antes de escribir
 tools/check_pages.py                  -- después de compilar: 1 día = 1 página, exacto
-diagrams/*.tex                        -- dibujos de línea en TikZ, para las páginas "Colorea"
+diagrams/*.tex                        -- dibujos de línea en TikZ, para las páginas "Completa"
 ```
 
 `tools/gen_days.py --check` falla si: los días no son consecutivos, un
