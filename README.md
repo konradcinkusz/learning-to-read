@@ -16,7 +16,17 @@ Ver `notes/01-curriculum.md` para el plan completo del curso (reparto
 de personajes, arco de cada trimestre, disciplina de vocabulario) y
 para qué falta escribir todavía.
 
-## Construir el PDF
+## Descargar el PDF sin instalar nada
+
+- **Cada push a `main` lo compila** — pestaña *Actions* → workflow
+  *Build* → artefacto `pdf` (se guarda 30 días, hace falta estar
+  identificado en GitHub para descargarlo).
+- **Enlace fijo, siempre la última versión** (una vez que alguien con
+  permisos de administrador active Pages una sola vez — ver
+  `.github/workflows/pages.yml`):
+  `https://konradcinkusz.github.io/learning-to-read/aprendo-a-leer.pdf`
+
+## Construir el PDF a mano
 
 Necesita una distribución de TeX (pdflatex + latexmk) con `babel`,
 `tcolorbox` y `tikz` — cualquier TeX Live razonablemente completo los
@@ -26,7 +36,7 @@ trae.
 make            # genera content/generated-days.tex, compila, comprueba
 make generate   # solo regenera content/generated-days.tex desde el JSON
 make build      # solo compila (asume que ya está generado)
-make check      # 1 día = 1 página (lee main.aux) + valida el JSON
+make check      # lee el log + 1 día = 1 página (lee main.aux) + valida el JSON
 make clean
 ```
 
@@ -42,6 +52,10 @@ diagrams/                             -- dibujos de línea (TikZ) para las pági
 backmatter/diploma.tex                -- página final
 tools/gen_days.py                     -- JSON -> LaTeX + validación
 tools/check_pages.py                  -- comprueba que cada día ocupa una sola página
+tools/checklog.py                     -- lee el .log de pdflatex correctamente (nunca grep '^!')
+docs/index.html                       -- la página que publica .github/workflows/pages.yml
+.github/workflows/build.yml           -- compila y valida en cada push/PR
+.github/workflows/pages.yml           -- publica el PDF en GitHub Pages en cada push a main
 notes/01-curriculum.md                -- el plan del curso completo
 ```
 
