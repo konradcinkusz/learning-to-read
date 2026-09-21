@@ -18,13 +18,16 @@ para qué falta escribir todavía.
 
 ## Descargar el PDF sin instalar nada
 
-- **Cada push a `main` lo compila** — pestaña *Actions* → workflow
-  *Build* → artefacto `pdf` (se guarda 30 días, hace falta estar
-  identificado en GitHub para descargarlo).
-- **Enlace fijo, siempre la última versión** (una vez que alguien con
-  permisos de administrador active Pages una sola vez — ver
-  `.github/workflows/pages.yml`):
-  `https://konradcinkusz.github.io/learning-to-read/aprendo-a-leer.pdf`
+**[⬇ Descargar el PDF más reciente](https://konradcinkusz.github.io/learning-to-read/aprendo-a-leer.pdf)**
+— enlace fijo, publicado por GitHub Pages en cada push a `main` (ver
+`.github/workflows/pages.yml`).
+
+Si ese enlace todavía no responde (por ejemplo, justo después de activar
+Pages por primera vez, antes de que corra el primer despliegue), el
+mismo PDF está también en la pestaña
+[*Actions*](https://github.com/konradcinkusz/learning-to-read/actions/workflows/build.yml)
+→ el último run de *Build* → artefacto `pdf` (se guarda 30 días, hace
+falta estar identificado en GitHub para descargarlo).
 
 ## Construir el PDF a mano
 
