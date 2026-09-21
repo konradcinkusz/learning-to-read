@@ -1,0 +1,12 @@
+# Artefactos de compilación de LaTeX -- se regeneran con `make all`.
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+*.pdf
+
+# Generado por tools/gen_days.py a partir de content/q*.json -- la fuente
+# de verdad es el JSON, no este fichero.
+content/generated-days.tex

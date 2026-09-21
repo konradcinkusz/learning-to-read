@@ -1,0 +1,112 @@
+{
+  "_comentario": "Datos de origen para tools/gen_days.py. Este fichero SÍ se edita a mano; content/generated-days.tex NO (se regenera con `make generate`). De momento contiene los días 1-10 (Trimestre 1, semanas 1-2). El resto de las semanas del Trimestre 1 se describe en notes/01-curriculum.md y se va añadiendo aquí, día a día, en pasadas futuras.",
+  "personajes": {
+    "Lucía": "protagonista, 6 años",
+    "Dani": "su hermano pequeño, 4 años",
+    "Toby": "el perro de la familia",
+    "Abuela Rosa": "la abuela materna"
+  },
+  "dias": [
+    {
+      "dia": 1, "semana": 1, "trimestre": 1,
+      "tema": "La familia de Lucía",
+      "oraciones": ["Lucía tiene seis años y le encanta leer cuentos."],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Dibuja a Lucía leyendo su cuento favorito."
+      }
+    },
+    {
+      "dia": 2, "semana": 1, "trimestre": 1,
+      "tema": "La familia de Lucía",
+      "oraciones": ["Dani es su hermano pequeño y siempre quiere jugar con ella."],
+      "actividad": {
+        "tipo": "colorea",
+        "diagrama": "ninos-jugando"
+      }
+    },
+    {
+      "dia": 3, "semana": 1, "trimestre": 1,
+      "tema": "La familia de Lucía",
+      "oraciones": ["Toby es un perro marrón con las orejas muy largas."],
+      "actividad": {
+        "tipo": "responde",
+        "pregunta": "¿De qué color es Toby?"
+      }
+    },
+    {
+      "dia": 4, "semana": 1, "trimestre": 1,
+      "tema": "La familia de Lucía",
+      "oraciones": ["Los domingos, toda la familia come junta en casa de la abuela Rosa."],
+      "actividad": {
+        "tipo": "relaciona",
+        "pares": [
+          ["Lucía", "niña"],
+          ["Dani", "niño pequeño"],
+          ["Toby", "perro"],
+          ["Abuela Rosa", "abuela"]
+        ]
+      }
+    },
+    {
+      "dia": 5, "semana": 1, "trimestre": 1,
+      "tema": "La familia de Lucía",
+      "oraciones": ["A Lucía le gusta mucho su familia porque siempre se ríen juntos."],
+      "actividad": {
+        "tipo": "crea",
+        "prompt": "Dibuja a tu propia familia. Cuéntale a un adulto qué es lo que más te gusta hacer juntos."
+      }
+    },
+    {
+      "dia": 6, "semana": 2, "trimestre": 1,
+      "tema": "Toby, el perro juguetón",
+      "oraciones": ["Toby corre muy rápido cuando ve su pelota roja."],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Dibuja a Toby corriendo detrás de su pelota roja."
+      }
+    },
+    {
+      "dia": 7, "semana": 2, "trimestre": 1,
+      "tema": "Toby, el perro juguetón",
+      "oraciones": ["Cada tarde, Dani y Toby juegan juntos en el jardín."],
+      "actividad": {
+        "tipo": "colorea",
+        "diagrama": "nino-perro-jardin"
+      }
+    },
+    {
+      "dia": 8, "semana": 2, "trimestre": 1,
+      "tema": "Toby, el perro juguetón",
+      "oraciones": ["A veces, Toby se esconde debajo de la cama y no quiere salir."],
+      "actividad": {
+        "tipo": "responde",
+        "pregunta": "¿Dónde se esconde Toby a veces?"
+      }
+    },
+    {
+      "dia": 9, "semana": 2, "trimestre": 1,
+      "tema": "Toby, el perro juguetón",
+      "oraciones": ["Lucía le da un hueso a Toby y él mueve la cola muy feliz."],
+      "actividad": {
+        "tipo": "adivina",
+        "adivinanza": "Tengo cuatro patas, muevo la cola y ladro fuerte. ¿Quién soy?"
+      }
+    },
+    {
+      "dia": 10, "semana": 2, "trimestre": 1,
+      "tema": "Toby, el perro juguetón",
+      "oraciones": ["Toby es el mejor amigo de toda la familia, sobre todo de Lucía."],
+      "actividad": {
+        "tipo": "repasa",
+        "checklist": [
+          "Sé cómo es Toby por fuera.",
+          "Sé por qué a veces se esconde.",
+          "Sé quién le da un hueso a Toby."
+        ],
+        "prompt": "Dibuja tu propia mascota, real o imaginaria.",
+        "banner": "¡10 páginas leídas! ¡Sigue así!"
+      }
+    }
+  ]
+}
