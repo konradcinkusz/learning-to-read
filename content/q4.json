@@ -13,8 +13,8 @@
         "Toby ya sabe que algo pasa: no para de mover la cola."
       ],
       "actividad": {
-        "tipo": "dibuja",
-        "prompt": "Dibuja las maletas de la familia, listas para el viaje."
+        "tipo": "traza",
+        "letra": "t"
       }
     },
     {
@@ -192,8 +192,8 @@
         "A Lucía le encantan los gatos, así que enseguida se hacen amigos."
       ],
       "actividad": {
-        "tipo": "dibuja",
-        "prompt": "Dibuja a Bigotes tomando el sol encima de la tapia."
+        "tipo": "traza",
+        "letra": "u"
       }
     },
     {
@@ -371,8 +371,8 @@
         "Esta vez, Lucía le pide que la deje ayudarla también."
       ],
       "actividad": {
-        "tipo": "dibuja",
-        "prompt": "Dibuja el huerto de la abuela, con sus tomates y sus judías."
+        "tipo": "traza",
+        "letra": "v"
       }
     },
     {
@@ -550,8 +550,8 @@
         "—Es más grande que el río del pueblo —dice, por fin, asombrado."
       ],
       "actividad": {
-        "tipo": "dibuja",
-        "prompt": "Dibuja el mar, tal como lo ve Dani por primera vez."
+        "tipo": "traza",
+        "letra": "w"
       }
     },
     {
@@ -729,8 +729,8 @@
         "Lucía los mira de lejos, contenta de que Dani tenga un amigo."
       ],
       "actividad": {
-        "tipo": "dibuja",
-        "prompt": "Dibuja a Dani y Martín jugando al balón en la plaza."
+        "tipo": "traza",
+        "letra": "x"
       }
     },
     {
@@ -908,8 +908,8 @@
         "Dani también quiere una mochila, aunque todavía no vaya al cole grande."
       ],
       "actividad": {
-        "tipo": "dibuja",
-        "prompt": "Dibuja la mochila nueva que ha elegido Lucía."
+        "tipo": "traza",
+        "letra": "y"
       }
     },
     {
@@ -1087,8 +1087,8 @@
         "—Suerte en segundo curso, hermana —le dice, dándole un abrazo antes de irse."
       ],
       "actividad": {
-        "tipo": "dibuja",
-        "prompt": "Dibuja a Lucía saliendo de casa el primer día de segundo curso."
+        "tipo": "traza",
+        "letra": "z"
       }
     },
     {

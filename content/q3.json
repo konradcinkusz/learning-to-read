@@ -12,8 +12,8 @@
         "De repente, Toby desaparece detrás de los matorrales y nadie lo ve."
       ],
       "actividad": {
-        "tipo": "dibuja",
-        "prompt": "Dibuja el parque grande, con los árboles donde se escondió Toby."
+        "tipo": "traza",
+        "letra": "n"
       }
     },
     {
@@ -186,8 +186,8 @@
         "Lucía busca el libro perfecto para regalárselo a Dani."
       ],
       "actividad": {
-        "tipo": "dibuja",
-        "prompt": "Dibuja la fiesta del Día del Libro en el colegio de Lucía."
+        "tipo": "traza",
+        "letra": "ñ"
       }
     },
     {
@@ -360,8 +360,8 @@
         "Cada niño va a trasplantar su planta de la maceta."
       ],
       "actividad": {
-        "tipo": "dibuja",
-        "prompt": "Dibuja el huerto nuevo del patio del colegio."
+        "tipo": "traza",
+        "letra": "o"
       }
     },
     {
@@ -530,8 +530,8 @@
         "Mamá le dice que todos los niños empiezan así."
       ],
       "actividad": {
-        "tipo": "dibuja",
-        "prompt": "Dibuja a Lucía con su bañador y su gorro de piscina."
+        "tipo": "traza",
+        "letra": "p"
       }
     },
     {
@@ -700,8 +700,8 @@
         "Cada vez acierta más rápido, casi sin pensarlo mucho."
       ],
       "actividad": {
-        "tipo": "dibuja",
-        "prompt": "Dibuja a Lucía y Dani jugando con las tarjetas de letras."
+        "tipo": "traza",
+        "letra": "q"
       }
     },
     {
@@ -870,8 +870,8 @@
         "Un día, la oruga deja de moverse y se cuelga boca abajo."
       ],
       "actividad": {
-        "tipo": "dibuja",
-        "prompt": "Dibuja la oruga colgada, formando su crisálida."
+        "tipo": "traza",
+        "letra": "r"
       }
     },
     {
@@ -1040,8 +1040,8 @@
         "Hoy se despide ya de su primer curso de primaria."
       ],
       "actividad": {
-        "tipo": "dibuja",
-        "prompt": "Dibuja a Lucía el último día de colegio, con su mochila."
+        "tipo": "traza",
+        "letra": "s"
       }
     },
     {

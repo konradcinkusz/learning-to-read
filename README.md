@@ -22,9 +22,12 @@ complejidad, no el alfabeto disponible.
 
 Además de los 260 días, el cuaderno trae una medalla al final de cada
 trimestre, una clave de respuestas para las páginas de Adivina y
-Relaciona, y un apéndice de trazo -- una página por letra del
-abecedario, con el contorno real de la letra (no un dibujo aparte)
-convertido en puntos para repasar. Ver "Estructura" más abajo.
+Relaciona, y una actividad más en la rotación diaria, **Traza**: de vez
+en cuando (cada dos semanas más o menos, repartida por todo el año),
+en vez de dibujar se repasa el contorno real de una letra -- mayúscula
+y minúscula, sacado del glifo real de la fuente del cuaderno, no un
+dibujo aparte -- hasta cubrir las 27 letras del abecedario. Ver
+"Estructura" más abajo.
 
 Ver `notes/01-curriculum.md` para el plan completo del curso (reparto
 de personajes, arco de cada trimestre, disciplina de vocabulario, qué
@@ -82,13 +85,11 @@ content/progresion.json               -- objetivos semanales de la escalera de p
 content/generated-clave.tex           -- GENERADO por tools/gen_days.py, no editar
 content/letras-trazo.json             -- contorno real de cada letra (Andika), generado por tools/gen_letras_puntos.py
 content/palabras-trazo.json           -- palabra de ejemplo de cada letra ("A de Abuela"), editado a mano
-content/generated-letras.tex          -- GENERADO por tools/gen_letras.py, no editar
 diagrams/                             -- dibujos de línea (TikZ) para las páginas "Completa"
-backmatter/diploma.tex, clave-respuestas.tex, trazo-letras.tex -- diploma, clave de respuestas y apéndice de trazo
+backmatter/diploma.tex, clave-respuestas.tex -- diploma y clave de respuestas
 fonts/andika/                         -- letra del cuaderno (Andika, SIL, OFL -- ver "Licencia")
-tools/gen_days.py                     -- JSON -> LaTeX + validación + medallas de trimestre + clave de respuestas
+tools/gen_days.py                     -- JSON -> LaTeX + validación + medallas + clave de respuestas + trazo
 tools/gen_letras_puntos.py            -- fuente -> contorno de cada letra (matplotlib/fonttools; no forma parte de `make`)
-tools/gen_letras.py                   -- contorno + palabra -> las páginas de trazo (sin dependencias pesadas)
 tools/check_pages.py                  -- comprueba que cada día ocupa una sola página
 tools/checklog.py                     -- lee el .log de LuaLaTeX correctamente (nunca grep '^!')
 tools/metricas.py                     -- mide palabras/frase/vocabulario nuevo contra content/progresion.json
@@ -130,8 +131,8 @@ Los 260 días están escritos, con sus actividades, y compilan como un
 cuaderno completo (`make all-formats` en verde: 1 día = 1 página, sin
 huecos, dentro de la escalera de progresión de
 `content/progresion.json`). Las medallas de trimestre, la clave de
-respuestas y las 27 páginas de trazo (una por letra) también están
-escritas y compilan. Ver `notes/01-curriculum.md` para el arco
+respuestas y las 27 páginas "Traza" (una por letra, repartidas por
+todo el año) también están escritas y compilan. Ver `notes/01-curriculum.md` para el arco
 narrativo de cada trimestre y `notes/02-revision-y-plan.md` para la
 revisión completa del cuaderno (qué mejorar y en qué orden) y el
 calendario del curso completo -- por qué los cuatro trimestres son las

@@ -25,6 +25,22 @@ ROOT = Path(__file__).resolve().parent.parent
 CONTENT_DIR = ROOT / "content"
 OUTPUT_FILE = CONTENT_DIR / "generated-days.tex"
 CLAVE_FILE = CONTENT_DIR / "generated-clave.tex"
+LETRAS_TRAZO_FILE = CONTENT_DIR / "letras-trazo.json"
+PALABRAS_TRAZO_FILE = CONTENT_DIR / "palabras-trazo.json"
+
+# cm por unidad "em" para la actividad "traza" (ver PLANTILLA_TRAZA) --
+# el contorno de cada letra (content/letras-trazo.json, generado por
+# tools/gen_letras_puntos.py a partir del glifo real de
+# fonts/andika/Andika-Bold.ttf) llega en unidades de em (tamaño de
+# fuente = 1.0); esta escala lo convierte a cm dentro de la caja de
+# actividad, que comparte página con la caja de lectura -- por eso es
+# más pequeña que un cartel a toda página. Elegida igual que en su
+# momento para el apéndice de trazo: que el par más ancho del alfabeto
+# (mayúscula + minúscula de la "w") siga cabiendo dentro del ancho de
+# página (170 mm, ver \geometry en preamble.tex) con margen.
+ESCALA_TRAZO_CM = 7.0
+HUECO_TRAZO_EM = 0.18
+RADIO_PUNTO_TRAZO_CM = "0.08"
 
 TOTAL_DIAS = 260
 FRASES_POR_TRIMESTRE = {1: 1, 2: 2, 3: 3, 4: 4}
@@ -43,7 +59,7 @@ ULTIMO_DIA_TRIMESTRE = {t: hi for t, (lo, hi) in RANGO_TRIMESTRE.items()}
 
 TIPOS_VALIDOS = {
     "dibuja", "completa", "copia", "responde", "relaciona", "adivina", "crea",
-    "repasa", "rodea", "verdadero_falso", "busca", "ordena", "relee",
+    "repasa", "rodea", "verdadero_falso", "busca", "ordena", "relee", "traza",
 }
 
 # En el trimestre 1 la niña todavía no compone una respuesta escrita por
@@ -207,6 +223,32 @@ $prompt
 }"""
 )
 
+# "Traza" -- practicar cómo se escribe una letra, no cómo se lee (eso
+# ya lo hace la niña en la propia caja de lectura). El contorno no es
+# un dibujo aparte: es el glifo real de Andika (la misma fuente de todo
+# el cuaderno, ver fonts/andika/), convertido en puntos por
+# tools/gen_letras_puntos.py y guardado en content/letras-trazo.json.
+# Aparece cada dos semanas más o menos, repartido por todo el año (ver
+# la lista de conversiones en content/q*.json) -- no es un apéndice
+# aparte, es una actividad más dentro del ciclo normal de cada día,
+# igual que Dibuja o Completa. Ver la revisión de un lector externo.
+PLANTILLA_TRAZA = Template(
+    r"""\actividadTraza{%
+\begin{center}
+{\Large\color{colorGris} $mayus~\lblTrazoDe~$palabra}
+
+\vspace{4mm}
+\begin{tikzpicture}
+\fill[colorResponde] $puntos;
+\end{tikzpicture}
+
+\vspace{4mm}
+{\footnotesize\color{colorGris}\lblInstruccionTrazo}\\[5mm]
+\rule{0.6\linewidth}{0.4pt}
+\end{center}
+}"""
+)
+
 PLANTILLA_REPASA = Template(
     r"""\actividadRepasa{%
 \begin{listaRepaso}
@@ -283,6 +325,58 @@ $actividad
 )
 
 
+def _cargar_json(ruta):
+    if not ruta.exists():
+        raise ErrorDeContenido(f"no existe {ruta}")
+    return json.loads(ruta.read_text(encoding="utf-8"))
+
+
+_letras_trazo = None
+_palabras_trazo = None
+
+
+def datos_trazo():
+    """Carga (una vez, con caché de módulo) los dos ficheros de datos
+    de 'traza': el contorno de cada letra (generado, ver
+    tools/gen_letras_puntos.py) y la palabra de ejemplo de cada letra
+    (editada a mano). Deliberadamente solo biblioteca estándar -- a
+    diferencia de tools/gen_letras_puntos.py, esto NO necesita
+    matplotlib/numpy/fonttools, así que `make generate` y el job
+    `gates` de CI no ganan una dependencia pesada por esta actividad."""
+    global _letras_trazo, _palabras_trazo
+    if _letras_trazo is None:
+        datos = _cargar_json(LETRAS_TRAZO_FILE)
+        datos.pop("_comentario", None)
+        _letras_trazo = datos
+        _palabras_trazo = _cargar_json(PALABRAS_TRAZO_FILE)["palabras"]
+    return _letras_trazo, _palabras_trazo
+
+
+def puntos_tikz_letra(entrada_mayus, entrada_minus):
+    """Todos los puntos de una letra (mayúscula + minúscula) en cm,
+    listos para un \\fill de TikZ -- mayúscula empieza en x=0,
+    minúscula justo después de HUECO_TRAZO_EM. \\actividadTraza envuelve
+    el tikzpicture en \\begin{center}, así que no hace falta calcular
+    ningún desplazamiento para centrarlo en la página."""
+    uc_bbox = entrada_mayus["bbox"]
+    lc_bbox = entrada_minus["bbox"]
+    ancho_mayus = uc_bbox[2] - uc_bbox[0]
+
+    piezas = []
+    for x, y in (pt for contorno in entrada_mayus["contornos"] for pt in contorno):
+        cx = (x - uc_bbox[0]) * ESCALA_TRAZO_CM
+        cy = y * ESCALA_TRAZO_CM
+        piezas.append(f"({cx:.3f},{cy:.3f}) circle ({RADIO_PUNTO_TRAZO_CM})")
+
+    despl_x = ancho_mayus + HUECO_TRAZO_EM - lc_bbox[0]
+    for x, y in (pt for contorno in entrada_minus["contornos"] for pt in contorno):
+        cx = (x + despl_x) * ESCALA_TRAZO_CM
+        cy = y * ESCALA_TRAZO_CM
+        piezas.append(f"({cx:.3f},{cy:.3f}) circle ({RADIO_PUNTO_TRAZO_CM})")
+
+    return " ".join(piezas)
+
+
 def render_actividad(dia_num, actividad):
     tipo = actividad.get("tipo")
     if tipo not in TIPOS_VALIDOS:
@@ -346,6 +440,27 @@ def render_actividad(dia_num, actividad):
     if tipo == "crea":
         _campos_requeridos(dia_num, actividad, ["prompt"])
         return PLANTILLA_CREA.substitute(prompt=escapar(actividad["prompt"]))
+
+    if tipo == "traza":
+        _campos_requeridos(dia_num, actividad, ["letra"])
+        letra = actividad["letra"]
+        letras, palabras = datos_trazo()
+        if letra not in letras:
+            raise ErrorDeContenido(
+                f"día {dia_num}: 'traza' pide la letra {letra!r}, que no "
+                f"está en {LETRAS_TRAZO_FILE.name}"
+            )
+        if letra not in palabras:
+            raise ErrorDeContenido(
+                f"día {dia_num}: la letra {letra!r} no tiene palabra de "
+                f"ejemplo en {PALABRAS_TRAZO_FILE.name}"
+            )
+        entrada = letras[letra]
+        return PLANTILLA_TRAZA.substitute(
+            mayus=escapar(letra.upper()),
+            palabra=escapar(palabras[letra]),
+            puntos=puntos_tikz_letra(entrada["mayuscula"], entrada["minuscula"]),
+        )
 
     if tipo == "repasa":
         _campos_requeridos(dia_num, actividad, ["checklist", "prompt", "banner"])

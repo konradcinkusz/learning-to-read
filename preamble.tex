@@ -201,6 +201,12 @@
   colback=colorLecturaClaro, colframe=colorLectura, colbacktitle=colorLectura,
   title=\lblRelee}
 
+% "Traza" reutiliza el color de "Copia"/"Responde" -- las dos son,
+% igual que "traza", practicar a mano (letra o respuesta), no leer.
+\newtcolorbox{cajaTraza}{cajabase,
+  colback=colorRespondeClaro, colframe=colorResponde, colbacktitle=colorResponde,
+  title=\lblTraza}
+
 % Envoltorios de actividad: el color/título ya está fijado arriba; el
 % contenido concreto (texto, tabla, dibujo, espacio en blanco) se escribe
 % al llamar a la macro, así que cada día es libre de necesitar cosas
@@ -222,6 +228,7 @@
 \newcommand{\actividadBusca}[1]{\begin{cajaBusca}\large#1\end{cajaBusca}}
 \newcommand{\actividadOrdena}[1]{\begin{cajaOrdena}#1\end{cajaOrdena}}
 \newcommand{\actividadRelee}[1]{\begin{cajaRelee}\large#1\end{cajaRelee}}
+\newcommand{\actividadTraza}[1]{\begin{cajaTraza}#1\end{cajaTraza}}
 
 % Piezas reutilizables dentro de una actividad. El bloque de lectura de
 % T1 deja mucho sitio en la página, así que el espacio en blanco por
@@ -305,37 +312,5 @@
 }{%
   \vfill
   \begin{center}\footnotesize\color{colorGris}\lblDia~\diapagina@actual~/ \totaldias\end{center}
-  \newpage
-}
-
-% =========================================================================
-% Páginas de trazo (backmatter/trazo-letras.tex,
-% content/generated-letras.tex, ver tools/gen_letras.py). Cada letra es
-% el contorno REAL del glifo de Andika (la misma fuente del resto del
-% cuaderno, ver tools/gen_letras_puntos.py), convertido en una nube de
-% puntos -- no un dibujo aparte, así que la "A" de trazar es
-% exactamente la misma "A" que se lee en el resto de páginas.
-%
-%   \paginaLetra{mayúscula}{minúscula}{palabra}{tikzpicture}
-%
-% #4 llega ya armado desde Python (PLANTILLA_LETRA en gen_letras.py) --
-% aquí solo se coloca dentro de la página, igual que \diapagina hace
-% con la caja de lectura y la actividad.
-% =========================================================================
-\newcommand{\paginaLetra}[4]{%
-  \begin{center}
-  \vspace*{0.5cm}
-  {\fontsize{30}{34}\selectfont\bfseries\color{colorLectura} #1#2}\\[2mm]
-  {\Large\color{colorGris} #1~\lblTrazoDe~#3}
-  \vspace{6mm}
-
-  #4
-
-  \vspace{8mm}
-  {\normalsize\color{colorGris}\lblInstruccionTrazo}\\[8mm]
-  \rule{0.75\linewidth}{0.4pt}\\[10mm]
-  \rule{0.75\linewidth}{0.4pt}
-  \end{center}
-  \vspace*{\fill}
   \newpage
 }
