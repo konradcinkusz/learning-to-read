@@ -120,13 +120,14 @@ lo usa.
 ## Estructura técnica (resumen; ver el propio código para el detalle)
 
 ```
-main.tex, preamble.tex, lang/es.tex   -- el motor LaTeX (pdflatex + babel[spanish])
+main.tex, main-bw.tex, preamble.tex, lang/es.tex   -- el motor LaTeX (pdflatex + babel[spanish])
 body.tex                              -- portada + cómo-usar + mapa + días + diploma
 content/q1.json, q2.json, ...         -- UN fichero por trimestre, editado a mano
 content/generated-days.tex            -- GENERADO, no tocar a mano
 tools/gen_days.py                     -- JSON -> LaTeX, valida antes de escribir
 tools/check_pages.py                  -- después de compilar: 1 día = 1 página, exacto
 diagrams/*.tex                        -- dibujos de línea en TikZ, para las páginas "Completa"
+main-muestra.tex, tools/gen_muestra.py, content/muestra/  -- ver "La muestra de progresión" abajo
 ```
 
 `tools/gen_days.py --check` falla si: los días no son consecutivos, un
@@ -141,14 +142,45 @@ desajuste se detecta).
 de saber si un día se ha desbordado a una segunda página sin mirar las
 260 páginas del PDF una por una.
 
+## La muestra de progresión
+
+`main-muestra.tex` (`make muestra`) no es el cuaderno: son 40 páginas,
+los 10 primeros días **reales** de cada trimestre uno detrás de otro
+(1–10, 66–75, 131–140, 196–205), para ver de un vistazo cómo sube el
+nivel — más frases, frases más largas, aparece el diálogo, cambia el
+tipo de actividad de miércoles (`copia` en T1, `responde` desde T2).
+
+Los tres bloques que no son T1 viven en `content/muestra/q{2,3,4}.json`,
+**no** en `content/q{2,3,4}.json` — a propósito: el glob `q*.json` que
+usa el libro real (`tools/gen_days.py`) exige continuidad 1..260 sin
+huecos, y estos tres bloques dejan huecos deliberados (11–65, 76–130,
+141–195) porque esas semanas todavía no están escritas. Es contenido
+real, con su número de día, semana y trimestre definitivo — no un
+borrador desechable — así que cuando se escriban las semanas que faltan
+alrededor de cada bloque, el fichero correspondiente se traslada tal
+cual a `content/qN.json` y no hay que rehacer nada.
+
+`tools/check_pages.py --allow-gaps` es la misma comprobación de siempre
+(el salto de página entre dos días seguidos tiene que ser exactamente
+1) sin la parte que exige que los números de día sean consecutivos —
+necesaria aquí porque los cuatro bloques, tomados juntos, tienen huecos
+por diseño.
+
 ## Qué queda pendiente
 
 1. **Escribir las semanas 3–13 del Trimestre 1** (días 11–65) siguiendo
    el esquema de temas de arriba.
 2. **Escribir los Trimestres 2, 3 y 4** (`content/q2.json`, `q3.json`,
-   `q4.json`) — cada uno con su propio arco narrativo más largo.
+   `q4.json`) — cada uno con su propio arco narrativo más largo. **Los
+   primeros 10 días reales de cada uno ya están escritos**, en
+   `content/muestra/q{2,3,4}.json` (ver arriba); lo que falta es el
+   resto de cada trimestre y trasladar estos tres ficheros a su sitio
+   definitivo cuando ese resto exista.
 3. **Más ilustraciones** en `diagrams/` a medida que aparecen escenarios
-   nuevos (el colegio, la playa, el cumpleaños...).
+   nuevos (el colegio, la playa, el cumpleaños...). Las de `completa`
+   (`lineas-ondas`, `lineas-circulo`) son deliberadamente genéricas —
+   unas pocas líneas sin forma — y sirven para cualquier día sin
+   necesitar un dibujo nuevo cada vez.
 4. Considerar automatizar el aviso de "palabra nueva" descrito arriba.
-5. CI (GitHub Actions) que compile el PDF en cada cambio — opcional,
-   una vez el resto esté estable.
+5. ~~CI (GitHub Actions) que compile el PDF en cada cambio~~ — hecho:
+   `.github/workflows/build.yml` y `pages.yml`.
