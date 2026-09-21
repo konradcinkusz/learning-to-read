@@ -46,12 +46,12 @@ familia no.
 ```sh
 make generate       # content/q1.json -> content/generated-days.tex
 make build           # compila la versión en color (main.tex)
-make check            # tools/checklog.py + tools/check_pages.py + tools/gen_days.py --check
+make check            # tools/checklog.py + tools/check_pages.py + tools/gen_days.py --check + tools/metricas.py
 make all-formats      # generate + build + check, color Y blanco-y-negro -- ejecútalo
                        # antes de abrir un PR, es lo mismo que corre el CI
 ```
 
-Tres bramas duras que tienen que quedar en verde:
+Cuatro bramas duras que tienen que quedar en verde:
 
 - **1 día = exactamente 1 página** (`tools/check_pages.py`, lee el `.aux`
   después de compilar -- es la única forma de saber si un día se ha
@@ -64,6 +64,11 @@ Tres bramas duras que tienen que quedar en verde:
 - **El JSON y el `.tex` generado coinciden** (`tools/gen_days.py --check`
   -- si alguien toca `content/generated-days.tex` a mano y luego cambia el
   JSON, el desajuste se detecta).
+- **La escalera de progresión** (`tools/metricas.py`, contra
+  `content/progresion.json` -- ver `notes/02-revision-y-plan.md`, Parte
+  C): palabras por página y frase más larga no pueden superar el
+  objetivo de esa semana. El vocabulario nuevo por día solo avisa, no
+  bloquea.
 
 `.github/workflows/build.yml` corre exactamente estas mismas comprobaciones
 en cada *push* y *pull request*, así que un PR con `make all-formats` en

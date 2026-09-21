@@ -47,6 +47,20 @@ jobs:
       - name: Valida el contenido (frases por trimestre, campos de actividad)
         run: python3 tools/gen_days.py --check
 
+      - name: Genera content/generated-muestra.tex desde content/muestra/q*.json
+        run: make generate-muestra
+
+      - name: Valida la muestra de progresión
+        run: python3 tools/gen_muestra.py --check
+
+      # Compara content/q*.json + content/muestra/q*.json con la escalera
+      # de content/progresion.json (notes/02-revision-y-plan.md, Parte C) --
+      # palabras/página y frase más larga son límites duros (fallan el
+      # job); el vocabulario nuevo por día es solo un aviso, ver la
+      # cabecera de content/progresion.json.
+      - name: Mide la progresión (palabras/página, frase, vocabulario nuevo)
+        run: python3 tools/metricas.py --tabla >> "$GITHUB_STEP_SUMMARY"
+
   build:
     name: PDF (${{ matrix.variant }})
     needs: gates

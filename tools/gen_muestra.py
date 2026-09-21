@@ -18,9 +18,9 @@ Cuando se escriban esas semanas que faltan, el contenido de
 content/muestra/q{2,3,4}.json se traslada tal cual a content/q{2,3,4}.json
 y este script deja de hacer falta.
 
-Reutiliza render_actividad/escapar/PLANTILLA_DIA de gen_days.py en vez de
-duplicarlos, para que una muestra nunca se pueda renderizar de forma
-distinta al libro real.
+Reutiliza render_actividad/escapar/PLANTILLA_DIA/validar_dia de
+gen_days.py en vez de duplicarlos, para que una muestra nunca se pueda
+renderizar ni validar de forma distinta al libro real.
 
 Uso:
     python3 tools/gen_muestra.py            # regenera content/generated-muestra.tex
@@ -34,11 +34,13 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from gen_days import (  # noqa: E402
     ErrorDeContenido,
-    FRASES_POR_TRIMESTRE,
+    INSTRUCCION_LECTURA_TRIMESTRE,
     PLANTILLA_DIA,
-    RANGO_TRIMESTRE,
     escapar,
+    formatear_oraciones,
     render_actividad,
+    texto_semana,
+    validar_dia,
 )
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -66,39 +68,6 @@ def cargar_dias():
     return dias
 
 
-def validar_dia(d):
-    """Las mismas reglas que gen_days.validar_dias aplicadas a UN día --
-    trimestre válido, número dentro del rango de ese trimestre, número de
-    frases correcto, frases bien terminadas -- pero sin exigir que los
-    días de la muestra sean consecutivos entre sí (lo son dentro de cada
-    bloque de 10, que es lo que importa)."""
-    num = d["dia"]
-    trimestre = d.get("trimestre")
-    if trimestre not in RANGO_TRIMESTRE:
-        raise ErrorDeContenido(f"día {num}: trimestre inválido: {trimestre!r}")
-
-    lo, hi = RANGO_TRIMESTRE[trimestre]
-    if not (lo <= num <= hi):
-        raise ErrorDeContenido(
-            f"día {num}: dice ser del trimestre {trimestre} (días {lo}-{hi}) "
-            "pero su número no está en ese rango"
-        )
-
-    oraciones = d.get("oraciones", [])
-    esperado_frases = FRASES_POR_TRIMESTRE[trimestre]
-    if len(oraciones) != esperado_frases:
-        raise ErrorDeContenido(
-            f"día {num} (trimestre {trimestre}): debería tener "
-            f"{esperado_frases} frase(s), tiene {len(oraciones)}"
-        )
-    for frase in oraciones:
-        if not frase.strip().endswith((".", "!", "?", "¡", "¿")):
-            raise ErrorDeContenido(
-                f"día {num}: la frase «{frase}» no termina en un signo de "
-                "puntuación final"
-            )
-
-
 def generar_tex(dias):
     piezas = [
         "% content/generated-muestra.tex\n",
@@ -107,15 +76,25 @@ def generar_tex(dias):
         "% tools/gen_muestra.py), NO el libro completo -- no forma parte de\n",
         "% main.tex ni de main-bw.tex.\n\n",
     ]
+
+    dias_por_semana = {}
+    for d in dias:
+        dias_por_semana.setdefault((d["trimestre"], d["semana"]), []).append(d)
+
     for d in dias:
         actividad_tex = render_actividad(d["dia"], d["actividad"])
-        oraciones = " ".join(escapar(o) for o in d["oraciones"])
+        if d["actividad"]["tipo"] == "relee":
+            oraciones_dia = texto_semana(dias_por_semana, d)
+        else:
+            oraciones_dia = d["oraciones"]
         piezas.append(
             PLANTILLA_DIA.substitute(
                 dia=d["dia"],
                 semana=d["semana"],
                 trimestre=d["trimestre"],
-                oraciones=oraciones,
+                tema=escapar(d.get("tema", "")),
+                instruccion=INSTRUCCION_LECTURA_TRIMESTRE[d["trimestre"]],
+                oraciones=formatear_oraciones(oraciones_dia, d["trimestre"]),
                 actividad=actividad_tex,
             )
         )
@@ -128,7 +107,7 @@ def main():
     try:
         dias = cargar_dias()
         for d in dias:
-            validar_dia(d)
+            validar_dia(d["dia"], d)
         tex = generar_tex(dias)
     except ErrorDeContenido as exc:
         print(f"ERROR: {exc}", file=sys.stderr)

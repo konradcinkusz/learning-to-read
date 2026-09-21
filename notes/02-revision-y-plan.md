@@ -37,6 +37,26 @@ renderizado, sino a partir del JSON y de las plantillas de
 maquetación (frases centradas, diálogo con comillas, etc.) conviene
 compilarlas con `make muestra` y mirarlas página a página.
 
+**Estado (actualizado tras Etapas 0–2):** hechas las tres primeras
+etapas de la Parte D — calendario y documentación (Etapa 0), la
+herramienta de métricas (Etapa 1) y el motor de página (Etapa 2), con
+un cambio de alcance respecto al plan original: al construir
+`content/progresion.json` se descubrió que la escalera, tal como está
+escrita en la Parte C, no la cumplía casi ninguno de los 60 días ya
+publicados (no solo los que el punto 2 señalaba) — ver el aviso al
+principio de la Etapa 1 más abajo. En vez de recalibrar la escalera o
+dejar el aviso pendiente, se reescribieron los 60 días para que la
+cumplan tal cual está escrita (palabras/página y frase más larga: 0
+errores); de paso se aplicaron el punto 10 completo (frases más
+cortas, diálogos con raya, el `relaciona` del día 14, las frases
+"meta" de los días 66/75/196/210) y la parte de la Etapa 3 que dependía
+de eso. Lo que **no** se ha tocado: los temas/calendario de T4 (sigue
+hablando de "el último trimestre" en vez de verano — eso es la
+reescritura de `content/muestra/q4.json` del punto 1, deliberadamente
+aparte) y las semanas 4–65, 81–195 y 211–260 que faltan por escribir
+(Etapa 3, sin empezar). Detalle exacto de qué se hizo y qué queda, en
+cada Etapa más abajo.
+
 ## Parte A — Qué ya funciona bien (no tocar)
 
 - Frases completas desde el primer día, sin restringir el alfabeto: es
@@ -345,7 +365,7 @@ crecen de forma lineal, semana a semana.
 
 ## Parte D — Orden de implementación
 
-### Etapa 0 — documentación (este PR)
+### Etapa 0 — documentación ✅ hecho
 
 1. Este documento: Parte B, Parte C y el calendario del punto 1.
 2. `notes/01-curriculum.md`: sustituir la tabla de trimestres y los
@@ -356,52 +376,114 @@ crecen de forma lineal, semana a semana.
 4. `frontmatter/mapa-del-curso.tex` y `frontmatter/como-usar.tex`:
    estaciones, frase sobre las vacaciones, regla 7.2.
 
-### Etapa 1 — medir la progresión (herramienta, para poder comprobar que es progresiva)
+### Etapa 1 — medir la progresión ✅ hecho, con un hallazgo que cambió el alcance
 
 - `content/progresion.json`: 52 filas con los objetivos de la Parte C
-  (generadas con una fórmula lineal, corregibles a mano).
-- `tools/metricas.py`: métricas por día/semana (como en la tabla del
-  punto 2, más los lemas nuevos), comparación con los objetivos; error
-  si se supera `palabras_max`/`frase_max`, aviso si se supera
-  `nuevas_max`. Modo `--tabla` para el resumen de CI.
-- `Makefile` `check` + el job `gates` de `build.yml`: ejecutar las
-  métricas y `gen_muestra.py --check`.
+  (generadas con una fórmula lineal por tramos entre los puntos de
+  control de esa tabla, corregibles a mano).
+- `tools/metricas.py`: métricas por día/semana (palabras/página, frase
+  más larga, lemas de contenido nuevos), comparación con los objetivos;
+  error si se supera `palabras_max`/`frase_max`, aviso si se supera
+  `palabras_min` o `nuevas_max`. Modo `--tabla` para el resumen de CI.
+- `Makefile` `check` + el job `gates` de `build.yml`: ejecutan las
+  métricas, `gen_muestra.py --check` (antes no estaba en CI, punto 9) y
+  publican la tabla en `GITHUB_STEP_SUMMARY`.
+- **Hallazgo, antes de cerrar la Etapa**: al medir los 60 días
+  contra la escalera tal como está escrita en la Parte C, la superaban
+  no solo los días 76/77/79 (los que el punto 2 señalaba) sino
+  **prácticamente los 60** — incluido el día 1 (9 palabras contra un
+  objetivo de 8). Ante eso se preguntó cómo resolverlo (recalibrar la
+  escalera / dejarla como aviso sin bloquear / reescribir los 60 días
+  ya publicados) y se eligió **reescribir los 60 días** para que
+  cumplan la escalera tal cual está escrita — esto adelanta aquí la
+  parte del punto 10 y de la Etapa 3 que consistía en acortar frases y
+  pasar los diálogos a raya (ver más abajo). Con eso, `tools/metricas.py`
+  da 0 errores (`palabras_max`/`frase_max`) sobre los 60 días; quedan
+  avisos de `nuevas_max` en la mayoría (43/60) — esperado y documentado
+  en el punto 6, no bloquea `make check`.
 
-### Etapa 2 — el motor de página (`tools/gen_days.py`, `preamble.tex`, `lang/es.tex`)
+### Etapa 2 — el motor de página ✅ hecho (`tools/gen_days.py`, `preamble.tex`, `lang/es.tex`)
 
 - Imprimir `tema`; frases en líneas separadas desde T2, `\raggedright`,
-  bloqueo de partición de palabras; raya para el diálogo.
-- `\lblInstruccionLectura` según el trimestre; casillas "Leído: ☐ ☐ ☐"
-  en la cabecera de `diapagina`; `\totaldias`.
-- *Copia*: una sola copia con liniatura; nuevos tipos `rodea`,
-  `verdadero_falso`, `busca`, `ordena`, `relee` (texto de la semana
-  compuesto a partir de los días de lunes a jueves).
-- Validador: `TRIMESTRES_SIN_RESPONDE` se queda, pero T1 admite
-  `rodea`/`verdadero_falso`; comprobar que `relee` cabe en una página en
-  T4 (`tools/check_pages.py`).
-- Decisión aparte: LuaLaTeX + tipografía para primeros lectores.
+  bloqueo de partición de palabras (`\hyphenpenalty=10000` dentro de
+  `cajaLectura`); raya para el diálogo (con sangría francesa si envuelve
+  a una segunda línea).
+- Instrucción de lectura según el trimestre (`\lblInstruccionLecturaUno`
+  a `Cuatro` en `lang/es.tex`); casillas "Leído: ☐ sola ☐ con ayuda ☐
+  con dificultad" en la cabecera de `diapagina` (con `Notas` más corto,
+  en la misma línea para no perder media página); `\totaldias` (una
+  sola fuente de verdad, en `lang/es.tex`, usada por `preamble.tex` y
+  `backmatter/diploma.tex`).
+  Nota de implementación: `\begin{cajaLectura}[title=...]` (la sintaxis
+  "de toda la vida" de tcolorbox para sobreescribir una opción) **no
+  funciona** si el `\newtcolorbox` no declara un número de argumentos —
+  el texto `[title=...]` aparece literalmente dentro de la caja en vez
+  de fijar el título. Arreglo: declarar el título como argumento
+  obligatorio (`\newtcolorbox{cajaLectura}[1]{...,title=#1,...}`) y
+  pasarlo con `\begin{cajaLectura}{...}`.
+- *Copia*: una sola copia (antes de esta Etapa pedía tres, que no
+  cabían — punto 5). La liniatura sigue siendo una simple `\rule`, no
+  la pauta doble/cuadrícula que proponía el punto 5 — pendiente, no
+  bloqueante.
+- Nuevos tipos `rodea`, `verdadero_falso`, `busca`, `ordena`, `relee`
+  (con `relee` componiendo el texto de la semana automáticamente a
+  partir de los días anteriores con el mismo `trimestre`+`semana`, sin
+  tener que repetirlo en el JSON) — probados con un día de prueba de
+  cada tipo (no forma parte del contenido real, `content/q*.json` no
+  usa ninguno todavía; eso es la Etapa 3).
+- Validador: `TRIMESTRES_SIN_RESPONDE` se queda, T1 admite
+  `rodea`/`verdadero_falso`; `relee` sin ningún día anterior de su
+  semana falla con un mensaje claro en vez de generar una página vacía.
+  De paso, se separó `validar_dia` (un solo día) de `validar_dias` (la
+  continuidad 1..260 del libro real) y `tools/gen_muestra.py` importa
+  la misma función en vez de duplicarla (arregla el punto 9).
+  "Comprobar que `relee` cabe en una página en T4" queda para cuando la
+  Etapa 3 escriba el primer viernes de T4 con contenido real — la
+  comprobación (`tools/check_pages.py`) ya es genérica, no necesita
+  cambios, solo hace falta contenido real que la ejercite.
+- Decisión aparte, sin tocar: LuaLaTeX + tipografía para primeros
+  lectores (Andika/ABeeZee) — sigue pendiente.
+- Sin tocar, fuera del alcance de esta Etapa (punto 5, pero no listado
+  en los bullets de la Etapa 2): el tamaño de letra de lo que lee la
+  niña en `relaciona`/`adivina`/`repasa` (sigue en 11–14 pt) y el ~40 %
+  de página en blanco en los días de `relaciona`/`adivina`.
 
-### Etapa 3 — contenido (trabajo de autoría; se pueden preparar borradores para editar)
+### Etapa 3 — contenido (trabajo de autoría; parte ya hecha de rebote)
 
+- ~~Acortar las frases del punto 10; diálogos con raya~~ — **hecho**,
+  como parte del hallazgo de la Etapa 1 (ver arriba): los 60 días
+  publicados ya cumplen la escalera y usan raya en los diálogos; el
+  `relaciona` sin apoyo textual del día 14 y las frases "meta" de los
+  días 66/75/196/210 también se corrigieron.
 - Trasladar el fin de curso escolar de `content/muestra/q4.json` a las
-  semanas 37–39; reescribir T4 como verano + final con Dani.
-- Acortar las frases del punto 10; diálogos con raya.
-- Escribir las semanas 4–13 de T1 siguiendo la escalera (la Etapa 1
-  vigila los números); una semana = un PR, `make all-formats` en verde.
+  semanas 37–39; reescribir T4 como verano + final con Dani —
+  **pendiente**, deliberadamente no tocado en este PR (es una reescritura
+  de tramas/calendario, no de longitud de frase).
+- Escribir las semanas 4–13 de T1 (días 16–65) y el resto de T2, T3 y T4
+  (días 81–130, 146–195, 211–260) siguiendo la escalera (`tools/metricas.py`
+  ya vigila los números) — **pendiente**, el grueso del trabajo que
+  falta: 200 de los 260 días.
 
 ## Verificación
 
 - **Etapa 0**: `make generate && python3 tools/gen_days.py --check` sin
   cambios en el resultado (solo hay documentación); revisión visual del
-  Markdown.
+  Markdown. — Hecho, PR fusionado.
 - **Etapa 1**: `python3 tools/metricas.py --tabla` sobre los 60 días
-  actuales tiene que **enseñar** los problemas de los puntos 2 y 6 (los
-  días 76/79 por encima del presupuesto, T1 por encima del límite de
-  palabras nuevas) — eso es la prueba de que la herramienta funciona;
-  tras acortar según el punto 10, la tabla queda limpia.
-- **Etapa 2**: `make all-formats && make muestra` en verde en CI
-  (checklog, check_pages, `--check`); descargar el artefacto `pdf-color`
-  de *Actions* y revisar una página de cada tipo de actividad, y el
-  viernes de T4 (`relee`) — una sola página, sin `Overfull`.
-- **Etapa 3**: cada semana de contenido pasa las métricas y el CI; cada
-  trimestre, `make muestra` para comparar el nivel.
+  **mostró** los problemas de los puntos 2 y 6 antes de tocar nada
+  (prácticamente los 60 días por encima del presupuesto, no solo
+  76/77/79) — eso fue la prueba de que la herramienta funciona; tras
+  reescribir los 60 días, la tabla queda con 0 errores y avisos de
+  `nuevas_max` únicamente (esperado). Confirmado localmente con
+  `make all-formats && make muestra` (color, blanco y negro y muestra,
+  las tres limpias) porque este entorno no tenía TeX instalado al
+  empezar y se instaló para poder verificar en vez de adivinar.
+- **Etapa 2**: `make all-formats && make muestra` en verde (checklog,
+  check_pages, `--check`), confirmado localmente; los cinco tipos
+  nuevos y `relee` probados con un documento de prueba aparte (fuera
+  del contenido real) que compila sin errores ni `Overfull` y se
+  revisó página a página. Queda confirmarlo también en el PDF publicado
+  por CI (`pdf-color`/`pdf-bw`) una vez fusionado.
+- **Etapa 3**: cada semana de contenido nueva pasa las métricas y el
+  CI; cada trimestre, `make muestra` para comparar el nivel. Sigue
+  pendiente en su mayor parte (ver arriba).

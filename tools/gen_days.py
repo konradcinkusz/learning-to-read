@@ -31,14 +31,27 @@ RANGO_TRIMESTRE = {1: (1, 65), 2: (66, 130), 3: (131, 195), 4: (196, 260)}
 
 TIPOS_VALIDOS = {
     "dibuja", "completa", "copia", "responde", "relaciona", "adivina", "crea",
-    "repasa",
+    "repasa", "rodea", "verdadero_falso", "busca", "ordena", "relee",
 }
 
 # En el trimestre 1 la niña todavía no compone una respuesta escrita por
 # sí sola -- "responde" (pregunta abierta) no se usa hasta que sepa
-# hacerlo; "copia" (repasar la frase, tres veces) es lo que hay en su
-# lugar. Ver notes/01-curriculum.md, "Rotación de actividades".
+# hacerlo; "copia", "rodea" y "verdadero_falso" son lo que hay en su
+# lugar (comprensión sin exigir escritura). Ver notes/01-curriculum.md,
+# "Rotación de actividades", y notes/02-revision-y-plan.md, punto 4.
 TRIMESTRES_SIN_RESPONDE = {1}
+
+# Una instrucción de lectura por trimestre -- ver
+# notes/02-revision-y-plan.md, punto 5: "despacio, señalando cada
+# palabra" (T1) es lo contrario de lo que se espera de quien ya lee con
+# soltura (T4). Las cuatro cadenas viven en lang/es.tex; aquí solo se
+# elige cuál usar, vía el título de cajaLectura (ver PLANTILLA_DIA).
+INSTRUCCION_LECTURA_TRIMESTRE = {
+    1: r"\lblInstruccionLecturaUno",
+    2: r"\lblInstruccionLecturaDos",
+    3: r"\lblInstruccionLecturaTres",
+    4: r"\lblInstruccionLecturaCuatro",
+}
 
 
 class ErrorDeContenido(Exception):
@@ -66,6 +79,30 @@ def escapar(texto):
     return texto
 
 
+def formatear_oraciones(oraciones, trimestre):
+    """Texto de la caja de lectura, ya alineado según el trimestre.
+
+    T1: una sola frase, centrada -- igual que siempre. Desde T2: cada
+    frase en su propia línea, alineada a la izquierda (nunca centrada:
+    con dos o más frases, un bloque centrado hace que cada línea empiece
+    en un sitio distinto, el peor formato posible para quien empieza a
+    leer -- ver notes/02-revision-y-plan.md, punto 5). Una frase que
+    empieza por "—" es un diálogo (raya, no comillas rectas -- ver
+    preamble.tex sobre el bug de babel con comillas) y lleva sangría
+    francesa por si el diálogo ocupa más de una línea.
+    """
+    if trimestre == 1:
+        return r"\centering " + " ".join(escapar(o) for o in oraciones)
+
+    piezas = []
+    for oracion in oraciones:
+        texto = escapar(oracion)
+        if texto.startswith("—"):
+            texto = r"\hangindent=4mm\hangafter=1 " + texto
+        piezas.append(texto)
+    return r"\raggedright " + " \\\\\n".join(piezas)
+
+
 # --- una plantilla (string.Template, sustitución $var) por tipo de
 #     actividad -- usar Template en vez de f-strings porque el cuerpo
 #     está lleno de llaves de LaTeX y así no hay que escaparlas todas. --
@@ -89,8 +126,6 @@ PLANTILLA_COMPLETA = Template(
 PLANTILLA_COPIA = Template(
     r"""\actividadCopia{%
 \lblInstruccionCopia
-\lineaRespuesta
-\lineaRespuesta
 \lineaRespuesta
 }"""
 )
@@ -145,10 +180,61 @@ $prompt
 }"""
 )
 
+PLANTILLA_RODEA = Template(
+    r"""\actividadRodea{%
+\footnotesize\color{colorGris}\lblInstruccionRodea
+\par\vspace{3mm}\normalfont\large\color{black}
+$pregunta
+\par\vspace{6mm}
+\begin{center}
+\Large $opciones
+\end{center}
+\espacioDibujo[6cm]
+}"""
+)
+
+PLANTILLA_VERDADERO_FALSO = Template(
+    r"""\actividadVerdaderoFalso{%
+\footnotesize\color{colorGris}\lblInstruccionVerdaderoFalso
+\par\vspace{3mm}\normalfont\large\color{black}
+\renewcommand{\arraystretch}{2.2}
+\begin{tabularx}{\linewidth}{@{}X >{\centering\arraybackslash}p{30mm}@{}}
+$filas
+\end{tabularx}
+\renewcommand{\arraystretch}{1}
+}"""
+)
+
+PLANTILLA_BUSCA = Template(
+    r"""\actividadBusca{%
+$instruccion
+\espacioDibujo[8cm]
+}"""
+)
+
+PLANTILLA_ORDENA = Template(
+    r"""\actividadOrdena{%
+\footnotesize\color{colorGris}\lblInstruccionOrdena
+\par\vspace{3mm}\normalfont\large\color{black}
+\begin{itemize}[label=,leftmargin=10mm,itemsep=6mm]
+$filas
+\end{itemize}
+}"""
+)
+
+PLANTILLA_RELEE = Template(
+    r"""\actividadRelee{%
+\footnotesize\color{colorGris}\lblInstruccionRelee
+\par\vspace{3mm}\normalfont\normalsize\color{black}
+$prompt
+\espacioDibujo
+}"""
+)
+
 PLANTILLA_DIA = Template(
-    r"""\begin{diapagina}{$dia}{$semana}{$trimestre}
-\begin{cajaLectura}
-\centering\diafuente{$trimestre}%
+    r"""\begin{diapagina}{$dia}{$semana}{$trimestre}{$tema}
+\begin{cajaLectura}{$instruccion}
+\diafuente{$trimestre}%
 $oraciones
 \end{cajaLectura}
 \vspace{5mm}
@@ -225,6 +311,58 @@ def render_actividad(dia_num, actividad):
             banner=escapar(actividad["banner"]),
         )
 
+    if tipo == "rodea":
+        _campos_requeridos(dia_num, actividad, ["pregunta", "opciones"])
+        opciones = actividad["opciones"]
+        if len(opciones) < 2:
+            raise ErrorDeContenido(
+                f"día {dia_num}: rodea necesita al menos 2 opciones"
+            )
+        return PLANTILLA_RODEA.substitute(
+            pregunta=escapar(actividad["pregunta"]),
+            opciones=r"\hspace{12mm}".join(escapar(o) for o in opciones),
+        )
+
+    if tipo == "verdadero_falso":
+        _campos_requeridos(dia_num, actividad, ["afirmaciones"])
+        afirmaciones = actividad["afirmaciones"]
+        if not afirmaciones:
+            raise ErrorDeContenido(
+                f"día {dia_num}: verdadero_falso necesita al menos 1 afirmación"
+            )
+        filas = " \\\\\n".join(
+            f"{escapar(a)} & \\lblVerdadero\\ \\casilla \\quad \\lblFalso\\ \\casilla"
+            for a in afirmaciones
+        )
+        filas += " \\\\"
+        return PLANTILLA_VERDADERO_FALSO.substitute(filas=filas)
+
+    if tipo == "busca":
+        _campos_requeridos(dia_num, actividad, ["instruccion"])
+        return PLANTILLA_BUSCA.substitute(
+            instruccion=escapar(actividad["instruccion"])
+        )
+
+    if tipo == "ordena":
+        _campos_requeridos(dia_num, actividad, ["sucesos"])
+        sucesos = actividad["sucesos"]
+        if len(sucesos) < 2:
+            raise ErrorDeContenido(
+                f"día {dia_num}: ordena necesita al menos 2 sucesos"
+            )
+        rng = random.Random(dia_num)
+        sucesos_mezclados = sucesos[:]
+        while sucesos_mezclados == sucesos and len(sucesos) > 1:
+            rng.shuffle(sucesos_mezclados)
+        filas = "\n".join(
+            f"\\item \\casillaNumero\\ {escapar(s)}" for s in sucesos_mezclados
+        )
+        return PLANTILLA_ORDENA.substitute(filas=filas)
+
+    if tipo == "relee":
+        _campos_requeridos(dia_num, actividad, ["prompt"])
+        return PLANTILLA_RELEE.substitute(prompt=escapar(actividad["prompt"]))
+
     raise AssertionError("tipo validado arriba, no debería llegar aquí")
 
 
@@ -247,8 +385,62 @@ def cargar_dias():
     return dias
 
 
+def validar_dia(num, d):
+    """Comprueba las reglas de UN día -- trimestre válido, número dentro
+    de su rango, 'responde' no en un trimestre que lo bloquea, número de
+    frases correcto y frases bien terminadas (salvo 'relee', que compone
+    la semana y no tiene frases propias que contar).
+
+    No comprueba continuidad entre días -- de eso se encarga quien llama
+    esta función: validar_dias() (más abajo) exige 1..260 sin huecos
+    para el libro real; tools/gen_muestra.py no, porque la muestra deja
+    huecos deliberados entre trimestres (ver su cabecera)."""
+    if num < 1 or num > TOTAL_DIAS:
+        raise ErrorDeContenido(f"día {num}: fuera de rango (1-{TOTAL_DIAS})")
+
+    trimestre = d.get("trimestre")
+    if trimestre not in RANGO_TRIMESTRE:
+        raise ErrorDeContenido(f"día {num}: trimestre inválido: {trimestre!r}")
+
+    lo, hi = RANGO_TRIMESTRE[trimestre]
+    if not (lo <= num <= hi):
+        raise ErrorDeContenido(
+            f"día {num}: dice ser del trimestre {trimestre} "
+            f"(días {lo}-{hi}) pero su número no está en ese rango"
+        )
+
+    tipo_actividad = d.get("actividad", {}).get("tipo")
+    if tipo_actividad == "responde" and trimestre in TRIMESTRES_SIN_RESPONDE:
+        raise ErrorDeContenido(
+            f"día {num}: 'responde' no se usa en el trimestre {trimestre} "
+            "-- la niña todavía no compone una respuesta escrita por sí "
+            "sola a esta edad; usa 'copia', 'rodea' o 'verdadero_falso' "
+            "en su lugar"
+        )
+
+    if tipo_actividad == "relee":
+        return
+
+    oraciones = d.get("oraciones", [])
+    esperado_frases = FRASES_POR_TRIMESTRE[trimestre]
+    if len(oraciones) != esperado_frases:
+        raise ErrorDeContenido(
+            f"día {num} (trimestre {trimestre}): debería tener "
+            f"{esperado_frases} frase(s), tiene {len(oraciones)}"
+        )
+    for frase in oraciones:
+        if not frase.strip().endswith((".", "!", "?", "¡", "¿")):
+            # una frase real termina en punto/exclamación -- si no,
+            # probablemente es un fragmento a medio escribir.
+            raise ErrorDeContenido(
+                f"día {num}: la frase «{frase}» no termina en un signo "
+                "de puntuación final"
+            )
+
+
 def validar_dias(dias):
-    """Comprueba las reglas del curso. Lanza ErrorDeContenido si algo falla."""
+    """Comprueba las reglas del curso -- exige además que los días sean
+    1..260 sin huecos, que es lo que hace a esta lista EL libro real."""
     if not dias:
         raise ErrorDeContenido("no hay ningún día en content/q*.json")
 
@@ -261,44 +453,29 @@ def validar_dias(dias):
                 f"se esperaba el día {esperado}, se encontró el día {num}"
             )
         esperado += 1
+        validar_dia(num, d)
 
-        if num < 1 or num > TOTAL_DIAS:
-            raise ErrorDeContenido(f"día {num}: fuera de rango (1-{TOTAL_DIAS})")
 
-        trimestre = d.get("trimestre")
-        if trimestre not in RANGO_TRIMESTRE:
-            raise ErrorDeContenido(f"día {num}: trimestre inválido: {trimestre!r}")
-
-        lo, hi = RANGO_TRIMESTRE[trimestre]
-        if not (lo <= num <= hi):
-            raise ErrorDeContenido(
-                f"día {num}: dice ser del trimestre {trimestre} "
-                f"(días {lo}-{hi}) pero su número no está en ese rango"
-            )
-
-        tipo_actividad = d.get("actividad", {}).get("tipo")
-        if tipo_actividad == "responde" and trimestre in TRIMESTRES_SIN_RESPONDE:
-            raise ErrorDeContenido(
-                f"día {num}: 'responde' no se usa en el trimestre {trimestre} "
-                "-- la niña todavía no compone una respuesta escrita por sí "
-                "sola a esta edad; usa 'copia' en su lugar"
-            )
-
-        oraciones = d.get("oraciones", [])
-        esperado_frases = FRASES_POR_TRIMESTRE[trimestre]
-        if len(oraciones) != esperado_frases:
-            raise ErrorDeContenido(
-                f"día {num} (trimestre {trimestre}): debería tener "
-                f"{esperado_frases} frase(s), tiene {len(oraciones)}"
-            )
-        for frase in oraciones:
-            if not frase.strip().endswith((".", "!", "?", "¡", "¿")):
-                # una frase real termina en punto/exclamación -- si no,
-                # probablemente es un fragmento a medio escribir.
-                raise ErrorDeContenido(
-                    f"día {num}: la frase «{frase}» no termina en un signo "
-                    "de puntuación final"
-                )
+def texto_semana(dias_por_semana, dia_actual):
+    """Para un día 'relee': las frases de los días anteriores de la
+    misma semana (lunes a jueves), en orden -- ver notes/02-revision-y-plan.md,
+    punto 3. No hace falta repetir el texto en el JSON de un día 'relee':
+    se compone solo, a partir de lo que ya se escribió esa semana."""
+    clave = (dia_actual["trimestre"], dia_actual["semana"])
+    anteriores = [
+        d for d in dias_por_semana.get(clave, [])
+        if d["dia"] < dia_actual["dia"] and d["actividad"]["tipo"] != "relee"
+    ]
+    anteriores.sort(key=lambda d: d["dia"])
+    oraciones = []
+    for d in anteriores:
+        oraciones.extend(d["oraciones"])
+    if not oraciones:
+        raise ErrorDeContenido(
+            f"día {dia_actual['dia']}: 'relee' no encuentra ningún día "
+            "anterior de la misma semana del que componer el texto"
+        )
+    return oraciones
 
 
 def generar_tex(dias):
@@ -308,15 +485,25 @@ def generar_tex(dias):
         "% NO EDITAR A MANO -- los cambios se perderán en la siguiente\n",
         "% ejecución de `make generate`. Edita content/q*.json en su lugar.\n\n",
     ]
+
+    dias_por_semana = {}
+    for d in dias:
+        dias_por_semana.setdefault((d["trimestre"], d["semana"]), []).append(d)
+
     for d in dias:
         actividad_tex = render_actividad(d["dia"], d["actividad"])
-        oraciones = " ".join(escapar(o) for o in d["oraciones"])
+        if d["actividad"]["tipo"] == "relee":
+            oraciones_dia = texto_semana(dias_por_semana, d)
+        else:
+            oraciones_dia = d["oraciones"]
         piezas.append(
             PLANTILLA_DIA.substitute(
                 dia=d["dia"],
                 semana=d["semana"],
                 trimestre=d["trimestre"],
-                oraciones=oraciones,
+                tema=escapar(d.get("tema", "")),
+                instruccion=INSTRUCCION_LECTURA_TRIMESTRE[d["trimestre"]],
+                oraciones=formatear_oraciones(oraciones_dia, d["trimestre"]),
                 actividad=actividad_tex,
             )
         )

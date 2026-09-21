@@ -10,7 +10,7 @@
     {
       "dia": 1, "semana": 1, "trimestre": 1,
       "tema": "La familia de Lucía",
-      "oraciones": ["Lucía tiene seis años y le encanta leer cuentos."],
+      "oraciones": ["Lucía tiene seis años y le encanta leer."],
       "actividad": {
         "tipo": "dibuja",
         "prompt": "Dibuja a Lucía leyendo su cuento favorito."
@@ -19,7 +19,7 @@
     {
       "dia": 2, "semana": 1, "trimestre": 1,
       "tema": "La familia de Lucía",
-      "oraciones": ["Dani es su hermano pequeño y siempre quiere jugar con ella."],
+      "oraciones": ["Dani es su hermano pequeño y quiere jugar."],
       "actividad": {
         "tipo": "completa",
         "diagrama": "lineas-ondas"
@@ -28,7 +28,7 @@
     {
       "dia": 3, "semana": 1, "trimestre": 1,
       "tema": "La familia de Lucía",
-      "oraciones": ["Toby es un perro marrón con las orejas muy largas."],
+      "oraciones": ["Toby es un perro marrón de orejas largas."],
       "actividad": {
         "tipo": "copia"
       }
@@ -36,7 +36,7 @@
     {
       "dia": 4, "semana": 1, "trimestre": 1,
       "tema": "La familia de Lucía",
-      "oraciones": ["Los domingos, toda la familia come junta en casa de la abuela Rosa."],
+      "oraciones": ["Los domingos van a casa de la abuela."],
       "actividad": {
         "tipo": "relaciona",
         "pares": [
@@ -50,7 +50,7 @@
     {
       "dia": 5, "semana": 1, "trimestre": 1,
       "tema": "La familia de Lucía",
-      "oraciones": ["A Lucía le gusta mucho su familia porque siempre se ríen juntos."],
+      "oraciones": ["A Lucía le gusta mucho su familia."],
       "actividad": {
         "tipo": "crea",
         "prompt": "Dibuja a tu propia familia. Cuéntale a un adulto qué es lo que más te gusta hacer juntos."
@@ -59,7 +59,7 @@
     {
       "dia": 6, "semana": 2, "trimestre": 1,
       "tema": "Toby, el perro juguetón",
-      "oraciones": ["Toby corre muy rápido cuando ve su pelota roja."],
+      "oraciones": ["Toby corre muy rápido detrás de su pelota."],
       "actividad": {
         "tipo": "dibuja",
         "prompt": "Dibuja a Toby corriendo detrás de su pelota roja."
@@ -68,7 +68,7 @@
     {
       "dia": 7, "semana": 2, "trimestre": 1,
       "tema": "Toby, el perro juguetón",
-      "oraciones": ["Cada tarde, Dani y Toby juegan juntos en el jardín."],
+      "oraciones": ["Dani y Toby juegan juntos en el jardín."],
       "actividad": {
         "tipo": "completa",
         "diagrama": "lineas-circulo"
@@ -77,7 +77,7 @@
     {
       "dia": 8, "semana": 2, "trimestre": 1,
       "tema": "Toby, el perro juguetón",
-      "oraciones": ["A veces, Toby se esconde debajo de la cama y no quiere salir."],
+      "oraciones": ["A veces Toby se esconde bajo la cama."],
       "actividad": {
         "tipo": "copia"
       }
@@ -85,7 +85,7 @@
     {
       "dia": 9, "semana": 2, "trimestre": 1,
       "tema": "Toby, el perro juguetón",
-      "oraciones": ["Lucía le da un hueso a Toby y él mueve la cola muy feliz."],
+      "oraciones": ["Lucía le da un hueso a Toby."],
       "actividad": {
         "tipo": "adivina",
         "adivinanza": "Tengo cuatro patas, muevo la cola y ladro fuerte. ¿Quién soy?"
@@ -94,7 +94,7 @@
     {
       "dia": 10, "semana": 2, "trimestre": 1,
       "tema": "Toby, el perro juguetón",
-      "oraciones": ["Toby es el mejor amigo de toda la familia, sobre todo de Lucía."],
+      "oraciones": ["Toby es el mejor amigo de la familia."],
       "actividad": {
         "tipo": "repasa",
         "checklist": [
@@ -109,7 +109,7 @@
     {
       "dia": 11, "semana": 3, "trimestre": 1,
       "tema": "El colegio de Lucía",
-      "oraciones": ["Lucía va cada mañana al colegio con su mochila azul favorita."],
+      "oraciones": ["Lucía va al colegio con su mochila azul."],
       "actividad": {
         "tipo": "dibuja",
         "prompt": "Dibuja a Lucía de camino al colegio con su mochila."
@@ -118,7 +118,7 @@
     {
       "dia": 12, "semana": 3, "trimestre": 1,
       "tema": "El colegio de Lucía",
-      "oraciones": ["Su profesora se llama Marta y siempre empieza la clase con un cuento."],
+      "oraciones": ["Su profesora, Marta, empieza con un cuento."],
       "actividad": {
         "tipo": "completa",
         "diagrama": "lineas-ondas"
@@ -127,7 +127,7 @@
     {
       "dia": 13, "semana": 3, "trimestre": 1,
       "tema": "El colegio de Lucía",
-      "oraciones": ["En el recreo, Lucía juega con su nueva amiga Sofía a saltar a la comba."],
+      "oraciones": ["Lucía juega con Sofía, su amiga nueva."],
       "actividad": {
         "tipo": "copia"
       }
@@ -135,21 +135,21 @@
     {
       "dia": 14, "semana": 3, "trimestre": 1,
       "tema": "El colegio de Lucía",
-      "oraciones": ["Cada niño de la clase cuelga su abrigo en una percha con su nombre."],
+      "oraciones": ["Lucía cuelga su abrigo en una percha."],
       "actividad": {
         "tipo": "relaciona",
         "pares": [
           ["Lucía", "tiene mochila azul"],
           ["Marta", "es la profesora"],
           ["Sofía", "es su amiga nueva"],
-          ["Dani", "va a la clase de los pequeños"]
+          ["Dani", "es el hermano pequeño"]
         ]
       }
     },
     {
       "dia": 15, "semana": 3, "trimestre": 1,
       "tema": "El colegio de Lucía",
-      "oraciones": ["A la salida, Lucía le cuenta a Mamá todo lo que ha aprendido ese día."],
+      "oraciones": ["Lucía le cuenta todo a Mamá."],
       "actividad": {
         "tipo": "crea",
         "prompt": "Dibuja tu clase o cuéntale a un adulto qué es lo que más te gusta de ir al colegio."

@@ -105,9 +105,24 @@
   }
 }
 
-\newtcolorbox{cajaLectura}{cajabase,
+% El título es un argumento obligatorio (#1) en vez de un valor fijo:
+% tools/gen_days.py elige qué instrucción pasar según el trimestre de
+% cada día (ver PLANTILLA_DIA, \begin{cajaLectura}{...}). Probado a
+% mano que \begin{cajaLectura}[title=...] (la sintaxis "de toda la
+% vida" para sobreescribir una opción de tcolorbox) NO funciona aquí --
+% \newtcolorbox sin un número de argumentos declarado no admite ese
+% corchete, y el texto "[title=...]" acaba escrito literalmente dentro
+% de la caja; declarar el título como argumento obligatorio es la forma
+% que sí funciona.
+% before upper bloquea la partición de palabras SOLO dentro de esta
+% caja -- ver notes/02-revision-y-plan.md, punto 5: en cuanto el texto
+% deja de estar centrado (trimestre 2 en adelante), LaTeX empieza a
+% partir palabras a final de línea para justificar, y a los 6 años eso
+% es ruido, no ayuda.
+\newtcolorbox{cajaLectura}[1]{cajabase,
   colback=colorLecturaClaro, colframe=colorLectura, colbacktitle=colorLectura,
-  title=\lblInstruccionLectura}
+  title=#1,
+  before upper={\hyphenpenalty=10000\exhyphenpenalty=10000}}
 
 \newtcolorbox{cajaDibuja}{cajabase,
   colback=colorDibujaClaro, colframe=colorDibuja, colbacktitle=colorDibuja,
@@ -141,6 +156,33 @@
   colback=colorCreaClaro, colframe=colorCrea, colbacktitle=colorCrea,
   title=\lblRepasa}
 
+% Los cinco tipos nuevos del ciclo objetivo (ver
+% notes/02-revision-y-plan.md, punto 3): reutilizan el color de la
+% actividad más parecida en vez de añadir tonos nuevos a la paleta --
+% rodea/verdadero_falso/ordena son variantes de "comprobar sin escribir
+% mucho" (como Responde/Copia), busca es una tarea a nivel de palabra
+% (como Completa), y relee es, literalmente, releer (como la propia
+% caja de lectura).
+\newtcolorbox{cajaRodea}{cajabase,
+  colback=colorRespondeClaro, colframe=colorResponde, colbacktitle=colorResponde,
+  title=\lblRodea}
+
+\newtcolorbox{cajaVerdaderoFalso}{cajabase,
+  colback=colorRespondeClaro, colframe=colorResponde, colbacktitle=colorResponde,
+  title=\lblVerdaderoFalso}
+
+\newtcolorbox{cajaBusca}{cajabase,
+  colback=colorCompletaClaro, colframe=colorCompleta, colbacktitle=colorCompleta,
+  title=\lblBusca}
+
+\newtcolorbox{cajaOrdena}{cajabase,
+  colback=colorRespondeClaro, colframe=colorResponde, colbacktitle=colorResponde,
+  title=\lblOrdena}
+
+\newtcolorbox{cajaRelee}{cajabase,
+  colback=colorLecturaClaro, colframe=colorLectura, colbacktitle=colorLectura,
+  title=\lblRelee}
+
 % Envoltorios de actividad: el color/título ya está fijado arriba; el
 % contenido concreto (texto, tabla, dibujo, espacio en blanco) se escribe
 % al llamar a la macro, así que cada día es libre de necesitar cosas
@@ -157,6 +199,11 @@
 \newcommand{\actividadAdivina}[1]{\begin{cajaAdivina}#1\end{cajaAdivina}}
 \newcommand{\actividadCrea}[1]{\begin{cajaCrea}#1\end{cajaCrea}}
 \newcommand{\actividadRepasa}[1]{\begin{cajaRepasa}#1\end{cajaRepasa}}
+\newcommand{\actividadRodea}[1]{\begin{cajaRodea}#1\end{cajaRodea}}
+\newcommand{\actividadVerdaderoFalso}[1]{\begin{cajaVerdaderoFalso}#1\end{cajaVerdaderoFalso}}
+\newcommand{\actividadBusca}[1]{\begin{cajaBusca}\large#1\end{cajaBusca}}
+\newcommand{\actividadOrdena}[1]{\begin{cajaOrdena}#1\end{cajaOrdena}}
+\newcommand{\actividadRelee}[1]{\begin{cajaRelee}\large#1\end{cajaRelee}}
 
 % Piezas reutilizables dentro de una actividad. El bloque de lectura de
 % T1 deja mucho sitio en la página, así que el espacio en blanco por
@@ -166,6 +213,9 @@
 \newcommand{\espacioDibujo}[1][11cm]{\vspace{#1}}
 \newcommand{\lineaRespuesta}{\par\vspace{13mm}\noindent\rule{\linewidth}{0.4pt}}
 \newcommand{\casilla}{\raisebox{-0.15ex}{\framebox[3.4mm][c]{\rule{0pt}{2.6mm}}}}
+% Como \casilla, pero más grande -- para escribir un número (1, 2, 3) a
+% mano dentro, en vez de solo marcar con una X. Usada por "ordena".
+\newcommand{\casillaNumero}{\raisebox{-0.6ex}{\framebox[6mm][c]{\rule{0pt}{5mm}}}}
 \newenvironment{listaRepaso}{%
   \begin{itemize}[label=\casilla, leftmargin=8mm, itemsep=2mm, topsep=2mm]
 }{%
@@ -189,7 +239,7 @@
 % =========================================================================
 % La página de un día.
 %
-%   \begin{diapagina}{numero}{semana}{trimestre}
+%   \begin{diapagina}{numero}{semana}{trimestre}{tema}
 %     \begin{cajaLectura}
 %     \centering\diafuente{trimestre}
 %     Texto de lectura (una o varias frases).
@@ -198,23 +248,33 @@
 %     \actividadX{...}
 %   \end{diapagina}
 %
-% \begin{diapagina} solo pone la cabecera (Día/Semana/Trimestre, Fecha,
-% Notas) y \label{dia:N}; \end{diapagina} pone el pie y \newpage. Todo lo
-% de en medio (la caja de lectura y la actividad) se escribe explícito,
-% para que cada día pueda tener una actividad completamente distinta sin
-% que la macro tenga que saber de antemano qué forma tiene.
+% \begin{diapagina} pone la cabecera (Día/Semana/Trimestre, tema, Fecha,
+% Leído, Notas) y \label{dia:N}; \end{diapagina} pone el pie y \newpage.
+% Todo lo de en medio (la caja de lectura y la actividad) se escribe
+% explícito, para que cada día pueda tener una actividad completamente
+% distinta sin que la macro tenga que saber de antemano qué forma tiene.
+%
+% "Leído: [] sola [] con ayuda [] con dificultad" sustituye a un campo
+% de Notas más grande -- ver notes/02-revision-y-plan.md, punto 5: tres
+% casillas que un adulto marca en 2 segundos, cada día, terminan siendo
+% un registro de progreso de todo el año sin ningún esfuerzo extra. El
+% campo Notas se queda, más corto, para lo que no cabe en una casilla.
 % =========================================================================
-\newenvironment{diapagina}[3]{%
+\newenvironment{diapagina}[4]{%
   \label{dia:#1}%
   \def\diapagina@actual{#1}%
   \noindent{\LARGE\bfseries\lblDia~#1}\quad
   {\large(\lblSemana~#2 \textperiodcentered\ \lblTrimestre~#3)}\par
+  {\normalsize\bfseries\color{colorGris}#4}\par
   \vspace{1mm}
-  \textbf{\lblFecha:} \rule{32mm}{0.4pt}\hspace{10mm}%
-  \textbf{\lblNotas:} \rule{55mm}{0.4pt}\par
-  \vspace{4mm}
+  \textbf{\lblFecha:} \rule{22mm}{0.4pt}\hspace{4mm}%
+  \textbf{\lblLeido:} \casilla\ \lblLeidoSola\quad
+  \casilla\ \lblLeidoConAyuda\quad
+  \casilla\ \lblLeidoConDificultad\hspace{4mm}%
+  \textbf{\lblNotas:} \rule{20mm}{0.4pt}\par
+  \vspace{3mm}
 }{%
   \vfill
-  \begin{center}\footnotesize\color{colorGris}\lblDia~\diapagina@actual~/ 260\end{center}
+  \begin{center}\footnotesize\color{colorGris}\lblDia~\diapagina@actual~/ \totaldias\end{center}
   \newpage
 }
