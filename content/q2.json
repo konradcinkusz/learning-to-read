@@ -11,8 +11,8 @@
         "Lucía se pone la bufanda de la abuela."
       ],
       "actividad": {
-        "tipo": "dibuja",
-        "prompt": "Dibuja a Lucía con su bufanda roja."
+        "tipo": "traza",
+        "letra": "g"
       }
     },
     {
@@ -98,8 +98,8 @@
         "Mamá hace una tarta de chocolate."
       ],
       "actividad": {
-        "tipo": "dibuja",
-        "prompt": "Dibuja la tarta de cumpleaños de Papá."
+        "tipo": "traza",
+        "letra": "h"
       }
     },
     {
@@ -262,8 +262,8 @@
         "Marta enseña a hacer palomas de papel."
       ],
       "actividad": {
-        "tipo": "dibuja",
-        "prompt": "Dibuja la paloma de papel que hace la clase de Lucía."
+        "tipo": "traza",
+        "letra": "i"
       }
     },
     {
@@ -423,8 +423,8 @@
         "Va a enseñar a Lucía a tejer."
       ],
       "actividad": {
-        "tipo": "dibuja",
-        "prompt": "Dibuja los ovillos de lana de colores de la abuela."
+        "tipo": "traza",
+        "letra": "j"
       }
     },
     {
@@ -584,8 +584,8 @@
         "Papá dice que hay que celebrarlo con una fiesta pequeña."
       ],
       "actividad": {
-        "tipo": "dibuja",
-        "prompt": "Dibuja a Toby el día que llegó a la familia."
+        "tipo": "traza",
+        "letra": "k"
       }
     },
     {
@@ -745,8 +745,8 @@
         "Cada uno planta tres semillas de judía en la tierra."
       ],
       "actividad": {
-        "tipo": "dibuja",
-        "prompt": "Dibuja tu maceta con las semillas recién plantadas."
+        "tipo": "traza",
+        "letra": "l"
       }
     },
     {
@@ -906,8 +906,8 @@
         "Los almendros del parque están llenos de flores blancas."
       ],
       "actividad": {
-        "tipo": "dibuja",
-        "prompt": "Dibuja los almendros en flor del parque."
+        "tipo": "traza",
+        "letra": "m"
       }
     },
     {

@@ -40,7 +40,12 @@ jobs:
 
       # Nada generado está comprometido en git (content/generated-days.tex
       # es GENERADO, no se sube), así que un checkout limpio tiene que
-      # generarlo antes de poder validar nada.
+      # generarlo antes de poder validar nada. content/letras-trazo.json
+      # (el contorno de cada letra para la actividad "traza") SÍ está en
+      # git -- tools/gen_days.py lo lee directamente, sin depender de
+      # matplotlib/fonttools (eso solo hace falta para regenerarlo, ver
+      # tools/gen_letras_puntos.py), así que este job no gana ninguna
+      # dependencia pesada por esa actividad.
       - name: Genera content/generated-days.tex desde content/q*.json
         run: make generate
 

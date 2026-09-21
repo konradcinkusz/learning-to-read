@@ -201,6 +201,12 @@
   colback=colorLecturaClaro, colframe=colorLectura, colbacktitle=colorLectura,
   title=\lblRelee}
 
+% "Traza" reutiliza el color de "Copia"/"Responde" -- las dos son,
+% igual que "traza", practicar a mano (letra o respuesta), no leer.
+\newtcolorbox{cajaTraza}{cajabase,
+  colback=colorRespondeClaro, colframe=colorResponde, colbacktitle=colorResponde,
+  title=\lblTraza}
+
 % Envoltorios de actividad: el color/título ya está fijado arriba; el
 % contenido concreto (texto, tabla, dibujo, espacio en blanco) se escribe
 % al llamar a la macro, así que cada día es libre de necesitar cosas
@@ -222,6 +228,7 @@
 \newcommand{\actividadBusca}[1]{\begin{cajaBusca}\large#1\end{cajaBusca}}
 \newcommand{\actividadOrdena}[1]{\begin{cajaOrdena}#1\end{cajaOrdena}}
 \newcommand{\actividadRelee}[1]{\begin{cajaRelee}\large#1\end{cajaRelee}}
+\newcommand{\actividadTraza}[1]{\begin{cajaTraza}#1\end{cajaTraza}}
 
 % Piezas reutilizables dentro de una actividad. El bloque de lectura de
 % T1 deja mucho sitio en la página, así que el espacio en blanco por
