@@ -1,0 +1,93 @@
+# El cuaderno necesita una dirección.
+#
+# Sin esto, la única forma de conseguir el PDF es clonar el repositorio e
+# instalar una distribución de TeX -- un precio demasiado alto para un
+# padre o una madre que solo quiere imprimir la página de hoy. Esto
+# compila y publica en cada push a `main`.
+#
+# Duplica a propósito los pasos de compilación de build.yml, y lee su
+# propio log con tools/checklog.py en vez de fiarse de otro workflow:
+# Pages no debe publicar nunca un PDF que no se haya construido limpio.
+#
+# NOTA PARA EL PRIMER DESPLIEGUE: crear la página de Pages de un
+# repositorio por primera vez es una acción administrativa, y
+# `administration` no es un permiso que el token de un workflow pueda
+# recibir -- ningún valor de `enablement` llega hasta ahí. Alguien con
+# permisos de administrador tiene que entrar una vez en Settings -> Pages
+# -> Build and deployment -> Source y elegir "GitHub Actions". Cada push
+# después de eso se publica sin nada más que hacer aquí.
+
+name: Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Genera content/generated-days.tex desde content/q*.json
+        run: make generate
+
+      - name: Valida el contenido antes de publicar nada
+        run: python3 tools/gen_days.py --check
+
+      - name: Compila el cuaderno
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: main.tex
+          latexmk_use_lualatex: false
+          args: -pdf -interaction=nonstopmode -file-line-error
+
+      - name: Lee el log correctamente
+        run: python3 tools/checklog.py main.log
+
+      - name: Cada día ocupa exactamente una página
+        run: python3 tools/check_pages.py main.aux
+
+      - name: Monta el sitio
+        run: |
+          mkdir -p _site
+          cp docs/index.html _site/
+          cp main.pdf _site/aprendo-a-leer.pdf
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - id: deploy
+        uses: actions/deploy-pages@v4
+
+      - name: Si configure-pages ha fallado
+        if: failure()
+        run: |
+          {
+            echo '## Si esto ha fallado en configure-pages'
+            echo
+            echo 'Crear la página de Pages de un repositorio por primera vez'
+            echo 'es una acción administrativa que ningún token de workflow'
+            echo 'puede hacer. Alguien con permisos de administrador debe'
+            echo 'entrar una vez en Settings -> Pages -> Build and'
+            echo 'deployment -> Source y elegir "GitHub Actions".'
+          } >> "$GITHUB_STEP_SUMMARY"

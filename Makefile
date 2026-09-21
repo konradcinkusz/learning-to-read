@@ -12,6 +12,7 @@ build:
 	$(LATEX) $(MAIN).tex
 
 check:
+	python3 tools/checklog.py $(MAIN).log
 	python3 tools/check_pages.py $(MAIN).aux
 	python3 tools/gen_days.py --check
 
