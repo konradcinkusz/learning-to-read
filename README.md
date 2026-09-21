@@ -50,6 +50,8 @@ make build        # solo compila la versión en color (asume que ya está genera
 make build-bw     # solo compila la versión en blanco y negro
 make check        # lee main.log + 1 día = 1 página (lee main.aux) + valida el JSON
 make check-bw     # lo mismo, sobre main-bw.log / main-bw.aux
+make muestra      # 40 páginas -- los 10 primeros días reales de cada trimestre, para
+                  # comparar el nivel; NO es el cuaderno, ver notes/01-curriculum.md
 make clean
 ```
 
@@ -67,6 +69,7 @@ backmatter/diploma.tex                -- página final
 tools/gen_days.py                     -- JSON -> LaTeX + validación
 tools/check_pages.py                  -- comprueba que cada día ocupa una sola página
 tools/checklog.py                     -- lee el .log de pdflatex correctamente (nunca grep '^!')
+main-muestra.tex, tools/gen_muestra.py, content/muestra/  -- muestra de progresión, no el libro (ver notes/01-curriculum.md)
 docs/index.html                       -- la página que publica .github/workflows/pages.yml
 .github/workflows/build.yml           -- compila (color + blanco-y-negro) y valida en cada push/PR
 .github/workflows/pages.yml           -- publica los dos PDF en GitHub Pages en cada push a main
@@ -75,6 +78,9 @@ notes/01-curriculum.md                -- el plan del curso completo
 
 ## Estado
 
-Días 1–10 escritos y con sus actividades. El resto del Trimestre 1
-(semanas 3–13) y los Trimestres 2–4 están esquematizados en
-`notes/01-curriculum.md` pero sin frases escritas todavía.
+Días 1–10 (Trimestre 1) escritos y con sus actividades -- son los que
+publica el cuaderno real. Los 10 primeros días reales de cada uno de
+los Trimestres 2, 3 y 4 también están escritos, como muestra de
+progresión (`content/muestra/`, `make muestra`) -- no forman parte
+todavía del cuaderno real porque las semanas que faltan entre medias no
+están escritas. El resto está esquematizado en `notes/01-curriculum.md`.

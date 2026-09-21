@@ -1,0 +1,136 @@
+{
+  "_comentario": "MUESTRA, no producción: los días reales 66-75 (primeras dos semanas del Trimestre 2), escritos para comparar el nivel entre trimestres -- ver tools/gen_muestra.py. Deliberadamente NO vive en content/ (el glob q*.json de la producción no debe verlo mientras los días 11-65 no existan). Cuando se escriban las semanas que faltan de T1 y el resto de T2, este fichero se traslada a content/q2.json tal cual.",
+  "dias": [
+    {
+      "dia": 66, "semana": 14, "trimestre": 2,
+      "tema": "El frío de enero",
+      "oraciones": [
+        "El segundo trimestre empieza y hace mucho frío.",
+        "Lucía se pone la bufanda roja de la abuela Rosa."
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Dibuja a Lucía con su bufanda roja."
+      }
+    },
+    {
+      "dia": 67, "semana": 14, "trimestre": 2,
+      "tema": "El frío de enero",
+      "oraciones": [
+        "A Dani le gusta la nieve, pero no le gusta el frío en las manos.",
+        "Por eso siempre lleva sus guantes azules."
+      ],
+      "actividad": {
+        "tipo": "completa",
+        "diagrama": "lineas-ondas"
+      }
+    },
+    {
+      "dia": 68, "semana": 14, "trimestre": 2,
+      "tema": "El frío de enero",
+      "oraciones": [
+        "Toby duerme junto a la chimenea porque allí hace calor.",
+        "Cuando Lucía lo llama, Toby no se quiere mover."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "pregunta": "¿Por qué Toby duerme junto a la chimenea?"
+      }
+    },
+    {
+      "dia": 69, "semana": 14, "trimestre": 2,
+      "tema": "El frío de enero",
+      "oraciones": [
+        "Dani quiere aprender a leer como su hermana, pero todavía confunde algunas letras.",
+        "Lucía le ayuda cada tarde, un poquito, cuando terminan de merendar."
+      ],
+      "actividad": {
+        "tipo": "relaciona",
+        "pares": [
+          ["Lucía", "ya lee sola"],
+          ["Dani", "está aprendiendo"],
+          ["Toby", "no sabe leer"],
+          ["Abuela Rosa", "les lee cuentos"]
+        ]
+      }
+    },
+    {
+      "dia": 70, "semana": 14, "trimestre": 2,
+      "tema": "El frío de enero",
+      "oraciones": [
+        "El sábado toda la familia va a ver la nieve a la montaña, porque este año ha nevado mucho.",
+        "Lucía y Dani hacen un muñeco de nieve muy grande."
+      ],
+      "actividad": {
+        "tipo": "crea",
+        "prompt": "Dibuja tu propio muñeco de nieve. ¿Qué le pondrías de nariz?"
+      }
+    },
+    {
+      "dia": 71, "semana": 15, "trimestre": 2,
+      "tema": "El cumpleaños de Papá",
+      "oraciones": [
+        "Hoy es el cumpleaños de Papá y toda la familia prepara una sorpresa.",
+        "Mamá hace una tarta de chocolate porque es su favorita."
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Dibuja la tarta de cumpleaños de Papá."
+      }
+    },
+    {
+      "dia": 72, "semana": 15, "trimestre": 2,
+      "tema": "El cumpleaños de Papá",
+      "oraciones": [
+        "Dani esconde los globos debajo de la mesa, pero se le escapa uno.",
+        "Toby persigue el globo por todo el salón."
+      ],
+      "actividad": {
+        "tipo": "completa",
+        "diagrama": "lineas-circulo"
+      }
+    },
+    {
+      "dia": 73, "semana": 15, "trimestre": 2,
+      "tema": "El cumpleaños de Papá",
+      "oraciones": [
+        "Cuando Papá abre la puerta, toda la familia grita \"¡Sorpresa!\".",
+        "Papá se pone muy contento y le da un abrazo a cada uno."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "pregunta": "¿Qué grita la familia cuando Papá abre la puerta?"
+      }
+    },
+    {
+      "dia": 74, "semana": 15, "trimestre": 2,
+      "tema": "El cumpleaños de Papá",
+      "oraciones": [
+        "El regalo de Dani para Papá es un dibujo, y Lucía le ha escrito una frase.",
+        "Papá dice que es el mejor regalo de todos."
+      ],
+      "actividad": {
+        "tipo": "adivina",
+        "adivinanza": "Una vez al año llego, con velas y tarta te alegro. ¿Quién soy?"
+      }
+    },
+    {
+      "dia": 75, "semana": 15, "trimestre": 2,
+      "tema": "El cumpleaños de Papá",
+      "oraciones": [
+        "Esa noche, Lucía escribe en su cuaderno todo lo que ha pasado en estas dos semanas.",
+        "Dice que el segundo trimestre ha empezado muy bien."
+      ],
+      "actividad": {
+        "tipo": "repasa",
+        "checklist": [
+          "Sé por qué Toby duerme junto a la chimenea.",
+          "Sé qué tarta hizo Mamá para Papá.",
+          "Sé cómo ayuda Lucía a Dani a leer."
+        ],
+        "prompt": "Dibuja tu recuerdo favorito de estas dos semanas.",
+        "banner": "¡75 páginas leídas! Ya estás en el segundo trimestre."
+      }
+    }
+  ]
+}

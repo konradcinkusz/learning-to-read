@@ -11,6 +11,15 @@ por separado ni mirar el PDF a ojo.
 
 Uso:
     python3 tools/check_pages.py [main.aux]
+    python3 tools/check_pages.py --allow-gaps main-muestra.aux
+
+--allow-gaps salta la comprobación de que los números de día sean
+consecutivos (para tools/gen_muestra.py, que solo renderiza una muestra
+de días reales, con huecos deliberados entre trimestres) pero mantiene
+la comprobación que de verdad importa: el salto de página entre dos
+días RENDERIZADOS seguidos tiene que ser exactamente 1, venga o no
+seguido el número de día -- \\end{diapagina} hace \\newpage siempre, así
+que esa parte del invariante no depende de la continuidad.
 """
 
 import re
@@ -30,7 +39,9 @@ def leer_paginas(ruta_aux):
 
 
 def main():
-    ruta_aux = Path(sys.argv[1] if len(sys.argv) > 1 else "main.aux")
+    allow_gaps = "--allow-gaps" in sys.argv
+    posicionales = [a for a in sys.argv[1:] if not a.startswith("--")]
+    ruta_aux = Path(posicionales[0] if posicionales else "main.aux")
     if not ruta_aux.exists():
         print(
             f"ERROR: no existe {ruta_aux} -- compila primero con "
@@ -51,12 +62,13 @@ def main():
     dias_ordenados = sorted(paginas)
     problemas = []
 
-    esperado = dias_ordenados[0]
-    for dia in dias_ordenados:
-        if dia != esperado:
-            problemas.append(f"falta el día {esperado} (o los días no son consecutivos)")
-            esperado = dia
-        esperado += 1
+    if not allow_gaps:
+        esperado = dias_ordenados[0]
+        for dia in dias_ordenados:
+            if dia != esperado:
+                problemas.append(f"falta el día {esperado} (o los días no son consecutivos)")
+                esperado = dia
+            esperado += 1
 
     for a, b in zip(dias_ordenados, dias_ordenados[1:]):
         salto = paginas[b] - paginas[a]

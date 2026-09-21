@@ -1,0 +1,146 @@
+{
+  "_comentario": "MUESTRA, no producción: los días reales 131-140 (primeras dos semanas del Trimestre 3) -- ver content/muestra/q2.json para la explicación completa del mecanismo.",
+  "dias": [
+    {
+      "dia": 131, "semana": 27, "trimestre": 3,
+      "tema": "Toby se pierde en el parque",
+      "oraciones": [
+        "La familia va al parque grande el sábado por la mañana.",
+        "Toby corre libre entre los árboles porque le encanta explorar.",
+        "De repente, Toby desaparece detrás de unos matorrales y nadie lo ve."
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Dibuja el parque grande, con los árboles donde se escondió Toby."
+      }
+    },
+    {
+      "dia": 132, "semana": 27, "trimestre": 3,
+      "tema": "Toby se pierde en el parque",
+      "oraciones": [
+        "Lucía y Dani empiezan a buscar a Toby por todo el parque.",
+        "Papá mira detrás de los bancos y Mamá pregunta a otras personas.",
+        "Nadie ha visto un perro marrón de orejas largas."
+      ],
+      "actividad": {
+        "tipo": "completa",
+        "diagrama": "lineas-ondas"
+      }
+    },
+    {
+      "dia": 133, "semana": 27, "trimestre": 3,
+      "tema": "Toby se pierde en el parque",
+      "oraciones": [
+        "Lucía tiene una idea: silba la canción que siempre le canta a Toby.",
+        "Desde lejos, se oye un ladrido que responde a la canción.",
+        "Toby estaba atrapado entre dos rocas, sin poder salir solo."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "pregunta": "¿Cómo encuentra Lucía a Toby?"
+      }
+    },
+    {
+      "dia": 134, "semana": 27, "trimestre": 3,
+      "tema": "Toby se pierde en el parque",
+      "oraciones": [
+        "Papá ayuda a Toby a salir de entre las rocas con mucho cuidado.",
+        "Toby mueve la cola muy rápido porque está feliz de verlos.",
+        "Toda la familia lo abraza y le dice que no se vuelva a escapar."
+      ],
+      "actividad": {
+        "tipo": "relaciona",
+        "pares": [
+          ["Lucía", "silba la canción"],
+          ["Papá", "saca a Toby de las rocas"],
+          ["Toby", "estaba atrapado"],
+          ["Mamá", "pregunta a la gente"]
+        ]
+      }
+    },
+    {
+      "dia": 135, "semana": 27, "trimestre": 3,
+      "tema": "Toby se pierde en el parque",
+      "oraciones": [
+        "Desde aquel día, Toby siempre lleva una correa nueva en el parque.",
+        "Lucía dice que fue el susto más grande de su vida.",
+        "Pero también dice que encontrar a Toby fue el momento más feliz."
+      ],
+      "actividad": {
+        "tipo": "crea",
+        "prompt": "Cuenta o dibuja: ¿qué harías tú si se te perdiera tu mascota?"
+      }
+    },
+    {
+      "dia": 136, "semana": 28, "trimestre": 3,
+      "tema": "A Dani se le cae un diente",
+      "oraciones": [
+        "Dani está comiendo una manzana cuando nota que un diente se mueve.",
+        "Se asusta mucho y corre a buscar a Mamá llorando.",
+        "Mamá le explica que perder un diente de leche es normal y bueno."
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Dibuja a Dani con su manzana y su diente que se mueve."
+      }
+    },
+    {
+      "dia": 137, "semana": 28, "trimestre": 3,
+      "tema": "A Dani se le cae un diente",
+      "oraciones": [
+        "Esa noche, el diente de Dani se cae por fin mientras cena.",
+        "Lucía le dice que tiene que ponerlo debajo de la almohada.",
+        "Dani no está seguro de si quiere hacerlo o no."
+      ],
+      "actividad": {
+        "tipo": "completa",
+        "diagrama": "lineas-circulo"
+      }
+    },
+    {
+      "dia": 138, "semana": 28, "trimestre": 3,
+      "tema": "A Dani se le cae un diente",
+      "oraciones": [
+        "Lucía le cuenta a Dani que a ella también se le cayeron los dientes.",
+        "Le explica que un ratoncito los cambia por una moneda por la noche.",
+        "Dani decide poner el diente debajo de la almohada, aunque tiene un poco de miedo."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "pregunta": "¿Qué le explica Lucía a Dani sobre perder los dientes?"
+      }
+    },
+    {
+      "dia": 139, "semana": 28, "trimestre": 3,
+      "tema": "A Dani se le cae un diente",
+      "oraciones": [
+        "Por la mañana, Dani busca debajo de la almohada muy rápido.",
+        "Encuentra una moneda brillante y el diente ya no está.",
+        "Dani corre a enseñarle la moneda a toda la familia, muy orgulloso."
+      ],
+      "actividad": {
+        "tipo": "adivina",
+        "adivinanza": "De noche vengo sin hacer ruido, me llevo un diente y dejo un brillo escondido. ¿Quién soy?"
+      }
+    },
+    {
+      "dia": 140, "semana": 28, "trimestre": 3,
+      "tema": "A Dani se le cae un diente",
+      "oraciones": [
+        "El sábado, Dani le cuenta la historia del diente a la abuela Rosa.",
+        "Ella se ríe y le dice que a ella también le pasó, hace muchísimos años.",
+        "Dani decide que quiere que se le caiga otro diente pronto."
+      ],
+      "actividad": {
+        "tipo": "repasa",
+        "checklist": [
+          "Sé por qué se asustó Dani al principio.",
+          "Sé qué le dijo Lucía sobre perder los dientes.",
+          "Sé qué encontró Dani debajo de la almohada."
+        ],
+        "prompt": "Dibuja el ratoncito que se lleva los dientes, como tú te lo imaginas.",
+        "banner": "¡140 páginas leídas! Ya estás en la segunda mitad del curso."
+      }
+    }
+  ]
+}
