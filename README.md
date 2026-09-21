@@ -47,9 +47,10 @@ descargarlos).
 
 ## Construir el PDF a mano
 
-Necesita una distribución de TeX (pdflatex + latexmk) con `babel`,
-`tcolorbox` y `tikz` — cualquier TeX Live razonablemente completo los
-trae.
+Necesita una distribución de TeX con **LuaLaTeX** (no pdflatex: la letra
+del cuaderno es Andika, cargada con `fontspec` desde `fonts/andika/` —
+ver preamble.tex) + `latexmk`, con `babel`, `tcolorbox`, `tikz` y
+`fontspec` — cualquier TeX Live razonablemente completo los trae.
 
 ```sh
 make              # genera content/generated-days.tex, compila (color), comprueba
@@ -72,11 +73,13 @@ frontmatter/                          -- portada, instrucciones, mapa del curso
 content/q1.json, q2.json, q3.json, q4.json  -- los 260 días, uno por trimestre, editados a mano
 content/generated-days.tex            -- GENERADO por tools/gen_days.py, no editar
 content/progresion.json               -- objetivos semanales de la escalera de progresión (52 filas)
+content/generated-clave.tex           -- GENERADO por tools/gen_days.py, no editar
 diagrams/                             -- dibujos de línea (TikZ) para las páginas "Completa"
-backmatter/diploma.tex                -- página final
-tools/gen_days.py                     -- JSON -> LaTeX + validación
+backmatter/diploma.tex, clave-respuestas.tex -- página final y clave de respuestas (Adivina/Relaciona)
+fonts/andika/                         -- letra del cuaderno (Andika, SIL, OFL -- ver "Licencia")
+tools/gen_days.py                     -- JSON -> LaTeX + validación + medallas de trimestre + clave de respuestas
 tools/check_pages.py                  -- comprueba que cada día ocupa una sola página
-tools/checklog.py                     -- lee el .log de pdflatex correctamente (nunca grep '^!')
+tools/checklog.py                     -- lee el .log de LuaLaTeX correctamente (nunca grep '^!')
 tools/metricas.py                     -- mide palabras/frase/vocabulario nuevo contra content/progresion.json
 docs/index.html                       -- la página que publica .github/workflows/pages.yml
 assets/logo.tex, logo.png, logo.svg   -- logo del repositorio (standalone TikZ, reutiliza el icono de portada.tex)
@@ -101,6 +104,10 @@ está bajo Creative Commons Atribución-NoComercial-CompartirIgual 4.0
 ([`LICENSE-CONTENT`](LICENSE-CONTENT)): se puede adaptar (por ejemplo,
 cambiar los personajes) pero no usar comercialmente, y cualquier adaptación
 tiene que compartirse bajo la misma licencia.
+
+La letra del cuaderno -- Andika (`fonts/andika/`), de SIL International --
+está bajo la SIL Open Font License 1.1 ([`fonts/andika/OFL.txt`](fonts/andika/OFL.txt)),
+independiente de las dos licencias de arriba.
 
 Ver [`LICENSE`](LICENSE) para el reparto exacto de qué cae en cada lado, y
 [`CONTRIBUTING.md`](CONTRIBUTING.md) para qué tipo de colaboración encaja

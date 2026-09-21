@@ -62,7 +62,8 @@
       ],
       "actividad": {
         "tipo": "adivina",
-        "adivinanza": "Tiene ruedas y motor, y nos lleva de viaje con calor. ¿Qué es?"
+        "adivinanza": "Tiene ruedas y motor, y nos lleva de viaje con calor. ¿Qué es?",
+        "respuesta": "El coche."
       }
     },
     {
@@ -240,7 +241,8 @@
       ],
       "actividad": {
         "tipo": "adivina",
-        "adivinanza": "Duermo todo el día y de noche veo bien, maúllo si tengo hambre. ¿Quién soy?"
+        "adivinanza": "Duermo todo el día y de noche veo bien, maúllo si tengo hambre. ¿Quién soy?",
+        "respuesta": "El gato."
       }
     },
     {
@@ -418,7 +420,8 @@
       ],
       "actividad": {
         "tipo": "adivina",
-        "adivinanza": "Crezco en el huerto, soy roja y redonda, y en ensalada estoy muy rica. ¿Qué soy?"
+        "adivinanza": "Crezco en el huerto, soy roja y redonda, y en ensalada estoy muy rica. ¿Qué soy?",
+        "respuesta": "El tomate."
       }
     },
     {
@@ -596,7 +599,8 @@
       ],
       "actividad": {
         "tipo": "adivina",
-        "adivinanza": "Soy muy grande, salado y azul, y las olas son mi voz. ¿Qué soy?"
+        "adivinanza": "Soy muy grande, salado y azul, y las olas son mi voz. ¿Qué soy?",
+        "respuesta": "El mar."
       }
     },
     {
@@ -774,7 +778,8 @@
       ],
       "actividad": {
         "tipo": "adivina",
-        "adivinanza": "Canto fuerte en verano, escondido entre las ramas, y me callo si me buscas. ¿Quién soy?"
+        "adivinanza": "Canto fuerte en verano, escondido entre las ramas, y me callo si me buscas. ¿Quién soy?",
+        "respuesta": "La cigarra."
       }
     },
     {
@@ -952,7 +957,8 @@
       ],
       "actividad": {
         "tipo": "adivina",
-        "adivinanza": "Me llevas a todas partes cargada de libros y de ilusión. ¿Qué soy?"
+        "adivinanza": "Me llevas a todas partes cargada de libros y de ilusión. ¿Qué soy?",
+        "respuesta": "La mochila."
       }
     },
     {

@@ -2,15 +2,32 @@
 % -----------------------------------------------------------------------
 % "Aprendo a leer" -- cuaderno diario de lectura (español, A4).
 % Todo el aparato tipográfico vive aquí: paquetes, colores, estilos de
-% caja y las macros que usa cada página diaria. pdflatex puro (sin
-% xelatex/fontspec): T1 + utf8 + babel[spanish] cubre á é í ó ú ñ ¿ ¡
-% sin depender de ningún fichero de fuente adicional.
+% caja y las macros que usa cada página diaria. Requiere LuaLaTeX
+% (fontspec) -- no pdflatex puro: la letra es Andika (SIL, OFL,
+% fonts/andika/), pensada para primeros lectores -- "a"/"g" de un solo
+% piso y "b"/"d"/"p"/"q" bien diferenciadas, a diferencia de Latin
+% Modern Sans (ver notes/02-revision-y-plan.md, punto 5). fontspec ya
+% cubre UTF-8 y la codificación de fuente por su cuenta -- no hacen
+% falta fontenc ni inputenc, y de hecho estorban bajo LuaLaTeX.
 % -----------------------------------------------------------------------
 
-\usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
-\usepackage{lmodern}
-\renewcommand{\familydefault}{\sfdefault}
+\usepackage{fontspec}
+\setmainfont{Andika}[
+  Path = fonts/andika/,
+  Extension = .ttf,
+  UprightFont = *-Regular,
+  BoldFont = *-Bold,
+  ItalicFont = *-Italic,
+  BoldItalicFont = *-BoldItalic,
+]
+\setsansfont{Andika}[
+  Path = fonts/andika/,
+  Extension = .ttf,
+  UprightFont = *-Regular,
+  BoldFont = *-Bold,
+  ItalicFont = *-Italic,
+  BoldItalicFont = *-BoldItalic,
+]
 
 \usepackage[spanish]{babel}
 % babel-spanish makes " an ACTIVE character (shorthand for <</>> and other
@@ -33,6 +50,7 @@
 \usepackage{booktabs}
 \usepackage{enumitem}
 \usepackage{tikz}
+\usepackage{multicol}
 
 \pagestyle{empty}
 \setlength{\parindent}{0pt}
@@ -220,6 +238,17 @@
   \begin{itemize}[label=\casilla, leftmargin=8mm, itemsep=2mm, topsep=2mm]
 }{%
   \end{itemize}
+}
+
+% =========================================================================
+% Clave de respuestas (backmatter/clave-respuestas.tex, generada por
+% tools/gen_days.py en content/generated-clave.tex). Una entrada por
+% cada día "adivina" o "relaciona" -- ver la revisión de un lector
+% externo: sin esto, un adulto no puede comprobar una adivinanza o un
+% relaciona sin resolverlos él mismo primero.
+% =========================================================================
+\newcommand{\claveEntrada}[3]{%
+  \item \textbf{\lblDia\ #1} \textcolor{colorGris}{(#2)}: #3%
 }
 
 % =========================================================================

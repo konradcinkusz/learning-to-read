@@ -1,4 +1,4 @@
-LATEX  = latexmk -pdf -interaction=nonstopmode -file-line-error
+LATEX  = latexmk -lualatex -interaction=nonstopmode -file-line-error
 MAIN   = main
 BW     = main-bw
 
@@ -35,7 +35,7 @@ check-bw:
 clean:
 	latexmk -C $(MAIN).tex
 	latexmk -C $(BW).tex
-	rm -f content/generated-days.tex
+	rm -f content/generated-days.tex content/generated-clave.tex
 
 watch:
 	$(LATEX) -pvc $(MAIN).tex

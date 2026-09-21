@@ -84,12 +84,16 @@ jobs:
       - name: Genera content/generated-days.tex desde content/q*.json
         run: make generate
 
+      # LuaLaTeX, no pdflatex: la letra es Andika (fonts/andika/, ver
+      # preamble.tex) -- fontspec exige lualatex o xelatex. args NO lleva
+      # -pdf: con latexmk_use_lualatex la propia acción añade -lualatex,
+      # y -pdf fuerza pdflatex, así que los dos juntos se pisan.
       - name: Compila el cuaderno
         uses: xu-cheng/latex-action@v3
         with:
           root_file: ${{ matrix.root }}.tex
-          latexmk_use_lualatex: false
-          args: -pdf -interaction=nonstopmode -file-line-error
+          latexmk_use_lualatex: true
+          args: -interaction=nonstopmode -file-line-error
 
       # Nunca `grep '^!'`: con -file-line-error una línea de error empieza
       # por una ruta, y -interaction=nonstopmode escribe igualmente un PDF
