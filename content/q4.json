@@ -1,0 +1,1176 @@
+{
+  "_comentario": "Datos de origen para tools/gen_days.py. Este fichero SI se edita a mano; content/generated-days.tex NO (se regenera con `make generate`). Trimestre 4 completo: dias 196-260 (semanas 40-52).",
+  "dias": [
+    {
+      "dia": 196,
+      "semana": 40,
+      "trimestre": 4,
+      "tema": "Empieza el verano",
+      "oraciones": [
+        "Llegan las vacaciones de verano, las más largas del año.",
+        "Lucía y Dani preparan sus maletas encima de la cama.",
+        "Van a pasar todo julio en el pueblo de la abuela Rosa.",
+        "Toby ya sabe que algo pasa: no para de mover la cola."
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Dibuja las maletas de la familia, listas para el viaje."
+      }
+    },
+    {
+      "dia": 197,
+      "semana": 40,
+      "trimestre": 4,
+      "tema": "Empieza el verano",
+      "oraciones": [
+        "Lucía mete en su maleta tres libros, por si acaso no bastan.",
+        "Dani mete su peluche favorito y una linterna pequeña.",
+        "Mamá les recuerda el bañador, las chanclas y la crema solar.",
+        "Papá carga el coche mientras Toby vigila desde la puerta."
+      ],
+      "actividad": {
+        "tipo": "busca",
+        "instruccion": "Busca en el texto qué tres cosas les recuerda Mamá."
+      }
+    },
+    {
+      "dia": 198,
+      "semana": 40,
+      "trimestre": 4,
+      "tema": "Empieza el verano",
+      "oraciones": [
+        "Esa noche, Lucía casi no puede dormir de la emoción.",
+        "Piensa en el pueblo, el río y el perro de la abuela.",
+        "Dani le pregunta si el viaje es muy largo en coche.",
+        "—Bastante, pero llevamos música y juegos —le dice Lucía sonriendo."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "pregunta": "¿En qué tres cosas piensa Lucía esa noche?"
+      }
+    },
+    {
+      "dia": 199,
+      "semana": 40,
+      "trimestre": 4,
+      "tema": "Empieza el verano",
+      "oraciones": [
+        "Por la mañana, toda la familia se despierta muy temprano.",
+        "Cierran la casa, suben al coche y ponen rumbo al pueblo.",
+        "Toby se sienta entre Lucía y Dani, en el asiento de atrás.",
+        "El viaje empieza con una canción que canta toda la familia."
+      ],
+      "actividad": {
+        "tipo": "adivina",
+        "adivinanza": "Tiene ruedas y motor, y nos lleva de viaje con calor. ¿Qué es?"
+      }
+    },
+    {
+      "dia": 200,
+      "semana": 40,
+      "trimestre": 4,
+      "tema": "Empieza el verano",
+      "oraciones": [
+        "Después de dos horas de viaje, Dani se queda dormido.",
+        "Lucía mira el paisaje: cada vez hay menos casas y más campo.",
+        "Poco a poco, el aire que entra huele distinto.",
+        "Lucía sabe que ya casi han llegado al pueblo de la abuela."
+      ],
+      "actividad": {
+        "tipo": "repasa",
+        "checklist": [
+          "Sé adónde va a pasar el verano la familia.",
+          "Sé qué mete Lucía en su maleta.",
+          "Sé qué le pregunta Dani a Lucía en el coche."
+        ],
+        "prompt": "Dibuja el coche de la familia, camino del pueblo.",
+        "banner": "¡200 páginas leídas! Empieza el verano en el pueblo."
+      }
+    },
+    {
+      "dia": 201,
+      "semana": 41,
+      "trimestre": 4,
+      "tema": "Llegada al pueblo de la abuela Rosa",
+      "oraciones": [
+        "El coche entra por fin en las calles estrechas del pueblo.",
+        "La casa de la abuela tiene un patio grande con limonero.",
+        "Nada más bajar del coche, Lucía corre a abrazar a la abuela.",
+        "Dani se queda mirando las gallinas del corral, fascinado."
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Dibuja la casa de la abuela, con su patio y su limonero."
+      }
+    },
+    {
+      "dia": 202,
+      "semana": 41,
+      "trimestre": 4,
+      "tema": "Llegada al pueblo de la abuela Rosa",
+      "oraciones": [
+        "La abuela les enseña su habitación, la de siempre, con dos camas.",
+        "Desde la ventana se ve la plaza del pueblo y la iglesia.",
+        "Lucía deja sus libros ordenados encima de la mesita de noche.",
+        "Dani coloca su peluche justo encima de la almohada."
+      ],
+      "actividad": {
+        "tipo": "completa",
+        "diagrama": "lineas-ondas"
+      }
+    },
+    {
+      "dia": 203,
+      "semana": 41,
+      "trimestre": 4,
+      "tema": "Llegada al pueblo de la abuela Rosa",
+      "oraciones": [
+        "Para cenar, la abuela prepara una tortilla de patata enorme.",
+        "Cenan todos juntos en el patio, bajo la luz de una bombilla.",
+        "—Aquí se cena tarde y despacio —explica la abuela, sonriendo.",
+        "Se oyen grillos por todas partes, algo que en la ciudad no pasa."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "pregunta": "¿Qué prepara la abuela para cenar el primer día?"
+      }
+    },
+    {
+      "dia": 204,
+      "semana": 41,
+      "trimestre": 4,
+      "tema": "Llegada al pueblo de la abuela Rosa",
+      "oraciones": [
+        "Esa primera noche, Lucía no reconoce ningún ruido del pueblo.",
+        "No hay coches, pero sí grillos, un búho y algún ladrido lejano.",
+        "Dani se asusta un poco, así que Lucía le agarra la mano.",
+        "Al final, los dos se quedan dormidos casi sin darse cuenta."
+      ],
+      "actividad": {
+        "tipo": "relaciona",
+        "pares": [
+          [
+            "La abuela",
+            "prepara una tortilla enorme"
+          ],
+          [
+            "Lucía",
+            "no reconoce los ruidos del pueblo"
+          ],
+          [
+            "Dani",
+            "se asusta un poco por la noche"
+          ],
+          [
+            "El patio",
+            "tiene un limonero grande"
+          ]
+        ]
+      }
+    },
+    {
+      "dia": 205,
+      "semana": 41,
+      "trimestre": 4,
+      "tema": "Llegada al pueblo de la abuela Rosa: la semana",
+      "oraciones": null,
+      "actividad": {
+        "tipo": "relee",
+        "prompt": "Dibuja tu primera noche imaginaria en el pueblo de la abuela."
+      }
+    },
+    {
+      "dia": 206,
+      "semana": 42,
+      "trimestre": 4,
+      "tema": "Andrés, el vecino, y su gato Bigotes",
+      "oraciones": [
+        "El vecino de la abuela se llama Andrés y tiene un huerto grande.",
+        "Vive solo, con un gato blanco y naranja llamado Bigotes.",
+        "Cada mañana, Bigotes se sube a la tapia a tomar el sol.",
+        "A Lucía le encantan los gatos, así que enseguida se hacen amigos."
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Dibuja a Bigotes tomando el sol encima de la tapia."
+      }
+    },
+    {
+      "dia": 207,
+      "semana": 42,
+      "trimestre": 4,
+      "tema": "Andrés, el vecino, y su gato Bigotes",
+      "oraciones": [
+        "Andrés le enseña a Lucía cómo se acaricia a un gato asustadizo.",
+        "—Despacio, y déjale que sea él quien se acerque —le explica.",
+        "Bigotes tarda un rato, pero al final se deja tocar la cabeza.",
+        "Dani también quiere acariciarlo, pero Bigotes sale corriendo enseguida."
+      ],
+      "actividad": {
+        "tipo": "busca",
+        "instruccion": "Busca en el texto cómo le enseña Andrés a Lucía a acariciar a un gato."
+      }
+    },
+    {
+      "dia": 208,
+      "semana": 42,
+      "trimestre": 4,
+      "tema": "Andrés, el vecino, y su gato Bigotes",
+      "oraciones": [
+        "Andrés le cuenta a Lucía un dato curioso sobre los gatos.",
+        "—Duermen casi todo el día, más de doce horas seguidas —le dice.",
+        "Lucía piensa que a ella también le gustaría dormir tanto alguna vez.",
+        "Bigotes, como para demostrarlo, se estira y se queda dormido allí mismo."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "pregunta": "¿Qué dato curioso sobre los gatos le cuenta Andrés a Lucía?"
+      }
+    },
+    {
+      "dia": 209,
+      "semana": 42,
+      "trimestre": 4,
+      "tema": "Andrés, el vecino, y su gato Bigotes",
+      "oraciones": [
+        "Cada tarde, Lucía cruza el patio para visitar a Bigotes un rato.",
+        "Le lleva trocitos de queso, que al gato le encantan.",
+        "Poco a poco, Bigotes empieza a esperarla sentado junto a la tapia.",
+        "Andrés dice que nunca lo había visto tan cariñoso con nadie."
+      ],
+      "actividad": {
+        "tipo": "adivina",
+        "adivinanza": "Duermo todo el día y de noche veo bien, maúllo si tengo hambre. ¿Quién soy?"
+      }
+    },
+    {
+      "dia": 210,
+      "semana": 42,
+      "trimestre": 4,
+      "tema": "Andrés, el vecino, y su gato Bigotes",
+      "oraciones": [
+        "Un día, la abuela le pregunta si Lucía quiere un gato.",
+        "Lucía dice que sí, pero que Toby tendría que aprobarlo primero.",
+        "Esa tarde, deja a Toby y a Bigotes olerse desde lejos, con cuidado.",
+        "Toby ladra una vez, pero después se tumba tranquilo junto a la tapia."
+      ],
+      "actividad": {
+        "tipo": "repasa",
+        "checklist": [
+          "Sé cómo se llama el vecino de la abuela.",
+          "Sé cómo se llama su gato.",
+          "Sé qué dato curioso le contó Andrés a Lucía."
+        ],
+        "prompt": "Dibuja a Toby y a Bigotes conociéndose por primera vez.",
+        "banner": "¡210 páginas leídas! Ya tienes un amigo nuevo en el pueblo."
+      }
+    },
+    {
+      "dia": 211,
+      "semana": 43,
+      "trimestre": 4,
+      "tema": "Un día en el río del pueblo",
+      "oraciones": [
+        "A pocos minutos andando del pueblo, hay un río de aguas muy frías.",
+        "Papá dice que es el mejor sitio para escapar del calor de julio.",
+        "Toda la familia coge toallas, bocadillos y una sombrilla vieja.",
+        "Toby corre delante de todos, como si ya conociera el camino."
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Dibuja el camino hacia el río, con Toby corriendo delante."
+      }
+    },
+    {
+      "dia": 212,
+      "semana": 43,
+      "trimestre": 4,
+      "tema": "Un día en el río del pueblo",
+      "oraciones": [
+        "Lucía mete un pie en el agua y da un grito: está helada.",
+        "Poco a poco, se va metiendo entera, hasta acostumbrarse al frío.",
+        "Gracias a las clases de natación, ahora nada sin ningún miedo.",
+        "Dani se queda solo en la orilla, chapoteando con sus manos."
+      ],
+      "actividad": {
+        "tipo": "completa",
+        "diagrama": "lineas-circulo"
+      }
+    },
+    {
+      "dia": 213,
+      "semana": 43,
+      "trimestre": 4,
+      "tema": "Un día en el río del pueblo",
+      "oraciones": [
+        "Papá le enseña a Dani un dato curioso sobre los peces del río.",
+        "—Estos peces nadan siempre contra la corriente, nunca a favor —le explica.",
+        "Dani intenta imaginarse nadando así, siempre hacia adelante y sin parar.",
+        "Al final, decide que prefiere quedarse chapoteando cerca de la orilla."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "pregunta": "¿Qué dato curioso le cuenta Papá a Dani sobre los peces?"
+      }
+    },
+    {
+      "dia": 214,
+      "semana": 43,
+      "trimestre": 4,
+      "tema": "Un día en el río del pueblo",
+      "oraciones": [
+        "Mamá reparte los bocadillos sentados todos sobre una manta grande.",
+        "Toby se moja las patas, pero no se atreve a nadar del todo.",
+        "Lucía y Papá cruzan el río nadando, de una orilla a la otra.",
+        "Dani los mira con la boca abierta, deseando poder hacerlo también pronto."
+      ],
+      "actividad": {
+        "tipo": "relaciona",
+        "pares": [
+          [
+            "Lucía",
+            "cruza el río nadando"
+          ],
+          [
+            "Dani",
+            "se queda chapoteando en la orilla"
+          ],
+          [
+            "Toby",
+            "se moja las patas sin nadar"
+          ],
+          [
+            "Papá",
+            "enseña un dato sobre los peces"
+          ]
+        ]
+      }
+    },
+    {
+      "dia": 215,
+      "semana": 43,
+      "trimestre": 4,
+      "tema": "Un día en el río del pueblo: la semana",
+      "oraciones": null,
+      "actividad": {
+        "tipo": "relee",
+        "prompt": "Dibuja el río del pueblo, con toda la familia alrededor."
+      }
+    },
+    {
+      "dia": 216,
+      "semana": 44,
+      "trimestre": 4,
+      "tema": "El huerto de la abuela",
+      "oraciones": [
+        "La abuela Rosa tiene un huerto enorme detrás de la casa.",
+        "Cultiva tomates, pimientos, calabacines y unas judías altísimas.",
+        "Cada mañana, antes de que apriete el calor, sale a regarlo.",
+        "Esta vez, Lucía le pide que la deje ayudarla también."
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Dibuja el huerto de la abuela, con sus tomates y sus judías."
+      }
+    },
+    {
+      "dia": 217,
+      "semana": 44,
+      "trimestre": 4,
+      "tema": "El huerto de la abuela",
+      "oraciones": [
+        "La abuela le enseña a Lucía a distinguir un tomate maduro de uno verde.",
+        "—Este ya está listo, mira qué rojo y qué blando —le explica.",
+        "Lucía llena una cesta pequeña con los tomates más rojos que encuentra.",
+        "Dani prefiere buscar caracoles escondidos entre las hojas de las judías."
+      ],
+      "actividad": {
+        "tipo": "busca",
+        "instruccion": "Busca en el texto cómo distingue la abuela un tomate maduro."
+      }
+    },
+    {
+      "dia": 218,
+      "semana": 44,
+      "trimestre": 4,
+      "tema": "El huerto de la abuela",
+      "oraciones": [
+        "Esa tarde, comen una ensalada hecha solo con verduras del huerto.",
+        "Lucía dice que nunca había probado un tomate tan rico.",
+        "La abuela le cuenta que ella también aprendió del huerto de pequeña.",
+        "Le promete que le enseñará a plantar algo antes de irse."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "pregunta": "¿Qué le promete la abuela a Lucía antes de irse?"
+      }
+    },
+    {
+      "dia": 219,
+      "semana": 44,
+      "trimestre": 4,
+      "tema": "El huerto de la abuela",
+      "oraciones": [
+        "Al día siguiente, Lucía planta ella sola una hilera de lechugas.",
+        "La abuela le enseña a dejar la distancia justa entre planta y planta.",
+        "Dani riega con la manguera, aunque moja más a Lucía que a la tierra.",
+        "Todos acaban riéndose y un poco empapados por el jaleo."
+      ],
+      "actividad": {
+        "tipo": "adivina",
+        "adivinanza": "Crezco en el huerto, soy roja y redonda, y en ensalada estoy muy rica. ¿Qué soy?"
+      }
+    },
+    {
+      "dia": 220,
+      "semana": 44,
+      "trimestre": 4,
+      "tema": "El huerto de la abuela",
+      "oraciones": [
+        "Antes de volver a casa, Lucía riega sus lechugas todos los días.",
+        "La abuela dice que para cuando vuelvan en agosto estarán enormes.",
+        "Lucía escribe en su cuaderno: —Mis primeras lechugas del huerto.",
+        "Se promete a sí misma tener un huerto propio de mayor."
+      ],
+      "actividad": {
+        "tipo": "repasa",
+        "checklist": [
+          "Sé qué cultiva la abuela en su huerto.",
+          "Sé qué plantó Lucía ella sola.",
+          "Sé qué le promete la abuela sobre las lechugas."
+        ],
+        "prompt": "Dibuja tus propias lechugas, tal como te las imaginas en agosto.",
+        "banner": "¡220 páginas leídas! Ya sabes cuidar un huerto entero."
+      }
+    },
+    {
+      "dia": 221,
+      "semana": 45,
+      "trimestre": 4,
+      "tema": "Una tormenta de verano",
+      "oraciones": [
+        "Una tarde de mucho calor, el cielo se pone de color gris oscuro.",
+        "La abuela dice que huele a tormenta y que va a caer buena.",
+        "Recogen deprisa la ropa tendida antes de que empiece a llover.",
+        "Toby se esconde debajo de la mesa, temblando un poco."
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Dibuja el cielo gris justo antes de la tormenta."
+      }
+    },
+    {
+      "dia": 222,
+      "semana": 45,
+      "trimestre": 4,
+      "tema": "Una tormenta de verano",
+      "oraciones": [
+        "De repente, un trueno enorme hace temblar las ventanas de la casa.",
+        "Dani se asusta y corre a abrazarse a las piernas de Mamá.",
+        "Lucía le explica que el trueno no puede hacerles daño desde dentro.",
+        "Aun así, ella también se acerca un poco más a la familia."
+      ],
+      "actividad": {
+        "tipo": "completa",
+        "diagrama": "lineas-ondas"
+      }
+    },
+    {
+      "dia": 223,
+      "semana": 45,
+      "trimestre": 4,
+      "tema": "Una tormenta de verano",
+      "oraciones": [
+        "Papá les cuenta un dato curioso sobre los rayos y los truenos.",
+        "—La luz llega antes que el sonido, por eso truena después —explica.",
+        "Lucía empieza a contar los segundos entre el rayo y el trueno.",
+        "Cada vez el número es más alto: la tormenta se está alejando."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "pregunta": "¿Por qué llega antes la luz del rayo que el sonido del trueno?"
+      }
+    },
+    {
+      "dia": 224,
+      "semana": 45,
+      "trimestre": 4,
+      "tema": "Una tormenta de verano",
+      "oraciones": [
+        "Poco a poco, la lluvia va calmándose hasta convertirse en llovizna.",
+        "La abuela abre la puerta y sale un olor a tierra mojada precioso.",
+        "Dani, ya sin miedo, sale corriendo a saltar en los charcos.",
+        "Toby, por fin tranquilo, sale detrás de él moviendo la cola."
+      ],
+      "actividad": {
+        "tipo": "relaciona",
+        "pares": [
+          [
+            "Dani",
+            "se asusta con el primer trueno"
+          ],
+          [
+            "Papá",
+            "explica por qué el trueno suena después"
+          ],
+          [
+            "Lucía",
+            "cuenta los segundos entre rayo y trueno"
+          ],
+          [
+            "Toby",
+            "se esconde debajo de la mesa"
+          ]
+        ]
+      }
+    },
+    {
+      "dia": 225,
+      "semana": 45,
+      "trimestre": 4,
+      "tema": "Una tormenta de verano: la semana",
+      "oraciones": null,
+      "actividad": {
+        "tipo": "relee",
+        "prompt": "Dibuja el cielo después de la tormenta, con Dani saltando en los charcos."
+      }
+    },
+    {
+      "dia": 226,
+      "semana": 46,
+      "trimestre": 4,
+      "tema": "La excursión a la playa",
+      "oraciones": [
+        "Un fin de semana, la familia va a la playa, a una hora de coche.",
+        "Lucía nunca había visto el mar tan grande de cerca.",
+        "Dani se queda callado un momento, mirando el agua hasta donde alcanza la vista.",
+        "—Es más grande que el río del pueblo —dice, por fin, asombrado."
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Dibuja el mar, tal como lo ve Dani por primera vez."
+      }
+    },
+    {
+      "dia": 227,
+      "semana": 46,
+      "trimestre": 4,
+      "tema": "La excursión a la playa",
+      "oraciones": [
+        "Lucía se mete corriendo en el agua, sin ningún miedo esta vez.",
+        "Gracias a la natación, nada más lejos que nadie de la familia.",
+        "Papá reparte una hoja con dibujos de animales marinos para buscar.",
+        "Buscan conchas, cangrejos pequeños y algas entre las rocas de la orilla."
+      ],
+      "actividad": {
+        "tipo": "busca",
+        "instruccion": "Busca en el texto qué tres cosas buscan entre las rocas de la orilla."
+      }
+    },
+    {
+      "dia": 228,
+      "semana": 46,
+      "trimestre": 4,
+      "tema": "La excursión a la playa",
+      "oraciones": [
+        "Mamá les cuenta un dato curioso sobre el mar mientras comen.",
+        "—El mar nunca deja de moverse, ni siquiera de noche —les explica.",
+        "Dani pregunta si los peces duermen alguna vez, con esas olas tan grandes.",
+        "Nadie lo sabe seguro, así que deciden buscarlo esa misma noche."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "pregunta": "¿Qué dato curioso sobre el mar les cuenta Mamá?"
+      }
+    },
+    {
+      "dia": 229,
+      "semana": 46,
+      "trimestre": 4,
+      "tema": "La excursión a la playa",
+      "oraciones": [
+        "Por la tarde, Dani hace un castillo de arena enorme, con la ayuda de Papá.",
+        "Lucía busca conchas para hacer un collar y guardar un recuerdo del día.",
+        "Toby, atado con correa larga, corre detrás de las olas que se retiran.",
+        "Antes de irse, toda la familia se hace una foto frente al mar."
+      ],
+      "actividad": {
+        "tipo": "adivina",
+        "adivinanza": "Soy muy grande, salado y azul, y las olas son mi voz. ¿Qué soy?"
+      }
+    },
+    {
+      "dia": 230,
+      "semana": 46,
+      "trimestre": 4,
+      "tema": "La excursión a la playa",
+      "oraciones": [
+        "Esa noche, de vuelta en el pueblo, Lucía escribe una postal para Sofía.",
+        "Le cuenta que ha visto el mar por primera vez con Dani.",
+        "Le promete enseñarle las conchas en cuanto vuelva a la ciudad.",
+        "Al final, dibuja una ola pequeña junto a su nombre."
+      ],
+      "actividad": {
+        "tipo": "repasa",
+        "checklist": [
+          "Sé qué le pareció el mar a Dani.",
+          "Sé qué dato curioso contó Mamá sobre el mar.",
+          "Sé a quién le escribe Lucía la postal."
+        ],
+        "prompt": "Dibuja la postal que Lucía le envía a Sofía.",
+        "banner": "¡230 páginas leídas! Ya has visto el mar entero en este libro."
+      }
+    },
+    {
+      "dia": 231,
+      "semana": 47,
+      "trimestre": 4,
+      "tema": "La verbena del pueblo",
+      "oraciones": [
+        "Cada agosto, el pueblo celebra una verbena en la plaza.",
+        "Ponen mesas y luces de colores entre los árboles de la plaza.",
+        "La abuela dice que esta fiesta se celebra desde hace más de cien años.",
+        "Lucía y Dani estrenan ropa especial que la abuela les ha comprado."
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Dibuja la plaza del pueblo con las luces de la verbena."
+      }
+    },
+    {
+      "dia": 232,
+      "semana": 47,
+      "trimestre": 4,
+      "tema": "La verbena del pueblo",
+      "oraciones": [
+        "Andrés también baja a la plaza, con Bigotes vigilando desde su ventana.",
+        "Hay una orquesta pequeña que toca canciones que a la abuela le encantan.",
+        "Dani se anima a bailar con la abuela en medio de la plaza.",
+        "Lucía prefiere mirar un rato, riéndose de los pasos de su hermano."
+      ],
+      "actividad": {
+        "tipo": "completa",
+        "diagrama": "lineas-circulo"
+      }
+    },
+    {
+      "dia": 233,
+      "semana": 47,
+      "trimestre": 4,
+      "tema": "La verbena del pueblo",
+      "oraciones": [
+        "A medianoche, empiezan los fuegos sobre la torre de la iglesia.",
+        "Dani se agarra fuerte a la mano de Lucía por el ruido tan fuerte.",
+        "—Son bonitos, aunque den un poco de miedo —le dice ella al oído.",
+        "Los dos se quedan mirando el cielo hasta que se acaba todo."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "pregunta": "¿Por qué se agarra Dani fuerte a la mano de Lucía?"
+      }
+    },
+    {
+      "dia": 234,
+      "semana": 47,
+      "trimestre": 4,
+      "tema": "La verbena del pueblo",
+      "oraciones": [
+        "Después de los fuegos, todos comen churros recién hechos en un puesto.",
+        "Papá dice que hacía años que no se acostaban tan tarde.",
+        "Dani se queda dormido en brazos de Papá, de vuelta a casa.",
+        "Lucía camina despacio, mirando las estrellas que se ven tan claras en el pueblo."
+      ],
+      "actividad": {
+        "tipo": "relaciona",
+        "pares": [
+          [
+            "La verbena",
+            "se celebra cada agosto en la plaza"
+          ],
+          [
+            "Dani",
+            "baila con la abuela"
+          ],
+          [
+            "Los fuegos artificiales",
+            "salen sobre la torre de la iglesia"
+          ],
+          [
+            "Todos",
+            "comen churros al final"
+          ]
+        ]
+      }
+    },
+    {
+      "dia": 235,
+      "semana": 47,
+      "trimestre": 4,
+      "tema": "La verbena del pueblo: la semana",
+      "oraciones": null,
+      "actividad": {
+        "tipo": "relee",
+        "prompt": "Dibuja los fuegos artificiales sobre la plaza del pueblo."
+      }
+    },
+    {
+      "dia": 236,
+      "semana": 48,
+      "trimestre": 4,
+      "tema": "Dani se hace amigo de Martín",
+      "oraciones": [
+        "En la plaza, Dani conoce a un niño del pueblo llamado Martín.",
+        "Martín tiene su misma edad y vive allí todo el año.",
+        "Enseguida se ponen a jugar con un balón viejo y desgastado.",
+        "Lucía los mira de lejos, contenta de que Dani tenga un amigo."
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Dibuja a Dani y Martín jugando al balón en la plaza."
+      }
+    },
+    {
+      "dia": 237,
+      "semana": 48,
+      "trimestre": 4,
+      "tema": "Dani se hace amigo de Martín",
+      "oraciones": [
+        "Martín le enseña a Dani dónde se esconden los mejores caracoles.",
+        "Dani le enseña a Martín a decir algunas letras del abecedario.",
+        "—Yo casi sé leer ya —le dice Dani, muy orgulloso.",
+        "Martín se queda impresionado y le pide que se lo demuestre."
+      ],
+      "actividad": {
+        "tipo": "busca",
+        "instruccion": "Busca en el texto qué le enseña Dani a Martín."
+      }
+    },
+    {
+      "dia": 238,
+      "semana": 48,
+      "trimestre": 4,
+      "tema": "Dani se hace amigo de Martín",
+      "oraciones": [
+        "Cada tarde, los dos niños quedan a jugar bajo el limonero.",
+        "A veces juegan con Toby, que ya se ha hecho amigo de Martín también.",
+        "Martín le cuenta a Dani un dato curioso sobre las cigarras del pueblo.",
+        "—Solo cantan los machos, y lo hacen para llamar a las hembras —le explica."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "pregunta": "¿Qué dato curioso sobre las cigarras le cuenta Martín a Dani?"
+      }
+    },
+    {
+      "dia": 239,
+      "semana": 48,
+      "trimestre": 4,
+      "tema": "Dani se hace amigo de Martín",
+      "oraciones": [
+        "Un día, Martín invita a Dani a merendar en su casa del pueblo.",
+        "Dani se pone nervioso: nunca antes ha ido solo a casa de un amigo.",
+        "Lucía lo acompaña hasta la puerta y le promete volver a buscarlo pronto.",
+        "Dani vuelve encantado, contando todo lo que han hecho juntos."
+      ],
+      "actividad": {
+        "tipo": "adivina",
+        "adivinanza": "Canto fuerte en verano, escondido entre las ramas, y me callo si me buscas. ¿Quién soy?"
+      }
+    },
+    {
+      "dia": 240,
+      "semana": 48,
+      "trimestre": 4,
+      "tema": "Dani se hace amigo de Martín",
+      "oraciones": [
+        "Los últimos días, Dani y Martín no se separan casi ni un momento.",
+        "Se prometen escribirse cartas cuando Dani vuelva a la ciudad.",
+        "Lucía le ayuda a Dani a escribir la dirección del pueblo.",
+        "Martín promete guardarle un sitio bajo el limonero para el año que viene."
+      ],
+      "actividad": {
+        "tipo": "repasa",
+        "checklist": [
+          "Sé cómo se llama el nuevo amigo de Dani.",
+          "Sé qué dato curioso le contó sobre las cigarras.",
+          "Sé qué se prometen los dos amigos al final."
+        ],
+        "prompt": "Dibuja a Dani y Martín despidiéndose bajo el limonero.",
+        "banner": "¡240 páginas leídas! Ya solo queda un mes de libro."
+      }
+    },
+    {
+      "dia": 241,
+      "semana": 49,
+      "trimestre": 4,
+      "tema": "Vuelta a la ciudad",
+      "oraciones": [
+        "Llega el último día de agosto: hay que volver a la ciudad.",
+        "Lucía riega sus lechugas por última vez antes de hacer la maleta.",
+        "Ya son enormes, tal como había prometido la abuela al plantarlas.",
+        "Dani se despide de Martín con un abrazo muy largo."
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Dibuja las lechugas de Lucía, ya enormes al final del verano."
+      }
+    },
+    {
+      "dia": 242,
+      "semana": 49,
+      "trimestre": 4,
+      "tema": "Vuelta a la ciudad",
+      "oraciones": [
+        "Antes de irse, Lucía va a despedirse de Andrés y de Bigotes.",
+        "Andrés le regala un tarro de miel de sus propias abejas del huerto.",
+        "Bigotes se deja acariciar un buen rato, como despidiéndose también a su manera.",
+        "Lucía promete que el año que viene volverá a visitarlo sin falta."
+      ],
+      "actividad": {
+        "tipo": "completa",
+        "diagrama": "lineas-ondas"
+      }
+    },
+    {
+      "dia": 243,
+      "semana": 49,
+      "trimestre": 4,
+      "tema": "Vuelta a la ciudad",
+      "oraciones": [
+        "La abuela los abraza a todos muy fuerte junto al coche.",
+        "—Este año habéis crecido muchísimo, los dos —les dice, emocionada.",
+        "Lucía piensa que, en realidad, el pueblo también ha cambiado un poco.",
+        "Ahora tiene un huerto propio, un gato amigo y un vecino especial."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "pregunta": "¿Qué le dice la abuela a los niños antes de irse?"
+      }
+    },
+    {
+      "dia": 244,
+      "semana": 49,
+      "trimestre": 4,
+      "tema": "Vuelta a la ciudad",
+      "oraciones": [
+        "Durante el viaje de vuelta, Dani se queda dormido casi enseguida.",
+        "Lucía mira por la ventana cómo el campo se convierte otra vez en ciudad.",
+        "Piensa en todo lo que ha pasado durante este largo verano.",
+        "El río, la tormenta, el mar, Bigotes, Martín: le parece casi un año entero."
+      ],
+      "actividad": {
+        "tipo": "relaciona",
+        "pares": [
+          [
+            "Andrés",
+            "le regala miel a Lucía"
+          ],
+          [
+            "La abuela",
+            "dice que han crecido mucho"
+          ],
+          [
+            "Dani",
+            "se duerme durante el viaje de vuelta"
+          ],
+          [
+            "Lucía",
+            "piensa en todo lo vivido este verano"
+          ]
+        ]
+      }
+    },
+    {
+      "dia": 245,
+      "semana": 49,
+      "trimestre": 4,
+      "tema": "Vuelta a la ciudad: la semana",
+      "oraciones": null,
+      "actividad": {
+        "tipo": "relee",
+        "prompt": "Dibuja tu recuerdo favorito de todo el verano en el pueblo."
+      }
+    },
+    {
+      "dia": 246,
+      "semana": 50,
+      "trimestre": 4,
+      "tema": "Preparativos para la vuelta al cole",
+      "oraciones": [
+        "De vuelta en la ciudad, empiezan a prepararse para la vuelta al cole.",
+        "Mamá lleva a Lucía a comprar una mochila nueva, más grande que la anterior.",
+        "Lucía elige una de color verde, con un bolsillo especial para libros.",
+        "Dani también quiere una mochila, aunque todavía no vaya al cole grande."
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Dibuja la mochila nueva que ha elegido Lucía."
+      }
+    },
+    {
+      "dia": 247,
+      "semana": 50,
+      "trimestre": 4,
+      "tema": "Preparativos para la vuelta al cole",
+      "oraciones": [
+        "Compran también lápices, cuadernos nuevos y una caja de pinturas.",
+        "Lucía forra sus libros con cuidado, uno por uno, sobre la mesa.",
+        "Papá le ayuda a escribir su nombre en la primera página de cada uno.",
+        "Este año, Lucía empieza segundo curso: ya no es la más pequeña."
+      ],
+      "actividad": {
+        "tipo": "busca",
+        "instruccion": "Busca en el texto qué curso empieza Lucía este año."
+      }
+    },
+    {
+      "dia": 248,
+      "semana": 50,
+      "trimestre": 4,
+      "tema": "Preparativos para la vuelta al cole",
+      "oraciones": [
+        "Marta, la profesora, envía una carta a todas las familias.",
+        "En ella cuenta un dato curioso: este año la clase tendrá una biblioteca nueva.",
+        "Lucía se emociona mucho al leer esa parte de la carta.",
+        "Ya está pensando en el primer libro que va a sacar prestado."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "pregunta": "¿Qué dato curioso cuenta Marta en su carta?"
+      }
+    },
+    {
+      "dia": 249,
+      "semana": 50,
+      "trimestre": 4,
+      "tema": "Preparativos para la vuelta al cole",
+      "oraciones": [
+        "Sofía llama por teléfono para contarle cómo le ha ido el verano.",
+        "Las dos se prometen sentarse juntas el primer día de curso.",
+        "Lucía le cuenta todo sobre el pueblo, el río y su nuevo amigo Bigotes.",
+        "Sofía dice que se muere de ganas de conocer esa historia entera."
+      ],
+      "actividad": {
+        "tipo": "adivina",
+        "adivinanza": "Me llevas a todas partes cargada de libros y de ilusión. ¿Qué soy?"
+      }
+    },
+    {
+      "dia": 250,
+      "semana": 50,
+      "trimestre": 4,
+      "tema": "Preparativos para la vuelta al cole",
+      "oraciones": [
+        "Ya solo queda una semana para que empiece el nuevo curso.",
+        "Lucía deja su mochila preparada, junto a la puerta, todas las noches.",
+        "Dani le pide que le siga enseñando letras hasta que empiece el cole.",
+        "Lucía le promete que lo harán cada tarde, como llevan haciendo todo el año."
+      ],
+      "actividad": {
+        "tipo": "repasa",
+        "checklist": [
+          "Sé qué compra Lucía para la vuelta al cole.",
+          "Sé qué curso empieza este año.",
+          "Sé qué dato curioso contó Marta en su carta."
+        ],
+        "prompt": "Dibuja tu propia mochila, lista para un nuevo curso.",
+        "banner": "¡250 páginas leídas! Ya casi has llegado al final del libro."
+      }
+    },
+    {
+      "dia": 251,
+      "semana": 51,
+      "trimestre": 4,
+      "tema": "Dani practica para leer en voz alta",
+      "oraciones": [
+        "Cada tarde, Lucía y Dani se sientan juntos con un cuento fácil.",
+        "Dani ya junta casi todas las palabras sin ayuda de nadie.",
+        "A veces se atasca en alguna palabra larga, pero Lucía espera sin decírsela enseguida.",
+        "—Tú puedes solo, inténtalo otra vez, despacio —le dice, con mucha paciencia."
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Dibuja a Lucía y Dani leyendo juntos por las tardes."
+      }
+    },
+    {
+      "dia": 252,
+      "semana": 51,
+      "trimestre": 4,
+      "tema": "Dani practica para leer en voz alta",
+      "oraciones": [
+        "Una tarde tranquila, Dani decide leerle un cuento entero a Toby.",
+        "Toby se tumba a su lado, como si de verdad estuviera escuchando con atención.",
+        "Dani lee despacio, siguiendo las palabras con el dedo, línea por línea.",
+        "Al terminar, se siente tan orgulloso como si hubiera ganado un premio muy importante."
+      ],
+      "actividad": {
+        "tipo": "completa",
+        "diagrama": "lineas-circulo"
+      }
+    },
+    {
+      "dia": 253,
+      "semana": 51,
+      "trimestre": 4,
+      "tema": "Dani practica para leer en voz alta",
+      "oraciones": [
+        "Mamá le graba en vídeo leyendo, para enseñárselo a la abuela después.",
+        "Dani se pone un poco nervioso al ver que lo están grabando con el móvil.",
+        "Aun así, termina el cuento entero sin ayuda de nadie más.",
+        "—Vas a leer mejor que yo dentro de poco —le dice Lucía, riéndose y abrazándolo."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "pregunta": "¿Para qué le graba Mamá un vídeo a Dani?"
+      }
+    },
+    {
+      "dia": 254,
+      "semana": 51,
+      "trimestre": 4,
+      "tema": "Dani practica para leer en voz alta",
+      "oraciones": [
+        "Esa misma noche, llaman a la abuela por teléfono para enseñarle el vídeo.",
+        "La abuela se emociona tanto que casi no puede hablar del orgullo que siente.",
+        "Dice que Dani ha aprendido tan rápido como Lucía en su momento.",
+        "Dani repite el cuento una vez más, solo para volver a oírla reír de alegría."
+      ],
+      "actividad": {
+        "tipo": "relaciona",
+        "pares": [
+          [
+            "Dani",
+            "lee un cuento entero él solo"
+          ],
+          [
+            "Toby",
+            "escucha el cuento tumbado a su lado"
+          ],
+          [
+            "Mamá",
+            "graba a Dani leyendo en vídeo"
+          ],
+          [
+            "La abuela",
+            "se emociona al ver el vídeo"
+          ]
+        ]
+      }
+    },
+    {
+      "dia": 255,
+      "semana": 51,
+      "trimestre": 4,
+      "tema": "Dani practica para leer en voz alta: la semana",
+      "oraciones": null,
+      "actividad": {
+        "tipo": "relee",
+        "prompt": "Dibuja a Dani leyéndole un cuento a Toby."
+      }
+    },
+    {
+      "dia": 256,
+      "semana": 52,
+      "trimestre": 4,
+      "tema": "Vuelta al cole",
+      "oraciones": [
+        "Por fin llega el día: empieza un nuevo curso de colegio.",
+        "Lucía se pone su ropa nueva y se cuelga la mochila verde a la espalda.",
+        "Dani la acompaña hasta la puerta, todavía en pijama, medio dormido.",
+        "—Suerte en segundo curso, hermana —le dice, dándole un abrazo antes de irse."
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Dibuja a Lucía saliendo de casa el primer día de segundo curso."
+      }
+    },
+    {
+      "dia": 257,
+      "semana": 52,
+      "trimestre": 4,
+      "tema": "Vuelta al cole",
+      "oraciones": [
+        "En la puerta del colegio, Lucía busca a Sofía entre todos los niños.",
+        "Se abrazan fuerte, como si llevaran un año entero sin verse.",
+        "Marta las recibe con una sonrisa y las lleva a ver la nueva biblioteca.",
+        "Lucía elige el primer libro del curso, muy despacio, casi con mucho respeto."
+      ],
+      "actividad": {
+        "tipo": "busca",
+        "instruccion": "Busca en el texto adónde las lleva Marta el primer día."
+      }
+    },
+    {
+      "dia": 258,
+      "semana": 52,
+      "trimestre": 4,
+      "tema": "Vuelta al cole",
+      "oraciones": [
+        "Ese mismo día, en la guardería, Dani sorprende a su profesora leyendo él solo.",
+        "La profesora llama enseguida a Mamá para contarle lo orgullosa que está.",
+        "Mamá se emociona tanto que se le escapan un par de lágrimas de alegría.",
+        "Esa tarde, toda la familia celebra los dos comienzos juntos con una tarta."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "pregunta": "¿Qué hace Dani en la guardería que sorprende a su profesora?"
+      }
+    },
+    {
+      "dia": 259,
+      "semana": 52,
+      "trimestre": 4,
+      "tema": "Vuelta al cole",
+      "oraciones": [
+        "Por la noche, Lucía mira todos los cuadernos que ha llenado este año entero.",
+        "Recuerda el primer día, cuando apenas leía una frase corta y sencilla.",
+        "Ahora lee páginas enteras ella sola, sin ayuda y casi sin pararse a pensar.",
+        "Toby duerme a su lado, tranquilo, como el primer día de todos."
+      ],
+      "actividad": {
+        "tipo": "relaciona",
+        "pares": [
+          [
+            "Lucía",
+            "empieza segundo curso de colegio"
+          ],
+          [
+            "Dani",
+            "sorprende leyendo solo en la guardería"
+          ],
+          [
+            "Sofía",
+            "se reencuentra con Lucía en la puerta"
+          ],
+          [
+            "Toby",
+            "sigue durmiendo junto a Lucía, como siempre"
+          ]
+        ]
+      }
+    },
+    {
+      "dia": 260,
+      "semana": 52,
+      "trimestre": 4,
+      "tema": "Fin del libro",
+      "oraciones": [
+        "Antes de dormir, Lucía escribe una última frase larga en su cuaderno.",
+        "—Fin de mi primer libro, pero no de mis lecturas —escribe, sonriendo mucho.",
+        "Dani, desde la puerta, le pide que mañana le enseñe otra palabra nueva más.",
+        "Lucía apaga la luz despacio, pensando en todo lo que queda todavía por leer."
+      ],
+      "actividad": {
+        "tipo": "repasa",
+        "checklist": [
+          "Sé qué empieza Lucía este curso.",
+          "Sé qué sorprende a la profesora de Dani.",
+          "Sé qué escribe Lucía en la última página de su cuaderno."
+        ],
+        "prompt": "Dibuja tu propia última página: ¿qué te gustaría leer después de este libro?",
+        "banner": "¡260 páginas leídas! Fin del libro -- y del curso entero. ¡Lo has conseguido!"
+      }
+    }
+  ]
+}

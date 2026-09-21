@@ -234,7 +234,7 @@ $prompt
 PLANTILLA_DIA = Template(
     r"""\begin{diapagina}{$dia}{$semana}{$trimestre}{$tema}
 \begin{cajaLectura}{$instruccion}
-\diafuente{$trimestre}%
+\diafuente{$fuente}%
 $oraciones
 \end{cajaLectura}
 \vspace{5mm}
@@ -392,9 +392,7 @@ def validar_dia(num, d):
     la semana y no tiene frases propias que contar).
 
     No comprueba continuidad entre días -- de eso se encarga quien llama
-    esta función: validar_dias() (más abajo) exige 1..260 sin huecos
-    para el libro real; tools/gen_muestra.py no, porque la muestra deja
-    huecos deliberados entre trimestres (ver su cabecera)."""
+    esta función: validar_dias() (más abajo) exige 1..260 sin huecos."""
     if num < 1 or num > TOTAL_DIAS:
         raise ErrorDeContenido(f"día {num}: fuera de rango (1-{TOTAL_DIAS})")
 
@@ -457,25 +455,46 @@ def validar_dias(dias):
 
 
 def texto_semana(dias_por_semana, dia_actual):
-    """Para un día 'relee': las frases de los días anteriores de la
+    """Para un día 'relee': la PRIMERA frase de cada día anterior de la
     misma semana (lunes a jueves), en orden -- ver notes/02-revision-y-plan.md,
     punto 3. No hace falta repetir el texto en el JSON de un día 'relee':
-    se compone solo, a partir de lo que ya se escribió esa semana."""
+    se compone solo, a partir de lo que ya se escribió esa semana.
+
+    Solo la primera frase de cada día (no todas): en el trimestre 1 no
+    cambia nada (un día = una frase), pero a partir del trimestre 2 un
+    día trae 2-4 frases, y componer TODAS las de lunes a jueves crece con
+    el trimestre (hasta 16 frases en el T4) sin que quepan en una caja
+    que comparte página con la actividad -- ver el hallazgo del PR de
+    T2. Una frase por día mantiene el texto compuesto en ~4 frases
+    siempre, del mismo orden de magnitud que ya funciona en T1."""
     clave = (dia_actual["trimestre"], dia_actual["semana"])
     anteriores = [
         d for d in dias_por_semana.get(clave, [])
         if d["dia"] < dia_actual["dia"] and d["actividad"]["tipo"] != "relee"
     ]
     anteriores.sort(key=lambda d: d["dia"])
-    oraciones = []
-    for d in anteriores:
-        oraciones.extend(d["oraciones"])
+    oraciones = [d["oraciones"][0] for d in anteriores]
     if not oraciones:
         raise ErrorDeContenido(
             f"día {dia_actual['dia']}: 'relee' no encuentra ningún día "
             "anterior de la misma semana del que componer el texto"
         )
     return oraciones
+
+
+# Un día "relee" compone hasta 4 días de frases en una sola caja --
+# siempre más texto que un día normal de su propio trimestre, así que
+# usa un tamaño de letra fijo y más pequeño (el de T3) en vez de
+# \diafuente{trimestre}, sea cual sea su trimestre real. Sin esto, un
+# "relee" de T1 (fuente más grande, 28pt) no cabe en una página -- visto
+# al escribir las primeras semanas nuevas de T1, no solo en teoría.
+FUENTE_RELEE = 3
+
+
+def fuente_lectura(d):
+    if d["actividad"]["tipo"] == "relee":
+        return FUENTE_RELEE
+    return d["trimestre"]
 
 
 def generar_tex(dias):
@@ -501,6 +520,7 @@ def generar_tex(dias):
                 dia=d["dia"],
                 semana=d["semana"],
                 trimestre=d["trimestre"],
+                fuente=fuente_lectura(d),
                 tema=escapar(d.get("tema", "")),
                 instruccion=INSTRUCCION_LECTURA_TRIMESTRE[d["trimestre"]],
                 oraciones=formatear_oraciones(oraciones_dia, d["trimestre"]),

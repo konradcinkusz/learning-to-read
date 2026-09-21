@@ -17,9 +17,9 @@ Lo que sí tiene sentido, y es bienvenido:
   en un carácter activo, y una comilla suelta en un diálogo se corrompía
   en silencio; el arreglo está documentado en `preamble.tex` junto al
   código, como ejemplo del tipo de problema que merece un *issue* o un PR).
-- **El generador** (`tools/gen_days.py`, `tools/gen_muestra.py`) y sus
-  validaciones -- por ejemplo, si detectas un caso que debería fallar la
-  validación y no lo hace, o al revés.
+- **El generador** (`tools/gen_days.py`) y sus validaciones -- por
+  ejemplo, si detectas un caso que debería fallar la validación y no lo
+  hace, o al revés.
 - **`tools/check_pages.py`** y el invariante "1 día = 1 página" -- si
   encuentras un caso donde se rompe sin que el *build* lo detecte.
 - **CI** (`.github/workflows/`), el `Makefile`, o cualquier parte de la
@@ -35,16 +35,15 @@ Lo que sí tiene sentido, y es bienvenido:
 El repositorio está deliberadamente construido para esto: el motor LaTeX
 (`preamble.tex`, `lang/es.tex`, `tools/`) es independiente del contenido
 (`content/*.json`). Si quieres un cuaderno parecido para otro niño o niña,
-haz un fork, sustituye `content/q1.json` (y los ficheros de
-`content/muestra/`) por tus propios personajes y frases, y conserva el
-resto tal cual -- es exactamente el reparto MIT/CC BY-NC-SA de
-`LICENSE`: el motor es tuyo para reutilizar, la historia concreta de esta
-familia no.
+haz un fork, sustituye `content/q1.json`, `q2.json`, `q3.json` y
+`q4.json` por tus propios personajes y frases, y conserva el resto tal
+cual -- es exactamente el reparto MIT/CC BY-NC-SA de `LICENSE`: el motor
+es tuyo para reutilizar, la historia concreta de esta familia no.
 
 ## Flujo de trabajo
 
 ```sh
-make generate       # content/q1.json -> content/generated-days.tex
+make generate       # content/q*.json -> content/generated-days.tex
 make build           # compila la versión en color (main.tex)
 make check            # tools/checklog.py + tools/check_pages.py + tools/gen_days.py --check + tools/metricas.py
 make all-formats      # generate + build + check, color Y blanco-y-negro -- ejecútalo

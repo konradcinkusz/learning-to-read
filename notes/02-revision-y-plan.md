@@ -37,25 +37,29 @@ renderizado, sino a partir del JSON y de las plantillas de
 maquetación (frases centradas, diálogo con comillas, etc.) conviene
 compilarlas con `make muestra` y mirarlas página a página.
 
-**Estado (actualizado tras Etapas 0–2):** hechas las tres primeras
-etapas de la Parte D — calendario y documentación (Etapa 0), la
-herramienta de métricas (Etapa 1) y el motor de página (Etapa 2), con
-un cambio de alcance respecto al plan original: al construir
+**Estado (actualizado tras Etapas 0–3): las cuatro etapas de la Parte D
+están hechas.** Calendario y documentación (Etapa 0), la herramienta de
+métricas (Etapa 1), el motor de página (Etapa 2) y los 260 días de
+contenido (Etapa 3) — el cuaderno completo compila (`make all-formats`
+en verde: 1 día = 1 página, sin huecos, dentro de la escalera de
+`content/progresion.json`, 0 errores). Hubo un cambio de alcance
+respecto al plan original en la Etapa 1: al construir
 `content/progresion.json` se descubrió que la escalera, tal como está
-escrita en la Parte C, no la cumplía casi ninguno de los 60 días ya
-publicados (no solo los que el punto 2 señalaba) — ver el aviso al
-principio de la Etapa 1 más abajo. En vez de recalibrar la escalera o
-dejar el aviso pendiente, se reescribieron los 60 días para que la
-cumplan tal cual está escrita (palabras/página y frase más larga: 0
-errores); de paso se aplicaron el punto 10 completo (frases más
-cortas, diálogos con raya, el `relaciona` del día 14, las frases
-"meta" de los días 66/75/196/210) y la parte de la Etapa 3 que dependía
-de eso. Lo que **no** se ha tocado: los temas/calendario de T4 (sigue
-hablando de "el último trimestre" en vez de verano — eso es la
-reescritura de `content/muestra/q4.json` del punto 1, deliberadamente
-aparte) y las semanas 4–65, 81–195 y 211–260 que faltan por escribir
-(Etapa 3, sin empezar). Detalle exacto de qué se hizo y qué queda, en
-cada Etapa más abajo.
+escrita en la Parte C, no la cumplía casi ninguno de los 60 días
+publicados en ese momento (no solo los que el punto 2 señalaba). En vez
+de recalibrar la escalera o dejar el aviso pendiente, se reescribieron
+esos 60 días para que la cumplan tal cual está escrita; de paso se
+aplicó el punto 10 completo (frases más cortas, diálogos con raya, el
+`relaciona` del día 14, las frases "meta" de los días 66/75/196/210).
+Los temas/calendario de T4 (punto 1) también se reescribieron como
+verano real en la Etapa 3, y la trama de fin de curso escolar que antes
+vivía ahí (feria del libro, oruga-mariposa) se trasladó a las semanas
+37–39 de T3, que es donde encaja de verdad. El mecanismo de muestra de
+progresión (`content/muestra/`, `tools/gen_muestra.py`,
+`main-muestra.tex`) se retiró al terminar la Etapa 3, tal como decía su
+propia cabecera: con los cuatro trimestres completos ya no hace falta
+un artefacto aparte para comparar el nivel entre trimestres. Detalle
+exacto de qué se hizo, en cada Etapa más abajo.
 
 ## Parte A — Qué ya funciona bien (no tocar)
 
@@ -448,21 +452,46 @@ crecen de forma lineal, semana a semana.
   niña en `relaciona`/`adivina`/`repasa` (sigue en 11–14 pt) y el ~40 %
   de página en blanco en los días de `relaciona`/`adivina`.
 
-### Etapa 3 — contenido (trabajo de autoría; parte ya hecha de rebote)
+### Etapa 3 — contenido ✅ hecho
 
 - ~~Acortar las frases del punto 10; diálogos con raya~~ — **hecho**,
-  como parte del hallazgo de la Etapa 1 (ver arriba): los 60 días
-  publicados ya cumplen la escalera y usan raya en los diálogos; el
-  `relaciona` sin apoyo textual del día 14 y las frases "meta" de los
-  días 66/75/196/210 también se corrigieron.
-- Trasladar el fin de curso escolar de `content/muestra/q4.json` a las
-  semanas 37–39; reescribir T4 como verano + final con Dani —
-  **pendiente**, deliberadamente no tocado en este PR (es una reescritura
-  de tramas/calendario, no de longitud de frase).
-- Escribir las semanas 4–13 de T1 (días 16–65) y el resto de T2, T3 y T4
-  (días 81–130, 146–195, 211–260) siguiendo la escalera (`tools/metricas.py`
-  ya vigila los números) — **pendiente**, el grueso del trabajo que
-  falta: 200 de los 260 días.
+  como parte del hallazgo de la Etapa 1 (ver arriba): los 60 días que
+  ya estaban publicados al empezar la Etapa 3 cumplen la escalera y
+  usan raya en los diálogos; el `relaciona` sin apoyo textual del día
+  14 y las frases "meta" de los días 66/75/196/210 también se
+  corrigieron.
+- ~~Trasladar el fin de curso escolar de `content/muestra/q4.json` a
+  las semanas 37–39; reescribir T4 como verano + final con Dani~~ —
+  **hecho**: T4 (semanas 40–52) es verano real de principio a fin — el
+  pueblo de la abuela Rosa, el río, una tormenta de verano, la playa en
+  familia, el vecino Andrés y su gato Bigotes, y cierra con la vuelta
+  al cole (Lucía empieza 2º, Dani empieza a leer solo). La trama de fin
+  de curso escolar que antes vivía al principio de T4 (feria del libro,
+  la oruga que se hace mariposa) se adaptó, con frases de tres en vez
+  de cuatro, a las semanas 37–39 de T3, que es donde encaja con el
+  calendario real.
+- ~~Escribir las semanas 4–13 de T1, y el resto de T2, T3 y T4~~ —
+  **hecho**: los 200 días que faltaban (16–65, 81–130, 146–195,
+  196–260) están escritos, siguiendo el ciclo objetivo del punto 3
+  (`busca`/`rodea`/`verdadero_falso`/`relee` desde la primera semana
+  nueva de cada trimestre) y dentro de la escalera de
+  `content/progresion.json`.
+- **Hallazgo no previsto en el plan**: `relee` (Etapa 2) componía
+  *todas* las frases de lunes a jueves de la semana, no solo una por
+  día. Eso no se nota en T1 (1 frase/día = 4 frases compuestas), pero
+  en T2 (2/día = 8 frases) ya desbordaba a una segunda página, y en T3
+  (3/día = 12) y T4 (4/día = 16) habría sido imposible de encajar en la
+  misma caja que la actividad, con cualquier tamaño de letra razonable.
+  Arreglado componiendo solo la primera frase de cada día
+  (`tools/gen_days.py`, `texto_semana`) — en T1 no cambia nada (ya era
+  la única frase del día), y en el resto mantiene el texto compuesto
+  siempre en torno a 4 frases, del mismo orden que ya funcionaba en T1.
+- **Retirada la muestra de progresión** (`content/muestra/`,
+  `tools/gen_muestra.py`, `main-muestra.tex`) una vez trasladado su
+  contenido a `content/q2.json`, `q3.json` y `q4.json`: su propia
+  cabecera decía que dejaría de hacer falta en este momento exacto, y
+  mantenerla habría significado dos copias del mismo contenido
+  divergiendo con el tiempo.
 
 ## Verificación
 
@@ -470,20 +499,24 @@ crecen de forma lineal, semana a semana.
   cambios en el resultado (solo hay documentación); revisión visual del
   Markdown. — Hecho, PR fusionado.
 - **Etapa 1**: `python3 tools/metricas.py --tabla` sobre los 60 días
-  **mostró** los problemas de los puntos 2 y 6 antes de tocar nada
-  (prácticamente los 60 días por encima del presupuesto, no solo
-  76/77/79) — eso fue la prueba de que la herramienta funciona; tras
-  reescribir los 60 días, la tabla queda con 0 errores y avisos de
-  `nuevas_max` únicamente (esperado). Confirmado localmente con
-  `make all-formats && make muestra` (color, blanco y negro y muestra,
-  las tres limpias) porque este entorno no tenía TeX instalado al
-  empezar y se instaló para poder verificar en vez de adivinar.
-- **Etapa 2**: `make all-formats && make muestra` en verde (checklog,
-  check_pages, `--check`), confirmado localmente; los cinco tipos
-  nuevos y `relee` probados con un documento de prueba aparte (fuera
-  del contenido real) que compila sin errores ni `Overfull` y se
-  revisó página a página. Queda confirmarlo también en el PDF publicado
-  por CI (`pdf-color`/`pdf-bw`) una vez fusionado.
-- **Etapa 3**: cada semana de contenido nueva pasa las métricas y el
-  CI; cada trimestre, `make muestra` para comparar el nivel. Sigue
-  pendiente en su mayor parte (ver arriba).
+  publicados en ese momento **mostró** los problemas de los puntos 2 y
+  6 antes de tocar nada (prácticamente los 60 días por encima del
+  presupuesto, no solo 76/77/79) — eso fue la prueba de que la
+  herramienta funciona; tras reescribirlos, la tabla quedó con 0
+  errores. — Hecho, PR fusionado.
+- **Etapa 2**: `make all-formats` en verde (checklog, check_pages,
+  `--check`); los cinco tipos nuevos y `relee` probados con un
+  documento de prueba aparte que compiló sin errores ni `Overfull` y se
+  revisó página a página. — Hecho, PR fusionado.
+- **Etapa 3**: `make all-formats` en verde sobre los 260 días —
+  `checklog.py` sin errores ni `Overfull`, `check_pages.py` confirma
+  que los 260 días ocupan exactamente una página cada uno, `gen_days.py
+  --check` confirma que el `.tex` generado coincide con el JSON, y
+  `metricas.py` da 0 errores (palabras/página y frase más larga dentro
+  de la escalera en los 260 días; solo avisos de `nuevas_max` y de
+  `palabras_min` en días concretos, ambos por diseño no bloqueantes).
+  Revisión visual de una muestra de páginas de cada trimestre
+  (incluidas varias `relee`, que fueron las que más iteración de
+  maquetación necesitaron) convertidas a imagen. Confirmado localmente
+  porque este entorno no tenía TeX instalado al empezar y se instaló
+  para poder verificar en vez de adivinar.

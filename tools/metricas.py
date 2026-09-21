@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Mide la progresión real de content/q*.json + content/muestra/q*.json y la
-compara con los objetivos de content/progresion.json -- ver
-notes/02-revision-y-plan.md, Parte B punto 2 y punto 6, y Parte C.
+"""Mide la progresión real de content/q*.json y la compara con los
+objetivos de content/progresion.json -- ver notes/02-revision-y-plan.md,
+Parte B punto 2 y punto 6, y Parte C.
 
 Cuatro métricas por día (una página = un día):
   - palabras: total de palabras de todas las oraciones de ese día.
@@ -36,11 +36,11 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from gen_days import cargar_dias as cargar_dias_reales  # noqa: E402
+from gen_days import cargar_dias  # noqa: E402
+from gen_days import texto_semana  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 CONTENT_DIR = ROOT / "content"
-MUESTRA_DIR = CONTENT_DIR / "muestra"
 PROGRESION_FILE = CONTENT_DIR / "progresion.json"
 FAMILIAS_FILE = CONTENT_DIR / "familias.json"
 
@@ -95,15 +95,6 @@ def cargar_familias():
     return json.loads(FAMILIAS_FILE.read_text(encoding="utf-8"))
 
 
-def cargar_todos_los_dias():
-    """Días reales (content/q*.json) + muestra (content/muestra/q*.json),
-    en orden de día -- ver tools/gen_muestra.py para por qué viven separados."""
-    dias = list(cargar_dias_reales())
-    for fichero in sorted(MUESTRA_DIR.glob("q*.json")):
-        datos = json.loads(fichero.read_text(encoding="utf-8"))
-        dias.extend(datos.get("dias", []))
-    dias.sort(key=lambda d: d["dia"])
-    return dias
 
 
 def lematizar(palabra, familias):
@@ -124,11 +115,21 @@ def lematizar(palabra, familias):
 def metricas_por_dia(dias, familias):
     """Devuelve una lista de dicts, uno por día, con sus métricas y la
     lista de lemas de contenido NUEVOS ese día (cumulativo, en orden de
-    día -- ver la cabecera del módulo)."""
+    día -- ver la cabecera del módulo). Un día 'relee' no tiene
+    `oraciones` propias en el JSON -- se componen igual que en
+    tools/gen_days.py (texto_semana), para medir lo mismo que se acaba
+    imprimiendo en la página."""
+    dias_por_semana = {}
+    for d in dias:
+        dias_por_semana.setdefault((d["trimestre"], d["semana"]), []).append(d)
+
     vistos = set()
     filas = []
     for d in dias:
-        oraciones = d["oraciones"]
+        if d["actividad"]["tipo"] == "relee":
+            oraciones = texto_semana(dias_por_semana, d)
+        else:
+            oraciones = d["oraciones"]
         palabras = sum(len(o.split()) for o in oraciones)
         frase_max_dia = max(len(o.split()) for o in oraciones)
 
@@ -254,7 +255,7 @@ def main():
 
     progresion = cargar_progresion()
     familias = cargar_familias()
-    dias = cargar_todos_los_dias()
+    dias = cargar_dias()
     if not dias:
         print("ERROR: no hay ningún día en content/q*.json", file=sys.stderr)
         return 1

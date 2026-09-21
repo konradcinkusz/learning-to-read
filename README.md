@@ -59,8 +59,6 @@ make build        # solo compila la versión en color (asume que ya está genera
 make build-bw     # solo compila la versión en blanco y negro
 make check        # lee main.log + 1 día = 1 página (lee main.aux) + valida el JSON
 make check-bw     # lo mismo, sobre main-bw.log / main-bw.aux
-make muestra      # 60 páginas -- los 15 primeros días reales de cada trimestre, para
-                  # comparar el nivel; NO es el cuaderno, ver notes/01-curriculum.md
 make clean
 ```
 
@@ -71,7 +69,7 @@ main.tex, main-bw.tex                 -- color y blanco-y-negro; solo fijan \boo
 preamble.tex, lang/es.tex             -- el motor LaTeX (la paleta de main-bw.tex está en preamble.tex)
 body.tex                              -- orden del documento
 frontmatter/                          -- portada, instrucciones, mapa del curso
-content/q1.json                       -- días 1-15 escritos (Trimestre 1, semanas 1-3)
+content/q1.json, q2.json, q3.json, q4.json  -- los 260 días, uno por trimestre, editados a mano
 content/generated-days.tex            -- GENERADO por tools/gen_days.py, no editar
 content/progresion.json               -- objetivos semanales de la escalera de progresión (52 filas)
 diagrams/                             -- dibujos de línea (TikZ) para las páginas "Completa"
@@ -80,7 +78,6 @@ tools/gen_days.py                     -- JSON -> LaTeX + validación
 tools/check_pages.py                  -- comprueba que cada día ocupa una sola página
 tools/checklog.py                     -- lee el .log de pdflatex correctamente (nunca grep '^!')
 tools/metricas.py                     -- mide palabras/frase/vocabulario nuevo contra content/progresion.json
-main-muestra.tex, tools/gen_muestra.py, content/muestra/  -- muestra de progresión, no el libro (ver notes/01-curriculum.md)
 docs/index.html                       -- la página que publica .github/workflows/pages.yml
 assets/logo.tex, logo.png, logo.svg   -- logo del repositorio (standalone TikZ, reutiliza el icono de portada.tex)
 LICENSE, LICENSE-CODE, LICENSE-CONTENT -- ver "Licencia" más abajo
@@ -111,15 +108,12 @@ aquí.
 
 ## Estado
 
-Días 1–15 (Trimestre 1) escritos y con sus actividades -- son los que
-publica el cuaderno real. Los 15 primeros días reales de cada uno de
-los Trimestres 2, 3 y 4 también están escritos, como muestra de
-progresión (`content/muestra/`, `make muestra`) -- no forman parte
-todavía del cuaderno real porque las semanas que faltan entre medias no
-están escritas. El resto está esquematizado en `notes/01-curriculum.md`.
-
-Ver `notes/02-revision-y-plan.md` para la revisión completa del
-cuaderno (qué mejorar y en qué orden) y el calendario del curso completo
--- por qué los cuatro trimestres son las cuatro estaciones del año, con
-vacaciones incluidas, y no los tres trimestres del curso escolar
-español.
+Los 260 días están escritos, con sus actividades, y compilan como un
+cuaderno completo (`make all-formats` en verde: 1 día = 1 página, sin
+huecos, dentro de la escalera de progresión de
+`content/progresion.json`). Ver `notes/01-curriculum.md` para el arco
+narrativo de cada trimestre y `notes/02-revision-y-plan.md` para la
+revisión completa del cuaderno (qué mejorar y en qué orden) y el
+calendario del curso completo -- por qué los cuatro trimestres son las
+cuatro estaciones del año, con vacaciones incluidas, y no los tres
+trimestres del curso escolar español.
