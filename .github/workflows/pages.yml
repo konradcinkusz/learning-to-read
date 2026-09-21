@@ -56,12 +56,17 @@ jobs:
       # Color y blanco-y-negro (main-bw.tex, ver preamble.tex \bookcolor):
       # los dos se compilan y se validan aquí, y Pages nunca publica uno
       # sin haber comprobado el otro -- son la misma promesa dos veces.
+      # LuaLaTeX, no pdflatex: la letra es Andika (fonts/andika/, ver
+      # preamble.tex) -- fontspec exige lualatex o xelatex. args NO lleva
+      # -pdf, igual que en build.yml: con latexmk_use_lualatex la propia
+      # acción añade -lualatex, y -pdf fuerza pdflatex, así que los dos
+      # juntos se pisan.
       - name: Compila el cuaderno (color)
         uses: xu-cheng/latex-action@v3
         with:
           root_file: main.tex
-          latexmk_use_lualatex: false
-          args: -pdf -interaction=nonstopmode -file-line-error
+          latexmk_use_lualatex: true
+          args: -interaction=nonstopmode -file-line-error
 
       - name: Lee el log correctamente (color)
         run: python3 tools/checklog.py main.log
@@ -73,8 +78,8 @@ jobs:
         uses: xu-cheng/latex-action@v3
         with:
           root_file: main-bw.tex
-          latexmk_use_lualatex: false
-          args: -pdf -interaction=nonstopmode -file-line-error
+          latexmk_use_lualatex: true
+          args: -interaction=nonstopmode -file-line-error
 
       - name: Lee el log correctamente (blanco y negro)
         run: python3 tools/checklog.py main-bw.log
