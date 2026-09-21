@@ -1,0 +1,22 @@
+% assets/logo.tex -- logo del repositorio.
+% Documento standalone (NO pasa por preamble.tex/body.tex del cuaderno --
+% no necesita babel/tcolorbox/geometry, solo tikz), para poder compilarse
+% solo y exportarse a PNG/SVG. Reutiliza tal cual el icono de libro abierto
+% de frontmatter/portada.tex (mismas coordenadas, escaladas), con el mismo
+% verde que \colorLectura en preamble.tex -- no es un diseño nuevo, es el
+% mismo icono ya usado y probado en la portada del cuaderno, así que no hay
+% ningún riesgo artístico ni inconsistencia visual que introducir.
+\documentclass[tikz,border=6mm]{standalone}
+\usepackage{xcolor}
+\definecolor{colorLectura}{HTML}{2E7D32}
+
+\begin{document}
+\begin{tikzpicture}[line width=3.2pt, line cap=round, line join=round, color=colorLectura]
+  \draw (-2.1,0) -- (0,0.46) -- (2.1,0) -- (2.1,-2.49) -- (0,-2.04) -- (-2.1,-2.49) -- cycle;
+  \draw (0,0.46) -- (0,-2.04);
+  \draw (-1.64,-0.39) -- (-0.33,-0.20);
+  \draw (-1.64,-0.92) -- (-0.33,-0.72);
+  \draw (0.33,-0.20) -- (1.64,-0.39);
+  \draw (0.33,-0.72) -- (1.64,-0.92);
+\end{tikzpicture}
+\end{document}
