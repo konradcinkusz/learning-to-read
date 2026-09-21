@@ -1,4 +1,10 @@
+<p align="center"><img src="assets/logo.png" width="140" alt="Aprendo a leer"></p>
+
 # Aprendo a leer
+
+[![Build](https://github.com/konradcinkusz/learning-to-read/actions/workflows/build.yml/badge.svg)](https://github.com/konradcinkusz/learning-to-read/actions/workflows/build.yml)
+[![Licencia](https://img.shields.io/github/license/konradcinkusz/learning-to-read)](LICENSE)
+[![Hecho con](https://img.shields.io/badge/hecho%20con-LaTeX-2E7D32)](preamble.tex)
 
 Cuaderno diario de lectura en español, en A4, una página por día de
 colegio (lunes a viernes, 260 días = un curso entero). Cada página
@@ -71,10 +77,31 @@ tools/check_pages.py                  -- comprueba que cada día ocupa una sola 
 tools/checklog.py                     -- lee el .log de pdflatex correctamente (nunca grep '^!')
 main-muestra.tex, tools/gen_muestra.py, content/muestra/  -- muestra de progresión, no el libro (ver notes/01-curriculum.md)
 docs/index.html                       -- la página que publica .github/workflows/pages.yml
+assets/logo.tex, logo.png, logo.svg   -- logo del repositorio (standalone TikZ, reutiliza el icono de portada.tex)
+LICENSE, LICENSE-CODE, LICENSE-CONTENT -- ver "Licencia" más abajo
+CONTRIBUTING.md                       -- cómo colaborar (o hacer tu propio fork)
 .github/workflows/build.yml           -- compila (color + blanco-y-negro) y valida en cada push/PR
 .github/workflows/pages.yml           -- publica los dos PDF en GitHub Pages en cada push a main
 notes/01-curriculum.md                -- el plan del curso completo
 ```
+
+## Licencia
+
+El motor -- LaTeX (`preamble.tex`, `lang/es.tex`, `main*.tex`, `body.tex`),
+las herramientas Python (`tools/`), el `Makefile` y la configuración de CI
+(`.github/`) -- está bajo MIT ([`LICENSE-CODE`](LICENSE-CODE)): reutilízalo
+libremente, incluido un fork para otro niño o niña.
+
+El contenido narrativo -- las frases, los nombres y la trama de
+`content/*.json`, y lo que se genera de ahí a las páginas del cuaderno --
+está bajo Creative Commons Atribución-NoComercial-CompartirIgual 4.0
+([`LICENSE-CONTENT`](LICENSE-CONTENT)): se puede adaptar (por ejemplo,
+cambiar los personajes) pero no usar comercialmente, y cualquier adaptación
+tiene que compartirse bajo la misma licencia.
+
+Ver [`LICENSE`](LICENSE) para el reparto exacto de qué cae en cada lado, y
+[`CONTRIBUTING.md`](CONTRIBUTING.md) para qué tipo de colaboración encaja
+aquí.
 
 ## Estado
 
