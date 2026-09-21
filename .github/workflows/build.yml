@@ -40,12 +40,19 @@ jobs:
 
       # Nada generado está comprometido en git (content/generated-days.tex
       # es GENERADO, no se sube), así que un checkout limpio tiene que
-      # generarlo antes de poder validar nada.
-      - name: Genera content/generated-days.tex desde content/q*.json
+      # generarlo antes de poder validar nada. content/letras-trazo.json
+      # SÍ está en git (tools/gen_letras.py, a diferencia de
+      # tools/gen_letras_puntos.py, no depende de matplotlib/fonttools --
+      # ver tools/gen_letras.py), así que este job no gana ninguna
+      # dependencia pesada por las páginas de trazo.
+      - name: Genera content/generated-days.tex y generated-letras.tex
         run: make generate
 
       - name: Valida el contenido (frases por trimestre, campos de actividad)
         run: python3 tools/gen_days.py --check
+
+      - name: Valida las páginas de trazo (una letra, una palabra, sin huecos)
+        run: python3 tools/gen_letras.py --check
 
       # Compara content/q*.json con la escalera de content/progresion.json
       # (notes/02-revision-y-plan.md, Parte C) -- palabras/página y frase

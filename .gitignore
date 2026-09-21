@@ -7,10 +7,11 @@
 *.synctex.gz
 *.pdf
 
-# Generado por tools/gen_days.py a partir del JSON -- la fuente de
-# verdad es el JSON, no estos ficheros.
+# Generado por tools/gen_days.py / tools/gen_letras.py a partir del
+# JSON -- la fuente de verdad es el JSON, no estos ficheros.
 content/generated-days.tex
 content/generated-clave.tex
+content/generated-letras.tex
 
 # Python
 __pycache__/

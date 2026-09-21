@@ -1,0 +1,32 @@
+{
+  "_comentario": "Una palabra de ejemplo por letra, para las páginas de trazo (backmatter/trazo-letras.tex). Editado a mano -- ver tools/gen_letras.py. Donde encaja de forma natural, la palabra viene del propio cuaderno (personajes, animales, cosas que ya han aparecido en algún día) en vez de ser genérica.",
+  "palabras": {
+    "a": "Abuela",
+    "b": "Bicicleta",
+    "c": "Castaña",
+    "d": "Dani",
+    "e": "Escuela",
+    "f": "Familia",
+    "g": "Gato",
+    "h": "Hueso",
+    "i": "Isla",
+    "j": "Jardín",
+    "k": "Kiwi",
+    "l": "Lucía",
+    "m": "Mamá",
+    "n": "Navidad",
+    "ñ": "Ñu",
+    "o": "Otoño",
+    "p": "Perro",
+    "q": "Queso",
+    "r": "Río",
+    "s": "Sol",
+    "t": "Toby",
+    "u": "Uva",
+    "v": "Verano",
+    "w": "Wifi",
+    "x": "Xilófono",
+    "y": "Yogur",
+    "z": "Zapato"
+  }
+}

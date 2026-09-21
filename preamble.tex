@@ -307,3 +307,35 @@
   \begin{center}\footnotesize\color{colorGris}\lblDia~\diapagina@actual~/ \totaldias\end{center}
   \newpage
 }
+
+% =========================================================================
+% Páginas de trazo (backmatter/trazo-letras.tex,
+% content/generated-letras.tex, ver tools/gen_letras.py). Cada letra es
+% el contorno REAL del glifo de Andika (la misma fuente del resto del
+% cuaderno, ver tools/gen_letras_puntos.py), convertido en una nube de
+% puntos -- no un dibujo aparte, así que la "A" de trazar es
+% exactamente la misma "A" que se lee en el resto de páginas.
+%
+%   \paginaLetra{mayúscula}{minúscula}{palabra}{tikzpicture}
+%
+% #4 llega ya armado desde Python (PLANTILLA_LETRA en gen_letras.py) --
+% aquí solo se coloca dentro de la página, igual que \diapagina hace
+% con la caja de lectura y la actividad.
+% =========================================================================
+\newcommand{\paginaLetra}[4]{%
+  \begin{center}
+  \vspace*{0.5cm}
+  {\fontsize{30}{34}\selectfont\bfseries\color{colorLectura} #1#2}\\[2mm]
+  {\Large\color{colorGris} #1~\lblTrazoDe~#3}
+  \vspace{6mm}
+
+  #4
+
+  \vspace{8mm}
+  {\normalsize\color{colorGris}\lblInstruccionTrazo}\\[8mm]
+  \rule{0.75\linewidth}{0.4pt}\\[10mm]
+  \rule{0.75\linewidth}{0.4pt}
+  \end{center}
+  \vspace*{\fill}
+  \newpage
+}

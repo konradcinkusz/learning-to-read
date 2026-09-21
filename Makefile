@@ -15,6 +15,7 @@ all-formats: generate build check build-bw check-bw
 
 generate:
 	python3 tools/gen_days.py
+	python3 tools/gen_letras.py
 
 build:
 	$(LATEX) $(MAIN).tex
@@ -26,6 +27,7 @@ check:
 	python3 tools/checklog.py $(MAIN).log
 	python3 tools/check_pages.py $(MAIN).aux
 	python3 tools/gen_days.py --check
+	python3 tools/gen_letras.py --check
 	python3 tools/metricas.py
 
 check-bw:
@@ -35,7 +37,7 @@ check-bw:
 clean:
 	latexmk -C $(MAIN).tex
 	latexmk -C $(BW).tex
-	rm -f content/generated-days.tex content/generated-clave.tex
+	rm -f content/generated-days.tex content/generated-clave.tex content/generated-letras.tex
 
 watch:
 	$(LATEX) -pvc $(MAIN).tex
