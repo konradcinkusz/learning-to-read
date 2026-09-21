@@ -30,8 +30,15 @@ FRASES_POR_TRIMESTRE = {1: 1, 2: 2, 3: 3, 4: 4}
 RANGO_TRIMESTRE = {1: (1, 65), 2: (66, 130), 3: (131, 195), 4: (196, 260)}
 
 TIPOS_VALIDOS = {
-    "dibuja", "colorea", "responde", "relaciona", "adivina", "crea", "repasa",
+    "dibuja", "completa", "copia", "responde", "relaciona", "adivina", "crea",
+    "repasa",
 }
+
+# En el trimestre 1 la niña todavía no compone una respuesta escrita por
+# sí sola -- "responde" (pregunta abierta) no se usa hasta que sepa
+# hacerlo; "copia" (repasar la frase, tres veces) es lo que hay en su
+# lugar. Ver notes/01-curriculum.md, "Rotación de actividades".
+TRIMESTRES_SIN_RESPONDE = {1}
 
 
 class ErrorDeContenido(Exception):
@@ -70,9 +77,21 @@ $prompt
 }"""
 )
 
-PLANTILLA_COLOREA = Template(
-    r"""\actividadColorea{%
-\input{diagrams/$diagrama}
+PLANTILLA_COMPLETA = Template(
+    r"""\actividadCompleta{%
+\footnotesize\color{colorGris}\lblInstruccionCompleta
+\par\vspace{3mm}\normalfont\normalsize\color{black}
+\centering\resizebox{0.97\linewidth}{!}{\input{diagrams/$diagrama}}\par
+\espacioDibujo[6cm]
+}"""
+)
+
+PLANTILLA_COPIA = Template(
+    r"""\actividadCopia{%
+\lblInstruccionCopia
+\lineaRespuesta
+\lineaRespuesta
+\lineaRespuesta
 }"""
 )
 
@@ -150,7 +169,7 @@ def render_actividad(dia_num, actividad):
         _campos_requeridos(dia_num, actividad, ["prompt"])
         return PLANTILLA_DIBUJA.substitute(prompt=escapar(actividad["prompt"]))
 
-    if tipo == "colorea":
+    if tipo == "completa":
         _campos_requeridos(dia_num, actividad, ["diagrama"])
         diagrama = actividad["diagrama"]
         ruta = ROOT / "diagrams" / f"{diagrama}.tex"
@@ -158,7 +177,10 @@ def render_actividad(dia_num, actividad):
             raise ErrorDeContenido(
                 f"día {dia_num}: diagrams/{diagrama}.tex no existe"
             )
-        return PLANTILLA_COLOREA.substitute(diagrama=diagrama)
+        return PLANTILLA_COMPLETA.substitute(diagrama=diagrama)
+
+    if tipo == "copia":
+        return PLANTILLA_COPIA.substitute()
 
     if tipo == "responde":
         _campos_requeridos(dia_num, actividad, ["pregunta"])
@@ -252,6 +274,14 @@ def validar_dias(dias):
             raise ErrorDeContenido(
                 f"día {num}: dice ser del trimestre {trimestre} "
                 f"(días {lo}-{hi}) pero su número no está en ese rango"
+            )
+
+        tipo_actividad = d.get("actividad", {}).get("tipo")
+        if tipo_actividad == "responde" and trimestre in TRIMESTRES_SIN_RESPONDE:
+            raise ErrorDeContenido(
+                f"día {num}: 'responde' no se usa en el trimestre {trimestre} "
+                "-- la niña todavía no compone una respuesta escrita por sí "
+                "sola a esta edad; usa 'copia' en su lugar"
             )
 
         oraciones = d.get("oraciones", [])

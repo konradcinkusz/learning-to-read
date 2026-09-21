@@ -35,20 +35,50 @@
 % =========================================================================
 % Cada actividad tiene un color saturado (borde + título) y uno claro
 % (fondo). El color es un canal EXTRA, nunca el único: el título en
-% negrita y el borde grueso ya distinguen la caja en blanco y negro.
-\definecolor{colorLectura}{HTML}{2E7D32}
-\definecolor{colorLecturaClaro}{HTML}{EAF6EC}
-\definecolor{colorDibuja}{HTML}{1565C0}
-\definecolor{colorDibujaClaro}{HTML}{E7F0FB}
-\definecolor{colorColorea}{HTML}{C2185B}
-\definecolor{colorColoreaClaro}{HTML}{FBE9EF}
-\definecolor{colorResponde}{HTML}{6A1B9A}
-\definecolor{colorRespondeClaro}{HTML}{F2E9F7}
-\definecolor{colorRelaciona}{HTML}{E65100}
-\definecolor{colorRelacionaClaro}{HTML}{FDEEE2}
-\definecolor{colorCrea}{HTML}{AD1457}
-\definecolor{colorCreaClaro}{HTML}{FBE7EE}
-\definecolor{colorGris}{HTML}{616161}
+% negrita y el borde grueso ya distinguen la caja en blanco y negro -- lo
+% que es lo que hace posible, sin cambiar una sola macro de las de abajo,
+% una versión sin color de verdad (ver \bookcolor, fijado por main*.tex
+% antes de \input{preamble}): no se pierde ninguna información, solo tinta.
+\makeatletter
+\newif\ifbwbook
+\def\aal@bookcolor@bw{bw}
+\@ifundefined{bookcolor}{\bwbookfalse}{%
+  \ifx\bookcolor\aal@bookcolor@bw \bwbooktrue \else \bwbookfalse \fi
+}
+\makeatother
+
+\ifbwbook
+  % Modo blanco y negro: mismos nombres de color, apuntan a negro/gris en
+  % vez de a un tono por actividad -- ninguna caja de abajo sabe ni le
+  % importa en qué modo está.
+  \definecolor{colorLectura}{gray}{0}
+  \definecolor{colorLecturaClaro}{gray}{0.95}
+  \definecolor{colorDibuja}{gray}{0}
+  \definecolor{colorDibujaClaro}{gray}{0.95}
+  \definecolor{colorCompleta}{gray}{0}
+  \definecolor{colorCompletaClaro}{gray}{0.95}
+  \definecolor{colorResponde}{gray}{0}
+  \definecolor{colorRespondeClaro}{gray}{0.95}
+  \definecolor{colorRelaciona}{gray}{0}
+  \definecolor{colorRelacionaClaro}{gray}{0.95}
+  \definecolor{colorCrea}{gray}{0}
+  \definecolor{colorCreaClaro}{gray}{0.95}
+  \definecolor{colorGris}{gray}{0.38}
+\else
+  \definecolor{colorLectura}{HTML}{2E7D32}
+  \definecolor{colorLecturaClaro}{HTML}{EAF6EC}
+  \definecolor{colorDibuja}{HTML}{1565C0}
+  \definecolor{colorDibujaClaro}{HTML}{E7F0FB}
+  \definecolor{colorCompleta}{HTML}{C2185B}
+  \definecolor{colorCompletaClaro}{HTML}{FBE9EF}
+  \definecolor{colorResponde}{HTML}{6A1B9A}
+  \definecolor{colorRespondeClaro}{HTML}{F2E9F7}
+  \definecolor{colorRelaciona}{HTML}{E65100}
+  \definecolor{colorRelacionaClaro}{HTML}{FDEEE2}
+  \definecolor{colorCrea}{HTML}{AD1457}
+  \definecolor{colorCreaClaro}{HTML}{FBE7EE}
+  \definecolor{colorGris}{HTML}{616161}
+\fi
 
 % =========================================================================
 % Cajas (tcolorbox)
@@ -72,9 +102,13 @@
   colback=colorDibujaClaro, colframe=colorDibuja, colbacktitle=colorDibuja,
   title=\lblDibuja}
 
-\newtcolorbox{cajaColorea}{cajabase,
-  colback=colorColoreaClaro, colframe=colorColorea, colbacktitle=colorColorea,
-  title=\lblColorea}
+\newtcolorbox{cajaCompleta}{cajabase,
+  colback=colorCompletaClaro, colframe=colorCompleta, colbacktitle=colorCompleta,
+  title=\lblCompleta}
+
+\newtcolorbox{cajaCopia}{cajabase,
+  colback=colorRespondeClaro, colframe=colorResponde, colbacktitle=colorResponde,
+  title=\lblCopia}
 
 \newtcolorbox{cajaResponde}{cajabase,
   colback=colorRespondeClaro, colframe=colorResponde, colbacktitle=colorResponde,
@@ -101,10 +135,12 @@
 % al llamar a la macro, así que cada día es libre de necesitar cosas
 % distintas sin que la macro tenga que adivinarlas.
 \newcommand{\actividadDibuja}[1]{\begin{cajaDibuja}#1\end{cajaDibuja}}
-% \resizebox al 92% del ancho disponible -- así el dibujo siempre llena
-% la caja sin desbordar el margen, sea cual sea su tamaño natural en
-% diagrams/*.tex (no hay que ajustar una escala a mano por dibujo).
-\newcommand{\actividadColorea}[1]{\begin{cajaColorea}\centering\resizebox{0.97\linewidth}{!}{#1}\vspace{12mm}\end{cajaColorea}}
+% A diferencia de las demás, la plantilla de "completa" (tools/gen_days.py)
+% necesita meter una línea de instrucción a tamaño normal ANTES del dibujo
+% escalado, así que aquí no se envuelve nada en \resizebox -- eso lo hace
+% la propia plantilla, solo alrededor del \input{diagrams/...}.
+\newcommand{\actividadCompleta}[1]{\begin{cajaCompleta}#1\end{cajaCompleta}}
+\newcommand{\actividadCopia}[1]{\begin{cajaCopia}\large#1\end{cajaCopia}}
 \newcommand{\actividadResponde}[1]{\begin{cajaResponde}\large#1\end{cajaResponde}}
 \newcommand{\actividadRelaciona}[1]{\begin{cajaRelaciona}\large#1\end{cajaRelaciona}}
 \newcommand{\actividadAdivina}[1]{\begin{cajaAdivina}#1\end{cajaAdivina}}
