@@ -1,5 +1,9 @@
 # Programa del curso — "Aprendo a leer"
 
+Ver también `notes/02-revision-y-plan.md`: la revisión del cuaderno ya
+escrito y el plan de desarrollo del resto del año (qué mejorar, en qué
+orden, y la escalera de progresión completa).
+
 ## Punto de partida (y por qué cambió)
 
 La primera versión de este cuaderno partía de un método silábico clásico
@@ -41,12 +45,44 @@ dependencia técnica de que se llame "Lucía".
 
 ## Los cuatro trimestres
 
-| Trimestre | Días | Frases/día | Arco narrativo |
-|---|---|---|---|
-| 1 | 1–65 | 1 | Frases independientes que presentan a la familia y el entorno cercano (casa, colegio, barrio, estaciones). Ya escrito: semanas 1–3 (días 1–15). |
-| 2 | 66–130 | 2 | Pequeñas escenas de dos frases; empiezan los conectores (`y`, `pero`, `porque`, `cuando`) y algún diálogo suelto. |
-| 3 | 131–195 | 3 | Mini-historias de tres frases por semana, con principio y final (problema/solución sencillo). |
-| 4 | 196–260 | 4 | Historias más largas, diálogo con comillas, alguna nota informativa curiosa, final de curso con la última semana cerrando la serie. |
+Los cuatro trimestres del cuaderno son las cuatro estaciones del año —
+**no** los tres trimestres del curso escolar español. El cuaderno se lee
+también durante las vacaciones (Navidad, Semana Santa, verano): es
+precisamente cuando más se agradece no perder el ritmo de lectura. Ver
+`notes/02-revision-y-plan.md`, punto 1, para el razonamiento completo.
+
+| Trimestre | Semanas | Días | Frases/día | Época | Qué pasa |
+|---|---|---|---|---|---|
+| 1 | 1–13 | 1–65 | 1 | septiembre–diciembre | Se presenta a la familia y el entorno cercano (casa, colegio, barrio); llega el otoño y el trimestre cierra con la Navidad (semana 13). Frases independientes. Ya escrito: semanas 1–3 (días 1–15). |
+| 2 | 14–26 | 66–130 | 2 | diciembre–marzo | Abre con Nochebuena y Reyes (semanas 14–17), sigue con la nieve y el Carnaval. Pequeñas escenas de dos frases; empiezan los conectores (`y`, `pero`, `porque`, `cuando`) y algún diálogo suelto. |
+| 3 | 27–39 | 131–195 | 3 | marzo–junio | Semana Santa, el Día del Libro (semanas 31–32), y el fin del curso escolar cerrando el trimestre (excursión final, feria del libro). Mini-historias de tres frases por semana, con principio y final. |
+| 4 | 40–52 | 196–260 | 4 | junio–septiembre | Vacaciones de verano: el pueblo de la abuela Rosa, la playa, tormentas de verano. La última semana es la vuelta al cole, con Dani empezando a leer — cierre de la serie. Historias más largas, diálogo con raya. |
+
+## Escalera de progresión
+
+El número de frases por página (1 → 2 → 3 → 4) es la parte visible de
+la progresión, pero no la única: dentro de cada trimestre, la longitud
+de las frases, el vocabulario nuevo y el tipo de comprensión que se pide
+también tienen que subir, semana a semana, no solo en el salto de
+trimestre. Objetivos al final de cada trimestre (ver
+`notes/02-revision-y-plan.md`, Parte C, para el detalle y el plan de
+`tools/metricas.py` que los comprobará):
+
+| Dimensión | inicio T1 | final T1 | final T2 | final T3 | final T4 |
+|---|---|---|---|---|---|
+| frases/página | 1 | 1 (viernes: texto de la semana ≈ 50 palabras) | 2 | 3 | 4 |
+| palabras/página (lun–jue) | 6–8 | 10–12 | 22–26 | 36–42 | 55–70 |
+| máx. palabras en una frase | 8 | 11 | 13 | 14 | 16 |
+| lemas de contenido nuevos/día | ≤ 3 | ≤ 3 | ≤ 3 | ≤ 4 | ≤ 4 |
+| sintaxis | frases simples + "y" | "porque", "cuando" | diálogo (raya), preguntas en el texto | subordinadas, "aunque", "mientras" | estilo indirecto, pretérito perfecto compuesto |
+| géneros | narración | + nota/lista (lista de la compra) | + diálogo | + "¿Sabías que...?", receta | + poema/rima, carta, cómic (bocadillos) |
+| comprensión | rodea / V-F | rodea / V-F | responde literal | "¿por qué...?", ordena | predicción, resumen, opinión |
+| soltura | viernes: texto de la semana | viernes: texto de la semana | + medición cada 4 semanas | lectura con expresión | primero en silencio |
+| escritura | Copia ×1 con liniatura | Copia ×1 | respuesta corta | 1 frase propia | 2 frases propias |
+
+Esta tabla todavía no se comprueba automáticamente — es la Etapa 1 del
+plan de `notes/02-revision-y-plan.md` (`content/progresion.json` +
+`tools/metricas.py`).
 
 ### Semanas ya escritas (Trimestre 1)
 
@@ -61,18 +97,21 @@ dependencia técnica de que se llame "Lucía".
 
 Un tema por semana, siguiendo el patrón de las tres primeras (un
 personaje o escenario nuevo se presenta, se explora durante la semana, y
-el viernes hay repaso/celebración cada dos semanas):
+el viernes hay repaso/celebración cada dos semanas). Las semanas 4–13
+caen entre finales de septiembre y diciembre (ver la tabla de arriba):
+de ahí que la Navidad cierre el trimestre y no haya ninguna semana de
+playa, que ya no encajaría en el calendario:
 
 4. El barrio y el parque
 5. La comida en casa (algo que le gusta, algo que no)
-6. Las estaciones — llega el otoño
+6. Llega el otoño (las hojas, el viento, la ropa de abrigo)
 7. Los juguetes de Dani
-8. Un día de lluvia
-9. El cumpleaños de alguien de la familia
+8. Castañas y Todos los Santos
+9. El cumpleaños de Lucía (cumple 7 años)
 10. Los animales del barrio (el gato del vecino, los pájaros)
-11. Ir al mercado con Mamá
-12. Un día en la playa o la montaña (según la zona)
-13. Repaso de fin de trimestre + puente hacia el Trimestre 2
+11. Un día de lluvia
+12. Ir al mercado con Mamá — ya huele a Navidad
+13. Nochebuena — repaso de fin de trimestre + puente hacia el Trimestre 2
 
 Cada semana son 5 frases independientes (una por día) sobre el mismo
 tema; no hace falta que se sigan unas a otras como una historia
@@ -117,6 +156,26 @@ genuinamente nuevo. `responde` está bloqueado en el trimestre 1 por el
 propio validador (`TRIMESTRES_SIN_RESPONDE`) — no es solo una
 convención editorial, `tools/gen_days.py --check` falla si un día de T1
 lo usa.
+
+### Ciclo objetivo (pendiente de implementar — ver `notes/02-revision-y-plan.md`, punto 3)
+
+El ciclo de arriba ejercita el dibujo mucho más que la lectura: dos de
+cada cinco días (*Dibuja*, *Completa*) no exigen volver al texto ni una
+vez. El ciclo pensado para sustituirlo, cuando existan los tipos de
+actividad nuevos que necesita (Etapa 2 del plan de desarrollo):
+
+| Día | Actividad | Qué entrena |
+|---|---|---|
+| Lunes | Lee y dibuja | comprensión vía dibujo, con una tarea dentro del texto |
+| Martes | Busca / Completa (alternando) | nivel de palabra |
+| Miércoles | Comprende (Rodea / Verdadero-Falso en T1, Responde desde T2) | comprensión, sin exigir escritura en T1 |
+| Jueves | Relaciona / Adivina | vocabulario (sin cambios) |
+| Viernes | Relee la semana + Crea; cada 2 semanas, Repasa | soltura — relee las frases de lunes a jueves compuestas como un texto |
+
+Necesita los tipos `rodea`, `verdadero_falso`, `busca`, `ordena` y
+`relee` en `tools/gen_days.py`, que todavía no existen — hasta entonces
+sigue valiendo el ciclo de arriba, y los días ya escritos no hace falta
+retocarlos.
 
 ## Estructura técnica (resumen; ver el propio código para el detalle)
 
@@ -169,19 +228,26 @@ por diseño.
 
 ## Qué queda pendiente
 
+Ver `notes/02-revision-y-plan.md` para la revisión completa del
+cuaderno (qué mejorar y en qué orden) — esta lista es solo la de
+contenido por escribir.
+
 1. **Escribir las semanas 4–13 del Trimestre 1** (días 16–65) siguiendo
-   el esquema de temas de arriba.
+   el esquema de temas de arriba y la escalera de progresión.
 2. **Escribir los Trimestres 2, 3 y 4** (`content/q2.json`, `q3.json`,
    `q4.json`) — cada uno con su propio arco narrativo más largo. **Las
    primeras 15 jornadas reales de cada uno ya están escritas**, en
    `content/muestra/q{2,3,4}.json` (ver arriba); lo que falta es el
    resto de cada trimestre y trasladar estos tres ficheros a su sitio
-   definitivo cuando ese resto exista.
+   definitivo cuando ese resto exista. La muestra de T4 todavía da por
+   hecho un calendario que no cuadra (`notes/02-revision-y-plan.md`,
+   punto 1) y hay que reescribirla como verano antes de darla por buena.
 3. **Más ilustraciones** en `diagrams/` a medida que aparecen escenarios
    nuevos (el colegio, la playa, el cumpleaños...). Las de `completa`
    (`lineas-ondas`, `lineas-circulo`) son deliberadamente genéricas —
    unas pocas líneas sin forma — y sirven para cualquier día sin
    necesitar un dibujo nuevo cada vez.
-4. Considerar automatizar el aviso de "palabra nueva" descrito arriba.
+4. Automatizar el aviso de "palabra nueva" descrito arriba —
+   `tools/metricas.py`, ver `notes/02-revision-y-plan.md`, Etapa 1.
 5. ~~CI (GitHub Actions) que compile el PDF en cada cambio~~ — hecho:
    `.github/workflows/build.yml` y `pages.yml`.

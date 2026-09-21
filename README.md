@@ -6,11 +6,13 @@
 [![Licencia](https://img.shields.io/github/license/konradcinkusz/learning-to-read)](LICENSE)
 [![Hecho con](https://img.shields.io/badge/hecho%20con-LaTeX-2E7D32)](preamble.tex)
 
-Cuaderno diario de lectura en español, en A4, una página por día de
-colegio (lunes a viernes, 260 días = un curso entero). Cada página
-tiene un hueco para la fecha y una nota del adulto, la frase (o frases)
-del día, y una actividad corta (dibujar, completar unas líneas sueltas,
-copiar la frase, responder, relacionar, adivinar o crear).
+Cuaderno diario de lectura en español, en A4, una página por día
+laborable (lunes a viernes, 260 días = un año completo, de una estación
+a la siguiente -- no "un curso" en el sentido escolar: se lee también
+en vacaciones, ver "Estado" más abajo). Cada página tiene un hueco para
+la fecha y una nota del adulto, la frase (o frases) del día, y una
+actividad corta (dibujar, completar unas líneas sueltas, copiar la
+frase, responder, relacionar, adivinar o crear).
 
 Pensado para una niña que ya vive y escolariza en español y está
 consolidando la lectura, no para empezar desde cero: las frases son
@@ -19,8 +21,9 @@ frases hay que leer (1 → 2 → 3 → 4, una vez por trimestre) y su
 complejidad, no el alfabeto disponible.
 
 Ver `notes/01-curriculum.md` para el plan completo del curso (reparto
-de personajes, arco de cada trimestre, disciplina de vocabulario) y
-para qué falta escribir todavía.
+de personajes, arco de cada trimestre, disciplina de vocabulario, qué
+falta escribir) y `notes/02-revision-y-plan.md` para la revisión del
+cuaderno y el plan de desarrollo del resto del año.
 
 ## Descargar el PDF sin instalar nada
 
@@ -83,6 +86,7 @@ CONTRIBUTING.md                       -- cómo colaborar (o hacer tu propio fork
 .github/workflows/build.yml           -- compila (color + blanco-y-negro) y valida en cada push/PR
 .github/workflows/pages.yml           -- publica los dos PDF en GitHub Pages en cada push a main
 notes/01-curriculum.md                -- el plan del curso completo
+notes/02-revision-y-plan.md           -- revisión del cuaderno y plan de desarrollo del resto del año
 ```
 
 ## Licencia
@@ -111,3 +115,9 @@ los Trimestres 2, 3 y 4 también están escritos, como muestra de
 progresión (`content/muestra/`, `make muestra`) -- no forman parte
 todavía del cuaderno real porque las semanas que faltan entre medias no
 están escritas. El resto está esquematizado en `notes/01-curriculum.md`.
+
+Ver `notes/02-revision-y-plan.md` para la revisión completa del
+cuaderno (qué mejorar y en qué orden) y el calendario del curso completo
+-- por qué los cuatro trimestres son las cuatro estaciones del año, con
+vacaciones incluidas, y no los tres trimestres del curso escolar
+español.
