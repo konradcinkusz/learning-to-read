@@ -1,5 +1,5 @@
 {
-  "_comentario": "MUESTRA, no producción: los días reales 66-75 (primeras dos semanas del Trimestre 2), escritos para comparar el nivel entre trimestres -- ver tools/gen_muestra.py. Deliberadamente NO vive en content/ (el glob q*.json de la producción no debe verlo mientras los días 11-65 no existan). Cuando se escriban las semanas que faltan de T1 y el resto de T2, este fichero se traslada a content/q2.json tal cual.",
+  "_comentario": "MUESTRA, no producción: los días reales 66-80 (primeras tres semanas del Trimestre 2), escritos para comparar el nivel entre trimestres -- ver tools/gen_muestra.py. Deliberadamente NO vive en content/ (el glob q*.json de la producción no debe verlo mientras los días 11-65 no existan). Cuando se escriban las semanas que faltan de T1 y el resto de T2, este fichero se traslada a content/q2.json tal cual.",
   "dias": [
     {
       "dia": 66, "semana": 14, "trimestre": 2,
@@ -130,6 +130,71 @@
         ],
         "prompt": "Dibuja tu recuerdo favorito de estas dos semanas.",
         "banner": "¡75 páginas leídas! Ya estás en el segundo trimestre."
+      }
+    },
+    {
+      "dia": 76, "semana": 16, "trimestre": 2,
+      "tema": "El disfraz de Carnaval",
+      "oraciones": [
+        "El viernes hay un desfile de Carnaval en el colegio y Lucía ya sabe de qué se quiere disfrazar.",
+        "Ha decidido ir de mariposa, con unas alas de colores que le está cosiendo la abuela Rosa."
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Dibuja a Lucía disfrazada de mariposa, con sus alas de colores."
+      }
+    },
+    {
+      "dia": 77, "semana": 16, "trimestre": 2,
+      "tema": "El disfraz de Carnaval",
+      "oraciones": [
+        "La abuela Rosa corta la cartulina mientras Lucía elige los colores de las alas.",
+        "Dani también quiere un disfraz, pero todavía no sabe si prefiere ser dragón o pirata."
+      ],
+      "actividad": {
+        "tipo": "completa",
+        "diagrama": "lineas-ondas"
+      }
+    },
+    {
+      "dia": 78, "semana": 16, "trimestre": 2,
+      "tema": "El disfraz de Carnaval",
+      "oraciones": [
+        "El jueves, Lucía se prueba las alas por primera vez y da vueltas por el salón.",
+        "\"¡Pareces una mariposa de verdad!\", le dice Papá riéndose."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "pregunta": "¿Qué le dice Papá cuando ve a Lucía con las alas puestas?"
+      }
+    },
+    {
+      "dia": 79, "semana": 16, "trimestre": 2,
+      "tema": "El disfraz de Carnaval",
+      "oraciones": [
+        "Por fin llega el viernes y Dani se decide: se viste de dragón verde, con una cola muy larga.",
+        "Toby lleva un pañuelo de rayas atado al cuello, como si también fuera parte de la fiesta."
+      ],
+      "actividad": {
+        "tipo": "relaciona",
+        "pares": [
+          ["Lucía", "va de mariposa"],
+          ["Dani", "va de dragón"],
+          ["Toby", "lleva un pañuelo"],
+          ["Abuela Rosa", "cose las alas"]
+        ]
+      }
+    },
+    {
+      "dia": 80, "semana": 16, "trimestre": 2,
+      "tema": "El disfraz de Carnaval",
+      "oraciones": [
+        "En el desfile, toda la clase de Lucía canta y baila por el patio del colegio.",
+        "Cuando termina, la profesora reparte una piruleta a cada niño porque lo han hecho genial."
+      ],
+      "actividad": {
+        "tipo": "crea",
+        "prompt": "Dibuja tu propio disfraz. ¿De qué te gustaría disfrazarte a ti?"
       }
     }
   ]

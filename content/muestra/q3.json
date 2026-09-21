@@ -1,5 +1,5 @@
 {
-  "_comentario": "MUESTRA, no producción: los días reales 131-140 (primeras dos semanas del Trimestre 3) -- ver content/muestra/q2.json para la explicación completa del mecanismo.",
+  "_comentario": "MUESTRA, no producción: los días reales 131-145 (primeras tres semanas del Trimestre 3) -- ver content/muestra/q2.json para la explicación completa del mecanismo.",
   "dias": [
     {
       "dia": 131, "semana": 27, "trimestre": 3,
@@ -140,6 +140,76 @@
         ],
         "prompt": "Dibuja el ratoncito que se lleva los dientes, como tú te lo imaginas.",
         "banner": "¡140 páginas leídas! Ya estás en la segunda mitad del curso."
+      }
+    },
+    {
+      "dia": 141, "semana": 29, "trimestre": 3,
+      "tema": "El Día del Libro",
+      "oraciones": [
+        "El 23 de abril, el colegio celebra el Día del Libro con una fiesta especial.",
+        "Cada alumno puede traer un libro de casa para intercambiarlo con un compañero.",
+        "Lucía decide que quiere buscar el libro perfecto para regalárselo a Dani."
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Dibuja la fiesta del Día del Libro en el colegio de Lucía."
+      }
+    },
+    {
+      "dia": 142, "semana": 29, "trimestre": 3,
+      "tema": "El Día del Libro",
+      "oraciones": [
+        "Lucía mira montones de libros en la biblioteca del colegio, pero ninguno le convence.",
+        "Unos le parecen demasiado difíciles y otros, demasiado aburridos para su hermano.",
+        "Cuando ya casi se rinde, ve una estantería que todavía no ha mirado."
+      ],
+      "actividad": {
+        "tipo": "completa",
+        "diagrama": "lineas-ondas"
+      }
+    },
+    {
+      "dia": 143, "semana": 29, "trimestre": 3,
+      "tema": "El Día del Libro",
+      "oraciones": [
+        "La bibliotecaria se acerca y le pregunta qué está buscando exactamente.",
+        "\"Un cuento fácil, con dibujos, para que mi hermano empiece a leer\", le explica Lucía.",
+        "La bibliotecaria sonríe y le enseña un libro pequeño sobre un dragón amigable."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "pregunta": "¿Qué le pide Lucía a la bibliotecaria?"
+      }
+    },
+    {
+      "dia": 144, "semana": 29, "trimestre": 3,
+      "tema": "El Día del Libro",
+      "oraciones": [
+        "Lucía envuelve el libro con papel de colores y le añade un lazo azul.",
+        "También fabrica un marcapáginas con la silueta de Toby recortada en cartulina.",
+        "Esa tarde, le da el regalo a Dani antes de merendar."
+      ],
+      "actividad": {
+        "tipo": "relaciona",
+        "pares": [
+          ["Lucía", "envuelve el libro"],
+          ["Dani", "recibe el regalo"],
+          ["la bibliotecaria", "recomienda el cuento"],
+          ["Toby", "está en el marcapáginas"]
+        ]
+      }
+    },
+    {
+      "dia": 145, "semana": 29, "trimestre": 3,
+      "tema": "El Día del Libro",
+      "oraciones": [
+        "Dani abre el libro con mucho cuidado y mira primero todos los dibujos.",
+        "Después, se sienta junto a Lucía y los dos leen la primera página juntos.",
+        "Dani dice que ese dragón amigable es ya su personaje favorito de todos."
+      ],
+      "actividad": {
+        "tipo": "crea",
+        "prompt": "Dibuja el marcapáginas que te gustaría hacer tú. ¿Qué dibujo tendría?"
       }
     }
   ]
