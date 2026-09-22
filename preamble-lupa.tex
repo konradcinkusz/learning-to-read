@@ -1,0 +1,193 @@
+% preamble-lupa.tex
+% -----------------------------------------------------------------------
+% Lo propio del nivel 3, "Leo con lupa" (lupa.tex, lupa-bw.tex), cargado
+% DESPUÉS de preamble.tex -- igual que preamble-palabras.tex para el
+% nivel 1: la letra, la paleta, las cajas base, \cabeceraDia y la caja
+% de lectura son las mismas que en el cuaderno de frases; aquí solo lo
+% que cambia en este nivel (ver notes/04-nivel-lupa.md):
+%
+%   - la página: la caja de actividad llena todo lo que queda de página
+%     (tcolorbox `height fill`) -- el sitio para dibujar, pensar o
+%     escribir se adapta solo a lo largo que sea el texto de ese día.
+%     Como en el cuaderno de primeras palabras, eso obliga a sacar el
+%     pie "Día N / 260" del texto y ponerlo en el pie de página de
+%     verdad (estilo `pielupa`);
+%   - el tamaño del texto del día (\fuenteLupa): párrafos de 55 a 125
+%     palabras, nunca por debajo de 14 pt;
+%   - las piezas de las actividades de análisis, que genera tools/lupa.py
+%     (dibuja con lupa, mapa, tabla de pistas, caso, errores, mensaje
+%     secreto, ficha, compara, viñetas...);
+%   - la lupa del club, en TikZ.
+% -----------------------------------------------------------------------
+
+% El mismo margen inferior que el cuaderno de primeras palabras
+% (preamble-palabras.tex): con el pie a 10 mm del texto, la línea del
+% pie queda a ~12 mm del borde del papel, dentro de lo que imprime
+% cualquier impresora doméstica.
+\geometry{bottom=22mm, footskip=10mm}
+
+\makeatletter
+\def\ps@pielupa{%
+  \let\@oddhead\@empty\let\@evenhead\@empty
+  \def\@oddfoot{\hfil\footnotesize\color{colorGris}\lblDia~\lupapagina@actual~/ \totaldias\hfil}%
+  \let\@evenfoot\@oddfoot
+}
+
+% La página de un día en este cuaderno: misma cabecera que los otros dos
+% (\cabeceraDia, preamble.tex, que pone también \label{dia:N} -- así
+% tools/check_pages.py funciona igual sobre el .aux de los tres). \gdef
+% y no \def: el pie se compone en la rutina de salida, y así no depende
+% de que esa rutina corra todavía dentro del grupo del entorno.
+\newenvironment{lupapagina}[4]{%
+  \gdef\lupapagina@actual{#1}%
+  \thispagestyle{pielupa}%
+  \cabeceraDia{#1}{#2}{#3}{#4}%
+}{%
+  \par\newpage
+}
+\makeatother
+
+% Tamaño del texto del día, según el trimestre (tools/libros.py, LUPA).
+\newcommand{\fuenteLupa}[1]{%
+  \ifcase#1\relax
+  \or \fontsize{16}{21.5}\selectfont
+  \or \fontsize{15}{20.5}\selectfont
+  \or \fontsize{14.5}{19.5}\selectfont
+  \or \fontsize{14}{19}\selectfont
+  \fi
+}
+
+% Tamaño de letra de todo lo que la niña lee dentro de una actividad:
+% más pequeño que el texto del día, pero nunca "de adulto" -- las
+% instrucciones para el adulto van aparte, en pequeño y gris.
+\newcommand{\letraActividad}{\fontsize{13}{17}\selectfont}
+
+% Una sola caja para todas las actividades (color y título como
+% argumentos). height fill: la caja llega hasta el final de la página.
+% Lo que va tras \tcblower (la lista para comprobar un dibujo, las
+% líneas de escribir, el banner de las páginas leídas) queda pegado al
+% fondo: todo el espacio sobrante se lo lleva la parte de arriba (space
+% to upper), sin línea separadora. Una caja de altura fija no respeta un
+% \vfill dentro, por eso se hace así (ver preamble-palabras.tex).
+%
+% height plus: sin él, cuando el contenido NO cabe en el alto que le
+% queda a la página, tcolorbox mantiene la altura fija y dibuja la
+% parte de abajo ENCIMA de la de arriba -- sin ningún aviso en el log,
+% ni Overfull ni nada: visto en el día 37 al bajar el margen inferior a
+% 22 mm. Con height plus, la caja crece hasta su altura natural, no
+% cabe en la página, y el día pasa entero a la siguiente -- que es justo
+% lo que tools/check_pages.py detecta. Un desbordamiento visible y
+% comprobado en vez de uno silencioso.
+\newtcolorbox{actividadLupa}[2]{cajabase,
+  colback=#1Claro, colframe=#1, colbacktitle=#1, title={#2},
+  height fill, height plus=100cm, space to upper, segmentation hidden, middle=1mm,
+  fontupper=\letraActividad, fontlower=\letraActividad,
+  before upper={\hyphenpenalty=10000\exhyphenpenalty=10000},
+  before lower={\hyphenpenalty=10000\exhyphenpenalty=10000}}
+
+% --- dentro del texto del día ---------------------------------------
+\newcommand{\separaParrafo}{\par\vspace{0.4em}}
+% Una nota, un cartel o una carta que los personajes leen dentro de la
+% historia ("> ..." en el JSON): recuadro blanco, para que se vea que es
+% otro texto dentro del texto.
+\newtcolorbox{notaTextoCaja}{enhanced, colback=white, colframe=colorGris,
+  boxrule=0.6pt, arc=1.5mm, left=3mm, right=3mm, top=1.5mm, bottom=1.5mm,
+  before skip=1mm, after skip=1mm}
+\newcommand{\notaTexto}[1]{\begin{notaTextoCaja}\raggedright #1\end{notaTextoCaja}}
+\newenvironment{listaTexto}{%
+  \begin{itemize}[leftmargin=7mm, itemsep=0mm, topsep=0.2em, label=\textbullet]%
+}{\end{itemize}}
+
+% --- piezas de las actividades --------------------------------------
+\newcommand{\renglon}{\par\vspace{8.5mm}\noindent\rule{\linewidth}{0.4pt}}
+\newcommand{\renglonCorto}{\rule{0.6\linewidth}{0.4pt}}
+\newcommand{\renglonNumerado}[1]{\par\vspace{8.5mm}\noindent\makebox[6mm][l]{#1.}\rule{\dimexpr\linewidth-6mm\relax}{0.4pt}}
+\newcommand{\renglonCorrige}{\par\vspace{7mm}\noindent\hspace{6mm}\rule{\dimexpr\linewidth-6mm\relax}{0.4pt}}
+\newcommand{\bannerDia}[1]{\par\vspace{2mm}{\centering\bfseries\Large\color{colorCrea}#1\par}}
+\newcommand{\casillaMarca}{\raisebox{-0.3ex}{\framebox[4.6mm][c]{\rule{0pt}{3.6mm}}}}
+\newcommand{\preguntaNumerada}[2]{\par\noindent\hangindent=6mm\hangafter=1\makebox[6mm][l]{\textbf{#1.}}#2\par}
+\newcommand{\afirmacionVF}[1]{\par\vspace{2.5mm}\noindent
+  \begin{tabularx}{\linewidth}{@{}X r@{}}#1 & \lblVerdadero\ \casillaMarca\quad\lblFalso\ \casillaMarca\end{tabularx}}
+\newenvironment{listaNumerada}{%
+  \begin{enumerate}[leftmargin=7mm, itemsep=0.5mm, topsep=1mm, label=\textbf{\arabic*.}]%
+}{\end{enumerate}}
+\newenvironment{listaOrdena}{%
+  \begin{itemize}[label=, leftmargin=2mm, itemsep=5mm, topsep=3mm]%
+}{\end{itemize}}
+
+% Caso: las opciones van grandes y separadas, para rodear la buena.
+\newcommand{\opcionCaso}[1]{\mbox{\Large\bfseries #1}}
+
+% Errores: el resumen equivocado, en blanco y con interlineado amplio
+% para poder subrayar o rodear encima.
+\newtcolorbox{cajaRelato}{enhanced, colback=white, colframe=colorResponde,
+  boxrule=0.6pt, arc=1.5mm, left=3mm, right=3mm, top=2mm, bottom=2mm,
+  fontupper=\fontsize{14}{22}\selectfont\raggedright}
+\newcommand{\relatoErrores}[1]{\begin{cajaRelato}#1\end{cajaRelato}}
+
+% Tabla lógica: casillas grandes para escribir ✓ o ✗.
+\newcommand{\cabeceraLogica}[1]{\rule{0pt}{5.5mm}\bfseries #1}
+\newcommand{\celdaLogica}{\rule[-4mm]{0pt}{11mm}}
+
+% Mapa en cuadrícula (filas con número, columnas con letra, como en
+% "hundir la flota"). Las casillas se calculan en tools/lupa.py.
+\tikzset{
+  lineaMapa/.style={colorGris, line width=0.6pt},
+  etiquetaMapa/.style={font=\bfseries\large, text=colorGris},
+  lugarMapa/.style={font=\fontsize{11}{12.5}\selectfont, align=center},
+}
+\newcommand{\salidaMapa}{\textcolor{colorRelaciona}{\bfseries\lblSalida}}
+
+% Mensaje secreto.
+\newenvironment{tablaCodigo}{%
+  \normalsize\setlength{\tabcolsep}{1.9mm}\renewcommand{\arraystretch}{1.3}%
+  \begin{tabular}{|*{14}{c|}}%
+}{\end{tabular}}
+\newcommand{\celdaCodigo}[1]{%
+  \begin{tabular}[t]{@{}c@{}}{\normalsize #1}\\[0.3mm]\framebox[9mm]{\rule{0pt}{8mm}}\end{tabular}\hspace{0.6mm}}
+\newcommand{\mensajeCifrado}[1]{%
+  \par\vspace{2mm}{\centering\fontsize{20}{28}\selectfont\bfseries\addfontfeatures{LetterSpace=12}#1\par}}
+
+% Ficha: un campo por línea.
+\newcommand{\campoFicha}[1]{\par\vspace{7mm}\noindent\textbf{#1:}~\hrulefill}
+
+% Compara: dos óvalos que se cruzan -- lo de cada uno a su lado, lo que
+% tienen los dos en medio.
+\newcommand{\diagramaCompara}[2]{%
+  \begin{center}
+  \begin{tikzpicture}[line width=1.3pt]
+    \draw[colorResponde] (0,0) ellipse (4.3cm and 3.3cm);
+    \draw[colorResponde] (4.2,0) ellipse (4.3cm and 3.3cm);
+    \node[font=\large\bfseries] at (-1.8,3.7) {#1};
+    \node[font=\large\bfseries] at (6,3.7) {#2};
+    \node[font=\normalsize, text=colorGris] at (2.1,3.7) {\lblLosDos};
+  \end{tikzpicture}
+  \end{center}}
+
+% Viñetas: tres recuadros vacíos, cada uno con su pie.
+\newcommand{\vineta}[2]{%
+  \framebox[\linewidth]{\rule{0pt}{4.8cm}}\par\vspace{1mm}
+  {\small\raggedright\textbf{#1.} #2\par}}
+
+% La lupa del bisabuelo relojero -- el símbolo del Club de la Lupa:
+% borde dorado, mango de madera oscura con tres rayas grabadas, tal como
+% la describe el día 1. Se usa en la portada, el carné del club y el
+% diploma. En blanco y negro, el borde y el mango pasan a gris y negro,
+% como el resto de la paleta.
+\ifbwbook
+  \definecolor{colorLupaBorde}{gray}{0.45}
+  \definecolor{colorLupaMango}{gray}{0.1}
+\else
+  \definecolor{colorLupaBorde}{HTML}{C9A227}
+  \definecolor{colorLupaMango}{HTML}{5D4037}
+\fi
+\newcommand{\iconoLupa}[1][1]{%
+  \begin{tikzpicture}[scale=#1, line cap=round, line join=round]
+    \fill[colorLecturaClaro] (0,0) circle (1.5);
+    \draw[colorLupaBorde, line width=#1*5pt] (0,0) circle (1.5);
+    \draw[colorLupaMango, line width=#1*13pt] (1.16,-1.16) -- (2.55,-2.55);
+    \foreach \d in {0.35,0.65,0.95}
+      \draw[colorLupaBorde, line width=#1*1.2pt]
+        ({1.33+\d},{-0.99-\d}) -- ({0.99+\d},{-1.33-\d});
+    \draw[white, line width=#1*2.5pt] (-0.95,0.55) arc (150:115:1.1);
+  \end{tikzpicture}}

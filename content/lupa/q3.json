@@ -1,0 +1,1971 @@
+{
+  "_comentario": "'Leo con lupa' (nivel 3). Datos de origen para tools/gen_days.py --libro lupa. Este fichero SI se edita a mano; content/lupa/generated-days.tex NO (se regenera con `make generate`). Trimestre 3 (primavera): días 131-195, semanas 27-39, narración en pasado (indefinido e imperfecto) con pluscuamperfecto y subjuntivo en las subordinadas; géneros nuevos: receta, instrucciones, entrevista, texto informativo y cartas. Hilo: la cápsula del tiempo -- ver notes/04-nivel-lupa.md.",
+  "dias": [
+    {
+      "dia": 131,
+      "semana": 27,
+      "trimestre": 3,
+      "tema": "Una foto de hace veinticinco años",
+      "texto": [
+        "Un lunes de primavera, Marta trajo una foto antigua que había encontrado en un cajón.",
+        "En la foto, cinco niños de rodillas rodeaban un hoyo. Una niña con dos trenzas sujetaba una caja roja de metal, y detrás, una maestra agarraba una pala.",
+        "A la izquierda asomaba el tronco de un plátano enorme, y a la derecha, una fuente con cabeza de león. Al fondo estaba la fachada del colegio, donde el reloj marcaba las doce.",
+        "—La de las trenzas soy yo, cuando tenía ocho años —dijo Marta—. Y la de la pala es Pilar, que era mi maestra."
+      ],
+      "actividad": {
+        "tipo": "dibuja_detalle",
+        "prompt": "Dibuja la foto de Marta con todo lo que cuenta el texto.",
+        "comprueba": [
+          "¿Cuántos niños hay, y qué rodean?",
+          "¿Qué sujeta la niña de las trenzas? ¿De qué color es?",
+          "¿Quién está detrás, y qué tiene en las manos?",
+          "¿Qué hay a la izquierda, a la derecha y al fondo? ¿Qué hora marca el reloj?"
+        ],
+        "clave": "Cinco niños de rodillas alrededor de un hoyo; la niña de las dos trenzas (Marta) sujeta una caja roja de metal; detrás, la maestra (Pilar) con una pala; a la izquierda, el tronco de un plátano enorme; a la derecha, una fuente con cabeza de león; al fondo, la fachada del colegio, con el reloj en las doce."
+      }
+    },
+    {
+      "dia": 132,
+      "semana": 27,
+      "trimestre": 3,
+      "tema": "Una foto de hace veinticinco años",
+      "texto": [
+        "Marta les contó que aquel día su clase había enterrado una cápsula del tiempo. Era una caja con cartas y dibujos, para que alguien la abriera veinticinco años después.",
+        "—¡Veinticinco años se cumplen este curso! —exclamó Sofía.",
+        "—Me gustaría abrirla en la fiesta de fin de curso —dijo Marta—. El problema es que nadie recuerda dónde la enterramos.",
+        "Detrás de la foto, alguien había escrito con letra de mayor:",
+        "> Nuestra cápsula del tiempo.\nFoto de P.",
+        "Lucía lo leyó dos veces, como mandaba la primera norma del club, y apuntó la letra P en su cuaderno."
+      ],
+      "actividad": {
+        "tipo": "verdadero_falso",
+        "afirmaciones": [
+          "La clase de Marta enterró una caja con cartas y dibujos.",
+          "La cápsula se tenía que abrir diez años después.",
+          "Marta quiere abrir la cápsula en la fiesta de fin de curso.",
+          "Detrás de la foto pone: «Foto de L.»"
+        ],
+        "respuestas": [
+          "V",
+          "F: veinticinco años después.",
+          "V",
+          "F: pone «Foto de P.»"
+        ]
+      }
+    },
+    {
+      "dia": 133,
+      "semana": 27,
+      "trimestre": 3,
+      "tema": "Una foto de hace veinticinco años",
+      "texto": [
+        "El miércoles, el club estudió la foto en la caseta, con la lupa de la abuela.",
+        "—Quien hizo la foto estaba allí aquel día —dijo Hugo—. Si averiguamos quién es, a lo mejor recuerda dónde está la caja.",
+        "Sofía pensó que la había hecho algún padre, pero Lucía se lo había preguntado a Marta esa misma mañana.",
+        "—Aquel día no vino al colegio ningún padre ni ninguna madre —le había contado Marta—. Y el director, que se llamaba Luis, estaba de viaje.",
+        "Lucía tachó dos cosas en su cuaderno antes de que Sofía pudiera protestar."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "preguntas": [
+          "¿Por qué quiere el club averiguar quién hizo la foto?",
+          "¿Qué dos cosas crees que tachó Lucía en su cuaderno? ¿Por qué?"
+        ],
+        "respuestas": [
+          "Porque quien hizo la foto estaba allí aquel día, y a lo mejor recuerda dónde está la caja.",
+          "Los padres y las madres, porque aquel día no fue ninguno al colegio, y el director, Luis, porque estaba de viaje."
+        ]
+      }
+    },
+    {
+      "dia": 134,
+      "semana": 27,
+      "trimestre": 3,
+      "tema": "Una foto de hace veinticinco años",
+      "texto": [
+        "El jueves hubo fiesta en el patio, porque Paco, el conserje, cumplía treinta años trabajando en el colegio.",
+        "Las clases de 1.º, 2.º y 3.º le prepararon un regalo cada una: una tarjeta gigante, una canción o un llavero. Los de 1.º no cantaron, ya que eran muy tímidos, y la tarjeta gigante la hicieron los mayores de los tres cursos.",
+        "Paco se emocionó tanto que tuvo que sonarse la nariz dos veces.",
+        "—Cuando llegué aquí, vuestra maestra todavía no había empezado el cole —dijo, guiñándole un ojo a Marta."
+      ],
+      "actividad": {
+        "tipo": "logica",
+        "instruccion": "Usa las pistas del texto para saber qué regalo le hizo cada clase a Paco. Pon ✓ donde sí y ✗ donde no.",
+        "filas": [
+          "1.º",
+          "2.º",
+          "3.º"
+        ],
+        "columnas": [
+          "tarjeta",
+          "canción",
+          "llavero"
+        ],
+        "restricciones": [
+          [
+            "no",
+            "1.º",
+            "canción"
+          ],
+          [
+            "si",
+            "3.º",
+            "tarjeta"
+          ]
+        ],
+        "solucion": {
+          "1.º": "llavero",
+          "2.º": "canción",
+          "3.º": "tarjeta"
+        },
+        "pregunta": "¿Qué le regaló a Paco la clase de Lucía, que es 2.º?",
+        "respuesta_pregunta": "Una canción."
+      }
+    },
+    {
+      "dia": 135,
+      "semana": 27,
+      "trimestre": 3,
+      "tema": "Una foto de hace veinticinco años: el caso",
+      "texto": [
+        "El viernes, el club repasó en la pizarra de la caseta todas las pistas de la semana.",
+        "—Tenemos una foto, una letra y una lista de personas que estaban en el colegio hace veinticinco años —resumió Hugo.",
+        "—Y la norma número dos: no acusar a nadie sin pruebas —añadió Sofía, aunque se moría de ganas de decir un nombre.",
+        "Lucía miró la foto con la lupa una última vez, como si quisiera meterse dentro. Después sonrió, porque todas las pistas señalaban a la misma persona.",
+        "¿Y tú? ¿Sabes ya quién hizo la foto?"
+      ],
+      "actividad": {
+        "tipo": "caso",
+        "pregunta": "¿Quién hizo la foto de la cápsula del tiempo?",
+        "opciones": [
+          "Pilar, la maestra",
+          "Luis, el director",
+          "Paco, el conserje",
+          "un padre"
+        ],
+        "solucion": "Paco, el conserje",
+        "clave": "Paco: detrás de la foto pone «Foto de P.» (martes); Pilar también empieza por P, pero sale en la foto con la pala (lunes); aquel día no fue ningún padre al colegio, y el director, Luis, estaba de viaje (miércoles); Paco lleva treinta años en el colegio, así que ya trabajaba allí hace veinticinco (jueves)."
+      }
+    },
+    {
+      "dia": 136,
+      "semana": 28,
+      "trimestre": 3,
+      "tema": "Torrijas, esta vez sola",
+      "texto": [
+        "La foto la había hecho Paco, como el club había deducido. El colegio cerró por Semana Santa antes de que pudieran preguntarle.",
+        "Lucía le recordó a la abuela su promesa del año anterior: esta vez, haría las torrijas ella sola.",
+        "El sábado lo preparó todo en la mesa. A la izquierda dejó el pan, que había cortado en ocho rebanadas, y a la derecha, dos huevos en un plato hondo.",
+        "En el centro puso un cuenco de leche con una rama de canela, y detrás, el azúcar. La sartén se la dejó a la abuela, porque freír es cosa de mayores."
+      ],
+      "actividad": {
+        "tipo": "dibuja_detalle",
+        "prompt": "Dibuja la mesa de la cocina con todo lo que preparó Lucía, cada cosa en su sitio.",
+        "comprueba": [
+          "¿Qué hay a la izquierda? ¿En cuántas rebanadas está cortado?",
+          "¿Qué hay a la derecha, y en qué está?",
+          "¿Qué hay en el centro? ¿Qué lleva dentro?",
+          "¿Qué hay detrás?"
+        ],
+        "clave": "A la izquierda, el pan cortado en ocho rebanadas; a la derecha, dos huevos en un plato hondo; en el centro, un cuenco de leche con una rama de canela; detrás, el azúcar."
+      }
+    },
+    {
+      "dia": 137,
+      "semana": 28,
+      "trimestre": 3,
+      "tema": "Torrijas, esta vez sola",
+      "texto": [
+        "Lucía abrió su cuaderno por la receta que había copiado el año anterior:",
+        "Ingredientes:",
+        "- pan del día anterior y medio litro de leche",
+        "- una rama de canela, azúcar y dos huevos",
+        "- aceite para freír",
+        "1. Calienta la leche con la canela y el azúcar, y deja que se enfríe.",
+        "2. Moja cada rebanada en la leche, sin que se rompa, y pásala por el huevo.",
+        "3. Un adulto la fríe en aceite caliente hasta que esté dorada.",
+        "4. Rebózala en azúcar con canela, ¡y a comer!",
+        "La abuela miraba con las manos quietas, como si le costara no ayudar."
+      ],
+      "actividad": {
+        "tipo": "verdadero_falso",
+        "afirmaciones": [
+          "Para hacer torrijas se usa pan del mismo día.",
+          "La leche tiene que enfriarse antes de mojar el pan.",
+          "Primero se pasa el pan por el huevo y después por la leche."
+        ],
+        "respuestas": [
+          "F: pan del día anterior.",
+          "V",
+          "F: primero se moja en la leche y después se pasa por el huevo."
+        ]
+      }
+    },
+    {
+      "dia": 138,
+      "semana": 28,
+      "trimestre": 3,
+      "tema": "Torrijas, esta vez sola",
+      "texto": [
+        "Salieron ocho torrijas doradas, y la abuela dijo que eran casi tan buenas como las suyas.",
+        "Comieron siete entre todos. La última, Lucía la puso en un plato, en la balda más alta de la cocina. Quería que Sofía y Hugo la probaran al día siguiente.",
+        "A las cuatro, antes de irse al parque con Mamá y con Dani, Lucía comprobó que seguía allí. Pero cuando volvieron, a las seis, el plato estaba vacío.",
+        "Las sillas seguían debajo de la mesa, así que nadie se había subido a ninguna."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "preguntas": [
+          "¿Dónde puso Lucía la última torrija, y para qué?",
+          "Las sillas seguían debajo de la mesa. ¿Qué nos dice eso de quien se comió la torrija?"
+        ],
+        "respuestas": [
+          "En un plato, en la balda más alta de la cocina, para que Sofía y Hugo la probaran al día siguiente.",
+          "Que llegaba a la balda más alta sin subirse a nada: tenía que ser alguien alto, un mayor."
+        ]
+      }
+    },
+    {
+      "dia": 139,
+      "semana": 28,
+      "trimestre": 3,
+      "tema": "Torrijas, esta vez sola",
+      "texto": [
+        "Al día siguiente, el club interrogó a la familia. Papá contó que se había ido a trabajar a las tres y que no había vuelto hasta las siete.",
+        "La abuela, que no se había movido de casa en toda la tarde, aseguró que Toby había dormido debajo del sofá.",
+        "Después, con la lupa, Lucía encontró en el suelo unos granitos de azúcar que casi no se veían. Hugo los fue marcando en su plano de la casa.",
+        "Salían de la cocina, avanzaban dos cuadros hacia la derecha por el pasillo y bajaban otros dos."
+      ],
+      "actividad": {
+        "tipo": "mapa",
+        "instruccion": "Dibuja en el plano el rastro de azúcar desde la cocina, y marca con una X la casilla donde se acaba.",
+        "columnas": 5,
+        "filas": 4,
+        "lugares": {
+          "A1": "cocina",
+          "B1": "pasillo",
+          "C1": "pasillo",
+          "D1": "entrada",
+          "A3": "sofá",
+          "D3": "sillón",
+          "B4": "tele",
+          "E4": "ventana"
+        },
+        "salida": "A1",
+        "comprobar": [
+          {
+            "desde": "A1",
+            "pasos": [
+              "derecha 2",
+              "abajo 2"
+            ],
+            "hasta": "C3"
+          }
+        ],
+        "preguntas": [
+          "¿En qué casilla se acaba el rastro? ¿Qué hay justo al lado?"
+        ],
+        "clave": "El rastro va de A1 a C1 por el pasillo, baja a C3 y se acaba allí, justo al lado del sillón (D3); el sofá de Toby (A3) queda más lejos."
+      }
+    },
+    {
+      "dia": 140,
+      "semana": 28,
+      "trimestre": 3,
+      "tema": "Torrijas, esta vez sola: el caso",
+      "texto": [
+        "Esa misma tarde, el club se reunió en la caseta para cerrar el caso de la última torrija.",
+        "—Papá es el que más torrijas come del mundo —dijo Dani, que se había colado en la reunión—. ¡Seguro que ha sido él!",
+        "—Norma número dos: no acusar a nadie sin pruebas —le recordó Hugo.",
+        "Lucía miró el plato vacío, la balda más alta y, por último, el sillón donde la abuela hacía punto por las tardes.",
+        "Entonces se le escapó una sonrisa, porque ya sabía quién había sido.",
+        "¿Y tú? ¿Lo has descubierto?"
+      ],
+      "actividad": {
+        "tipo": "caso",
+        "pregunta": "¿Quién se comió la última torrija?",
+        "opciones": [
+          "Dani",
+          "Papá",
+          "la abuela",
+          "Toby"
+        ],
+        "solucion": "la abuela",
+        "clave": "La abuela: el plato estaba en la balda más alta y nadie se subió a una silla, así que fue alguien alto (miércoles); Dani estaba en el parque con Mamá y Lucía, y Papá, trabajando (miércoles y jueves); en casa solo quedaban la abuela y Toby, que dormía debajo del sofá y no llega a la balda; el rastro de azúcar termina junto al sillón donde la abuela hace punto (jueves y viernes).",
+        "banner": "¡140 páginas leídas! Torrijas hechas por Lucía, ella sola."
+      }
+    },
+    {
+      "dia": 141,
+      "semana": 29,
+      "trimestre": 3,
+      "tema": "La rueda pinchada",
+      "texto": [
+        "La última torrija se la había comido la abuela, que quería saber si eran tan buenas como las suyas.",
+        "El sábado, Lucía fue en bici con Papá hasta la biblioteca, y después Hugo dibujó el recorrido en un plano con cuadros.",
+        "Desde casa fueron dos cuadros hacia la derecha, pasando por los contenedores, hasta la panadería. Desde allí bajaron un cuadro hasta las obras de la calle.",
+        "Luego siguieron dos cuadros a la derecha, hasta los rosales del parque, donde un jardinero estaba podando. Por último, bajaron dos más hasta la biblioteca."
+      ],
+      "actividad": {
+        "tipo": "mapa",
+        "instruccion": "Dibuja en el plano el recorrido de Lucía y Papá desde su casa, y marca con una X dónde termina.",
+        "columnas": 6,
+        "filas": 4,
+        "lugares": {
+          "A1": "casa",
+          "B1": "contenedores",
+          "C1": "panadería",
+          "F1": "mercado",
+          "C2": "obras",
+          "E2": "rosales",
+          "A4": "colegio",
+          "E4": "biblioteca"
+        },
+        "salida": "A1",
+        "comprobar": [
+          {
+            "desde": "A1",
+            "pasos": [
+              "derecha 2",
+              "abajo 1",
+              "derecha 2",
+              "abajo 2"
+            ],
+            "hasta": "E4"
+          }
+        ],
+        "preguntas": [
+          "¿Por qué sitios pasaron antes de llegar a la biblioteca?"
+        ],
+        "clave": "De A1 van a C1 (la panadería), pasando por los contenedores (B1); bajan a C2 (las obras); siguen hasta E2 (los rosales) y bajan a E4 (la biblioteca)."
+      }
+    },
+    {
+      "dia": 142,
+      "semana": 29,
+      "trimestre": 3,
+      "tema": "La rueda pinchada",
+      "texto": [
+        "Cuando volvieron a casa, la rueda de atrás estaba tan blanda que parecía de chicle.",
+        "Lucía la examinó con la lupa hasta que encontró algo clavado en la goma: una espina pequeña, curva y marrón.",
+        "—Es de un rosal —dijo Papá, que de plantas sabía mucho—. No es un clavo ni un cristal.",
+        "Lucía la guardó en un sobre, como si fuera la prueba de un caso importante. Y es que lo era.",
+        "Papá prometió que al día siguiente le enseñaría a arreglar el pinchazo, para que la próxima vez pudiera hacerlo ella sola."
+      ],
+      "actividad": {
+        "tipo": "errores",
+        "instruccion": "Este resumen tiene tres errores. Rodéalos y escribe debajo cómo es de verdad.",
+        "relato": "Cuando volvieron a casa, la rueda de delante estaba muy blanda. Con la lupa, Lucía encontró en la goma un clavo largo y brillante. Lo guardó en una caja, como si fuera una prueba.",
+        "errores": [
+          [
+            "de delante",
+            "de atrás"
+          ],
+          [
+            "un clavo largo y brillante",
+            "una espina pequeña, curva y marrón"
+          ],
+          [
+            "una caja",
+            "un sobre"
+          ]
+        ]
+      }
+    },
+    {
+      "dia": 143,
+      "semana": 29,
+      "trimestre": 3,
+      "tema": "La rueda pinchada",
+      "texto": [
+        "El domingo, Papá le enseñó a arreglar el pinchazo. Lucía apuntó los pasos en su cuaderno, para que no se le olvidaran:",
+        "1. Quita la rueda y, con dos palancas, saca la cámara, que es el tubo de goma de dentro.",
+        "2. Ínflala un poco y métela en un barreño con agua. Por donde salgan burbujas, está el agujero.",
+        "3. Seca la goma, líjala y pon pegamento alrededor del agujero.",
+        "4. Espera un minuto y aprieta el parche encima con fuerza.",
+        "5. Vuelve a montar la rueda e ínflala con la bomba.",
+        "Las burbujas salieron justo donde había estado la espina."
+      ],
+      "actividad": {
+        "tipo": "vinetas",
+        "instruccion": "Dibuja tres de los pasos para arreglar un pinchazo, uno en cada viñeta.",
+        "pies": [
+          "Lucía saca la cámara de la rueda con las palancas.",
+          "Mete la cámara en el agua y busca las burbujas.",
+          "Aprieta el parche encima del agujero."
+        ]
+      }
+    },
+    {
+      "dia": 144,
+      "semana": 29,
+      "trimestre": 3,
+      "tema": "La rueda pinchada",
+      "texto": [
+        "El jueves, Lucía recordó más cosas del paseo, aunque no en orden.",
+        "En la biblioteca, Tomás les había avisado de que la rueda de atrás estaba blanda, así que volvieron a casa andando.",
+        "Antes, en el parque, Lucía se había salido del camino para esquivar a un cachorro. Así había pasado por encima de unas ramas de rosal.",
+        "Por las obras, como el suelo estaba lleno de clavos, Papá llevó las bicis en brazos.",
+        "Y en la panadería, antes de que siguieran, Papá había apretado la rueda con los dedos: estaba dura como una piedra."
+      ],
+      "actividad": {
+        "tipo": "ordena",
+        "sucesos": [
+          "Papá aprieta la rueda en la panadería, y está dura.",
+          "Papá lleva las bicis en brazos por las obras.",
+          "Lucía pasa por encima de unas ramas de rosal.",
+          "Tomás les avisa de que la rueda está blanda.",
+          "Vuelven a casa andando."
+        ]
+      }
+    },
+    {
+      "dia": 145,
+      "semana": 29,
+      "trimestre": 3,
+      "tema": "La rueda pinchada: el caso",
+      "texto": [
+        "El viernes, el club colgó en la pizarra de la caseta el plano de Hugo y la espina.",
+        "—Una rueda se puede pinchar con un cristal, con un clavo o con una espina —dijo Hugo.",
+        "—En el camino había contenedores con cristales, obras con clavos y rosales con espinas —añadió Sofía, que no podía estarse quieta.",
+        "Lucía sacó la espina del sobre y la miró otra vez con la lupa, aunque ya se la sabía de memoria.",
+        "—Creo que ya sé dónde fue —dijo—. Pero antes de decirlo, quiero que lo comprobemos juntos.",
+        "¿Y tú? ¿Sabes dónde se pinchó la rueda?"
+      ],
+      "actividad": {
+        "tipo": "caso",
+        "pregunta": "¿Dónde se pinchó la rueda de la bici?",
+        "opciones": [
+          "en los contenedores",
+          "en las obras",
+          "en los rosales del parque",
+          "en la biblioteca"
+        ],
+        "solucion": "en los rosales del parque",
+        "clave": "En los rosales del parque: en la rueda había una espina de rosal (martes) y las burbujas salieron justo donde había estado (miércoles); después de los contenedores, en la panadería, la rueda estaba dura; por las obras, Papá llevó las bicis en brazos, así que las ruedas no tocaron los clavos; en el parque, Lucía pasó por encima de unas ramas de rosal, y en la biblioteca la rueda ya estaba blanda (jueves)."
+      }
+    },
+    {
+      "dia": 146,
+      "semana": 30,
+      "trimestre": 3,
+      "tema": "La entrevista a Paco",
+      "texto": [
+        "La rueda se había pinchado en los rosales, como el club había averiguado.",
+        "Marta pidió a cada grupo que entrevistara a alguien del colegio para el periódico de clase, y el club eligió a Paco.",
+        "Antes de la entrevista, Hugo dibujó el patio tal y como era ahora. Arriba estaba el edificio, con el reloj encima de la puerta. A la izquierda de la puerta estaba la conserjería, y a la derecha, la fuente de la cabeza de león.",
+        "Abajo había dos plátanos, uno junto a cada tapia, y justo entre los dos, el arenero donde jugaban los pequeños."
+      ],
+      "actividad": {
+        "tipo": "dibuja_detalle",
+        "prompt": "Dibuja el patio del colegio tal y como lo dibujó Hugo.",
+        "comprueba": [
+          "¿Qué hay encima de la puerta?",
+          "¿Qué hay a la izquierda de la puerta? ¿Y a la derecha?",
+          "¿Cuántos plátanos hay, y dónde están?",
+          "¿Qué hay entre los plátanos?"
+        ],
+        "clave": "Arriba, el edificio, con el reloj encima de la puerta; a la izquierda de la puerta, la conserjería, y a la derecha, la fuente de la cabeza de león; abajo, dos plátanos, uno junto a cada tapia, y entre los dos, el arenero."
+      }
+    },
+    {
+      "dia": 147,
+      "semana": 30,
+      "trimestre": 3,
+      "tema": "La entrevista a Paco",
+      "texto": [
+        "El martes, el club entrevistó a Paco en la conserjería. Sofía hacía las preguntas, y Hugo lo apuntaba todo.",
+        "—¿Cuántos años lleva en el colegio?",
+        "—Treinta. Llegué cuando tenía veinticinco años, y desde entonces abro la verja cada mañana.",
+        "—¿Y qué es lo que más le gusta cuidar?",
+        "—Os lo digo con una adivinanza, que es más divertido —contestó Paco—. Tengo agujas y no sé coser, tengo números y no sé leer. Cada lunes me dan cuerda.",
+        "Sofía se quedó pensando, mientras Hugo miraba por la ventana hacia la fachada."
+      ],
+      "actividad": {
+        "tipo": "adivina",
+        "adivinanza": "Resuelve la adivinanza de Paco.\nTengo agujas y no sé coser,\ntengo números y no sé leer.\nCada lunes me dan cuerda.\n¿Qué es? ¿Dónde está el que cuida Paco?",
+        "respuesta": "El reloj: el reloj de la fachada del colegio, encima de la puerta."
+      }
+    },
+    {
+      "dia": 148,
+      "semana": 30,
+      "trimestre": 3,
+      "tema": "La entrevista a Paco",
+      "texto": [
+        "—¿Es verdad que usted hizo la foto de la cápsula? —preguntó Lucía.",
+        "—Sí. Pilar me pidió que la hiciera para que nadie olvidara el sitio —contestó Paco—. La enterramos a mediodía, a la sombra del plátano grande, a diez pasos de la fuente.",
+        "—¡Por eso el reloj de la foto marcaba las doce! —exclamó Lucía.",
+        "Pero Hugo frunció el ceño, porque había un problema: ahora había dos plátanos, y los dos eran grandes.",
+        "—Y la fuente no está donde estaba —añadió Paco—. La movieron cuando hicieron obras, aunque ya no recuerdo dónde estaba antes."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "preguntas": [
+          "¿Cómo sabe Lucía que Paco recuerda bien la hora?",
+          "¿Qué dos problemas tiene ahora el club para encontrar la cápsula?"
+        ],
+        "respuestas": [
+          "Porque en la foto el reloj marcaba las doce, que es mediodía.",
+          "Que ahora hay dos plátanos y los dos son grandes, y que la fuente ya no está donde estaba: la movieron cuando hicieron obras."
+        ]
+      }
+    },
+    {
+      "dia": 149,
+      "semana": 30,
+      "trimestre": 3,
+      "tema": "La entrevista a Paco",
+      "texto": [
+        "El jueves, el club salió al patio con el plano de Hugo, en el que cada cuadro medía cinco pasos de Paco.",
+        "Paco se puso junto a la fuente y contó en voz alta diez pasos hacia abajo. Después volvió a la fuente y contó otros diez hacia la izquierda.",
+        "—Ninguno llega a la sombra de un plátano —suspiró Sofía, que ya se veía cavando—. Así no hay manera.",
+        "Lucía pensó que, si la fuente estaba en otro sitio hace veinticinco años, primero tenían que averiguar dónde. Y para eso necesitaban algo más que buena memoria."
+      ],
+      "actividad": {
+        "tipo": "mapa",
+        "instruccion": "Cada casilla son cinco pasos de Paco. Dibuja los dos caminos de diez pasos que hizo Paco desde la fuente, y marca con una X dónde termina cada uno.",
+        "columnas": 7,
+        "filas": 4,
+        "lugares": {
+          "C1": "conserje",
+          "D1": "puerta y reloj",
+          "E1": "fuente",
+          "A3": "plátano",
+          "D3": "arenero",
+          "G3": "plátano",
+          "D4": "verja"
+        },
+        "salida": "E1",
+        "comprobar": [
+          {
+            "desde": "E1",
+            "pasos": [
+              "abajo 2"
+            ],
+            "hasta": "E3"
+          },
+          {
+            "desde": "E1",
+            "pasos": [
+              "izquierda 2"
+            ],
+            "hasta": "C1"
+          }
+        ],
+        "preguntas": [
+          "¿A qué casilla llega Paco cada vez? ¿Hay algún plátano al lado?"
+        ],
+        "clave": "Diez pasos son dos casillas. Hacia abajo, de E1 a E3, junto al arenero; hacia la izquierda, de E1 a C1, la conserjería. Ninguna de las dos está al lado de un plátano (A3 y G3)."
+      }
+    },
+    {
+      "dia": 150,
+      "semana": 30,
+      "trimestre": 3,
+      "tema": "La entrevista a Paco",
+      "texto": [
+        "El viernes salió el periódico de clase con la entrevista a Paco, y el club colgó una copia en la caseta.",
+        "Debajo, Lucía escribió lo que sabían de la cápsula y lo que todavía no sabían:",
+        "- La enterraron a mediodía, como dice el reloj de la foto.",
+        "- Está a la sombra del plátano grande, pero ¿de cuál de los dos?",
+        "- Está a diez pasos de la fuente, pero ¿dónde estaba la fuente entonces?",
+        "—Lo que necesitamos es un plano antiguo del colegio —dijo Hugo, que no podía dejar de pensar en mapas."
+      ],
+      "actividad": {
+        "tipo": "crea",
+        "prompt": "Piensa en alguien de tu colegio o de tu familia a quien te gustaría entrevistar. Escribe tres preguntas para hacerle.",
+        "lineas": 3,
+        "banner": "¡150 páginas leídas! Entrevista a Paco: publicada."
+      }
+    },
+    {
+      "dia": 151,
+      "semana": 31,
+      "trimestre": 3,
+      "tema": "El Día del Libro",
+      "texto": [
+        "Por el Día del Libro, Marta organizó un intercambio secreto.",
+        "Cada uno traía un libro envuelto, con su nombre escrito dentro, para regalárselo a otro sin que supiera de quién era.",
+        "Pero, cuando los revisó, Marta encontró uno sin nombre. No quería preguntar en voz alta, para no estropear la sorpresa, así que se lo encargó al club.",
+        "El libro tenía las tapas azules, con un barco pirata en la portada y una gaviota encima del mástil. Dentro había un marcapáginas con forma de pez, y entre las hojas, granitos de arena.",
+        "—Este libro ha estado en la playa —dijo Hugo, que de playas sabía mucho."
+      ],
+      "actividad": {
+        "tipo": "dibuja_detalle",
+        "prompt": "Dibuja el libro sin nombre por fuera y por dentro, con todo lo que cuenta el texto.",
+        "comprueba": [
+          "¿De qué color son las tapas?",
+          "¿Qué hay en la portada? ¿Y encima del mástil?",
+          "¿Qué forma tiene el marcapáginas?",
+          "¿Qué había entre las hojas?"
+        ],
+        "clave": "Tapas azules; en la portada, un barco pirata con una gaviota encima del mástil; dentro, un marcapáginas con forma de pez y granitos de arena entre las hojas."
+      }
+    },
+    {
+      "dia": 152,
+      "semana": 31,
+      "trimestre": 3,
+      "tema": "El Día del Libro",
+      "texto": [
+        "El martes, Marta pidió a cada uno que contara qué había hecho en Semana Santa, y el club escuchó con mucha atención.",
+        "Nora había ido a la playa con sus primos. Leo había pasado las vacaciones en el pueblo de su abuelo, que estaba junto al mar.",
+        "Irene se había quedado en la ciudad, porque su madre trabajaba, y Álex había subido a la montaña, donde todavía quedaba nieve.",
+        "Lucía, que no se fiaba de su memoria, apuntó dos nombres en su cuaderno y los rodeó con un círculo.",
+        "—La arena no miente —susurró Sofía."
+      ],
+      "actividad": {
+        "tipo": "relaciona",
+        "instruccion": "Une a cada niño con el sitio donde pasó la Semana Santa.",
+        "cabeceras": [
+          "Quién",
+          "Dónde estuvo"
+        ],
+        "pares": [
+          [
+            "Nora",
+            "en la playa, con sus primos"
+          ],
+          [
+            "Leo",
+            "en el pueblo de su abuelo, junto al mar"
+          ],
+          [
+            "Irene",
+            "en la ciudad"
+          ],
+          [
+            "Álex",
+            "en la montaña, con nieve"
+          ]
+        ]
+      }
+    },
+    {
+      "dia": 153,
+      "semana": 31,
+      "trimestre": 3,
+      "tema": "El Día del Libro",
+      "texto": [
+        "El miércoles, Lucía examinó el libro página por página con la lupa.",
+        "En la página doce, alguien había subrayado con lápiz verde una frase: «El tesoro está donde nadie lo busca».",
+        "—En clase solo hay dos que subrayan en verde —recordó Hugo—: Leo e Irene. Los demás usan el lápiz rojo que nos dio Marta.",
+        "Sofía sospechaba de Hugo, que venía del mar y adoraba los barcos. Pero Marta ya había visto el nombre de Hugo en su libro, escrito con letras enormes.",
+        "Lucía se quedó mirando la frase, porque le hizo pensar en la cápsula del tiempo."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "preguntas": [
+          "¿Por qué sospechaba Sofía de Hugo? ¿Por qué no puede ser él?",
+          "¿Por qué crees que la frase subrayada le hizo pensar a Lucía en la cápsula del tiempo?"
+        ],
+        "respuestas": [
+          "Porque venía del mar y adoraba los barcos. No puede ser él porque su libro sí tenía su nombre, escrito con letras enormes.",
+          "Porque la cápsula también es como un tesoro escondido que nadie encuentra; a lo mejor está donde nadie la busca."
+        ]
+      }
+    },
+    {
+      "dia": 154,
+      "semana": 31,
+      "trimestre": 3,
+      "tema": "El Día del Libro",
+      "texto": [
+        "El jueves se hizo por fin el intercambio, y cada uno desenvolvió el libro que le había tocado.",
+        "A Irene le tocó uno de poemas, y lo abrazó antes de que nadie pudiera verlo.",
+        "Álex, que odia cocinar, respiró tranquilo al ver que el suyo no era el de recetas.",
+        "Nora y Leo querían los dos el de animales, pero no le tocó a ninguno.",
+        "Y Nora, que es la portera del equipo del cole, se llevó justo el de su deporte favorito.",
+        "El libro pirata, en cambio, se quedó en la mesa de Marta, esperando a su dueño."
+      ],
+      "actividad": {
+        "tipo": "logica",
+        "instruccion": "Usa las pistas del texto para saber qué libro le tocó a cada uno. Pon ✓ donde sí y ✗ donde no.",
+        "filas": [
+          "Nora",
+          "Leo",
+          "Irene",
+          "Álex"
+        ],
+        "columnas": [
+          "poemas",
+          "recetas",
+          "fútbol",
+          "animales"
+        ],
+        "restricciones": [
+          [
+            "si",
+            "Irene",
+            "poemas"
+          ],
+          [
+            "no",
+            "Álex",
+            "recetas"
+          ],
+          [
+            "no",
+            "Nora",
+            "animales"
+          ],
+          [
+            "no",
+            "Leo",
+            "animales"
+          ],
+          [
+            "si",
+            "Nora",
+            "fútbol"
+          ]
+        ],
+        "solucion": {
+          "Nora": "fútbol",
+          "Leo": "recetas",
+          "Irene": "poemas",
+          "Álex": "animales"
+        },
+        "pregunta": "¿A quién le tocó el libro de animales?",
+        "respuesta_pregunta": "A Álex."
+      }
+    },
+    {
+      "dia": 155,
+      "semana": 31,
+      "trimestre": 3,
+      "tema": "El Día del Libro: el caso",
+      "texto": [
+        "El viernes, el club repasó las pistas del libro pirata en la caseta, mientras Toby dormía la siesta en la puerta.",
+        "—La arena dice una cosa y el lápiz verde dice otra —resumió Hugo—. Pero hay un nombre que está en las dos listas.",
+        "Sofía cogió el cuaderno de Lucía y lo leyó dos veces, como mandaba la norma número uno.",
+        "—¡Ya lo tengo! —gritó, tan fuerte que Toby se despertó de un salto.",
+        "Lucía sonrió, porque había llegado a la misma respuesta.",
+        "¿Y tú? ¿Sabes de quién es el libro sin nombre?"
+      ],
+      "actividad": {
+        "tipo": "caso",
+        "pregunta": "¿De quién es el libro sin nombre?",
+        "opciones": [
+          "de Nora",
+          "de Leo",
+          "de Irene",
+          "de Álex"
+        ],
+        "solucion": "de Leo",
+        "clave": "De Leo: entre las hojas había arena (lunes), y solo Nora y Leo estuvieron junto al mar en Semana Santa (martes); la frase está subrayada en verde, y solo Leo e Irene subrayan en verde (miércoles). El único nombre que está en las dos listas es el de Leo."
+      }
+    },
+    {
+      "dia": 156,
+      "semana": 32,
+      "trimestre": 3,
+      "tema": "El plano antiguo",
+      "texto": [
+        "El libro sin nombre era de Leo, como había adivinado Sofía: con las prisas, se le olvidó poner su nombre.",
+        "Ese lunes, Paco apareció con una hoja amarilla que había encontrado en un armario de la conserjería.",
+        "Era un plano del patio tal como era veinticinco años atrás, en papel de cuadros.",
+        "Arriba estaba el edificio, con una estrella encima de la puerta, que era el reloj, y la conserjería a la izquierda.",
+        "Abajo, junto a la tapia de la izquierda, había un solo árbol con la palabra «plátano». Tres cuadros a su derecha, en la misma fila, un círculo azul decía «fuente»."
+      ],
+      "actividad": {
+        "tipo": "dibuja_detalle",
+        "prompt": "Dibuja el plano antiguo del patio tal y como lo describe el texto.",
+        "comprueba": [
+          "¿Qué hay dibujado encima de la puerta, y qué significa?",
+          "¿Qué hay a la izquierda de la puerta?",
+          "¿Cuántos árboles hay, y dónde están?",
+          "¿Dónde está la fuente, y cómo está dibujada?"
+        ],
+        "clave": "Arriba, el edificio, con una estrella encima de la puerta (el reloj) y la conserjería a la izquierda; abajo, junto a la tapia de la izquierda, un solo árbol, el plátano; tres cuadros a su derecha, en la misma fila, un círculo azul: la fuente."
+      }
+    },
+    {
+      "dia": 157,
+      "semana": 32,
+      "trimestre": 3,
+      "tema": "El plano antiguo",
+      "texto": [
+        "El martes, mientras los demás jugaban en el recreo, el club comparó el plano antiguo con el patio de hoy.",
+        "El edificio, el reloj y la conserjería seguían donde estaban.",
+        "Pero ahora había dos plátanos, uno junto a cada tapia, y entre los dos, un arenero que en el plano no aparecía.",
+        "Además, la fuente ya no estaba abajo, sino arriba, pegada a la fachada, a la derecha de la puerta.",
+        "Hugo lo apuntó todo en dos columnas, una para cada plano, para que no se les escapara nada.",
+        "—¡Entonces uno de los plátanos no existía hace veinticinco años! —exclamó Sofía."
+      ],
+      "actividad": {
+        "tipo": "compara",
+        "instruccion": "Escribe a cada lado lo que solo tiene el plano antiguo o solo el patio de hoy, y en el medio, lo que tienen los dos. Vuelve a leer también la página de ayer.",
+        "a": "el plano antiguo",
+        "b": "el patio de hoy",
+        "solucion": {
+          "a": [
+            "un solo plátano",
+            "la fuente abajo, en la fila del plátano"
+          ],
+          "ambos": [
+            "el edificio",
+            "la puerta con el reloj",
+            "la conserjería",
+            "un plátano junto a la tapia de la izquierda"
+          ],
+          "b": [
+            "dos plátanos",
+            "el arenero",
+            "la fuente junto a la puerta"
+          ]
+        }
+      }
+    },
+    {
+      "dia": 158,
+      "semana": 32,
+      "trimestre": 3,
+      "tema": "El plano antiguo",
+      "texto": [
+        "El miércoles, el club intentó abrazar los troncos de los dos plátanos.",
+        "Para rodear el de la izquierda hicieron falta los tres, cogidos de la mano y estirando mucho los brazos. El de la derecha, en cambio, lo abrazaba Sofía ella sola.",
+        "—Uno de los dos lo plantaron después de la cápsula, eso seguro —dijo Paco—. Pero no me pidáis que recuerde cuál.",
+        "Lucía apuntó en su cuaderno que un tronco engorda un poco cada año, igual que crece un niño.",
+        "Hugo, que tenía los brazos más largos, se reía porque le había tocado la parte con más hormigas."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "preguntas": [
+          "¿Qué descubrió el club al abrazar los troncos?",
+          "¿Qué crees que quiere decir que un tronco sea mucho más gordo que el otro?"
+        ],
+        "respuestas": [
+          "Que el tronco del plátano de la izquierda es mucho más gordo: hacen falta los tres para rodearlo, y el de la derecha lo abraza Sofía sola.",
+          "Que ese árbol es más viejo: lleva más años creciendo, porque un tronco engorda un poco cada año."
+        ]
+      }
+    },
+    {
+      "dia": 159,
+      "semana": 32,
+      "trimestre": 3,
+      "tema": "El plano antiguo",
+      "texto": [
+        "El jueves, Hugo colocó el plano antiguo encima del suyo. Los dos encajaban como piezas de un puzle, porque tenían los mismos cuadros.",
+        "—En el plano antiguo, la fuente estaba tres cuadros a la derecha del árbol, en la misma fila —dijo Lucía—. Si contamos tres cuadros desde el plátano de la izquierda en el plano de hoy…",
+        "No terminó la frase, porque Sofía ya había salido corriendo al patio. Paco, que la vio pasar como una flecha, se dio una palmada en la frente.",
+        "—¡Claro! ¡Ahora me acuerdo de todo! —exclamó."
+      ],
+      "actividad": {
+        "tipo": "mapa",
+        "instruccion": "Este es el patio de hoy. Sal del plátano de la izquierda, cuenta tres casillas hacia la derecha y marca con una X dónde estaba la fuente.",
+        "columnas": 7,
+        "filas": 4,
+        "lugares": {
+          "C1": "conserje",
+          "D1": "puerta y reloj",
+          "E1": "fuente",
+          "A3": "plátano",
+          "D3": "arenero",
+          "G3": "plátano",
+          "D4": "verja"
+        },
+        "salida": "A3",
+        "comprobar": [
+          {
+            "desde": "A3",
+            "pasos": [
+              "derecha 3"
+            ],
+            "hasta": "D3"
+          }
+        ],
+        "preguntas": [
+          "¿Qué hay hoy en la casilla donde estaba la fuente?"
+        ],
+        "clave": "Tres casillas a la derecha del plátano de la izquierda (A3) está D3: donde hoy está el arenero estaba antes la fuente."
+      }
+    },
+    {
+      "dia": 160,
+      "semana": 32,
+      "trimestre": 3,
+      "tema": "El plano antiguo: el caso",
+      "texto": [
+        "El viernes, Paco les contó lo que había recordado de golpe: cuando construyeron el arenero, movieron la fuente junto a la puerta.",
+        "—Para que los pequeños no se llenaran de barro —explicó—. Y aquel mismo año plantaron un plátano nuevo, aunque ya no sé cuál de los dos.",
+        "El club se quedó mirando los dos troncos desde la ventana de clase. Sofía empezó a contar pruebas con los dedos, y Hugo sacó su plano.",
+        "—Pues yo sí lo sé —dijo Lucía—. Y tengo tres pruebas.",
+        "¿Y tú? ¿Sabes cuál de los dos plátanos es el plátano grande de Paco?"
+      ],
+      "actividad": {
+        "tipo": "caso",
+        "pregunta": "¿Cuál de los dos plátanos estaba ya cuando enterraron la cápsula?",
+        "opciones": [
+          "el de la izquierda",
+          "el de la derecha",
+          "los dos"
+        ],
+        "solucion": "el de la izquierda",
+        "clave": "El de la izquierda, junto a la tapia: en el plano antiguo solo hay un árbol, abajo, junto a la tapia de la izquierda (lunes); hoy hay dos, uno junto a cada tapia (martes), así que el de la derecha se plantó después; además, el tronco del de la izquierda es mucho más gordo, porque es más viejo (miércoles).",
+        "banner": "¡160 páginas leídas! El plano antiguo: descifrado."
+      }
+    },
+    {
+      "dia": 161,
+      "semana": 33,
+      "trimestre": 3,
+      "tema": "Rayo se escapa",
+      "texto": [
+        "El plátano grande de Paco era el de la izquierda, el único que aparecía en el plano antiguo, como había demostrado Lucía.",
+        "El sábado, Hugo llevó a Rayo al jardín de Lucía en una caja de cartón, para que conociera la caseta del club.",
+        "Dejaron la caja en medio del césped. A la izquierda estaba el huerto de Papá, con sus lechugas, y a la derecha, el castaño. Al fondo quedaba la caseta de la puerta verde.",
+        "Mientras el club preparaba un cartel dentro de la caseta, Rayo se quedó tomando el sol. Pero cuando salieron, la caja estaba vacía.",
+        "—¡Rayo se ha escapado! —gritó Hugo."
+      ],
+      "actividad": {
+        "tipo": "dibuja_detalle",
+        "prompt": "Dibuja el jardín de Lucía con la caja de Rayo, cada cosa en su sitio.",
+        "comprueba": [
+          "¿Dónde dejaron la caja de Rayo?",
+          "¿Qué hay a la izquierda, y qué tiene?",
+          "¿Qué hay a la derecha?",
+          "¿Qué hay al fondo, y de qué color es su puerta?"
+        ],
+        "clave": "La caja de cartón, en medio del césped; a la izquierda, el huerto de Papá, con lechugas; a la derecha, el castaño; al fondo, la caseta de la puerta verde."
+      }
+    },
+    {
+      "dia": 162,
+      "semana": 33,
+      "trimestre": 3,
+      "tema": "Rayo se escapa",
+      "texto": [
+        "Mientras buscaban por todo el jardín, Hugo les contó lo que sabía de las tortugas de tierra, para que entendieran cómo pensaba Rayo:",
+        "- No tienen dientes: cortan las hojas con el pico, como si fuera una tijera, y dejan mordiscos con forma de media luna.",
+        "- Les encantan la lechuga y las flores del diente de león.",
+        "- Cuando hace mucho calor, se entierran en la tierra blanda para estar fresquitas.",
+        "- En invierno duermen durante meses: a eso se le llama hibernar.",
+        "- Aunque parecen lentas, pueden andar muchos metros en una tarde.",
+        "—Así que Rayo puede estar muy lejos —dijo Sofía, preocupada."
+      ],
+      "actividad": {
+        "tipo": "ficha",
+        "instruccion": "Completa la ficha de la tortuga de tierra con lo que cuenta Hugo.",
+        "titulo": "La tortuga de tierra",
+        "campos": [
+          "Qué le gusta comer",
+          "Con qué corta las hojas",
+          "Qué hace cuando hace mucho calor",
+          "Qué hace en invierno"
+        ],
+        "respuestas": [
+          "Lechuga y flores del diente de león.",
+          "Con el pico, porque no tiene dientes; deja mordiscos con forma de media luna.",
+          "Se entierra en la tierra blanda para estar fresca.",
+          "Duerme durante meses: hiberna."
+        ]
+      }
+    },
+    {
+      "dia": 163,
+      "semana": 33,
+      "trimestre": 3,
+      "tema": "Rayo se escapa",
+      "texto": [
+        "Dani estaba seguro de que Toby había escondido a Rayo debajo del sofá, porque allí esconde todo lo que encuentra.",
+        "Pero Mamá dijo que Toby había pasado la tarde dormido dentro de casa, y que la puerta del jardín había estado cerrada.",
+        "Mientras tanto, Lucía examinaba el huerto con la lupa. Varias hojas de lechuga tenían mordiscos con forma de media luna, y la tierra estaba blanda y húmeda, porque Papá acababa de regar.",
+        "Era la tarde más calurosa de la primavera, y hasta los pájaros se habían callado.",
+        "—¡Aquí ha estado comiendo! —exclamó Hugo, agachándose tanto que se le cayeron las gafas."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "preguntas": [
+          "¿Por qué no puede haber escondido Toby a Rayo?",
+          "¿Quién crees que mordió las lechugas? ¿Cómo lo sabes? (Vuelve a leer la página de ayer.)"
+        ],
+        "respuestas": [
+          "Porque Toby pasó la tarde dormido dentro de casa, y la puerta del jardín estuvo cerrada.",
+          "Rayo, porque las tortugas cortan las hojas con el pico y dejan mordiscos con forma de media luna."
+        ]
+      }
+    },
+    {
+      "dia": 164,
+      "semana": 33,
+      "trimestre": 3,
+      "tema": "Rayo se escapa",
+      "texto": [
+        "Entonces, Lucía encontró con la lupa unas huellas diminutas: dos filas de puntitos con una raya en medio.",
+        "—Son de Rayo —dijo Hugo—. La raya la hace la parte de abajo del caparazón, que va rozando el suelo.",
+        "Hugo dibujó las huellas en un plano del jardín con cuadros. Salían de la caja, subían un cuadro hacia la caseta y luego avanzaban dos cuadros hacia la izquierda.",
+        "Allí, donde crecían las lechugas, las huellas desaparecían de repente.",
+        "—Rayo no puede haber volado —dijo Hugo—. Si las huellas se acaban aquí, tiene que estar aquí."
+      ],
+      "actividad": {
+        "tipo": "mapa",
+        "instruccion": "Dibuja en el plano las huellas de Rayo desde la caja, y marca con una X dónde desaparecen.",
+        "columnas": 5,
+        "filas": 3,
+        "lugares": {
+          "C1": "caseta",
+          "A2": "lechugas",
+          "A3": "huerto",
+          "E2": "castaño",
+          "C3": "caja",
+          "E3": "césped"
+        },
+        "salida": "C3",
+        "comprobar": [
+          {
+            "desde": "C3",
+            "pasos": [
+              "arriba 1",
+              "izquierda 2"
+            ],
+            "hasta": "A2"
+          }
+        ],
+        "preguntas": [
+          "¿En qué casilla desaparecen las huellas? ¿Qué hay allí?"
+        ],
+        "clave": "Las huellas suben de C3 a C2 y van hacia la izquierda hasta A2, donde están las lechugas del huerto: allí desaparecen."
+      }
+    },
+    {
+      "dia": 165,
+      "semana": 33,
+      "trimestre": 3,
+      "tema": "Rayo se escapa: el caso",
+      "texto": [
+        "Ya casi era de noche cuando el club se sentó en la caseta a repasar las pistas.",
+        "Dani seguía mirando debajo del sofá, por si acaso. Sofía había buscado hasta en la caseta, detrás de las cajas de fruta.",
+        "Hugo, en cambio, no se movía de la ventana redonda. Tenía los ojos llenos de lágrimas, a pesar de que intentaba que nadie lo notara.",
+        "Lucía le puso la mano en el hombro y le enseñó su cuaderno.",
+        "—Creo que sé dónde está Rayo —le dijo en voz baja—. Y está bien, ya lo verás.",
+        "¿Y tú? ¿Sabes dónde se ha metido Rayo?"
+      ],
+      "actividad": {
+        "tipo": "caso",
+        "pregunta": "¿Dónde está Rayo?",
+        "opciones": [
+          "debajo del sofá",
+          "dentro de la caseta",
+          "enterrado en el huerto",
+          "en la calle"
+        ],
+        "solucion": "enterrado en el huerto",
+        "clave": "Enterrado en el huerto, entre las lechugas: cuando hace mucho calor, las tortugas se entierran en la tierra blanda (martes); era la tarde más calurosa de la primavera, la tierra del huerto estaba blanda porque Papá acababa de regar, y las lechugas tenían mordiscos de tortuga (miércoles); las huellas van hasta las lechugas y allí desaparecen de repente (jueves). Toby estuvo toda la tarde dentro de casa (miércoles)."
+      }
+    },
+    {
+      "dia": 166,
+      "semana": 34,
+      "trimestre": 3,
+      "tema": "El día de la madre",
+      "texto": [
+        "Rayo estaba enterrado entre las lechugas, con la tripa llena, como Lucía le había dicho a Hugo.",
+        "Esa semana, en casa de Lucía todos hablaban en voz baja, como si guardaran un tesoro. El domingo era el día de la madre, y Papá, Lucía y Dani preparaban un desayuno sorpresa.",
+        "Lucía dibujó la bandeja en su cuaderno para que no se les olvidara nada. En el centro irían dos tostadas con forma de corazón, y a la izquierda, un vaso de zumo de naranja.",
+        "A la derecha pondrían una taza de café con leche, con una servilleta doblada en triángulo debajo. Detrás, una rosa amarilla en un vaso estrecho."
+      ],
+      "actividad": {
+        "tipo": "dibuja_detalle",
+        "prompt": "Dibuja la bandeja del desayuno sorpresa tal y como la planeó Lucía.",
+        "comprueba": [
+          "¿Qué hay en el centro, y qué forma tiene?",
+          "¿Qué hay a la izquierda?",
+          "¿Qué hay a la derecha, y qué hay debajo?",
+          "¿Qué hay detrás, y de qué color es?"
+        ],
+        "clave": "En el centro, dos tostadas con forma de corazón; a la izquierda, un vaso de zumo de naranja; a la derecha, una taza de café con leche, con una servilleta doblada en triángulo debajo; detrás, una rosa amarilla en un vaso estrecho."
+      }
+    },
+    {
+      "dia": 167,
+      "semana": 34,
+      "trimestre": 3,
+      "tema": "El día de la madre",
+      "texto": [
+        "Guardar un secreto era lo más difícil del mundo para Dani, así que decidieron hablar de la sorpresa solo en la caseta.",
+        "Cuando Mamá encontró la rosa en la nevera, Dani empezó a decir para quién era, y Lucía tuvo que taparle la boca.",
+        "Otro día, mientras ensayaban con la bandeja, a Dani se le cayó un vaso al suelo. Por eso, Papá decidió que Dani solo llevaría la rosa.",
+        "Y como Mamá se levantaba siempre a las ocho, pusieron el despertador a las siete y media.",
+        "Dani prometió que no volvería a abrir la boca hasta el domingo, aunque nadie se lo creyó."
+      ],
+      "actividad": {
+        "tipo": "relaciona",
+        "instruccion": "Une cada causa con lo que pasó por ella.",
+        "cabeceras": [
+          "Causa",
+          "Consecuencia"
+        ],
+        "pares": [
+          [
+            "Dani no sabía guardar secretos.",
+            "Solo hablaban de la sorpresa en la caseta."
+          ],
+          [
+            "Dani empezó a decir para quién era la rosa.",
+            "Lucía tuvo que taparle la boca."
+          ],
+          [
+            "A Dani se le cayó un vaso al ensayar.",
+            "Dani solo llevaría la rosa."
+          ],
+          [
+            "Mamá se levantaba a las ocho.",
+            "Pusieron el despertador a las siete y media."
+          ]
+        ]
+      }
+    },
+    {
+      "dia": 168,
+      "semana": 34,
+      "trimestre": 3,
+      "tema": "El día de la madre",
+      "texto": [
+        "El miércoles repartieron las tareas del domingo en la caseta, con la puerta bien cerrada.",
+        "Había cuatro tareas: hacer las tostadas, exprimir el zumo, llevar la rosa y vigilar la puerta del dormitorio. Así sabrían si Mamá se despertaba antes de tiempo.",
+        "Como el tostador quema, las tostadas las haría el único mayor. Lucía no quería llevar la rosa, ya que le daba miedo pincharse con las espinas.",
+        "Y Toby, claro, ni sabe exprimir naranjas ni puede llevar una rosa sin mordisquearla.",
+        "Aun así, Toby también tendría su tarea, porque en esa casa nadie se quedaba sin ayudar."
+      ],
+      "actividad": {
+        "tipo": "logica",
+        "instruccion": "Usa las pistas del texto para saber qué tarea le tocó a cada uno. Pon ✓ donde sí y ✗ donde no.",
+        "filas": [
+          "Papá",
+          "Lucía",
+          "Dani",
+          "Toby"
+        ],
+        "columnas": [
+          "tostadas",
+          "zumo",
+          "rosa",
+          "puerta"
+        ],
+        "restricciones": [
+          [
+            "si",
+            "Papá",
+            "tostadas"
+          ],
+          [
+            "no",
+            "Lucía",
+            "rosa"
+          ],
+          [
+            "no",
+            "Toby",
+            "zumo"
+          ],
+          [
+            "no",
+            "Toby",
+            "rosa"
+          ]
+        ],
+        "solucion": {
+          "Papá": "tostadas",
+          "Lucía": "zumo",
+          "Dani": "rosa",
+          "Toby": "puerta"
+        },
+        "pregunta": "¿Qué tarea le tocó a Toby?",
+        "respuesta_pregunta": "Vigilar la puerta del dormitorio."
+      }
+    },
+    {
+      "dia": 169,
+      "semana": 34,
+      "trimestre": 3,
+      "tema": "El día de la madre",
+      "texto": [
+        "El jueves, Lucía escribió un poema para Mamá. Lo escribió con el código del club, que Mamá ya conocía, para que fuera un regalo y un juego a la vez.",
+        "—Seguro que lo descifra más rápido que Dani —dijo Sofía.",
+        "Dani quiso añadir un verso sobre las tostadas, pero no rimaba con nada.",
+        "Hugo, que era el experto en códigos, lo revisó dos veces, letra por letra, para que no hubiera ni un error.",
+        "Después, Lucía lo dobló en cuatro y lo escondió debajo de la servilleta, donde Mamá lo encontraría el domingo.",
+        "—Y cuando lo lea, será miembro de honor del club —propuso Hugo, muy serio."
+      ],
+      "actividad": {
+        "tipo": "codigo",
+        "instruccion": "Descifra el poema de Lucía con el código del club.",
+        "mensaje": "Mamá tu risa es mi sol y tu abrazo mi casa",
+        "cifrado": "vocales",
+        "mostrar_clave": true
+      }
+    },
+    {
+      "dia": 170,
+      "semana": 34,
+      "trimestre": 3,
+      "tema": "El día de la madre",
+      "texto": [
+        "El domingo, a las siete y media, la bandeja entró en el dormitorio tal y como la había dibujado Lucía.",
+        "Toby vigilaba la puerta, Dani llevaba la rosa con mucho cuidado y Papá sujetaba la bandeja con las dos manos.",
+        "Debajo de la servilleta, Mamá encontró el poema. Lo descifró en voz alta, letra por letra, sin ninguna ayuda, porque se sabía el código de memoria.",
+        "Cuando terminó, tenía los ojos brillantes y la boca llena de migas.",
+        "—Es el mejor regalo que me han hecho nunca —dijo, y los abrazó a los tres. Toby también se coló en el abrazo."
+      ],
+      "actividad": {
+        "tipo": "crea",
+        "prompt": "Escribe un poema de dos versos para tu madre o para alguien que te cuide. Si te atreves, escríbelo también con el código del club.",
+        "lineas": 3,
+        "banner": "¡170 páginas leídas! Desayuno sorpresa: todo un éxito."
+      }
+    },
+    {
+      "dia": 171,
+      "semana": 35,
+      "trimestre": 3,
+      "tema": "Dani cumple seis años",
+      "texto": [
+        "Una semana después, llegó otro día importante: Dani cumplía seis años.",
+        "Lucía quería regalarle algo especial, así que organizó una búsqueda del tesoro con adivinanzas, como las que Dani se inventaba para Lector X.",
+        "Esta vez, la Lectora X sería ella. Preparó tres tarjetas con pistas y las escondió por la casa antes de que él se despertara.",
+        "Mamá y la abuela hicieron la tarta, que era redonda y de chocolate. Tenía seis velas azules en el borde y un dinosaurio verde de azúcar en el centro, rodeado de fresas.",
+        "Dani no sabía nada, aunque llevaba toda la semana preguntando qué le iban a regalar."
+      ],
+      "actividad": {
+        "tipo": "dibuja_detalle",
+        "prompt": "Dibuja la tarta de cumpleaños de Dani con todo lo que cuenta el texto.",
+        "comprueba": [
+          "¿Qué forma tiene, y de qué es?",
+          "¿Cuántas velas hay, de qué color son y dónde están?",
+          "¿Qué hay en el centro, y de qué color es?",
+          "¿Qué hay alrededor del dinosaurio?"
+        ],
+        "clave": "Tarta redonda de chocolate, con seis velas azules en el borde y un dinosaurio verde de azúcar en el centro, rodeado de fresas."
+      }
+    },
+    {
+      "dia": 172,
+      "semana": 35,
+      "trimestre": 3,
+      "tema": "Dani cumple seis años",
+      "texto": [
+        "El sábado por la mañana, Dani encontró una tarjeta debajo de la almohada. Olía a fresa y estaba firmada por la Lectora X.",
+        "> Feliz cumpleaños, detective.\nTengo una boca redonda\ny en la barriga doy vueltas.\nMe como la ropa sucia\ny te la devuelvo limpia.\nLectora X",
+        "—¡Lectora X! —gritó Dani—. ¡Como Lector X, pero en chica!",
+        "Leyó la adivinanza dos veces, como le había enseñado su hermana, y salió corriendo por el pasillo.",
+        "Lucía lo siguió de puntillas, para que no sospechara nada. Toby corría detrás de los dos, con su pelota roja en la boca, convencido de que aquello era un juego para perros."
+      ],
+      "actividad": {
+        "tipo": "adivina",
+        "adivinanza": "Resuelve la adivinanza de la Lectora X.\nTengo una boca redonda\ny en la barriga doy vueltas.\nMe como la ropa sucia\ny te la devuelvo limpia.\n¿Qué es? ¿Adónde corrió Dani?",
+        "respuesta": "La lavadora: Dani corrió a la lavadora a buscar la siguiente tarjeta."
+      }
+    },
+    {
+      "dia": 173,
+      "semana": 35,
+      "trimestre": 3,
+      "tema": "Dani cumple seis años",
+      "texto": [
+        "Dentro de la lavadora, entre dos calcetines de Papá, Dani encontró la segunda tarjeta, que también olía a fresa.",
+        "> Aunque fuera haga calor,\ndentro de mí hace frío.\nGuardo leche, fruta y queso,\n¡y hoy una tarta, qué lío!",
+        "Esta vez, Dani tardó un poco más, porque la adivinanza era difícil. Primero buscó en el horno, después en el armario de las escobas y, por fin, abrió la nevera.",
+        "Allí, pegada a la caja de la tarta, estaba la tercera tarjeta. Pero esta no tenía ni una sola letra: solo números.",
+        "—¡Esto es cosa de detectives de verdad! —dijo Dani, emocionado, aunque no entendía nada."
+      ],
+      "actividad": {
+        "tipo": "ordena",
+        "sucesos": [
+          "Dani encuentra la segunda tarjeta en la lavadora.",
+          "Dani busca en el horno.",
+          "Dani busca en el armario de las escobas.",
+          "Dani abre la nevera.",
+          "Dani encuentra una tarjeta con números."
+        ]
+      }
+    },
+    {
+      "dia": 174,
+      "semana": 35,
+      "trimestre": 3,
+      "tema": "Dani cumple seis años",
+      "texto": [
+        "Por suerte, Sofía y Hugo llegaron a la fiesta justo a tiempo.",
+        "—Es el código de los números —dijo Hugo, que era el experto del club—. Cada letra es un número, según su orden en el abecedario.",
+        "Dani fue buscando cada número en la tabla, mientras Sofía le apuntaba las letras en un papel.",
+        "Lucía, mientras tanto, miraba hacia otro lado y silbaba, como si la cosa no fuera con ella. Toby la miraba con la cabeza ladeada, como un detective.",
+        "En cuanto terminaron, Dani leyó el mensaje en voz alta, tan deprisa que nadie le entendió."
+      ],
+      "actividad": {
+        "tipo": "codigo",
+        "instruccion": "Descifra el mensaje de la tercera tarjeta con el código de los números.",
+        "mensaje": "Busca debajo de tu cama",
+        "cifrado": "numeros"
+      }
+    },
+    {
+      "dia": 175,
+      "semana": 35,
+      "trimestre": 3,
+      "tema": "Dani cumple seis años",
+      "texto": [
+        "Debajo de la cama había un paquete envuelto en papel de estrellas.",
+        "Dentro, Dani encontró un cuaderno de tapas rojas, que olía a fresa. En la primera página ponía:",
+        "> Cuaderno de detective.\nPara Dani, de la Lectora X.",
+        "Dani miró la letra: era de niña, con corazoncitos en vez de puntos sobre las íes, igual que la de…",
+        "—¡Lucía! —gritó, y se le echó encima para abrazarla—. ¡Tú eras la Lectora X!",
+        "—Todo buen detective necesita un cuaderno —dijo Lucía—. Yo encontré el mío debajo de mi cama, en septiembre.",
+        "Toby, que no entendía nada, ladró de alegría por si acaso."
+      ],
+      "actividad": {
+        "tipo": "vinetas",
+        "instruccion": "Dibuja la búsqueda del tesoro de Dani en tres viñetas.",
+        "pies": [
+          "Dani encuentra la primera tarjeta debajo de la almohada.",
+          "Dani abre la nevera y encuentra la tarjeta de los números.",
+          "Dani encuentra el cuaderno rojo debajo de su cama."
+        ]
+      }
+    },
+    {
+      "dia": 176,
+      "semana": 36,
+      "trimestre": 3,
+      "tema": "Las abejas del parque",
+      "texto": [
+        "Dani no se separaba de su cuaderno rojo, aunque aquella semana el caso nuevo era para el club.",
+        "Cada mañana, cinco o seis abejas zumbaban delante de la ventana de 2.º, que estaba en el primer piso.",
+        "La ventana tenía el marco azul y un alféizar ancho. Encima, por fuera, había tres macetas de barro con unas plantas de flores moradas, que la clase había plantado en marzo.",
+        "En la maceta del medio, una mariquita tomaba el sol en una hoja.",
+        "—No os preocupéis —dijo Marta—. Si no las molestamos, no nos molestarán.",
+        "Venían del parque de enfrente, pero Sofía quería saber por qué iban justo a su ventana."
+      ],
+      "actividad": {
+        "tipo": "dibuja_detalle",
+        "prompt": "Dibuja la ventana de 2.º tal y como la describe el texto, con sus abejas.",
+        "comprueba": [
+          "¿De qué color es el marco?",
+          "¿Cuántas macetas hay, de qué son y dónde están?",
+          "¿De qué color son las flores?",
+          "¿Qué hay en la maceta del medio? ¿Cuántas abejas dibujarás?"
+        ],
+        "clave": "Ventana con el marco azul y un alféizar ancho; encima, por fuera, tres macetas de barro con plantas de flores moradas; en la del medio, una mariquita tomando el sol en una hoja; delante, cinco o seis abejas."
+      }
+    },
+    {
+      "dia": 177,
+      "semana": 36,
+      "trimestre": 3,
+      "tema": "Las abejas del parque",
+      "texto": [
+        "Esa tarde, el club fue a la biblioteca del barrio, y Tomás les buscó un libro sobre abejas. Esto es lo que apuntó Lucía:",
+        "- Las abejas se alimentan del néctar y del polen de las flores. En un solo día, una abeja puede visitar cientos de flores.",
+        "- Ven muy bien los colores azul y morado, pero el rojo casi no lo distinguen.",
+        "- Cuando una abeja encuentra muchas flores, vuelve a la colmena y baila para que las demás sepan dónde están.",
+        "- Solo pican cuando se sienten en peligro, porque muchas mueren después de picar.",
+        "—¡Bailan para dar direcciones, como los mapas de Hugo! —se rio Sofía."
+      ],
+      "actividad": {
+        "tipo": "ficha",
+        "instruccion": "Completa la ficha de las abejas con lo que apuntó Lucía.",
+        "titulo": "Las abejas",
+        "campos": [
+          "De qué se alimentan",
+          "Qué colores ven muy bien",
+          "Qué color casi no distinguen",
+          "Para qué bailan",
+          "Cuándo pican"
+        ],
+        "respuestas": [
+          "Del néctar y del polen de las flores.",
+          "El azul y el morado.",
+          "El rojo.",
+          "Para que las demás sepan dónde están las flores.",
+          "Solo cuando se sienten en peligro."
+        ]
+      }
+    },
+    {
+      "dia": 178,
+      "semana": 36,
+      "trimestre": 3,
+      "tema": "Las abejas del parque",
+      "texto": [
+        "El miércoles, Sofía dejó su zumo de melocotón en la ventana, para ver si las abejas venían a beberlo.",
+        "Pero las abejas ni lo miraron. Siguieron zumbando alrededor de las macetas, de flor en flor, como si el zumo no existiera.",
+        "—Las que buscan zumos y meriendas son las avispas —explicó Hugo—. Las dos tienen rayas amarillas y negras, y las dos pueden picar.",
+        "—Pero la abeja es gordita y peluda, y hace miel —siguió—. La avispa es más delgada, casi sin pelo, y tiene la cintura muy estrecha.",
+        "Sofía recogió su zumo a toda prisa, por si acaso aparecía alguna avispa."
+      ],
+      "actividad": {
+        "tipo": "compara",
+        "instruccion": "Escribe a cada lado lo que solo tiene la abeja o solo la avispa, y en el medio, lo que tienen las dos.",
+        "a": "la abeja",
+        "b": "la avispa",
+        "solucion": {
+          "a": [
+            "es gordita y peluda",
+            "hace miel",
+            "busca flores"
+          ],
+          "ambos": [
+            "rayas amarillas y negras",
+            "pueden picar"
+          ],
+          "b": [
+            "es delgada, casi sin pelo",
+            "tiene la cintura muy estrecha",
+            "busca zumos y meriendas"
+          ]
+        }
+      }
+    },
+    {
+      "dia": 179,
+      "semana": 36,
+      "trimestre": 3,
+      "tema": "Las abejas del parque",
+      "texto": [
+        "El jueves, Paco acompañó al club por el pasillo del primer piso. Las cuatro clases tenían la ventana con el marco azul, pero solo había abejas en la de 2.º.",
+        "En los alféizares había lavanda, geranios rojos, cactus o nada. En 1.º tenían los geranios, y los de 4.º no tenían ninguna planta, porque se les habían secado todas.",
+        "Los cactus, que pinchan mucho, no estaban en 2.º.",
+        "Para que no quedara ninguna duda, Paco subió con una escalera, y no había ningún panal por ninguna parte.",
+        "—Ya tenemos casi todas las piezas —dijo Lucía, mientras las contaba con los dedos."
+      ],
+      "actividad": {
+        "tipo": "logica",
+        "instruccion": "Usa las pistas del texto para saber qué había en el alféizar de cada clase. Pon ✓ donde sí y ✗ donde no.",
+        "filas": [
+          "1.º",
+          "2.º",
+          "3.º",
+          "4.º"
+        ],
+        "columnas": [
+          "lavanda",
+          "geranios",
+          "cactus",
+          "nada"
+        ],
+        "restricciones": [
+          [
+            "si",
+            "1.º",
+            "geranios"
+          ],
+          [
+            "si",
+            "4.º",
+            "nada"
+          ],
+          [
+            "no",
+            "2.º",
+            "cactus"
+          ]
+        ],
+        "solucion": {
+          "1.º": "geranios",
+          "2.º": "lavanda",
+          "3.º": "cactus",
+          "4.º": "nada"
+        },
+        "pregunta": "¿Qué planta hay en la ventana de 2.º, la única con abejas?",
+        "respuesta_pregunta": "Lavanda."
+      }
+    },
+    {
+      "dia": 180,
+      "semana": 36,
+      "trimestre": 3,
+      "tema": "Las abejas del parque: el caso",
+      "texto": [
+        "El viernes, a la hora del recreo, Marta les dejó usar la pizarra de clase para cerrar el caso de las abejas.",
+        "Hugo escribió las cuatro posibles causas: la merienda, el marco azul, un panal escondido y las macetas.",
+        "Después, mientras Sofía leía las pistas en voz alta, las fue tachando una a una, hasta que solo quedó una sin tachar.",
+        "—Y que conste que las abejas no hacen daño a nadie —dijo Lucía—. Solo buscan comida, igual que nosotros en el recreo.",
+        "Por la ventana, las abejas seguían con su trabajo, sin enterarse de nada.",
+        "¿Y tú? ¿Sabes por qué van las abejas a la ventana de 2.º?"
+      ],
+      "actividad": {
+        "tipo": "caso",
+        "pregunta": "¿Por qué van las abejas a la ventana de 2.º?",
+        "opciones": [
+          "por la merienda",
+          "por el marco azul",
+          "por un panal escondido",
+          "por las macetas de lavanda"
+        ],
+        "solucion": "por las macetas de lavanda",
+        "clave": "Por las macetas de lavanda: las abejas se alimentan de las flores y ven muy bien el morado (martes); las flores de la ventana de 2.º son moradas (lunes) y son de lavanda (jueves); el zumo no les interesa, eso es cosa de avispas (miércoles); las cuatro ventanas tienen el marco azul, pero solo hay abejas en la de 2.º, y Paco no encontró ningún panal (jueves).",
+        "banner": "¡180 páginas leídas! Caso de las abejas: resuelto."
+      }
+    },
+    {
+      "dia": 181,
+      "semana": 37,
+      "trimestre": 3,
+      "tema": "La granja escuela",
+      "texto": [
+        "Las abejas iban a la ventana de 2.º por la lavanda, como el club había descubierto.",
+        "Esa semana, la clase de Marta pasó dos días en una granja escuela, y el granjero les enseñó todo con un plano.",
+        "Desde el albergue fueron dos cuadros a la derecha, hasta el comedor. Bajaron dos cuadros hasta el establo, donde dormía el burro. Luego fueron dos cuadros a la izquierda, hasta el corral, donde vivían las cabras y las ovejas.",
+        "Allí, una cabra de manchas marrones llamada Lola se acercó a Lucía y le mordisqueó la manga.",
+        "—Es la más curiosa de la granja —se rio Julián, el granjero—. Todo lo que ve, lo prueba."
+      ],
+      "actividad": {
+        "tipo": "mapa",
+        "instruccion": "Dibuja en el plano el paseo por la granja desde el albergue, y marca con una X dónde termina.",
+        "columnas": 5,
+        "filas": 3,
+        "lugares": {
+          "A1": "albergue",
+          "C1": "comedor",
+          "E1": "huerto",
+          "A3": "corral",
+          "C3": "establo",
+          "E3": "gallinero"
+        },
+        "salida": "A1",
+        "comprobar": [
+          {
+            "desde": "A1",
+            "pasos": [
+              "derecha 2",
+              "abajo 2",
+              "izquierda 2"
+            ],
+            "hasta": "A3"
+          }
+        ],
+        "preguntas": [
+          "¿Dónde termina el paseo? ¿Qué animales viven allí?"
+        ],
+        "clave": "De A1 van a C1 (el comedor), bajan a C3 (el establo del burro) y van a la izquierda hasta A3: el corral de las cabras y las ovejas."
+      }
+    },
+    {
+      "dia": 182,
+      "semana": 37,
+      "trimestre": 3,
+      "tema": "La granja escuela",
+      "texto": [
+        "A la mañana siguiente, mientras desayunaban, Julián entró en el comedor con cara de susto.",
+        "—¡La puerta del corral está abierta! —exclamó—. Las cabras están en el huerto, comiéndose las coles, y las ovejas las siguen como si fueran sus hermanas mayores.",
+        "Toda la clase ayudó a devolverlas al corral. Sofía empujaba a una oveja que no quería moverse, y Hugo perseguía a Lola, que se había comido media col.",
+        "Cuando todo terminó, Lucía examinó la puerta del corral con la lupa.",
+        "—Anoche la cerré yo mismo —aseguró Julián—. Estoy seguro.",
+        "—Pues alguien la abrió —dijo Lucía—, y vamos a averiguar quién."
+      ],
+      "actividad": {
+        "tipo": "errores",
+        "instruccion": "Este resumen tiene tres errores. Rodéalos y escribe debajo cómo es de verdad.",
+        "relato": "Mientras cenaban, Julián dijo que la puerta del establo estaba abierta y que las cabras se estaban comiendo las lechugas.",
+        "errores": [
+          [
+            "cenaban",
+            "desayunaban"
+          ],
+          [
+            "del establo",
+            "del corral"
+          ],
+          [
+            "las lechugas",
+            "las coles"
+          ]
+        ]
+      }
+    },
+    {
+      "dia": 183,
+      "semana": 37,
+      "trimestre": 3,
+      "tema": "La granja escuela",
+      "texto": [
+        "Con la lupa, Lucía descubrió que la palanquita del pestillo estaba llena de babas y tenía unas marcas pequeñas, como de dientes.",
+        "Por dentro del corral, junto a la puerta, el barro estaba lleno de huellas de pezuñas partidas en dos, como dos gotas juntas.",
+        "—Esas son de cabra o de oveja —dijo Julián—. El burro tiene la pezuña entera y redonda.",
+        "Además, Marta había dormido junto a la puerta del albergue, y nadie de la clase había salido en toda la noche.",
+        "Y tampoco había hecho viento: la bandera amaneció quieta como un calcetín mojado.",
+        "Lola, mientras tanto, masticaba algo con cara de no haber roto un plato."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "preguntas": [
+          "¿Por qué no pudo abrir la puerta nadie de la clase?",
+          "¿Por qué no pudo ser el viento? ¿Y por qué no fue el burro?"
+        ],
+        "respuestas": [
+          "Porque Marta durmió junto a la puerta del albergue, y nadie de la clase salió en toda la noche.",
+          "Porque aquella noche no hizo viento: la bandera amaneció quieta. Y no fue el burro porque las huellas son de pezuñas partidas en dos, y el burro tiene la pezuña entera y redonda."
+        ]
+      }
+    },
+    {
+      "dia": 184,
+      "semana": 37,
+      "trimestre": 3,
+      "tema": "La granja escuela",
+      "texto": [
+        "El último día, Julián les explicó en qué se parecen las cabras y las ovejas, mientras les daban de comer.",
+        "—Las dos comen hierba, tienen la pezuña partida en dos y nos dan leche —dijo—. Pero son muy distintas.",
+        "—Las ovejas van siempre en grupo y se asustan de todo. Las cabras, en cambio, son tan curiosas que trepan por cualquier sitio y lo mordisquean todo.",
+        "—Algunas cabras aprenden incluso a abrir pestillos con la boca —añadió, mirando a Lola, que se hacía la dormida.",
+        "Lucía lo apuntó todo en su cuaderno, aunque ya estaba casi segura de la respuesta."
+      ],
+      "actividad": {
+        "tipo": "compara",
+        "instruccion": "Escribe a cada lado lo que solo es de la cabra o solo de la oveja, y en el medio, lo que tienen las dos.",
+        "a": "la cabra",
+        "b": "la oveja",
+        "solucion": {
+          "a": [
+            "es muy curiosa",
+            "trepa por cualquier sitio",
+            "lo mordisquea todo",
+            "puede aprender a abrir pestillos con la boca"
+          ],
+          "ambos": [
+            "comen hierba",
+            "tienen la pezuña partida en dos",
+            "nos dan leche"
+          ],
+          "b": [
+            "va siempre en grupo",
+            "se asusta de todo"
+          ]
+        }
+      }
+    },
+    {
+      "dia": 185,
+      "semana": 37,
+      "trimestre": 3,
+      "tema": "La granja escuela: el caso",
+      "texto": [
+        "En el autobús de vuelta, mientras los demás cantaban, el club repasó el caso del corral en la última fila.",
+        "—Nadie de la clase salió del albergue —recordó Sofía—. Y aquella noche no hizo viento.",
+        "Hugo enseñó un botón de su chaqueta, que alguien le había arrancado de un mordisco en el corral.",
+        "—Yo sé quién abrió la puerta —dijo Lucía—, y también quién se comió tu botón.",
+        "Marta, que iba sentada delante, se dio la vuelta para escucharlos. Hasta el conductor bajó un poco la música, como si también quisiera saberlo.",
+        "¿Y tú? ¿Sabes quién abrió la puerta del corral?"
+      ],
+      "actividad": {
+        "tipo": "caso",
+        "pregunta": "¿Quién abrió la puerta del corral?",
+        "opciones": [
+          "el viento",
+          "un niño de la clase",
+          "el burro",
+          "Lola, la cabra"
+        ],
+        "solucion": "Lola, la cabra",
+        "clave": "Lola, la cabra: la palanquita del pestillo tenía babas y marcas de dientes, y junto a la puerta había huellas de pezuñas partidas en dos, que son de cabra o de oveja, no del burro; nadie de la clase salió del albergue en toda la noche, y no hizo viento (miércoles); las cabras son curiosas, lo mordisquean todo y algunas aprenden a abrir pestillos con la boca, pero las ovejas no se separan del grupo (jueves)."
+      }
+    },
+    {
+      "dia": 186,
+      "semana": 38,
+      "trimestre": 3,
+      "tema": "¡Aquí está la cápsula!",
+      "texto": [
+        "La puerta del corral la había abierto Lola, tal y como Lucía había dicho en el autobús.",
+        "Quedaba solo una semana para la fiesta de fin de curso. El club copió en la pizarra de la caseta lo que sabía de la cápsula, y cómo lo sabía:",
+        "- La enterraron a mediodía: el reloj de la foto marcaba las doce.",
+        "- El plátano grande es el de la izquierda: sale en el plano antiguo.",
+        "- La fuente estaba donde hoy está el arenero: Paco lo recordó.",
+        "- Está a diez pasos de la fuente: lo dijo Paco en la entrevista.",
+        "—Ya solo falta que lo juntemos todo —dijo Hugo."
+      ],
+      "actividad": {
+        "tipo": "relaciona",
+        "instruccion": "Une cada cosa que sabe el club con la pista que se lo dijo.",
+        "cabeceras": [
+          "Lo que sabe el club",
+          "Cómo lo sabe"
+        ],
+        "pares": [
+          [
+            "La enterraron a mediodía.",
+            "El reloj de la foto marcaba las doce."
+          ],
+          [
+            "El plátano grande es el de la izquierda.",
+            "Sale en el plano antiguo."
+          ],
+          [
+            "La fuente estaba donde está el arenero.",
+            "Paco lo recordó."
+          ],
+          [
+            "Está a diez pasos de la fuente.",
+            "Lo dijo Paco en la entrevista."
+          ]
+        ]
+      }
+    },
+    {
+      "dia": 187,
+      "semana": 38,
+      "trimestre": 3,
+      "tema": "¡Aquí está la cápsula!",
+      "texto": [
+        "El martes, el club fue con Marta al despacho de la directora para pedirle permiso para cavar en el patio.",
+        "—Podéis cavar, pero solo si Paco os ayuda, y con la condición de que después tapéis el agujero —dijo la directora.",
+        "Paco, que nunca soltaba su taza de café, sonrió.",
+        "—Los diez pasos los conté yo, con mis botas —recordó—. Los niños no se ponían de acuerdo.",
+        "Hugo hizo la cuenta enseguida: cada cuadro de su plano medía cinco pasos de Paco, de modo que diez pasos eran dos cuadros.",
+        "—Pues el jueves, a mediodía, todos al patio —dijo Sofía, frotándose las manos."
+      ],
+      "actividad": {
+        "tipo": "verdadero_falso",
+        "afirmaciones": [
+          "La directora les deja cavar solos.",
+          "Después tendrán que tapar el agujero.",
+          "Los diez pasos los contó uno de los niños.",
+          "Diez pasos de Paco son dos cuadros del plano de Hugo."
+        ],
+        "respuestas": [
+          "F: solo si Paco les ayuda.",
+          "V",
+          "F: los contó Paco, con sus botas.",
+          "V"
+        ]
+      }
+    },
+    {
+      "dia": 188,
+      "semana": 38,
+      "trimestre": 3,
+      "tema": "¡Aquí está la cápsula!",
+      "texto": [
+        "El miércoles, Hugo dibujó un plano nuevo del patio en la pizarra de clase, al lado de una copia de la lista.",
+        "Marcó con una cruz el arenero, donde estaba la fuente hace veinticinco años, y con un círculo, el plátano de la izquierda.",
+        "Luego contó los cuadros que había entre los dos: tres cuadros, que eran quince pasos de Paco.",
+        "—Entonces ya casi lo tenemos —murmuró Lucía, mordiendo el lápiz.",
+        "Paco lo miraba todo desde la puerta de la clase, con su taza de café en la mano.",
+        "Sofía, que no podía esperar, ya había pedido prestada una pala a Paco."
+      ],
+      "actividad": {
+        "tipo": "mapa",
+        "instruccion": "Sal del arenero y cuenta los cuadros que hay hasta el plátano de la izquierda.",
+        "columnas": 7,
+        "filas": 3,
+        "lugares": {
+          "C1": "conserje",
+          "D1": "puerta y reloj",
+          "E1": "fuente",
+          "A3": "plátano",
+          "D3": "arenero",
+          "G3": "plátano"
+        },
+        "salida": "D3",
+        "comprobar": [
+          {
+            "desde": "D3",
+            "pasos": [
+              "izquierda 3"
+            ],
+            "hasta": "A3"
+          }
+        ],
+        "preguntas": [
+          "¿Cuántos cuadros hay? ¿Cuántos pasos de Paco son?"
+        ],
+        "clave": "Del arenero (D3) al plátano de la izquierda (A3) hay tres cuadros hacia la izquierda: quince pasos de Paco."
+      }
+    },
+    {
+      "dia": 189,
+      "semana": 38,
+      "trimestre": 3,
+      "tema": "¡Aquí está la cápsula!",
+      "texto": [
+        "El jueves, a mediodía, el club salió al patio con Paco, con la pala y con el plano de Hugo.",
+        "El reloj de la fachada marcaba las doce, como en la foto de Marta. El plátano de la izquierda daba una sombra fresca y redonda.",
+        "Paco se puso en el centro del arenero, donde había estado la fuente, y miró hacia el plátano viejo.",
+        "—Esta vez sé que no me equivoco —dijo, y dejó la taza de café en el suelo.",
+        "Sofía contenía la respiración, y Lucía apretaba la lupa tan fuerte que le dolían los dedos.",
+        "¿Y tú? ¿Sabes dónde terminarán los diez pasos de Paco?"
+      ],
+      "actividad": {
+        "tipo": "caso",
+        "pregunta": "¿En qué casilla del plano de Hugo tendrá que cavar Paco? (Vuelve a mirar el plano de ayer.)",
+        "opciones": [
+          "B3",
+          "C3",
+          "E3",
+          "F3"
+        ],
+        "solucion": "B3",
+        "clave": "B3: la fuente estaba donde hoy está el arenero (D3) y el plátano grande es el de la izquierda (A3) (lunes y miércoles); diez pasos de Paco son dos cuadros (martes). Desde el arenero, dos cuadros hacia el plátano de la izquierda: B3, a su sombra. E3 está a diez pasos de la fuente de hoy, que no vale, y F3 va hacia el plátano nuevo."
+      }
+    },
+    {
+      "dia": 190,
+      "semana": 38,
+      "trimestre": 3,
+      "tema": "¡Aquí está la cápsula!",
+      "texto": [
+        "Paco contó diez pasos desde el arenero hacia el plátano viejo: uno, dos, tres… hasta diez. Justo allí, a la sombra, empezó a cavar.",
+        "Al poco rato, la pala hizo ¡clonc! contra algo duro.",
+        "Era una caja de metal, oxidada, que un día había sido roja. En la tapa, alguien había escrito unas palabras muy raras.",
+        "—¡Aquí está la cápsula! —gritaron los tres a la vez, tan fuerte que medio colegio se asomó a las ventanas.",
+        "Marta se tapó la boca con las manos, como si no pudiera creérselo.",
+        "Lucía limpió la tapa con la manga y leyó las palabras dos veces, como mandaba la norma número uno."
+      ],
+      "actividad": {
+        "tipo": "codigo",
+        "instruccion": "Las palabras de la tapa están escritas al revés. Lee cada una de atrás hacia delante y escribe el mensaje.",
+        "mensaje": "Abrir en la fiesta de fin de curso",
+        "cifrado": "reves",
+        "banner": "¡190 páginas leídas! ¡La cápsula del tiempo, encontrada!"
+      }
+    },
+    {
+      "dia": 191,
+      "semana": 39,
+      "trimestre": 3,
+      "tema": "La fiesta de fin de curso",
+      "texto": [
+        "La cápsula había pasado veinticinco años a diez pasos del arenero, a la sombra del plátano viejo, justo donde el club había dicho.",
+        "Como decía la tapa, la abrieron en la fiesta de fin de curso, delante de todo el colegio.",
+        "Paco fue sacando las cosas una a una y las colocó sobre una mesa. A la izquierda puso un fajo de cartas atado con una cinta roja. A la derecha, un dibujo del patio con la fuente de la cabeza de león.",
+        "En el centro, Marta colocó su foto antigua, en la que ella, con dos trenzas, sujetaba la caja.",
+        "Después de que todos aplaudieran, a Marta se le escaparon dos lágrimas."
+      ],
+      "actividad": {
+        "tipo": "dibuja_detalle",
+        "prompt": "Dibuja la mesa de la fiesta con todo lo que había encima, cada cosa en su sitio.",
+        "comprueba": [
+          "¿Qué hay a la izquierda? ¿Con qué está atado?",
+          "¿Qué hay en el centro? ¿Qué sujeta la niña de las trenzas?",
+          "¿Qué hay a la derecha, y qué se ve en él?"
+        ],
+        "clave": "A la izquierda, un fajo de cartas atado con una cinta roja; en el centro, la foto antigua de Marta, en la que ella, con dos trenzas, sujeta la caja; a la derecha, un dibujo del patio con la fuente de la cabeza de león."
+      }
+    },
+    {
+      "dia": 192,
+      "semana": 39,
+      "trimestre": 3,
+      "tema": "La fiesta de fin de curso",
+      "texto": [
+        "Al día siguiente, Marta colgó las cartas en la biblioteca del colegio, para que todo el mundo pudiera leerlas.",
+        "Tres eran de los niños de la foto: Elena, Jorge y Nacho. Cada uno contaba lo que quería ser de mayor: veterinaria, futbolista o astronauta.",
+        "Elena, que en la foto llevaba gafas, escribía que quería curar animales enfermos. Jorge no quería ser astronauta, porque le daban miedo las alturas.",
+        "Pero una carta no tenía nombre: con la humedad, la firma se había borrado del todo.",
+        "—Esa es la más misteriosa de todas —dijo Lucía, y la leyó dos veces, muy despacio."
+      ],
+      "actividad": {
+        "tipo": "logica",
+        "instruccion": "Usa las pistas del texto para saber qué quería ser cada niño de la foto. Pon ✓ donde sí y ✗ donde no.",
+        "filas": [
+          "Elena",
+          "Jorge",
+          "Nacho"
+        ],
+        "columnas": [
+          "veterinaria",
+          "futbolista",
+          "astronauta"
+        ],
+        "restricciones": [
+          [
+            "si",
+            "Elena",
+            "veterinaria"
+          ],
+          [
+            "no",
+            "Jorge",
+            "astronauta"
+          ]
+        ],
+        "solucion": {
+          "Elena": "veterinaria",
+          "Jorge": "futbolista",
+          "Nacho": "astronauta"
+        },
+        "pregunta": "¿Qué quería ser Nacho?",
+        "respuesta_pregunta": "Astronauta."
+      }
+    },
+    {
+      "dia": 193,
+      "semana": 39,
+      "trimestre": 3,
+      "tema": "La fiesta de fin de curso",
+      "texto": [
+        "Esta era la carta sin nombre, escrita con lápiz en una hoja de cuadros:",
+        "> Hola, persona del futuro:\nTengo ocho años, y hoy me ha tocado a mí sujetar la caja. ¡Estoy nerviosísima!\nMi maestra dice que la abrirán dentro de veinticinco años.\nCuando sea mayor, quiero ser maestra en este colegio.\nY tú, ¿qué quieres ser?",
+        "—Es de una niña —dijo Sofía—. Pone «nerviosísima», no «nerviosísimo».",
+        "—Y de alguien que aquel día tenía la caja en las manos —añadió Hugo.",
+        "Lucía no dijo nada, aunque ya tenía una idea. La apuntó en su cuaderno, como hacen los buenos detectives."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "preguntas": [
+          "¿Qué sabemos de quien escribió la carta sin nombre? Escribe tres cosas.",
+          "¿Cómo sabe Sofía que la carta es de una niña?"
+        ],
+        "respuestas": [
+          "Que tenía ocho años, que aquel día le tocó sujetar la caja y que quería ser maestra en ese colegio.",
+          "Porque pone «nerviosísima», y no «nerviosísimo»."
+        ]
+      }
+    },
+    {
+      "dia": 194,
+      "semana": 39,
+      "trimestre": 3,
+      "tema": "La fiesta de fin de curso: el caso",
+      "texto": [
+        "El jueves, el club se sentó en la biblioteca, delante de las cartas, para cerrar el último caso del curso.",
+        "Sofía volvió a leer la carta de Elena, que estaba firmada con letras enormes.",
+        "Hugo, en cambio, no apartaba la vista de la foto antigua, en la que una niña sujetaba la caja con las dos manos.",
+        "Lucía cerró su cuaderno y sonrió, porque todas las pistas señalaban a la misma persona. Esta vez, la respuesta estaba muy cerca.",
+        "—Norma número dos —le recordó Sofía—: no acusar a nadie sin pruebas.",
+        "—Por eso quiero que lo comprobemos juntos antes de decírselo —contestó Lucía.",
+        "¿Y tú? ¿Sabes quién escribió la carta sin firma?"
+      ],
+      "actividad": {
+        "tipo": "caso",
+        "pregunta": "¿Quién escribió la carta sin firma?",
+        "opciones": [
+          "Elena",
+          "Marta",
+          "Pilar",
+          "Paco"
+        ],
+        "solucion": "Marta",
+        "clave": "Marta: la carta es de una niña de ocho años (dice «nerviosísima») que aquel día sujetó la caja (miércoles); en la foto, la niña de las dos trenzas que sujeta la caja es Marta (lunes); Pilar y Paco ya eran mayores, y Elena firmó su propia carta y quería curar animales (martes y jueves)."
+      }
+    },
+    {
+      "dia": 195,
+      "semana": 39,
+      "trimestre": 3,
+      "tema": "La fiesta de fin de curso",
+      "texto": [
+        "El viernes, último día de clase, el club le dio la carta a Marta.",
+        "—Creemos que es tuya —dijo Lucía, que llevaba días esperando ese momento.",
+        "Marta la leyó en voz alta. Cuando llegó a la última frase, se le quebró la voz:",
+        "> Cuando sea mayor, quiero ser maestra en este colegio.",
+        "—Es mía —dijo por fin, con los ojos húmedos—. Y ya veis: aquí estoy.",
+        "Esa tarde, el club escribió su propia carta para una cápsula nueva. Paco la enterraría en el mismo sitio, a la sombra del plátano viejo:",
+        "> Hola, persona del futuro:\nsomos el Club de la Lupa.\nLee siempre dos veces y fíjate en todo.\nLucía, Sofía y Hugo"
+      ],
+      "actividad": {
+        "tipo": "repasa",
+        "checklist": [
+          "Sé quién hizo la foto de la cápsula.",
+          "Sé por qué no servía contar diez pasos desde la fuente de hoy.",
+          "Sé cuál de los dos plátanos es el más viejo.",
+          "Sé dónde estaba enterrada la cápsula.",
+          "Sé quién escribió la carta sin firma."
+        ],
+        "prompt": "Escribe una carta para quien abra tu cápsula del tiempo.",
+        "banner": "¡195 páginas leídas! La cápsula del tiempo, abierta."
+      }
+    }
+  ]
+}

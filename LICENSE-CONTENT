@@ -10,17 +10,21 @@ del código y las herramientas (que están bajo MIT, ver LICENSE-CODE):
     (Lucía, Dani, Toby, Mamá, Papá, Abuela Rosa) y la trama semanal
   - content/palabras/*.json -- lo mismo para el cuaderno de primeras
     palabras: las palabras de cada día, las adivinanzas, los enunciados
-  - content/generated-*.tex, content/palabras/generated-*.tex -- lo que se
-    genera de lo anterior
+  - content/lupa/*.json -- lo mismo para "Leo con lupa": los textos de
+    cada día, los casos, las pistas y las actividades
+  - content/generated-*.tex, content/palabras/generated-*.tex,
+    content/lupa/generated-*.tex -- lo que se genera de lo anterior
   - frontmatter/ -- portada, "cómo usar este cuaderno", mapa del curso
-    (de los dos cuadernos)
-  - backmatter/diploma.tex, backmatter/palabras/diploma.tex
-  - notes/01-curriculum.md, notes/03-nivel-palabras.md -- el plan
-    narrativo del curso completo, en los dos niveles
+    (de los tres cuadernos)
+  - backmatter/diploma.tex, backmatter/palabras/diploma.tex,
+    backmatter/lupa/diploma.tex
+  - notes/01-curriculum.md, notes/03-nivel-palabras.md,
+    notes/04-nivel-lupa.md -- el plan narrativo del curso completo, en
+    los tres niveles
 
 NO cubre (esos quedan bajo MIT, ver LICENSE-CODE): preamble.tex,
-preamble-palabras.tex, lang/es.tex, main*.tex, palabras*.tex, body*.tex,
-tools/, Makefile, .github/, diagrams/
+preamble-palabras.tex, preamble-lupa.tex, lang/es.tex, main*.tex,
+palabras*.tex, lupa*.tex, body*.tex, tools/, Makefile, .github/, diagrams/
 (las técnicas de dibujo lineal son reutilizables como técnica, no como
 "historia").
 

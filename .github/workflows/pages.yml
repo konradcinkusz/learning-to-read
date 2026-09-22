@@ -47,7 +47,7 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Genera los .tex de los dos cuadernos desde su JSON
+      - name: Genera los .tex de los tres cuadernos desde su JSON
         run: make generate
 
       - name: Valida el contenido antes de publicar nada
@@ -55,6 +55,7 @@ jobs:
           python3 tools/gen_days.py --check
           python3 tools/silabas.py --prueba
           python3 tools/gen_palabras.py --check
+          python3 tools/gen_days.py --libro lupa --check
 
       # Color y blanco-y-negro (main-bw.tex, ver preamble.tex \bookcolor):
       # los dos se compilan y se validan aquí, y Pages nunca publica uno
@@ -118,6 +119,34 @@ jobs:
       - name: Cada día ocupa exactamente una página (primeras palabras, blanco y negro)
         run: python3 tools/check_pages.py palabras-bw.aux
 
+      # "Leo con lupa" (lupa.tex), el nivel 3: la misma promesa --
+      # compilado y comprobado en los dos formatos antes de publicar nada.
+      - name: Compila Leo con lupa (color)
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: lupa.tex
+          latexmk_use_lualatex: true
+          args: -interaction=nonstopmode -file-line-error
+
+      - name: Lee el log correctamente (Leo con lupa, color)
+        run: python3 tools/checklog.py lupa.log
+
+      - name: Cada día ocupa exactamente una página (Leo con lupa, color)
+        run: python3 tools/check_pages.py lupa.aux
+
+      - name: Compila Leo con lupa (blanco y negro)
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: lupa-bw.tex
+          latexmk_use_lualatex: true
+          args: -interaction=nonstopmode -file-line-error
+
+      - name: Lee el log correctamente (Leo con lupa, blanco y negro)
+        run: python3 tools/checklog.py lupa-bw.log
+
+      - name: Cada día ocupa exactamente una página (Leo con lupa, blanco y negro)
+        run: python3 tools/check_pages.py lupa-bw.aux
+
       - name: Monta el sitio
         run: |
           mkdir -p _site
@@ -126,6 +155,8 @@ jobs:
           cp main-bw.pdf _site/aprendo-a-leer-bn.pdf
           cp palabras.pdf _site/aprendo-a-leer-palabras.pdf
           cp palabras-bw.pdf _site/aprendo-a-leer-palabras-bn.pdf
+          cp lupa.pdf _site/leo-con-lupa.pdf
+          cp lupa-bw.pdf _site/leo-con-lupa-bn.pdf
 
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3

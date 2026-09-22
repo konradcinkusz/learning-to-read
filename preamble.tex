@@ -322,3 +322,14 @@
   \begin{center}\footnotesize\color{colorGris}\lblDia~\diapagina@actual~/ \totaldias\end{center}
   \newpage
 }
+
+% Una etiqueta que solo guarda la página en la que cae, para
+% tools/check_pages.py. La clave de respuestas de los tres cuadernos
+% empieza con \etiquetaPagina{clave}: así se comprueba también que el
+% último día -- que no tiene otro día detrás con el que comparar -- no se
+% ha desbordado a una segunda página. (\@currentlabel vacío: en el .aux
+% queda \newlabel{clave}{{}{<página>}...}, sin nada que dependa de lo que
+% hubiera antes.)
+\makeatletter
+\newcommand{\etiquetaPagina}[1]{\begingroup\def\@currentlabel{}\label{#1}\endgroup}
+\makeatother

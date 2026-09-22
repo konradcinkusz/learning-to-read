@@ -7,7 +7,9 @@ orden, y la escalera de progresión completa).
 Este fichero describe el cuaderno de **frases** (nivel 2). El nivel
 anterior, el cuaderno de **primeras palabras** (`palabras.tex`, mismos
 temas semana a semana, una palabra al día en vez de una frase), tiene su
-propio diseño en `notes/03-nivel-palabras.md`.
+propio diseño en `notes/03-nivel-palabras.md`; el siguiente, **Leo con
+lupa** (`lupa.tex`, el año siguiente: oraciones complejas y una
+actividad de análisis cada día), en `notes/04-nivel-lupa.md`.
 
 ## Punto de partida (y por qué cambió)
 

@@ -1,17 +1,26 @@
 #!/usr/bin/env python3
-"""Genera content/generated-days.tex a partir de content/q*.json.
+"""Genera el .tex de los días de un libro a partir de su JSON.
 
-No editar content/generated-days.tex a mano -- se sobrescribe cada vez
-que se ejecuta este script. El fichero que SÍ se edita a mano es
-content/q1.json (y, más adelante, q2.json, q3.json, q4.json), uno por
-trimestre.
+Cuaderno de frases (nivel 2, el libro por defecto): content/q*.json ->
+content/generated-days.tex y content/generated-clave.tex.
+"Leo con lupa" (nivel 3, `--libro lupa`): content/lupa/q*.json ->
+content/lupa/generated-days.tex y content/lupa/generated-clave.tex.
+Qué distingue un libro de otro (rutas, reglas, tipos de actividad) está
+en tools/libros.py; las plantillas y validaciones propias de "Leo con
+lupa", en tools/lupa.py. (El cuaderno de primeras palabras, nivel 1,
+tiene su propio generador: tools/gen_palabras.py.)
+
+No editar los generated-*.tex a mano -- se sobrescriben cada vez que se
+ejecuta este script. Los ficheros que SÍ se editan a mano son los
+q1.json ... q4.json de cada libro, uno por trimestre.
 
 Uso:
-    python3 tools/gen_days.py            # regenera content/generated-days.tex
-    python3 tools/gen_days.py --check    # solo valida, no escribe nada;
-                                          # falla (exit 1) si algo no
-                                          # cuadra o si el fichero
-                                          # generado está desactualizado
+    python3 tools/gen_days.py                    # regenera el cuaderno de frases
+    python3 tools/gen_days.py --libro lupa       # regenera "Leo con lupa"
+    python3 tools/gen_days.py [--libro X] --check
+                                  # solo valida, no escribe nada; falla
+                                  # (exit 1) si algo no cuadra o si el
+                                  # fichero generado está desactualizado
 """
 
 import json
@@ -21,12 +30,13 @@ import sys
 from pathlib import Path
 from string import Template
 
-ROOT = Path(__file__).resolve().parent.parent
-CONTENT_DIR = ROOT / "content"
-OUTPUT_FILE = CONTENT_DIR / "generated-days.tex"
-CLAVE_FILE = CONTENT_DIR / "generated-clave.tex"
+import lupa
+from comun import ErrorDeContenido, escapar
+from libros import CONTENT_DIR, FRASES, ROOT, libro_desde_argv
+
 LETRAS_TRAZO_FILE = CONTENT_DIR / "letras-trazo.json"
 PALABRAS_TRAZO_FILE = CONTENT_DIR / "palabras-trazo.json"
+LANG_FILE = ROOT / "lang" / "es.tex"
 
 # cm por unidad "em" para la actividad "traza" (ver PLANTILLA_TRAZA) --
 # el contorno de cada letra (content/letras-trazo.json, generado por
@@ -42,9 +52,12 @@ ESCALA_TRAZO_CM = 7.0
 HUECO_TRAZO_EM = 0.18
 RADIO_PUNTO_TRAZO_CM = "0.08"
 
-TOTAL_DIAS = 260
-FRASES_POR_TRIMESTRE = {1: 1, 2: 2, 3: 3, 4: 4}
-RANGO_TRIMESTRE = {1: (1, 65), 2: (66, 130), 3: (131, 195), 4: (196, 260)}
+# Las reglas del cuaderno de frases, con los nombres de siempre (las
+# notas del curso se refieren a ellas así). La fuente de verdad es
+# tools/libros.py (FRASES); esto son solo alias.
+TOTAL_DIAS = FRASES.total_dias
+FRASES_POR_TRIMESTRE = FRASES.frases_por_trimestre
+RANGO_TRIMESTRE = FRASES.rango_trimestre
 
 # Medalla de fin de trimestre (recompensa intermedia, no solo el diploma
 # del día 260 -- ver la revisión de un lector externo: un único hito a
@@ -52,59 +65,26 @@ RANGO_TRIMESTRE = {1: (1, 65), 2: (66, 130), 3: (131, 195), 4: (196, 260)}
 # trimestre 4 no lleva medalla propia: termina en el diploma final de
 # backmatter/diploma.tex. La estación de cada medalla viene del mismo
 # calendario que ya fija RANGO_TRIMESTRE (ver notes/02-revision-y-plan.md,
-# punto 1); el texto exacto lo pone el "banner" del día repasa que cierra
-# cada trimestre -- ya existe en el JSON, no hace falta duplicarlo.
-NOMBRE_MEDALLA_TRIMESTRE = {1: "Otoño", 2: "Invierno", 3: "Primavera"}
-ULTIMO_DIA_TRIMESTRE = {t: hi for t, (lo, hi) in RANGO_TRIMESTRE.items()}
+# punto 1); el texto exacto lo pone el "banner" del día que cierra cada
+# trimestre -- ya existe en el JSON, no hace falta duplicarlo.
+NOMBRE_MEDALLA_TRIMESTRE = FRASES.nombre_medalla
+ULTIMO_DIA_TRIMESTRE = FRASES.ultimo_dia_trimestre
 
-TIPOS_VALIDOS = {
-    "dibuja", "completa", "copia", "responde", "relaciona", "adivina", "crea",
-    "repasa", "rodea", "verdadero_falso", "busca", "ordena", "relee", "traza",
-}
+TIPOS_VALIDOS = FRASES.tipos_validos
 
 # En el trimestre 1 la niña todavía no compone una respuesta escrita por
 # sí sola -- "responde" (pregunta abierta) no se usa hasta que sepa
 # hacerlo; "copia", "rodea" y "verdadero_falso" son lo que hay en su
 # lugar (comprensión sin exigir escritura). Ver notes/01-curriculum.md,
 # "Rotación de actividades", y notes/02-revision-y-plan.md, punto 4.
-TRIMESTRES_SIN_RESPONDE = {1}
+TRIMESTRES_SIN_RESPONDE = FRASES.trimestres_sin_responde
 
 # Una instrucción de lectura por trimestre -- ver
 # notes/02-revision-y-plan.md, punto 5: "despacio, señalando cada
 # palabra" (T1) es lo contrario de lo que se espera de quien ya lee con
-# soltura (T4). Las cuatro cadenas viven en lang/es.tex; aquí solo se
-# elige cuál usar, vía el título de cajaLectura (ver PLANTILLA_DIA).
-INSTRUCCION_LECTURA_TRIMESTRE = {
-    1: r"\lblInstruccionLecturaUno",
-    2: r"\lblInstruccionLecturaDos",
-    3: r"\lblInstruccionLecturaTres",
-    4: r"\lblInstruccionLecturaCuatro",
-}
-
-
-class ErrorDeContenido(Exception):
-    """Un día no cumple las reglas -- el mensaje ya dice cuál y por qué."""
-
-
-def escapar(texto):
-    """Escapa los caracteres especiales de LaTeX en texto libre (JSON)."""
-    if texto is None:
-        return ""
-    sustituciones = [
-        ("\\", r"\textbackslash{}"),
-        ("&", r"\&"),
-        ("%", r"\%"),
-        ("$", r"\$"),
-        ("#", r"\#"),
-        ("_", r"\_"),
-        ("{", r"\{"),
-        ("}", r"\}"),
-        ("~", r"\textasciitilde{}"),
-        ("^", r"\textasciicircum{}"),
-    ]
-    for viejo, nuevo in sustituciones:
-        texto = texto.replace(viejo, nuevo)
-    return texto
+# soltura (T4). Las cadenas viven en lang/es.tex; aquí solo se elige
+# cuál usar, vía el título de cajaLectura (ver PLANTILLA_DIA).
+INSTRUCCION_LECTURA_TRIMESTRE = FRASES.instruccion_lectura
 
 
 def formatear_oraciones(oraciones, trimestre):
@@ -535,32 +515,47 @@ def _campos_requeridos(dia_num, actividad, campos):
         )
 
 
-def cargar_dias():
-    """Lee todos los content/q*.json y devuelve la lista de días, en orden."""
+def _ruta_legible(ruta):
+    """content/q*.json, content/lupa/q*.json... -- para los mensajes y
+    la cabecera de los ficheros generados, relativa a la raíz."""
+    try:
+        return ruta.relative_to(ROOT).as_posix()
+    except ValueError:
+        return str(ruta)
+
+
+def origen_json(libro):
+    return f"{_ruta_legible(libro.dir_contenido)}/q*.json"
+
+
+def cargar_dias(libro=FRASES):
+    """Lee todos los q*.json del libro y devuelve la lista de días, en orden."""
     dias = []
-    for fichero in sorted(CONTENT_DIR.glob("q*.json")):
+    for fichero in sorted(libro.dir_contenido.glob("q*.json")):
         datos = json.loads(fichero.read_text(encoding="utf-8"))
         dias.extend(datos.get("dias", []))
     dias.sort(key=lambda d: d["dia"])
     return dias
 
 
-def validar_dia(num, d):
+def validar_dia(num, d, libro=FRASES):
     """Comprueba las reglas de UN día -- trimestre válido, número dentro
     de su rango, 'responde' no en un trimestre que lo bloquea, número de
     frases correcto y frases bien terminadas (salvo 'relee', que compone
-    la semana y no tiene frases propias que contar).
+    la semana y no tiene frases propias que contar). En "Leo con lupa",
+    el texto va en párrafos (campo "texto") y lo comprueba
+    tools/lupa.py, igual que los campos de cada actividad.
 
     No comprueba continuidad entre días -- de eso se encarga quien llama
     esta función: validar_dias() (más abajo) exige 1..260 sin huecos."""
-    if num < 1 or num > TOTAL_DIAS:
-        raise ErrorDeContenido(f"día {num}: fuera de rango (1-{TOTAL_DIAS})")
+    if num < 1 or num > libro.total_dias:
+        raise ErrorDeContenido(f"día {num}: fuera de rango (1-{libro.total_dias})")
 
     trimestre = d.get("trimestre")
-    if trimestre not in RANGO_TRIMESTRE:
+    if trimestre not in libro.rango_trimestre:
         raise ErrorDeContenido(f"día {num}: trimestre inválido: {trimestre!r}")
 
-    lo, hi = RANGO_TRIMESTRE[trimestre]
+    lo, hi = libro.rango_trimestre[trimestre]
     if not (lo <= num <= hi):
         raise ErrorDeContenido(
             f"día {num}: dice ser del trimestre {trimestre} "
@@ -568,7 +563,12 @@ def validar_dia(num, d):
         )
 
     tipo_actividad = d.get("actividad", {}).get("tipo")
-    if tipo_actividad == "responde" and trimestre in TRIMESTRES_SIN_RESPONDE:
+    if tipo_actividad not in libro.tipos_validos:
+        raise ErrorDeContenido(
+            f"día {num}: tipo de actividad desconocido en el cuaderno «{libro.nombre}»: "
+            f"{tipo_actividad!r}"
+        )
+    if tipo_actividad == "responde" and trimestre in libro.trimestres_sin_responde:
         raise ErrorDeContenido(
             f"día {num}: 'responde' no se usa en el trimestre {trimestre} "
             "-- la niña todavía no compone una respuesta escrita por sí "
@@ -576,11 +576,15 @@ def validar_dia(num, d):
             "en su lugar"
         )
 
+    if libro.parrafos:
+        lupa.validar_texto(num, d)
+        return
+
     if tipo_actividad == "relee":
         return
 
     oraciones = d.get("oraciones", [])
-    esperado_frases = FRASES_POR_TRIMESTRE[trimestre]
+    esperado_frases = libro.frases_por_trimestre[trimestre]
     if len(oraciones) != esperado_frases:
         raise ErrorDeContenido(
             f"día {num} (trimestre {trimestre}): debería tener "
@@ -596,11 +600,11 @@ def validar_dia(num, d):
             )
 
 
-def validar_dias(dias):
+def validar_dias(dias, libro=FRASES):
     """Comprueba las reglas del curso -- exige además que los días sean
     1..260 sin huecos, que es lo que hace a esta lista EL libro real."""
     if not dias:
-        raise ErrorDeContenido("no hay ningún día en content/q*.json")
+        raise ErrorDeContenido(f"no hay ningún día en {origen_json(libro)}")
 
     esperado = 1
     for d in dias:
@@ -611,7 +615,16 @@ def validar_dias(dias):
                 f"se esperaba el día {esperado}, se encontró el día {num}"
             )
         esperado += 1
-        validar_dia(num, d)
+        validar_dia(num, d, libro)
+
+    # Y que el libro esté entero: un cuaderno al que le faltan semanas
+    # compila igual de bien (todas sus páginas caben, todas sus
+    # actividades se validan) y no se notaría hasta imprimirlo.
+    if len(dias) != libro.total_dias:
+        raise ErrorDeContenido(
+            f"el cuaderno «{libro.nombre}» tiene {len(dias)} días y deberían ser "
+            f"{libro.total_dias} -- faltan los días {len(dias) + 1}-{libro.total_dias}"
+        )
 
 
 def texto_semana(dias_por_semana, dia_actual):
@@ -657,13 +670,53 @@ def fuente_lectura(d):
     return d["trimestre"]
 
 
-def generar_tex(dias):
-    piezas = [
-        "% content/generated-days.tex\n",
-        "% GENERADO por tools/gen_days.py a partir de content/q*.json.\n",
+def _cabecera_generada(ruta, libro):
+    origen = origen_json(libro)
+    return [
+        f"% {_ruta_legible(ruta)}\n",
+        f"% GENERADO por tools/gen_days.py a partir de {origen}.\n",
         "% NO EDITAR A MANO -- los cambios se perderán en la siguiente\n",
-        "% ejecución de `make generate`. Edita content/q*.json en su lugar.\n\n",
+        f"% ejecución de `make generate`. Edita {origen} en su lugar.\n\n",
     ]
+
+
+def pagina_medalla(d, libro):
+    """La página de medalla que sigue al último día de un trimestre (T1-T3),
+    o None si este día no cierra ningún trimestre con medalla."""
+    if d["dia"] != libro.ultimo_dia_trimestre.get(d["trimestre"]):
+        return None
+    if d["trimestre"] not in libro.nombre_medalla:
+        return None
+    banner = d["actividad"].get("banner")
+    if not banner:
+        raise ErrorDeContenido(
+            f"día {d['dia']}: cierra el trimestre {d['trimestre']} "
+            "y necesita un 'banner' (en su actividad) "
+            "para la medalla de fin de trimestre"
+        )
+    return PLANTILLA_MEDALLA.substitute(
+        dia=d["dia"],
+        titulo=f"¡Medalla de {libro.nombre_medalla[d['trimestre']]}!",
+        banner=escapar(banner),
+    )
+
+
+def generar_tex(dias, libro=FRASES):
+    piezas = _cabecera_generada(libro.salida_dias, libro)
+
+    if libro.parrafos:
+        dias_por_semana = {}
+        for d in dias:
+            dias_por_semana.setdefault((d["trimestre"], d["semana"]), []).append(d)
+        for d in dias:
+            semana = sorted(
+                dias_por_semana[(d["trimestre"], d["semana"])], key=lambda x: x["dia"]
+            )
+            piezas.append(lupa.pagina_dia(d, libro, semana))
+            medalla = pagina_medalla(d, libro)
+            if medalla:
+                piezas.append(medalla)
+        return "\n".join(piezas)
 
     dias_por_semana = {}
     for d in dias:
@@ -682,42 +735,34 @@ def generar_tex(dias):
                 trimestre=d["trimestre"],
                 fuente=fuente_lectura(d),
                 tema=escapar(d.get("tema", "")),
-                instruccion=INSTRUCCION_LECTURA_TRIMESTRE[d["trimestre"]],
+                instruccion=libro.instruccion_lectura[d["trimestre"]],
                 oraciones=formatear_oraciones(oraciones_dia, d["trimestre"]),
                 actividad=actividad_tex,
             )
         )
 
-        if d["dia"] == ULTIMO_DIA_TRIMESTRE.get(d["trimestre"]) and d["trimestre"] in NOMBRE_MEDALLA_TRIMESTRE:
-            banner = d["actividad"].get("banner")
-            if not banner:
-                raise ErrorDeContenido(
-                    f"día {d['dia']}: cierra el trimestre {d['trimestre']} "
-                    "y necesita un 'banner' (en su actividad 'repasa') "
-                    "para la medalla de fin de trimestre"
-                )
-            piezas.append(
-                PLANTILLA_MEDALLA.substitute(
-                    dia=d["dia"],
-                    titulo=f"¡Medalla de {NOMBRE_MEDALLA_TRIMESTRE[d['trimestre']]}!",
-                    banner=escapar(banner),
-                )
-            )
+        medalla = pagina_medalla(d, libro)
+        if medalla:
+            piezas.append(medalla)
     return "\n".join(piezas)
 
 
-def generar_clave(dias):
-    """content/generated-clave.tex: la respuesta de cada 'adivina' y los
-    pares correctos de cada 'relaciona', para que un adulto pueda
-    comprobar sin resolverlas él mismo -- ver la revisión de un lector
-    externo. No se imprime en la página del día (ver PLANTILLA_ADIVINA);
-    vive aparte, en backmatter/clave-respuestas.tex."""
-    piezas = [
-        "% content/generated-clave.tex\n",
-        "% GENERADO por tools/gen_days.py a partir de content/q*.json.\n",
-        "% NO EDITAR A MANO -- los cambios se perderán en la siguiente\n",
-        "% ejecución de `make generate`. Edita content/q*.json en su lugar.\n\n",
-    ]
+def generar_clave(dias, libro=FRASES):
+    """generated-clave.tex: la respuesta de cada actividad que tiene una
+    respuesta que comprobar, para que un adulto pueda hacerlo sin
+    resolverla él mismo -- ver la revisión de un lector externo. En el
+    cuaderno de frases, 'adivina' y 'relaciona'; en "Leo con lupa", casi
+    todas (ver tools/lupa.py, entrada_clave). No se imprime en la página del día
+    (ver PLANTILLA_ADIVINA); vive aparte, en la clave de respuestas del
+    final de cada libro."""
+    piezas = _cabecera_generada(libro.salida_clave, libro)
+    if libro.parrafos:
+        for d in dias:
+            entrada = lupa.entrada_clave(d)
+            if entrada:
+                piezas.append(entrada)
+        return "".join(piezas)
+
     for d in dias:
         actividad = d["actividad"]
         tipo = actividad.get("tipo")
@@ -733,36 +778,56 @@ def generar_clave(dias):
     return "".join(piezas)
 
 
+def comprobar_totaldias(libro):
+    """lang/es.tex promete que \\totaldias (el pie de página y el
+    diploma) y el total de días del libro son el mismo número -- esto es
+    lo que lo comprueba (ver notes/02-revision-y-plan.md, punto 9)."""
+    texto = LANG_FILE.read_text(encoding="utf-8")
+    m = re.search(r"\\newcommand\{\\totaldias\}\{(\d+)\}", texto)
+    if not m:
+        raise ErrorDeContenido(f"{_ruta_legible(LANG_FILE)} no define \\totaldias")
+    if int(m.group(1)) != libro.total_dias:
+        raise ErrorDeContenido(
+            f"\\totaldias vale {m.group(1)} en {_ruta_legible(LANG_FILE)}, "
+            f"pero el cuaderno «{libro.nombre}» tiene {libro.total_dias} días"
+        )
+
+
 def main():
     check_only = "--check" in sys.argv
+    libro = libro_desde_argv(sys.argv[1:])
 
     try:
-        dias = cargar_dias()
-        validar_dias(dias)
-        tex = generar_tex(dias)
-        clave = generar_clave(dias)
+        comprobar_totaldias(libro)
+        dias = cargar_dias(libro)
+        validar_dias(dias, libro)
+        tex = generar_tex(dias, libro)
+        clave = generar_clave(dias, libro)
     except ErrorDeContenido as exc:
-        print(f"ERROR: {exc}", file=sys.stderr)
+        print(f"ERROR ({libro.nombre}): {exc}", file=sys.stderr)
         return 1
 
-    salidas = [(OUTPUT_FILE, tex), (CLAVE_FILE, clave)]
+    salidas = [(libro.salida_dias, tex), (libro.salida_clave, clave)]
 
     if check_only:
         for ruta, contenido in salidas:
             actual = ruta.read_text(encoding="utf-8") if ruta.exists() else None
             if actual != contenido:
                 print(
-                    f"DESACTUALIZADO: {ruta} no coincide con "
-                    "content/q*.json -- ejecuta `make generate`.",
+                    f"DESACTUALIZADO: {_ruta_legible(ruta)} no coincide con "
+                    f"{origen_json(libro)} -- ejecuta `make generate`.",
                     file=sys.stderr,
                 )
                 return 1
-        print(f"OK: {len(dias)} días validados, {OUTPUT_FILE.name} y {CLAVE_FILE.name} al día.")
+        print(
+            f"OK ({libro.nombre}): {len(dias)} días validados, "
+            f"{libro.salida_dias.name} y {libro.salida_clave.name} al día."
+        )
         return 0
 
     for ruta, contenido in salidas:
         ruta.write_text(contenido, encoding="utf-8")
-    print(f"Escrito {OUTPUT_FILE} con {len(dias)} días, y {CLAVE_FILE}.")
+    print(f"Escrito {_ruta_legible(libro.salida_dias)} con {len(dias)} días, y {_ruta_legible(libro.salida_clave)}.")
     return 0
 
 

@@ -46,7 +46,7 @@ jobs:
       # matplotlib/fonttools (eso solo hace falta para regenerarlo, ver
       # tools/gen_letras_puntos.py), así que este job no gana ninguna
       # dependencia pesada por esa actividad.
-      - name: Genera los .tex de los dos cuadernos desde su JSON
+      - name: Genera los .tex de los tres cuadernos desde su JSON
         run: make generate
 
       - name: Valida el contenido (frases por trimestre, campos de actividad)
@@ -78,7 +78,32 @@ jobs:
       # más larga son límites duros (fallan el job); el vocabulario nuevo
       # por día es solo un aviso, ver la cabecera de content/progresion.json.
       - name: Mide la progresión (palabras/página, frase, vocabulario nuevo)
-        run: python3 tools/metricas.py --tabla >> "$GITHUB_STEP_SUMMARY"
+        run: |
+          {
+            echo '## Cuaderno de frases: escalera por semana'
+            echo
+            python3 tools/metricas.py --tabla
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      # "Leo con lupa", el nivel 3 (content/lupa/q*.json, ver
+      # notes/04-nivel-lupa.md): las mismas puertas con su propio
+      # contenido y su propia escalera, que añade un mínimo de oraciones
+      # subordinadas por texto. tools/gen_days.py --libro lupa comprueba
+      # además lo que se puede comprobar a máquina en sus actividades: que
+      # cada tabla lógica tenga una sola solución, que cada ruta de un mapa
+      # llegue a donde dice, que cada corrección de "Caza los errores" esté
+      # en el texto de la semana, que el libro tenga sus 260 días... (ver
+      # la cabecera de tools/lupa.py).
+      - name: Valida Leo con lupa (actividades, tablas, mapas, 260 días)
+        run: python3 tools/gen_days.py --libro lupa --check
+
+      - name: Mide la progresión de Leo con lupa (palabras, frase, subordinadas)
+        run: |
+          {
+            echo '## Leo con lupa: escalera por semana'
+            echo
+            python3 tools/metricas.py --libro lupa --tabla
+          } >> "$GITHUB_STEP_SUMMARY"
 
   build:
     name: PDF (${{ matrix.variant }})
@@ -105,6 +130,11 @@ jobs:
             root: palabras
           - variant: palabras-bw
             root: palabras-bw
+          # "Leo con lupa" (lupa.tex), el nivel 3: las mismas comprobaciones.
+          - variant: lupa-color
+            root: lupa
+          - variant: lupa-bw
+            root: lupa-bw
     steps:
       - uses: actions/checkout@v4
 
@@ -113,7 +143,7 @@ jobs:
           python-version: '3.11'
 
       # Otro runner, otro checkout -- este job genera para sí mismo.
-      - name: Genera los .tex de los dos cuadernos desde su JSON
+      - name: Genera los .tex de los tres cuadernos desde su JSON
         run: make generate
 
       # LuaLaTeX, no pdflatex: la letra es Andika (fonts/andika/, ver
