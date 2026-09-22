@@ -295,10 +295,14 @@
 % casillas que un adulto marca en 2 segundos, cada día, terminan siendo
 % un registro de progreso de todo el año sin ningún esfuerzo extra. El
 % campo Notas se queda, más corto, para lo que no cabe en una casilla.
+%
+% La cabecera vive en su propia macro, \cabeceraDia, porque la comparten
+% los dos cuadernos: este (diapagina) y el de primeras palabras
+% (palabrapagina, ver preamble-palabras.tex) -- la misma cabecera en
+% los dos, sin dos copias que puedan divergir.
 % =========================================================================
-\newenvironment{diapagina}[4]{%
+\newcommand{\cabeceraDia}[4]{%
   \label{dia:#1}%
-  \def\diapagina@actual{#1}%
   \noindent{\LARGE\bfseries\lblDia~#1}\quad
   {\large(\lblSemana~#2 \textperiodcentered\ \lblTrimestre~#3)}\par
   {\normalsize\bfseries\color{colorGris}#4}\par
@@ -309,6 +313,10 @@
   \casilla\ \lblLeidoConDificultad\hspace{4mm}%
   \textbf{\lblNotas:} \rule{20mm}{0.4pt}\par
   \vspace{3mm}
+}
+\newenvironment{diapagina}[4]{%
+  \def\diapagina@actual{#1}%
+  \cabeceraDia{#1}{#2}{#3}{#4}%
 }{%
   \vfill
   \begin{center}\footnotesize\color{colorGris}\lblDia~\diapagina@actual~/ \totaldias\end{center}

@@ -1,0 +1,925 @@
+{
+  "_comentario": "Datos de origen para tools/gen_palabras.py (cuaderno de primeras palabras). Este fichero SÍ se edita a mano; content/palabras/generated-*.tex NO (se regeneran con `make generate`). Cada palabra va partida en sílabas con guiones (\"pe-lo-ta\"), y tiene que coincidir con el silabeo de tools/silabas.py. Trimestre 2 (invierno), días 66-130: dos palabras al día; llegan las sílabas cerradas (sol, pan), la c y la g suaves (ce, gi) y la h.",
+  "dias": [
+    {
+      "dia": 66,
+      "semana": 14,
+      "trimestre": 2,
+      "tema": "El frío de enero",
+      "palabras": [
+        "bu-fan-da",
+        "man-ta"
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Dibuja a Lucía bien abrigada, con su bufanda."
+      }
+    },
+    {
+      "dia": 67,
+      "semana": 14,
+      "trimestre": 2,
+      "tema": "El frío de enero",
+      "palabras": [
+        "cal-ce-tín",
+        "bo-tas"
+      ],
+      "actividad": {
+        "tipo": "traza",
+        "letra": "c",
+        "prompt": "tus botas y tus calcetines de invierno."
+      }
+    },
+    {
+      "dia": 68,
+      "semana": 14,
+      "trimestre": 2,
+      "tema": "El frío de enero",
+      "palabras": [
+        "es-tu-fa",
+        "ca-lor"
+      ],
+      "actividad": {
+        "tipo": "encuentra",
+        "distractores": [
+          "escoba",
+          "espuma",
+          "esfera",
+          "estufas",
+          "estopa"
+        ],
+        "prompt": "a la familia calentita junto a la estufa."
+      }
+    },
+    {
+      "dia": 69,
+      "semana": 14,
+      "trimestre": 2,
+      "tema": "El frío de enero",
+      "palabras": [
+        "sa-lón",
+        "co-ci-na"
+      ],
+      "actividad": {
+        "tipo": "adivina",
+        "adivinanza": "Es larga y suave, y te la pones en el cuello cuando hace frío. ¿Qué es?",
+        "respuesta": "La bufanda."
+      }
+    },
+    {
+      "dia": 70,
+      "semana": 14,
+      "trimestre": 2,
+      "tema": "El frío de enero",
+      "actividad": {
+        "tipo": "repasa",
+        "prompt": "Dibuja un día de frío. ¿Qué ropa te pones tú?",
+        "banner": "¡70 páginas leídas! ¡Abrígate bien!"
+      }
+    },
+    {
+      "dia": 71,
+      "semana": 15,
+      "trimestre": 2,
+      "tema": "El cumpleaños de Papá",
+      "palabras": [
+        "tar-ta",
+        "ve-las"
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Dibuja la tarta de cumpleaños de Papá, con sus velas."
+      }
+    },
+    {
+      "dia": 72,
+      "semana": 15,
+      "trimestre": 2,
+      "tema": "El cumpleaños de Papá",
+      "palabras": [
+        "pa-pel",
+        "la-zo"
+      ],
+      "actividad": {
+        "tipo": "completa",
+        "diagrama": "lineas-cuadrado",
+        "prompt": "Convierte el cuadrado en un regalo para Papá, con papel y lazo."
+      }
+    },
+    {
+      "dia": 73,
+      "semana": 15,
+      "trimestre": 2,
+      "tema": "El cumpleaños de Papá",
+      "palabras": [
+        "tam-bor",
+        "can-tar"
+      ],
+      "actividad": {
+        "tipo": "escribe",
+        "prompt": "a Dani tocando el tambor para Papá."
+      }
+    },
+    {
+      "dia": 74,
+      "semana": 15,
+      "trimestre": 2,
+      "tema": "El cumpleaños de Papá",
+      "palabras": [
+        "be-so",
+        "son-ri-sa"
+      ],
+      "actividad": {
+        "tipo": "une",
+        "prompt": "la cara de Papá con una sonrisa enorme."
+      }
+    },
+    {
+      "dia": 75,
+      "semana": 15,
+      "trimestre": 2,
+      "tema": "El cumpleaños de Papá",
+      "actividad": {
+        "tipo": "relee",
+        "prompt": "Dibuja a Papá soplando las velas."
+      }
+    },
+    {
+      "dia": 76,
+      "semana": 16,
+      "trimestre": 2,
+      "tema": "El disfraz de Carnaval",
+      "palabras": [
+        "pi-ra-ta",
+        "ca-re-ta"
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Dibuja a Lucía disfrazada de pirata."
+      }
+    },
+    {
+      "dia": 77,
+      "semana": 16,
+      "trimestre": 2,
+      "tema": "El disfraz de Carnaval",
+      "palabras": [
+        "ha-da",
+        "pa-ya-so"
+      ],
+      "actividad": {
+        "tipo": "traza",
+        "letra": "h",
+        "prompt": "un hada con su varita mágica."
+      }
+    },
+    {
+      "dia": 78,
+      "semana": 16,
+      "trimestre": 2,
+      "tema": "El disfraz de Carnaval",
+      "palabras": [
+        "si-re-na",
+        "fan-tas-ma"
+      ],
+      "actividad": {
+        "tipo": "palmadas",
+        "prompt": "el disfraz que más te guste."
+      }
+    },
+    {
+      "dia": 79,
+      "semana": 16,
+      "trimestre": 2,
+      "tema": "El disfraz de Carnaval",
+      "palabras": [
+        "an-ti-faz",
+        "pe-lu-ca"
+      ],
+      "actividad": {
+        "tipo": "adivina",
+        "adivinanza": "Lleva un parche en el ojo, tiene un barco y busca tesoros. ¿Quién es?",
+        "respuesta": "El pirata."
+      }
+    },
+    {
+      "dia": 80,
+      "semana": 16,
+      "trimestre": 2,
+      "tema": "El disfraz de Carnaval",
+      "actividad": {
+        "tipo": "repasa",
+        "prompt": "Dibuja el disfraz que te gustaría llevar en Carnaval.",
+        "banner": "¡80 páginas leídas! ¡Viva el Carnaval!"
+      }
+    },
+    {
+      "dia": 81,
+      "semana": 17,
+      "trimestre": 2,
+      "tema": "El Día de la Paz",
+      "palabras": [
+        "pa-lo-ma",
+        "paz"
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Dibuja una paloma blanca: es el símbolo de la paz."
+      }
+    },
+    {
+      "dia": 82,
+      "semana": 17,
+      "trimestre": 2,
+      "tema": "El Día de la Paz",
+      "palabras": [
+        "ma-nos",
+        "mu-ral"
+      ],
+      "actividad": {
+        "tipo": "completa",
+        "diagrama": "lineas-arco",
+        "prompt": "Convierte el arco en un arcoíris, encima de un mural lleno de manos."
+      }
+    },
+    {
+      "dia": 83,
+      "semana": 17,
+      "trimestre": 2,
+      "tema": "El Día de la Paz",
+      "palabras": [
+        "a-mi-gos",
+        "jun-tos"
+      ],
+      "actividad": {
+        "tipo": "encuentra",
+        "distractores": [
+          "amigas",
+          "amigo",
+          "migas",
+          "amargos",
+          "mangos"
+        ],
+        "prompt": "a Lucía y a sus amigos de la mano."
+      }
+    },
+    {
+      "dia": 84,
+      "semana": 17,
+      "trimestre": 2,
+      "tema": "El Día de la Paz",
+      "palabras": [
+        "co-ra-zón",
+        "com-par-tir"
+      ],
+      "actividad": {
+        "tipo": "une",
+        "prompt": "un corazón grande, con tus amigos dentro."
+      }
+    },
+    {
+      "dia": 85,
+      "semana": 17,
+      "trimestre": 2,
+      "tema": "El Día de la Paz",
+      "actividad": {
+        "tipo": "relee",
+        "prompt": "Dibuja algo bonito que puedes hacer por un amigo."
+      }
+    },
+    {
+      "dia": 86,
+      "semana": 18,
+      "trimestre": 2,
+      "tema": "Lucía se pone mala",
+      "palabras": [
+        "ca-ma",
+        "tos"
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Dibuja a Lucía en la cama, tapada hasta la nariz."
+      }
+    },
+    {
+      "dia": 87,
+      "semana": 18,
+      "trimestre": 2,
+      "tema": "Lucía se pone mala",
+      "palabras": [
+        "ja-ra-be",
+        "mé-di-co"
+      ],
+      "actividad": {
+        "tipo": "traza",
+        "letra": "j",
+        "prompt": "la cuchara con el jarabe."
+      }
+    },
+    {
+      "dia": 88,
+      "semana": 18,
+      "trimestre": 2,
+      "tema": "Lucía se pone mala",
+      "palabras": [
+        "zu-mo",
+        "des-can-so"
+      ],
+      "actividad": {
+        "tipo": "escribe",
+        "prompt": "un vaso de zumo de naranja."
+      }
+    },
+    {
+      "dia": 89,
+      "semana": 18,
+      "trimestre": 2,
+      "tema": "Lucía se pone mala",
+      "palabras": [
+        "mi-mos",
+        "sa-lud"
+      ],
+      "actividad": {
+        "tipo": "adivina",
+        "adivinanza": "Es dulce y pegajoso, y te lo da Mamá con una cuchara cuando estás mala. ¿Qué es?",
+        "respuesta": "El jarabe."
+      }
+    },
+    {
+      "dia": 90,
+      "semana": 18,
+      "trimestre": 2,
+      "tema": "Lucía se pone mala",
+      "actividad": {
+        "tipo": "repasa",
+        "prompt": "Dibuja qué te hace sentir mejor cuando estás malito o malita.",
+        "banner": "¡90 páginas leídas! ¡Que te mejores!"
+      }
+    },
+    {
+      "dia": 91,
+      "semana": 19,
+      "trimestre": 2,
+      "tema": "Un domingo de manualidades con la abuela",
+      "palabras": [
+        "ti-je-ras",
+        "car-tón"
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Dibuja a la abuela Rosa y a Lucía recortando cartón con tijeras."
+      }
+    },
+    {
+      "dia": 92,
+      "semana": 19,
+      "trimestre": 2,
+      "tema": "Un domingo de manualidades con la abuela",
+      "palabras": [
+        "pin-tu-ra",
+        "pin-cel"
+      ],
+      "actividad": {
+        "tipo": "completa",
+        "diagrama": "lineas-espiral",
+        "prompt": "Convierte la espiral en un dibujo pintado con pincel: un caracol, una piruleta..."
+      }
+    },
+    {
+      "dia": 93,
+      "semana": 19,
+      "trimestre": 2,
+      "tema": "Un domingo de manualidades con la abuela",
+      "palabras": [
+        "bo-to-nes",
+        "cin-ta"
+      ],
+      "actividad": {
+        "tipo": "palmadas",
+        "prompt": "un muñeco hecho con botones."
+      }
+    },
+    {
+      "dia": 94,
+      "semana": 19,
+      "trimestre": 2,
+      "tema": "Un domingo de manualidades con la abuela",
+      "palabras": [
+        "Ro-sa",
+        "do-min-go"
+      ],
+      "actividad": {
+        "tipo": "une",
+        "prompt": "la manualidad que te gustaría hacer con tu abuela."
+      }
+    },
+    {
+      "dia": 95,
+      "semana": 19,
+      "trimestre": 2,
+      "tema": "Un domingo de manualidades con la abuela",
+      "actividad": {
+        "tipo": "relee",
+        "prompt": "Dibuja algo que hayas hecho tú con tus manos."
+      }
+    },
+    {
+      "dia": 96,
+      "semana": 20,
+      "trimestre": 2,
+      "tema": "La biblioteca del barrio",
+      "palabras": [
+        "pá-gi-na",
+        "le-er"
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Dibuja a Lucía leyendo un libro en la biblioteca."
+      }
+    },
+    {
+      "dia": 97,
+      "semana": 20,
+      "trimestre": 2,
+      "tema": "La biblioteca del barrio",
+      "palabras": [
+        "ñu",
+        "ji-ra-fa"
+      ],
+      "actividad": {
+        "tipo": "traza",
+        "letra": "ñ",
+        "prompt": "un ñu: un animal de África, con cuernos."
+      }
+    },
+    {
+      "dia": 98,
+      "semana": 20,
+      "trimestre": 2,
+      "tema": "La biblioteca del barrio",
+      "palabras": [
+        "le-ón",
+        "del-fín"
+      ],
+      "actividad": {
+        "tipo": "encuentra",
+        "distractores": [
+          "peón",
+          "melón",
+          "limón",
+          "leones",
+          "lejos"
+        ],
+        "prompt": "un león con una melena enorme."
+      }
+    },
+    {
+      "dia": 99,
+      "semana": 20,
+      "trimestre": 2,
+      "tema": "La biblioteca del barrio",
+      "palabras": [
+        "mo-no",
+        "can-gu-ro"
+      ],
+      "actividad": {
+        "tipo": "adivina",
+        "adivinanza": "Es muy alta, tiene el cuello larguísimo y manchas. ¿Quién es?",
+        "respuesta": "La jirafa."
+      }
+    },
+    {
+      "dia": 100,
+      "semana": 20,
+      "trimestre": 2,
+      "tema": "La biblioteca del barrio",
+      "actividad": {
+        "tipo": "repasa",
+        "prompt": "Dibuja la portada de un libro de animales inventado por ti.",
+        "banner": "¡100 páginas leídas! ¡Cien!"
+      }
+    },
+    {
+      "dia": 101,
+      "semana": 21,
+      "trimestre": 2,
+      "tema": "El cumpleaños de Toby",
+      "palabras": [
+        "To-by",
+        "pas-tel"
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Dibuja a Toby con una corona de cartón en la cabeza."
+      }
+    },
+    {
+      "dia": 102,
+      "semana": 21,
+      "trimestre": 2,
+      "tema": "El cumpleaños de Toby",
+      "palabras": [
+        "ca-se-ta",
+        "co-jín"
+      ],
+      "actividad": {
+        "tipo": "completa",
+        "diagrama": "lineas-triangulo",
+        "prompt": "Convierte el triángulo en el tejado de la caseta de Toby."
+      }
+    },
+    {
+      "dia": 103,
+      "semana": 21,
+      "trimestre": 2,
+      "tema": "El cumpleaños de Toby",
+      "palabras": [
+        "sal-tar",
+        "ju-gar"
+      ],
+      "actividad": {
+        "tipo": "escribe",
+        "prompt": "a Toby saltando para coger su pelota roja."
+      }
+    },
+    {
+      "dia": 104,
+      "semana": 21,
+      "trimestre": 2,
+      "tema": "El cumpleaños de Toby",
+      "palabras": [
+        "a-ño",
+        "re-ga-lar"
+      ],
+      "actividad": {
+        "tipo": "une",
+        "prompt": "una galleta especial para perros."
+      }
+    },
+    {
+      "dia": 105,
+      "semana": 21,
+      "trimestre": 2,
+      "tema": "El cumpleaños de Toby",
+      "actividad": {
+        "tipo": "relee",
+        "prompt": "Dibuja el regalo que le darías tú a Toby."
+      }
+    },
+    {
+      "dia": 106,
+      "semana": 22,
+      "trimestre": 2,
+      "tema": "Un día de mucho viento",
+      "palabras": [
+        "co-me-ta",
+        "ho-jas"
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Dibuja una cometa volando muy alto."
+      }
+    },
+    {
+      "dia": 107,
+      "semana": 22,
+      "trimestre": 2,
+      "tema": "Un día de mucho viento",
+      "palabras": [
+        "gi-rar",
+        "hi-lo"
+      ],
+      "actividad": {
+        "tipo": "traza",
+        "letra": "g",
+        "prompt": "un molinillo de viento girando."
+      }
+    },
+    {
+      "dia": 108,
+      "semana": 22,
+      "trimestre": 2,
+      "tema": "Un día de mucho viento",
+      "palabras": [
+        "nu-bes",
+        "rá-pi-do"
+      ],
+      "actividad": {
+        "tipo": "palmadas",
+        "prompt": "nubes corriendo por el cielo."
+      }
+    },
+    {
+      "dia": 109,
+      "semana": 22,
+      "trimestre": 2,
+      "tema": "Un día de mucho viento",
+      "palabras": [
+        "pe-lo",
+        "bol-sa"
+      ],
+      "actividad": {
+        "tipo": "adivina",
+        "adivinanza": "Vuelo muy alto atada a un hilo, y el viento me lleva de aquí para allá. ¿Qué soy?",
+        "respuesta": "La cometa."
+      }
+    },
+    {
+      "dia": 110,
+      "semana": 22,
+      "trimestre": 2,
+      "tema": "Un día de mucho viento",
+      "actividad": {
+        "tipo": "repasa",
+        "prompt": "Dibuja un día de mucho viento: ¿qué cosas salen volando?",
+        "banner": "¡110 páginas leídas! ¡Vuela, vuela!"
+      }
+    },
+    {
+      "dia": 111,
+      "semana": 23,
+      "trimestre": 2,
+      "tema": "El proyecto de plantas de Marta",
+      "palabras": [
+        "ma-ce-ta",
+        "Mar-ta"
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Dibuja una maceta con una planta pequeña."
+      }
+    },
+    {
+      "dia": 112,
+      "semana": 23,
+      "trimestre": 2,
+      "tema": "El proyecto de plantas de Marta",
+      "palabras": [
+        "ra-íz",
+        "ho-ja"
+      ],
+      "actividad": {
+        "tipo": "completa",
+        "diagrama": "lineas-ondas",
+        "prompt": "Convierte estas líneas en las raíces y las hojas de una planta."
+      }
+    },
+    {
+      "dia": 113,
+      "semana": 23,
+      "trimestre": 2,
+      "tema": "El proyecto de plantas de Marta",
+      "palabras": [
+        "re-gar",
+        "sol"
+      ],
+      "actividad": {
+        "tipo": "encuentra",
+        "distractores": [
+          "pegar",
+          "rezar",
+          "negar",
+          "segar",
+          "remar"
+        ],
+        "prompt": "una regadera echando agua a una planta."
+      }
+    },
+    {
+      "dia": 114,
+      "semana": 23,
+      "trimestre": 2,
+      "tema": "El proyecto de plantas de Marta",
+      "palabras": [
+        "gi-ra-sol",
+        "ver-de"
+      ],
+      "actividad": {
+        "tipo": "une",
+        "prompt": "un girasol tan alto como tú."
+      }
+    },
+    {
+      "dia": 115,
+      "semana": 23,
+      "trimestre": 2,
+      "tema": "El proyecto de plantas de Marta",
+      "actividad": {
+        "tipo": "relee",
+        "prompt": "Dibuja cómo crece una planta, desde la semilla hasta la flor."
+      }
+    },
+    {
+      "dia": 116,
+      "semana": 24,
+      "trimestre": 2,
+      "tema": "Dani rompe el dinosaurio de Lucía",
+      "palabras": [
+        "di-no",
+        "ro-to"
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Dibuja el dinosaurio de Lucía, roto en dos trozos."
+      }
+    },
+    {
+      "dia": 117,
+      "semana": 24,
+      "trimestre": 2,
+      "tema": "Dani rompe el dinosaurio de Lucía",
+      "palabras": [
+        "Da-ni",
+        "per-dón"
+      ],
+      "actividad": {
+        "tipo": "traza",
+        "letra": "d",
+        "prompt": "a Dani pidiendo perdón a Lucía."
+      }
+    },
+    {
+      "dia": 118,
+      "semana": 24,
+      "trimestre": 2,
+      "tema": "Dani rompe el dinosaurio de Lucía",
+      "palabras": [
+        "ce-lo",
+        "pe-gar"
+      ],
+      "actividad": {
+        "tipo": "escribe",
+        "prompt": "el dinosaurio arreglado con celo."
+      }
+    },
+    {
+      "dia": 119,
+      "semana": 24,
+      "trimestre": 2,
+      "tema": "Dani rompe el dinosaurio de Lucía",
+      "palabras": [
+        "en-fa-do",
+        "cal-ma"
+      ],
+      "actividad": {
+        "tipo": "adivina",
+        "adivinanza": "Lo dices cuando has hecho algo mal y quieres arreglarlo. ¿Qué palabra es?",
+        "respuesta": "Perdón."
+      }
+    },
+    {
+      "dia": 120,
+      "semana": 24,
+      "trimestre": 2,
+      "tema": "Dani rompe el dinosaurio de Lucía",
+      "actividad": {
+        "tipo": "repasa",
+        "prompt": "Dibuja a Lucía y a Dani haciendo las paces.",
+        "banner": "¡120 páginas leídas! ¡Amigos otra vez!"
+      }
+    },
+    {
+      "dia": 121,
+      "semana": 25,
+      "trimestre": 2,
+      "tema": "Huele a primavera",
+      "palabras": [
+        "jar-dín",
+        "ro-sas"
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Dibuja un jardín lleno de rosas."
+      }
+    },
+    {
+      "dia": 122,
+      "semana": 25,
+      "trimestre": 2,
+      "tema": "Huele a primavera",
+      "palabras": [
+        "tu-li-pán",
+        "pé-ta-lo"
+      ],
+      "actividad": {
+        "tipo": "completa",
+        "diagrama": "lineas-circulo",
+        "prompt": "Convierte el círculo en el centro de una flor, y dibújale sus pétalos."
+      }
+    },
+    {
+      "dia": 123,
+      "semana": 25,
+      "trimestre": 2,
+      "tema": "Huele a primavera",
+      "palabras": [
+        "ca-ra-col",
+        "hor-mi-ga"
+      ],
+      "actividad": {
+        "tipo": "palmadas",
+        "prompt": "un caracol y una hormiga encima de una hoja."
+      }
+    },
+    {
+      "dia": 124,
+      "semana": 25,
+      "trimestre": 2,
+      "tema": "Huele a primavera",
+      "palabras": [
+        "per-fu-me",
+        "co-lor"
+      ],
+      "actividad": {
+        "tipo": "une",
+        "prompt": "tu flor favorita, con muchos colores."
+      }
+    },
+    {
+      "dia": 125,
+      "semana": 25,
+      "trimestre": 2,
+      "tema": "Huele a primavera",
+      "actividad": {
+        "tipo": "relee",
+        "prompt": "Dibuja un paseo por el parque en primavera."
+      }
+    },
+    {
+      "dia": 126,
+      "semana": 26,
+      "trimestre": 2,
+      "tema": "Adiós al invierno",
+      "palabras": [
+        "pa-se-o",
+        "sol"
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Dibuja a toda la familia de paseo por el parque, con sol."
+      }
+    },
+    {
+      "dia": 127,
+      "semana": 26,
+      "trimestre": 2,
+      "tema": "Adiós al invierno",
+      "palabras": [
+        "ban-co",
+        "ár-bol"
+      ],
+      "actividad": {
+        "tipo": "traza",
+        "letra": "b",
+        "prompt": "a la familia sentada en un banco, debajo de un árbol."
+      }
+    },
+    {
+      "dia": 128,
+      "semana": 26,
+      "trimestre": 2,
+      "tema": "Adiós al invierno",
+      "palabras": [
+        "ca-lor",
+        "pá-ja-ros"
+      ],
+      "actividad": {
+        "tipo": "encuentra",
+        "distractores": [
+          "color",
+          "valor",
+          "calar",
+          "colar",
+          "caldo"
+        ],
+        "prompt": "el sol calentando el parque."
+      }
+    },
+    {
+      "dia": 129,
+      "semana": 26,
+      "trimestre": 2,
+      "tema": "Adiós al invierno",
+      "palabras": [
+        "le-er",
+        "jun-tos"
+      ],
+      "actividad": {
+        "tipo": "adivina",
+        "adivinanza": "Estoy en el parque, tengo patas pero no ando, y la gente se sienta en mí. ¿Qué soy?",
+        "respuesta": "El banco."
+      }
+    },
+    {
+      "dia": 130,
+      "semana": 26,
+      "trimestre": 2,
+      "tema": "Adiós al invierno",
+      "actividad": {
+        "tipo": "repasa",
+        "prompt": "Dibuja lo que más te ha gustado de este invierno.",
+        "banner": "¡130 páginas leídas! ¡Adiós, invierno!"
+      }
+    }
+  ]
+}
