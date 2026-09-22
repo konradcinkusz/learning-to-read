@@ -46,11 +46,32 @@ jobs:
       # matplotlib/fonttools (eso solo hace falta para regenerarlo, ver
       # tools/gen_letras_puntos.py), así que este job no gana ninguna
       # dependencia pesada por esa actividad.
-      - name: Genera content/generated-days.tex desde content/q*.json
+      - name: Genera los .tex de los dos cuadernos desde su JSON
         run: make generate
 
       - name: Valida el contenido (frases por trimestre, campos de actividad)
         run: python3 tools/gen_days.py --check
+
+      # El cuaderno de primeras palabras (content/palabras/q*.json):
+      # primero el silabeo automático contra casos conocidos -- si alguien
+      # rompe una regla de tools/silabas.py, que se vea aquí y no como
+      # cientos de palabras "mal silabeadas" de golpe --, después el
+      # contenido (cada palabra partida a mano igual que la parte
+      # tools/silabas.py, y dentro de la escalera de sílabas de su
+      # semana), y un resumen de la escalera en el resumen del job.
+      - name: Comprueba el silabeo automático (casos conocidos)
+        run: python3 tools/silabas.py --prueba
+
+      - name: Valida el cuaderno de primeras palabras (silabeo, escalera de sílabas)
+        run: python3 tools/gen_palabras.py --check
+
+      - name: Resume la escalera del cuaderno de primeras palabras
+        run: |
+          {
+            echo '## Cuaderno de primeras palabras: escalera por semana'
+            echo
+            python3 tools/gen_palabras.py --tabla
+          } >> "$GITHUB_STEP_SUMMARY"
 
       # Compara content/q*.json con la escalera de content/progresion.json
       # (notes/02-revision-y-plan.md, Parte C) -- palabras/página y frase
@@ -78,6 +99,12 @@ jobs:
             root: main
           - variant: bw
             root: main-bw
+          # El cuaderno de primeras palabras (palabras.tex), mismo motor y
+          # mismas comprobaciones: un día = una página, log limpio.
+          - variant: palabras-color
+            root: palabras
+          - variant: palabras-bw
+            root: palabras-bw
     steps:
       - uses: actions/checkout@v4
 
@@ -86,7 +113,7 @@ jobs:
           python-version: '3.11'
 
       # Otro runner, otro checkout -- este job genera para sí mismo.
-      - name: Genera content/generated-days.tex desde content/q*.json
+      - name: Genera los .tex de los dos cuadernos desde su JSON
         run: make generate
 
       # LuaLaTeX, no pdflatex: la letra es Andika (fonts/andika/, ver

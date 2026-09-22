@@ -1,0 +1,865 @@
+{
+  "_comentario": "Datos de origen para tools/gen_palabras.py (cuaderno de primeras palabras). Este fichero SÍ se edita a mano; content/palabras/generated-*.tex NO (se regeneran con `make generate`). Cada palabra va partida en sílabas con guiones (\"pe-lo-ta\"), y tiene que coincidir con el silabeo de tools/silabas.py. Trimestre 1 (otoño), días 1-65: una palabra al día, solo sílabas directas (ma, pe, lo).",
+  "dias": [
+    {
+      "dia": 1,
+      "semana": 1,
+      "trimestre": 1,
+      "tema": "La familia de Lucía",
+      "palabras": [
+        "ma-má"
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Dibuja a mamá. ¿Qué está haciendo?"
+      }
+    },
+    {
+      "dia": 2,
+      "semana": 1,
+      "trimestre": 1,
+      "tema": "La familia de Lucía",
+      "palabras": [
+        "pa-pá"
+      ],
+      "actividad": {
+        "tipo": "completa",
+        "diagrama": "lineas-circulo",
+        "prompt": "Convierte el círculo en la cara de papá."
+      }
+    },
+    {
+      "dia": 3,
+      "semana": 1,
+      "trimestre": 1,
+      "tema": "La familia de Lucía",
+      "palabras": [
+        "Da-ni"
+      ],
+      "actividad": {
+        "tipo": "palmadas",
+        "prompt": "a Dani, el hermano pequeño de Lucía."
+      }
+    },
+    {
+      "dia": 4,
+      "semana": 1,
+      "trimestre": 1,
+      "tema": "La familia de Lucía",
+      "palabras": [
+        "Lu-cí-a"
+      ],
+      "actividad": {
+        "tipo": "une",
+        "prompt": "a Lucía con su familia."
+      }
+    },
+    {
+      "dia": 5,
+      "semana": 1,
+      "trimestre": 1,
+      "tema": "La familia de Lucía",
+      "actividad": {
+        "tipo": "relee",
+        "prompt": "Dibuja a tu familia. ¿Quién es quién?"
+      }
+    },
+    {
+      "dia": 6,
+      "semana": 2,
+      "trimestre": 1,
+      "tema": "Toby, el perro juguetón",
+      "palabras": [
+        "To-by"
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Dibuja a Toby, el perro de Lucía: es marrón y tiene las orejas largas."
+      }
+    },
+    {
+      "dia": 7,
+      "semana": 2,
+      "trimestre": 1,
+      "tema": "Toby, el perro juguetón",
+      "palabras": [
+        "pa-ta"
+      ],
+      "actividad": {
+        "tipo": "traza",
+        "letra": "p",
+        "prompt": "las cuatro patas de Toby."
+      }
+    },
+    {
+      "dia": 8,
+      "semana": 2,
+      "trimestre": 1,
+      "tema": "Toby, el perro juguetón",
+      "palabras": [
+        "co-la"
+      ],
+      "actividad": {
+        "tipo": "encuentra",
+        "distractores": [
+          "bola",
+          "coma",
+          "sola",
+          "copa",
+          "cala"
+        ],
+        "prompt": "la cola de Toby, moviéndose de contento."
+      }
+    },
+    {
+      "dia": 9,
+      "semana": 2,
+      "trimestre": 1,
+      "tema": "Toby, el perro juguetón",
+      "palabras": [
+        "bo-la"
+      ],
+      "actividad": {
+        "tipo": "adivina",
+        "adivinanza": "Tengo cuatro patas, muevo la cola y digo «guau». ¿Quién soy?",
+        "respuesta": "Toby (un perro)."
+      }
+    },
+    {
+      "dia": 10,
+      "semana": 2,
+      "trimestre": 1,
+      "tema": "Toby, el perro juguetón",
+      "actividad": {
+        "tipo": "repasa",
+        "prompt": "Dibuja a Toby jugando con su bola.",
+        "banner": "¡10 páginas leídas! ¡Guau!"
+      }
+    },
+    {
+      "dia": 11,
+      "semana": 3,
+      "trimestre": 1,
+      "tema": "El colegio de Lucía",
+      "palabras": [
+        "co-le"
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Dibuja el cole de Lucía, con su puerta y sus ventanas."
+      }
+    },
+    {
+      "dia": 12,
+      "semana": 3,
+      "trimestre": 1,
+      "tema": "El colegio de Lucía",
+      "palabras": [
+        "me-sa"
+      ],
+      "actividad": {
+        "tipo": "completa",
+        "diagrama": "lineas-cuadrado",
+        "prompt": "Convierte el cuadrado en la mesa de Lucía en el cole."
+      }
+    },
+    {
+      "dia": 13,
+      "semana": 3,
+      "trimestre": 1,
+      "tema": "El colegio de Lucía",
+      "palabras": [
+        "go-ma"
+      ],
+      "actividad": {
+        "tipo": "escribe",
+        "prompt": "una goma de borrar."
+      }
+    },
+    {
+      "dia": 14,
+      "semana": 3,
+      "trimestre": 1,
+      "tema": "El colegio de Lucía",
+      "palabras": [
+        "ti-za"
+      ],
+      "actividad": {
+        "tipo": "une",
+        "prompt": "una pizarra con dibujos de tiza."
+      }
+    },
+    {
+      "dia": 15,
+      "semana": 3,
+      "trimestre": 1,
+      "tema": "El colegio de Lucía",
+      "actividad": {
+        "tipo": "relee",
+        "prompt": "Dibuja lo que más te gusta de tu cole."
+      }
+    },
+    {
+      "dia": 16,
+      "semana": 4,
+      "trimestre": 1,
+      "tema": "El barrio y el parque",
+      "palabras": [
+        "pa-to"
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Dibuja un pato nadando en el lago del parque."
+      }
+    },
+    {
+      "dia": 17,
+      "semana": 4,
+      "trimestre": 1,
+      "tema": "El barrio y el parque",
+      "palabras": [
+        "ra-ma"
+      ],
+      "actividad": {
+        "tipo": "traza",
+        "letra": "r",
+        "prompt": "un pájaro en una rama."
+      }
+    },
+    {
+      "dia": 18,
+      "semana": 4,
+      "trimestre": 1,
+      "tema": "El barrio y el parque",
+      "palabras": [
+        "mo-to"
+      ],
+      "actividad": {
+        "tipo": "palmadas",
+        "prompt": "la moto que pasa por la calle de Lucía."
+      }
+    },
+    {
+      "dia": 19,
+      "semana": 4,
+      "trimestre": 1,
+      "tema": "El barrio y el parque",
+      "palabras": [
+        "ca-sa"
+      ],
+      "actividad": {
+        "tipo": "adivina",
+        "adivinanza": "Nado en el lago del parque y digo «cua, cua». ¿Quién soy?",
+        "respuesta": "El pato."
+      }
+    },
+    {
+      "dia": 20,
+      "semana": 4,
+      "trimestre": 1,
+      "tema": "El barrio y el parque",
+      "actividad": {
+        "tipo": "repasa",
+        "prompt": "Dibuja tu parque favorito.",
+        "banner": "¡20 páginas leídas! ¡Muy bien!"
+      }
+    },
+    {
+      "dia": 21,
+      "semana": 5,
+      "trimestre": 1,
+      "tema": "La comida en casa",
+      "palabras": [
+        "so-pa"
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Dibuja un plato de sopa bien caliente."
+      }
+    },
+    {
+      "dia": 22,
+      "semana": 5,
+      "trimestre": 1,
+      "tema": "La comida en casa",
+      "palabras": [
+        "pe-ra"
+      ],
+      "actividad": {
+        "tipo": "completa",
+        "diagrama": "lineas-ovalo",
+        "prompt": "Convierte el óvalo en una pera, o en otra fruta."
+      }
+    },
+    {
+      "dia": 23,
+      "semana": 5,
+      "trimestre": 1,
+      "tema": "La comida en casa",
+      "palabras": [
+        "u-va"
+      ],
+      "actividad": {
+        "tipo": "encuentra",
+        "distractores": [
+          "una",
+          "ave",
+          "uña",
+          "oca",
+          "ola"
+        ],
+        "prompt": "un racimo de uvas."
+      }
+    },
+    {
+      "dia": 24,
+      "semana": 5,
+      "trimestre": 1,
+      "tema": "La comida en casa",
+      "palabras": [
+        "pi-ña"
+      ],
+      "actividad": {
+        "tipo": "une",
+        "prompt": "tu fruta favorita."
+      }
+    },
+    {
+      "dia": 25,
+      "semana": 5,
+      "trimestre": 1,
+      "tema": "La comida en casa",
+      "actividad": {
+        "tipo": "relee",
+        "prompt": "Dibuja tu comida favorita en un plato."
+      }
+    },
+    {
+      "dia": 26,
+      "semana": 6,
+      "trimestre": 1,
+      "tema": "Llega el otoño",
+      "palabras": [
+        "o-to-ño"
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Dibuja un árbol en otoño, con hojas amarillas y naranjas cayendo."
+      }
+    },
+    {
+      "dia": 27,
+      "semana": 6,
+      "trimestre": 1,
+      "tema": "Llega el otoño",
+      "palabras": [
+        "se-ta"
+      ],
+      "actividad": {
+        "tipo": "traza",
+        "letra": "s",
+        "prompt": "una seta en el bosque."
+      }
+    },
+    {
+      "dia": 28,
+      "semana": 6,
+      "trimestre": 1,
+      "tema": "Llega el otoño",
+      "palabras": [
+        "nu-be"
+      ],
+      "actividad": {
+        "tipo": "escribe",
+        "prompt": "una nube gris con gotas de lluvia."
+      }
+    },
+    {
+      "dia": 29,
+      "semana": 6,
+      "trimestre": 1,
+      "tema": "Llega el otoño",
+      "palabras": [
+        "bo-ta"
+      ],
+      "actividad": {
+        "tipo": "adivina",
+        "adivinanza": "Las hojas se ponen marrones y se caen de los árboles. ¿Qué estación es?",
+        "respuesta": "El otoño."
+      }
+    },
+    {
+      "dia": 30,
+      "semana": 6,
+      "trimestre": 1,
+      "tema": "Llega el otoño",
+      "actividad": {
+        "tipo": "repasa",
+        "prompt": "Dibuja un montón de hojas de otoño.",
+        "banner": "¡30 páginas leídas! ¡Qué bien lees!"
+      }
+    },
+    {
+      "dia": 31,
+      "semana": 7,
+      "trimestre": 1,
+      "tema": "Los juguetes de Dani",
+      "palabras": [
+        "pe-lo-ta"
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Dibuja a Dani jugando con su pelota."
+      }
+    },
+    {
+      "dia": 32,
+      "semana": 7,
+      "trimestre": 1,
+      "tema": "Los juguetes de Dani",
+      "palabras": [
+        "mu-ñe-ca"
+      ],
+      "actividad": {
+        "tipo": "completa",
+        "diagrama": "lineas-ondas",
+        "prompt": "Convierte estas líneas en el pelo de una muñeca."
+      }
+    },
+    {
+      "dia": 33,
+      "semana": 7,
+      "trimestre": 1,
+      "tema": "Los juguetes de Dani",
+      "palabras": [
+        "da-do"
+      ],
+      "actividad": {
+        "tipo": "palmadas",
+        "prompt": "un dado con sus puntitos."
+      }
+    },
+    {
+      "dia": 34,
+      "semana": 7,
+      "trimestre": 1,
+      "tema": "Los juguetes de Dani",
+      "palabras": [
+        "yo-yó"
+      ],
+      "actividad": {
+        "tipo": "une",
+        "prompt": "tu juguete favorito."
+      }
+    },
+    {
+      "dia": 35,
+      "semana": 7,
+      "trimestre": 1,
+      "tema": "Los juguetes de Dani",
+      "actividad": {
+        "tipo": "relee",
+        "prompt": "Dibuja el juguete de Dani que más te guste."
+      }
+    },
+    {
+      "dia": 36,
+      "semana": 8,
+      "trimestre": 1,
+      "tema": "Castañas y Todos los Santos",
+      "palabras": [
+        "co-no"
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "En otoño se venden castañas asadas en un cono de papel. Dibuja un cono lleno de castañas."
+      }
+    },
+    {
+      "dia": 37,
+      "semana": 8,
+      "trimestre": 1,
+      "tema": "Castañas y Todos los Santos",
+      "palabras": [
+        "ve-la"
+      ],
+      "actividad": {
+        "tipo": "traza",
+        "letra": "v",
+        "prompt": "una vela encendida."
+      }
+    },
+    {
+      "dia": 38,
+      "semana": 8,
+      "trimestre": 1,
+      "tema": "Castañas y Todos los Santos",
+      "palabras": [
+        "la-na"
+      ],
+      "actividad": {
+        "tipo": "encuentra",
+        "distractores": [
+          "lama",
+          "luna",
+          "lata",
+          "rana",
+          "nana"
+        ],
+        "prompt": "una bufanda de lana."
+      }
+    },
+    {
+      "dia": 39,
+      "semana": 8,
+      "trimestre": 1,
+      "tema": "Castañas y Todos los Santos",
+      "palabras": [
+        "ma-no"
+      ],
+      "actividad": {
+        "tipo": "adivina",
+        "adivinanza": "Tengo una llamita que da luz, y cada vez me hago más pequeña. ¿Qué soy?",
+        "respuesta": "La vela."
+      }
+    },
+    {
+      "dia": 40,
+      "semana": 8,
+      "trimestre": 1,
+      "tema": "Castañas y Todos los Santos",
+      "actividad": {
+        "tipo": "repasa",
+        "prompt": "Dibuja tus manos calentitas alrededor de un cono de castañas.",
+        "banner": "¡40 páginas leídas! ¡Ya casi 50!"
+      }
+    },
+    {
+      "dia": 41,
+      "semana": 9,
+      "trimestre": 1,
+      "tema": "El cumpleaños de Lucía",
+      "palabras": [
+        "re-ga-lo"
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Dibuja un regalo para Lucía, con un lazo bien grande."
+      }
+    },
+    {
+      "dia": 42,
+      "semana": 9,
+      "trimestre": 1,
+      "tema": "El cumpleaños de Lucía",
+      "palabras": [
+        "pi-ña-ta"
+      ],
+      "actividad": {
+        "tipo": "completa",
+        "diagrama": "lineas-triangulo",
+        "prompt": "Convierte el triángulo en una piñata de colores."
+      }
+    },
+    {
+      "dia": 43,
+      "semana": 9,
+      "trimestre": 1,
+      "tema": "El cumpleaños de Lucía",
+      "palabras": [
+        "mú-si-ca"
+      ],
+      "actividad": {
+        "tipo": "escribe",
+        "prompt": "a Lucía bailando con música."
+      }
+    },
+    {
+      "dia": 44,
+      "semana": 9,
+      "trimestre": 1,
+      "tema": "El cumpleaños de Lucía",
+      "palabras": [
+        "co-mi-da"
+      ],
+      "actividad": {
+        "tipo": "une",
+        "prompt": "la tarta de Lucía, con siete velas."
+      }
+    },
+    {
+      "dia": 45,
+      "semana": 9,
+      "trimestre": 1,
+      "tema": "El cumpleaños de Lucía",
+      "actividad": {
+        "tipo": "relee",
+        "prompt": "Dibuja cómo celebras tú tu cumpleaños."
+      }
+    },
+    {
+      "dia": 46,
+      "semana": 10,
+      "trimestre": 1,
+      "tema": "Los animales del barrio",
+      "palabras": [
+        "ga-to"
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Dibuja un gato durmiendo al sol."
+      }
+    },
+    {
+      "dia": 47,
+      "semana": 10,
+      "trimestre": 1,
+      "tema": "Los animales del barrio",
+      "palabras": [
+        "lo-ro"
+      ],
+      "actividad": {
+        "tipo": "traza",
+        "letra": "l",
+        "prompt": "un loro de muchos colores."
+      }
+    },
+    {
+      "dia": 48,
+      "semana": 10,
+      "trimestre": 1,
+      "tema": "Los animales del barrio",
+      "palabras": [
+        "pa-lo-ma"
+      ],
+      "actividad": {
+        "tipo": "palmadas",
+        "prompt": "una paloma comiendo migas."
+      }
+    },
+    {
+      "dia": 49,
+      "semana": 10,
+      "trimestre": 1,
+      "tema": "Los animales del barrio",
+      "palabras": [
+        "a-be-ja"
+      ],
+      "actividad": {
+        "tipo": "adivina",
+        "adivinanza": "Tengo bigotes, digo «miau» y me gusta dormir al sol. ¿Quién soy?",
+        "respuesta": "El gato."
+      }
+    },
+    {
+      "dia": 50,
+      "semana": 10,
+      "trimestre": 1,
+      "tema": "Los animales del barrio",
+      "actividad": {
+        "tipo": "repasa",
+        "prompt": "Dibuja un animal que hayas visto en tu barrio.",
+        "banner": "¡50 páginas leídas! ¡Cincuenta!"
+      }
+    },
+    {
+      "dia": 51,
+      "semana": 11,
+      "trimestre": 1,
+      "tema": "Un día de lluvia",
+      "palabras": [
+        "go-ta"
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Dibuja la lluvia: muchas gotas cayendo del cielo."
+      }
+    },
+    {
+      "dia": 52,
+      "semana": 11,
+      "trimestre": 1,
+      "tema": "Un día de lluvia",
+      "palabras": [
+        "ra-yo"
+      ],
+      "actividad": {
+        "tipo": "completa",
+        "diagrama": "lineas-zigzag",
+        "prompt": "Convierte el zigzag en un rayo de tormenta."
+      }
+    },
+    {
+      "dia": 53,
+      "semana": 11,
+      "trimestre": 1,
+      "tema": "Un día de lluvia",
+      "palabras": [
+        "mo-ja-do"
+      ],
+      "actividad": {
+        "tipo": "encuentra",
+        "distractores": [
+          "mojada",
+          "morado",
+          "lavado",
+          "pesado",
+          "mimado"
+        ],
+        "prompt": "a Toby mojado, sacudiéndose."
+      }
+    },
+    {
+      "dia": 54,
+      "semana": 11,
+      "trimestre": 1,
+      "tema": "Un día de lluvia",
+      "palabras": [
+        "so-fá"
+      ],
+      "actividad": {
+        "tipo": "une",
+        "prompt": "a la familia en el sofá, mirando llover por la ventana."
+      }
+    },
+    {
+      "dia": 55,
+      "semana": 11,
+      "trimestre": 1,
+      "tema": "Un día de lluvia",
+      "actividad": {
+        "tipo": "relee",
+        "prompt": "Dibuja qué te gusta hacer a ti un día de lluvia."
+      }
+    },
+    {
+      "dia": 56,
+      "semana": 12,
+      "trimestre": 1,
+      "tema": "Ir al mercado con Mamá",
+      "palabras": [
+        "pa-ta-ta"
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Dibuja una bolsa de la compra llena de patatas."
+      }
+    },
+    {
+      "dia": 57,
+      "semana": 12,
+      "trimestre": 1,
+      "tema": "Ir al mercado con Mamá",
+      "palabras": [
+        "to-ma-te"
+      ],
+      "actividad": {
+        "tipo": "traza",
+        "letra": "t",
+        "prompt": "un tomate rojo y redondo."
+      }
+    },
+    {
+      "dia": 58,
+      "semana": 12,
+      "trimestre": 1,
+      "tema": "Ir al mercado con Mamá",
+      "palabras": [
+        "mo-ne-da"
+      ],
+      "actividad": {
+        "tipo": "escribe",
+        "prompt": "una moneda para pagar en el mercado."
+      }
+    },
+    {
+      "dia": 59,
+      "semana": 12,
+      "trimestre": 1,
+      "tema": "Ir al mercado con Mamá",
+      "palabras": [
+        "pe-pi-no"
+      ],
+      "actividad": {
+        "tipo": "adivina",
+        "adivinanza": "Soy rojo y redondo, y me pones en la ensalada. ¿Qué soy?",
+        "respuesta": "El tomate."
+      }
+    },
+    {
+      "dia": 60,
+      "semana": 12,
+      "trimestre": 1,
+      "tema": "Ir al mercado con Mamá",
+      "actividad": {
+        "tipo": "repasa",
+        "prompt": "Dibuja un puesto del mercado lleno de frutas y verduras.",
+        "banner": "¡60 páginas leídas! ¡Ya casi es Navidad!"
+      }
+    },
+    {
+      "dia": 61,
+      "semana": 13,
+      "trimestre": 1,
+      "tema": "Nochebuena",
+      "palabras": [
+        "a-be-to"
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Dibuja el abeto de Navidad, con bolas y luces."
+      }
+    },
+    {
+      "dia": 62,
+      "semana": 13,
+      "trimestre": 1,
+      "tema": "Nochebuena",
+      "palabras": [
+        "o-ve-ja"
+      ],
+      "actividad": {
+        "tipo": "completa",
+        "diagrama": "lineas-ovalo",
+        "prompt": "Convierte el óvalo en una oveja del belén."
+      }
+    },
+    {
+      "dia": 63,
+      "semana": 13,
+      "trimestre": 1,
+      "tema": "Nochebuena",
+      "palabras": [
+        "mu-la"
+      ],
+      "actividad": {
+        "tipo": "palmadas",
+        "prompt": "la mula y el buey del belén."
+      }
+    },
+    {
+      "dia": 64,
+      "semana": 13,
+      "trimestre": 1,
+      "tema": "Nochebuena",
+      "palabras": [
+        "mu-ñe-co"
+      ],
+      "actividad": {
+        "tipo": "une",
+        "prompt": "un muñeco de nieve con bufanda."
+      }
+    },
+    {
+      "dia": 65,
+      "semana": 13,
+      "trimestre": 1,
+      "tema": "Nochebuena",
+      "actividad": {
+        "tipo": "repasa",
+        "prompt": "Dibuja a la familia de Lucía cenando en Nochebuena.",
+        "banner": "¡65 páginas leídas! ¡Feliz Navidad!"
+      }
+    }
+  ]
+}

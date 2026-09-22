@@ -1,0 +1,958 @@
+{
+  "_comentario": "Datos de origen para tools/gen_palabras.py (cuaderno de primeras palabras). Este fichero SÍ se edita a mano; content/palabras/generated-*.tex NO (se regeneran con `make generate`). Cada palabra va partida en sílabas con guiones (\"pe-lo-ta\"), y tiene que coincidir con el silabeo de tools/silabas.py. Trimestre 4 (verano), días 196-260: una frase al día, de 2 a 4 palabras -- el puente hacia el cuaderno de frases.",
+  "dias": [
+    {
+      "dia": 196,
+      "semana": 40,
+      "trimestre": 4,
+      "tema": "Empieza el verano",
+      "frase": "¡Hola, verano!",
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Dibuja el verano: ¿qué es lo que más te gusta?"
+      }
+    },
+    {
+      "dia": 197,
+      "semana": 40,
+      "trimestre": 4,
+      "tema": "Empieza el verano",
+      "frase": "¡Adiós, cole!",
+      "actividad": {
+        "tipo": "traza",
+        "letra": "a",
+        "prompt": "a Lucía y a Dani saliendo del cole, muy contentos."
+      }
+    },
+    {
+      "dia": 198,
+      "semana": 40,
+      "trimestre": 4,
+      "tema": "Empieza el verano",
+      "frase": "Toby espera.",
+      "actividad": {
+        "tipo": "si_no",
+        "afirmaciones": [
+          [
+            "Toby vuela.",
+            false
+          ],
+          [
+            "Toby ladra.",
+            true
+          ],
+          [
+            "Dani lee.",
+            true
+          ]
+        ],
+        "prompt": "a Toby esperando junto a las maletas."
+      }
+    },
+    {
+      "dia": 199,
+      "semana": 40,
+      "trimestre": 4,
+      "tema": "Empieza el verano",
+      "frase": "¡Al coche!",
+      "actividad": {
+        "tipo": "adivina",
+        "adivinanza": "Tiene cuatro ruedas y nos lleva de viaje al pueblo de la abuela. ¿Qué es?",
+        "respuesta": "El coche."
+      }
+    },
+    {
+      "dia": 200,
+      "semana": 40,
+      "trimestre": 4,
+      "tema": "Empieza el verano",
+      "actividad": {
+        "tipo": "repasa",
+        "prompt": "Dibuja la maleta que te llevarías tú de vacaciones.",
+        "banner": "¡200 páginas leídas! ¡Doscientas!"
+      }
+    },
+    {
+      "dia": 201,
+      "semana": 41,
+      "trimestre": 4,
+      "tema": "Llegada al pueblo de la abuela Rosa",
+      "frase": "¡Abuela Rosa!",
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Dibuja a la abuela Rosa abrazando a Lucía y a Dani."
+      }
+    },
+    {
+      "dia": 202,
+      "semana": 41,
+      "trimestre": 4,
+      "tema": "Llegada al pueblo de la abuela Rosa",
+      "frase": "¡Qué patio!",
+      "actividad": {
+        "tipo": "completa",
+        "diagrama": "lineas-triangulo",
+        "prompt": "Convierte estas líneas en la casa de la abuela, con su patio y su limonero."
+      }
+    },
+    {
+      "dia": 203,
+      "semana": 41,
+      "trimestre": 4,
+      "tema": "Llegada al pueblo de la abuela Rosa",
+      "frase": "Hay tortilla.",
+      "actividad": {
+        "tipo": "encuentra",
+        "palabra": "tortilla",
+        "distractores": [
+          "tortita",
+          "tortuga",
+          "tortillas",
+          "tomillo",
+          "toalla"
+        ],
+        "prompt": "una tortilla de patata enorme."
+      }
+    },
+    {
+      "dia": 204,
+      "semana": 41,
+      "trimestre": 4,
+      "tema": "Llegada al pueblo de la abuela Rosa",
+      "frase": "Grillos cantan.",
+      "actividad": {
+        "tipo": "une",
+        "instruccion": "Une cada animal con su sonido.",
+        "pares": [
+          [
+            "grillo",
+            "cri, cri"
+          ],
+          [
+            "búho",
+            "uuu, uuu"
+          ],
+          [
+            "perro",
+            "guau"
+          ],
+          [
+            "gato",
+            "miau"
+          ]
+        ],
+        "prompt": "la noche en el pueblo, con la luna y un búho."
+      }
+    },
+    {
+      "dia": 205,
+      "semana": 41,
+      "trimestre": 4,
+      "tema": "Llegada al pueblo de la abuela Rosa",
+      "actividad": {
+        "tipo": "relee",
+        "prompt": "Dibuja la casa de la abuela Rosa en el pueblo."
+      }
+    },
+    {
+      "dia": 206,
+      "semana": 42,
+      "trimestre": 4,
+      "tema": "Andrés, el vecino, y su gato Bigotes",
+      "frase": "Bigotes duerme.",
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Dibuja a Bigotes, un gato blanco y naranja, tomando el sol en la tapia."
+      }
+    },
+    {
+      "dia": 207,
+      "semana": 42,
+      "trimestre": 4,
+      "tema": "Andrés, el vecino, y su gato Bigotes",
+      "frase": "Ojos verdes.",
+      "actividad": {
+        "tipo": "traza",
+        "letra": "o",
+        "prompt": "la cara de Bigotes, con sus ojos verdes."
+      }
+    },
+    {
+      "dia": 208,
+      "semana": 42,
+      "trimestre": 4,
+      "tema": "Andrés, el vecino, y su gato Bigotes",
+      "frase": "Andrés saluda.",
+      "actividad": {
+        "tipo": "escribe",
+        "palabra": "saluda",
+        "prompt": "a Andrés, el vecino, saludando desde su huerto."
+      }
+    },
+    {
+      "dia": 209,
+      "semana": 42,
+      "trimestre": 4,
+      "tema": "Andrés, el vecino, y su gato Bigotes",
+      "frase": "Toby ladra.",
+      "actividad": {
+        "tipo": "adivina",
+        "adivinanza": "Tiene bigotes, dice «miau» y duerme casi todo el día. ¿Quién es?",
+        "respuesta": "Bigotes (el gato)."
+      }
+    },
+    {
+      "dia": 210,
+      "semana": 42,
+      "trimestre": 4,
+      "tema": "Andrés, el vecino, y su gato Bigotes",
+      "actividad": {
+        "tipo": "repasa",
+        "prompt": "Dibuja a Toby y a Bigotes haciéndose amigos.",
+        "banner": "¡210 páginas leídas! ¡Miau!"
+      }
+    },
+    {
+      "dia": 211,
+      "semana": 43,
+      "trimestre": 4,
+      "tema": "Un día en el río del pueblo",
+      "frase": "¡Agua fría!",
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Dibuja el río del pueblo, con sus piedras y sus peces."
+      }
+    },
+    {
+      "dia": 212,
+      "semana": 43,
+      "trimestre": 4,
+      "tema": "Un día en el río del pueblo",
+      "frase": "¡Qué frío!",
+      "actividad": {
+        "tipo": "completa",
+        "diagrama": "lineas-ondas",
+        "prompt": "Convierte estas líneas en el agua del río, con peces nadando."
+      }
+    },
+    {
+      "dia": 213,
+      "semana": 43,
+      "trimestre": 4,
+      "tema": "Un día en el río del pueblo",
+      "frase": "Dani salpica.",
+      "actividad": {
+        "tipo": "si_no",
+        "afirmaciones": [
+          [
+            "Peces nadan.",
+            true
+          ],
+          [
+            "Dani salpica.",
+            true
+          ],
+          [
+            "Piedras vuelan.",
+            false
+          ]
+        ],
+        "prompt": "a Dani salpicando a Lucía en el río."
+      }
+    },
+    {
+      "dia": 214,
+      "semana": 43,
+      "trimestre": 4,
+      "tema": "Un día en el río del pueblo",
+      "frase": "Merienda rica.",
+      "actividad": {
+        "tipo": "une",
+        "instruccion": "Une cada palabra con su contraria.",
+        "pares": [
+          [
+            "frío",
+            "calor"
+          ],
+          [
+            "grande",
+            "pequeño"
+          ],
+          [
+            "día",
+            "noche"
+          ],
+          [
+            "arriba",
+            "abajo"
+          ]
+        ],
+        "prompt": "la merienda en una manta, junto al río."
+      }
+    },
+    {
+      "dia": 215,
+      "semana": 43,
+      "trimestre": 4,
+      "tema": "Un día en el río del pueblo",
+      "actividad": {
+        "tipo": "relee",
+        "prompt": "Dibuja lo que más te gustaría hacer en un río."
+      }
+    },
+    {
+      "dia": 216,
+      "semana": 44,
+      "trimestre": 4,
+      "tema": "El huerto de la abuela",
+      "frase": "Tomates muy rojos.",
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Dibuja el huerto de la abuela: tomates, pimientos y judías."
+      }
+    },
+    {
+      "dia": 217,
+      "semana": 44,
+      "trimestre": 4,
+      "tema": "El huerto de la abuela",
+      "frase": "Yo planto lechugas.",
+      "actividad": {
+        "tipo": "traza",
+        "letra": "y",
+        "prompt": "a Lucía plantando lechugas en fila."
+      }
+    },
+    {
+      "dia": 218,
+      "semana": 44,
+      "trimestre": 4,
+      "tema": "El huerto de la abuela",
+      "frase": "La abuela riega.",
+      "actividad": {
+        "tipo": "encuentra",
+        "palabra": "riega",
+        "distractores": [
+          "niega",
+          "riegan",
+          "juega",
+          "siega",
+          "río"
+        ],
+        "prompt": "una regadera llena de agua."
+      }
+    },
+    {
+      "dia": 219,
+      "semana": 44,
+      "trimestre": 4,
+      "tema": "El huerto de la abuela",
+      "frase": "Ensalada rica.",
+      "actividad": {
+        "tipo": "adivina",
+        "adivinanza": "Soy rojo y redondo, y crezco en la mata del huerto. ¿Qué soy?",
+        "respuesta": "El tomate."
+      }
+    },
+    {
+      "dia": 220,
+      "semana": 44,
+      "trimestre": 4,
+      "tema": "El huerto de la abuela",
+      "actividad": {
+        "tipo": "repasa",
+        "prompt": "Dibuja tu propio huerto: ¿qué plantarías tú?",
+        "banner": "¡220 páginas leídas! ¡Qué huerto tan bonito!"
+      }
+    },
+    {
+      "dia": 221,
+      "semana": 45,
+      "trimestre": 4,
+      "tema": "Una tormenta de verano",
+      "frase": "Viene tormenta.",
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Dibuja el cielo gris, justo antes de la tormenta."
+      }
+    },
+    {
+      "dia": 222,
+      "semana": 45,
+      "trimestre": 4,
+      "tema": "Una tormenta de verano",
+      "frase": "¡Un trueno!",
+      "actividad": {
+        "tipo": "completa",
+        "diagrama": "lineas-zigzag",
+        "prompt": "Convierte el zigzag en un rayo, en medio de la tormenta."
+      }
+    },
+    {
+      "dia": 223,
+      "semana": 45,
+      "trimestre": 4,
+      "tema": "Una tormenta de verano",
+      "frase": "Dani se asusta.",
+      "actividad": {
+        "tipo": "escribe",
+        "palabra": "asusta",
+        "prompt": "a Dani abrazado a Mamá."
+      }
+    },
+    {
+      "dia": 224,
+      "semana": 45,
+      "trimestre": 4,
+      "tema": "Una tormenta de verano",
+      "frase": "Huele a tierra.",
+      "actividad": {
+        "tipo": "une",
+        "instruccion": "Une cada cosa con el ruido que hace.",
+        "pares": [
+          [
+            "trueno",
+            "¡bum!"
+          ],
+          [
+            "lluvia",
+            "plic, plic"
+          ],
+          [
+            "viento",
+            "fiuuu"
+          ],
+          [
+            "Toby",
+            "guau"
+          ]
+        ],
+        "prompt": "el arcoíris después de la tormenta."
+      }
+    },
+    {
+      "dia": 225,
+      "semana": 45,
+      "trimestre": 4,
+      "tema": "Una tormenta de verano",
+      "actividad": {
+        "tipo": "relee",
+        "prompt": "Dibuja lo que haces tú cuando hay tormenta."
+      }
+    },
+    {
+      "dia": 226,
+      "semana": 46,
+      "trimestre": 4,
+      "tema": "La excursión a la playa",
+      "frase": "¡El mar!",
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Dibuja el mar, con olas, barcos y peces."
+      }
+    },
+    {
+      "dia": 227,
+      "semana": 46,
+      "trimestre": 4,
+      "tema": "La excursión a la playa",
+      "frase": "Isla pequeña.",
+      "actividad": {
+        "tipo": "traza",
+        "letra": "i",
+        "prompt": "una isla pequeña en medio del mar."
+      }
+    },
+    {
+      "dia": 228,
+      "semana": 46,
+      "trimestre": 4,
+      "tema": "La excursión a la playa",
+      "frase": "Lucía nada lejos.",
+      "actividad": {
+        "tipo": "si_no",
+        "afirmaciones": [
+          [
+            "Los peces hablan.",
+            false
+          ],
+          [
+            "El mar moja.",
+            true
+          ],
+          [
+            "La arena canta.",
+            false
+          ]
+        ],
+        "prompt": "a Lucía nadando en el mar."
+      }
+    },
+    {
+      "dia": 229,
+      "semana": 46,
+      "trimestre": 4,
+      "tema": "La excursión a la playa",
+      "frase": "Castillo de arena.",
+      "actividad": {
+        "tipo": "adivina",
+        "adivinanza": "Tengo forma de abanico, vivo en la playa y con muchas como yo se hace un collar. ¿Qué soy?",
+        "respuesta": "Una concha."
+      }
+    },
+    {
+      "dia": 230,
+      "semana": 46,
+      "trimestre": 4,
+      "tema": "La excursión a la playa",
+      "actividad": {
+        "tipo": "repasa",
+        "prompt": "Dibuja tu día perfecto en la playa.",
+        "banner": "¡230 páginas leídas! ¡Al agua!"
+      }
+    },
+    {
+      "dia": 231,
+      "semana": 47,
+      "trimestre": 4,
+      "tema": "La verbena del pueblo",
+      "frase": "Luces de colores.",
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Dibuja la plaza del pueblo con luces de colores."
+      }
+    },
+    {
+      "dia": 232,
+      "semana": 47,
+      "trimestre": 4,
+      "tema": "La verbena del pueblo",
+      "frase": "Dani baila.",
+      "actividad": {
+        "tipo": "completa",
+        "diagrama": "lineas-espiral",
+        "prompt": "Convierte la espiral en los fuegos artificiales del cielo."
+      }
+    },
+    {
+      "dia": 233,
+      "semana": 47,
+      "trimestre": 4,
+      "tema": "La verbena del pueblo",
+      "frase": "Hay fuegos artificiales.",
+      "actividad": {
+        "tipo": "encuentra",
+        "palabra": "fuegos",
+        "distractores": [
+          "juegos",
+          "fuego",
+          "ruedas",
+          "huecos",
+          "luego"
+        ],
+        "prompt": "fuegos artificiales de muchos colores."
+      }
+    },
+    {
+      "dia": 234,
+      "semana": 47,
+      "trimestre": 4,
+      "tema": "La verbena del pueblo",
+      "frase": "Churros calentitos.",
+      "actividad": {
+        "tipo": "une",
+        "instruccion": "Une cada palabra con la que rima.",
+        "pares": [
+          [
+            "fuego",
+            "juego"
+          ],
+          [
+            "luna",
+            "cuna"
+          ],
+          [
+            "plaza",
+            "taza"
+          ],
+          [
+            "churro",
+            "burro"
+          ]
+        ],
+        "prompt": "a la familia comiendo churros en la verbena."
+      }
+    },
+    {
+      "dia": 235,
+      "semana": 47,
+      "trimestre": 4,
+      "tema": "La verbena del pueblo",
+      "actividad": {
+        "tipo": "relee",
+        "prompt": "Dibuja una fiesta de tu pueblo o de tu barrio."
+      }
+    },
+    {
+      "dia": 236,
+      "semana": 48,
+      "trimestre": 4,
+      "tema": "Dani se hace amigo de Martín",
+      "frase": "Dani conoce a Martín.",
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Dibuja a Dani y a Martín jugando con un balón en la plaza."
+      }
+    },
+    {
+      "dia": 237,
+      "semana": 48,
+      "trimestre": 4,
+      "tema": "Dani se hace amigo de Martín",
+      "frase": "¡Uno, dos, tres!",
+      "actividad": {
+        "tipo": "traza",
+        "letra": "u",
+        "prompt": "a Dani y a Martín jugando al escondite."
+      }
+    },
+    {
+      "dia": 238,
+      "semana": 48,
+      "trimestre": 4,
+      "tema": "Dani se hace amigo de Martín",
+      "frase": "Martín busca caracoles.",
+      "actividad": {
+        "tipo": "escribe",
+        "palabra": "caracoles",
+        "prompt": "un caracol con su casita a cuestas."
+      }
+    },
+    {
+      "dia": 239,
+      "semana": 48,
+      "trimestre": 4,
+      "tema": "Dani se hace amigo de Martín",
+      "frase": "Dani merienda con Martín.",
+      "actividad": {
+        "tipo": "adivina",
+        "adivinanza": "Es alguien con quien juegas, te ríes y compartes tus cosas. ¿Quién es?",
+        "respuesta": "Un amigo (Martín)."
+      }
+    },
+    {
+      "dia": 240,
+      "semana": 48,
+      "trimestre": 4,
+      "tema": "Dani se hace amigo de Martín",
+      "actividad": {
+        "tipo": "repasa",
+        "prompt": "Dibuja a tu mejor amigo o amiga.",
+        "banner": "¡240 páginas leídas! ¡Viva la amistad!"
+      }
+    },
+    {
+      "dia": 241,
+      "semana": 49,
+      "trimestre": 4,
+      "tema": "Vuelta a la ciudad",
+      "frase": "Adiós, abuela Rosa.",
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Dibuja a la abuela Rosa diciendo adiós junto al coche."
+      }
+    },
+    {
+      "dia": 242,
+      "semana": 49,
+      "trimestre": 4,
+      "tema": "Vuelta a la ciudad",
+      "frase": "Miel de Andrés.",
+      "actividad": {
+        "tipo": "completa",
+        "diagrama": "lineas-ovalo",
+        "prompt": "Convierte el óvalo en el tarro de miel que les regala Andrés."
+      }
+    },
+    {
+      "dia": 243,
+      "semana": 49,
+      "trimestre": 4,
+      "tema": "Vuelta a la ciudad",
+      "frase": "Dani se duerme.",
+      "actividad": {
+        "tipo": "si_no",
+        "afirmaciones": [
+          [
+            "El coche vuela.",
+            false
+          ],
+          [
+            "Dani se duerme.",
+            true
+          ],
+          [
+            "La abuela ladra.",
+            false
+          ],
+          [
+            "Las abejas hacen miel.",
+            true
+          ]
+        ],
+        "prompt": "el coche de vuelta a la ciudad."
+      }
+    },
+    {
+      "dia": 244,
+      "semana": 49,
+      "trimestre": 4,
+      "tema": "Vuelta a la ciudad",
+      "frase": "Casa, dulce casa.",
+      "actividad": {
+        "tipo": "une",
+        "instruccion": "Une cada animal con su casa.",
+        "pares": [
+          [
+            "abeja",
+            "colmena"
+          ],
+          [
+            "pájaro",
+            "nido"
+          ],
+          [
+            "perro",
+            "caseta"
+          ],
+          [
+            "conejo",
+            "madriguera"
+          ]
+        ],
+        "prompt": "tu casa, con tu ventana."
+      }
+    },
+    {
+      "dia": 245,
+      "semana": 49,
+      "trimestre": 4,
+      "tema": "Vuelta a la ciudad",
+      "actividad": {
+        "tipo": "relee",
+        "prompt": "Dibuja lo que más vas a echar de menos del pueblo."
+      }
+    },
+    {
+      "dia": 246,
+      "semana": 50,
+      "trimestre": 4,
+      "tema": "Preparativos para la vuelta al cole",
+      "frase": "Una mochila nueva.",
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Dibuja la mochila nueva de Lucía."
+      }
+    },
+    {
+      "dia": 247,
+      "semana": 50,
+      "trimestre": 4,
+      "tema": "Preparativos para la vuelta al cole",
+      "frase": "¡Hay wifi otra vez!",
+      "actividad": {
+        "tipo": "traza",
+        "letra": "w",
+        "prompt": "a Lucía hablando con Sofía por videollamada."
+      }
+    },
+    {
+      "dia": 248,
+      "semana": 50,
+      "trimestre": 4,
+      "tema": "Preparativos para la vuelta al cole",
+      "frase": "Lápices y cuadernos nuevos.",
+      "actividad": {
+        "tipo": "encuentra",
+        "palabra": "lápices",
+        "distractores": [
+          "lápiz",
+          "tapices",
+          "lavabos",
+          "pájaros",
+          "lazos"
+        ],
+        "prompt": "tu estuche con lápices de colores."
+      }
+    },
+    {
+      "dia": 249,
+      "semana": 50,
+      "trimestre": 4,
+      "tema": "Preparativos para la vuelta al cole",
+      "frase": "Sofía llama por teléfono.",
+      "actividad": {
+        "tipo": "adivina",
+        "adivinanza": "Tiene hojas en blanco o con rayas, y en él escribes y dibujas en el cole. ¿Qué es?",
+        "respuesta": "El cuaderno."
+      }
+    },
+    {
+      "dia": 250,
+      "semana": 50,
+      "trimestre": 4,
+      "tema": "Preparativos para la vuelta al cole",
+      "actividad": {
+        "tipo": "repasa",
+        "prompt": "Dibuja todo lo que llevas tú en tu mochila.",
+        "banner": "¡250 páginas leídas! ¡Ya casi está!"
+      }
+    },
+    {
+      "dia": 251,
+      "semana": 51,
+      "trimestre": 4,
+      "tema": "Dani practica para leer en voz alta",
+      "frase": "Dani lee un cuento.",
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Dibuja a Dani leyéndole un cuento a Toby."
+      }
+    },
+    {
+      "dia": 252,
+      "semana": 51,
+      "trimestre": 4,
+      "tema": "Dani practica para leer en voz alta",
+      "frase": "Toby escucha muy atento.",
+      "actividad": {
+        "tipo": "completa",
+        "diagrama": "lineas-circulo",
+        "prompt": "Convierte el círculo en la cara de Toby, escuchando el cuento."
+      }
+    },
+    {
+      "dia": 253,
+      "semana": 51,
+      "trimestre": 4,
+      "tema": "Dani practica para leer en voz alta",
+      "frase": "Mamá graba un vídeo.",
+      "actividad": {
+        "tipo": "escribe",
+        "palabra": "vídeo",
+        "prompt": "el móvil de Mamá grabando a Dani."
+      }
+    },
+    {
+      "dia": 254,
+      "semana": 51,
+      "trimestre": 4,
+      "tema": "Dani practica para leer en voz alta",
+      "frase": "La abuela se emociona.",
+      "actividad": {
+        "tipo": "une",
+        "instruccion": "Une cada palabra con su contraria.",
+        "pares": [
+          [
+            "rápido",
+            "despacio"
+          ],
+          [
+            "alto",
+            "bajo"
+          ],
+          [
+            "alegre",
+            "triste"
+          ],
+          [
+            "abrir",
+            "cerrar"
+          ]
+        ],
+        "prompt": "a la abuela Rosa contenta, hablando por teléfono."
+      }
+    },
+    {
+      "dia": 255,
+      "semana": 51,
+      "trimestre": 4,
+      "tema": "Dani practica para leer en voz alta",
+      "actividad": {
+        "tipo": "relee",
+        "prompt": "Dibuja el cuento que te gustaría leer a ti en voz alta."
+      }
+    },
+    {
+      "dia": 256,
+      "semana": 52,
+      "trimestre": 4,
+      "tema": "Vuelta al cole",
+      "frase": "Lucía empieza segundo.",
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Dibuja a Lucía con su mochila, el primer día de segundo."
+      }
+    },
+    {
+      "dia": 257,
+      "semana": 52,
+      "trimestre": 4,
+      "tema": "Vuelta al cole",
+      "frase": "Un xilófono en clase.",
+      "actividad": {
+        "tipo": "traza",
+        "letra": "x",
+        "prompt": "un xilófono de colores."
+      }
+    },
+    {
+      "dia": 258,
+      "semana": 52,
+      "trimestre": 4,
+      "tema": "Vuelta al cole",
+      "frase": "¡Dani ya lee solo!",
+      "actividad": {
+        "tipo": "si_no",
+        "afirmaciones": [
+          [
+            "Lucía va al cole.",
+            true
+          ],
+          [
+            "Toby lee cuentos.",
+            false
+          ],
+          [
+            "Dani ya lee.",
+            true
+          ]
+        ],
+        "prompt": "a Dani leyendo solo, muy orgulloso."
+      }
+    },
+    {
+      "dia": 259,
+      "semana": 52,
+      "trimestre": 4,
+      "tema": "Vuelta al cole",
+      "frase": "Una tarta para todos.",
+      "actividad": {
+        "tipo": "adivina",
+        "adivinanza": "Es donde vas a aprender, a jugar y a leer con tus amigos. ¿Qué es?",
+        "respuesta": "El cole (el colegio)."
+      }
+    },
+    {
+      "dia": 260,
+      "semana": 52,
+      "trimestre": 4,
+      "tema": "Vuelta al cole",
+      "actividad": {
+        "tipo": "repasa",
+        "prompt": "Dibuja todo lo que has aprendido a leer este año.",
+        "banner": "¡260 páginas leídas! ¡Ya sabes leer!"
+      }
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+% diagrams/lineas-ovalo.tex -- un óvalo y un par de trazos, para
+% "Completa": un huevo, una cara, una pera, un globo, un pez, el cuerpo
+% de una oveja... Sin ojos, sin boca, sin nada más: eso lo pone quien
+% dibuja.
+\begin{tikzpicture}[line width=1.6pt, line cap=round, line join=round]
+  \draw (0,-0.8) ellipse (1.2 and 1.6);
+  \draw (0,0.8) .. controls (0.2,1.3) and (0.6,1.5) .. (0.9,1.6);
+  \draw (-3.4,-2.4) .. controls (-2.8,-2) and (-2.4,-2.6) .. (-1.8,-2.2);
+\end{tikzpicture}

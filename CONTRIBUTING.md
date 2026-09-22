@@ -17,9 +17,13 @@ Lo que sí tiene sentido, y es bienvenido:
   en un carácter activo, y una comilla suelta en un diálogo se corrompía
   en silencio; el arreglo está documentado en `preamble.tex` junto al
   código, como ejemplo del tipo de problema que merece un *issue* o un PR).
-- **El generador** (`tools/gen_days.py`) y sus validaciones -- por
-  ejemplo, si detectas un caso que debería fallar la validación y no lo
-  hace, o al revés.
+- **Los generadores** (`tools/gen_days.py`, `tools/gen_palabras.py`) y
+  sus validaciones -- por ejemplo, si detectas un caso que debería
+  fallar la validación y no lo hace, o al revés.
+- **El silabeo** (`tools/silabas.py`) -- una palabra real que las reglas
+  parten mal es exactamente el tipo de error que merece un *issue* (con
+  la palabra y el silabeo correcto; si es un caso legítimo que las
+  reglas no cubren, se añade a `EXCEPCIONES` y a `CASOS_PRUEBA`).
 - **`tools/check_pages.py`** y el invariante "1 día = 1 página" -- si
   encuentras un caso donde se rompe sin que el *build* lo detecte.
 - **CI** (`.github/workflows/`), el `Makefile`, o cualquier parte de la
@@ -33,24 +37,26 @@ Lo que sí tiene sentido, y es bienvenido:
 ## La vía principal: haz un fork
 
 El repositorio está deliberadamente construido para esto: el motor LaTeX
-(`preamble.tex`, `lang/es.tex`, `tools/`) es independiente del contenido
-(`content/*.json`). Si quieres un cuaderno parecido para otro niño o niña,
-haz un fork, sustituye `content/q1.json`, `q2.json`, `q3.json` y
-`q4.json` por tus propios personajes y frases, y conserva el resto tal
-cual -- es exactamente el reparto MIT/CC BY-NC-SA de `LICENSE`: el motor
+(`preamble*.tex`, `lang/es.tex`, `tools/`) es independiente del contenido
+(`content/*.json`, `content/palabras/*.json`). Si quieres un cuaderno
+parecido para otro niño o niña, haz un fork, sustituye `content/q1.json`
+a `q4.json` (frases) y/o `content/palabras/q1.json` a `q4.json`
+(primeras palabras) por tus propios personajes, frases y palabras, y
+conserva el resto tal cual -- es exactamente el reparto MIT/CC BY-NC-SA de `LICENSE`: el motor
 es tuyo para reutilizar, la historia concreta de esta familia no.
 
 ## Flujo de trabajo
 
 ```sh
-make generate       # content/q*.json -> content/generated-days.tex
-make build           # compila la versión en color (main.tex)
+make generate       # content/q*.json y content/palabras/q*.json -> .tex generados
+make build           # compila el cuaderno de frases en color (main.tex)
+make palabras        # genera, compila y comprueba el de primeras palabras (palabras.tex)
 make check            # tools/checklog.py + tools/check_pages.py + tools/gen_days.py --check + tools/metricas.py
-make all-formats      # generate + build + check, color Y blanco-y-negro -- ejecútalo
+make all-formats      # los dos cuadernos, color Y blanco-y-negro -- ejecútalo
                        # antes de abrir un PR, es lo mismo que corre el CI
 ```
 
-Cuatro bramas duras que tienen que quedar en verde:
+Las barreras duras que tienen que quedar en verde:
 
 - **1 día = exactamente 1 página** (`tools/check_pages.py`, lee el `.aux`
   después de compilar -- es la única forma de saber si un día se ha
@@ -63,6 +69,11 @@ Cuatro bramas duras que tienen que quedar en verde:
 - **El JSON y el `.tex` generado coinciden** (`tools/gen_days.py --check`
   -- si alguien toca `content/generated-days.tex` a mano y luego cambia el
   JSON, el desajuste se detecta).
+- **La escalera de sílabas** del cuaderno de primeras palabras
+  (`tools/gen_palabras.py --check`): cada palabra escrita a mano con sus
+  sílabas (`"pe-lo-ta"`) tiene que coincidir con el silabeo automático
+  de `tools/silabas.py`, y no puede usar estructuras de sílaba que su
+  semana todavía no admite (una `rr` en otoño, por ejemplo).
 - **La escalera de progresión** (`tools/metricas.py`, contra
   `content/progresion.json` -- ver `notes/02-revision-y-plan.md`, Parte
   C): palabras por página y frase más larga no pueden superar el

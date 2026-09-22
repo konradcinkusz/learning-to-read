@@ -47,11 +47,14 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Genera content/generated-days.tex desde content/q*.json
+      - name: Genera los .tex de los dos cuadernos desde su JSON
         run: make generate
 
       - name: Valida el contenido antes de publicar nada
-        run: python3 tools/gen_days.py --check
+        run: |
+          python3 tools/gen_days.py --check
+          python3 tools/silabas.py --prueba
+          python3 tools/gen_palabras.py --check
 
       # Color y blanco-y-negro (main-bw.tex, ver preamble.tex \bookcolor):
       # los dos se compilan y se validan aquí, y Pages nunca publica uno
@@ -87,12 +90,42 @@ jobs:
       - name: Cada día ocupa exactamente una página (blanco y negro)
         run: python3 tools/check_pages.py main-bw.aux
 
+      # El cuaderno de primeras palabras (palabras.tex): las mismas dos
+      # versiones y las mismas comprobaciones antes de publicar.
+      - name: Compila el cuaderno de primeras palabras (color)
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: palabras.tex
+          latexmk_use_lualatex: true
+          args: -interaction=nonstopmode -file-line-error
+
+      - name: Lee el log correctamente (primeras palabras, color)
+        run: python3 tools/checklog.py palabras.log
+
+      - name: Cada día ocupa exactamente una página (primeras palabras, color)
+        run: python3 tools/check_pages.py palabras.aux
+
+      - name: Compila el cuaderno de primeras palabras (blanco y negro)
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: palabras-bw.tex
+          latexmk_use_lualatex: true
+          args: -interaction=nonstopmode -file-line-error
+
+      - name: Lee el log correctamente (primeras palabras, blanco y negro)
+        run: python3 tools/checklog.py palabras-bw.log
+
+      - name: Cada día ocupa exactamente una página (primeras palabras, blanco y negro)
+        run: python3 tools/check_pages.py palabras-bw.aux
+
       - name: Monta el sitio
         run: |
           mkdir -p _site
           cp docs/index.html _site/
           cp main.pdf _site/aprendo-a-leer.pdf
           cp main-bw.pdf _site/aprendo-a-leer-bn.pdf
+          cp palabras.pdf _site/aprendo-a-leer-palabras.pdf
+          cp palabras-bw.pdf _site/aprendo-a-leer-palabras-bn.pdf
 
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
