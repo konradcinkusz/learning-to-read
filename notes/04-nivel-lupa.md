@@ -211,12 +211,14 @@ está debajo de la piedra que parece una tortuga. Rosa, 8 años». Rosa lo
 dibujó en el pueblo «hace unos sesenta años»; lo que enterró es una caja
 de lata.
 
-Otros detalles fijos del invierno: el jardín de Lucía tiene un banco
-debajo de un limonero, un seto, un rosal y, al fondo, una tapia cubierta
-de hiedra (donde anidan los mirlos); la caseta del club, a la izquierda,
-tiene la puerta verde y una ventana redonda. Paco siempre lleva una
-taza de café en la mano y llega a las siete. Toby tiene una pelota roja
-nueva desde Reyes.
+Otros detalles fijos: el jardín de Lucía (en la ciudad) tiene el
+castaño, a la derecha, con un banco debajo; el huerto de Papá, con
+lechugas, a la izquierda; un seto y un rosal; y al fondo, delante de una
+tapia cubierta de hiedra (donde anidan los mirlos), la caseta del club,
+con la puerta verde y una ventana redonda. El limonero es el del patio
+de la abuela, en el pueblo (como en el cuaderno de frases). Paco siempre
+lleva una taza de café en la mano y llega a las siete. Toby tiene una
+pelota roja nueva desde Reyes.
 
 ### Trimestre 3 — primavera (pasado, pluscuamperfecto, subjuntivo)
 

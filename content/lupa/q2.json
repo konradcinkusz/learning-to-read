@@ -582,7 +582,7 @@
       "texto": [
         "El jueves, el club hizo su primera misión de observación con el periscopio.",
         "Se escondieron detrás del seto y, por turnos, cada uno miró cinco minutos y apuntó lo que vio.",
-        "Uno vio a Luna en la tapia; otro, un mirlo en el limonero, y otro, a Toby escondiendo un calcetín.",
+        "Uno vio a Luna en la tapia; otro, un mirlo en el castaño, y otro, a Toby escondiendo un calcetín.",
         "Luna se quedó mirando el periscopio justo cuando le tocaba a Hugo, que casi se cae del susto. Lucía no vio ningún pájaro, aunque estuvo muy atenta todo el rato."
       ],
       "actividad": {
@@ -1241,9 +1241,9 @@
       "texto": [
         "Hugo había elegido Marte, el planeta rojo de las dos lunas, como había adivinado el club.",
         "Aquella semana llegó la primavera, y la abuela vino a pasar unos días a casa de Lucía.",
-        "Por las tardes tejía en el jardín, sentada en el banco que había debajo del limonero. A su lado dejaba una cesta con ovillos de tres colores: rojo, amarillo y azul.",
+        "Por las tardes tejía en el jardín, sentada en el banco que había debajo del castaño. A su lado dejaba una cesta con ovillos de tres colores: rojo, amarillo y azul.",
         "Cuando terminaba, guardaba en la cesta los trocitos de lana que le sobraban.",
-        "Al fondo, la tapia estaba cubierta de hiedra, y a la izquierda, la caseta del club, con su puerta verde."
+        "Al fondo, delante de la tapia cubierta de hiedra, estaba la caseta del club, con su puerta verde."
       ],
       "actividad": {
         "tipo": "dibuja_detalle",
@@ -1251,10 +1251,10 @@
         "comprueba": [
           "¿Dónde está el banco?",
           "¿Qué hay al lado del banco? ¿De qué colores son los ovillos?",
-          "¿Qué cubre la tapia del fondo?",
-          "¿Qué hay a la izquierda, y de qué color es su puerta?"
+          "¿Qué hay al fondo, y de qué color es su puerta?",
+          "¿Qué hay detrás, y qué la cubre?"
         ],
-        "clave": "El banco, debajo del limonero, con la abuela tejiendo; a su lado, una cesta con ovillos rojo, amarillo y azul; al fondo, la tapia cubierta de hiedra; a la izquierda, la caseta del club, con la puerta verde."
+        "clave": "El banco, debajo del castaño, con la abuela tejiendo; a su lado, una cesta con ovillos rojo, amarillo y azul; al fondo, la caseta del club, con la puerta verde, delante de la tapia cubierta de hiedra."
       }
     },
     {
