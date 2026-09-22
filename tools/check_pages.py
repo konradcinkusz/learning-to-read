@@ -9,6 +9,11 @@ la página del día N y la del día N+1 será mayor que 1, y este script lo
 señala con el número de día exacto -- no hace falta compilar cada día
 por separado ni mirar el PDF a ojo.
 
+El último día no tiene un día N+1 con el que compararse: se compara con
+la página donde empieza la clave de respuestas, que la marca con
+\\etiquetaPagina{clave} (preamble.tex). Un documento sin esa etiqueta
+(una prueba de un solo trimestre, por ejemplo) se comprueba sin ella.
+
 Uso:
     python3 tools/check_pages.py [main.aux]
 """
@@ -18,6 +23,9 @@ import sys
 from pathlib import Path
 
 PATRON_LABEL = re.compile(r"\\newlabel\{dia:(\d+)\}\{\{[^{}]*\}\{(\d+)\}")
+# \etiquetaPagina{clave} (preamble.tex), al empezar la clave de
+# respuestas: la página que viene justo después del último día.
+PATRON_CLAVE = re.compile(r"\\newlabel\{clave\}\{\{[^{}]*\}\{(\d+)\}")
 
 # Fin de trimestre (T1-T3): tools/gen_days.py inserta una página de
 # medalla, sin \label propio, justo después del último día del
@@ -33,6 +41,14 @@ def leer_paginas(ruta_aux):
         dia, pagina = int(m.group(1)), int(m.group(2))
         paginas[dia] = pagina
     return paginas
+
+
+def leer_pagina_clave(ruta_aux):
+    """La página donde empieza la clave de respuestas, o None si el .aux
+    no la tiene (un documento de prueba sin clave, por ejemplo)."""
+    texto = ruta_aux.read_text(encoding="utf-8", errors="replace")
+    m = PATRON_CLAVE.search(texto)
+    return int(m.group(1)) if m else None
 
 
 def main():
@@ -74,6 +90,22 @@ def main():
                 f"salto de {salto} página(s), debería ser exactamente "
                 f"{esperado_salto} -- el día {a} probablemente se ha "
                 "desbordado a una segunda página"
+            )
+
+    # El último día no tiene otro día detrás con el que comparar: lo que
+    # viene después es la clave de respuestas (o, si el último día cierra
+    # un trimestre, su medalla y luego la clave).
+    pagina_clave = leer_pagina_clave(ruta_aux)
+    if pagina_clave is not None:
+        ultimo = dias_ordenados[-1]
+        salto = pagina_clave - paginas[ultimo]
+        esperado_salto = SALTOS_ESPERADOS.get(ultimo, 1)
+        if salto != esperado_salto:
+            problemas.append(
+                f"día {ultimo} (página {paginas[ultimo]}) -> clave de respuestas "
+                f"(página {pagina_clave}): salto de {salto} página(s), debería "
+                f"ser exactamente {esperado_salto} -- el último día probablemente "
+                "se ha desbordado a una segunda página"
             )
 
     print(
