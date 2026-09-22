@@ -222,21 +222,30 @@ pelota roja nueva desde Reyes.
 
 ### Trimestre 3 — primavera (pasado, pluscuamperfecto, subjuntivo)
 
-| Sem. | Tema | Caso / hilo |
-|---|---|---|
-| 27 | Una foto de hace veinticinco años | Marta enseña una foto de su clase enterrando una cápsula del tiempo (fuente con cabeza de león, el plátano grande, el reloj de la fachada a las doce) |
-| 28 | Torrijas, esta vez sola | Semana Santa: Lucía hace las torrijas que prometió en el cuaderno de frases (receta); ¿quién se comió la última? |
-| 29 | La rueda pinchada | ¿dónde se pinchó la bici? (mapa del recorrido); cómo arreglar un pinchazo (instrucciones) |
-| 30 | La entrevista a Paco | Paco recuerda: «a mediodía, a la sombra del plátano grande, a diez pasos de la fuente»; pero la fuente se cambió de sitio y ahora hay dos plátanos |
-| 31 | El Día del Libro | ¿de quién es el libro sin nombre? (pistas dentro del libro) |
-| 32 | El plano antiguo | un plano del colegio de hace 25 años: la fuente estaba donde hoy está el arenero |
-| 33 | Rayo se escapa | la tortuga de Hugo; huellas en la tierra, mordiscos en la lechuga |
-| 34 | El día de la madre | desayuno sorpresa; poema en clave |
-| 35 | Dani cumple seis años | Lucía organiza para Dani una búsqueda del tesoro con adivinanzas (ahora es ella la Lectora X) |
-| 36 | Las abejas del parque | informativo; ¿por qué hay abejas en la ventana de 2.º? → las macetas de lavanda |
-| 37 | La granja escuela | ¿quién abrió la puerta del corral? → la cabra, que abre pestillos con la boca |
-| 38 | ¡Aquí está la cápsula! | juntan las pistas (el plátano que existía entonces, la fuente en el arenero, diez pasos) y la encuentran con Paco |
-| 39 | La fiesta de fin de curso | abren la cápsula: la carta de Marta niña («quiero ser maestra en este colegio»); el club escribe la suya; repasa + medalla |
+| Sem. | Tema | Caso / hilo | Lunes | Martes | Miércoles | Jueves | Viernes |
+|---|---|---|---|---|---|---|---|
+| 27 | Una foto de hace veinticinco años | Marta enseña la foto de su clase enterrando una cápsula del tiempo (ella, con dos trenzas, sujeta la caja roja; el plátano grande, la fuente con cabeza de león, el reloj a las doce). ¿Quién hizo la foto? → Paco («Foto de P.»: Pilar sale en la foto con la pala, no vino ningún padre, el director Luis estaba de viaje, Paco lleva treinta años en el colegio) | dibuja la foto | V/F | responde | tabla (los regalos de las clases a Paco) | caso |
+| 28 | Torrijas, esta vez sola | Lucía hace las torrijas que prometió en el cuaderno de frases (receta: un adulto fríe); ¿quién se comió la última? → la abuela (balda alta sin silla movida; solo estaban ella y Toby; el rastro de azúcar acaba en su sillón) | dibuja la mesa | V/F (la receta) | responde | mapa (el rastro de azúcar) | caso |
+| 29 | La rueda pinchada | ¿dónde se pinchó la bici? → en los rosales del parque (una espina de rosal; en la panadería la rueda estaba dura; por las obras, Papá llevó las bicis en brazos); cómo arreglar un pinchazo (instrucciones) | mapa (el paseo) | errores | viñetas (el pinchazo) | ordena | caso |
+| 30 | La entrevista a Paco | entrevista con la adivinanza del reloj; Paco recuerda «a mediodía, a la sombra del plátano grande, a diez pasos de la fuente», pero hoy hay dos plátanos y la fuente se movió | dibuja el patio de hoy | adivina (el reloj) | responde | mapa (diez pasos desde la fuente de hoy) | crea (una entrevista) |
+| 31 | El Día del Libro | ¿de quién es el libro sin nombre del intercambio? → de Leo (arena entre las hojas: Nora y Leo estuvieron en el mar; subrayado en verde: Leo e Irene) | dibuja el libro | relaciona (la Semana Santa de cada uno) | responde | tabla 4×4 (qué libro le tocó a cada uno) | caso |
+| 32 | El plano antiguo | Paco encuentra un plano del patio de hace 25 años: un solo árbol, junto a la tapia de la izquierda, y la fuente tres cuadros a su derecha — donde hoy está el arenero. ¿Qué plátano estaba ya entonces? → el de la izquierda (el único del plano, y el tronco más gordo) | dibuja el plano antiguo | compara (plano antiguo / patio de hoy) | responde (los troncos) | mapa | caso |
+| 33 | Rayo se escapa | la tortuga de Hugo (informativo); ¿dónde está Rayo? → enterrado en el huerto de Papá (mordiscos de media luna, la tarde más calurosa, tierra recién regada, huellas que se acaban de golpe) | dibuja el jardín | ficha (la tortuga de tierra) | responde | mapa (las huellas) | caso |
+| 34 | El día de la madre | desayuno sorpresa; Mamá descifra ella sola el poema en clave | dibuja la bandeja | relaciona (causa → consecuencia) | tabla 4×4 (las tareas) | código de vocales (el poema) | crea (un poema) |
+| 35 | Dani cumple seis años | Lucía es ahora la Lectora X: búsqueda del tesoro con adivinanzas y un mensaje en clave hasta un cuaderno de detective rojo (como el verde que encontró ella en septiembre) | dibuja la tarta | adivina (la lavadora) | ordena | código de números | viñetas |
+| 36 | Las abejas del parque | informativo (abejas y avispas); ¿por qué van las abejas a la ventana de 2.º? → las macetas de lavanda (ven muy bien el morado; las cuatro ventanas tienen el marco azul; no hay panal) | dibuja la ventana | ficha (las abejas) | compara (abeja / avispa) | tabla 4×4 (los alféizares) | caso |
+| 37 | La granja escuela | ¿quién abrió la puerta del corral? → Lola, la cabra (babas y dientes en el pestillo, pezuñas partidas, nadie salió del albergue, no hizo viento; algunas cabras aprenden a abrir pestillos) | mapa (la granja) | errores | responde | compara (cabra / oveja) | caso |
+| 38 | ¡Aquí está la cápsula! | juntan las pistas: diez pasos de Paco (dos cuadros) desde el arenero hacia el plátano viejo → B3; la caja roja, oxidada, con un mensaje al revés en la tapa: «Abrir en la fiesta de fin de curso» | relaciona (qué sabe el club y cómo) | V/F | mapa | caso (el jueves: ¿dónde cavar?) | código al revés |
+| 39 | La fiesta de fin de curso | abren la cápsula; ¿quién escribió la carta sin firma? → Marta («nerviosísima», ocho años, sujetaba la caja): «Cuando sea mayor, quiero ser maestra en este colegio». El club escribe su propia carta para una cápsula nueva | dibuja la mesa de la fiesta | tabla (qué quería ser cada niño) | responde (la carta) | caso | repasa + medalla |
+
+**El patio del colegio** es el mismo en todos los planos del cuaderno
+(los del invierno, días 89 y 109, y los de la primavera): 7 columnas y
+4 filas; arriba, el edificio, con la conserjería (C1) a la izquierda de
+la puerta con el reloj (D1) y la fuente de la cabeza de león a la
+derecha (E1); abajo, un plátano junto a cada tapia (A3, el viejo; G3,
+el que se plantó después) y el arenero en medio (D3), donde estaba la
+fuente hace veinticinco años; la verja, en D4. Diez pasos de Paco son
+dos cuadros: la cápsula estaba en B3.
 
 ### Trimestre 4 — verano (todos los tiempos y géneros)
 

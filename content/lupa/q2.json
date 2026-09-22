@@ -483,19 +483,19 @@
       "tema": "Un muñeco de nieve madrugador",
       "texto": [
         "El jueves, Hugo dibujó en papel cuadriculado un plano del patio con el camino de las huellas.",
-        "Las huellas salían de la conserjería, iban dos casillas hacia la derecha y bajaban otras dos. Allí giraban una casilla a la derecha y se acababan justo donde estaba el muñeco.",
+        "Las huellas salían de la conserjería, que estaba junto a la puerta del colegio, y bajaban dos casillas. Allí giraban una casilla a la derecha y se acababan justo donde estaba el muñeco.",
         "Después volvían por el mismo camino, así que quien hizo el muñeco regresó a la conserjería.",
         "Mientras tanto, el muñeco se derretía poco a poco, porque ya calentaba el sol."
       ],
       "actividad": {
         "tipo": "mapa",
         "instruccion": "Dibuja en el plano el camino de las huellas desde la conserjería y marca con una X la casilla del muñeco.",
-        "columnas": 6, "filas": 4,
-        "lugares": {"A1": "conserjería", "F1": "puerta del cole", "F3": "canasta", "A4": "banco", "C4": "columpios", "F4": "huerto"},
-        "salida": "A1",
-        "comprobar": [{"desde": "A1", "pasos": ["derecha 2", "abajo 2", "derecha 1"], "hasta": "D3"}],
-        "preguntas": ["¿En qué casilla estaba el muñeco?"],
-        "clave": "Las huellas van de A1 a C1, bajan hasta C3 y giran a D3: el muñeco estaba en D3. Después volvían a la conserjería."
+        "columnas": 7, "filas": 4,
+        "lugares": {"C1": "conserje", "D1": "puerta y reloj", "E1": "fuente", "A3": "plátano", "D3": "arenero", "G3": "plátano", "D4": "verja"},
+        "salida": "C1",
+        "comprobar": [{"desde": "C1", "pasos": ["abajo 2", "derecha 1"], "hasta": "D3"}],
+        "preguntas": ["¿En qué casilla estaba el muñeco? ¿Qué hay en esa casilla cuando no nieva?"],
+        "clave": "Las huellas van de la conserjería (C1) hasta C3 y giran a D3: el muñeco estaba en el centro del patio, encima del arenero (D3). Después volvían a la conserjería."
       }
     },
     {
@@ -901,12 +901,12 @@
       "actividad": {
         "tipo": "mapa",
         "instruccion": "Sigue en el plano el recorrido de los de 2.º desde la puerta del gimnasio y marca con una X el escenario.",
-        "columnas": 6, "filas": 4,
-        "lugares": {"A1": "entrada", "B1": "mesa de los libros", "F1": "bancos", "C2": "canasta", "A4": "gimnasio", "F4": "huerto"},
+        "columnas": 7, "filas": 4,
+        "lugares": {"C1": "conserje", "D1": "puerta y reloj", "E1": "fuente", "C2": "libros", "A3": "plátano", "D3": "arenero", "G3": "plátano", "A4": "gimnasio", "D4": "verja"},
         "salida": "A4",
         "comprobar": [{"desde": "A4", "pasos": ["derecha 4", "arriba 2"], "hasta": "E2"}],
         "preguntas": ["¿En qué casilla está el escenario?"],
-        "clave": "Desde la puerta del gimnasio (A4) avanzan cuatro casillas hasta E4 y suben dos: el escenario está en E2, lejos de la mesa de los libros (B1), donde estuvo Tomás."
+        "clave": "Desde la puerta del gimnasio (A4) avanzan cuatro casillas hasta E4 y suben dos: el escenario está en E2. La mesa de los libros, donde estuvo Tomás, está en C2, junto a la puerta del colegio."
       }
     },
     {

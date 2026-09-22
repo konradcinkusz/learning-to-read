@@ -143,8 +143,13 @@ LUPA = Libro(
     }),
     nombres_propios=frozenset({
         "lucía", "dani", "toby", "rosa", "marta", "sofía", "hugo", "paco",
-        "pedro", "luna", "tomás", "andrés", "bigotes", "martín", "javier", "nora",
+        "pedro", "luna", "tomás", "andrés", "bigotes", "martín", "javier",
         "rayo", "mamá", "papá", "abuela",
+        # compañeros de clase y gente del colegio (invierno y primavera)
+        "nora", "leo", "irene", "álex", "pilar", "luis", "elena", "jorge",
+        "nacho",
+        # la granja escuela
+        "julián", "lola",
     }),
 )
 
