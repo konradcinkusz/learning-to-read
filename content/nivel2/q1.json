@@ -1,0 +1,1302 @@
+{
+  "_comentario": "Nivel 2 ('Leo con lupa'). Datos de origen para tools/gen_days.py --libro nivel2. Este fichero SI se edita a mano; content/nivel2/generated-days.tex NO (se regenera con `make generate-nivel2`). Trimestre 1 (otoño): días 1-65, semanas 1-13, en presente. Hilo: ¿quién es Lector X? -- ver notes/03-nivel2.md.",
+  "personajes": {
+    "Lucía": "protagonista, 7 años (cumple 8 en la semana 9), 2.º de primaria",
+    "Dani": "su hermano, 5 años",
+    "Toby": "el perro de la familia",
+    "Abuela Rosa": "la abuela; su padre era relojero",
+    "Sofía": "la mejor amiga de Lucía",
+    "Hugo": "compañero nuevo, viene de una ciudad junto al mar",
+    "Marta": "la maestra",
+    "Paco": "el conserje del colegio",
+    "Tomás": "el bibliotecario del barrio",
+    "Pedro": "el vecino",
+    "Luna": "la gata de Pedro"
+  },
+  "dias": [
+    {
+      "dia": 1, "semana": 1, "trimestre": 1,
+      "tema": "La lupa de la abuela",
+      "texto": [
+        "Un sábado de septiembre, la abuela Rosa llega con un paquete pequeño que huele a armario antiguo.",
+        "Dentro hay una lupa redonda con el borde dorado. El mango es de madera oscura y tiene tres rayas grabadas.",
+        "—Era de mi padre, que arreglaba relojes —explica la abuela—. Con ella veía hasta las piezas más pequeñas.",
+        "Lucía mira su mano con la lupa y descubre unas rayitas que nunca había visto."
+      ],
+      "actividad": {
+        "tipo": "dibuja_detalle",
+        "prompt": "Dibuja la lupa de la abuela tal y como la describe el texto.",
+        "comprueba": [
+          "¿Qué forma tiene la lupa?",
+          "¿De qué color es el borde?",
+          "¿De qué es el mango, y de qué color?",
+          "¿Cuántas rayas tiene el mango?"
+        ],
+        "clave": "Lupa redonda, con el borde dorado; mango de madera oscura con tres rayas grabadas."
+      }
+    },
+    {
+      "dia": 2, "semana": 1, "trimestre": 1,
+      "tema": "La lupa de la abuela",
+      "texto": [
+        "El domingo, Lucía no suelta la lupa ni para desayunar.",
+        "Primero mira una hoja del jardín y ve que tiene caminitos, como un mapa diminuto. Después mira la nariz de Toby, que está húmeda y llena de bultitos.",
+        "Toby estornuda y se va, porque no le gusta nada que lo miren tan de cerca.",
+        "Dani también quiere la lupa, pero Lucía le dice que primero tiene que aprender a cuidarla."
+      ],
+      "actividad": {
+        "tipo": "verdadero_falso",
+        "afirmaciones": [
+          "Con la lupa, la hoja parece un mapa diminuto.",
+          "La nariz de Toby está seca y lisa.",
+          "Toby se queda quieto para que Lucía lo mire.",
+          "Lucía le dice a Dani que primero tiene que aprender a cuidar la lupa."
+        ],
+        "respuestas": [
+          "V",
+          "F: está húmeda y llena de bultitos.",
+          "F: estornuda y se va, porque no le gusta que lo miren tan de cerca.",
+          "V"
+        ]
+      }
+    },
+    {
+      "dia": 3, "semana": 1, "trimestre": 1,
+      "tema": "La lupa de la abuela",
+      "texto": [
+        "Por la tarde, la abuela cuenta que su padre tenía un taller de relojes.",
+        "Era un taller tan pequeño que solo cabían una mesa, una silla y un gato. Allí arreglaba relojes de bolsillo, relojes de pared y hasta el reloj de la iglesia.",
+        "Como las piezas eran diminutas, trabajaba con la lupa pegada al ojo.",
+        "—Decía que un buen relojero se fija en todo —recuerda la abuela, sonriendo."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "preguntas": [
+          "¿Por qué trabajaba el padre de la abuela con la lupa pegada al ojo?",
+          "¿Qué tres cosas cabían en su taller?"
+        ],
+        "respuestas": [
+          "Porque las piezas de los relojes eran diminutas.",
+          "Una mesa, una silla y un gato."
+        ]
+      }
+    },
+    {
+      "dia": 4, "semana": 1, "trimestre": 1,
+      "tema": "La lupa de la abuela",
+      "texto": [
+        "Esa noche, Lucía encuentra dentro de su libro un papel doblado que huele a fresa. Tiene una letra redonda y muy ordenada, como la de un mayor.",
+        "> Los buenos lectores se fijan en todo.\nTengo cuatro patas y no sé andar,\npero de noche te hago soñar.\nBusca debajo de mí.\nLector X",
+        "Lucía se lo enseña a Mamá, que lo lee dos veces y sonríe sin decir nada."
+      ],
+      "actividad": {
+        "tipo": "adivina",
+        "adivinanza": "Resuelve la adivinanza de la nota de Lector X.\nTiene cuatro patas y no sabe andar,\npero de noche te hace soñar.\n¿Qué es? ¿Dónde tiene que buscar Lucía?",
+        "respuesta": "La cama: Lucía tiene que buscar debajo de su cama."
+      }
+    },
+    {
+      "dia": 5, "semana": 1, "trimestre": 1,
+      "tema": "La lupa de la abuela",
+      "texto": [
+        "Por la mañana, Lucía mira debajo de su cama y encuentra un cuaderno de tapas verdes. En la primera página pone: «Cuaderno de detective».",
+        "Lucía decide que apuntará en él todo lo que descubra con su lupa.",
+        "Aunque no sabe quién es Lector X, está segura de una cosa: lo va a descubrir.",
+        "Toby, que la mira desde la puerta, mueve la cola como si ya lo supiera."
+      ],
+      "actividad": {
+        "tipo": "crea",
+        "prompt": "Tú también eres detective. Escribe tres cosas que hace un buen detective cuando lee.",
+        "lineas": 3
+      }
+    },
+    {
+      "dia": 6, "semana": 2, "trimestre": 1,
+      "tema": "Un compañero nuevo",
+      "texto": [
+        "El lunes, Marta presenta a un alumno nuevo que se llama Hugo.",
+        "Hugo lleva unas gafas redondas de color azul y un jersey de rayas grises y blancas. De su mochila, que es amarilla, cuelga un llavero con forma de tortuga.",
+        "Se sienta al lado de Lucía y casi no habla en toda la mañana.",
+        "Mientras los demás juegan en el recreo, él dibuja algo en un cuaderno."
+      ],
+      "actividad": {
+        "tipo": "dibuja_detalle",
+        "prompt": "Dibuja a Hugo el primer día de clase, con todo lo que cuenta el texto.",
+        "comprueba": [
+          "¿Qué forma y qué color tienen sus gafas?",
+          "¿Cómo es su jersey?",
+          "¿De qué color es su mochila, y qué cuelga de ella?"
+        ],
+        "clave": "Gafas redondas azules; jersey de rayas grises y blancas; mochila amarilla con un llavero con forma de tortuga."
+      }
+    },
+    {
+      "dia": 7, "semana": 2, "trimestre": 1,
+      "tema": "Un compañero nuevo",
+      "texto": [
+        "El martes, a Hugo se le cae el estuche y Lucía le ayuda a recoger los lápices.",
+        "Dentro del estuche hay una concha blanca, pequeña y con rayas.",
+        "—La encontré en la playa de mi abuelo —dice Hugo, muy bajito.",
+        "Cuando salen al patio, Hugo respira hondo y dice que aquí el aire no huele a sal.",
+        "Lucía lo apunta todo en su cuaderno, porque siente que hay un misterio."
+      ],
+      "actividad": {
+        "tipo": "errores",
+        "instruccion": "Este resumen tiene tres errores. Rodéalos y escribe debajo cómo es de verdad.",
+        "relato": "El martes, a Hugo se le cae la mochila. Dentro hay una piedra negra, pequeña y con rayas. En el patio, Hugo dice que aquí el aire no huele a flores.",
+        "errores": [
+          ["la mochila", "el estuche"],
+          ["piedra negra", "concha blanca"],
+          ["flores", "sal"]
+        ]
+      }
+    },
+    {
+      "dia": 8, "semana": 2, "trimestre": 1,
+      "tema": "Un compañero nuevo",
+      "texto": [
+        "El miércoles, Lucía por fin ve lo que dibuja Hugo en el recreo.",
+        "Es un faro alto con rayas rojas, junto a un puerto lleno de barcos de pesca. Al fondo hay olas y gaviotas, y una casa con el tejado azul.",
+        "—Es donde vivía antes —explica Hugo, y se le pone la voz triste.",
+        "Lucía piensa que Hugo echa de menos su casa, aunque no lo diga."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "preguntas": [
+          "¿Qué dibuja Hugo en el recreo? Escribe tres cosas.",
+          "¿Cómo sabe Lucía que Hugo echa de menos su casa?"
+        ],
+        "respuestas": [
+          "Un faro con rayas rojas, un puerto con barcos de pesca, olas, gaviotas y una casa con el tejado azul.",
+          "Porque, cuando dice que es donde vivía antes, se le pone la voz triste."
+        ]
+      }
+    },
+    {
+      "dia": 9, "semana": 2, "trimestre": 1,
+      "tema": "Un compañero nuevo",
+      "texto": [
+        "El jueves, Lucía y Sofía se sientan con Hugo a merendar en el recreo.",
+        "Cada uno trae una cosa distinta: un bocadillo, una manzana o un yogur. Sofía, que odia la fruta, no trae la manzana.",
+        "Hugo le pide a Marta una cuchara, porque su merienda no se puede comer sin ella.",
+        "Mientras comen, Hugo les cuenta que desde su antiguo colegio se veía el mar."
+      ],
+      "actividad": {
+        "tipo": "logica",
+        "instruccion": "Usa las pistas del texto para saber qué merienda trae cada uno. Pon ✓ donde sí y ✗ donde no.",
+        "filas": ["Lucía", "Sofía", "Hugo"],
+        "columnas": ["bocadillo", "manzana", "yogur"],
+        "restricciones": [["no", "Sofía", "manzana"], ["si", "Hugo", "yogur"]],
+        "solucion": {"Lucía": "manzana", "Sofía": "bocadillo", "Hugo": "yogur"}
+      }
+    },
+    {
+      "dia": 10, "semana": 2, "trimestre": 1,
+      "tema": "Un compañero nuevo: el caso",
+      "texto": [
+        "El viernes, Lucía repasa con Sofía su cuaderno de detective, página por página.",
+        "—Hugo no es de aquí, eso está claro —dice Sofía—. Pero ¿de dónde viene?",
+        "Lucía sonríe, porque cree que ya lo sabe. Antes de preguntárselo a Hugo, quiere estar segura de que no se equivoca.",
+        "¿Y tú? ¿Te has fijado en todas las pistas de esta semana?"
+      ],
+      "actividad": {
+        "tipo": "caso",
+        "pregunta": "¿De dónde viene Hugo?",
+        "opciones": ["de la montaña", "de una ciudad junto al mar", "de un pueblo con río"],
+        "solucion": "de una ciudad junto al mar",
+        "clave": "De una ciudad junto al mar: guarda una concha de la playa de su abuelo y dice que aquí el aire no huele a sal (martes); dibuja un faro, un puerto con barcos y gaviotas (miércoles); desde su antiguo colegio se veía el mar (jueves).",
+        "banner": "¡10 páginas leídas! Ya eres detective."
+      }
+    },
+    {
+      "dia": 11, "semana": 3, "trimestre": 1,
+      "tema": "El Club de la Lupa",
+      "texto": [
+        "Hugo viene de una ciudad junto al mar, como Lucía había adivinado.",
+        "Esa semana, Lucía, Sofía y Hugo deciden formar un club de detectives. Se reúnen en la caseta del jardín de Lucía, que tiene la puerta verde y una ventana redonda.",
+        "Dentro hay una mesa y tres cajas de fruta que sirven de sillas. En la pared del fondo, Papá les ha colgado una pizarra pequeña."
+      ],
+      "actividad": {
+        "tipo": "dibuja_detalle",
+        "prompt": "Dibuja la caseta del club tal y como la describe el texto.",
+        "comprueba": [
+          "¿De qué color es la puerta?",
+          "¿Qué forma tiene la ventana?",
+          "¿Qué sirve de sillas, y cuántas hay?",
+          "¿Qué hay en la pared del fondo?"
+        ],
+        "clave": "Puerta verde; ventana redonda; una mesa y tres cajas de fruta como sillas; una pizarra pequeña en la pared del fondo."
+      }
+    },
+    {
+      "dia": 12, "semana": 3, "trimestre": 1,
+      "tema": "El Club de la Lupa",
+      "texto": [
+        "Cada uno escribe un nombre para el club en un papel y lo mete en un bote.",
+        "Sale el de Lucía: el Club de la Lupa, porque la lupa de la abuela será su símbolo.",
+        "Después escriben tres normas en la pizarra, para que nadie las olvide:",
+        "- Leer siempre dos veces.",
+        "- No acusar a nadie sin pruebas.",
+        "- Guardar los secretos del club."
+      ],
+      "actividad": {
+        "tipo": "verdadero_falso",
+        "afirmaciones": [
+          "El nombre del club sale de un bote.",
+          "El símbolo del club es una lupa.",
+          "Una norma dice que hay que leer siempre tres veces.",
+          "Escriben las normas en un cuaderno."
+        ],
+        "respuestas": [
+          "V",
+          "V",
+          "F: hay que leer siempre dos veces.",
+          "F: las escriben en la pizarra."
+        ]
+      }
+    },
+    {
+      "dia": 13, "semana": 3, "trimestre": 1,
+      "tema": "El Club de la Lupa",
+      "texto": [
+        "Hugo propone un código secreto para que nadie más pueda leer los mensajes del club.",
+        "Es muy fácil: cada vocal se cambia por un número. La A es el 1, la E es el 2 y la I es el 3. La O es el 4 y la U es el 5.",
+        "Así, «hola» se escribe «h4l1».",
+        "Sofía tarda un poco en entenderlo, pero cuando lo entiende no para de escribir mensajes."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "preguntas": [
+          "¿Para qué inventa Hugo un código secreto?",
+          "¿Cómo se escribe «sol» con el código del club? ¿Y «luna»?"
+        ],
+        "respuestas": [
+          "Para que nadie más pueda leer los mensajes del club.",
+          "S4L; L5N1."
+        ]
+      }
+    },
+    {
+      "dia": 14, "semana": 3, "trimestre": 1,
+      "tema": "El Club de la Lupa",
+      "texto": [
+        "El jueves, Lucía encuentra en su pupitre un papel escrito con el código del club.",
+        "Enseguida reconoce la letra de Hugo, que siempre escribe con mayúsculas. Sofía también tiene uno, aunque el suyo es más corto.",
+        "Las dos se miran y sonríen, porque saben que es la primera misión del club.",
+        "Antes de descifrarlo, Lucía recuerda la primera norma: hay que leer siempre dos veces."
+      ],
+      "actividad": {
+        "tipo": "codigo",
+        "instruccion": "Descifra el mensaje de Hugo con el código del club. Si no te acuerdas, vuelve a leer la página de ayer.",
+        "mensaje": "Trae la lupa el sábado",
+        "cifrado": "vocales"
+      }
+    },
+    {
+      "dia": 15, "semana": 3, "trimestre": 1,
+      "tema": "El Club de la Lupa",
+      "texto": [
+        "El sábado, cuando el club llega a la caseta, hay un sobre encima de la mesa.",
+        "Dentro hay otra nota de Lector X, que huele a fresa como la primera:",
+        "> Un detective de verdad mira lo que otros no ven.\n¿Cuántas ventanas tiene tu casa?\nLector X",
+        "—Pues habrá que contarlas —dice Hugo, y sale corriendo al jardín."
+      ],
+      "actividad": {
+        "tipo": "crea",
+        "prompt": "Inventa un mensaje para el Club de la Lupa y escríbelo con el código de las vocales.",
+        "lineas": 2
+      }
+    },
+    {
+      "dia": 16, "semana": 4, "trimestre": 1,
+      "tema": "El caso de las galletas",
+      "texto": [
+        "En la cocina de Lucía hay una estantería de madera con tres baldas.",
+        "En la de arriba están los tarros de especias, y en la del medio, los vasos. En la de abajo está el bote azul de las galletas, que tiene la tapa roja y floja.",
+        "Antes estaba arriba, pero Mamá lo ha bajado porque siempre tenía que subirse a una silla."
+      ],
+      "actividad": {
+        "tipo": "dibuja_detalle",
+        "prompt": "Dibuja la estantería de la cocina con todo lo que hay en cada balda.",
+        "comprueba": [
+          "¿Cuántas baldas tiene?",
+          "¿Qué hay en la balda de arriba? ¿Y en la del medio?",
+          "¿En qué balda está el bote de las galletas, y de qué colores es?"
+        ],
+        "clave": "Tres baldas: arriba, los tarros de especias; en medio, los vasos; abajo, el bote azul de las galletas, con la tapa roja."
+      }
+    },
+    {
+      "dia": 17, "semana": 4, "trimestre": 1,
+      "tema": "El caso de las galletas",
+      "texto": [
+        "El martes, Mamá encuentra el bote de las galletas vacío y con la tapa en el suelo.",
+        "Desde la cocina hasta el salón hay un camino de migas que termina junto al sofá. Lucía saca la lupa y, entre las migas, encuentra un pelo corto y marrón.",
+        "—Esto lo tiene que investigar el club —dice, muy seria.",
+        "Mamá se ríe, aunque también quiere saber quién ha sido."
+      ],
+      "actividad": {
+        "tipo": "errores",
+        "instruccion": "Este resumen del caso tiene tres errores. Rodéalos y escribe debajo cómo es de verdad.",
+        "relato": "El martes, Papá encuentra el bote de las galletas vacío. Hay un camino de migas desde la cocina hasta el baño. Con la lupa, Lucía encuentra un pelo largo y rubio.",
+        "errores": [
+          ["Papá", "Mamá"],
+          ["el baño", "el salón"],
+          ["largo y rubio", "corto y marrón"]
+        ]
+      }
+    },
+    {
+      "dia": 18, "semana": 4, "trimestre": 1,
+      "tema": "El caso de las galletas",
+      "texto": [
+        "El club interroga a los sospechosos, uno por uno, en la caseta.",
+        "Dani dice que a esa hora estaba en el baño, y Mamá lo confirma. Papá asegura que no ha probado ni una galleta, porque llegó del trabajo a las siete.",
+        "Según Mamá, a las seis el bote ya estaba vacío.",
+        "Toby no dice nada, claro: está dormido debajo del sofá."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "preguntas": [
+          "¿Por qué Papá no puede haberse comido las galletas?",
+          "¿Dónde estaba Dani, y quién lo confirma?"
+        ],
+        "respuestas": [
+          "Porque llegó a las siete, y a las seis el bote ya estaba vacío.",
+          "Estaba en el baño, y lo confirma Mamá."
+        ]
+      }
+    },
+    {
+      "dia": 19, "semana": 4, "trimestre": 1,
+      "tema": "El caso de las galletas",
+      "texto": [
+        "El jueves, Hugo dibuja en la pizarra del club un plano de la casa de Lucía.",
+        "Con la lupa, han seguido casilla por casilla el camino de migas que atraviesa la casa.",
+        "Las migas salen de la cocina y avanzan tres casillas hacia la derecha por el pasillo. Después bajan dos casillas y se acaban justo al lado del sofá, donde duerme Toby."
+      ],
+      "actividad": {
+        "tipo": "mapa",
+        "instruccion": "Dibuja en el plano el camino de las migas desde la cocina, y marca con una X la casilla donde se acaban.",
+        "columnas": 5, "filas": 4,
+        "lugares": {"A1": "cocina", "B1": "pasillo", "C1": "pasillo", "D1": "pasillo", "E1": "puerta de la calle", "A3": "baño", "B4": "estantería", "E3": "sofá", "E4": "tele"},
+        "salida": "A1",
+        "comprobar": [{"desde": "A1", "pasos": ["derecha 3", "abajo 2"], "hasta": "D3"}],
+        "preguntas": ["¿En qué casilla se acaban las migas? ¿Qué hay justo al lado?"],
+        "clave": "Las migas van de A1 a D1 por el pasillo, bajan a D3 y se acaban allí, justo al lado del sofá (E3)."
+      }
+    },
+    {
+      "dia": 20, "semana": 4, "trimestre": 1,
+      "tema": "El caso de las galletas: el caso",
+      "texto": [
+        "El viernes, el club se reúne para cerrar el caso de las galletas.",
+        "Sofía lee en voz alta todas las pistas, y Hugo las apunta en la pizarra.",
+        "Lucía mira el bote, luego la balda de abajo y, por último, el sofá. De repente, se le escapa una sonrisa, porque ya sabe quién ha sido.",
+        "Toby, desde debajo del sofá, bosteza como si la cosa no fuera con él."
+      ],
+      "actividad": {
+        "tipo": "caso",
+        "pregunta": "¿Quién se comió las galletas?",
+        "opciones": ["Dani", "Papá", "Mamá", "Toby"],
+        "solucion": "Toby",
+        "clave": "Toby: el bote estaba en la balda de abajo, a su altura, y con la tapa floja (lunes); el pelo es corto y marrón como el suyo, y las migas llevan hasta el sofá, donde duerme (martes y jueves); Dani estaba en el baño y Papá llegó a las siete, cuando el bote ya estaba vacío (miércoles).",
+        "banner": "¡20 páginas leídas! Caso de las galletas: resuelto."
+      }
+    },
+    {
+      "dia": 21, "semana": 5, "trimestre": 1,
+      "tema": "Huellas en el cemento",
+      "texto": [
+        "El caso de las galletas está cerrado: fue Toby.",
+        "Esta semana, unos operarios arreglan la acera que hay delante de la casa de Pedro, el vecino. Rodean el cemento fresco con una cinta de rayas rojas y blancas, para que nadie lo pise.",
+        "Pero al día siguiente, cuando sale hacia el cole, Lucía ve cinco huellas en una esquina.",
+        "Cada una tiene cuatro dedos redondos y, debajo, una almohadilla grande, pero ninguna marca de uñas."
+      ],
+      "actividad": {
+        "tipo": "dibuja_detalle",
+        "prompt": "Dibuja, muy grande, una de las huellas del cemento, como si la miraras con la lupa.",
+        "comprueba": [
+          "¿Cuántos dedos tiene?",
+          "¿Qué forma tienen los dedos?",
+          "¿Qué hay debajo de los dedos?",
+          "¿Se ven marcas de uñas?"
+        ],
+        "clave": "Cuatro dedos redondos y, debajo, una almohadilla grande; ninguna marca de uñas."
+      }
+    },
+    {
+      "dia": 22, "semana": 5, "trimestre": 1,
+      "tema": "Huellas en el cemento",
+      "texto": [
+        "Esa tarde, el club busca en un libro de la biblioteca cómo se reconocen las huellas de los animales.",
+        "Los perros dejan cuatro dedos y, delante de cada dedo, la marca de una uña que no pueden esconder.",
+        "Los gatos también tienen cuatro dedos, pero esconden las uñas cuando caminan, así que no se marcan.",
+        "Las palomas dejan tres dedos largos hacia delante y uno corto hacia atrás."
+      ],
+      "actividad": {
+        "tipo": "ficha",
+        "instruccion": "Completa la ficha con lo que dice el texto: ¿cómo es la huella de cada animal?",
+        "titulo": "Huellas de animales",
+        "campos": ["Perro", "Gato", "Paloma"],
+        "respuestas": [
+          "cuatro dedos, con la marca de una uña delante de cada dedo",
+          "cuatro dedos, sin marcas de uñas, porque las esconde al caminar",
+          "tres dedos largos hacia delante y uno corto hacia atrás"
+        ]
+      }
+    },
+    {
+      "dia": 23, "semana": 5, "trimestre": 1,
+      "tema": "Huellas en el cemento",
+      "texto": [
+        "El miércoles, el club vuelve a mirar las huellas del cemento, que ya está duro.",
+        "Ahora saben que no son de una paloma, porque tienen cuatro dedos y no tres. Tampoco parecen de Toby, ya que no hay ninguna marca de uñas.",
+        "—Entonces son de un animal que esconde las uñas —dice Sofía.",
+        "Lucía mira hacia la tapia de Pedro, donde algo blanco se mueve despacio."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "preguntas": [
+          "¿Por qué las huellas no son de una paloma?",
+          "¿Por qué no parecen de Toby?"
+        ],
+        "respuestas": [
+          "Porque tienen cuatro dedos, y las palomas dejan tres dedos hacia delante y uno hacia atrás.",
+          "Porque no tienen marcas de uñas, y los perros dejan la marca de una uña delante de cada dedo."
+        ]
+      }
+    },
+    {
+      "dia": 24, "semana": 5, "trimestre": 1,
+      "tema": "Huellas en el cemento",
+      "texto": [
+        "El jueves, Pedro invita al club a merendar en su jardín, donde vive su gata Luna.",
+        "Luna es blanca, tiene un ojo verde y otro azul, y lleva un collar con un cascabel.",
+        "Mientras merendan, Luna camina por lo alto de la tapia sin hacer ningún ruido. Toby, en cambio, ladra desde el otro lado y hace sonar las uñas contra el suelo."
+      ],
+      "actividad": {
+        "tipo": "compara",
+        "instruccion": "Compara los perros y los gatos con lo que has leído esta semana: a cada lado, lo que es solo de unos; en medio, lo que tienen los dos.",
+        "a": "Perros",
+        "b": "Gatos",
+        "solucion": {
+          "a": ["dejan la marca de las uñas", "ladran", "hacen sonar las uñas contra el suelo"],
+          "ambos": ["cuatro dedos en cada huella"],
+          "b": ["esconden las uñas al caminar", "caminan sin hacer ruido"]
+        }
+      }
+    },
+    {
+      "dia": 25, "semana": 5, "trimestre": 1,
+      "tema": "Huellas en el cemento: el caso",
+      "texto": [
+        "El viernes por la tarde, Pedro les cuenta algo que ellos no sabían.",
+        "La noche del lunes, Luna no durmió en casa, porque se quedó encerrada fuera.",
+        "—Por la mañana tenía las patas grises, como si hubiera pisado polvo —recuerda Pedro.",
+        "Lucía, Sofía y Hugo se miran, porque ya tienen todas las pistas que necesitan. ¿Y tú? ¿Sabes ya quién pisó el cemento?"
+      ],
+      "actividad": {
+        "tipo": "caso",
+        "pregunta": "¿Quién pisó el cemento fresco?",
+        "opciones": ["Toby", "Luna", "una paloma"],
+        "solucion": "Luna",
+        "clave": "Luna, la gata de Pedro: las huellas tienen cuatro dedos, así que no son de paloma, y ninguna marca de uñas, así que no son de perro (los gatos esconden las uñas al caminar). Además, Luna pasó fuera la noche del lunes y por la mañana tenía las patas grises."
+      }
+    },
+    {
+      "dia": 26, "semana": 6, "trimestre": 1,
+      "tema": "La hoja de los martes",
+      "texto": [
+        "Fue Luna quien pisó el cemento, como había descubierto el club.",
+        "La biblioteca del barrio es pequeña, pero Lucía la conoce de memoria. A la izquierda de la puerta está la mesa de Tomás, el bibliotecario, con una planta y un sello.",
+        "Las estanterías son de colores: azules para los animales, verdes para los cuentos y amarillas para la ciencia.",
+        "Al fondo hay una alfombra redonda con cuatro cojines, donde se lee sin zapatos."
+      ],
+      "actividad": {
+        "tipo": "dibuja_detalle",
+        "prompt": "Dibuja la biblioteca del barrio tal y como la describe el texto.",
+        "comprueba": [
+          "¿Dónde está la mesa de Tomás, y qué hay encima?",
+          "¿De qué color son las estanterías de los cuentos? ¿Y las de los animales?",
+          "¿Qué hay al fondo, y cuántos cojines tiene?"
+        ],
+        "clave": "La mesa de Tomás, a la izquierda de la puerta, con una planta y un sello; estanterías azules (animales), verdes (cuentos) y amarillas (ciencia); al fondo, una alfombra redonda con cuatro cojines."
+      }
+    },
+    {
+      "dia": 27, "semana": 6, "trimestre": 1,
+      "tema": "La hoja de los martes",
+      "texto": [
+        "Tomás les enseña un libro enorme que se llama «El gran libro de los árboles».",
+        "—Alguien lo devuelve cada martes con una hoja seca dentro —explica—. Y nunca veo quién es.",
+        "El martes pasado era una hoja de castaño, y el anterior, una de roble.",
+        "Lucía decide que el club vigilará la biblioteca el martes que viene, aunque tenga que perderse la merienda."
+      ],
+      "actividad": {
+        "tipo": "verdadero_falso",
+        "afirmaciones": [
+          "Alguien devuelve «El gran libro de los árboles» cada martes.",
+          "Dentro del libro siempre hay una flor seca.",
+          "Tomás sabe quién devuelve el libro.",
+          "El martes pasado, la hoja era de castaño."
+        ],
+        "respuestas": [
+          "V",
+          "F: siempre hay una hoja seca.",
+          "F: nunca ve quién es.",
+          "V"
+        ]
+      }
+    },
+    {
+      "dia": 28, "semana": 6, "trimestre": 1,
+      "tema": "La hoja de los martes",
+      "texto": [
+        "El club apunta en la pizarra quién visita la biblioteca los martes.",
+        "Tomás está allí todo el día y come un bocadillo en su mesa, porque no puede dejarla sola.",
+        "Marta solo viene los viernes, cuando trae a la clase a cambiar libros.",
+        "Pedro viene cada martes a las seis a su club de lectura de mayores. Siempre llega andando por el parque."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "preguntas": [
+          "¿Por qué no puede ser Marta?",
+          "¿Por qué Tomás no puede ir al parque a coger hojas?"
+        ],
+        "respuestas": [
+          "Porque solo viene los viernes, y el libro vuelve los martes.",
+          "Porque está todo el día en la biblioteca y no puede dejarla sola."
+        ]
+      }
+    },
+    {
+      "dia": 29, "semana": 6, "trimestre": 1,
+      "tema": "La hoja de los martes",
+      "texto": [
+        "El jueves, Hugo y Lucía van al parque con la lupa para estudiar las hojas de los árboles.",
+        "Descubren que la hoja del castaño es larga y tiene el borde lleno de dientes. La del roble es más pequeña y tiene el borde con ondas, como una nube.",
+        "La del arce parece una mano abierta con cinco puntas.",
+        "Los tres árboles están junto al camino que cruza el parque."
+      ],
+      "actividad": {
+        "tipo": "relaciona",
+        "instruccion": "Une cada árbol con cómo es su hoja.",
+        "cabeceras": ["Árbol", "Su hoja"],
+        "pares": [
+          ["castaño", "larga, con el borde lleno de dientes"],
+          ["roble", "pequeña, con el borde con ondas"],
+          ["arce", "como una mano abierta con cinco puntas"]
+        ]
+      }
+    },
+    {
+      "dia": 30, "semana": 6, "trimestre": 1,
+      "tema": "La hoja de los martes: el caso",
+      "texto": [
+        "El martes siguiente, el club vigila la entrada de la biblioteca desde la mesa de Tomás.",
+        "A las seis en punto, alguien echa el libro de los árboles por el buzón de devoluciones. Cuando Hugo abre el buzón, encuentra dentro una hoja con forma de mano abierta.",
+        "En la alfombra de la puerta hay otra igual, que se ha caído de algún zapato.",
+        "—Ya sé quién es —susurra Lucía—, pero antes quiero una prueba más."
+      ],
+      "actividad": {
+        "tipo": "caso",
+        "pregunta": "¿Quién deja una hoja en el libro de los árboles cada martes?",
+        "opciones": ["Tomás", "Marta", "Pedro"],
+        "solucion": "Pedro",
+        "clave": "Pedro: va a su club de lectura cada martes a las seis y llega andando por el parque (miércoles), por el camino donde están el castaño, el roble y el arce (jueves); el libro vuelve un martes a las seis con una hoja de arce (viernes). Tomás no puede salir de la biblioteca y Marta solo viene los viernes (miércoles).",
+        "banner": "¡30 páginas leídas! Caso de la hoja de los martes: resuelto."
+      }
+    },
+    {
+      "dia": 31, "semana": 7, "trimestre": 1,
+      "tema": "Ruidos en el desván",
+      "texto": [
+        "Era Pedro: usaba las hojas del parque como marcapáginas y se le olvidaban dentro del libro.",
+        "Esta semana, Mamá está de viaje de trabajo y Papá asa castañas por la noche.",
+        "Cuando terminan de cenar, Lucía sube al desván, que tiene el techo inclinado y una ventana redonda. Junto a la ventana hay un baúl con cerraduras doradas, y detrás, tres maletas apiladas de mayor a menor.",
+        "Al fondo, una lámpara de pie espera sin bombilla."
+      ],
+      "actividad": {
+        "tipo": "dibuja_detalle",
+        "prompt": "Dibuja el desván con todo lo que cuenta el texto.",
+        "comprueba": [
+          "¿Cómo es el techo? ¿Y la ventana?",
+          "¿Qué hay junto a la ventana, y cómo son sus cerraduras?",
+          "¿Cuántas maletas hay, y cómo están colocadas?",
+          "¿Qué hay al fondo?"
+        ],
+        "clave": "Techo inclinado y ventana redonda; junto a la ventana, un baúl con cerraduras doradas; detrás, tres maletas apiladas de mayor a menor; al fondo, una lámpara de pie sin bombilla."
+      }
+    },
+    {
+      "dia": 32, "semana": 7, "trimestre": 1,
+      "tema": "Ruidos en el desván",
+      "texto": [
+        "Esa noche, cuando todos duermen, se oye un ruido en el desván: toc, toc, toc.",
+        "Dani se despierta asustado y dice que es un fantasma que llama para entrar. Papá sube con una linterna, pero no ve nada raro y el ruido para enseguida.",
+        "La noche siguiente, que es muy tranquila, no se oye nada.",
+        "Sin embargo, el miércoles vuelve a soplar el viento, y el toc, toc, toc vuelve con él."
+      ],
+      "actividad": {
+        "tipo": "verdadero_falso",
+        "afirmaciones": [
+          "El ruido del desván suena así: toc, toc, toc.",
+          "Dani cree que es un ratón.",
+          "La noche tranquila, el ruido suena más fuerte que nunca.",
+          "El ruido vuelve el miércoles, cuando sopla el viento."
+        ],
+        "respuestas": [
+          "V",
+          "F: cree que es un fantasma que llama para entrar.",
+          "F: esa noche no se oye nada.",
+          "V"
+        ]
+      }
+    },
+    {
+      "dia": 33, "semana": 7, "trimestre": 1,
+      "tema": "Ruidos en el desván",
+      "texto": [
+        "El miércoles por la tarde, el club investiga el desván con la luz del día.",
+        "Primero, Hugo ve que el polvo del suelo no tiene ni una huella. Después, Sofía descubre unos arañazos finos en el cristal de la ventana redonda.",
+        "Por último, Lucía abre el baúl y encuentra dentro una nota de Lector X, que huele a fresa.",
+        "En una esquina hay un dinosaurio diminuto, que alguien ha dibujado con prisa."
+      ],
+      "actividad": {
+        "tipo": "ordena",
+        "sucesos": [
+          "El ruido despierta a Dani.",
+          "Papá sube con una linterna y no ve nada raro.",
+          "Hugo ve que el polvo del suelo no tiene ni una huella.",
+          "Sofía descubre unos arañazos en el cristal de la ventana.",
+          "Lucía encuentra una nota de Lector X dentro del baúl."
+        ]
+      }
+    },
+    {
+      "dia": 34, "semana": 7, "trimestre": 1,
+      "tema": "Ruidos en el desván",
+      "texto": [
+        "Esa noche, Lucía lee la nota de Lector X con la lupa, palabra por palabra:",
+        "> Tengo agujas y no sé coser,\ntengo números y no sé leer.\nBusca detrás de mí.\nLector X",
+        "Lucía piensa que Mamá no puede ser Lector X, porque está de viaje desde el lunes. Aun así, lo apunta en su cuaderno con un signo de interrogación.",
+        "Toby, que no se separa de ella, apoya la cabeza en sus rodillas."
+      ],
+      "actividad": {
+        "tipo": "adivina",
+        "adivinanza": "Resuelve la adivinanza de Lector X:\ntiene agujas y no sabe coser,\ntiene números y no sabe leer.\n¿Qué es? ¿Dónde tiene que buscar Lucía?",
+        "respuesta": "El reloj: Lucía tiene que buscar detrás del reloj."
+      }
+    },
+    {
+      "dia": 35, "semana": 7, "trimestre": 1,
+      "tema": "Ruidos en el desván: el caso",
+      "texto": [
+        "El viernes sopla un viento fortísimo, y el club decide pasar la tarde en el desván.",
+        "Desde la ventana redonda se ve el castaño del jardín, que se mueve de un lado a otro. Una de sus ramas es tan larga que casi toca el cristal.",
+        "De pronto suena otra vez: toc, toc, toc.",
+        "Dani, que ha subido con ellos, se tapa los ojos, pero Lucía sonríe."
+      ],
+      "actividad": {
+        "tipo": "caso",
+        "pregunta": "¿Qué hace el ruido del desván?",
+        "opciones": ["un fantasma", "un ratón", "una rama del castaño", "Toby"],
+        "solucion": "una rama del castaño",
+        "clave": "Una rama del castaño: el ruido solo suena cuando sopla el viento (martes); hay arañazos finos en el cristal de la ventana y el polvo del suelo no tiene huellas de ningún animal (miércoles); y una rama es tan larga que casi toca el cristal (viernes)."
+      }
+    },
+    {
+      "dia": 36, "semana": 8, "trimestre": 1,
+      "tema": "La lista de la compra",
+      "texto": [
+        "El ruido era una rama del castaño, que Papá ya ha podado.",
+        "El sábado, Papá va al mercado con Lucía y con Dani. Lleva una lista de la compra escrita con su letra redonda y ordenada.",
+        "Primero van a la fruta, que está justo a la derecha de la entrada. Después avanzan otro puesto hacia la derecha, hasta el pan.",
+        "Desde allí bajan un puesto y llegan al pescado, donde Dani se queda mirando los peces del acuario."
+      ],
+      "actividad": {
+        "tipo": "mapa",
+        "instruccion": "Dibuja en el plano del mercado el camino que hacen Papá, Lucía y Dani, y marca con una X el puesto donde Dani se queda mirando los peces.",
+        "columnas": 5, "filas": 3,
+        "lugares": {"A1": "entrada", "B1": "fruta", "C1": "pan", "D1": "queso", "E1": "café", "B2": "carne", "C2": "pescado", "D2": "huevos", "A3": "flores", "C3": "aceitunas", "E3": "puerta trasera"},
+        "salida": "A1",
+        "comprobar": [{"desde": "A1", "pasos": ["derecha", "derecha", "abajo"], "hasta": "C2"}],
+        "preguntas": ["¿En qué casilla está el puesto donde Dani se queda mirando los peces?"],
+        "clave": "Entrada (A1), fruta (B1), pan (C1) y pescado (C2): Dani se queda mirando los peces en C2."
+      }
+    },
+    {
+      "dia": 37, "semana": 8, "trimestre": 1,
+      "tema": "La lista de la compra",
+      "texto": [
+        "Mientras Papá compra, Dani decora la lista con sus rotuladores nuevos, que huelen a frutas. El rojo huele a fresa y el amarillo, a limón.",
+        "Dani dibuja un sol en cada esquina, aunque Papá le pide que no manche la lista. En ella pone:",
+        "- Un kilo de naranjas.",
+        "- Una barra de pan.",
+        "- Queso de oveja.",
+        "- Media docena de huevos.",
+        "Cuando llegan a casa, Lucía se da cuenta de que falta algo muy importante: ¡el pan!"
+      ],
+      "actividad": {
+        "tipo": "errores",
+        "instruccion": "Este resumen tiene tres errores. Rodéalos y escribe debajo cómo es de verdad.",
+        "relato": "Mientras Papá compra, Dani decora la lista con sus pinturas viejas. El rojo huele a cereza. Cuando llegan a casa, Lucía se da cuenta de que falta el queso.",
+        "errores": [
+          ["pinturas viejas", "rotuladores nuevos"],
+          ["cereza", "fresa"],
+          ["el queso", "el pan"]
+        ]
+      }
+    },
+    {
+      "dia": 38, "semana": 8, "trimestre": 1,
+      "tema": "La lista de la compra",
+      "texto": [
+        "El club interroga a Dani, que llevaba la bolsa de tela con el pan.",
+        "Dani recuerda que la llevaba en la mano cuando salieron de la panadería. También recuerda que, en el pescado, necesitó las dos manos para apoyarse en el acuario.",
+        "Después de eso, ya no se acuerda de nada, porque los peces eran preciosos.",
+        "Papá dice que él pagó el pan, pero que no lo llevó en ningún momento."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "preguntas": [
+          "¿Quién llevaba la bolsa con el pan?",
+          "¿Por qué crees que Dani soltó la bolsa en el puesto del pescado?"
+        ],
+        "respuestas": [
+          "Dani.",
+          "Porque necesitó las dos manos para apoyarse en el acuario y mirar los peces."
+        ]
+      }
+    },
+    {
+      "dia": 39, "semana": 8, "trimestre": 1,
+      "tema": "La lista de la compra",
+      "texto": [
+        "Para volver a casa, cada uno lleva una cosa: la cesta, la mochila o la bolsa de papel.",
+        "Papá no lleva la mochila, porque le duele un poco la espalda. La bolsa de papel pesa tan poco que se la dan a Dani, que está feliz.",
+        "Por el camino, Lucía piensa en el pan y en el acuario del puesto de pescado.",
+        "Toby los espera en la puerta de casa, moviendo la cola."
+      ],
+      "actividad": {
+        "tipo": "logica",
+        "instruccion": "Usa las pistas del texto para saber qué lleva cada uno. Pon ✓ donde sí y ✗ donde no.",
+        "filas": ["Papá", "Lucía", "Dani"],
+        "columnas": ["cesta", "mochila", "bolsa de papel"],
+        "restricciones": [["no", "Papá", "mochila"], ["si", "Dani", "bolsa de papel"]],
+        "solucion": {"Papá": "cesta", "Lucía": "mochila", "Dani": "bolsa de papel"}
+      }
+    },
+    {
+      "dia": 40, "semana": 8, "trimestre": 1,
+      "tema": "La lista de la compra: el caso",
+      "texto": [
+        "El viernes, el club repasa en la pizarra el camino del sábado, puesto por puesto.",
+        "El pan estaba en la bolsa de tela cuando salieron de la panadería. Al llegar a casa ya no estaba, y nadie volvió atrás a buscarlo.",
+        "—Lo que no sé es si seguirá allí —dice Hugo.",
+        "Lucía coge el plano, porque ya sabe adónde tienen que ir. Esta vez, Dani quiere ir con ellos."
+      ],
+      "actividad": {
+        "tipo": "caso",
+        "pregunta": "¿Dónde se quedó la bolsa del pan?",
+        "opciones": ["en la panadería", "en el puesto de la fruta", "en el puesto del pescado", "en casa de la abuela"],
+        "solucion": "en el puesto del pescado",
+        "clave": "En el puesto del pescado: Dani llevaba la bolsa al salir de la panadería, y en el pescado necesitó las dos manos para apoyarse en el acuario (miércoles); después ya no se acuerda de nada. En el plano, el pescado está justo debajo del pan (lunes).",
+        "banner": "¡40 páginas leídas! Caso del pan perdido: resuelto."
+      }
+    },
+    {
+      "dia": 41, "semana": 9, "trimestre": 1,
+      "tema": "Ocho años",
+      "texto": [
+        "La bolsa del pan estaba en el puesto del pescado, junto al acuario.",
+        "Hoy Lucía cumple ocho años, y Mamá ha hecho una tarta que parece una obra de arte. Es redonda y de chocolate, con ocho velas colocadas en círculo alrededor del borde.",
+        "En el centro hay tres fresas, sobre las que Mamá ha puesto una lupa de galleta.",
+        "Su nombre, que está escrito con letras blancas, ocupa el hueco que queda debajo de las fresas."
+      ],
+      "actividad": {
+        "tipo": "dibuja_detalle",
+        "prompt": "Dibuja la tarta de cumpleaños de Lucía con todos sus detalles.",
+        "comprueba": [
+          "¿Qué forma tiene, y de qué es?",
+          "¿Cuántas velas tiene, y cómo están colocadas?",
+          "¿Qué hay en el centro, y qué hay encima?",
+          "¿Dónde está escrito su nombre, y de qué color?"
+        ],
+        "clave": "Tarta redonda de chocolate; ocho velas en círculo alrededor del borde; en el centro, tres fresas con una lupa de galleta encima; su nombre, en letras blancas, debajo de las fresas."
+      }
+    },
+    {
+      "dia": 42, "semana": 9, "trimestre": 1,
+      "tema": "Ocho años",
+      "texto": [
+        "Por la tarde llegan los invitados, y cada uno trae un regalo distinto.",
+        "Sofía le regala un dibujo del club, que ha pintado con acuarelas. Hugo le da una brújula pequeña, para que el club no se pierda nunca.",
+        "Dani le da una piedra con forma de corazón que encontró en el parque.",
+        "La abuela no puede venir hasta el sábado, porque está en el pueblo cuidando a su hermana."
+      ],
+      "actividad": {
+        "tipo": "relaciona",
+        "instruccion": "Une a cada invitado con el regalo que le da a Lucía.",
+        "cabeceras": ["Quién", "Qué regala"],
+        "pares": [
+          ["Sofía", "un dibujo del club pintado con acuarelas"],
+          ["Hugo", "una brújula pequeña"],
+          ["Dani", "una piedra con forma de corazón"]
+        ]
+      }
+    },
+    {
+      "dia": 43, "semana": 9, "trimestre": 1,
+      "tema": "Ocho años",
+      "texto": [
+        "Esa noche, cuando Lucía se mete en la cama, oye un crujido debajo de la almohada.",
+        "Es una nota de Lector X, que huele a fresa y tiene un dinosaurio en una esquina:",
+        "> Feliz cumpleaños, detective.\nTu regalo duerme donde duerme\nquien nunca ha leído un libro.\nLector X",
+        "Lucía piensa que la abuela no puede ser Lector X, ya que lleva toda la semana en el pueblo."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "preguntas": [
+          "¿Por qué piensa Lucía que la abuela no puede ser Lector X?",
+          "¿Qué dos cosas tiene esta nota que ya tenían otras notas de Lector X?"
+        ],
+        "respuestas": [
+          "Porque la abuela lleva toda la semana en el pueblo, cuidando a su hermana.",
+          "Huele a fresa y tiene un dinosaurio dibujado en una esquina."
+        ]
+      }
+    },
+    {
+      "dia": 44, "semana": 9, "trimestre": 1,
+      "tema": "Ocho años",
+      "texto": [
+        "En la merienda, Lucía, Sofía y Hugo se ponen gorros de fiesta de tres colores: rojo, azul y verde.",
+        "Hugo elige el azul, porque le recuerda al mar. Sofía no quiere el verde, aunque sea su color favorito, porque ya lleva un vestido verde.",
+        "Dani no quiere el suyo, porque le pica, así que se lo pone a Toby.",
+        "Lucía se ríe tanto al verlo que casi se le cae el gorro dentro de la limonada."
+      ],
+      "actividad": {
+        "tipo": "logica",
+        "instruccion": "Usa las pistas del texto para saber de qué color es el gorro de cada uno. Pon ✓ donde sí y ✗ donde no.",
+        "filas": ["Lucía", "Sofía", "Hugo"],
+        "columnas": ["rojo", "azul", "verde"],
+        "restricciones": [["si", "Hugo", "azul"], ["no", "Sofía", "verde"]],
+        "solucion": {"Lucía": "verde", "Sofía": "rojo", "Hugo": "azul"}
+      }
+    },
+    {
+      "dia": 45, "semana": 9, "trimestre": 1,
+      "tema": "Ocho años",
+      "texto": [
+        "El sábado llega por fin la abuela Rosa, con un bizcocho de limón y muchos besos.",
+        "Lucía le enseña la nota de Lector X, que la abuela lee dos veces con mucha atención.",
+        "—Yo no he sido, cariño, aunque me parece una idea estupenda —dice, sonriendo.",
+        "Antes de merendar, Lucía se tumba en el suelo del salón, porque ya sabe dónde buscar su regalo."
+      ],
+      "actividad": {
+        "tipo": "adivina",
+        "adivinanza": "Vuelve a leer la nota de Lector X del miércoles:\n«Tu regalo duerme donde duerme\nquien nunca ha leído un libro».\n¿Quién nunca ha leído un libro? ¿Dónde está el regalo?",
+        "respuesta": "Toby, que nunca ha leído un libro y duerme debajo del sofá: el regalo está debajo del sofá del salón."
+      }
+    },
+    {
+      "dia": 46, "semana": 10, "trimestre": 1,
+      "tema": "¿Dónde está Luna?",
+      "texto": [
+        "El regalo de Lector X, que estaba debajo del sofá, era un marcapáginas con forma de lupa.",
+        "El lunes, Pedro llama a la puerta preocupado, porque Luna no ha vuelto desde el domingo.",
+        "Hugo dibuja un plano de la calle, para que el club busque con orden. La casa de Lucía está arriba a la izquierda, y la de Pedro, justo a su derecha.",
+        "El jardín de Lucía queda debajo de su casa, y la caseta, debajo del jardín."
+      ],
+      "actividad": {
+        "tipo": "mapa",
+        "instruccion": "Escribe en el plano dónde están la casa de Lucía, la casa de Pedro, el jardín de Lucía y la caseta del club, tal como lo dice el texto.",
+        "columnas": 5, "filas": 4,
+        "lugares": {"C1": "garaje", "E1": "parque", "C3": "contenedores", "E4": "colegio"},
+        "preguntas": ["¿En qué casilla está la caseta del club?"],
+        "clave": "Casa de Lucía: A1. Casa de Pedro: B1. Jardín de Lucía: A2. Caseta del club: A3."
+      }
+    },
+    {
+      "dia": 47, "semana": 10, "trimestre": 1,
+      "tema": "¿Dónde está Luna?",
+      "texto": [
+        "El club hace un cartel para colgarlo en todas las farolas de la calle:",
+        "> SE BUSCA\nGata blanca llamada Luna.\nTiene un ojo verde y otro azul.\nLleva un collar rojo con un cascabel.\nSi la veis, avisad a Pedro, que vive en el número 3.",
+        "Sofía dibuja a Luna en el centro del cartel, y le sale tan bonita que parece una foto.",
+        "Esa tarde, Hugo reparte los carteles por el barrio mientras Lucía pregunta a los vecinos."
+      ],
+      "actividad": {
+        "tipo": "ficha",
+        "instruccion": "Rellena la ficha de Luna con los datos del cartel.",
+        "titulo": "Ficha de Luna",
+        "campos": ["Color", "Ojos", "Collar", "Dueño"],
+        "respuestas": ["blanca", "uno verde y otro azul", "rojo, con un cascabel", "Pedro, que vive en el número 3"]
+      }
+    },
+    {
+      "dia": 48, "semana": 10, "trimestre": 1,
+      "tema": "¿Dónde está Luna?",
+      "texto": [
+        "Esa noche, como no puede dormir, Lucía se asoma a la ventana de su habitación.",
+        "De pronto, oye un cascabel muy cerca, en algún sitio de su propio jardín.",
+        "Por la mañana, encuentran pelos blancos en la ventana redonda de la caseta, que se quedó abierta el sábado. Dentro de la caseta, además, la abuela guarda una caja con ovillos de lana.",
+        "—Luna es tan curiosa que se mete en cualquier sitio —dice Pedro."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "preguntas": [
+          "¿Qué oye Lucía esa noche, y dónde?",
+          "¿Por qué crees que Luna pudo entrar en la caseta?"
+        ],
+        "respuestas": [
+          "Un cascabel, muy cerca, en su propio jardín.",
+          "Porque la ventana redonda de la caseta se quedó abierta el sábado, y allí hay pelos blancos."
+        ]
+      }
+    },
+    {
+      "dia": 49, "semana": 10, "trimestre": 1,
+      "tema": "¿Dónde está Luna?",
+      "texto": [
+        "El jueves, Hugo deja en el buzón de Lucía un mensaje con un código nuevo que ha inventado él.",
+        "En vez de cambiar solo las vocales, cambia cada letra por su número en el abecedario. La A es el 1, la B es el 2, y así hasta la Z, que es el 27.",
+        "—Así es más difícil de descifrar —explica, muy orgulloso.",
+        "Lucía coge un lápiz y se pone manos a la obra antes de que se haga de noche."
+      ],
+      "actividad": {
+        "tipo": "codigo",
+        "instruccion": "Descifra el mensaje de Hugo: escribe debajo de cada número su letra. La tabla te ayuda.",
+        "mensaje": "Esta noche vigilamos la caseta",
+        "cifrado": "numeros"
+      }
+    },
+    {
+      "dia": 50, "semana": 10, "trimestre": 1,
+      "tema": "¿Dónde está Luna?: el caso",
+      "texto": [
+        "El viernes, el club se reúne en el jardín de Lucía, delante de la caseta.",
+        "Hugo repasa las pistas en voz alta: el cascabel, los pelos blancos y la ventana abierta. Sofía quiere buscar en el garaje de Pedro, que siempre está abierto, pero Lucía le pide que espere un momento.",
+        "Se acerca despacio a la puerta verde, porque le ha parecido oír un ronroneo.",
+        "—Recordad la primera norma —susurra—: leer dos veces antes de decidir."
+      ],
+      "actividad": {
+        "tipo": "caso",
+        "pregunta": "¿Dónde está Luna?",
+        "opciones": ["en el garaje de Pedro", "en el parque", "en la caseta del club", "en el tejado"],
+        "solucion": "en la caseta del club",
+        "clave": "En la caseta del club, dormida en la caja de lana de la abuela: Lucía oyó el cascabel de noche en su propio jardín; en la ventana redonda de la caseta, que se había quedado abierta, había pelos blancos; y dentro la abuela guarda una caja de ovillos (miércoles).",
+        "banner": "¡50 páginas leídas! Caso de la gata perdida: resuelto."
+      }
+    },
+    {
+      "dia": 51, "semana": 11, "trimestre": 1,
+      "tema": "El museo de los dinosaurios",
+      "texto": [
+        "Luna estaba dormida en la caja de lana de la abuela, hecha un ovillo más.",
+        "Esta semana, la clase de Lucía va de excursión al museo de ciencias. En la sala grande hay un esqueleto de diplodocus tan largo que casi toca las dos paredes.",
+        "Tiene la cabeza a la izquierda, pequeña como una maleta, y la cola a la derecha, fina como un látigo.",
+        "Debajo de su barriga, en una vitrina de cristal, hay tres huevos de dinosaurio."
+      ],
+      "actividad": {
+        "tipo": "dibuja_detalle",
+        "prompt": "Dibuja la sala grande del museo con el esqueleto del diplodocus.",
+        "comprueba": [
+          "¿Hacia qué lado tiene la cabeza, y cómo es de grande?",
+          "¿Cómo es la cola, y hacia qué lado está?",
+          "¿Qué hay debajo de su barriga, y cuántos son?"
+        ],
+        "clave": "El diplodocus, con la cabeza a la izquierda, pequeña como una maleta, y la cola a la derecha, fina como un látigo; debajo de la barriga, una vitrina de cristal con tres huevos de dinosaurio."
+      }
+    },
+    {
+      "dia": 52, "semana": 11, "trimestre": 1,
+      "tema": "El museo de los dinosaurios",
+      "texto": [
+        "La guía del museo les explica, delante del esqueleto, cómo vivía el diplodocus.",
+        "Era tan largo como tres autobuses puestos en fila, pero solo comía plantas. Con su cuello larguísimo alcanzaba las hojas de los árboles más altos.",
+        "Vivió hace unos ciento cincuenta millones de años, cuando todavía no había personas.",
+        "Lucía lo apunta en su cuaderno, porque quiere contárselo a Dani, que se ha quedado en casa con envidia."
+      ],
+      "actividad": {
+        "tipo": "ficha",
+        "instruccion": "Completa la ficha del diplodocus con los datos del texto.",
+        "titulo": "Ficha del diplodocus",
+        "campos": ["Tamaño", "Qué comía", "Cómo llegaba a su comida", "Cuándo vivió"],
+        "respuestas": [
+          "tan largo como tres autobuses en fila",
+          "solo plantas",
+          "con su cuello larguísimo alcanzaba las hojas de los árboles más altos",
+          "hace unos ciento cincuenta millones de años"
+        ]
+      }
+    },
+    {
+      "dia": 53, "semana": 11, "trimestre": 1,
+      "tema": "El museo de los dinosaurios",
+      "texto": [
+        "La visita tiene cuatro partes, que Marta ha apuntado en una hoja para cada uno.",
+        "Primero ven la sala de los dinosaurios, y después, la de los minerales, que brillan en la oscuridad. Antes de comer, visitan el planetario, donde el techo se llena de estrellas.",
+        "Por último, antes de volver al colegio, pasan por la tienda del museo, donde Lucía compra una postal para Dani.",
+        "Hugo no para de hacer preguntas, aunque en clase casi nunca habla."
+      ],
+      "actividad": {
+        "tipo": "ordena",
+        "sucesos": [
+          "Ven la sala de los dinosaurios.",
+          "Ven la sala de los minerales.",
+          "Visitan el planetario.",
+          "Pasan por la tienda del museo."
+        ]
+      }
+    },
+    {
+      "dia": 54, "semana": 11, "trimestre": 1,
+      "tema": "El museo de los dinosaurios",
+      "texto": [
+        "En otra sala está el tiranosaurio, al que todos llaman T. rex.",
+        "A diferencia del diplodocus, caminaba sobre dos patas y comía carne. Tenía unos brazos cortitos y una boca enorme, llena de dientes como plátanos.",
+        "El diplodocus, en cambio, andaba sobre cuatro patas y tenía la cabeza pequeña.",
+        "Los dos vivieron hace millones de años y eran enormes. Lucía piensa que a Dani le encantaría, aunque seguro que le daría un poco de miedo."
+      ],
+      "actividad": {
+        "tipo": "compara",
+        "instruccion": "Compara el diplodocus y el T. rex con lo que has leído esta semana: a cada lado, lo que es solo de uno; en medio, lo que tienen los dos.",
+        "a": "Diplodocus",
+        "b": "T. rex",
+        "solucion": {
+          "a": ["comía plantas", "andaba sobre cuatro patas", "tenía la cabeza pequeña y el cuello larguísimo"],
+          "ambos": ["vivieron hace millones de años", "eran enormes"],
+          "b": ["comía carne", "caminaba sobre dos patas", "tenía los brazos cortitos y una boca enorme llena de dientes"]
+        }
+      }
+    },
+    {
+      "dia": 55, "semana": 11, "trimestre": 1,
+      "tema": "El museo de los dinosaurios: el caso",
+      "texto": [
+        "El viernes por la mañana, Lucía encuentra otra nota de Lector X en la mesa de la cocina. Solo dice: «Pronto sabrás quién soy».",
+        "Toby duerme en el salón, debajo del sofá, y ladra a cualquiera que entra en casa de noche.",
+        "Sin embargo, Mamá, que tiene el sueño muy ligero, dice que esa noche Toby no ladró ni una vez.",
+        "Lucía lo apunta en su cuaderno y se queda pensando un buen rato."
+      ],
+      "actividad": {
+        "tipo": "caso",
+        "pregunta": "¿Quién ha dejado la nota en la cocina: alguien de fuera o alguien de casa?",
+        "opciones": ["alguien de fuera de casa", "alguien de casa"],
+        "solucion": "alguien de casa",
+        "clave": "Alguien de casa: Toby ladra a cualquiera que entra en casa de noche, y esa noche no ladró ni una vez; si hubiera entrado alguien de fuera, habría ladrado."
+      }
+    },
+    {
+      "dia": 56, "semana": 12, "trimestre": 1,
+      "tema": "La función de Navidad",
+      "texto": [
+        "Lector X es alguien de casa, porque Toby no ladró aquella noche.",
+        "En el cole, la clase de Lucía prepara una obra de teatro para la fiesta de Navidad. En el escenario, a la izquierda, hay tres árboles de cartón. A la derecha hay una casita con la puerta roja.",
+        "Encima de la casita brilla una estrella dorada tan grande que parece un paraguas abierto.",
+        "Paco, el conserje, ha pintado el suelo de blanco para que parezca nieve."
+      ],
+      "actividad": {
+        "tipo": "dibuja_detalle",
+        "prompt": "Dibuja el escenario de la obra de Navidad tal y como lo describe el texto.",
+        "comprueba": [
+          "¿Qué hay a la izquierda, y cuántos son?",
+          "¿Qué hay a la derecha, y de qué color es su puerta?",
+          "¿Qué hay encima de la casita, y cómo es de grande?",
+          "¿De qué color es el suelo, y por qué?"
+        ],
+        "clave": "A la izquierda, tres árboles de cartón; a la derecha, una casita con la puerta roja; encima de la casita, una estrella dorada tan grande como un paraguas abierto; el suelo, pintado de blanco para que parezca nieve."
+      }
+    },
+    {
+      "dia": 57, "semana": 12, "trimestre": 1,
+      "tema": "La función de Navidad",
+      "texto": [
+        "El martes, cuando llegan al ensayo, la estrella dorada ya no está encima de la casita.",
+        "Marta la busca por todo el salón de actos, pero no aparece por ninguna parte. Sofía recuerda que el lunes la estrella se cayó y la dejaron en una silla de la primera fila.",
+        "Esa tarde, Paco ordenó el salón de actos, como hace siempre después de los ensayos.",
+        "Sin la estrella, la obra no tiene sentido, porque es la que guía a los pastores."
+      ],
+      "actividad": {
+        "tipo": "errores",
+        "instruccion": "Este resumen tiene tres errores. Rodéalos y escribe debajo cómo es de verdad.",
+        "relato": "El martes, la estrella plateada ya no está encima de la casita. Sofía recuerda que el lunes la dejaron en una silla de la última fila. Esa tarde, Marta ordenó el salón de actos.",
+        "errores": [
+          ["plateada", "dorada"],
+          ["última fila", "primera fila"],
+          ["Marta ordenó", "Paco ordenó"]
+        ]
+      }
+    },
+    {
+      "dia": 58, "semana": 12, "trimestre": 1,
+      "tema": "La función de Navidad",
+      "texto": [
+        "El club va a ver a Paco a la conserjería, junto a la puerta del colegio.",
+        "Paco les explica que, cuando ordena, mete las cosas pequeñas en la caja de objetos perdidos. En cambio, las cosas grandes, que no caben en la caja, las lleva al almacén del gimnasio.",
+        "—¿Una estrella? No me acuerdo, la verdad —dice, rascándose la cabeza.",
+        "Lucía mira a Hugo, porque los dos están pensando lo mismo."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "preguntas": [
+          "¿Dónde guarda Paco las cosas pequeñas que encuentra? ¿Y las grandes?",
+          "¿Cómo es de grande la estrella? Vuelve a leer la página del lunes."
+        ],
+        "respuestas": [
+          "Las pequeñas, en la caja de objetos perdidos; las grandes, en el almacén del gimnasio.",
+          "Tan grande que parece un paraguas abierto."
+        ]
+      }
+    },
+    {
+      "dia": 59, "semana": 12, "trimestre": 1,
+      "tema": "La función de Navidad",
+      "texto": [
+        "Marta reparte tres papeles de la obra entre Lucía, Sofía y Hugo: narrador, pastor y lobo.",
+        "Hugo, que es muy tímido, no quiere ser el narrador, porque tendría que hablar más que nadie. El lobo necesita una voz grave, y Sofía tiene la voz más grave de toda la clase.",
+        "Esa noche, en casa, Lucía encuentra otra nota de Lector X debajo de su plato.",
+        "La firma, esta vez, está escrita con letras torcidas y enormes, como las de un niño pequeño."
+      ],
+      "actividad": {
+        "tipo": "logica",
+        "instruccion": "Usa las pistas del texto para saber qué papel hace cada uno. Pon ✓ donde sí y ✗ donde no.",
+        "filas": ["Lucía", "Sofía", "Hugo"],
+        "columnas": ["narrador", "pastor", "lobo"],
+        "restricciones": [["no", "Hugo", "narrador"], ["si", "Sofía", "lobo"]],
+        "solucion": {"Lucía": "narrador", "Sofía": "lobo", "Hugo": "pastor"}
+      }
+    },
+    {
+      "dia": 60, "semana": 12, "trimestre": 1,
+      "tema": "La función de Navidad: el caso",
+      "texto": [
+        "El viernes es el ensayo general, y la estrella sigue sin aparecer.",
+        "Marta está a punto de hacer una estrella nueva con papel de aluminio y purpurina.",
+        "—Espera un momento —le pide Lucía—. Creo que sé dónde está, y no hay que ir muy lejos.",
+        "Hugo repasa en voz alta todo lo que saben, pista por pista. Paco saca su manojo de llaves y sonríe, porque él también empieza a entenderlo."
+      ],
+      "actividad": {
+        "tipo": "caso",
+        "pregunta": "¿Dónde está la estrella?",
+        "opciones": ["en la caja de objetos perdidos", "en el almacén del gimnasio", "en la clase de Lucía", "dentro de la casita del escenario"],
+        "solucion": "en el almacén del gimnasio",
+        "clave": "En el almacén del gimnasio: la estrella se quedó en una silla de la primera fila y esa tarde Paco ordenó el salón (martes); Paco mete las cosas pequeñas en la caja de objetos perdidos, pero las grandes, que no caben, las lleva al almacén (miércoles); y la estrella es tan grande que parece un paraguas abierto (lunes).",
+        "banner": "¡60 páginas leídas! Caso de la estrella: resuelto."
+      }
+    },
+    {
+      "dia": 61, "semana": 13, "trimestre": 1,
+      "tema": "¡Lector X, descubierto!",
+      "texto": [
+        "La estrella estaba en el almacén, y la obra fue un éxito.",
+        "El lunes, el club cuelga en la caseta todas las notas de Lector X, en fila y por orden. Son seis: cinco de papel blanco y una de papel amarillo, que es la última.",
+        "Hugo, que es muy ordenado, las une con un hilo de lana roja y, debajo, escribe las pistas con tiza.",
+        "La lupa de la abuela cuelga de un clavo, encima de la primera nota, para que nadie la pierda."
+      ],
+      "actividad": {
+        "tipo": "dibuja_detalle",
+        "prompt": "Dibuja la pizarra de las pistas del club tal y como la describe el texto.",
+        "comprueba": [
+          "¿Cuántas notas hay, y de qué color es cada una?",
+          "¿Con qué están unidas, y de qué color?",
+          "¿Qué hay escrito debajo, y con qué?",
+          "¿Dónde cuelga la lupa?"
+        ],
+        "clave": "Seis notas en fila: cinco blancas y la última amarilla; unidas con un hilo de lana roja; debajo, las pistas escritas con tiza; la lupa, colgada de un clavo justo encima de la primera nota."
+      }
+    },
+    {
+      "dia": 62, "semana": 13, "trimestre": 1,
+      "tema": "¡Lector X, descubierto!",
+      "texto": [
+        "Lucía lee en voz alta las pistas que han apuntado debajo de las notas:",
+        "- Las notas huelen a fresa.",
+        "- La letra es redonda y ordenada, como la de un mayor.",
+        "- Algunas notas tienen un dinosaurio dibujado con prisa.",
+        "- Mamá estaba de viaje cuando apareció la tercera.",
+        "- La abuela estaba en el pueblo cuando apareció la cuarta.",
+        "- Toby no ladró la noche de la quinta.",
+        "- La firma de la sexta tiene letras torcidas, de niño pequeño."
+      ],
+      "actividad": {
+        "tipo": "verdadero_falso",
+        "afirmaciones": [
+          "Las notas de Lector X huelen a limón.",
+          "La letra de las notas parece la de un mayor.",
+          "Cuando apareció la tercera nota, Mamá estaba en casa.",
+          "La noche de la quinta nota, Toby no ladró."
+        ],
+        "respuestas": [
+          "F: huelen a fresa.",
+          "V",
+          "F: Mamá estaba de viaje.",
+          "V"
+        ]
+      }
+    },
+    {
+      "dia": 63, "semana": 13, "trimestre": 1,
+      "tema": "¡Lector X, descubierto!",
+      "texto": [
+        "—Si la letra es de un mayor, Lector X no puede ser Dani —dice Sofía.",
+        "—Pero los dinosaurios y las letras torcidas son de un niño pequeño —responde Hugo.",
+        "Lucía se queda callada un momento, mirando la lupa del bisabuelo. Entonces recuerda lo que decía el relojero: hay que fijarse en todo, también en lo que no encaja.",
+        "De pronto, se le ocurre que quizá las dos cosas son verdad a la vez."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "preguntas": [
+          "¿Qué pista dice que Lector X es un mayor? ¿Qué pistas dicen que es un niño pequeño?",
+          "¿Qué crees que se le ha ocurrido a Lucía?"
+        ],
+        "respuestas": [
+          "Un mayor: la letra redonda y ordenada. Un niño pequeño: los dinosaurios dibujados con prisa y la firma con letras torcidas.",
+          "Que Lector X no es una persona, sino dos: un niño pequeño que inventa las notas y un mayor que las escribe."
+        ]
+      }
+    },
+    {
+      "dia": 64, "semana": 13, "trimestre": 1,
+      "tema": "¡Lector X, descubierto!",
+      "texto": [
+        "El jueves por la tarde, el club se reúne por última vez antes de las vacaciones.",
+        "Sofía repasa la lista de sospechosos: Mamá, Papá, la abuela Rosa y Dani. Hugo añade con tiza una pista que habían olvidado: los rotuladores de Dani, que huelen a frutas.",
+        "Luego, Lucía pone junto a las notas la lista de la compra del mercado. Las letras son idénticas.",
+        "Nadie dice nada durante un buen rato, hasta que Sofía suelta un silbido."
+      ],
+      "actividad": {
+        "tipo": "caso",
+        "pregunta": "¿Quién es Lector X?",
+        "opciones": ["Mamá", "la abuela Rosa", "Papá", "Dani", "Papá y Dani"],
+        "solucion": "Papá y Dani",
+        "lineas": 4,
+        "clave": "Papá y Dani: la letra de las notas es idéntica a la de la lista de la compra que escribió Papá (semanas 8 y 13); el olor a fresa es el del rotulador rojo de Dani (semana 8), y los dinosaurios y la firma torcida son de un niño pequeño (semanas 7, 9 y 12). No puede ser Mamá, que estaba de viaje (semana 7), ni la abuela, que estaba en el pueblo (semana 9); y es alguien de casa, porque Toby no ladró (semana 11)."
+      }
+    },
+    {
+      "dia": 65, "semana": 13, "trimestre": 1,
+      "tema": "¡Lector X, descubierto!",
+      "texto": [
+        "Esa noche, Lucía deja una nota en la almohada de Dani: «Ya sé quién eres, Lector X».",
+        "A la mañana siguiente, Dani y Papá aparecen en su cuarto con una sonrisa enorme.",
+        "—Yo inventaba las adivinanzas y Papá las escribía —confiesa Dani—, porque todavía escribo muy despacio.",
+        "Dani quería darle las gracias a Lucía, que le ha enseñado a leer. Lucía los abraza a los dos, y Toby, que no quiere quedarse fuera, se sube a la cama."
+      ],
+      "actividad": {
+        "tipo": "repasa",
+        "checklist": [
+          "Sé quién es Hugo y de dónde viene.",
+          "Sé escribir un mensaje con el código del club.",
+          "Sé distinguir las huellas de un perro de las de un gato.",
+          "Sé qué pistas llevaron al club hasta Lector X."
+        ],
+        "prompt": "Dibuja al Club de la Lupa celebrando que ha resuelto el caso de Lector X.",
+        "banner": "¡65 páginas leídas! Fin del otoño: el caso de Lector X, resuelto."
+      }
+    }
+  ]
+}
