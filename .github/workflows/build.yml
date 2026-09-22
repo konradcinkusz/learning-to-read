@@ -57,7 +57,27 @@ jobs:
       # más larga son límites duros (fallan el job); el vocabulario nuevo
       # por día es solo un aviso, ver la cabecera de content/progresion.json.
       - name: Mide la progresión (palabras/página, frase, vocabulario nuevo)
-        run: python3 tools/metricas.py --tabla >> "$GITHUB_STEP_SUMMARY"
+        run: |
+          echo "## Nivel 1 -- Aprendo a leer" >> "$GITHUB_STEP_SUMMARY"
+          python3 tools/metricas.py --tabla >> "$GITHUB_STEP_SUMMARY"
+
+      # El nivel 2 ("Leo con lupa", notes/03-nivel2.md) pasa por las mismas
+      # puertas con su propio contenido (content/nivel2/q*.json) y su propia
+      # escalera. Además, tools/gen_days.py --libro nivel2 comprueba lo que
+      # se puede comprobar a máquina en sus actividades: que cada tabla
+      # lógica tenga una sola solución, que cada ruta de un mapa llegue a
+      # donde dice, que cada corrección de "Caza los errores" esté en el
+      # texto de la semana... (ver la cabecera de tools/nivel2.py).
+      - name: Genera el nivel 2 desde content/nivel2/q*.json
+        run: make generate-nivel2
+
+      - name: Valida el contenido del nivel 2 (actividades, tablas, mapas)
+        run: python3 tools/gen_days.py --libro nivel2 --check
+
+      - name: Mide la progresión del nivel 2 (palabras, frase, subordinadas)
+        run: |
+          echo "## Nivel 2 -- Leo con lupa" >> "$GITHUB_STEP_SUMMARY"
+          python3 tools/metricas.py --libro nivel2 --tabla >> "$GITHUB_STEP_SUMMARY"
 
   build:
     name: PDF (${{ matrix.variant }})
@@ -72,12 +92,17 @@ jobs:
       # \input{preamble}. Una matriz en vez de un job duplicado: un cambio
       # que solo rompe uno de los dos formatos tiene que ser tan visible
       # como uno que rompe los dos.
+      # Los dos libros (nivel 1 y nivel 2) en los dos formatos: cuatro PDF.
       matrix:
         include:
           - variant: color
             root: main
           - variant: bw
             root: main-bw
+          - variant: nivel2-color
+            root: main-nivel2
+          - variant: nivel2-bw
+            root: main-nivel2-bw
     steps:
       - uses: actions/checkout@v4
 
@@ -85,9 +110,11 @@ jobs:
         with:
           python-version: '3.11'
 
-      # Otro runner, otro checkout -- este job genera para sí mismo.
-      - name: Genera content/generated-days.tex desde content/q*.json
-        run: make generate
+      # Otro runner, otro checkout -- este job genera para sí mismo (los
+      # dos libros: es un segundo de Python, y así cualquier fila de la
+      # matriz encuentra lo que su body*.tex necesita).
+      - name: Genera los días de los dos libros desde content/**/q*.json
+        run: make generate generate-nivel2
 
       # LuaLaTeX, no pdflatex: la letra es Andika (fonts/andika/, ver
       # preamble.tex) -- fontspec exige lualatex o xelatex. args NO lleva

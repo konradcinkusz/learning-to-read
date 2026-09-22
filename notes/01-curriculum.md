@@ -2,7 +2,9 @@
 
 Ver también `notes/02-revision-y-plan.md`: la revisión del cuaderno ya
 escrito y el plan de desarrollo del resto del año (qué mejorar, en qué
-orden, y la escalera de progresión completa).
+orden, y la escalera de progresión completa). Este fichero es el nivel 1
+("Aprendo a leer"); el segundo cuaderno, un nivel por encima, está en
+`notes/03-nivel2.md` ("Leo con lupa").
 
 ## Punto de partida (y por qué cambió)
 

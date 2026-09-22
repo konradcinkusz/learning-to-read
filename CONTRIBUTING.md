@@ -38,7 +38,11 @@ El repositorio está deliberadamente construido para esto: el motor LaTeX
 haz un fork, sustituye `content/q1.json`, `q2.json`, `q3.json` y
 `q4.json` por tus propios personajes y frases, y conserva el resto tal
 cual -- es exactamente el reparto MIT/CC BY-NC-SA de `LICENSE`: el motor
-es tuyo para reutilizar, la historia concreta de esta familia no.
+es tuyo para reutilizar, la historia concreta de esta familia no. Lo mismo
+vale para el nivel 2 (*Leo con lupa*): su contenido está en
+`content/nivel2/q1.json` ... `q4.json`, y lo que distingue un libro de
+otro (rutas, reglas, tipos de actividad) está en un solo sitio,
+`tools/libros.py`.
 
 ## Flujo de trabajo
 
@@ -46,8 +50,9 @@ es tuyo para reutilizar, la historia concreta de esta familia no.
 make generate       # content/q*.json -> content/generated-days.tex
 make build           # compila la versión en color (main.tex)
 make check            # tools/checklog.py + tools/check_pages.py + tools/gen_days.py --check + tools/metricas.py
-make all-formats      # generate + build + check, color Y blanco-y-negro -- ejecútalo
-                       # antes de abrir un PR, es lo mismo que corre el CI
+make nivel2           # lo mismo para el nivel 2 (content/nivel2/q*.json -> main-nivel2.tex)
+make all-formats      # generate + build + check de los DOS niveles, color Y blanco-y-negro --
+                       # ejecútalo antes de abrir un PR, es lo mismo que corre el CI
 ```
 
 Cuatro bramas duras que tienen que quedar en verde:
@@ -67,7 +72,12 @@ Cuatro bramas duras que tienen que quedar en verde:
   `content/progresion.json` -- ver `notes/02-revision-y-plan.md`, Parte
   C): palabras por página y frase más larga no pueden superar el
   objetivo de esa semana. El vocabulario nuevo por día solo avisa, no
-  bloquea.
+  bloquea. En el nivel 2 (`--libro nivel2`, contra
+  `content/nivel2/progresion.json`) hay además un mínimo de oraciones
+  subordinadas por texto, y `tools/gen_days.py --libro nivel2 --check`
+  comprueba las actividades que se pueden comprobar a máquina (una sola
+  solución en cada tabla lógica, rutas de mapa que llegan a donde dicen,
+  correcciones que están de verdad en el texto -- ver `tools/nivel2.py`).
 
 `.github/workflows/build.yml` corre exactamente estas mismas comprobaciones
 en cada *push* y *pull request*, así que un PR con `make all-formats` en

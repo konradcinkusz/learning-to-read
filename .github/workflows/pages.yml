@@ -47,11 +47,13 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Genera content/generated-days.tex desde content/q*.json
-        run: make generate
+      - name: Genera los días de los dos libros desde content/**/q*.json
+        run: make generate generate-nivel2
 
       - name: Valida el contenido antes de publicar nada
-        run: python3 tools/gen_days.py --check
+        run: |
+          python3 tools/gen_days.py --check
+          python3 tools/gen_days.py --libro nivel2 --check
 
       # Color y blanco-y-negro (main-bw.tex, ver preamble.tex \bookcolor):
       # los dos se compilan y se validan aquí, y Pages nunca publica uno
@@ -87,12 +89,43 @@ jobs:
       - name: Cada día ocupa exactamente una página (blanco y negro)
         run: python3 tools/check_pages.py main-bw.aux
 
+      # El nivel 2, "Leo con lupa" (main-nivel2.tex, notes/03-nivel2.md):
+      # la misma promesa -- compilado y comprobado en los dos formatos
+      # antes de publicar nada.
+      - name: Compila el nivel 2 (color)
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: main-nivel2.tex
+          latexmk_use_lualatex: true
+          args: -interaction=nonstopmode -file-line-error
+
+      - name: Lee el log correctamente (nivel 2, color)
+        run: python3 tools/checklog.py main-nivel2.log
+
+      - name: Cada día ocupa exactamente una página (nivel 2, color)
+        run: python3 tools/check_pages.py main-nivel2.aux
+
+      - name: Compila el nivel 2 (blanco y negro)
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: main-nivel2-bw.tex
+          latexmk_use_lualatex: true
+          args: -interaction=nonstopmode -file-line-error
+
+      - name: Lee el log correctamente (nivel 2, blanco y negro)
+        run: python3 tools/checklog.py main-nivel2-bw.log
+
+      - name: Cada día ocupa exactamente una página (nivel 2, blanco y negro)
+        run: python3 tools/check_pages.py main-nivel2-bw.aux
+
       - name: Monta el sitio
         run: |
           mkdir -p _site
           cp docs/index.html _site/
           cp main.pdf _site/aprendo-a-leer.pdf
           cp main-bw.pdf _site/aprendo-a-leer-bn.pdf
+          cp main-nivel2.pdf _site/leo-con-lupa.pdf
+          cp main-nivel2-bw.pdf _site/leo-con-lupa-bn.pdf
 
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
