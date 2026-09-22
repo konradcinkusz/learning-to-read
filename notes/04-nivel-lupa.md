@@ -53,7 +53,7 @@ del club, y lo resuelve con las mismas pistas que los personajes.
 
 ## El reparto
 
-Los del cuaderno de frases, un año mayores, y tres nuevos.
+Los del cuaderno de frases, un año mayores, y algunos nuevos.
 
 | Personaje | Quién es |
 |---|---|
@@ -64,12 +64,15 @@ Los del cuaderno de frases, un año mayores, y tres nuevos.
 | **Abuela Rosa** | la abuela; vive en la ciudad y pasa el verano en su casa del pueblo; su padre era relojero y la lupa era suya |
 | **Sofía** | la mejor amiga de Lucía desde 1.º; impaciente, valiente, dibuja muy bien |
 | **Hugo** *(nuevo)* | compañero nuevo en 2.º; viene de una ciudad junto al mar; gafas redondas azules; tímido al principio; le encantan los mapas y los códigos; tiene una tortuga, **Rayo** |
-| **Marta** | la maestra de Lucía (también en 2.º) |
+| **Marta** | la maestra de Lucía (también en 2.º); de niña estudió en ese mismo colegio (la cápsula del tiempo, T3), y el septiembre siguiente es la maestra de Dani en 1.º |
 | **Paco** *(nuevo)* | el conserje del colegio, que lleva allí treinta años |
 | **Tomás** *(nuevo)* | el bibliotecario del barrio |
 | **Pedro** y **Luna** | el vecino y su gata blanca (un ojo verde y otro azul, collar con cascabel) |
 | **Andrés** y **Bigotes** | el vecino del pueblo, que tiene abejas, y su gato blanco y naranja |
 | **Martín** | el amigo de Dani en el pueblo |
+| **Nora**, **Leo**, **Irene** y **Álex** | compañeros de clase de Lucía (Nora desde el invierno; los otros tres, en primavera) |
+| **Pilar** y **Luis** | la maestra y el director del colegio cuando Marta era niña (T3) |
+| **Julián** y **Lola** | el granjero de la granja escuela y su cabra más curiosa (semana 37) |
 
 Todos los nombres propios del reparto están en `tools/libros.py`
 (`LUPA.nombres_propios`), para que `tools/metricas.py` no los cuente
@@ -249,21 +252,28 @@ dos cuadros: la cápsula estaba en B3.
 
 ### Trimestre 4 — verano (todos los tiempos y géneros)
 
-| Sem. | Tema | Caso / hilo |
-|---|---|---|
-| 40 | La maleta | lista de la maleta; ¿qué se ha olvidado Dani? |
-| 41 | Otra vez en el pueblo | el mapa de la abuela contra la era de hoy (un prado detrás de la iglesia, de la familia de Andrés): el pozo sigue (tapado con una tapa de madera), quedan dos álamos (el tercero lo tiró una tormenta; queda el tocón), la piedra de la tortuga está en el jardín del molino |
-| 42 | Diez pasos | Papá cuenta diez pasos desde el pozo y no encuentran nada → ¿por qué? Porque los pasos de Papá son mucho más largos que los de una niña de ocho años |
-| 43 | El diario de Lucía | (diario) ¿quién visita el huerto de noche? → un erizo (come caracoles, no lechugas) |
-| 44 | Las abejas de Andrés | ¿quién abrió el tarro de miel? → las hormigas (a los gatos no les sabe el dulce) |
-| 45 | La noche de las estrellas fugaces | las Perseidas; la Osa Mayor |
-| 46 | Una carta de Hugo | carta desde el mar, con mensaje en clave |
-| 47 | Las fiestas del pueblo | concurso de adivinanzas; poema; noticia en el bando del pueblo |
-| 48 | ¡El tesoro de Rosa! | Lucía, con ocho años como Rosa, cuenta diez pasos suyos desde el pozo y llega a un círculo donde la hierba crece distinta, junto al tocón: con permiso de Andrés, desentierran la caja de lata, con una canica azul, una foto de Rosa niña con su padre, que sostiene la lupa, y una carta «Para la Rosa de mayor» |
-| 49 | El mapa de Dani y Martín | Dani y Martín dibujan su propio mapa para el verano siguiente |
-| 50 | Vuelta a la ciudad | despedidas; el verano en orden; cómic |
-| 51 | Dani, al cole de los mayores | Lucía le enseña a Dani cómo lee un detective; Dani, miembro del club |
-| 52 | Vuelta al cole | Lucía empieza 3.º y Dani 1.º; un sobre sin remite en el buzón del club...; repasa + diploma |
+| Sem. | Tema | Caso / hilo | Lunes | Martes | Miércoles | Jueves | Viernes |
+|---|---|---|---|---|---|---|---|
+| 40 | La maleta | la lista de la maleta de Dani; ¿qué se ha olvidado? → la gorra: leyó tan deprisa que metió un gorro de lana (el armario de invierno, la maleta que no cierra, un pompón rojo asomando) | dibuja la maleta | errores | responde | código de vocales | caso |
+| 41 | Otra vez en el pueblo | el mapa de la abuela contra la era de hoy (el prado de detrás de la iglesia, de la familia de Andrés, que confirma lo de la carta de Martín): el pozo, tapado con una tapa de madera; de los tres álamos quedan dos y el tocón del de en medio; la piedra de la tortuga, en el jardín del molino | dibuja el mapa de Rosa | V/F | responde | mapa (la era de hoy) | compara (el mapa / la era de hoy) |
+| 42 | Diez pasos | Papá cuenta diez pasos desde el pozo, acaba detrás de los álamos y no hay nada. ¿Por qué? → los pasos de Papá son mucho más largos que los de una niña de ocho años | dibuja el pozo | mapa (los pasos de Papá) | errores | tabla (cuántos pasos da cada uno) | caso |
+| 43 | El diario de Lucía | (diario) ¿quién visita el huerto de noche? → un erizo (huellas de cinco dedos con uñas, lechugas enteras, caracoles que desaparecen, resoplidos, el rastro acaba en la leña) | dibuja la huella | V/F | responde | mapa (el rastro) | caso |
+| 44 | Las abejas de Andrés | (informativo) ¿quién se metió en el tarro de miel? → las hormigas (la tapa solo apoyada, una fila de puntitos negros desde el limonero; a los gatos no les sabe el dulce, y a Bigotes lo que le gusta es el queso) | dibuja a Andrés con su traje | ficha (las abejas) | responde | compara (abejas / hormigas) | caso |
+| 45 | La noche de las estrellas fugaces | las Perseidas (informativo) en el jardín del molino; la Osa Mayor, «el reloj de la noche» del bisabuelo relojero | dibuja la Osa Mayor | ficha (las estrellas fugaces) | ordena | tabla 4×4 (cuántas vio cada uno) | adivina (las estrellas) |
+| 46 | Una carta de Hugo | carta desde el mar, una hoja cada día, con una adivinanza (el faro) y un mensaje en clave: «Cuenta tus propios pasos»; Lucía contesta | dibuja lo que ve Hugo | adivina | responde | código de números | crea (una carta) |
+| 47 | Las fiestas del pueblo | el bando de fiestas (Andrés siega la era antes de los fuegos); el poema-adivinanza del club (la lupa) gana el concurso; la noticia en la hoja del pueblo | dibuja la plaza | ficha (el programa) | adivina (el poema) | tabla (los equipos) | viñetas (la noticia) |
+| 48 | ¡El tesoro de Rosa! | Lucía, con ocho años como Rosa, cuenta diez pasos suyos desde el pozo y se para junto al tocón, en una mancha redonda donde la hierba crece distinta: la caja de lata, con una canica azul, una foto de Rosa niña con su padre (que sostiene la lupa de las tres rayas) y una carta «Para la Rosa de mayor» («Si algún día tienes nietos, enséñales a mirar con la lupa de papá» — «Ya lo hice») | mapa (los pasos de Lucía) | errores | dibuja la foto | responde | adivina (el reloj) |
+| 49 | El mapa de Dani y Martín | Dani y Martín entierran su propia lata para el verano siguiente, medida en baldosas, «porque las baldosas no crecen» | dibuja la lata | tabla (qué pone cada uno) | responde | mapa (el patio de la abuela) | crea (tu mapa del tesoro) |
+| 50 | Vuelta a la ciudad | despedidas; el verano en orden (leído del final al principio); el mensaje al revés de Martín; el cómic de Dani | dibuja el tarro de miel | tabla (quién va en cada sitio del coche) | ordena | código al revés | viñetas (el cómic) |
+| 51 | Dani, al cole de los mayores | las reglas del club para leer; el primer caso de Dani: ¿quién escribió su nombre en todas sus cosas? → Papá (letra redonda y ordenada, el último en acostarse; Toby no ladró). Dani, cuarto miembro del club | dibuja la mochila | V/F (las reglas) | relaciona (la letra de cada uno) | tabla 4×4 (a qué hora se acostó cada uno) | caso |
+| 52 | Vuelta al cole | Lucía empieza 3.º y Dani 1.º (con Marta); ¿qué ha traído Hugo del mar? → una brújula. Un sobre sin remite en el buzón de la caseta: «¿Os atrevéis con un caso más difícil?» | dibuja la puerta de 1.º | relaciona (el verano de cada uno) | código de vocales | caso | repasa + diploma |
+
+**La era** (los tres planos del verano, 7 columnas y 4 filas): el río
+baja por la columna A, con el molino en A1 y el puente en A3; el jardín
+del molino, en B1; el pozo, en C2; la iglesia, en C4; los álamos, en F1
+y F3, con el tocón en F2. Diez pasos de Papá son cuatro casillas (acaba
+en G2, detrás de los álamos); diez pasos de Lucía, dos (E2, junto al
+tocón, donde estuvo la piedra).
 
 ## Reglas para escribir (y revisar) un día
 

@@ -100,8 +100,8 @@ pero:
   fichas de textos informativos, comparar...
 
 Lucía recibe la lupa de su bisabuelo relojero y funda con sus amigos el
-*Club de la Lupa*: cada semana es un caso, y cada trimestre tiene uno
-grande (¿quién es *Lector X*?, el mapa del tesoro de la abuela, la
+*Club de la Lupa*: cada semana es un capítulo, casi siempre con un caso,
+y cada trimestre tiene uno grande (¿quién es *Lector X*?, el mapa del tesoro de la abuela, la
 cápsula del tiempo del colegio, el tesoro del pueblo). Al generar el
 libro se comprueba a máquina lo que se puede comprobar de cada actividad
 -- que cada tabla lógica tenga una sola solución, que cada ruta de un
@@ -259,8 +259,8 @@ calendario del curso completo -- por qué los cuatro trimestres son las
 cuatro estaciones del año, con vacaciones incluidas, y no los tres
 trimestres del curso escolar español.
 
-**Nivel 3 (Leo con lupa)**: los 260 días están escritos, con sus 52
-casos, y compilan como un cuaderno completo (`make all-formats` en
+**Nivel 3 (Leo con lupa)**: los 260 días están escritos (52 semanas y
+35 casos, con su solución en la clave), y compilan como un cuaderno completo (`make all-formats` en
 verde: 1 día = 1 página, log limpio, dentro de la escalera de
 `content/lupa/progresion.json`, y todas las comprobaciones de
 `tools/lupa.py` en verde: tablas lógicas con una sola solución, rutas de
