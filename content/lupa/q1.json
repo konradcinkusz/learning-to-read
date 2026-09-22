@@ -1,5 +1,5 @@
 {
-  "_comentario": "Nivel 2 ('Leo con lupa'). Datos de origen para tools/gen_days.py --libro nivel2. Este fichero SI se edita a mano; content/nivel2/generated-days.tex NO (se regenera con `make generate-nivel2`). Trimestre 1 (otoño): días 1-65, semanas 1-13, en presente. Hilo: ¿quién es Lector X? -- ver notes/03-nivel2.md.",
+  "_comentario": "'Leo con lupa' (nivel 3). Datos de origen para tools/gen_days.py --libro lupa. Este fichero SI se edita a mano; content/lupa/generated-days.tex NO (se regenera con `make generate`). Trimestre 1 (otoño): días 1-65, semanas 1-13, en presente. Hilo: ¿quién es Lector X? -- ver notes/04-nivel-lupa.md.",
   "personajes": {
     "Lucía": "protagonista, 7 años (cumple 8 en la semana 9), 2.º de primaria",
     "Dani": "su hermano, 5 años",
@@ -734,14 +734,13 @@
         "Dani dibuja un sol en cada esquina, aunque Papá le pide que no manche la lista. En ella pone:",
         "- Un kilo de naranjas.",
         "- Una barra de pan.",
-        "- Queso de oveja.",
         "- Media docena de huevos.",
         "Cuando llegan a casa, Lucía se da cuenta de que falta algo muy importante: ¡el pan!"
       ],
       "actividad": {
         "tipo": "errores",
-        "instruccion": "Este resumen tiene tres errores. Rodéalos y escribe debajo cómo es de verdad.",
-        "relato": "Mientras Papá compra, Dani decora la lista con sus pinturas viejas. El rojo huele a cereza. Cuando llegan a casa, Lucía se da cuenta de que falta el queso.",
+        "instruccion": "Rodea los tres errores de este resumen y escribe debajo cómo es de verdad.",
+        "relato": "Dani decora la lista con sus pinturas viejas. El rojo huele a cereza. En casa, Lucía ve que falta el queso.",
         "errores": [
           ["pinturas viejas", "rotuladores nuevos"],
           ["cereza", "fresa"],

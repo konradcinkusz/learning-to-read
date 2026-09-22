@@ -1,21 +1,22 @@
 #!/usr/bin/env python3
 """Genera el .tex de los días de un libro a partir de su JSON.
 
-Nivel 1 ("Aprendo a leer", el libro por defecto): content/q*.json ->
+Cuaderno de frases (nivel 2, el libro por defecto): content/q*.json ->
 content/generated-days.tex y content/generated-clave.tex.
-Nivel 2 ("Leo con lupa", `--libro nivel2`): content/nivel2/q*.json ->
-content/nivel2/generated-days.tex y content/nivel2/generated-clave.tex.
+"Leo con lupa" (nivel 3, `--libro lupa`): content/lupa/q*.json ->
+content/lupa/generated-days.tex y content/lupa/generated-clave.tex.
 Qué distingue un libro de otro (rutas, reglas, tipos de actividad) está
-en tools/libros.py; las plantillas y validaciones propias del nivel 2,
-en tools/nivel2.py.
+en tools/libros.py; las plantillas y validaciones propias de "Leo con
+lupa", en tools/lupa.py. (El cuaderno de primeras palabras, nivel 1,
+tiene su propio generador: tools/gen_palabras.py.)
 
 No editar los generated-*.tex a mano -- se sobrescriben cada vez que se
 ejecuta este script. Los ficheros que SÍ se editan a mano son los
 q1.json ... q4.json de cada libro, uno por trimestre.
 
 Uso:
-    python3 tools/gen_days.py                    # regenera el nivel 1
-    python3 tools/gen_days.py --libro nivel2     # regenera el nivel 2
+    python3 tools/gen_days.py                    # regenera el cuaderno de frases
+    python3 tools/gen_days.py --libro lupa       # regenera "Leo con lupa"
     python3 tools/gen_days.py [--libro X] --check
                                   # solo valida, no escribe nada; falla
                                   # (exit 1) si algo no cuadra o si el
@@ -29,9 +30,9 @@ import sys
 from pathlib import Path
 from string import Template
 
-import nivel2
+import lupa
 from comun import ErrorDeContenido, escapar
-from libros import CONTENT_DIR, NIVEL1, ROOT, libro_desde_argv
+from libros import CONTENT_DIR, FRASES, ROOT, libro_desde_argv
 
 LETRAS_TRAZO_FILE = CONTENT_DIR / "letras-trazo.json"
 PALABRAS_TRAZO_FILE = CONTENT_DIR / "palabras-trazo.json"
@@ -51,12 +52,12 @@ ESCALA_TRAZO_CM = 7.0
 HUECO_TRAZO_EM = 0.18
 RADIO_PUNTO_TRAZO_CM = "0.08"
 
-# Las reglas del nivel 1, con los nombres de siempre (las notas del
-# curso se refieren a ellas así). La fuente de verdad es tools/libros.py
-# (NIVEL1); esto son solo alias.
-TOTAL_DIAS = NIVEL1.total_dias
-FRASES_POR_TRIMESTRE = NIVEL1.frases_por_trimestre
-RANGO_TRIMESTRE = NIVEL1.rango_trimestre
+# Las reglas del cuaderno de frases, con los nombres de siempre (las
+# notas del curso se refieren a ellas así). La fuente de verdad es
+# tools/libros.py (FRASES); esto son solo alias.
+TOTAL_DIAS = FRASES.total_dias
+FRASES_POR_TRIMESTRE = FRASES.frases_por_trimestre
+RANGO_TRIMESTRE = FRASES.rango_trimestre
 
 # Medalla de fin de trimestre (recompensa intermedia, no solo el diploma
 # del día 260 -- ver la revisión de un lector externo: un único hito a
@@ -66,24 +67,24 @@ RANGO_TRIMESTRE = NIVEL1.rango_trimestre
 # calendario que ya fija RANGO_TRIMESTRE (ver notes/02-revision-y-plan.md,
 # punto 1); el texto exacto lo pone el "banner" del día que cierra cada
 # trimestre -- ya existe en el JSON, no hace falta duplicarlo.
-NOMBRE_MEDALLA_TRIMESTRE = NIVEL1.nombre_medalla
-ULTIMO_DIA_TRIMESTRE = NIVEL1.ultimo_dia_trimestre
+NOMBRE_MEDALLA_TRIMESTRE = FRASES.nombre_medalla
+ULTIMO_DIA_TRIMESTRE = FRASES.ultimo_dia_trimestre
 
-TIPOS_VALIDOS = NIVEL1.tipos_validos
+TIPOS_VALIDOS = FRASES.tipos_validos
 
 # En el trimestre 1 la niña todavía no compone una respuesta escrita por
 # sí sola -- "responde" (pregunta abierta) no se usa hasta que sepa
 # hacerlo; "copia", "rodea" y "verdadero_falso" son lo que hay en su
 # lugar (comprensión sin exigir escritura). Ver notes/01-curriculum.md,
 # "Rotación de actividades", y notes/02-revision-y-plan.md, punto 4.
-TRIMESTRES_SIN_RESPONDE = NIVEL1.trimestres_sin_responde
+TRIMESTRES_SIN_RESPONDE = FRASES.trimestres_sin_responde
 
 # Una instrucción de lectura por trimestre -- ver
 # notes/02-revision-y-plan.md, punto 5: "despacio, señalando cada
 # palabra" (T1) es lo contrario de lo que se espera de quien ya lee con
 # soltura (T4). Las cadenas viven en lang/es.tex; aquí solo se elige
 # cuál usar, vía el título de cajaLectura (ver PLANTILLA_DIA).
-INSTRUCCION_LECTURA_TRIMESTRE = NIVEL1.instruccion_lectura
+INSTRUCCION_LECTURA_TRIMESTRE = FRASES.instruccion_lectura
 
 
 def formatear_oraciones(oraciones, trimestre):
@@ -515,7 +516,7 @@ def _campos_requeridos(dia_num, actividad, campos):
 
 
 def _ruta_legible(ruta):
-    """content/q*.json, content/nivel2/q*.json... -- para los mensajes y
+    """content/q*.json, content/lupa/q*.json... -- para los mensajes y
     la cabecera de los ficheros generados, relativa a la raíz."""
     try:
         return ruta.relative_to(ROOT).as_posix()
@@ -527,7 +528,7 @@ def origen_json(libro):
     return f"{_ruta_legible(libro.dir_contenido)}/q*.json"
 
 
-def cargar_dias(libro=NIVEL1):
+def cargar_dias(libro=FRASES):
     """Lee todos los q*.json del libro y devuelve la lista de días, en orden."""
     dias = []
     for fichero in sorted(libro.dir_contenido.glob("q*.json")):
@@ -537,13 +538,13 @@ def cargar_dias(libro=NIVEL1):
     return dias
 
 
-def validar_dia(num, d, libro=NIVEL1):
+def validar_dia(num, d, libro=FRASES):
     """Comprueba las reglas de UN día -- trimestre válido, número dentro
     de su rango, 'responde' no en un trimestre que lo bloquea, número de
     frases correcto y frases bien terminadas (salvo 'relee', que compone
-    la semana y no tiene frases propias que contar). En el nivel 2, el
-    texto va en párrafos (campo "texto") y lo comprueba
-    tools/nivel2.py, igual que los campos de cada actividad.
+    la semana y no tiene frases propias que contar). En "Leo con lupa",
+    el texto va en párrafos (campo "texto") y lo comprueba
+    tools/lupa.py, igual que los campos de cada actividad.
 
     No comprueba continuidad entre días -- de eso se encarga quien llama
     esta función: validar_dias() (más abajo) exige 1..260 sin huecos."""
@@ -564,7 +565,7 @@ def validar_dia(num, d, libro=NIVEL1):
     tipo_actividad = d.get("actividad", {}).get("tipo")
     if tipo_actividad not in libro.tipos_validos:
         raise ErrorDeContenido(
-            f"día {num}: tipo de actividad desconocido en el {libro.nombre}: "
+            f"día {num}: tipo de actividad desconocido en el cuaderno «{libro.nombre}»: "
             f"{tipo_actividad!r}"
         )
     if tipo_actividad == "responde" and trimestre in libro.trimestres_sin_responde:
@@ -575,8 +576,8 @@ def validar_dia(num, d, libro=NIVEL1):
             "en su lugar"
         )
 
-    if libro.frases_por_trimestre is None:
-        nivel2.validar_texto(num, d)
+    if libro.parrafos:
+        lupa.validar_texto(num, d)
         return
 
     if tipo_actividad == "relee":
@@ -599,7 +600,7 @@ def validar_dia(num, d, libro=NIVEL1):
             )
 
 
-def validar_dias(dias, libro=NIVEL1):
+def validar_dias(dias, libro=FRASES):
     """Comprueba las reglas del curso -- exige además que los días sean
     1..260 sin huecos, que es lo que hace a esta lista EL libro real."""
     if not dias:
@@ -621,7 +622,7 @@ def validar_dias(dias, libro=NIVEL1):
     # actividades se validan) y no se notaría hasta imprimirlo.
     if len(dias) != libro.total_dias:
         raise ErrorDeContenido(
-            f"el {libro.nombre} tiene {len(dias)} días y deberían ser "
+            f"el cuaderno «{libro.nombre}» tiene {len(dias)} días y deberían ser "
             f"{libro.total_dias} -- faltan los días {len(dias) + 1}-{libro.total_dias}"
         )
 
@@ -700,10 +701,10 @@ def pagina_medalla(d, libro):
     )
 
 
-def generar_tex(dias, libro=NIVEL1):
+def generar_tex(dias, libro=FRASES):
     piezas = _cabecera_generada(libro.salida_dias, libro)
 
-    if libro.nivel == 2:
+    if libro.parrafos:
         dias_por_semana = {}
         for d in dias:
             dias_por_semana.setdefault((d["trimestre"], d["semana"]), []).append(d)
@@ -711,7 +712,7 @@ def generar_tex(dias, libro=NIVEL1):
             semana = sorted(
                 dias_por_semana[(d["trimestre"], d["semana"])], key=lambda x: x["dia"]
             )
-            piezas.append(nivel2.pagina_dia(d, libro, semana))
+            piezas.append(lupa.pagina_dia(d, libro, semana))
             medalla = pagina_medalla(d, libro)
             if medalla:
                 piezas.append(medalla)
@@ -746,18 +747,18 @@ def generar_tex(dias, libro=NIVEL1):
     return "\n".join(piezas)
 
 
-def generar_clave(dias, libro=NIVEL1):
+def generar_clave(dias, libro=FRASES):
     """generated-clave.tex: la respuesta de cada actividad que tiene una
     respuesta que comprobar, para que un adulto pueda hacerlo sin
     resolverla él mismo -- ver la revisión de un lector externo. En el
-    nivel 1, 'adivina' y 'relaciona'; en el nivel 2, casi todas (ver
-    tools/nivel2.py, entrada_clave). No se imprime en la página del día
+    cuaderno de frases, 'adivina' y 'relaciona'; en "Leo con lupa", casi
+    todas (ver tools/lupa.py, entrada_clave). No se imprime en la página del día
     (ver PLANTILLA_ADIVINA); vive aparte, en la clave de respuestas del
     final de cada libro."""
     piezas = _cabecera_generada(libro.salida_clave, libro)
-    if libro.nivel == 2:
+    if libro.parrafos:
         for d in dias:
-            entrada = nivel2.entrada_clave(d)
+            entrada = lupa.entrada_clave(d)
             if entrada:
                 piezas.append(entrada)
         return "".join(piezas)
@@ -788,7 +789,7 @@ def comprobar_totaldias(libro):
     if int(m.group(1)) != libro.total_dias:
         raise ErrorDeContenido(
             f"\\totaldias vale {m.group(1)} en {_ruta_legible(LANG_FILE)}, "
-            f"pero el {libro.nombre} tiene {libro.total_dias} días"
+            f"pero el cuaderno «{libro.nombre}» tiene {libro.total_dias} días"
         )
 
 

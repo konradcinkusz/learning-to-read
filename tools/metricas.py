@@ -26,22 +26,22 @@ que no se recortan bien) o infra-contar (formas que no deberían
 fusionarse pero lo hacen). Sirve para vigilar una tendencia, no como
 métrica exacta.
 
-Nivel 2 (`--libro nivel2`, content/nivel2/q*.json contra
-content/nivel2/progresion.json): el texto de un día son párrafos, no una
-lista de frases, así que las frases se separan aquí (ver
+"Leo con lupa", el nivel 3 (`--libro lupa`, content/lupa/q*.json
+contra content/lupa/progresion.json): el texto de un día son párrafos,
+no una lista de frases, así que las frases se separan aquí (ver
 oraciones_de_parrafos), y se mide una cosa más -- `subordinadas`, las
 conjunciones y relativos que abren una oración subordinada (que,
 porque, cuando, aunque, mientras, si, donde, como...; ver
-SUBORDINANTES). Es la forma sencilla de comprobar que el texto del
-nivel 2 está hecho de oraciones compuestas de verdad, que es lo que lo
-distingue del nivel 1: `subordinadas_min` es un límite duro, igual que
+SUBORDINANTES). Es la forma sencilla de comprobar que su texto está
+hecho de oraciones compuestas de verdad, que es lo que lo distingue del
+cuaderno de frases: `subordinadas_min` es un límite duro, igual que
 palabras_max y frase_max. Y el vocabulario nuevo se cuenta contra todo
-lo que ya se leyó en el nivel 1, no desde cero.
+lo que ya se leyó en el cuaderno de frases, no desde cero.
 
 Uso:
     python3 tools/metricas.py            # informe por día + resumen; exit 1 si hay errores
     python3 tools/metricas.py --tabla    # tabla en Markdown por semana (para GITHUB_STEP_SUMMARY)
-    python3 tools/metricas.py --libro nivel2 [--tabla]
+    python3 tools/metricas.py --libro lupa [--tabla]
 """
 
 import json
@@ -52,8 +52,8 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from gen_days import cargar_dias  # noqa: E402
 from gen_days import texto_semana  # noqa: E402
-from libros import CONTENT_DIR, NIVEL1, libro_desde_argv  # noqa: E402
-from nivel2 import texto_plano  # noqa: E402
+from libros import CONTENT_DIR, FRASES, libro_desde_argv  # noqa: E402
+from lupa import texto_plano  # noqa: E402
 
 FAMILIAS_FILE = CONTENT_DIR / "familias.json"
 
@@ -91,16 +91,16 @@ PALABRAS_FUNCIONALES = {
 
 # Nombres propios del reparto: se repiten constantemente a propósito, no
 # cuentan como "palabra nueva" -- ver notes/01-curriculum.md. Cada libro
-# tiene su lista (tools/libros.py); esta es la del nivel 1.
-NOMBRES_PROPIOS = NIVEL1.nombres_propios
+# tiene su lista (tools/libros.py); esta es la del cuaderno de frases.
+NOMBRES_PROPIOS = FRASES.nombres_propios
 
-# Nivel 2: palabras que abren una oración subordinada (sustantiva,
+# "Leo con lupa": palabras que abren una oración subordinada (sustantiva,
 # relativa o adverbial). "que" las cubre casi todas las compuestas
 # (para que, antes de que, ya que, así que, hasta que...); las formas
 # con tilde (qué, cómo, dónde, cuándo) NO cuentan -- son preguntas
 # directas, no subordinadas. Es una aproximación a propósito, igual
 # que la lematización de abajo: vigila una tendencia (que los textos
-# del nivel 2 sigan hechos de oraciones complejas), no hace análisis
+# de "Leo con lupa" sigan hechos de oraciones complejas), no hace análisis
 # sintáctico.
 SUBORDINANTES = {
     "que", "porque", "cuando", "aunque", "mientras", "si", "donde",
@@ -114,7 +114,7 @@ SUBORDINANTES = {
 _FIN_DE_FRASE = re.compile(r"(?<=[.!?…])[»—]?\s+(?=[¿¡«—A-ZÁÉÍÓÚÑ])")
 
 
-def cargar_progresion(libro=NIVEL1):
+def cargar_progresion(libro=FRASES):
     datos = json.loads(libro.progresion.read_text(encoding="utf-8"))
     return {fila["semana"]: fila for fila in datos["semanas"]}
 
@@ -143,7 +143,7 @@ def lematizar(palabra, familias, nombres_propios=NOMBRES_PROPIOS):
 
 
 def oraciones_de_parrafos(parrafos):
-    """Las frases de un texto del nivel 2: cada párrafo (o elemento de
+    """Las frases de un texto de "Leo con lupa": cada párrafo (o elemento de
     lista, o nota) termina al menos una frase, y dentro de un párrafo se
     corta en cada fin de frase (ver _FIN_DE_FRASE)."""
     oraciones = []
@@ -165,7 +165,7 @@ def contar_subordinantes(oraciones):
 
 
 def oraciones_del_dia(d, dias_por_semana, libro):
-    if libro.nivel == 2:
+    if libro.parrafos:
         return oraciones_de_parrafos(d["texto"])
     if d["actividad"]["tipo"] == "relee":
         return texto_semana(dias_por_semana, d)
@@ -174,14 +174,15 @@ def oraciones_del_dia(d, dias_por_semana, libro):
 
 def lemas_de_libro(libro, familias):
     """Todos los lemas de contenido de un libro entero -- para que el
-    vocabulario nuevo del nivel 2 se cuente contra lo ya leído en el 1."""
+    vocabulario nuevo de "Leo con lupa" se cuente contra lo ya leído en
+    el cuaderno de frases."""
     vistos = set()
     for fila in metricas_por_dia(cargar_dias(libro), familias, libro):
         vistos.update(fila["lemas_nuevos"])
     return vistos
 
 
-def metricas_por_dia(dias, familias, libro=NIVEL1, vistos_previos=None):
+def metricas_por_dia(dias, familias, libro=FRASES, vistos_previos=None):
     """Devuelve una lista de dicts, uno por día, con sus métricas y la
     lista de lemas de contenido NUEVOS ese día (cumulativo, en orden de
     día -- ver la cabecera del módulo). Un día 'relee' no tiene
@@ -217,7 +218,7 @@ def metricas_por_dia(dias, familias, libro=NIVEL1, vistos_previos=None):
             "nuevas": len(lemas_dia),
             "lemas_nuevos": lemas_dia,
         }
-        if libro.nivel == 2:
+        if libro.parrafos:
             fila["subordinadas"] = contar_subordinantes(oraciones)
         filas.append(fila)
     return filas
@@ -285,8 +286,8 @@ def tabla_markdown(filas, progresion):
     for fila in filas:
         por_semana.setdefault(fila["semana"], []).append(fila)
 
-    # La columna de subordinadas solo existe en el nivel 2 -- la tabla del
-    # nivel 1 sigue siendo exactamente la de siempre.
+    # La columna de subordinadas solo existe en "Leo con lupa" -- la tabla
+    # del cuaderno de frases sigue siendo exactamente la de siempre.
     con_subordinadas = any("subordinadas" in f for f in filas)
     cabecera = "| Semana | Trim. | Días | Palabras (real) | Objetivo | Frase más larga | Nuevas (máx. día) |"
     separador = "|---|---|---|---|---|---|---|"
@@ -339,13 +340,13 @@ def main():
     familias = cargar_familias()
     dias = cargar_dias(libro)
     if not dias:
-        origen = libro.dir_contenido.relative_to(libro.dir_contenido.parents[1] if libro.nivel == 2 else libro.dir_contenido.parent)
-        print(f"ERROR: no hay ningún día en {origen.as_posix()}/q*.json", file=sys.stderr)
+        origen = libro.dir_contenido.relative_to(CONTENT_DIR.parent).as_posix()
+        print(f"ERROR: no hay ningún día en {origen}/q*.json", file=sys.stderr)
         return 1
 
     vistos_previos = None
-    if libro.nivel == 2:
-        vistos_previos = lemas_de_libro(NIVEL1, familias)
+    if libro.parrafos:
+        vistos_previos = lemas_de_libro(FRASES, familias)
     filas = metricas_por_dia(dias, familias, libro, vistos_previos)
     evaluar(filas, progresion)
 

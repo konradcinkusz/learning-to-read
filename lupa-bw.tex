@@ -1,0 +1,10 @@
+% lupa-bw.tex -- "Leo con lupa" sin color, igual que main-bw.tex y
+% palabras-bw.tex: mismo body-lupa.tex, mismos preambles; solo cambia
+% \bookcolor, fijado ANTES de \input{preamble}.
+\documentclass[11pt]{article}
+\def\bookcolor{bw}
+\input{preamble}
+\input{preamble-lupa}
+\begin{document}
+\input{body-lupa}
+\end{document}

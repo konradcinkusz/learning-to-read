@@ -1,12 +1,12 @@
-"""Nivel 2 ("Leo con lupa"): el texto en párrafos y las actividades de
-análisis -- ver notes/03-nivel2.md para el porqué de cada una.
+"""Nivel 3 ("Leo con lupa"): el texto en párrafos y las actividades de
+análisis -- ver notes/04-nivel-lupa.md para el porqué de cada una.
 
-tools/gen_days.py llama a este módulo cuando el libro es el nivel 2
-(`--libro nivel2`): validar_texto() comprueba el texto de un día,
+tools/gen_days.py llama a este módulo cuando el libro es "Leo con lupa"
+(`--libro lupa`): validar_texto() comprueba el texto de un día,
 pagina_dia() genera su página entera (caja de lectura + actividad) y
 entrada_clave() su línea en la clave de respuestas.
 
-La diferencia con el nivel 1 no es solo de longitud: aquí cada
+La diferencia con el cuaderno de frases (nivel 2) no es solo de longitud: aquí cada
 actividad obliga a volver al texto y analizarlo -- dibujar exactamente
 lo que describe (dónde está cada cosa, cuántas hay, de qué color),
 resolver un caso con las pistas repartidas por la semana, completar
@@ -46,7 +46,7 @@ from comun import ErrorDeContenido, campos_requeridos, escapar
 #
 # "texto" es una lista de párrafos. Marcas, al principio de un párrafo:
 #   "—..."  diálogo, con raya (nunca comillas rectas): sangría francesa
-#           si ocupa más de una línea, igual que en el nivel 1.
+#           si ocupa más de una línea, igual que en el cuaderno de frases.
 #   "> ..." una nota, cartel, carta o mensaje que los personajes leen
 #           dentro de la historia: va en un recuadro blanco aparte, para
 #           que se vea que es "otro texto" dentro del texto.
@@ -112,7 +112,7 @@ def validar_texto(num, d):
     texto = d.get("texto")
     if not isinstance(texto, list) or not texto:
         raise ErrorDeContenido(
-            f"día {num}: el nivel 2 necesita 'texto', una lista de párrafos"
+            f"día {num}: este cuaderno necesita 'texto', una lista de párrafos"
         )
     if not d.get("tema"):
         raise ErrorDeContenido(f"día {num}: falta el 'tema' del día")
@@ -152,36 +152,36 @@ def validar_texto(num, d):
 # ---------------------------------------------------------------------
 
 PLANTILLA_DIA = Template(
-    r"""\begin{diapaginados}{$dia}{$semana}{$trimestre}{$tema}
+    r"""\begin{lupapagina}{$dia}{$semana}{$trimestre}{$tema}
 \begin{cajaLectura}{$instruccion}
-\diafuente{$fuente}%
+\fuenteLupa{$fuente}%
 $texto
 \end{cajaLectura}
 \vspace{4mm}
 $actividad
-\end{diapaginados}
+\end{lupapagina}
 """
 )
 
-# Todas las actividades del nivel 2 usan la misma caja (actividadDos, ver
-# preamble.tex): ocupa todo el alto que le queda a la página -- el
+# Todas las actividades de este cuaderno usan la misma caja (actividadLupa,
+# ver preamble-lupa.tex): ocupa todo el alto que le queda a la página -- el
 # espacio para dibujar o para pensar crece o encoge solo según lo largo
 # que sea el texto de ese día, sin calcularlo a mano -- y lo que va
 # después de \tcblower (la lista de comprobación de un dibujo, las
 # líneas para escribir, el banner de las páginas leídas) se queda pegado
 # al fondo de la caja.
 PLANTILLA_ACTIVIDAD = Template(
-    r"""\begin{actividadDos}{$color}{$titulo}
+    r"""\begin{actividadLupa}{$color}{$titulo}
 $arriba
 \tcblower
 $abajo
-\end{actividadDos}"""
+\end{actividadLupa}"""
 )
 
 PLANTILLA_ACTIVIDAD_SIN_ABAJO = Template(
-    r"""\begin{actividadDos}{$color}{$titulo}
+    r"""\begin{actividadLupa}{$color}{$titulo}
 $arriba
-\end{actividadDos}"""
+\end{actividadLupa}"""
 )
 
 COLOR = {
@@ -230,7 +230,7 @@ def _instruccion_adulto(texto):
 
 
 def _lineas_escribir(n):
-    return "\n".join([r"\lineaEscribir"] * n)
+    return "\n".join([r"\renglon"] * n)
 
 
 def _banner(actividad):
@@ -424,7 +424,7 @@ def render_mapa(num, a, contexto):
     )
     preguntas = a.get("preguntas", [])
     abajo = "\n".join(
-        rf"{escapar(p)}\par\lineaEscribir\par\vspace{{1mm}}" for p in preguntas
+        rf"{escapar(p)}\par\renglon\par\vspace{{1mm}}" for p in preguntas
     )
     return _caja("mapa", arriba, abajo, a)
 
@@ -504,7 +504,7 @@ def render_logica(num, a, contexto):
     arriba = "\n\\par\\vspace{2mm}\n".join(partes)
     abajo = ""
     if a.get("pregunta"):
-        abajo = escapar(a["pregunta"]) + r"\par\lineaEscribir"
+        abajo = escapar(a["pregunta"]) + r"\par\renglon"
     return _caja("logica", arriba, abajo, a)
 
 
@@ -560,7 +560,7 @@ def render_errores(num, a, contexto):
         + r"\relatoErrores{" + escapar(relato) + "}"
     )
     lineas = "\n".join(
-        rf"\lineaNumerada{{{i}}}" for i in range(1, len(errores) + 1)
+        rf"\renglonNumerado{{{i}}}" for i in range(1, len(errores) + 1)
     )
     abajo = r"{\bfseries\lblCorrigeErrores\par}" + "\n" + lineas
     return _caja("errores", arriba, abajo, a)
@@ -670,7 +670,7 @@ def render_compara(num, a, contexto):
     return _caja("compara", arriba, "", a)
 
 
-# --- los tipos del nivel 1, con más campos ---------------------------
+# --- los tipos del cuaderno de frases, con más campos ----------------
 
 def render_responde(num, a, contexto):
     campos_requeridos(num, a, ["preguntas", "respuestas"])
@@ -701,7 +701,7 @@ def render_ordena(num, a, contexto):
     filas = "\n".join(rf"\item \casillaNumero\ {escapar(s)}" for s in mezclados)
     arriba = (
         _instruccion_adulto(
-            rf"\lblInstruccionOrdenaDos{{{_y(range(1, len(sucesos) + 1))}}}"
+            rf"\lblLupaInstruccionOrdena{{{_y(range(1, len(sucesos) + 1))}}}"
         )
         + "\n\\begin{listaOrdena}\n" + filas + "\n\\end{listaOrdena}"
     )
@@ -754,9 +754,9 @@ def render_verdadero_falso(num, a, contexto):
     for af in afirmaciones:
         fila = rf"\afirmacionVF{{{escapar(af)}}}"
         if corrige:
-            fila += r"\lineaCorrige"
+            fila += r"\renglonCorrige"
         filas.append(fila)
-    instruccion = r"\lblInstruccionVerdaderoFalsoCorrige" if corrige else r"\lblInstruccionVerdaderoFalso"
+    instruccion = r"\lblLupaInstruccionVerdaderoFalso" if corrige else r"\lblInstruccionVerdaderoFalso"
     arriba = _instruccion_adulto(instruccion) + "\n" + "\n".join(filas)
     return _caja("verdadero_falso", arriba, "", a)
 
@@ -764,7 +764,7 @@ def render_verdadero_falso(num, a, contexto):
 def render_adivina(num, a, contexto):
     campos_requeridos(num, a, ["adivinanza", "respuesta"])
     arriba = r"{\Large " + _lineas(a["adivinanza"]) + r"\par}"
-    abajo = r"\lblRespuesta:\ \lineaEscribirCorta"
+    abajo = r"\lblRespuesta:\ \renglonCorto"
     return _caja("adivina", arriba, abajo, a)
 
 

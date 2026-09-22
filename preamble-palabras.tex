@@ -1,0 +1,190 @@
+% preamble-palabras.tex
+% -----------------------------------------------------------------------
+% Lo propio del cuaderno de primeras palabras (palabras.tex,
+% palabras-bw.tex), cargado DESPUÉS de preamble.tex: la letra, la paleta,
+% las cajas base, \cabeceraDia, \casilla y la actividad "traza" son las
+% mismas que en el cuaderno de frases -- aquí solo lo que cambia en este
+% nivel:
+%
+%   - la página: la caja de actividad llena todo lo que queda de página
+%     (tcolorbox `height fill`), porque en este nivel casi todas las
+%     actividades terminan dibujando, y el sitio para dibujar es todo el
+%     que haya -- nunca una caja pequeña con media página en blanco
+%     debajo (ver notes/02-revision-y-plan.md, punto 5). Para eso el pie
+%     "Día N / 260" tiene que salir de la página de texto y vivir en el
+%     pie de página de verdad (estilo `piepalabras`), si no la caja lo
+%     empujaría a una segunda página;
+%   - la caja de lectura: tarjetas de palabra (sílabas arriba, palabra
+%     entera debajo), una, dos o tres por página según el trimestre;
+%   - las actividades nuevas: escribe, encuentra, palmadas, une, sí/no.
+% -----------------------------------------------------------------------
+
+\usepackage{pdfrender}
+
+% El pie de página de verdad necesita sitio por debajo del texto: 22 mm
+% de margen inferior con el pie a 10 mm del texto deja la línea del pie
+% a ~12 mm del borde del papel, dentro de lo que imprime cualquier
+% impresora doméstica.
+\geometry{bottom=22mm, footskip=10mm}
+
+\makeatletter
+\def\ps@piepalabras{%
+  \let\@oddhead\@empty\let\@evenhead\@empty
+  \def\@oddfoot{\hfil\footnotesize\color{colorGris}\lblDia~\palabrapagina@actual~/ \totaldias\hfil}%
+  \let\@evenfoot\@oddfoot
+}
+
+% La página de un día, en este cuaderno. Misma cabecera que el de
+% frases (\cabeceraDia, preamble.tex) y el mismo \label{dia:N}, así que
+% tools/check_pages.py funciona igual sobre los dos .aux. \gdef y no
+% \def: el pie se compone en la rutina de salida, y aunque esa rutina
+% corre todavía dentro del grupo del entorno, así no depende de ello.
+\newenvironment{palabrapagina}[4]{%
+  \gdef\palabrapagina@actual{#1}%
+  \thispagestyle{piepalabras}%
+  \cabeceraDia{#1}{#2}{#3}{#4}%
+}{%
+  \par\newpage
+}
+\makeatother
+
+% =========================================================================
+% Caja de lectura: tarjetas de palabra
+% =========================================================================
+% Tamaño de la palabra y de sus sílabas, según el trimestre. T1: una
+% palabra enorme; T3: tres por página, más pequeñas para que quepan en
+% una fila. T4 no tiene tarjetas -- ya es una frase, sin sílabas (ver
+% \fraseDia).
+\newcommand{\fuentePalabra}[1]{%
+  \ifcase#1\relax
+  \or \fontsize{64}{70}\selectfont
+  \or \fontsize{46}{52}\selectfont
+  \or \fontsize{31}{37}\selectfont
+  \fi
+}
+\newcommand{\fuenteSilabas}[1]{%
+  \ifcase#1\relax
+  \or \fontsize{28}{32}\selectfont
+  \or \fontsize{24}{28}\selectfont
+  \or \fontsize{18}{22}\selectfont
+  \fi
+}
+% Separador entre sílabas: un punto centrado con aire a los dos lados,
+% más fácil de ver para un niño que un guion.
+\newcommand{\sep}{\hspace{0.28em}\textperiodcentered\hspace{0.28em}}
+
+% Una tarjeta: primero las sílabas (en color, más pequeñas), después la
+% palabra entera -- el orden en que se leen: sílaba a sílaba, luego de
+% corrido.
+%
+% Una palabra larga de T3 (va·ca·cio·nes, ra·ton·ci·to) no cabe a ese
+% tamaño en una columna de un tercio de página: \ajustado la encoge
+% justo lo necesario para que quepa, en vez de dejar que se salga de la
+% caja. Las palabras que ya caben no se tocan.
+\newsavebox{\cajaAjuste}
+\newcommand{\ajustado}[1]{%
+  \sbox{\cajaAjuste}{#1}%
+  \ifdim\wd\cajaAjuste>\linewidth
+    \resizebox{\linewidth}{!}{\usebox{\cajaAjuste}}%
+  \else
+    \usebox{\cajaAjuste}%
+  \fi
+}
+\newcommand{\tarjeta}[3]{%
+  {\fuenteSilabas{#1}\color{colorLectura}\ajustado{#2}\par}%
+  \vspace{1.5mm}%
+  {\fuentePalabra{#1}\ajustado{#3}\par}%
+}
+
+% La frase del día en T4: una sola línea, grande, sin sílabas. Una
+% frase de cuatro palabras largas ("Lápices y cuadernos nuevos.") se
+% encoge un poco antes que partirse en dos líneas: a este nivel, una
+% frase que salta de línea a mitad se lee como dos.
+\newcommand{\fraseDia}[1]{{\centering\fontsize{36}{44}\selectfont\ajustado{#1}\par}}
+
+% El viernes: las palabras (o frases) de toda la semana, cada una con
+% una casilla para marcar si ya la lee sola. Tamaño según cuántas son.
+\newcommand{\fuenteSemana}[1]{%
+  \ifcase#1\relax
+  \or \fontsize{30}{36}\selectfont
+  \or \fontsize{25}{31}\selectfont
+  \or \fontsize{21}{27}\selectfont
+  \or \fontsize{22}{30}\selectfont
+  \fi
+}
+\newcommand{\casillaGrande}{\raisebox{0.05ex}{\framebox[5mm][c]{\rule{0pt}{4mm}}}}
+\newcommand{\palabraSemana}[1]{\casillaGrande\hspace{2mm}#1}
+
+% =========================================================================
+% Cajas de actividad: las mismas que en el cuaderno de frases (colores,
+% títulos), pero todas con `height fill` -- llenan lo que queda de
+% página. El \vspace{5mm} que las separa de la caja de lectura lo pone
+% la plantilla del día (tools/gen_palabras.py).
+% =========================================================================
+% Una caja de altura fija no respeta un \vfill dentro (tcolorbox mide
+% el contenido a su altura natural antes de colocarlo), así que lo que
+% tiene que ir abajo del todo (la línea de escribir de "adivina", el
+% cartel de "repasa") o centrado en el hueco (el dibujo de "completa")
+% va en la parte de abajo de la caja (\tcblower), con `abajo` o
+% `centrado abajo`: todo el sitio sobrante se lo lleva la otra parte.
+\tcbset{
+  cajapalabras/.style={cajabase, height fill},
+  abajo/.style={space to upper, segmentation hidden, middle=2mm},
+  centrado abajo/.style={space to lower, valign lower=center, segmentation hidden, middle=2mm},
+}
+\newtcolorbox{cajaPalDibuja}[1][]{cajapalabras, #1,
+  colback=colorDibujaClaro, colframe=colorDibuja, colbacktitle=colorDibuja,
+  title=\lblDibuja}
+\newtcolorbox{cajaPalCompleta}[1][]{cajapalabras, #1,
+  colback=colorCompletaClaro, colframe=colorCompleta, colbacktitle=colorCompleta,
+  title=\lblCompleta}
+\newtcolorbox{cajaPalTraza}[1][]{cajapalabras, #1,
+  colback=colorRespondeClaro, colframe=colorResponde, colbacktitle=colorResponde,
+  title=\lblTraza}
+\newtcolorbox{cajaPalEscribe}[1][]{cajapalabras, #1,
+  colback=colorRespondeClaro, colframe=colorResponde, colbacktitle=colorResponde,
+  title=\lblEscribe}
+\newtcolorbox{cajaPalEncuentra}[1][]{cajapalabras, #1,
+  colback=colorCompletaClaro, colframe=colorCompleta, colbacktitle=colorCompleta,
+  title=\lblEncuentra}
+\newtcolorbox{cajaPalPalmadas}[1][]{cajapalabras, #1,
+  colback=colorCompletaClaro, colframe=colorCompleta, colbacktitle=colorCompleta,
+  title=\lblPalmadas}
+\newtcolorbox{cajaPalAdivina}[1][]{cajapalabras, #1,
+  colback=colorRelacionaClaro, colframe=colorRelaciona, colbacktitle=colorRelaciona,
+  title=\lblAdivina}
+\newtcolorbox{cajaPalUne}[1][]{cajapalabras, #1,
+  colback=colorRelacionaClaro, colframe=colorRelaciona, colbacktitle=colorRelaciona,
+  title=\lblUne}
+\newtcolorbox{cajaPalSiNo}[1][]{cajapalabras, #1,
+  colback=colorRespondeClaro, colframe=colorResponde, colbacktitle=colorResponde,
+  title=\lblSiNo}
+\newtcolorbox{cajaPalRelee}[1][]{cajapalabras, #1,
+  colback=colorCreaClaro, colframe=colorCrea, colbacktitle=colorCrea,
+  title=\lblRelee}
+\newtcolorbox{cajaPalRepasa}[1][]{cajapalabras, #1,
+  colback=colorCreaClaro, colframe=colorCrea, colbacktitle=colorCrea,
+  title=\lblRepasa}
+
+% Una instrucción para el adulto: pequeña y gris, como en el cuaderno de
+% frases ("Une cada nombre..."). Lo que lee la niña o el niño va aparte,
+% siempre grande.
+\newcommand{\instruccion}[1]{{\footnotesize\color{colorGris}#1\par}\vspace{3mm}}
+
+% El remate de dibujo que llevan casi todas las actividades: una línea
+% de instrucción y, debajo, todo el sitio que quede en la caja.
+\newcommand{\ahoraDibuja}[1]{\par\vspace{6mm}{\footnotesize\color{colorGris}\lblPalAhoraDibuja}\ {\large #1}\par}
+
+% Una línea para escribir, a lo ancho de la caja, con aire encima.
+\newcommand{\lineaEscribir}{\par\vspace{16mm}\noindent\rule{\linewidth}{0.5pt}\par}
+
+% Palabra hueca, para repasarla con el lápiz por dentro (actividad
+% "escribe"): solo el contorno de cada letra, en gris -- la misma letra
+% Andika del resto del cuaderno, no una fuente punteada aparte.
+\newcommand{\palabraHueca}[1]{%
+  {\fontsize{76}{96}\selectfont
+   \textpdfrender{TextRenderingMode=Stroke, LineWidth=0.9pt, StrokeColor=colorGris}{#1}\par}%
+}
+
+% Un círculo vacío para colorear (actividad "palmadas").
+\newcommand{\circuloPalmada}{\tikz[baseline=-0.6ex]\draw[line width=1pt, colorGris] (0,0) circle (4.2mm);}

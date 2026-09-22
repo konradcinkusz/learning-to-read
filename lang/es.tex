@@ -69,14 +69,60 @@
 \newcommand{\lblPortadaCurso}{Curso}
 
 % -----------------------------------------------------------------------
-% Nivel 2 -- "Leo con lupa" (main-nivel2.tex). Las etiquetas de arriba
-% que valen igual para los dos libros (Día, Semana, Leído, Responde,
-% Relaciona...) no se repiten aquí.
+% Cuaderno de primeras palabras (palabras.tex, ver preamble-palabras.tex
+% y tools/gen_palabras.py). Las cadenas de arriba (Día, Semana, Leído,
+% Dibuja, Completa, Traza...) se comparten; aquí solo lo que es propio
+% de este nivel.
 % -----------------------------------------------------------------------
-\newcommand{\lblInstruccionLecturaNivelDosUno}{Lee en voz alta, sin prisa. Fíjate en cada detalle}
-\newcommand{\lblInstruccionLecturaNivelDosDos}{Lee dos veces: primero para ti y luego en voz alta}
-\newcommand{\lblInstruccionLecturaNivelDosTres}{Lee en voz alta, con la voz de cada personaje}
-\newcommand{\lblInstruccionLecturaNivelDosCuatro}{Lee en silencio. Luego, cuéntalo con tus palabras}
+
+% Instrucción de lectura (título de la caja verde), una por trimestre --
+% igual que en el cuaderno de frases, cambia a medida que cambia lo que
+% se lee: sílaba a sílaba al principio, de corrido al final.
+\newcommand{\lblPalInstruccionUno}{Lee la palabra: primero sílaba a sílaba, luego entera}
+\newcommand{\lblPalInstruccionDos}{Lee las dos palabras: primero sílaba a sílaba, luego enteras}
+\newcommand{\lblPalInstruccionTres}{Lee las tres palabras: despacio y, luego, de corrido}
+\newcommand{\lblPalInstruccionCuatro}{Lee la frase señalando cada palabra con el dedo}
+\newcommand{\lblPalInstruccionSemana}{Las palabras de la semana: léelas otra vez}
+\newcommand{\lblPalInstruccionSemanaFrases}{Las frases de la semana: léelas otra vez}
+\newcommand{\lblPalMarcaSemana}{Marca cada una que ya sabes leer.}
+
+\newcommand{\lblEscribe}{Escribe}
+\newcommand{\lblEncuentra}{Encuentra}
+\newcommand{\lblPalmadas}{Palmadas}
+\newcommand{\lblUne}{Une}
+\newcommand{\lblSiNo}{¿Sí o no?}
+\newcommand{\lblSi}{Sí}
+\newcommand{\lblNo}{No}
+
+% Instrucciones de actividad: las lee un adulto en voz alta (ver
+% frontmatter/palabras/como-usar.tex) -- por eso van en pequeño y en
+% gris, igual que en el cuaderno de frases; lo que lee la niña o el
+% niño va siempre grande.
+\newcommand{\lblPalInstruccionCompleta}{Convierte estas líneas en un dibujo.}
+\newcommand{\lblPalInstruccionEscribe}{Repasa la palabra con un lápiz, despacio, por dentro de las letras. Luego, escríbela tú en la línea.}
+\newcommand{\lblPalInstruccionEncuentra}{Rodea esta palabra cada vez que la veas:}
+\newcommand{\lblPalInstruccionPalmadas}{Lee cada palabra dando una palmada en cada sílaba. Colorea un círculo por cada palmada.}
+\newcommand{\lblPalInstruccionAdivina}{Un adulto te lee la adivinanza. Dibuja la respuesta.}
+\newcommand{\lblPalInstruccionAdivinaEscribe}{Un adulto te lee la adivinanza. Dibuja la respuesta y escribe su nombre en la línea.}
+\newcommand{\lblPalInstruccionUne}{Une con una línea cada palabra con la misma palabra en MAYÚSCULAS.}
+\newcommand{\lblPalInstruccionSiNo}{Lee cada frase. Rodea \lblSi\ o \lblNo.}
+\newcommand{\lblPalAhoraDibuja}{Ahora, dibuja:}
+
+\newcommand{\lblPalTituloPortada}{Aprendo a leer}
+\newcommand{\lblPalNivelPortada}{Primeras palabras}
+\newcommand{\lblPalSubtituloPortada}{Una palabra nueva cada día -- y un dibujo}
+\newcommand{\lblPalSubtituloPortadaMetodo}{Cuaderno de lectura diaria para quien empieza a juntar sílabas -- el paso anterior al cuaderno de frases}
+
+% -----------------------------------------------------------------------
+% "Leo con lupa", el nivel 3 (lupa.tex, ver preamble-lupa.tex y
+% tools/lupa.py). Las etiquetas de arriba que valen igual para todos los
+% cuadernos (Día, Semana, Leído, Responde, Relaciona...) no se repiten
+% aquí; solo lo que es propio de este nivel.
+% -----------------------------------------------------------------------
+\newcommand{\lblLupaInstruccionUno}{Lee en voz alta, sin prisa. Fíjate en cada detalle}
+\newcommand{\lblLupaInstruccionDos}{Lee dos veces: primero para ti y luego en voz alta}
+\newcommand{\lblLupaInstruccionTres}{Lee en voz alta, con la voz de cada personaje}
+\newcommand{\lblLupaInstruccionCuatro}{Lee en silencio. Luego, cuéntalo con tus palabras}
 
 \newcommand{\lblDibujaConLupa}{Dibuja con lupa}
 \newcommand{\lblVinetas}{Viñetas}
@@ -92,12 +138,12 @@
 \newcommand{\lblInstruccionCaso}{Rodea la respuesta. Después, escribe las pistas del texto que te lo dicen.}
 \newcommand{\lblPistasCaso}{Las pistas que me lo dicen:}
 \newcommand{\lblCorrigeErrores}{Escribe cómo es de verdad:}
-\newcommand{\lblInstruccionOrdenaDos}[1]{Estos sucesos están desordenados. Escribe #1 en las casillas, en el orden en que pasaron.}
-\newcommand{\lblInstruccionVerdaderoFalsoCorrige}{Marca V (verdadero) o F (falso). Si es falsa, escribe debajo cómo es de verdad.}
+\newcommand{\lblLupaInstruccionOrdena}[1]{Estos sucesos están desordenados. Escribe #1 en las casillas, en el orden en que pasaron.}
+\newcommand{\lblLupaInstruccionVerdaderoFalso}{Marca V (verdadero) o F (falso). Si es falsa, escribe debajo cómo es de verdad.}
 \newcommand{\lblSalida}{SALIDA}
 \newcommand{\lblLosDos}{los dos}
 
-\newcommand{\lblTituloPortadaNivelDos}{Leo con lupa}
-\newcommand{\lblNivelPortadaNivelDos}{Aprendo a leer \textperiodcentered\ nivel 2}
-\newcommand{\lblSubtituloPortadaNivelDos}{Un caso nuevo cada semana}
-\newcommand{\lblSubtituloPortadaMetodoNivelDos}{Cuaderno de lectura diaria para quien ya lee con soltura: oraciones largas, y cada día algo que descubrir en el texto}
+\newcommand{\lblLupaTituloPortada}{Leo con lupa}
+\newcommand{\lblLupaNivelPortada}{Aprendo a leer \textperiodcentered\ nivel 3}
+\newcommand{\lblLupaSubtituloPortada}{Un caso nuevo cada semana}
+\newcommand{\lblLupaSubtituloPortadaMetodo}{Cuaderno de lectura diaria para quien ya lee con soltura: oraciones largas, y cada día algo que descubrir en el texto}

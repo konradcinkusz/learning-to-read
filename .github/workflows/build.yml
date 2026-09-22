@@ -46,11 +46,32 @@ jobs:
       # matplotlib/fonttools (eso solo hace falta para regenerarlo, ver
       # tools/gen_letras_puntos.py), así que este job no gana ninguna
       # dependencia pesada por esa actividad.
-      - name: Genera content/generated-days.tex desde content/q*.json
+      - name: Genera los .tex de los tres cuadernos desde su JSON
         run: make generate
 
       - name: Valida el contenido (frases por trimestre, campos de actividad)
         run: python3 tools/gen_days.py --check
+
+      # El cuaderno de primeras palabras (content/palabras/q*.json):
+      # primero el silabeo automático contra casos conocidos -- si alguien
+      # rompe una regla de tools/silabas.py, que se vea aquí y no como
+      # cientos de palabras "mal silabeadas" de golpe --, después el
+      # contenido (cada palabra partida a mano igual que la parte
+      # tools/silabas.py, y dentro de la escalera de sílabas de su
+      # semana), y un resumen de la escalera en el resumen del job.
+      - name: Comprueba el silabeo automático (casos conocidos)
+        run: python3 tools/silabas.py --prueba
+
+      - name: Valida el cuaderno de primeras palabras (silabeo, escalera de sílabas)
+        run: python3 tools/gen_palabras.py --check
+
+      - name: Resume la escalera del cuaderno de primeras palabras
+        run: |
+          {
+            echo '## Cuaderno de primeras palabras: escalera por semana'
+            echo
+            python3 tools/gen_palabras.py --tabla
+          } >> "$GITHUB_STEP_SUMMARY"
 
       # Compara content/q*.json con la escalera de content/progresion.json
       # (notes/02-revision-y-plan.md, Parte C) -- palabras/página y frase
@@ -58,26 +79,31 @@ jobs:
       # por día es solo un aviso, ver la cabecera de content/progresion.json.
       - name: Mide la progresión (palabras/página, frase, vocabulario nuevo)
         run: |
-          echo "## Nivel 1 -- Aprendo a leer" >> "$GITHUB_STEP_SUMMARY"
-          python3 tools/metricas.py --tabla >> "$GITHUB_STEP_SUMMARY"
+          {
+            echo '## Cuaderno de frases: escalera por semana'
+            echo
+            python3 tools/metricas.py --tabla
+          } >> "$GITHUB_STEP_SUMMARY"
 
-      # El nivel 2 ("Leo con lupa", notes/03-nivel2.md) pasa por las mismas
-      # puertas con su propio contenido (content/nivel2/q*.json) y su propia
-      # escalera. Además, tools/gen_days.py --libro nivel2 comprueba lo que
-      # se puede comprobar a máquina en sus actividades: que cada tabla
-      # lógica tenga una sola solución, que cada ruta de un mapa llegue a
-      # donde dice, que cada corrección de "Caza los errores" esté en el
-      # texto de la semana... (ver la cabecera de tools/nivel2.py).
-      - name: Genera el nivel 2 desde content/nivel2/q*.json
-        run: make generate-nivel2
+      # "Leo con lupa", el nivel 3 (content/lupa/q*.json, ver
+      # notes/04-nivel-lupa.md): las mismas puertas con su propio
+      # contenido y su propia escalera, que añade un mínimo de oraciones
+      # subordinadas por texto. tools/gen_days.py --libro lupa comprueba
+      # además lo que se puede comprobar a máquina en sus actividades: que
+      # cada tabla lógica tenga una sola solución, que cada ruta de un mapa
+      # llegue a donde dice, que cada corrección de "Caza los errores" esté
+      # en el texto de la semana, que el libro tenga sus 260 días... (ver
+      # la cabecera de tools/lupa.py).
+      - name: Valida Leo con lupa (actividades, tablas, mapas, 260 días)
+        run: python3 tools/gen_days.py --libro lupa --check
 
-      - name: Valida el contenido del nivel 2 (actividades, tablas, mapas)
-        run: python3 tools/gen_days.py --libro nivel2 --check
-
-      - name: Mide la progresión del nivel 2 (palabras, frase, subordinadas)
+      - name: Mide la progresión de Leo con lupa (palabras, frase, subordinadas)
         run: |
-          echo "## Nivel 2 -- Leo con lupa" >> "$GITHUB_STEP_SUMMARY"
-          python3 tools/metricas.py --libro nivel2 --tabla >> "$GITHUB_STEP_SUMMARY"
+          {
+            echo '## Leo con lupa: escalera por semana'
+            echo
+            python3 tools/metricas.py --libro lupa --tabla
+          } >> "$GITHUB_STEP_SUMMARY"
 
   build:
     name: PDF (${{ matrix.variant }})
@@ -92,17 +118,23 @@ jobs:
       # \input{preamble}. Una matriz en vez de un job duplicado: un cambio
       # que solo rompe uno de los dos formatos tiene que ser tan visible
       # como uno que rompe los dos.
-      # Los dos libros (nivel 1 y nivel 2) en los dos formatos: cuatro PDF.
       matrix:
         include:
           - variant: color
             root: main
           - variant: bw
             root: main-bw
-          - variant: nivel2-color
-            root: main-nivel2
-          - variant: nivel2-bw
-            root: main-nivel2-bw
+          # El cuaderno de primeras palabras (palabras.tex), mismo motor y
+          # mismas comprobaciones: un día = una página, log limpio.
+          - variant: palabras-color
+            root: palabras
+          - variant: palabras-bw
+            root: palabras-bw
+          # "Leo con lupa" (lupa.tex), el nivel 3: las mismas comprobaciones.
+          - variant: lupa-color
+            root: lupa
+          - variant: lupa-bw
+            root: lupa-bw
     steps:
       - uses: actions/checkout@v4
 
@@ -110,11 +142,9 @@ jobs:
         with:
           python-version: '3.11'
 
-      # Otro runner, otro checkout -- este job genera para sí mismo (los
-      # dos libros: es un segundo de Python, y así cualquier fila de la
-      # matriz encuentra lo que su body*.tex necesita).
-      - name: Genera los días de los dos libros desde content/**/q*.json
-        run: make generate generate-nivel2
+      # Otro runner, otro checkout -- este job genera para sí mismo.
+      - name: Genera los .tex de los tres cuadernos desde su JSON
+        run: make generate
 
       # LuaLaTeX, no pdflatex: la letra es Andika (fonts/andika/, ver
       # preamble.tex) -- fontspec exige lualatex o xelatex. args NO lleva

@@ -11,8 +11,10 @@
 # verdad es el JSON, no estos ficheros.
 content/generated-days.tex
 content/generated-clave.tex
-content/nivel2/generated-days.tex
-content/nivel2/generated-clave.tex
+content/palabras/generated-days.tex
+content/palabras/generated-clave.tex
+content/lupa/generated-days.tex
+content/lupa/generated-clave.tex
 
 # Python
 __pycache__/

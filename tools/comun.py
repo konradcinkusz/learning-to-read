@@ -1,7 +1,8 @@
-"""Lo que comparten tools/gen_days.py (los dos libros) y tools/nivel2.py
-(las actividades propias del nivel 2): el error de contenido y el
-escapado de texto libre a LaTeX. Vive aparte para que nivel2.py no
-tenga que importar gen_days.py (que a su vez importa nivel2.py)."""
+"""Lo que comparten tools/gen_days.py (los cuadernos de frases y de
+"Leo con lupa") y tools/lupa.py (las actividades propias de "Leo con
+lupa"): el error de contenido y el escapado de texto libre a LaTeX. Vive
+aparte para que lupa.py no tenga que importar gen_days.py (que a su vez
+importa lupa.py)."""
 
 
 class ErrorDeContenido(Exception):

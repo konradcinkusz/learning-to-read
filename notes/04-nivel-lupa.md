@@ -1,21 +1,26 @@
-# Nivel 2 — "Leo con lupa"
+# "Leo con lupa" — nivel 3
 
-El segundo cuaderno del repositorio: un año más de lectura diaria para
-la misma niña, un nivel por encima de "Aprendo a leer" (nivel 1). Mismo
-motor, mismo formato (A4, una página por día laborable, 260 días,
-cuatro trimestres que son las cuatro estaciones), mismos personajes un
-año después. Se construye con `make nivel2` y sale en
-`main-nivel2.pdf` (color) y `main-nivel2-bw.pdf` (blanco y negro).
+El tercer cuaderno del repositorio, después de *Primeras palabras*
+(nivel 1, `notes/03-nivel-palabras.md`) y del cuaderno de frases
+(nivel 2, `notes/01-curriculum.md`): un año más de lectura diaria para
+la misma niña, un nivel por encima del cuaderno de frases. Mismo motor
+(`tools/gen_days.py --libro lupa`), mismo formato (A4, una página por
+día laborable, 260 días, cuatro trimestres que son las cuatro
+estaciones), mismos personajes un año después. Ficheros: `lupa.tex` /
+`lupa-bw.tex`, `body-lupa.tex`, `preamble-lupa.tex`,
+`frontmatter/lupa/`, `backmatter/lupa/`, `content/lupa/q1.json`…`q4.json`,
+`tools/lupa.py`. `make lupa` lo genera, compila y comprueba; `make
+all-formats` hace los tres cuadernos en color y en blanco y negro.
 
 Ver `notes/01-curriculum.md` y `notes/02-revision-y-plan.md` para el
-nivel 1: este documento solo cuenta lo que cambia.
+cuaderno de frases: este documento solo cuenta lo que cambia.
 
-## Qué cambia respecto al nivel 1
+## Qué cambia respecto al cuaderno de frases
 
-El nivel 1 termina con una lectora que lee con soltura páginas de cuatro
-frases compuestas (55–70 palabras, frases de hasta 16 palabras,
-"porque", "cuando", "aunque", diálogo con raya). El nivel 2 sube en las
-dos cosas que el nivel 1 apenas tocaba:
+El cuaderno de frases termina con una lectora que lee con soltura
+páginas de cuatro frases compuestas (55–70 palabras, frases de hasta 16
+palabras, "porque", "cuando", "aunque", diálogo con raya). "Leo con
+lupa" sube en las dos cosas que el cuaderno de frases apenas tocaba:
 
 1. **El texto está hecho de oraciones complejas.** Subordinadas de
    todo tipo — relativas (*el cuaderno que le regaló la abuela*, *la
@@ -48,7 +53,7 @@ del club, y lo resuelve con las mismas pistas que los personajes.
 
 ## El reparto
 
-Los del nivel 1, un año mayores, y tres nuevos.
+Los del cuaderno de frases, un año mayores, y tres nuevos.
 
 | Personaje | Quién es |
 |---|---|
@@ -67,7 +72,7 @@ Los del nivel 1, un año mayores, y tres nuevos.
 | **Martín** | el amigo de Dani en el pueblo |
 
 Todos los nombres propios del reparto están en `tools/libros.py`
-(`NIVEL2.nombres_propios`), para que `tools/metricas.py` no los cuente
+(`LUPA.nombres_propios`), para que `tools/metricas.py` no los cuente
 como vocabulario nuevo.
 
 ## La semana
@@ -96,10 +101,10 @@ variaciones cuando el tema lo pide:
 
 ## Las actividades
 
-Todas usan la misma caja (`actividadDos`, `preamble.tex`), que ocupa
+Todas usan la misma caja (`actividadLupa`, `preamble-lupa.tex`), que ocupa
 todo el alto que le queda a la página: el sitio para dibujar o pensar
 se adapta solo a lo largo que sea el texto. Campos en el JSON — ver
-`tools/nivel2.py` para el detalle y las comprobaciones:
+`tools/lupa.py` para el detalle y las comprobaciones:
 
 | Tipo | Título | Campos | Qué se comprueba al generar |
 |---|---|---|---|
@@ -128,13 +133,13 @@ El texto del día (`texto`) es una lista de párrafos: `—` al principio es
 diálogo, `> ` una nota o carta que los personajes leen (va en un
 recuadro blanco), `- ` un elemento de lista, y `\n` dentro de un párrafo
 un salto de línea. Nada de comillas rectas: raya para el diálogo, «»
-para citar (`tools/nivel2.py` lo comprueba).
+para citar (`tools/lupa.py` lo comprueba).
 
 ## Escalera de progresión
 
 Valores al final de cada trimestre; en medio crecen de forma lineal,
-semana a semana (`content/nivel2/progresion.json`, comprobado por
-`tools/metricas.py --libro nivel2`):
+semana a semana (`content/lupa/progresion.json`, comprobado por
+`tools/metricas.py --libro lupa`):
 
 | Dimensión | inicio T1 | final T1 | final T2 | final T3 | final T4 |
 |---|---|---|---|---|---|
@@ -147,9 +152,9 @@ semana a semana (`content/nivel2/progresion.json`, comprobado por
 | letra del texto | 16 pt | 16 pt | 15 pt | 14,5 pt | 14 pt |
 
 `palabras_max`, `frase_max` y `subordinadas_min` son límites duros (`make
-check-nivel2` falla); `palabras_min` y el vocabulario nuevo
-(`nuevas_max`, contando como ya vistas todas las palabras del nivel 1)
-son avisos.
+check-lupa` falla); `palabras_min` y el vocabulario nuevo
+(`nuevas_max`, contando como ya vistas todas las palabras del cuaderno
+de frases) son avisos.
 
 ## Los cuatro trimestres
 
@@ -201,7 +206,7 @@ son avisos.
 | Sem. | Tema | Caso / hilo |
 |---|---|---|
 | 27 | Una foto de hace veinticinco años | Marta enseña una foto de su clase enterrando una cápsula del tiempo (fuente con cabeza de león, el plátano grande, el reloj de la fachada a las doce) |
-| 28 | Torrijas, esta vez sola | Semana Santa: Lucía hace las torrijas que prometió en el nivel 1 (receta); ¿quién se comió la última? |
+| 28 | Torrijas, esta vez sola | Semana Santa: Lucía hace las torrijas que prometió en el cuaderno de frases (receta); ¿quién se comió la última? |
 | 29 | La rueda pinchada | ¿dónde se pinchó la bici? (mapa del recorrido); cómo arreglar un pinchazo (instrucciones) |
 | 30 | La entrevista a Paco | Paco recuerda: «a mediodía, a la sombra del plátano grande, a diez pasos de la fuente»; pero la fuente se cambió de sitio y ahora hay dos plátanos |
 | 31 | El Día del Libro | ¿de quién es el libro sin nombre? (pistas dentro del libro) |
