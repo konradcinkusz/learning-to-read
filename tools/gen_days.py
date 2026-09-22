@@ -616,6 +616,15 @@ def validar_dias(dias, libro=NIVEL1):
         esperado += 1
         validar_dia(num, d, libro)
 
+    # Y que el libro esté entero: un cuaderno al que le faltan semanas
+    # compila igual de bien (todas sus páginas caben, todas sus
+    # actividades se validan) y no se notaría hasta imprimirlo.
+    if len(dias) != libro.total_dias:
+        raise ErrorDeContenido(
+            f"el {libro.nombre} tiene {len(dias)} días y deberían ser "
+            f"{libro.total_dias} -- faltan los días {len(dias) + 1}-{libro.total_dias}"
+        )
+
 
 def texto_semana(dias_por_semana, dia_actual):
     """Para un día 'relee': la PRIMERA frase de cada día anterior de la
