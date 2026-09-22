@@ -1,0 +1,1354 @@
+{
+  "_comentario": "'Leo con lupa' (nivel 3). Datos de origen para tools/gen_days.py --libro lupa. Este fichero SI se edita a mano; content/lupa/generated-days.tex NO (se regenera con `make generate`). Trimestre 2 (invierno): días 66-130, semanas 14-26, narración en pasado (indefinido e imperfecto; el diálogo, en presente). Hilo: el mapa de la abuela Rosa, que Lucía encuentra en Nochebuena (semana 15) y que se resolverá en verano (T4). Géneros nuevos: carta (semanas 17 y 23), texto informativo (semanas 16, 24, 25 y 26) e instrucciones (semana 19). -- ver notes/04-nivel-lupa.md.",
+  "dias": [
+    {
+      "dia": 66, "semana": 14, "trimestre": 2,
+      "tema": "Los Reyes que caminan",
+      "texto": [
+        "Lector X eran dos: Papá, que escribía las notas, y Dani, que inventaba las adivinanzas.",
+        "Aquella mañana, cuando Lucía bajó a desayunar, el belén ya no estaba igual.",
+        "Lo tenían en la balda más alta de la estantería del salón. A la derecha había un portal con una estrella encima, y en el centro, un río de papel de plata.",
+        "La noche anterior, los tres Reyes estaban a la izquierda, junto a una palmera. Ahora estaban al lado del río, un palmo más cerca del portal."
+      ],
+      "actividad": {
+        "tipo": "dibuja_detalle",
+        "prompt": "Dibuja el belén como lo vio Lucía aquella mañana, con los Reyes en su sitio nuevo.",
+        "comprueba": [
+          "¿Dónde está el portal, y qué tiene encima?",
+          "¿Qué hay en el centro, y de qué está hecho?",
+          "¿Qué hay a la izquierda?",
+          "¿Dónde están ahora los tres Reyes?"
+        ],
+        "clave": "A la derecha, el portal con una estrella encima; en el centro, un río de papel de plata; a la izquierda, una palmera; los tres Reyes, al lado del río, un palmo más cerca del portal."
+      }
+    },
+    {
+      "dia": 67, "semana": 14, "trimestre": 2,
+      "tema": "Los Reyes que caminan",
+      "texto": [
+        "El martes, los Reyes aparecieron otro palmo más cerca del portal, así que Lucía llamó al club.",
+        "Primero comprobaron si Dani llegaba a la balda del belén. Aunque se subió a una silla, no alcanzó ni la palmera.",
+        "Luego, Sofía se acordó de Toby, que siempre ladraba cuando alguien de fuera entraba de noche. Pero aquella noche no ladró ni una vez.",
+        "—Entonces, el que mueve los Reyes es de casa —susurró Hugo."
+      ],
+      "actividad": {
+        "tipo": "verdadero_falso",
+        "afirmaciones": [
+          "El martes, los Reyes aparecieron otro palmo más cerca del portal.",
+          "Subido a una silla, Dani llegó hasta la palmera del belén.",
+          "Toby siempre ladraba cuando alguien de fuera entraba de noche.",
+          "Aquella noche, Toby ladró muchas veces."
+        ],
+        "respuestas": [
+          "V",
+          "F: aunque se subió a una silla, no alcanzó ni la palmera.",
+          "V",
+          "F: no ladró ni una vez."
+        ]
+      }
+    },
+    {
+      "dia": 68, "semana": 14, "trimestre": 2,
+      "tema": "Los Reyes que caminan",
+      "texto": [
+        "El miércoles, el club interrogó a los sospechosos en la caseta, uno por uno.",
+        "Mamá, que tenía un catarro tremendo, se acostaba muy pronto con una bolsa de agua caliente.",
+        "Papá contestó que él se quedaba leyendo hasta muy tarde en el sillón, junto a la estantería del belén.",
+        "—¡Los Reyes caminan solos porque son magos! —aseguró Dani.",
+        "Lucía lo apuntó todo en su cuaderno de detective, aunque sabía que las figuritas del belén no andaban solas."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "preguntas": [
+          "¿Por qué no puede ser Dani el que mueve los Reyes? Vuelve a leer la página del martes.",
+          "¿Quién se quedaba despierto por la noche cerca del belén? ¿Cómo lo sabes?"
+        ],
+        "respuestas": [
+          "Porque no llega a la balda del belén: aunque se subió a una silla, no alcanzó ni la palmera.",
+          "Papá: él mismo contó que se quedaba leyendo hasta muy tarde en el sillón, junto a la estantería del belén."
+        ]
+      }
+    },
+    {
+      "dia": 69, "semana": 14, "trimestre": 2,
+      "tema": "Los Reyes que caminan",
+      "texto": [
+        "El jueves, junto a los Reyes, apareció una nota pequeña que tenía la letra redonda y ordenada:",
+        "> Un palmo cada noche, hasta llegar al portal.",
+        "Como Lucía quería saber quién se quedaba despierto, preguntó a qué hora se acostaban Mamá, Papá y Dani.",
+        "Mamá, con su catarro, se acostaba antes que nadie. Dani, que se dormía en el sofá, nunca aguantaba despierto hasta las doce.",
+        "Uno se acostaba a las nueve; otro, a las nueve y media, y otro, a las doce."
+      ],
+      "actividad": {
+        "tipo": "logica",
+        "instruccion": "Usa las pistas del texto para saber a qué hora se acostaba cada uno. Pon ✓ donde sí y ✗ donde no.",
+        "filas": ["Mamá", "Dani", "Papá"],
+        "columnas": ["a las nueve", "a las nueve y media", "a las doce"],
+        "restricciones": [["si", "Mamá", "a las nueve"], ["no", "Dani", "a las doce"]],
+        "solucion": {"Mamá": "a las nueve", "Dani": "a las nueve y media", "Papá": "a las doce"},
+        "pregunta": "¿Quién se quedaba despierto hasta más tarde?",
+        "respuesta_pregunta": "Papá, que se acostaba a las doce."
+      }
+    },
+    {
+      "dia": 70, "semana": 14, "trimestre": 2,
+      "tema": "Los Reyes que caminan: el caso",
+      "texto": [
+        "El viernes, el club se reunió en la caseta para cerrar el caso de los Reyes.",
+        "Sofía colocó la nota del belén junto a una nota antigua de Lector X. La letra era igual de redonda y ordenada en las dos.",
+        "Hugo leyó en voz alta las pistas que tenían apuntadas, mientras Lucía miraba el belén en silencio.",
+        "—Ya sé quién mueve los Reyes —susurró por fin—, aunque antes de decirlo quiero estar segura.",
+        "¿Y tú? ¿Quién crees que es?"
+      ],
+      "actividad": {
+        "tipo": "caso",
+        "pregunta": "¿Quién movía los Reyes del belén cada noche?",
+        "opciones": ["Dani", "Mamá", "Papá", "Toby"],
+        "solucion": "Papá",
+        "clave": "Papá: el belén está en la balda más alta, y Dani no llega ni subido a una silla, y Toby menos (lunes y martes); Toby no ladró, así que era alguien de casa (martes); Mamá, con catarro, se acostaba antes que nadie, y Papá se quedaba leyendo hasta las doce junto a la estantería del belén (miércoles y jueves); y la nota tiene la letra redonda y ordenada de las notas de Lector X, que escribía Papá (lunes, jueves y viernes).",
+        "banner": "¡70 páginas leídas! Caso de los Reyes: resuelto."
+      }
+    },
+    {
+      "dia": 71, "semana": 15, "trimestre": 2,
+      "tema": "Nochebuena y el mapa",
+      "texto": [
+        "Los Reyes los movía Papá, como Lucía sospechaba.",
+        "En Nochebuena, Lucía encontró en el armario de la abuela un cuaderno viejo del colegio con un mapa dentro.",
+        "A la izquierda había un río que bajaba de arriba abajo, con un puente pequeño. Arriba, junto al río, estaba el molino con su rueda.",
+        "En el centro había un pozo con un cubo. A la derecha, tres álamos en fila y, a su lado, una piedra grande que parecía una tortuga. Debajo de la piedra había una X roja."
+      ],
+      "actividad": {
+        "tipo": "dibuja_detalle",
+        "prompt": "Dibuja el mapa que encontró Lucía, con cada cosa en su sitio. Hazlo con cuidado: ¡más adelante lo volverás a necesitar!",
+        "comprueba": [
+          "¿Dónde está el río, y por dónde se cruza?",
+          "¿Dónde está el molino, y qué tiene?",
+          "¿Qué hay en el centro?",
+          "¿Cuántos álamos hay, y cómo están colocados?",
+          "¿Qué hay al lado de los álamos? ¿Y debajo?"
+        ],
+        "clave": "El río, a la izquierda, de arriba abajo, con un puente pequeño; el molino con su rueda, arriba, junto al río; en el centro, un pozo con un cubo; a la derecha, tres álamos en fila y, a su lado, una piedra grande con forma de tortuga, con una X roja debajo."
+      }
+    },
+    {
+      "dia": 72, "semana": 15, "trimestre": 2,
+      "tema": "Nochebuena y el mapa",
+      "texto": [
+        "Cuando Lucía le dio la vuelta al mapa, vio unas líneas escritas a lápiz:",
+        "> Desde el pozo, diez pasos hacia los álamos. El tesoro está debajo de la piedra que parece una tortuga.\nRosa, 8 años.",
+        "Lucía corrió al salón con el cuaderno. La abuela se puso las gafas, miró el mapa y se quedó callada un momento.",
+        "—¡Es mi mapa del tesoro! —dijo por fin—. Lo dibujé en el pueblo hace unos sesenta años, cuando tenía ocho."
+      ],
+      "actividad": {
+        "tipo": "errores",
+        "instruccion": "Este resumen tiene tres errores. Rodéalos y escribe debajo cómo es de verdad. Si hace falta, vuelve a leer la página de ayer.",
+        "relato": "En Nochebuena, Lucía encontró un mapa dentro de una caja de lata. Detrás, escrito con rotulador, ponía: «Desde el pozo, veinte pasos hacia los álamos». La abuela lo dibujó cuando tenía ocho años.",
+        "errores": [
+          ["una caja de lata", "un cuaderno viejo del colegio"],
+          ["con rotulador", "a lápiz"],
+          ["veinte pasos", "diez pasos"]
+        ]
+      }
+    },
+    {
+      "dia": 73, "semana": 15, "trimestre": 2,
+      "tema": "Nochebuena y el mapa",
+      "texto": [
+        "Después de cenar, la abuela les contó la historia del mapa.",
+        "—Cuando tenía ocho años, enterré una caja de lata con mis cosas más queridas —explicó—. Luego hice el mapa para no olvidar dónde estaba.",
+        "Con los años, se fue a vivir a la ciudad y se olvidó del cuaderno. Aunque de mayor volvió al pueblo a buscar la caja, ya no se acordaba del sitio.",
+        "—¿Y qué había dentro? —preguntó Dani.",
+        "—Eso es lo curioso: que ya no me acuerdo bien —se rio la abuela."
+      ],
+      "actividad": {
+        "tipo": "ordena",
+        "sucesos": [
+          "Rosa, con ocho años, enterró una caja de lata con sus cosas más queridas.",
+          "Rosa hizo un mapa para no olvidar dónde estaba la caja.",
+          "Rosa se fue a vivir a la ciudad y se olvidó del cuaderno.",
+          "De mayor, Rosa volvió al pueblo a buscar la caja, pero no se acordaba del sitio.",
+          "En Nochebuena, Lucía encontró el mapa en el armario de la abuela."
+        ]
+      }
+    },
+    {
+      "dia": 74, "semana": 15, "trimestre": 2,
+      "tema": "Nochebuena y el mapa",
+      "texto": [
+        "El día de Navidad, Lucía no dejaba de pensar en la niña que dibujó el mapa.",
+        "Rosa y ella se parecían mucho: las dos tenían ocho años y las dos guardaban sus secretos en un cuaderno.",
+        "Pero Rosa vivía en un pueblo con río y molino, mientras que Lucía vivía en la ciudad. Rosa escondía tesoros, y Lucía, en cambio, buscaba pistas con su lupa.",
+        "—Algún día encontraremos tu caja, abuela —prometió Lucía."
+      ],
+      "actividad": {
+        "tipo": "compara",
+        "instruccion": "Escribe a cada lado lo que el texto cuenta solo de Rosa de niña o solo de Lucía, y en el centro, lo que tienen las dos.",
+        "a": "Rosa de niña",
+        "b": "Lucía",
+        "solucion": {
+          "a": ["vivía en un pueblo con río y molino", "escondía tesoros"],
+          "ambos": ["tenían ocho años", "guardaban sus secretos en un cuaderno"],
+          "b": ["vivía en la ciudad", "buscaba pistas con su lupa"]
+        }
+      }
+    },
+    {
+      "dia": 75, "semana": 15, "trimestre": 2,
+      "tema": "Nochebuena y el mapa",
+      "texto": [
+        "Cuando se despidieron, la abuela le dio el mapa a Lucía.",
+        "—Guárdalo tú, detective. En verano, cuando vayamos al pueblo, buscaremos la caja.",
+        "Dani también quiso ayudar, así que inventó una adivinanza, como cuando era Lector X:",
+        "> Tengo agua y no soy un río,\ntengo un cubo y no soy la playa,\ny estoy en el centro del mapa.\n¿Quién soy?",
+        "La abuela la adivinó a la primera, pero Lucía tardó un poco más."
+      ],
+      "actividad": {
+        "tipo": "adivina",
+        "adivinanza": "Resuelve la adivinanza de Dani. Si no la sabes, vuelve a leer la página del lunes.\nTengo agua y no soy un río,\ntengo un cubo y no soy la playa,\ny estoy en el centro del mapa.\n¿Quién soy?",
+        "respuesta": "El pozo: en el centro del mapa hay un pozo con un cubo."
+      }
+    },
+    {
+      "dia": 76, "semana": 16, "trimestre": 2,
+      "tema": "Las doce uvas",
+      "texto": [
+        "En Nochevieja, a las cinco y media, Mamá preparó las uvas de la suerte.",
+        "Puso en la mesa del comedor una bandeja redonda con cuatro cuencos. El rojo era de Papá; el azul, de Mamá; el verde, de Lucía, y el amarillo, de Dani.",
+        "En cada cuenco había doce uvas moradas, de esas que tienen pepitas. Luego, la tapó con un paño y dijo que nadie podía tocarla hasta las doce.",
+        "—¡Este año me como las doce! —anunció Dani, que el año anterior solo se comió tres."
+      ],
+      "actividad": {
+        "tipo": "dibuja_detalle",
+        "prompt": "Dibuja la bandeja de las uvas tal y como la preparó Mamá.",
+        "comprueba": [
+          "¿Qué forma tiene la bandeja?",
+          "¿Cuántos cuencos hay?",
+          "¿De qué color es el cuenco de Dani? ¿Y el de Papá?",
+          "¿Cuántas uvas hay en cada cuenco, y de qué color son?"
+        ],
+        "clave": "Una bandeja redonda con cuatro cuencos: rojo (Papá), azul (Mamá), verde (Lucía) y amarillo (Dani); en cada cuenco, doce uvas moradas."
+      }
+    },
+    {
+      "dia": 77, "semana": 16, "trimestre": 2,
+      "tema": "Las doce uvas",
+      "texto": [
+        "¿Sabías que en España se comen doce uvas en Nochevieja?",
+        "Se come una con cada campanada de las doce, y cada uva es un mes del año nuevo. Dicen que, si te las comes todas a tiempo, tendrás suerte todo el año.",
+        "Hay que masticar deprisa, porque entre campanada y campanada solo pasan unos tres segundos.",
+        "¡Ojo! Las uvas son peligrosas para los perros: aunque sea una sola, les puede sentar muy mal. Por eso, en casa de Lucía, las uvas estaban siempre lejos de Toby."
+      ],
+      "actividad": {
+        "tipo": "ficha",
+        "instruccion": "Completa la ficha con lo que dice el texto.",
+        "titulo": "Las doce uvas",
+        "campos": [
+          "Cuándo se comen",
+          "Cuántas se comen con cada campanada",
+          "Qué es cada uva",
+          "Tiempo entre campanada y campanada",
+          "Por qué no son para Toby"
+        ],
+        "respuestas": [
+          "En Nochevieja, con las campanadas de las doce.",
+          "Una.",
+          "Un mes del año nuevo.",
+          "Unos tres segundos.",
+          "Porque son peligrosas para los perros: aunque sea una sola, les puede sentar muy mal."
+        ]
+      }
+    },
+    {
+      "dia": 78, "semana": 16, "trimestre": 2,
+      "tema": "Las doce uvas",
+      "texto": [
+        "A las siete, Mamá levantó el paño porque quería hacer una foto de las uvas. En el cuenco amarillo solo quedaban nueve.",
+        "—¡Alguien se ha comido tres uvas de Dani! —exclamó.",
+        "Papá y Toby estuvieron fuera desde las cinco hasta las ocho, viendo las luces del centro. Lucía estuvo toda la tarde en la cocina con Mamá, mientras Dani jugaba solo en el comedor.",
+        "—Yo no he visto nada —dijo Dani, que tenía la boca y el pijama manchados de morado."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "preguntas": [
+          "¿Por qué ni Papá ni Toby pueden haberse comido las uvas? Vuelve a leer también la página del lunes.",
+          "¿Dónde estaban Lucía y Dani mientras tanto?"
+        ],
+        "respuestas": [
+          "Porque estuvieron fuera desde las cinco hasta las ocho, y Mamá preparó las uvas a las cinco y media: a las siete ya faltaban tres.",
+          "Lucía, en la cocina con Mamá; Dani, jugando solo en el comedor, donde estaban las uvas."
+        ]
+      }
+    },
+    {
+      "dia": 79, "semana": 16, "trimestre": 2,
+      "tema": "Las doce uvas",
+      "texto": [
+        "Antes de cenar, Lucía examinó el comedor con la lupa.",
+        "Debajo de la mesa estaban las zapatillas de Dani, y dentro de una había unas pepitas de uva. Lucía guardó las pepitas en una bolsita, porque una detective no tira ninguna pista.",
+        "A las doce, Dani se tragó sus nueve uvas tan deprisa que le sobraron tres campanadas.",
+        "Después, Lucía escribió un mensaje para el club con el código de números. Como ya era muy tarde, lo dejó para mandarlo por la mañana."
+      ],
+      "actividad": {
+        "tipo": "codigo",
+        "instruccion": "Descifra el mensaje de Lucía con el código de números del club: busca cada número en la tabla y escribe su letra en la casilla.",
+        "mensaje": "Feliz año nuevo club",
+        "cifrado": "numeros"
+      }
+    },
+    {
+      "dia": 80, "semana": 16, "trimestre": 2,
+      "tema": "Las doce uvas: el caso",
+      "texto": [
+        "El dos de enero, el club se reunió en la caseta para estrenar el año con un caso.",
+        "Lucía les contó lo de las uvas y puso encima de la mesa la bolsita con las pepitas.",
+        "Hugo apuntó en la pizarra dónde estaba cada uno, mientras Sofía leía las notas de Lucía.",
+        "De repente, Sofía se echó a reír, porque leyó lo que dijo Dani cuando Mamá preparó las uvas.",
+        "—Recordad la norma dos: nada de acusar sin pruebas —dijo Lucía, aunque ella también sonreía."
+      ],
+      "actividad": {
+        "tipo": "caso",
+        "pregunta": "¿Quién se comió tres uvas del cuenco de Dani?",
+        "opciones": ["Papá", "Mamá", "Toby", "Dani"],
+        "solucion": "Dani",
+        "clave": "Dani: Papá y Toby estuvieron fuera de cinco a ocho, y Mamá y Lucía, en la cocina, mientras Dani jugaba solo en el comedor, donde estaban las uvas, y tenía la boca y el pijama manchados de morado (miércoles); en su zapatilla, debajo de la mesa, había pepitas de uva (jueves). Quería comerse las doce a tiempo (lunes): se estaba entrenando.",
+        "banner": "¡80 páginas leídas! Caso de las uvas: resuelto."
+      }
+    },
+    {
+      "dia": 81, "semana": 17, "trimestre": 2,
+      "tema": "El roscón de Reyes",
+      "texto": [
+        "Las uvas se las había comido Dani, que se estaba entrenando para las campanadas.",
+        "Unos días después, Lucía ayudó a Dani a escribir su carta a los Reyes, porque él aún confundía algunas letras:",
+        "> Queridos Reyes Magos:\nEste año me he portado bien casi siempre.\nPara mí quiero una linterna, para ser detective como Lucía.\nPara Lucía, un cuaderno, porque el suyo ya está lleno de pistas.\nPara Mamá, jarabe, porque tose mucho.\nPara Toby, una pelota roja, porque la suya está mordida.\nUn beso,\nDani"
+      ],
+      "actividad": {
+        "tipo": "relaciona",
+        "instruccion": "Une con una línea cada cosa que pide Dani con la razón que da en su carta.",
+        "cabeceras": ["Lo que pide", "Por qué o para qué"],
+        "pares": [
+          ["una linterna, para él", "para ser detective"],
+          ["un cuaderno, para Lucía", "porque el suyo está lleno"],
+          ["jarabe, para Mamá", "porque tose mucho"],
+          ["una pelota, para Toby", "porque la suya está mordida"]
+        ]
+      }
+    },
+    {
+      "dia": 82, "semana": 17, "trimestre": 2,
+      "tema": "El roscón de Reyes",
+      "texto": [
+        "Cuando llegó la noche del cinco de enero, Lucía y Dani lo prepararon todo para los Reyes.",
+        "Debajo de la ventana del salón pusieron un zapato de cada uno, en fila, del más grande al más pequeño.",
+        "En la mesa dejaron tres vasos de leche y un plato con seis polvorones, dos para cada Rey. Junto a la puerta del jardín, Dani puso un cubo de agua para los camellos, que siempre llegaban con sed.",
+        "Después se acostaron tan nerviosos que tardaron mucho en dormirse."
+      ],
+      "actividad": {
+        "tipo": "dibuja_detalle",
+        "prompt": "Dibuja cómo dejaron Lucía y Dani el salón la noche de Reyes.",
+        "comprueba": [
+          "¿Dónde están los zapatos, y cuántos hay?",
+          "¿En qué orden están colocados?",
+          "¿Qué hay en la mesa? ¿Cuántos vasos y cuántos polvorones?",
+          "¿Qué hay junto a la puerta del jardín?"
+        ],
+        "clave": "Debajo de la ventana del salón, cuatro zapatos en fila (uno de cada uno de la familia), del más grande al más pequeño; en la mesa, tres vasos de leche y un plato con seis polvorones; junto a la puerta del jardín, un cubo de agua para los camellos."
+      }
+    },
+    {
+      "dia": 83, "semana": 17, "trimestre": 2,
+      "tema": "El roscón de Reyes",
+      "texto": [
+        "El día de Reyes, Dani encontró su linterna; Lucía, un cuaderno nuevo, y Toby, una pelota roja.",
+        "Al mediodía vino la abuela, y trajo un roscón enorme con frutas de colores y una guinda roja.",
+        "—Quien encuentre la figurita será el rey o la reina —explicó—. Y el que encuentre el haba, paga el roscón del año que viene.",
+        "Al cortar el trozo de la guinda, el cuchillo hizo ¡clac!, porque dentro había algo duro. La figurita le salió a Lucía, que se puso la corona muy contenta."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "preguntas": [
+          "¿Qué pasa si te toca la figurita del roscón? ¿Y si te toca el haba?",
+          "¿Qué pasó al cortar el trozo de la guinda, y por qué?"
+        ],
+        "respuestas": [
+          "Con la figurita eres el rey o la reina; con el haba, pagas el roscón del año que viene.",
+          "El cuchillo hizo ¡clac!, porque dentro había algo duro."
+        ]
+      }
+    },
+    {
+      "dia": 84, "semana": 17, "trimestre": 2,
+      "tema": "El roscón de Reyes",
+      "texto": [
+        "Primero, la abuela les dio un trozo a Lucía y a Dani. Después repartió otros tres entre los mayores: uno con la guinda, otro con naranja y otro con almendras.",
+        "Mamá no quiso la guinda, porque decía que sabía a jarabe. Papá tampoco la quiso y, además, no probó las almendras, porque se le pegaban en los dientes.",
+        "Cuando terminaron, nadie dijo nada del haba, aunque todos se miraban con cara de sospecha.",
+        "—Aquí hay un caso —susurró Lucía, y sacó su cuaderno de detective."
+      ],
+      "actividad": {
+        "tipo": "logica",
+        "instruccion": "Usa las pistas del texto para saber qué trozo se comió cada uno de los mayores. Pon ✓ donde sí y ✗ donde no.",
+        "filas": ["Papá", "Mamá", "la abuela"],
+        "columnas": ["con guinda", "con naranja", "con almendras"],
+        "restricciones": [["no", "Mamá", "con guinda"], ["no", "Papá", "con guinda"], ["no", "Papá", "con almendras"]],
+        "solucion": {"Papá": "con naranja", "Mamá": "con almendras", "la abuela": "con guinda"},
+        "pregunta": "¿Quién se comió el trozo de la guinda?",
+        "respuesta_pregunta": "La abuela."
+      }
+    },
+    {
+      "dia": 85, "semana": 17, "trimestre": 2,
+      "tema": "El roscón de Reyes: el caso",
+      "texto": [
+        "El viernes, Lucía se lo contó todo al club en la caseta.",
+        "Hugo apuntó en la pizarra lo del cuchillo, que hizo ¡clac! en el trozo de la guinda. Sofía, mientras tanto, copió la tabla de los trozos.",
+        "—El que tenga el haba tiene que pagar el roscón —dijo Sofía—. Por eso nadie quiere decir nada.",
+        "Lucía recordó que la abuela, que siempre gastaba bromas, pasó la tarde muerta de risa.",
+        "¿Y tú? ¿Quién crees que tiene el haba?"
+      ],
+      "actividad": {
+        "tipo": "caso",
+        "pregunta": "¿Quién tiene el haba?",
+        "opciones": ["Papá", "Mamá", "la abuela", "Dani"],
+        "solucion": "la abuela",
+        "clave": "La abuela: al cortar el trozo de la guinda, el cuchillo chocó con algo duro, y no era la figurita, que le salió a Lucía (miércoles); así que el haba estaba en ese trozo, que fue para uno de los mayores; ni Mamá ni Papá quisieron la guinda, así que se la comió la abuela (jueves)."
+      }
+    },
+    {
+      "dia": 86, "semana": 18, "trimestre": 2,
+      "tema": "Un muñeco de nieve madrugador",
+      "texto": [
+        "El haba la tenía la abuela, que la escondió en el bolsillo para no pagar el roscón.",
+        "El lunes, cuando los niños llegaron al colegio, el patio estaba blanco de nieve. En el centro había un muñeco hecho con tres bolas, tan alto como una persona mayor.",
+        "Tenía dos piedras negras por ojos, una zanahoria por nariz y tres botones rojos en la barriga.",
+        "Llevaba una bufanda de rayas verdes y blancas, y a la izquierda tenía una escoba clavada en la nieve."
+      ],
+      "actividad": {
+        "tipo": "dibuja_detalle",
+        "prompt": "Dibuja el muñeco de nieve del patio con todo lo que cuenta el texto.",
+        "comprueba": [
+          "¿Cuántas bolas tiene?",
+          "¿Qué tiene por ojos? ¿Y por nariz?",
+          "¿Cuántos botones tiene, y de qué color son?",
+          "¿Cómo es su bufanda?",
+          "¿Qué hay a la izquierda?"
+        ],
+        "clave": "Tres bolas de nieve; dos piedras negras por ojos y una zanahoria por nariz; tres botones rojos en la barriga; una bufanda de rayas verdes y blancas; a la izquierda, una escoba clavada en la nieve."
+      }
+    },
+    {
+      "dia": 87, "semana": 18, "trimestre": 2,
+      "tema": "Un muñeco de nieve madrugador",
+      "texto": [
+        "En el recreo, el club examinó con la lupa la nieve que había alrededor del muñeco.",
+        "Detrás del muñeco, donde no había pisado nadie, encontraron unas huellas de botas grandes que venían de la conserjería. No había huellas pequeñas, así que no parecía obra de ningún niño.",
+        "Sofía se fijó en la bufanda: era de lana gruesa y olía a café.",
+        "—Quien hizo este muñeco se levantó muy temprano —dijo Lucía, mientras miraba la bufanda con la lupa."
+      ],
+      "actividad": {
+        "tipo": "errores",
+        "instruccion": "Este resumen tiene tres errores. Rodéalos y escribe debajo cómo es de verdad.",
+        "relato": "En el recreo, el club examinó la nieve. Detrás del muñeco había huellas de zapatillas pequeñas que venían del gimnasio. La bufanda era de lana gruesa y olía a chocolate.",
+        "errores": [
+          ["zapatillas pequeñas", "botas grandes"],
+          ["del gimnasio", "de la conserjería"],
+          ["chocolate", "café"]
+        ]
+      }
+    },
+    {
+      "dia": 88, "semana": 18, "trimestre": 2,
+      "tema": "Un muñeco de nieve madrugador",
+      "texto": [
+        "El miércoles, el club averiguó a qué hora llegaba cada uno al colegio.",
+        "Marta contó que el lunes llegó a las ocho y media, y que el muñeco ya estaba en el patio. Los niños entraban a las nueve, así que ninguno pudo hacerlo.",
+        "Paco, el conserje, llegaba todos los días a las siete, porque abría las puertas. Siempre tenía en la mano una taza de café.",
+        "Ese miércoles, Paco estornudaba sin parar y, aunque hacía mucho frío, llevaba el cuello al aire."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "preguntas": [
+          "¿Por qué no pudo hacer el muñeco Marta? ¿Y los niños?",
+          "¿Quién llegaba al colegio antes que nadie, y por qué?"
+        ],
+        "respuestas": [
+          "Marta llegó a las ocho y media, y el muñeco ya estaba en el patio; los niños entraban a las nueve, más tarde todavía.",
+          "Paco, el conserje, a las siete, porque abría las puertas."
+        ]
+      }
+    },
+    {
+      "dia": 89, "semana": 18, "trimestre": 2,
+      "tema": "Un muñeco de nieve madrugador",
+      "texto": [
+        "El jueves, Hugo dibujó en papel cuadriculado un plano del patio con el camino de las huellas.",
+        "Las huellas salían de la conserjería, iban dos casillas hacia la derecha y bajaban otras dos. Allí giraban una casilla a la derecha y se acababan justo donde estaba el muñeco.",
+        "Después volvían por el mismo camino, así que quien hizo el muñeco regresó a la conserjería.",
+        "Mientras tanto, el muñeco se derretía poco a poco, porque ya calentaba el sol."
+      ],
+      "actividad": {
+        "tipo": "mapa",
+        "instruccion": "Dibuja en el plano el camino de las huellas desde la conserjería y marca con una X la casilla del muñeco.",
+        "columnas": 6, "filas": 4,
+        "lugares": {"A1": "conserjería", "F1": "puerta del cole", "F3": "canasta", "A4": "banco", "C4": "columpios", "F4": "huerto"},
+        "salida": "A1",
+        "comprobar": [{"desde": "A1", "pasos": ["derecha 2", "abajo 2", "derecha 1"], "hasta": "D3"}],
+        "preguntas": ["¿En qué casilla estaba el muñeco?"],
+        "clave": "Las huellas van de A1 a C1, bajan hasta C3 y giran a D3: el muñeco estaba en D3. Después volvían a la conserjería."
+      }
+    },
+    {
+      "dia": 90, "semana": 18, "trimestre": 2,
+      "tema": "Un muñeco de nieve madrugador: el caso",
+      "texto": [
+        "El viernes, a la hora del recreo, el club se reunió al lado del muñeco, que ya estaba medio derretido.",
+        "Sofía repasó las pistas en voz alta: las botas grandes, la bufanda que olía a café y las horas de llegada.",
+        "—No podemos acusar a nadie sin pruebas —recordó Hugo—. Hay que estar seguros.",
+        "Lucía miró hacia la ventana de la conserjería, donde alguien estornudaba sin parar, y sonrió.",
+        "¿Y tú? ¿Ya sabes quién fue el madrugador?"
+      ],
+      "actividad": {
+        "tipo": "caso",
+        "pregunta": "¿Quién hizo el muñeco de nieve?",
+        "opciones": ["Marta", "Paco", "los niños de sexto"],
+        "solucion": "Paco",
+        "clave": "Paco: el muñeco es tan alto como una persona mayor (lunes); las huellas de botas grandes salían de la conserjería y volvían a ella (martes y jueves); la bufanda olía a café, y Paco siempre tenía una taza de café en la mano (martes y miércoles); Marta llegó a las ocho y media, cuando el muñeco ya estaba, y los niños entraban a las nueve, pero Paco llegaba a las siete (miércoles); y Paco estornudaba con el cuello al aire: su bufanda la llevaba el muñeco (miércoles y viernes).",
+        "banner": "¡90 páginas leídas! Caso del muñeco de nieve: resuelto."
+      }
+    },
+    {
+      "dia": 91, "semana": 19, "trimestre": 2,
+      "tema": "El periscopio de Hugo",
+      "texto": [
+        "El muñeco lo había hecho Paco, que quería darles una sorpresa a los niños.",
+        "Aquel lunes, Hugo llegó a la caseta con un invento: un periscopio que construyó él solo.",
+        "Era una caja larga y estrecha, pintada de azul marino, con una tortuga amarilla dibujada en un lado. Arriba tenía una ventanita cuadrada que miraba hacia delante, y abajo, otra que miraba hacia atrás.",
+        "—Sirve para ver por encima de las cosas sin asomarse —explicó Hugo, muy orgulloso."
+      ],
+      "actividad": {
+        "tipo": "dibuja_detalle",
+        "prompt": "Dibuja el periscopio de Hugo tal y como lo describe el texto.",
+        "comprueba": [
+          "¿Qué forma tiene, y de qué color está pintado?",
+          "¿Qué hay dibujado en un lado, y de qué color es?",
+          "¿Qué tiene arriba, y hacia dónde mira?",
+          "¿Qué tiene abajo, y hacia dónde mira?"
+        ],
+        "clave": "Una caja larga y estrecha, pintada de azul marino, con una tortuga amarilla en un lado; arriba, una ventanita cuadrada que mira hacia delante; abajo, otra que mira hacia atrás."
+      }
+    },
+    {
+      "dia": 92, "semana": 19, "trimestre": 2,
+      "tema": "El periscopio de Hugo",
+      "texto": [
+        "Hugo copió las instrucciones de un libro que le prestó Tomás:",
+        "- Necesitas dos cartones de leche, dos espejos pequeños y cinta adhesiva.",
+        "- Primero, pide a un mayor que corte la parte de arriba de los cartones.",
+        "- Después, haz una ventana cuadrada cerca del fondo de cada cartón.",
+        "- Pega dentro de cada cartón un espejo inclinado, justo enfrente de la ventana.",
+        "- Por último, une los cartones por la parte abierta, con las ventanas mirando hacia lados contrarios.",
+        "Hugo tardó una tarde entera, porque los espejos se caían todo el rato."
+      ],
+      "actividad": {
+        "tipo": "ordena",
+        "sucesos": [
+          "Un mayor corta la parte de arriba de los dos cartones.",
+          "Se hace una ventana cuadrada cerca del fondo de cada cartón.",
+          "Se pega un espejo inclinado enfrente de cada ventana.",
+          "Se unen los dos cartones por la parte abierta."
+        ]
+      }
+    },
+    {
+      "dia": 93, "semana": 19, "trimestre": 2,
+      "tema": "El periscopio de Hugo",
+      "texto": [
+        "El miércoles, Hugo trajo el periscopio en brazos, porque no cupo en la mochila.",
+        "—La luz entra por arriba, choca con un espejo y baja hasta el otro, que la manda al ojo —explicó.",
+        "Para probarlo, Sofía se escondió detrás del seto con una cartulina en la que escribió cada palabra al revés. Lucía levantó el periscopio por encima de las ramas y, aunque tardó un poco, consiguió leerla.",
+        "—¡Funciona! —gritó, tan contenta que Toby dio un salto y salió corriendo."
+      ],
+      "actividad": {
+        "tipo": "codigo",
+        "instruccion": "Descifra la cartulina de Sofía: cada palabra está escrita al revés, de la última letra a la primera.",
+        "mensaje": "Hola desde el seto",
+        "cifrado": "reves"
+      }
+    },
+    {
+      "dia": 94, "semana": 19, "trimestre": 2,
+      "tema": "El periscopio de Hugo",
+      "texto": [
+        "El jueves, el club hizo su primera misión de observación con el periscopio.",
+        "Se escondieron detrás del seto y, por turnos, cada uno miró cinco minutos y apuntó lo que vio.",
+        "Uno vio a Luna en la tapia; otro, un mirlo en el limonero, y otro, a Toby escondiendo un calcetín.",
+        "Luna se quedó mirando el periscopio justo cuando le tocaba a Hugo, que casi se cae del susto. Lucía no vio ningún pájaro, aunque estuvo muy atenta todo el rato."
+      ],
+      "actividad": {
+        "tipo": "logica",
+        "instruccion": "Usa las pistas del texto para saber qué vio cada uno por el periscopio. Pon ✓ donde sí y ✗ donde no.",
+        "filas": ["Lucía", "Sofía", "Hugo"],
+        "columnas": ["a Luna", "un mirlo", "a Toby"],
+        "restricciones": [["si", "Hugo", "a Luna"], ["no", "Lucía", "un mirlo"]],
+        "solucion": {"Lucía": "a Toby", "Sofía": "un mirlo", "Hugo": "a Luna"},
+        "pregunta": "¿Quién vio el mirlo?",
+        "respuesta_pregunta": "Sofía."
+      }
+    },
+    {
+      "dia": 95, "semana": 19, "trimestre": 2,
+      "tema": "El periscopio de Hugo",
+      "texto": [
+        "El viernes, el club colgó el periscopio en la pared de la caseta, al lado de la pizarra.",
+        "Hugo dijo que servía para mirar pájaros y gatos, pero no para espiar a las personas, y todos estuvieron de acuerdo.",
+        "Después, Sofía, que dibujaba muy bien, pintó una tortuga pequeña al lado de la amarilla. La llamó Rayo, como la tortuga de Hugo.",
+        "Dani también quiso mirar, y dijo que se veía todo muy raro, aunque era porque lo sujetaba del revés."
+      ],
+      "actividad": {
+        "tipo": "vinetas",
+        "instruccion": "Dibuja tres momentos de la semana del periscopio. Debajo de cada viñeta tienes lo que pasa.",
+        "pies": [
+          "Hugo llega a la caseta con su periscopio azul.",
+          "Lucía lee con el periscopio la cartulina de Sofía.",
+          "Dani mira por el periscopio... ¡del revés!"
+        ]
+      }
+    },
+    {
+      "dia": 96, "semana": 20, "trimestre": 2,
+      "tema": "El Día de la Paz",
+      "texto": [
+        "El lunes, Sofía pintó un cartel nuevo para la puerta verde de la caseta, porque el viejo estaba muy estropeado.",
+        "Era una cartulina blanca que decía «Club de la Lupa» en letras rojas. En el centro tenía una lupa enorme, y en cada esquina, una estrella azul.",
+        "Lo pegó con un trozo de cinta adhesiva vieja, porque era la única que encontró.",
+        "—Lo he pegado yo, que para algo soy la jefa —dijo Sofía.",
+        "—¿La jefa? —protestó Hugo—. Aquí no manda nadie."
+      ],
+      "actividad": {
+        "tipo": "dibuja_detalle",
+        "prompt": "Dibuja el cartel nuevo del club, pegado en la puerta de la caseta.",
+        "comprueba": [
+          "¿De qué color es la cartulina? ¿Y las letras?",
+          "¿Qué pone en el cartel?",
+          "¿Qué hay en el centro?",
+          "¿Qué hay en las esquinas, y de qué color es?",
+          "¿De qué color es la puerta?"
+        ],
+        "clave": "Una cartulina blanca que dice «Club de la Lupa» en letras rojas, con una lupa enorme en el centro y una estrella azul en cada esquina, pegada con cinta adhesiva vieja en la puerta verde de la caseta."
+      }
+    },
+    {
+      "dia": 97, "semana": 20, "trimestre": 2,
+      "tema": "El Día de la Paz",
+      "texto": [
+        "El martes, la pelea siguió en la caseta, porque ninguno quería ceder.",
+        "Sofía decía que tenía que mandar ella, que era la más valiente. Hugo decía que mandaba él, porque sabía más de mapas y de códigos.",
+        "A las seis se fueron los dos a casa sin despedirse, y Lucía se quedó sola y triste. Cuando cerró la caseta, a las siete, el cartel seguía en la puerta.",
+        "Aquella noche sopló un viento tan fuerte que hacía temblar las ventanas."
+      ],
+      "actividad": {
+        "tipo": "verdadero_falso",
+        "afirmaciones": [
+          "Sofía quería mandar porque sabía más de mapas y de códigos.",
+          "A las seis, Sofía y Hugo se fueron a casa sin despedirse.",
+          "Cuando Lucía cerró la caseta, a las siete, el cartel ya no estaba.",
+          "Aquella noche sopló un viento muy fuerte."
+        ],
+        "respuestas": [
+          "F: eso decía Hugo; Sofía decía que era la más valiente.",
+          "V",
+          "F: el cartel seguía en la puerta.",
+          "V"
+        ]
+      }
+    },
+    {
+      "dia": 98, "semana": 20, "trimestre": 2,
+      "tema": "El Día de la Paz",
+      "texto": [
+        "El miércoles por la mañana, el cartel ya no estaba en la puerta de la caseta.",
+        "Lucía lo encontró al fondo del jardín, enganchado en el rosal, con una esquina rota, pero sin ningún mordisco. El jardín estaba lleno de hojas y de ramas que había arrancado el viento.",
+        "Detrás todavía tenía la cinta, que estaba entera, aunque ya no pegaba nada.",
+        "—¡Ha sido Hugo, porque ayer se fue enfadado! —dijo Sofía en el recreo.",
+        "Pero Lucía le recordó la segunda norma del club: «No acusar a nadie sin pruebas»."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "preguntas": [
+          "¿Por qué no pudo quitar el cartel Hugo? Vuelve a leer la página del martes.",
+          "¿Por qué Lucía no deja que Sofía acuse a Hugo?"
+        ],
+        "respuestas": [
+          "Porque Hugo se fue a casa a las seis, y a las siete, cuando Lucía cerró la caseta, el cartel seguía en la puerta.",
+          "Porque la segunda norma del club dice que no se puede acusar a nadie sin pruebas."
+        ]
+      }
+    },
+    {
+      "dia": 99, "semana": 20, "trimestre": 2,
+      "tema": "El Día de la Paz",
+      "texto": [
+        "El jueves era el Día de la Paz. En clase, Marta les propuso un juego: pensar en una pelea y mirarla desde los dos lados.",
+        "Lucía pensó en Sofía y en Hugo, que seguían sin hablarse. Los dos querían mandar, y los dos querían mucho al club.",
+        "Pero Sofía era valiente y dibujaba muy bien, mientras que Hugo sabía de mapas y de códigos.",
+        "Entonces, Lucía tuvo una idea: si cada uno ponía lo que sabía hacer, el club sería el mejor."
+      ],
+      "actividad": {
+        "tipo": "compara",
+        "instruccion": "Escribe a cada lado lo que el texto cuenta solo de Sofía o solo de Hugo, y en el centro, lo que tienen los dos.",
+        "a": "Sofía",
+        "b": "Hugo",
+        "solucion": {
+          "a": ["era valiente", "dibujaba muy bien"],
+          "ambos": ["querían mandar", "querían mucho al club", "seguían sin hablarse"],
+          "b": ["sabía de mapas", "sabía de códigos"]
+        }
+      }
+    },
+    {
+      "dia": 100, "semana": 20, "trimestre": 2,
+      "tema": "El Día de la Paz: el caso",
+      "texto": [
+        "El viernes, Lucía reunió al club en la caseta, aunque Sofía y Hugo no se miraban.",
+        "Encima de la mesa puso el cartel roto, la cinta vieja y una foto del jardín lleno de ramas. Además, les contó que aquella mañana Pedro encontró su papelera en medio de la calle.",
+        "—Antes de acusar a nadie, hay que mirar todas las pistas —dijo Lucía.",
+        "Sofía miró primero el cartel, luego la foto, y se puso roja como un tomate."
+      ],
+      "actividad": {
+        "tipo": "caso",
+        "pregunta": "¿Quién quitó el cartel de la puerta de la caseta?",
+        "opciones": ["Hugo", "Sofía", "Toby", "el viento"],
+        "solucion": "el viento",
+        "clave": "Nadie: fue el viento. La cinta era vieja (lunes) y, aunque seguía entera, ya no pegaba (miércoles); Hugo y Sofía se fueron a las seis, y a las siete el cartel seguía en la puerta (martes); esa noche sopló un viento muy fuerte, que llenó el jardín de ramas y dejó el cartel en el rosal, sin ningún mordisco de Toby (martes y miércoles), y la papelera de Pedro acabó en medio de la calle (viernes).",
+        "banner": "¡100 páginas leídas! ¡Cien días leyendo con lupa!"
+      }
+    },
+    {
+      "dia": 101, "semana": 21, "trimestre": 2,
+      "tema": "El cumpleaños de Papá",
+      "texto": [
+        "El cartel lo arrancó el viento, así que nadie tenía la culpa. Desde entonces, en el club mandaba uno cada semana, por turnos.",
+        "Como el sábado era el cumpleaños de Papá, los niños le prepararon una búsqueda del tesoro, como las de Lector X.",
+        "Lucía dibujó un plano de la casa y escribió una nota con el camino que llevaba hasta el regalo:",
+        "> Ponte en la puerta de la calle y avanza dos casillas hacia la izquierda. Baja dos casillas y avanza otras dos hacia la derecha. Tu regalo está debajo."
+      ],
+      "actividad": {
+        "tipo": "mapa",
+        "instruccion": "Sigue en el plano el camino de la nota desde la puerta de la calle y marca con una X la casilla donde se acaba.",
+        "columnas": 5, "filas": 4,
+        "lugares": {"A1": "cocina", "B1": "pasillo", "C1": "pasillo", "D1": "pasillo", "E1": "puerta de la calle", "A3": "baño", "B4": "estantería", "E3": "sofá", "E4": "tele"},
+        "salida": "E1",
+        "comprobar": [{"desde": "E1", "pasos": ["izquierda 2", "abajo 2", "derecha 2"], "hasta": "E3"}],
+        "preguntas": ["¿Debajo de qué está escondido el regalo de Papá?"],
+        "clave": "De la puerta de la calle (E1) a C1, baja hasta C3 y gira hasta E3: el regalo está debajo del sofá."
+      }
+    },
+    {
+      "dia": 102, "semana": 21, "trimestre": 2,
+      "tema": "El cumpleaños de Papá",
+      "texto": [
+        "El martes, Mamá, Lucía y Dani repartieron las tareas de la sorpresa.",
+        "Mamá haría la tarta de fresa en casa de Pedro, donde Papá no podía verla. Lucía se encargó de los globos, que escondió en la caseta del club.",
+        "El regalo era una lámpara pequeña para leer, porque Papá siempre se quedaba leyendo hasta muy tarde. Dani la envolvió en papel azul, aunque gastó casi todo el rollo de celo.",
+        "Y lo más importante: nadie podía contarle nada a Papá."
+      ],
+      "actividad": {
+        "tipo": "errores",
+        "instruccion": "Este resumen tiene tres errores. Rodéalos y escribe debajo cómo es de verdad.",
+        "relato": "El martes repartieron las tareas. Mamá haría la tarta en casa de la abuela. Lucía escondió los globos en su armario. El regalo era una lámpara para leer, envuelta en papel rojo.",
+        "errores": [
+          ["casa de la abuela", "casa de Pedro"],
+          ["en su armario", "en la caseta del club"],
+          ["papel rojo", "papel azul"]
+        ]
+      }
+    },
+    {
+      "dia": 103, "semana": 21, "trimestre": 2,
+      "tema": "El cumpleaños de Papá",
+      "texto": [
+        "El miércoles, durante la cena, Papá preguntó qué querían hacer el sábado.",
+        "—¡El sábado no podemos salir, porque Mamá va a hacer una tarta en casa de...! —empezó Dani.",
+        "Lucía le tapó la boca con la mano tan deprisa que Dani casi se atraganta con los guisantes.",
+        "—¿En casa de quién? —preguntó Papá, que levantó una ceja.",
+        "—¡De nadie! —dijeron los dos a la vez, mientras Mamá se reía detrás de la servilleta.",
+        "Aquella noche, Lucía decidió que los mensajes de la sorpresa irían en clave."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "preguntas": [
+          "¿Qué estuvo a punto de contar Dani? ¿Cómo lo sabes? Vuelve a leer la página del martes.",
+          "¿Por qué decidió Lucía que los mensajes de la sorpresa irían en clave?"
+        ],
+        "respuestas": [
+          "Que Mamá iba a hacer la tarta de cumpleaños en casa de Pedro: el martes repartieron las tareas, y la tarta se haría allí para que Papá no la viera.",
+          "Porque Dani casi descubre la sorpresa y Papá empezó a sospechar: si los mensajes van en clave, Papá no los entiende aunque los vea."
+        ]
+      }
+    },
+    {
+      "dia": 104, "semana": 21, "trimestre": 2,
+      "tema": "El cumpleaños de Papá",
+      "texto": [
+        "El jueves, Lucía le dejó a Mamá un mensaje secreto debajo de la taza del desayuno.",
+        "Lo escribió con el código del club, que cambiaba cada vocal por un número, porque así Papá no podría leerlo.",
+        "Mamá, que se había aprendido el código para la sorpresa, lo leyó en un momento y contestó con un guiño. Papá también vio el papel, pero, como no conocía el código, no entendió nada.",
+        "—¿Es la lista de la compra? —preguntó, tan extrañado que Lucía casi se ríe."
+      ],
+      "actividad": {
+        "tipo": "codigo",
+        "instruccion": "Descifra el mensaje de Lucía con el código del club: cada número es una vocal.",
+        "mensaje": "Pedro trae la tarta a las cinco",
+        "cifrado": "vocales",
+        "mostrar_clave": true
+      }
+    },
+    {
+      "dia": 105, "semana": 21, "trimestre": 2,
+      "tema": "El cumpleaños de Papá",
+      "texto": [
+        "El sábado, Papá siguió el camino del plano, casilla por casilla, hasta llegar al sofá.",
+        "Debajo encontró su regalo, la pelota roja de Toby y un calcetín que llevaba semanas perdido.",
+        "Cuando se dio la vuelta, Pedro entró con la tarta de fresa, y Lucía y Dani soltaron los globos.",
+        "—¡Sorpresa! —gritaron todos, mientras Toby ladraba y movía la cola sin parar.",
+        "Papá encendió la lámpara nueva en su sillón y dijo que era el mejor regalo del mundo."
+      ],
+      "actividad": {
+        "tipo": "crea",
+        "prompt": "Escribe una felicitación de cumpleaños para alguien de tu familia. Escóndele dentro una adivinanza, como hacía Lector X.",
+        "lineas": 4
+      }
+    },
+    {
+      "dia": 106, "semana": 22, "trimestre": 2,
+      "tema": "Carnaval",
+      "texto": [
+        "El lunes, Lucía se probó el disfraz que iba a llevar al desfile de Carnaval.",
+        "Iba de detective, claro, porque era lo que más le gustaba. Llevaba una gorra de cuadros marrones y una gabardina larga de color beis, con un cinturón y dos bolsillos grandes.",
+        "Del cuello le colgaba la lupa de la abuela, atada con un cordón rojo. Debajo de la nariz se pegó un bigote negro, que le hacía cosquillas.",
+        "—Pareces una detective de película —dijo Dani, muy serio, mientras le miraba el bigote."
+      ],
+      "actividad": {
+        "tipo": "dibuja_detalle",
+        "prompt": "Dibuja a Lucía con su disfraz de detective, con todo lo que cuenta el texto.",
+        "comprueba": [
+          "¿Cómo es la gorra?",
+          "¿Cómo es la gabardina, y qué tiene?",
+          "¿Qué le cuelga del cuello, y con qué está atado?",
+          "¿Qué lleva debajo de la nariz?"
+        ],
+        "clave": "Una gorra de cuadros marrones; una gabardina larga de color beis, con cinturón y dos bolsillos grandes; la lupa de la abuela colgada del cuello con un cordón rojo; un bigote negro debajo de la nariz."
+      }
+    },
+    {
+      "dia": 107, "semana": 22, "trimestre": 2,
+      "tema": "Carnaval",
+      "texto": [
+        "El martes, antes del desfile, todas las clases se juntaron en el gimnasio, donde se hicieron una foto.",
+        "Después salieron al patio, con Marta delante, y dieron una vuelta entera mientras sonaba la música a todo volumen. Cuando terminó la vuelta, los de 2.º subieron al escenario y cantaron una canción.",
+        "Al final, cuando volvían a clase, Lucía encontró un antifaz en el suelo, junto a la escalera del escenario.",
+        "—Alguien lo ha perdido —dijo Sofía, con su parche de pirata—. ¡Tenemos un caso!"
+      ],
+      "actividad": {
+        "tipo": "ordena",
+        "sucesos": [
+          "Todas las clases se hicieron una foto en el gimnasio.",
+          "Salieron al patio y dieron una vuelta con música.",
+          "Los de 2.º cantaron una canción en el escenario.",
+          "Lucía encontró un antifaz junto a la escalera del escenario."
+        ]
+      }
+    },
+    {
+      "dia": 108, "semana": 22, "trimestre": 2,
+      "tema": "Carnaval",
+      "texto": [
+        "En la caseta, Lucía examinó el antifaz con la lupa.",
+        "Era morado, con lentejuelas plateadas y una pluma blanca que salía del lado izquierdo. Cuando se lo probó, la goma era tan larga que el antifaz se le cayó hasta el cuello.",
+        "En el desfile, cuatro personas llevaban antifaz. Marta iba de mariposa, con alas moradas y plateadas, y Tomás, de mago, con una capa morada llena de estrellas plateadas.",
+        "Nora, una compañera de clase, iba de bruja morada, y Paco, que hacía de pirata, iba de negro y rojo."
+      ],
+      "actividad": {
+        "tipo": "ficha",
+        "instruccion": "Completa la ficha del objeto perdido con lo que dice el texto. Vuelve a leer también la página de ayer.",
+        "titulo": "Objeto perdido: un antifaz",
+        "campos": [
+          "Color",
+          "Adornos",
+          "Dónde apareció",
+          "¿De un niño o de un mayor?",
+          "¿Cómo lo sabes?"
+        ],
+        "respuestas": [
+          "Morado.",
+          "Lentejuelas plateadas y una pluma blanca en el lado izquierdo.",
+          "En el suelo, junto a la escalera del escenario.",
+          "De un mayor.",
+          "La goma es tan larga que a Lucía se le cayó hasta el cuello."
+        ]
+      }
+    },
+    {
+      "dia": 109, "semana": 22, "trimestre": 2,
+      "tema": "Carnaval",
+      "texto": [
+        "El jueves, Hugo dibujó en un plano del patio el recorrido de los de 2.º, que iban detrás de Marta.",
+        "Salieron de la puerta del gimnasio, avanzaron cuatro casillas hacia la derecha y subieron dos hasta el escenario.",
+        "Allí, Marta subió la primera, y Paco también subió para arreglar el micrófono, que no funcionaba. Nora, como toda la clase, cantó en el escenario.",
+        "Tomás, en cambio, no lo pisó, porque estuvo toda la mañana en la mesa de los libros, junto a la entrada."
+      ],
+      "actividad": {
+        "tipo": "mapa",
+        "instruccion": "Sigue en el plano el recorrido de los de 2.º desde la puerta del gimnasio y marca con una X el escenario.",
+        "columnas": 6, "filas": 4,
+        "lugares": {"A1": "entrada", "B1": "mesa de los libros", "F1": "bancos", "C2": "canasta", "A4": "gimnasio", "F4": "huerto"},
+        "salida": "A4",
+        "comprobar": [{"desde": "A4", "pasos": ["derecha 4", "arriba 2"], "hasta": "E2"}],
+        "preguntas": ["¿En qué casilla está el escenario?"],
+        "clave": "Desde la puerta del gimnasio (A4) avanzan cuatro casillas hasta E4 y suben dos: el escenario está en E2, lejos de la mesa de los libros (B1), donde estuvo Tomás."
+      }
+    },
+    {
+      "dia": 110, "semana": 22, "trimestre": 2,
+      "tema": "Carnaval: el caso",
+      "texto": [
+        "El viernes, el club colgó en la pared de la caseta la lista de los cuatro sospechosos.",
+        "Al lado pusieron tres pistas: la goma larga, los colores del antifaz y el sitio exacto donde apareció.",
+        "—Cada pista deja fuera a alguien —explicó Lucía—. Solo hay una persona que las cumple todas.",
+        "Sofía, que ya se había quitado el parche de pirata, repasó la lista con el dedo, nombre por nombre.",
+        "¿Y tú? ¿De quién crees que es el antifaz perdido?"
+      ],
+      "actividad": {
+        "tipo": "caso",
+        "pregunta": "¿De quién es el antifaz perdido?",
+        "opciones": ["Marta", "Tomás", "Paco", "Nora"],
+        "solucion": "Marta",
+        "clave": "Marta: la goma es tan larga que el antifaz es de un mayor, así que no es de Nora (miércoles); es morado y plateado, y Paco iba de negro y rojo (miércoles); apareció junto a la escalera del escenario (martes), y Tomás no pisó el escenario en toda la mañana (jueves). Solo Marta cumple las tres pistas: iba de mariposa morada y plateada y subió al escenario la primera.",
+        "banner": "¡110 páginas leídas! Caso del antifaz: resuelto."
+      }
+    },
+    {
+      "dia": 111, "semana": 23, "trimestre": 2,
+      "tema": "Una carta del pueblo",
+      "texto": [
+        "El antifaz era de Marta, que se lo quitó en el escenario para cantar mejor.",
+        "Aquel lunes llegó una carta para Dani desde el pueblo. Era de Martín, el amigo que Dani tenía allí, y dentro venía también un dibujo.",
+        "A la izquierda había un molino con su rueda, y delante, unos andamios donde trabajaban dos obreros. A la derecha, en el jardín del molino, Martín había dibujado una piedra grande con forma de tortuga.",
+        "Lucía se quedó mirándola con la boca abierta, porque aquella piedra la conocía muy bien."
+      ],
+      "actividad": {
+        "tipo": "dibuja_detalle",
+        "prompt": "Haz tu versión del dibujo de Martín, con todo lo que cuenta el texto.",
+        "comprueba": [
+          "¿Dónde está el molino, y qué tiene?",
+          "¿Qué hay delante del molino? ¿Cuántos obreros hay?",
+          "¿Qué hay a la derecha, y dónde está?"
+        ],
+        "clave": "A la izquierda, el molino con su rueda; delante, unos andamios con dos obreros trabajando; a la derecha, en el jardín del molino, una piedra grande con forma de tortuga."
+      }
+    },
+    {
+      "dia": 112, "semana": 23, "trimestre": 2,
+      "tema": "Una carta del pueblo",
+      "texto": [
+        "Lucía le leyó la carta a Dani en voz alta:",
+        "> Querido Dani:\nAquí hace mucho frío, y por las mañanas los tejados están blancos de escarcha. Las abejas de Andrés duermen en sus colmenas hasta que llegue la primavera. Bigotes no se aparta de la estufa, porque es muy friolero.\nEstán arreglando el molino viejo para que sea un museo pequeño. Y se han llevado la piedra grande que parece una tortuga desde el prado hasta el jardín del molino. Así la podrá ver todo el mundo.\n¡Te espero en verano!\nMartín"
+      ],
+      "actividad": {
+        "tipo": "verdadero_falso",
+        "afirmaciones": [
+          "Las abejas de Andrés están despiertas todo el invierno.",
+          "Están arreglando el molino viejo para hacer un museo pequeño.",
+          "La piedra que parece una tortuga sigue en el prado."
+        ],
+        "respuestas": [
+          "F: duermen en sus colmenas hasta que llegue la primavera.",
+          "V",
+          "F: se la han llevado del prado al jardín del molino."
+        ]
+      }
+    },
+    {
+      "dia": 113, "semana": 23, "trimestre": 2,
+      "tema": "Una carta del pueblo",
+      "texto": [
+        "Detrás de la carta había una posdata con una adivinanza, porque Martín sabía que a Dani le encantaban:",
+        "> P. D.: Tengo rueda y no soy coche,\nel río me hace girar,\ny muy pronto en mi casa\nun museo vas a visitar.\n¿Quién soy?",
+        "Dani supo la respuesta enseguida, aunque luego se quedó muy pensativo.",
+        "—¿Y la piedra de la tortuga no era la del mapa de la abuela? —preguntó.",
+        "Lucía no contestó, porque ya corría a su cuarto a buscar el mapa."
+      ],
+      "actividad": {
+        "tipo": "adivina",
+        "adivinanza": "Resuelve la adivinanza de Martín. Si hace falta, vuelve a leer las páginas del lunes y del martes.\nTengo rueda y no soy coche,\nel río me hace girar,\ny muy pronto en mi casa\nun museo vas a visitar.\n¿Quién soy?",
+        "respuesta": "El molino: tiene una rueda que mueve el río, y lo están arreglando para que sea un museo."
+      }
+    },
+    {
+      "dia": 114, "semana": 23, "trimestre": 2,
+      "tema": "Una carta del pueblo",
+      "texto": [
+        "Lucía extendió el mapa sobre la mesa. La X roja estaba debajo de la piedra, que ya no seguía en el prado.",
+        "—¿Y ahora cómo encontraremos el tesoro? —suspiró.",
+        "Entonces le dio la vuelta al mapa y leyó otra vez lo que escribió Rosa a lápiz:",
+        "> Desde el pozo, diez pasos hacia los álamos.",
+        "—¡Los pasos! —exclamó—. El pozo no se mueve, así que todavía podemos encontrar el sitio.",
+        "Como era una noticia importante, le escribió al club un mensaje con el código de las vocales."
+      ],
+      "actividad": {
+        "tipo": "codigo",
+        "instruccion": "Descifra el mensaje de Lucía con el código del club: cada número es una vocal.",
+        "mensaje": "La piedra se ha movido pero el pozo no",
+        "cifrado": "vocales",
+        "mostrar_clave": true
+      }
+    },
+    {
+      "dia": 115, "semana": 23, "trimestre": 2,
+      "tema": "Una carta del pueblo",
+      "texto": [
+        "El viernes, Dani quiso contestar a Martín enseguida, y Lucía le ayudó con las palabras difíciles.",
+        "Le contaron los casos del invierno, aunque Dani se saltó el de las uvas, porque le daba vergüenza.",
+        "También le preguntaron cómo habían podido llevarse una piedra tan grande del prado, que pesaría más que un elefante.",
+        "Al final, Dani firmó con su nombre y dibujó a Toby con su pelota roja nueva.",
+        "—Ahora solo falta que llegue el verano —dijo Lucía, mientras cerraba el sobre."
+      ],
+      "actividad": {
+        "tipo": "crea",
+        "prompt": "Escribe tú también una carta corta a un amigo o a una amiga. Empieza con «Querido» o «Querida», cuéntale algo de este invierno y despídete con tu nombre.",
+        "lineas": 4
+      }
+    },
+    {
+      "dia": 116, "semana": 24, "trimestre": 2,
+      "tema": "Las plantas mustias",
+      "texto": [
+        "En la clase de Marta había una ventana grande que tenía un pestillo plateado, y en la repisa, cuatro macetas en fila.",
+        "De izquierda a derecha había un geranio de flores rojas, una violeta, una albahaca y un helecho. El helecho tenía unas hojas tan largas que casi tocaban el cristal.",
+        "Pero aquel lunes, cuando llegaron, las cuatro estaban mustias, con las hojas caídas y blandas.",
+        "—¿Qué les pasará? —preguntó Marta, preocupada—. El viernes estaban preciosas.",
+        "Lucía sacó la lupa, porque aquello parecía un caso para el club."
+      ],
+      "actividad": {
+        "tipo": "dibuja_detalle",
+        "prompt": "Dibuja la ventana de la clase de Marta con las cuatro macetas, cada una en su sitio.",
+        "comprueba": [
+          "¿Qué tiene la ventana, y de qué color es?",
+          "¿Cuántas macetas hay, y dónde están?",
+          "¿Qué planta está a la izquierda del todo? ¿Y a la derecha del todo?",
+          "¿Qué tiene de especial la planta de la derecha?"
+        ],
+        "clave": "Una ventana grande con un pestillo plateado; en la repisa, cuatro macetas en fila: de izquierda a derecha, un geranio de flores rojas, una violeta, una albahaca y un helecho de hojas tan largas que casi tocan el cristal (todas mustias)."
+      }
+    },
+    {
+      "dia": 117, "semana": 24, "trimestre": 2,
+      "tema": "Las plantas mustias",
+      "texto": [
+        "¿Sabías que las plantas necesitan cuatro cosas para vivir?",
+        "La primera es la luz, porque con ella fabrican su alimento en las hojas. La segunda es el agua, que beben por las raíces.",
+        "También necesitan aire y una temperatura agradable, ni muy fría ni muy caliente.",
+        "Muchas plantas de interior vienen de países cálidos, así que no aguantan el frío. Si pasan una noche helada, sus hojas se ponen blandas y se caen.",
+        "Y cuidado: si les das demasiada agua, las raíces se pudren."
+      ],
+      "actividad": {
+        "tipo": "ficha",
+        "instruccion": "Completa la ficha con lo que dice el texto.",
+        "titulo": "Lo que necesitan las plantas",
+        "campos": [
+          "Cuántas cosas necesitan para vivir",
+          "Para qué les sirve la luz",
+          "Por dónde beben el agua",
+          "Qué les pasa con una noche helada",
+          "Qué pasa si les das demasiada agua"
+        ],
+        "respuestas": [
+          "Cuatro: luz, agua, aire y una temperatura agradable.",
+          "Para fabricar su alimento en las hojas.",
+          "Por las raíces.",
+          "Sus hojas se ponen blandas y se caen.",
+          "Las raíces se pudren."
+        ]
+      }
+    },
+    {
+      "dia": 118, "semana": 24, "trimestre": 2,
+      "tema": "Las plantas mustias",
+      "texto": [
+        "El miércoles, el club investigó con la lupa las plantas de la ventana, una por una.",
+        "La tierra estaba húmeda, pero no encharcada, porque Marta las regaba un poco cada viernes. Tampoco les faltaba luz, ya que el sol entraba por la ventana toda la mañana.",
+        "Lo más raro era que siempre se ponían mustias los lunes, y durante la semana se recuperaban un poco.",
+        "Además, los lunes por la mañana la clase estaba helada, porque la calefacción no se encendía el fin de semana."
+      ],
+      "actividad": {
+        "tipo": "relaciona",
+        "instruccion": "Une cada cosa que descubrió el club con lo que quiere decir. Vuelve a leer también la página del martes.",
+        "cabeceras": ["Lo que descubrió el club", "Lo que quiere decir"],
+        "pares": [
+          ["La tierra estaba húmeda, pero no encharcada.", "No les faltaba agua ni les sobraba."],
+          ["Entraba el sol toda la mañana.", "No les faltaba luz."],
+          ["Se ponían mustias los lunes.", "Algo les pasaba el fin de semana."],
+          ["La calefacción se apagaba el fin de semana.", "Los lunes, la clase estaba helada."]
+        ]
+      }
+    },
+    {
+      "dia": 119, "semana": 24, "trimestre": 2,
+      "tema": "Las plantas mustias",
+      "texto": [
+        "El jueves, Hugo se fijó en la planta de la mesa de Marta, que estaba preciosa.",
+        "Era otro geranio y lo regaban los viernes, igual que a las de la ventana, pero estaba junto al radiador.",
+        "Entonces Lucía miró la ventana con la lupa y descubrió que el pestillo estaba roto. Aunque la ventana parecía cerrada, en cuanto soplaba un poco de viento, se abría sola.",
+        "Paco les contó que algunos lunes, al llegar a las siete, la encontraba abierta de par en par."
+      ],
+      "actividad": {
+        "tipo": "compara",
+        "instruccion": "Compara las plantas de la ventana con el geranio de la mesa de Marta. Vuelve a leer también las páginas del lunes y del miércoles.",
+        "a": "Plantas de la ventana",
+        "b": "Geranio de la mesa",
+        "solucion": {
+          "a": ["estaban mustias", "estaban junto al cristal, con el pestillo roto"],
+          "ambos": ["las regaban los viernes", "estaban en la clase de Marta"],
+          "b": ["estaba precioso", "estaba junto al radiador"]
+        }
+      }
+    },
+    {
+      "dia": 120, "semana": 24, "trimestre": 2,
+      "tema": "Las plantas mustias: el caso",
+      "texto": [
+        "El viernes, el club le presentó a Marta sus pistas, escritas en una cartulina.",
+        "Hugo copió lo que necesitan las plantas para vivir, y Sofía dibujó la ventana con el pestillo roto. Lucía, por su parte, apuntó lo que pasaba los lunes y los fines de semana.",
+        "—Antes de decidir nada, lo leemos todo dos veces —dijo Lucía, que se acordaba de la primera norma del club.",
+        "Marta leyó la cartulina muy despacio y, cuando terminó, miró la ventana con cara de haberlo entendido todo.",
+        "¿Y tú? ¿Ya sabes qué les pasaba a las plantas?"
+      ],
+      "actividad": {
+        "tipo": "caso",
+        "pregunta": "¿Por qué se ponían mustias las plantas de la ventana?",
+        "opciones": ["les faltaba agua", "les faltaba luz", "pasaban frío", "les sobraba agua"],
+        "solucion": "pasaban frío",
+        "clave": "Pasaban frío: el pestillo estaba roto y, con un poco de viento, la ventana se abría sola; algunos lunes Paco la encontraba abierta de par en par (jueves), y el fin de semana la calefacción estaba apagada (miércoles). Con una noche helada, las hojas se ponen blandas y se caen (martes). No les faltaba agua ni les sobraba, y tenían sol toda la mañana (miércoles); y el geranio de la mesa, junto al radiador, estaba precioso (jueves).",
+        "banner": "¡120 páginas leídas! Caso de las plantas: resuelto."
+      }
+    },
+    {
+      "dia": 121, "semana": 25, "trimestre": 2,
+      "tema": "El planetario",
+      "texto": [
+        "Las plantas pasaban frío por culpa del pestillo roto, así que Paco lo arregló enseguida.",
+        "Aquel lunes, la clase de Marta fue de excursión al planetario.",
+        "La sala era redonda, y el techo era una cúpula enorme donde se veía el cielo de noche. En el centro brillaba el Sol, y a su alrededor giraban ocho planetas, cada uno en su órbita.",
+        "Los niños se tumbaron en unos asientos que se echaban hacia atrás, y Hugo no paró de sonreír.",
+        "—Algún día viajaré a uno de esos —susurró, mientras los miraba sin pestañear."
+      ],
+      "actividad": {
+        "tipo": "dibuja_detalle",
+        "prompt": "Dibuja la sala del planetario tal y como la vio la clase de Marta.",
+        "comprueba": [
+          "¿Qué forma tiene la sala? ¿Y el techo?",
+          "¿Qué hay en el centro de la cúpula?",
+          "¿Cuántos planetas hay, y qué hacen?",
+          "¿Cómo son los asientos?"
+        ],
+        "clave": "Una sala redonda con una cúpula enorme donde se ve el cielo de noche; en el centro, el Sol; a su alrededor, ocho planetas que giran, cada uno en su órbita; asientos que se echan hacia atrás."
+      }
+    },
+    {
+      "dia": 122, "semana": 25, "trimestre": 2,
+      "tema": "El planetario",
+      "texto": [
+        "¿Sabías que alrededor del Sol giran ocho planetas?",
+        "Mercurio es el más cercano al Sol, pero el más caliente es Venus, aunque está más lejos. La Tierra es el único donde sabemos que hay vida.",
+        "Marte es rojo porque su suelo está lleno de óxido, como un clavo viejo, y tiene dos lunas pequeñas.",
+        "Júpiter es el más grande de todos, tanto que dentro cabrían más de mil Tierras.",
+        "Saturno tiene unos anillos enormes de hielo y roca. Urano y Neptuno están tan lejos que allí hace un frío terrible."
+      ],
+      "actividad": {
+        "tipo": "verdadero_falso",
+        "afirmaciones": [
+          "Alrededor del Sol giran nueve planetas.",
+          "El planeta más caliente es Mercurio.",
+          "Marte es rojo porque su suelo está lleno de óxido.",
+          "Dentro de Júpiter cabrían más de mil Tierras."
+        ],
+        "respuestas": [
+          "F: giran ocho.",
+          "F: es Venus, aunque está más lejos del Sol.",
+          "V",
+          "V"
+        ]
+      }
+    },
+    {
+      "dia": 123, "semana": 25, "trimestre": 2,
+      "tema": "El planetario",
+      "texto": [
+        "El miércoles, Marta anunció que cada niño haría un mural sobre un planeta.",
+        "Lucía eligió Saturno, por sus anillos, y Sofía, Júpiter, porque le gustaban las cosas enormes. Hugo, en cambio, dijo que el suyo era un secreto, aunque les daría pistas.",
+        "—Primera pista: mi planeta no es el más caliente, ni el más grande —anunció, muy misterioso.",
+        "Por la tarde, Sofía vio a Hugo en la papelería, comprando una cartulina roja.",
+        "Esa noche, Lucía repasó lo que sabía de los planetas y apuntó en su cuaderno las pistas de Hugo."
+      ],
+      "actividad": {
+        "tipo": "vinetas",
+        "instruccion": "Dibuja tres momentos de esta semana. Debajo de cada viñeta tienes lo que pasa.",
+        "pies": [
+          "La clase de Marta mira los planetas, tumbada en el planetario.",
+          "Lucía elige Saturno, y Sofía, Júpiter.",
+          "Hugo compra una cartulina roja en la papelería."
+        ]
+      }
+    },
+    {
+      "dia": 124, "semana": 25, "trimestre": 2,
+      "tema": "El planetario",
+      "texto": [
+        "El jueves, Lucía encontró en su pupitre la segunda pista de Hugo, escrita con el código de números del club.",
+        "Sofía también tenía una copia, y las dos se pusieron a descifrarla en el recreo, mientras Hugo silbaba como si nada.",
+        "—Si juntamos esta pista con lo que aprendimos en el planetario, ya lo tenemos —dijo Sofía.",
+        "Pero Lucía prefirió comprobarlo, porque la primera norma del club era leer siempre dos veces. Así que sacó la lupa y volvió a leer, muy despacio, las dos pistas de Hugo."
+      ],
+      "actividad": {
+        "tipo": "codigo",
+        "instruccion": "Descifra la segunda pista de Hugo con el código de números: busca cada número en la tabla y escribe su letra en la casilla.",
+        "mensaje": "Tiene dos lunas pequeñas",
+        "cifrado": "numeros"
+      }
+    },
+    {
+      "dia": 125, "semana": 25, "trimestre": 2,
+      "tema": "El planetario: el caso",
+      "texto": [
+        "El viernes, cada uno colgó su mural en el pasillo, menos Hugo, que tenía el suyo tapado con una sábana.",
+        "—Antes de destaparlo, el club tiene que adivinar cuál es —dijo, con una sonrisa enorme.",
+        "Lucía y Sofía repasaron las pistas: lo que dijo Hugo el miércoles, la cartulina que compró y el mensaje en clave.",
+        "Después volvieron a leer lo que sabían de cada planeta, y al final se miraron y sonrieron a la vez.",
+        "¿Y tú? ¿Qué planeta crees que eligió Hugo?"
+      ],
+      "actividad": {
+        "tipo": "caso",
+        "pregunta": "¿Qué planeta eligió Hugo para su mural?",
+        "opciones": ["Venus", "Marte", "Júpiter", "Saturno"],
+        "solucion": "Marte",
+        "clave": "Marte: su planeta no es el más caliente ni el más grande, así que no es Venus ni Júpiter (miércoles, con lo que dice el martes); Hugo compró una cartulina roja, y el planeta rojo es Marte (miércoles y martes); y su pista en clave dice que tiene dos lunas pequeñas, como Marte (jueves y martes). Saturno es el de los anillos, y lo eligió Lucía."
+      }
+    },
+    {
+      "dia": 126, "semana": 26, "trimestre": 2,
+      "tema": "El nido del jardín",
+      "texto": [
+        "Hugo había elegido Marte, el planeta rojo de las dos lunas, como había adivinado el club.",
+        "Aquella semana llegó la primavera, y la abuela vino a pasar unos días a casa de Lucía.",
+        "Por las tardes tejía en el jardín, sentada en el banco que había debajo del limonero. A su lado dejaba una cesta con ovillos de tres colores: rojo, amarillo y azul.",
+        "Cuando terminaba, guardaba en la cesta los trocitos de lana que le sobraban.",
+        "Al fondo, la tapia estaba cubierta de hiedra, y a la izquierda, la caseta del club, con su puerta verde."
+      ],
+      "actividad": {
+        "tipo": "dibuja_detalle",
+        "prompt": "Dibuja el jardín de Lucía tal y como lo describe el texto, con la abuela tejiendo.",
+        "comprueba": [
+          "¿Dónde está el banco?",
+          "¿Qué hay al lado del banco? ¿De qué colores son los ovillos?",
+          "¿Qué cubre la tapia del fondo?",
+          "¿Qué hay a la izquierda, y de qué color es su puerta?"
+        ],
+        "clave": "El banco, debajo del limonero, con la abuela tejiendo; a su lado, una cesta con ovillos rojo, amarillo y azul; al fondo, la tapia cubierta de hiedra; a la izquierda, la caseta del club, con la puerta verde."
+      }
+    },
+    {
+      "dia": 127, "semana": 26, "trimestre": 2,
+      "tema": "El nido del jardín",
+      "texto": [
+        "¿Sabías que los mirlos cantan desde que amanece?",
+        "El macho es negro, con el pico naranja, y la hembra es marrón.",
+        "En primavera construyen un nido con forma de taza, hecho de ramitas, hierba y barro. Por dentro lo forran con cosas blandas, como musgo, pelos o lana.",
+        "Les gusta esconderlo en los setos o en la hiedra, donde nadie lo ve. La hembra pone de tres a cinco huevos azulados con pintitas marrones.",
+        "Y si ves un nido, no lo toques: los mirlos se asustan y pueden abandonarlo."
+      ],
+      "actividad": {
+        "tipo": "ficha",
+        "instruccion": "Completa la ficha con lo que dice el texto.",
+        "titulo": "El mirlo",
+        "campos": [
+          "Cómo es el macho",
+          "Cómo es la hembra",
+          "De qué hacen el nido",
+          "Con qué lo forran por dentro",
+          "Dónde lo esconden"
+        ],
+        "respuestas": [
+          "Negro, con el pico naranja.",
+          "Marrón.",
+          "De ramitas, hierba y barro, con forma de taza.",
+          "Con cosas blandas, como musgo, pelos o lana.",
+          "En los setos o en la hiedra."
+        ]
+      }
+    },
+    {
+      "dia": 128, "semana": 26, "trimestre": 2,
+      "tema": "El nido del jardín",
+      "texto": [
+        "Desde el lunes, cada mañana faltaban trocitos de lana en la cesta de la abuela.",
+        "El miércoles, antes de dormir, la abuela los contó: había doce. Como no llovía, dejó la cesta en el banco toda la noche.",
+        "A las ocho de la mañana solo quedaban nueve: faltaban dos rojos y uno amarillo.",
+        "Luna no salió de casa de Pedro, porque tenía una pata vendada. Toby no durmió en ninguna cama, y Dani no pisó el salón en toda la noche.",
+        "Al amanecer, lo único que se oía en el jardín eran los pájaros, que cantaban en la hiedra."
+      ],
+      "actividad": {
+        "tipo": "logica",
+        "instruccion": "Usa las pistas del texto para saber dónde pasó la noche cada uno. Pon ✓ donde sí y ✗ donde no.",
+        "filas": ["Luna", "Toby", "Dani"],
+        "columnas": ["en casa de Pedro", "debajo del sofá", "en su cama"],
+        "restricciones": [["si", "Luna", "en casa de Pedro"], ["no", "Toby", "en su cama"], ["no", "Dani", "debajo del sofá"]],
+        "solucion": {"Luna": "en casa de Pedro", "Toby": "debajo del sofá", "Dani": "en su cama"},
+        "pregunta": "¿Salió alguno de los tres al jardín aquella noche?",
+        "respuesta_pregunta": "No: los tres pasaron la noche dentro de una casa."
+      }
+    },
+    {
+      "dia": 129, "semana": 26, "trimestre": 2,
+      "tema": "El nido del jardín: el caso",
+      "texto": [
+        "El jueves, en cuanto la abuela contó los trocitos que quedaban, el club examinó el jardín con la lupa.",
+        "En el banco, al lado de la cesta, Sofía encontró una pluma marrón, pequeña y suave. Hugo descubrió un hilo rojo que colgaba de la hiedra, tan arriba que ni Papá llegaba sin escalera.",
+        "Y justo entonces, un pájaro negro con el pico naranja se posó en la tapia y se puso a cantar.",
+        "—No acusemos a nadie todavía —dijo Lucía—. Primero, repasemos todo lo que sabemos."
+      ],
+      "actividad": {
+        "tipo": "caso",
+        "pregunta": "¿Quién se llevaba los trocitos de lana de la abuela?",
+        "opciones": ["Luna", "Toby", "Dani", "unos mirlos"],
+        "solucion": "unos mirlos",
+        "clave": "Unos mirlos: forran el nido con cosas blandas, como lana, lo esconden en la hiedra y cantan desde que amanece (martes); la lana desaparecía por la noche o al amanecer, cuando Luna estaba en casa de Pedro, Toby debajo del sofá y Dani en su cama, y en la hiedra cantaban los pájaros (miércoles); en el banco había una pluma marrón, como las de la hembra; un hilo rojo colgaba de la hiedra, muy arriba, y en la tapia cantaba un mirlo macho, negro con el pico naranja (jueves)."
+      }
+    },
+    {
+      "dia": 130, "semana": 26, "trimestre": 2,
+      "tema": "El nido del jardín",
+      "texto": [
+        "Los trocitos de lana se los llevaba una pareja de mirlos, como había deducido el club.",
+        "Hugo levantó el periscopio por encima de la hiedra, sin tocarla, y todos miraron por turnos.",
+        "Allí estaba el nido, redondo como una taza y forrado de lana roja y amarilla, con cuatro huevos azulados dentro.",
+        "La abuela se rio tanto que se le cayeron las gafas.",
+        "—A partir de hoy, los trocitos que me sobren serán para los mirlos —dijo—. Pero nadie se acerca al nido, ¿eh?",
+        "Así terminó el invierno del club: con un nido lleno de colores."
+      ],
+      "actividad": {
+        "tipo": "repasa",
+        "checklist": [
+          "Leo historias contadas en pasado: «bajó», «estaba», «hizo», «trajo».",
+          "Sé leer una carta: quién la escribe, a quién y qué cuenta.",
+          "Saco datos de un texto de «¿Sabías que...?» para completar una ficha.",
+          "Sigo unas instrucciones paso a paso.",
+          "Descifro mensajes con números, con vocales y al revés.",
+          "Junto las pistas de toda la semana y no acuso a nadie sin pruebas."
+        ],
+        "prompt": "¿Qué caso de este invierno te ha gustado más? Cuéntaselo a alguien de tu familia y explícale qué pista te dio la solución.",
+        "banner": "¡130 páginas leídas! Todos los casos del invierno, resueltos."
+      }
+    }
+  ]
+}

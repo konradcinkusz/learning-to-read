@@ -185,21 +185,38 @@ de frases) son avisos.
 
 ### Trimestre 2 — invierno (narración en pasado)
 
-| Sem. | Tema | Caso / hilo |
-|---|---|---|
-| 14 | Los Reyes que caminan | los Reyes del belén avanzan un palmo cada noche → los mueve Papá (tradición de su infancia): el belén está en una balda alta, Mamá se acostaba pronto con catarro, Papá lee hasta tarde, una nota con su letra |
-| 15 | Nochebuena y el mapa de la abuela | en casa de la abuela, dentro de un cuaderno viejo de su escuela, Lucía encuentra el mapa del tesoro que Rosa dibujó a los 8 años: el río a la izquierda, con un puente; el molino con su rueda, arriba a la izquierda; el pozo con un cubo en el centro; tres álamos en fila a la derecha y, junto a ellos, la piedra que parece una tortuga; una X roja debajo de la piedra. Detrás, a lápiz: «Desde el pozo, diez pasos hacia los álamos. El tesoro está debajo de la piedra que parece una tortuga» |
-| 16 | Las doce uvas | ¿quién se comió tres uvas del cuenco de Dani? → Dani, que se entrenaba (mancha morada en el pijama, pepitas en la zapatilla); las uvas, lejos de Toby porque a los perros les sientan mal |
-| 17 | El roscón de Reyes | la carta de Dani a los Reyes; ¿quién tiene el haba? (tabla lógica + caso) |
-| 18 | Un muñeco de nieve madrugador | ¿quién hizo el muñeco del patio antes de que llegara nadie? → Paco (bufanda de rayas, huellas de botas desde la conserjería, llega a las siete) |
-| 19 | El periscopio de Hugo | instrucciones para construirlo (ordena); misión de observación |
-| 20 | El Día de la Paz | el club se pelea por quién manda; turnos; ¿quién rompió el cartel del club? → nadie: se despegó con el viento (norma 2: no acusar sin pruebas) |
-| 21 | El cumpleaños de Papá | sorpresa organizada con mensajes en clave; Dani casi lo cuenta |
-| 22 | Carnaval | disfraces (Lucía, de detective); ¿de quién es el antifaz perdido? |
-| 23 | Una carta del pueblo | Martín escribe a Dani (carta): el molino se está restaurando para hacer un museo, y la piedra de la tortuga se la han llevado de la era al jardín del molino |
-| 24 | Las plantas mustias | ¿por qué se mueren las plantas de la ventana de clase? → el frío: la ventana tiene el pestillo roto y se abre con el viento el fin de semana |
-| 25 | El planetario | los planetas (informativo); ¿qué planeta eligió Hugo? → Marte |
-| 26 | El nido del jardín | ¿quién se lleva la lana de la abuela? → una pareja de mirlos, para el nido de la hiedra; repasa + medalla |
+| Sem. | Tema | Caso / hilo | Lunes | Martes | Miércoles | Jueves | Viernes |
+|---|---|---|---|---|---|---|---|
+| 14 | Los Reyes que caminan | ¿quién mueve los Reyes del belén un palmo cada noche? → Papá (el belén está en la balda más alta, Toby no ladró, Mamá se acostaba pronto con catarro y Papá leía hasta las doce; la nota «Un palmo cada noche, hasta llegar al portal», sin firma, tiene la letra redonda de Lector X) | dibuja el belén | V/F | responde | tabla (a qué hora se acuesta cada uno) | caso |
+| 15 | Nochebuena y el mapa | en el armario de la abuela, dentro de un cuaderno viejo de su colegio, Lucía encuentra el mapa del tesoro que Rosa dibujó a los 8 años (ver abajo); la abuela se lo da: lo buscarán en verano | dibuja el mapa | errores | ordena | compara (Rosa de niña / Lucía) | adivina (el pozo) |
+| 16 | Las doce uvas | ¿quién se comió tres uvas del cuenco de Dani? → Dani, que se entrenaba para las campanadas (boca y pijama manchados de morado, pepitas en su zapatilla); las uvas, lejos de Toby, porque a los perros les sientan mal | dibuja la bandeja | ficha (las doce uvas) | responde | código de números | caso |
+| 17 | El roscón de Reyes | la carta de Dani a los Reyes; ¿quién tiene el haba? → la abuela (el cuchillo chocó con algo duro en el trozo de la guinda, que no quisieron ni Mamá ni Papá) | relaciona (la carta) | dibuja el salón la noche de Reyes | responde | tabla (los trozos) | caso |
+| 18 | Un muñeco de nieve madrugador | ¿quién hizo el muñeco del patio? → Paco (tan alto como un mayor, huellas de botas grandes que salen de la conserjería y vuelven a ella, bufanda que huele a café, llega a las siete) | dibuja el muñeco | errores | responde | mapa (las huellas) | caso |
+| 19 | El periscopio de Hugo | instrucciones para construirlo; misión de observación desde el seto | dibuja el periscopio | ordena (instrucciones) | código al revés | tabla (quién vio a quién) | viñetas |
+| 20 | El Día de la Paz | el club se pelea por quién manda; ¿quién quitó el cartel de la caseta? → nadie: el viento (cinta vieja, una noche de vendaval, la papelera de Pedro en medio de la calle). Desde entonces mandan por turnos | dibuja el cartel | V/F | responde | compara (Sofía / Hugo) | caso |
+| 21 | El cumpleaños de Papá | búsqueda del tesoro por la casa, con un plano y mensajes en clave: Mamá se aprende el código del club, Papá no lo conoce | mapa (plano de la casa) | errores | responde | código de vocales | crea (felicitación con adivinanza) |
+| 22 | Carnaval | Lucía, de detective; ¿de quién es el antifaz perdido? → Marta (goma de mayor, morado y plateado, apareció junto a la escalera del escenario); aparece Nora, compañera de clase | dibuja el disfraz | ordena | ficha (objeto perdido) | mapa (el patio) | caso |
+| 23 | Una carta del pueblo | Martín escribe a Dani: el molino viejo será un museo, y la piedra de la tortuga se la han llevado del prado al jardín del molino. Pero el pozo no se mueve: «desde el pozo, diez pasos» sigue sirviendo | dibuja el dibujo de Martín | V/F | adivina (el molino) | código de vocales | crea (una carta) |
+| 24 | Las plantas mustias | ¿por qué se ponen mustias los lunes las plantas de la ventana de clase? → pasan frío: el pestillo está roto, la ventana se abre con el viento y el fin de semana la calefacción está apagada | dibuja la ventana | ficha (lo que necesitan las plantas) | relaciona | compara (ventana / geranio de la mesa) | caso |
+| 25 | El planetario | los planetas (informativo); ¿qué planeta eligió Hugo para su mural? → Marte (ni el más caliente ni el más grande, cartulina roja, dos lunas pequeñas) | dibuja el planetario | V/F | viñetas | código de números | caso |
+| 26 | El nido del jardín | ¿quién se lleva los trocitos de lana de la cesta de la abuela? → una pareja de mirlos, para el nido de la hiedra (pluma marrón, hilo rojo muy arriba, un mirlo macho cantando en la tapia) | dibuja el jardín | ficha (el mirlo) | tabla (dónde durmió cada uno) | caso | repasa + medalla |
+
+**El mapa de la abuela** (días 71–72), tal como lo tiene que encontrar
+el trimestre 4: a la izquierda, un río que baja de arriba abajo, con un
+puente pequeño; arriba, junto al río, el molino con su rueda; en el
+centro, un pozo con un cubo; a la derecha, tres álamos en fila y, a su
+lado, una piedra grande que parece una tortuga, con una X roja debajo.
+Detrás, a lápiz: «Desde el pozo, diez pasos hacia los álamos. El tesoro
+está debajo de la piedra que parece una tortuga. Rosa, 8 años». Rosa lo
+dibujó en el pueblo «hace unos sesenta años»; lo que enterró es una caja
+de lata.
+
+Otros detalles fijos del invierno: el jardín de Lucía tiene un banco
+debajo de un limonero, un seto, un rosal y, al fondo, una tapia cubierta
+de hiedra (donde anidan los mirlos); la caseta del club, a la izquierda,
+tiene la puerta verde y una ventana redonda. Paco siempre lleva una
+taza de café en la mano y llega a las siete. Toby tiene una pelota roja
+nueva desde Reyes.
 
 ### Trimestre 3 — primavera (pasado, pluscuamperfecto, subjuntivo)
 
