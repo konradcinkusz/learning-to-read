@@ -4,17 +4,20 @@ introducción.
 
 - "verano": el cuaderno de verano -- solo los 65 días del verano (del
   196 al 260), impresos como días 1 a 65 y semanas 1 a 13.
+- "muestra": la muestra gratuita -- las cuatro primeras semanas (días 1
+  a 20), con su número de siempre: son el principio del libro entero.
 
 Cada generador (tools/gen_days.py, tools/gen_palabras.py) escribe, además
 del libro entero, los .tex de cada edición (generated-days-verano.tex,
 generated-clave-verano.tex): las mismas páginas, una a una, de los días
-de la edición -- no se vuelve a generar ninguna, se escogen --, y las
-filas de su mapa (generated-mapa-verano.tex: cada semana con su tema). Lo único
-que cambia dentro de una página es el cartel de "¡200 páginas leídas!",
-que en el cuaderno de verano es "¡5 páginas leídas!" (ver
-banner_edicion). El número del día y de la semana que se imprime lo
-resta LaTeX (\\numeroDia, preamble.tex), con los mismos números que hay
-aquí -- comprobar_preamble() se asegura de que coinciden.
+de la edición -- no se vuelve a generar ninguna, se escogen --, y, si la
+edición lleva mapa propio, sus filas (generated-mapa-verano.tex: cada
+semana con su tema). Lo único que cambia dentro de una página es el
+cartel de "¡200 páginas leídas!", que en el cuaderno de verano es "¡5
+páginas leídas!" (ver banner_edicion). El número del día y de la semana
+que se imprime lo resta LaTeX (\\numeroDia, preamble.tex), con los
+mismos números que hay aquí -- comprobar_preamble() se asegura de que
+coinciden.
 """
 
 import re
@@ -31,7 +34,8 @@ class Edicion:
     hasta: int  # y el último
     desplazamiento_dias: int  # lo que se resta al número del día al imprimirlo
     desplazamiento_semanas: int  # y al de la semana
-    total_dias: int  # \totaldias en la edición
+    total_dias: int  # \totaldias en la edición (None: el del libro entero)
+    mapa: bool  # si lleva su propio mapa (\mapaEdicion) en vez del del curso
 
     def contiene(self, dia):
         return self.desde <= dia <= self.hasta
@@ -40,9 +44,16 @@ class Edicion:
 VERANO = Edicion(
     nombre="verano", desde=196, hasta=260,
     desplazamiento_dias=195, desplazamiento_semanas=39, total_dias=65,
+    mapa=True,
 )
 
-EDICIONES = (VERANO,)
+MUESTRA = Edicion(
+    nombre="muestra", desde=1, hasta=20,
+    desplazamiento_dias=0, desplazamiento_semanas=0, total_dias=None,
+    mapa=False,
+)
+
+EDICIONES = (VERANO, MUESTRA)
 
 
 def ruta_edicion(ruta, edicion):
@@ -63,11 +74,14 @@ def banner_edicion(d, edicion, idioma):
     llevan leídas en ella (¡200 páginas leídas! es ¡5 páginas leídas! en
     el cuaderno de verano). Si el resto del cartel habla del número
     (¡Doscientas!), la actividad lleva el suyo propio para la edición:
-    "banner_verano". None si el día no tiene cartel."""
+    "banner_verano". None si el día no tiene cartel. Una edición que no
+    cambia los números (la muestra) deja el cartel como está."""
     actividad = d["actividad"]
     banner = actividad.get("banner")
     if banner is None:
         return None
+    if edicion.desplazamiento_dias == 0:
+        return banner
     propio = actividad.get(f"banner_{edicion.nombre}")
     if propio is not None:
         return propio
@@ -136,8 +150,9 @@ def salidas_ediciones(dias, paginas, entradas, salida_dias, salida_clave,
     """[(ruta, contenido)]: los .tex de cada edición -- las páginas del
     libro entero ([(d, tex)], en orden y sin medallas) de los días de la
     edición, con el cartel de cada viernes cambiado; sus entradas de la
-    clave ([(d, entrada)]), y las filas de su mapa. `cabecera(ruta)` es
-    el comentario de "GENERADO, no editar" de cada generador."""
+    clave ([(d, entrada)]), y las filas de su mapa si lleva mapa propio.
+    `cabecera(ruta)` es el comentario de "GENERADO, no editar" de cada
+    generador."""
     salidas = []
     for e in ediciones_completas(dias):
         ruta_dias = ruta_edicion(salida_dias, e)
@@ -149,12 +164,10 @@ def salidas_ediciones(dias, paginas, entradas, salida_dias, salida_clave,
         ruta_clave = ruta_edicion(salida_clave, e)
         clave = [cabecera(ruta_clave)]
         clave.extend(entrada for d, entrada in entradas if e.contiene(d["dia"]))
-        ruta_mapa = ruta_edicion(salida_dias.with_name("generated-mapa.tex"), e)
-        salidas += [
-            (ruta_dias, "\n".join(piezas)),
-            (ruta_clave, "".join(clave)),
-            (ruta_mapa, cabecera(ruta_mapa) + mapa_edicion(dias, e)),
-        ]
+        salidas += [(ruta_dias, "\n".join(piezas)), (ruta_clave, "".join(clave))]
+        if e.mapa:
+            ruta_mapa = ruta_edicion(salida_dias.with_name("generated-mapa.tex"), e)
+            salidas.append((ruta_mapa, cabecera(ruta_mapa) + mapa_edicion(dias, e)))
     return salidas
 
 
@@ -172,7 +185,9 @@ def comprobar_campos(d):
 
 
 def comprobar_preamble():
-    """preamble.tex resta al imprimir los mismos números que hay aquí."""
+    """preamble.tex resta al imprimir los mismos números que hay aquí. Lo
+    que el bloque de una edición no fija se queda como en el libro entero:
+    nada que restar, y el \\totaldias de siempre."""
     texto = (ROOT / "preamble.tex").read_text(encoding="utf-8")
     for e in EDICIONES:
         m = re.search(
@@ -183,16 +198,17 @@ def comprobar_preamble():
         bloque = m.group(1)
         esperado = {
             r"\desplazamientoDias": (
-                r"\\def\\desplazamientoDias\{(\d+)\}", e.desplazamiento_dias),
+                r"\\def\\desplazamientoDias\{(\d+)\}", e.desplazamiento_dias, 0),
             r"\desplazamientoSemanas": (
-                r"\\def\\desplazamientoSemanas\{(\d+)\}", e.desplazamiento_semanas),
+                r"\\def\\desplazamientoSemanas\{(\d+)\}", e.desplazamiento_semanas, 0),
             r"\totaldias": (
-                r"\\renewcommand\{\\totaldias\}\{(\d+)\}", e.total_dias),
+                r"\\renewcommand\{\\totaldias\}\{(\d+)\}", e.total_dias, None),
         }
-        for macro, (patron, valor) in esperado.items():
+        for macro, (patron, valor, por_defecto) in esperado.items():
             n = re.search(patron, bloque)
-            if not n or int(n.group(1)) != valor:
+            if (int(n.group(1)) if n else por_defecto) != valor:
+                debe = "no se cambia" if valor is None else f"tiene que ser {valor}"
                 raise ErrorDeContenido(
-                    f"preamble.tex, edición «{e.nombre}»: {macro} tiene que "
-                    f"ser {valor}, como en tools/ediciones.py"
+                    f"preamble.tex, edición «{e.nombre}»: {macro} {debe}, "
+                    "como en tools/ediciones.py"
                 )

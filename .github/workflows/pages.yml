@@ -238,6 +238,35 @@ jobs:
             python3 tools/check_pages.py "$r-verano.aux"
           done
 
+      # Las muestras gratuitas (ediciones/<raíz>-muestra.tex): las cuatro
+      # primeras semanas de cada cuaderno, igual que los cuadernos de
+      # verano -- compiladas desde la raíz, y comprobadas antes de
+      # publicar nada.
+      - name: Compila las muestras gratuitas
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: |
+            ediciones/main-muestra.tex
+            ediciones/main-bw-muestra.tex
+            ediciones/palabras-muestra.tex
+            ediciones/palabras-bw-muestra.tex
+            ediciones/lupa-muestra.tex
+            ediciones/lupa-bw-muestra.tex
+            ediciones/english-muestra.tex
+            ediciones/english-bw-muestra.tex
+            ediciones/firstwords-muestra.tex
+            ediciones/firstwords-bw-muestra.tex
+          latexmk_use_lualatex: true
+          args: -interaction=nonstopmode -file-line-error
+
+      - name: Lee los logs y comprueba las páginas (muestras gratuitas)
+        run: |
+          for r in main main-bw palabras palabras-bw lupa lupa-bw \
+                   english english-bw firstwords firstwords-bw; do
+            python3 tools/checklog.py "$r-muestra.log"
+            python3 tools/check_pages.py "$r-muestra.aux"
+          done
+
       - name: Monta el sitio
         run: |
           mkdir -p _site
@@ -262,6 +291,16 @@ jobs:
           cp english-bw-verano.pdf _site/read-and-draw-summer-bw.pdf
           cp firstwords-verano.pdf _site/first-words-summer.pdf
           cp firstwords-bw-verano.pdf _site/first-words-summer-bw.pdf
+          cp main-muestra.pdf _site/aprendo-a-leer-muestra.pdf
+          cp main-bw-muestra.pdf _site/aprendo-a-leer-muestra-bn.pdf
+          cp palabras-muestra.pdf _site/aprendo-a-leer-palabras-muestra.pdf
+          cp palabras-bw-muestra.pdf _site/aprendo-a-leer-palabras-muestra-bn.pdf
+          cp lupa-muestra.pdf _site/leo-con-lupa-muestra.pdf
+          cp lupa-bw-muestra.pdf _site/leo-con-lupa-muestra-bn.pdf
+          cp english-muestra.pdf _site/read-and-draw-sample.pdf
+          cp english-bw-muestra.pdf _site/read-and-draw-sample-bw.pdf
+          cp firstwords-muestra.pdf _site/first-words-sample.pdf
+          cp firstwords-bw-muestra.pdf _site/first-words-sample-bw.pdf
 
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3

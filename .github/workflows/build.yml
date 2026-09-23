@@ -231,6 +231,40 @@ jobs:
           - variant: firstwords-verano-bw
             root: firstwords-bw-verano
             tex: ediciones/firstwords-bw-verano.tex
+          # Las muestras gratuitas (ediciones/<raíz>-muestra.tex): las
+          # cuatro primeras semanas de cada cuaderno, con sus páginas del
+          # principio y, al final, dónde está el cuaderno entero. Igual que
+          # los cuadernos de verano.
+          - variant: muestra-color
+            root: main-muestra
+            tex: ediciones/main-muestra.tex
+          - variant: muestra-bw
+            root: main-bw-muestra
+            tex: ediciones/main-bw-muestra.tex
+          - variant: palabras-muestra-color
+            root: palabras-muestra
+            tex: ediciones/palabras-muestra.tex
+          - variant: palabras-muestra-bw
+            root: palabras-bw-muestra
+            tex: ediciones/palabras-bw-muestra.tex
+          - variant: lupa-muestra-color
+            root: lupa-muestra
+            tex: ediciones/lupa-muestra.tex
+          - variant: lupa-muestra-bw
+            root: lupa-bw-muestra
+            tex: ediciones/lupa-bw-muestra.tex
+          - variant: english-muestra-color
+            root: english-muestra
+            tex: ediciones/english-muestra.tex
+          - variant: english-muestra-bw
+            root: english-bw-muestra
+            tex: ediciones/english-bw-muestra.tex
+          - variant: firstwords-muestra-color
+            root: firstwords-muestra
+            tex: ediciones/firstwords-muestra.tex
+          - variant: firstwords-muestra-bw
+            root: firstwords-bw-muestra
+            tex: ediciones/firstwords-bw-muestra.tex
     steps:
       - uses: actions/checkout@v4
 

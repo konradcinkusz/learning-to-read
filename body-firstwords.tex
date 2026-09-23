@@ -1,6 +1,6 @@
 % body-firstwords.tex -- «First Words» (el cuaderno de primeras palabras
 % en inglés) entero, en el orden en que se imprime (ver body.tex para el
-% cuaderno de verano).
+% cuaderno de verano y la muestra).
 \input{frontmatter/firstwords/portada}
 \ifedicionverano
   \input{frontmatter/firstwords/verano}
@@ -13,4 +13,8 @@
 \fi
 \input{content/firstwords/generated-days\sufijoEdicion}
 \input{backmatter/firstwords/clave-respuestas}
-\input{backmatter/firstwords/diploma}
+\ifedicionmuestra
+  \paginaFinMuestra{\lblFwTituloPortada}
+\else
+  \input{backmatter/firstwords/diploma}
+\fi

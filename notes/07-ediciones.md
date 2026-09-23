@@ -1,12 +1,11 @@
-# Las ediciones — el cuaderno de verano
+# Las ediciones — el cuaderno de verano y la muestra gratuita
 
 Cada uno de los cinco cuadernos tiene 260 páginas, una por día laborable
 del año. Una **edición** es el mismo cuaderno con otra selección de
 días, y con lo que tiene que cambiar para que esa selección sea un
 cuaderno de verdad: su portada, su página para el adulto, su mapa, su
-clave y su diploma. La primera es el **cuaderno de verano**; la
-siguiente será una muestra gratuita (las primeras semanas de cada
-cuaderno, ver el issue #16), con el mismo motor.
+clave y su diploma. Hay dos, las dos del issue #16: el **cuaderno de
+verano** y la **muestra gratuita**.
 
 ## El cuaderno de verano
 
@@ -51,6 +50,32 @@ Lo que lleva, en orden:
 No lleva medallas: la única del verano es el diploma, como en el libro
 entero.
 
+## La muestra gratuita
+
+Las cuatro primeras semanas de cada cuaderno (días 1 a 20), para probar
+con unas pocas páginas antes de imprimir el año entero. Diez PDF más:
+`ediciones/<raíz>-muestra.tex`; `make muestra` los compila y los
+comprueba.
+
+A diferencia del cuaderno de verano, la muestra **es el principio del
+libro entero**, y se nota: los días llevan su número de siempre ("Día 1
+/ 260", semana y trimestre), y delante van las páginas del principio del
+libro, tal cual — "Cómo usar este cuaderno", el mapa del curso, y lo que
+tenga cada uno (el carné de detective, "Who's who?", la tabla de
+sonidos). Lo que cambia:
+
+- **la portada**, con la insignia "Muestra gratuita: las cuatro primeras
+  semanas" / "Free sample: the first four weeks";
+- **su parte de la clave**;
+- **la última página**, en vez del diploma (`\paginaFinMuestra`):
+  "¿Seguimos leyendo?", dónde está el cuaderno entero — la página de los
+  cuadernos, `konradcinkusz.github.io/learning-to-read` —, y un código QR
+  con esa misma dirección, para abrirla desde el móvil.
+
+Como no cambia los números, no toca los carteles de "¡10 páginas
+leídas!", no necesita `banner_muestra` y no tiene mapa propio
+(`Edicion.mapa`).
+
 ## Cómo está hecho: las páginas no se escriben dos veces
 
 Una página de un día es la misma en el libro entero y en el cuaderno de
@@ -80,6 +105,8 @@ palabras y de *First Words* y en el 260 de *Leo con lupa*. Un
 `banner_verano` en un día que no es del verano, o sin `banner`, es un
 error.
 
+En la muestra, que no cambia los números, el cartel se queda como está.
+
 El número del día y de la semana que se imprime lo resta LaTeX, no el
 generador (`\numeroDia`, `\numeroSemana` en `preamble.tex`): la etiqueta
 `dia:N` de cada página sigue siendo la del libro entero, así que
@@ -87,16 +114,20 @@ generador (`\numeroDia`, `\numeroSemana` en `preamble.tex`): la etiqueta
 existe (días 196 a 260, uno por página, y la clave justo detrás). Los
 números de la edición (qué días, cuánto se resta, `\totaldias`) están
 dos veces, en `tools/ediciones.py` y en `preamble.tex`, y los dos
-generadores comprueban que coinciden (`comprobar_preamble`).
+generadores comprueban que coinciden (`comprobar_preamble`; lo que el
+bloque de una edición no fija es lo del libro entero, como en la
+muestra).
 
 La edición la elige el `.tex` raíz: `ediciones/main-verano.tex` es
 `\def\edicion{verano}` y `\input{main}` — lo mismo que hace `main-bw.tex`
 con `\bookcolor` —, así que cada edición sale en color y en blanco y
 negro sin una línea más. `preamble.tex` traduce `\edicion` en
-`\ifedicionverano`, `\sufijoEdicion` (el `-verano` de los `.tex`
-generados que se leen) y `\segunEdicion{todo el año}{todo el
-verano}`, para las frases de la portada, la tabla de sonidos, "Who's
-who?" y los diplomas que dicen "el año". El libro entero no cambia en
+`\ifedicionverano` e `\ifedicionmuestra`, `\sufijoEdicion` (el
+`-verano` o `-muestra` de los `.tex` generados que se leen) y
+`\segunEdicion{todo el año}{todo el verano}`, para las frases de la
+portada, la tabla de sonidos, "Who's who?" y los diplomas que dicen "el
+año" (la muestra dice lo del libro entero). Un `\edicion` que no es
+ninguna de las tres para la compilación. El libro entero no cambia en
 nada: sus `.tex` generados son los mismos, letra por letra, y sus PDF
 también.
 
@@ -105,8 +136,9 @@ también.
 - `make generate` escribe las ediciones con el libro entero, y los
   `--check` de los dos generadores comprueban que también las suyas
   están al día.
-- El CI compila los diez cuadernos de verano con los mismos pasos que
-  los libros enteros (`.github/workflows/build.yml`: log limpio y un día
-  por página), y Pages los publica junto a ellos
+- El CI compila los diez cuadernos de verano y las diez muestras con
+  los mismos pasos que los libros enteros (`.github/workflows/build.yml`:
+  log limpio y un día por página), y Pages los publica junto a ellos
   (`aprendo-a-leer-verano.pdf`, `leo-con-lupa-verano-bn.pdf`,
-  `read-and-draw-summer.pdf`, `first-words-summer-bw.pdf`...).
+  `read-and-draw-summer.pdf`, `first-words-summer-bw.pdf`...;
+  `aprendo-a-leer-muestra.pdf`, `read-and-draw-sample-bw.pdf`...).

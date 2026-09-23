@@ -1,6 +1,6 @@
 % body-palabras.tex -- el cuaderno de primeras palabras entero, en el
 % orden en que se imprime (ver body.tex para el de frases, y para el
-% cuaderno de verano).
+% cuaderno de verano y la muestra).
 \input{frontmatter/palabras/portada}
 \ifedicionverano
   \input{frontmatter/palabras/verano}
@@ -11,4 +11,8 @@
 \fi
 \input{content/palabras/generated-days\sufijoEdicion}
 \input{backmatter/palabras/clave-respuestas}
-\input{backmatter/palabras/diploma}
+\ifedicionmuestra
+  \paginaFinMuestra{\lblPalTituloPortada\ \textperiodcentered\ \lblPalNivelPortada}
+\else
+  \input{backmatter/palabras/diploma}
+\fi

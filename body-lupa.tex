@@ -1,5 +1,5 @@
 % body-lupa.tex -- "Leo con lupa" (nivel 3) entero, en el orden en que se
-% imprime (ver body.tex para el cuaderno de verano).
+% imprime (ver body.tex para el cuaderno de verano y la muestra).
 \input{frontmatter/lupa/portada}
 \ifedicionverano
   \input{frontmatter/lupa/verano}
@@ -12,4 +12,8 @@
 \fi
 \input{content/lupa/generated-days\sufijoEdicion}
 \input{backmatter/lupa/clave-respuestas}
-\input{backmatter/lupa/diploma}
+\ifedicionmuestra
+  \paginaFinMuestra{\lblLupaTituloPortada}
+\else
+  \input{backmatter/lupa/diploma}
+\fi
