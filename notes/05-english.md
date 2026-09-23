@@ -195,7 +195,7 @@ de verdad.
 | 1 | 1–13 | 1–65 | otoño | **Los vecinos nuevos.** Llega una furgoneta: los Brown, de Londres, con Amy, Sam y Pip, el loro que habla. Amy empieza en la clase de Lucía. Halloween a la inglesa, el cumpleaños de Lucía, la Navidad que se acerca |
 | 2 | 14–26 | 66–130 | invierno | **Dos Navidades.** Crackers y calcetines en casa de Amy, las uvas y los Reyes en la de Lucía; nieve, Pancake Day, Carnaval, una cometa |
 | 3 | 27–39 | 131–195 | primavera | **En pasado.** El cumpleaños de Amy, la búsqueda de huevos de Pascua, Toby y Pip se pierden (y cada uno encuentra al otro), el Día del Libro, las orugas, el día de la madre, el cumpleaños de Dani, la granja escuela, el último día de colegio |
-| 4 | 40–52 | 196–260 | verano | **Cartas.** Amy pasa julio en Londres y escribe postales; Lucía, en el pueblo de la abuela; en agosto los Brown van al pueblo. Vuelta al cole: Dani y Sam empiezan 1.º juntos |
+| 4 | 40–52 | 196–260 | verano | **Postales, cartas y un diario.** Amy pasa julio en Londres y Lucía el verano en el pueblo de la abuela: las gallinas, el río, las abejas de Andrés, las estrellas fugaces, una tormenta; en agosto, los Brown llegan para las fiestas. Vuelta a la ciudad y al cole: Dani y Sam, en la clase de Marta |
 
 ### Parte 1 — otoño (presente)
 
@@ -288,25 +288,65 @@ cápsula ni la carta de Marta salen.
 
 ### Parte 4 — verano (pasado y futuro; postales, cartas, diario, poemas)
 
+El pasado sigue contando la historia, y el futuro entra con los planes
+(*going to*, *will*): lo que Amy va a hacer en Londres, lo que harán el
+verano que viene. Los géneros nuevos:
+
+- la postal de Amy y la carta de Lucía (semana 42);
+- el programa de las fiestas (47);
+- el diario de Lucía, que es toda la semana 50;
+- los poemas de Lucía (el de las abejas, el de las estrellas y, con
+  Amy, el del año entero, que es la penúltima página).
+
+Lo que pasa en el pueblo es, otra vez, lo de «Leo con lupa»:
+- el viaje, el sábado de la semana 40;
+- Andrés y Bigotes, blanco y naranja;
+- en la 44, el traje de apicultor de Andrés: blanco, con guantes
+  amarillos hasta los codos, sombrero de paja con red y el ahumador en
+  la derecha;
+- en la 45, la Osa Mayor (el cazo de siete estrellas, «el reloj de la
+  noche» del bisabuelo relojero) y la noche del 12 de agosto en el
+  jardín del molino, con la adivinanza de las estrellas;
+- en la 47, las fiestas: los banderines rojos y amarillos, el escenario
+  delante de la iglesia, el puesto de churros con su toldo de rayas
+  verdes y blancas, el programa, el concurso que gana la adivinanza de
+  la lupa de Lucía, Dani y Martín, y los fuegos del sábado;
+- en la 50, la despedida del último lunes de agosto: la miel de romero
+  con la abeja con lupa, la abuela que se queda hasta octubre, el sobre
+  de Martín y el cómic de Dani en el que no sale Toby;
+- en la 51, la mochila roja con el tiranosaurio verde y el estuche de
+  tres cremalleras;
+- en la 52, Paco en la puerta y la nube de Marta con las gotas de papel
+  (la de Dani, azul y en el centro).
+
+No se desvela nada:
+- ni lo que se le olvidó a Dani en la maleta;
+- ni el mapa de Rosa ni su tesoro;
+- ni el erizo ni las hormigas;
+- ni quién escribió el nombre de Dani en sus cosas.
+
 | Sem. | Tema | Historia | Lunes | Martes | Miércoles | Jueves | Viernes |
 |---|---|---|---|---|---|---|---|
-| 40 | Packing | las maletas: Lucía al pueblo, Amy a Londres; listas | dibuja (la maleta) | rodea | busca | mitades | repasa |
-| 41 | In the village | la casa de la abuela: el patio, el limonero, las gallinas; Andrés y Bigotes | dibuja | si_no | donde (el patio) | huecos | vinetas |
-| 42 | A postcard from London | la postal de Amy: autobuses rojos, un reloj enorme, el parque, lluvia; Lucía contesta | dibuja (la postal) | rodea | colorea (el autobús) | ordena | repasa |
-| 43 | At the river | bañarse, peces, ranas, una merienda | dibuja | si_no | mitades | adivina | vinetas |
-| 44 | Andrés and his bees | las abejas, la miel, el traje de apicultor | dibuja (Andrés con su traje) | rodea | relaciona | huecos | repasa |
-| 45 | The storm | truenos y relámpagos; Toby debajo de la cama; velas y cuentos | dibuja | si_no | donde | ordena | vinetas |
-| 46 | A day at the beach | un castillo de arena, conchas, un cangrejo, un helado | dibuja (el castillo) | rodea | colorea (el helado) | mitades | repasa |
-| 47 | The village festival | la música, el baile, los fuegos; Dani y Martín | dibuja | si_no | relaciona | busca | vinetas |
-| 48 | Amy in the village | los Brown pasan una semana en el pueblo | dibuja | rodea | mitades | huecos | repasa |
-| 49 | The treasure hunt | Lucía y Amy preparan una búsqueda del tesoro con adivinanzas para Dani, Sam y Martín | dibuja (el mapa) | si_no | adivina | ordena | vinetas |
-| 50 | Back to the city | la despedida; el viaje; Pip: *Hello, Toby!* (un diario) | dibuja | rodea | donde | mitades | repasa |
-| 51 | Ready for school | lápices nuevos, una mochila nueva; Dani y Sam, en la misma clase de 1.º | dibuja | si_no | relaciona | huecos | vinetas |
-| 52 | Back to school | el primer día: Lucía y Amy en 3.º, Dani y Sam con Marta | dibuja | rodea | mitades | busca | repasa + diploma |
+| 40 | Packing | la maleta de Amy; el taxi a Londres (Sam le deja a Dani su dinosaurio); la maleta verde de Dani; la mochila de Lucía | dibuja (la maleta de Amy) | rodea | busca (los colores) | mitades | repasa |
+| 41 | In the village | las cinco gallinas, el limonero, Andrés y Bigotes; la sandía en la pila; el pueblo; la postal de Lucía | dibuja (las gallinas) | si_no | donde (el patio) | huecos | vinetas |
+| 42 | A postcard from London | la postal de Amy: la torre del reloj, el autobús de dos pisos, las ardillas grises; el autobús de Dani; la carta de Lucía; los buzones amarillos y los rojos | dibuja (la postal) | rodea | colorea (el autobús) | ordena | repasa |
+| 43 | At the river | la merienda, el agua fría, la roca, los peces y la rana; la adivinanza del río; el barquito | dibuja (la merienda) | si_no | mitades | adivina (el río) | vinetas |
+| 44 | Andrés and his bees | el traje de apicultor; cómo viven las abejas; tres mieles de tres colores; el poema de la abeja; una abeja en el brazo de Dani | dibuja (Andrés con su traje) | rodea | relaciona (las mieles) | huecos | repasa |
+| 45 | Shooting stars | el cazo de siete estrellas (*the Plough*); qué son las estrellas fugaces; la noche en el jardín del molino; el poema de Lucía y la adivinanza de las estrellas | dibuja (las siete estrellas) | si_no | ordena | busca | vinetas |
+| 46 | The storm | tres nubes negras y un rayo sobre la torre; se va la luz: velas y cuentos; el patio después de la tormenta; la carta de Amy | dibuja (la tormenta) | rodea | donde (el patio) | ordena | repasa |
+| 47 | The village festival | la plaza en fiestas; el programa; los churros; el concurso de adivinanzas; los Brown llegan para los fuegos | dibuja (la plaza) | si_no | relaciona (quién tomó qué) | mitades | vinetas |
+| 48 | Amy in the village | el pueblo dibujado desde el puente; Sam recupera su dinosaurio; el helado de tres bolas; el río; los *scones* de Mr Brown | dibuja (el pueblo) | rodea | colorea (el helado) | huecos | repasa |
+| 49 | The treasure hunt | Lucía y Amy preparan una búsqueda del tesoro para Dani, Sam y Martín: el mapa del patio, las adivinanzas, las gafas de bucear | dibuja (el mapa) | si_no | adivina (el gallinero) | ordena | vinetas |
+| 50 | Back to the city | el diario de Lucía: la miel de Andrés, el viaje, el jardín de casa (Pip: *Hello, Toby!*), el sobre de Martín, el cómic de Dani | dibuja (el tarro de miel) | rodea | donde (los jardines) | mitades | repasa |
+| 51 | Ready for school | la mochila y el estuche de Dani; los consejos de Lucía para leer; la papelería; el uniforme inglés | dibuja (la mochila) | si_no | relaciona (quién eligió qué) | huecos | vinetas |
+| 52 | Back to school | la nube de Marta; el dibujo de Sam; la clase nueva de Lucía y Amy; el poema del año; Pip: *Hello, Lucía! Hello, Amy! Hello, Toby!* | dibuja (la nube) | rodea | donde (la clase) | busca (las estaciones) | repasa + diploma |
 
-La tabla es el plan, no un contrato: al escribir cada parte se ajusta lo
-que haga falta (y se actualiza aquí) para que la historia y las
-actividades encajen.
+Las tablas de las cuatro partes son lo que hay escrito. Sobre el plan
+del principio, el verano cambió así:
+- las estrellas fugaces, el 12 de agosto como en «Leo con lupa»;
+- la tormenta pasa a la semana 46;
+- el día de playa desaparece, y el helado se lo toma Amy en el pueblo;
+- los Brown llegan para las fiestas.
 
 ## Los dibujos
 
@@ -315,13 +355,17 @@ actividades encajen.
 parte cerrada para poder colorearla): un personaje u objeto para
 colorear (Pip, un árbol de otoño, una calabaza, un árbol de Navidad, un
 roscón, un muñeco de nieve, una cometa, una mariposa, unas flores en una
-maceta; y en verano, un autobús de Londres, un helado...) o una escena
-donde dibujar cosas en su sitio (los dos jardines, el cuarto de Lucía,
-la entrada, la cocina, el salón de los Brown, la biblioteca, el parque,
-la clase; y en verano, el patio del pueblo). Cada uno se puede usar
-varias veces a lo largo del año, con otros colores u otras cosas que
-dibujar: la mariposa del invierno vuelve en primavera, naranja, y el
-jardín de Pip es donde Mr Brown esconde los huevos de Pascua.
+maceta, un autobús de Londres, un helado) o una escena donde dibujar
+cosas en su sitio (los dos jardines, el cuarto de Lucía, la entrada, la
+cocina, el salón de los Brown, la biblioteca, el parque, la clase y el
+patio de la abuela, en el pueblo). Varios se usan más de una vez, con
+otros colores u otras cosas que dibujar:
+- la mariposa del invierno vuelve en primavera, naranja;
+- el jardín de Pip es donde Mr Brown esconde los huevos de Pascua, y
+  adonde vuelven todos al final del verano;
+- el patio de la abuela sale antes y después de la tormenta;
+- en la clase de Marta se prepara la fiesta de fin de curso, y es
+  también la clase nueva de Lucía y Amy en septiembre.
 
 ## Reglas para escribir (y revisar) un día
 
@@ -345,8 +389,8 @@ jardín de Pip es donde Mr Brown esconde los huevos de Pascua.
 
 ## Las fases
 
-El cuaderno se escribe en cinco fases, cada una con su PR, que se
-fusiona en verde antes de empezar la siguiente:
+El cuaderno se escribió en cinco fases, cada una con su PR, fusionado
+en verde antes de empezar la siguiente:
 
 1. **El motor** (este documento, `tools/english.py`, `lang/en.tex`,
    `preamble-english.tex`, portada y demás páginas, CI) con las dos
@@ -358,8 +402,9 @@ fusiona en verde antes de empezar la siguiente:
 5. **Parte 4**, verano: días 196–260; el cuaderno, completo, se publica
    en GitHub Pages con los otros tres.
 
-Mientras tanto, `ENGLISH.dias_escritos` (en `tools/libros.py`) dice
-cuántos días hay escritos, y `tools/gen_days.py` exige exactamente esos
-— del 1 en adelante, sin huecos — en vez de los 260 de un libro
-terminado. En la fase 5 se quita, y el libro vuelve a la regla de
-siempre: los 260 días o nada.
+Mientras tanto, `ENGLISH.dias_escritos` (en `tools/libros.py`) decía
+cuántos días había escritos, y `tools/gen_days.py` exigía exactamente
+esos, del 1 en adelante y sin huecos, en vez de los 260 de un libro
+terminado. En la fase 5 se quitó, y el libro volvió a la regla de
+siempre: los 260 días o nada. El campo sigue en `Libro` para el próximo
+cuaderno que se escriba por partes.
