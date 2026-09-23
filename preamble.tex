@@ -78,18 +78,24 @@
 % --- la edición -----------------------------------------------------------
 % El mismo cuaderno, en otra edición (ver ediciones/ y notes/07-ediciones.md):
 % \edicion, fijado antes de \input{preamble} (como \bookcolor), es
-% "completa" si no se fija (los 260 días) o "verano": solo los 65 días
+% "completa" si no se fija (los 260 días); "verano": solo los 65 días
 % del verano (del 196 al 260), impresos como días 1 a 65 y semanas 1
-% a 13, sin trimestre -- un cuaderno de verano. Lo que cambia está todo
-% aquí: el sufijo de los .tex generados (content/generated-days-verano.tex,
-% que escriben los generadores), cuánto se resta al número del día y al
-% de la semana al imprimirlos (la etiqueta dia:N sigue siendo la de
-% siempre, para tools/check_pages.py) y \totaldias. tools/ediciones.py
-% tiene los mismos números, y los generadores comprueban que coinciden.
+% a 13, sin trimestre -- un cuaderno de verano --, o "muestra": las
+% cuatro primeras semanas (días 1 a 20), con su número de siempre, y al
+% final, en vez del diploma, dónde está el cuaderno entero. Lo que cambia
+% está todo aquí: el sufijo de los .tex generados
+% (content/generated-days-verano.tex, que escriben los generadores),
+% cuánto se resta al número del día y al de la semana al imprimirlos (la
+% etiqueta dia:N sigue siendo la de siempre, para tools/check_pages.py)
+% y \totaldias. tools/ediciones.py tiene los mismos números, y los
+% generadores comprueban que coinciden.
 \makeatletter
+\def\aal@edicion@completa{completa}
 \def\aal@edicion@verano{verano}
+\def\aal@edicion@muestra{muestra}
 \@ifundefined{edicion}{\def\edicion{completa}}{}
 \newif\ifedicionverano
+\newif\ifedicionmuestra
 \def\sufijoEdicion{}
 \def\desplazamientoDias{0}
 \def\desplazamientoSemanas{0}
@@ -100,11 +106,22 @@
   \def\desplazamientoSemanas{39}
   \renewcommand{\totaldias}{65}
 \fi
+\ifx\edicion\aal@edicion@muestra
+  \edicionmuestratrue
+  \def\sufijoEdicion{-muestra}
+\fi
+\ifedicionverano\else\ifedicionmuestra\else
+  \ifx\edicion\aal@edicion@completa\else
+    \errmessage{\string\edicion\space = \edicion: tiene que ser completa, verano o muestra}
+  \fi
+\fi\fi
 \makeatother
+\ifedicionmuestra\usepackage{qrcode}\fi
 \newcommand{\numeroDia}[1]{\the\numexpr#1-\desplazamientoDias\relax}
 \newcommand{\numeroSemana}[1]{\the\numexpr#1-\desplazamientoSemanas\relax}
 % Lo que dice una página del libro entero, y lo que dice en el cuaderno
-% de verano: \segunEdicion{todo el año}{todo el verano}.
+% de verano: \segunEdicion{todo el año}{todo el verano}. La muestra dice
+% lo del libro entero: es su principio.
 \newcommand{\segunEdicion}[2]{\ifedicionverano#2\else#1\fi}
 
 % =========================================================================
@@ -387,9 +404,10 @@
 % =========================================================================
 % Las ediciones: la insignia de la portada y el mapa del verano
 % =========================================================================
-% La portada de un cuaderno de verano es la del libro entero con una
-% insignia debajo del título (\insigniaEdicion, que en el libro entero no
-% pone nada), y en vez del mapa del curso lleva el mapa del verano
+% La portada de un cuaderno de verano -- y la de la muestra -- es la del
+% libro entero con una insignia debajo del título (\insigniaEdicion, que
+% en el libro entero no pone nada), y en vez del mapa del curso el
+% cuaderno de verano lleva el mapa del verano
 % (\mapaEdicion{content/lupa}...): las 13 semanas, cada una con su tema
 % y cinco soles, uno por día, para colorear cada día que se lee. Las
 % filas (\filasMapaEdicion, con \filaMapa) las escriben los generadores
@@ -401,14 +419,18 @@
     \draw (0,0) circle (0.2);
     \foreach \a in {0,45,...,315} \draw (\a:0.3) -- (\a:0.42);
   \end{tikzpicture}}
+\newcommand{\insigniaPortada}[2]{%
+  \par\vspace{7mm}%
+  \begin{tcolorbox}[enhanced, hbox, center, colback=white, colframe=#1,
+    boxrule=1.4pt, arc=4mm, left=4mm, right=6mm, top=2mm, bottom=2mm]
+    {\color{#1}#2}%
+  \end{tcolorbox}}
 \newcommand{\insigniaEdicion}{%
   \ifedicionverano
-    \par\vspace{7mm}%
-    \begin{tcolorbox}[enhanced, hbox, center, colback=white, colframe=colorVerano,
-      boxrule=1.4pt, arc=4mm, left=4mm, right=6mm, top=2mm, bottom=2mm]
-      {\color{colorVerano}\solVerano}\hspace{3mm}%
-      {\Large\bfseries\color{colorVerano}\lblInsigniaVerano}%
-    \end{tcolorbox}%
+    \insigniaPortada{colorVerano}{\solVerano\hspace{3mm}{\Large\bfseries\lblInsigniaVerano}}%
+  \fi
+  \ifedicionmuestra
+    \insigniaPortada{colorLectura}{\hspace{2mm}{\Large\bfseries\lblInsigniaMuestra}}%
   \fi}
 \newcommand{\solMapa}{\solVerano[1.2]\hspace{2.5mm}}
 \newcommand{\filaMapa}[4]{%
@@ -429,4 +451,20 @@
   \bottomrule
   \end{tabularx}
   \end{center}
+  \newpage}
+
+% La última página de la muestra, en vez del diploma: dónde está el
+% cuaderno entero -- la página de los cuadernos, con un código QR para el
+% móvil. \paginaFinMuestra{<el título del cuaderno>}.
+\newcommand{\urlCuadernos}{https://konradcinkusz.github.io/learning-to-read/}
+\newcommand{\urlCuadernosTexto}{konradcinkusz.github.io/learning-to-read}
+\newcommand{\paginaFinMuestra}[1]{%
+  \begin{center}
+  \vspace*{3cm}
+  {\fontsize{32}{38}\selectfont\bfseries\color{colorLectura} \lblMuestraFinTitulo}\\[10mm]
+  \parbox{0.8\linewidth}{\centering\Large \lblMuestraFinTexto{#1}}\\[12mm]
+  \qrcode[height=45mm]{\urlCuadernos}\\[7mm]
+  {\Large\bfseries \urlCuadernosTexto}
+  \end{center}
+  \vspace*{\fill}
   \newpage}

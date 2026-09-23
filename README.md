@@ -32,8 +32,10 @@ los dos con los mismos temas):
   primeras palabras, en inglés. Ver "First Words" más abajo.
 
 Y de cada uno, un **cuaderno de verano**: su verano -- las últimas 13
-semanas, 65 páginas -- en un cuaderno aparte, para las vacaciones. Ver
-"Los cuadernos de verano" más abajo.
+semanas, 65 páginas -- en un cuaderno aparte, para las vacaciones; y una
+**muestra gratuita**: sus cuatro primeras semanas, para probar antes de
+imprimir el año entero. Ver "Los cuadernos de verano y las muestras" más
+abajo.
 
 Cuaderno diario de lectura en español, en A4, una página por día
 laborable (lunes a viernes, 260 días = un año completo, de una estación
@@ -206,7 +208,7 @@ la escalera, que cada sonido de la tabla salga en alguna tarjeta de su
 estación y que cada dibujo sea el de una palabra que se lee ese día.
 Ver `notes/06-first-words.md` para el diseño completo y las fases.
 
-## Los cuadernos de verano
+## Los cuadernos de verano y las muestras
 
 El verano de cada cuaderno (sus últimas 13 semanas, del día 196 al 260)
 es también un cuaderno aparte, para quien solo quiere leer un poco cada
@@ -226,6 +228,14 @@ se imprime lo resta LaTeX. `ediciones/<raíz>-verano.tex` es el `.tex`
 raíz de siempre con `\edicion` fijado antes -- como `\bookcolor` para el
 blanco y negro --, así que cada uno sale en los dos formatos. Ver
 `notes/07-ediciones.md`.
+
+La **muestra gratuita** de cada cuaderno son sus cuatro primeras semanas
+(días 1 a 20), para probar con unas pocas páginas antes de imprimir el
+año entero: la portada (con la insignia "Muestra gratuita"), las
+páginas del principio del libro, los 20 días con su número de siempre
+("Día 1 / 260": son el principio del libro), su parte de la clave y, en
+vez del diploma, una página que dice dónde está el cuaderno entero, con
+un código QR. Se hace con el mismo motor (`ediciones/<raíz>-muestra.tex`).
 
 ## Descargar el PDF sin instalar nada
 
@@ -266,6 +276,23 @@ nivel 3, Leo con lupa
 ([color](https://konradcinkusz.github.io/learning-to-read/first-words-summer.pdf) ·
 [blanco y negro](https://konradcinkusz.github.io/learning-to-read/first-words-summer-bw.pdf)).
 
+Las muestras gratuitas (las cuatro primeras semanas, 20 días):
+nivel 1, primeras palabras
+([color](https://konradcinkusz.github.io/learning-to-read/aprendo-a-leer-palabras-muestra.pdf) ·
+[blanco y negro](https://konradcinkusz.github.io/learning-to-read/aprendo-a-leer-palabras-muestra-bn.pdf));
+nivel 2, frases
+([color](https://konradcinkusz.github.io/learning-to-read/aprendo-a-leer-muestra.pdf) ·
+[blanco y negro](https://konradcinkusz.github.io/learning-to-read/aprendo-a-leer-muestra-bn.pdf));
+nivel 3, Leo con lupa
+([color](https://konradcinkusz.github.io/learning-to-read/leo-con-lupa-muestra.pdf) ·
+[blanco y negro](https://konradcinkusz.github.io/learning-to-read/leo-con-lupa-muestra-bn.pdf));
+*Read and Draw*
+([color](https://konradcinkusz.github.io/learning-to-read/read-and-draw-sample.pdf) ·
+[blanco y negro](https://konradcinkusz.github.io/learning-to-read/read-and-draw-sample-bw.pdf));
+*First Words*
+([color](https://konradcinkusz.github.io/learning-to-read/first-words-sample.pdf) ·
+[blanco y negro](https://konradcinkusz.github.io/learning-to-read/first-words-sample-bw.pdf)).
+
 Enlaces fijos, publicados por GitHub Pages en cada push a `main` (ver
 `.github/workflows/pages.yml`). Las dos versiones tienen exactamente el
 mismo contenido y la misma paginación — la de blanco y negro es para
@@ -280,9 +307,10 @@ despliegue), los mismos PDF están también en la pestaña
 → el último run de *Build* → artefactos `pdf-color` / `pdf-bw` /
 `pdf-palabras-color` / `pdf-palabras-bw` / `pdf-lupa-color` /
 `pdf-lupa-bw` / `pdf-english-color` / `pdf-english-bw` /
-`pdf-firstwords-color` / `pdf-firstwords-bw`, y los de verano
-`pdf-verano-color` / `pdf-verano-bw` / `pdf-palabras-verano-color`...
-(se guardan 30 días, hace falta estar identificado en GitHub para
+`pdf-firstwords-color` / `pdf-firstwords-bw`, los de verano
+`pdf-verano-color` / `pdf-verano-bw` / `pdf-palabras-verano-color`... y
+las muestras `pdf-muestra-color` / `pdf-palabras-muestra-bw`... (se
+guardan 30 días, hace falta estar identificado en GitHub para
 descargarlos).
 
 ## Construir el PDF a mano
@@ -299,7 +327,8 @@ make lupa         # lo mismo para Leo con lupa (color)
 make english      # lo mismo para Read and Draw, en inglés (color)
 make firstwords   # lo mismo para First Words, en inglés (color)
 make verano       # los diez cuadernos de verano: los cinco, color Y blanco-y-negro
-make all-formats  # los veinte PDF: palabras, frases, lupa, english y firstwords, color Y blanco-y-negro, y sus cuadernos de verano
+make muestra      # las diez muestras gratuitas: los cinco, color Y blanco-y-negro
+make all-formats  # los treinta PDF: palabras, frases, lupa, english y firstwords, color Y blanco-y-negro, y sus ediciones
 make generate     # solo regenera los .tex de los cinco cuadernos desde el JSON
 make build        # solo compila frases en color (asume que ya está generado)
 make build-bw     # solo compila frases en blanco y negro
@@ -314,6 +343,7 @@ make check-english / check-english-bw     # lo mismo, Read and Draw (+ actividad
 make build-firstwords / build-firstwords-bw   # lo mismo, First Words
 make check-firstwords / check-firstwords-bw   # lo mismo, First Words (+ partido en sonidos y escalera de sonidos)
 make build-lupa-verano / check-lupa-verano    # un cuaderno de verano (main, main-bw, palabras, lupa-bw...: <raíz>-verano)
+make build-lupa-muestra / check-lupa-muestra  # una muestra gratuita (<raíz>-muestra)
 make clean
 ```
 
@@ -326,6 +356,7 @@ lupa.tex, lupa-bw.tex                 -- Leo con lupa (nivel 3), color y blanco-
 english.tex, english-bw.tex           -- Read and Draw (en inglés), color y blanco-y-negro
 firstwords.tex, firstwords-bw.tex     -- First Words (primeras palabras en inglés), color y blanco-y-negro
 ediciones/<raíz>-verano.tex           -- los cuadernos de verano: cada .tex raíz de arriba con \edicion fijado antes
+ediciones/<raíz>-muestra.tex          -- las muestras gratuitas (las cuatro primeras semanas), igual
 preamble.tex, lang/es.tex             -- el motor LaTeX (la paleta de main-bw.tex está en preamble.tex)
 lang/en.tex                           -- las cadenas en inglés (\booklang = en, ver preamble.tex)
 preamble-palabras.tex                 -- lo propio del cuaderno de primeras palabras (tarjetas, cajas que llenan la página)
@@ -360,7 +391,7 @@ tools/libros.py                       -- lo que distingue el cuaderno de frases 
 tools/lupa.py                         -- plantillas y comprobaciones de las actividades de Leo con lupa (tablas lógicas, mapas, errores...)
 tools/english.py                      -- lo mismo para Read and Draw (frases del texto, inglés británico, sin español)
 tools/comun.py                        -- lo que comparten gen_days.py y lupa.py
-tools/ediciones.py                    -- las ediciones (el cuaderno de verano): qué días, cómo se renumeran, los carteles y los .tex que escriben los dos generadores
+tools/ediciones.py                    -- las ediciones (el cuaderno de verano, la muestra): qué días, cómo se renumeran, los carteles y los .tex que escriben los dos generadores
 tools/gen_palabras.py                 -- lo mismo para el cuaderno de primeras palabras, + la escalera de sílabas (y First Words con --libro firstwords, + la escalera de sonidos)
 tools/silabas.py                      -- silabeo automático del español y rasgos de cada sílaba (cerrada, trabada...)
 tools/fonetica.py                     -- partido automático del inglés en sonidos (grafemas, e mágica), trampas, tricky words (First Words)
@@ -380,7 +411,7 @@ notes/03-nivel-palabras.md            -- diseño del cuaderno de primeras palabr
 notes/04-nivel-lupa.md                -- diseño de Leo con lupa (nivel 3): escalera, actividades, reparto y las 52 semanas
 notes/05-english.md                   -- diseño de Read and Draw (en inglés): escalera, actividades, reparto, las 52 semanas y las fases
 notes/06-first-words.md               -- diseño de First Words (primeras palabras en inglés): escalera de sonidos, botones, comprobaciones y las fases
-notes/07-ediciones.md                 -- las ediciones de los cinco cuadernos: el cuaderno de verano
+notes/07-ediciones.md                 -- las ediciones de los cinco cuadernos: el cuaderno de verano y la muestra gratuita
 ```
 
 ## Licencia
@@ -462,3 +493,8 @@ el verano de cada cuaderno, con su portada, su página para el adulto,
 su mapa del verano, su clave y su diploma. Compilan con las mismas
 comprobaciones que los libros enteros (1 día = 1 página, log limpio), y
 se publican en GitHub Pages con ellos. Ver `notes/07-ediciones.md`.
+
+**Las muestras gratuitas**: las cinco, en color y en blanco y negro --
+las cuatro primeras semanas de cada cuaderno, con una última página que
+dice dónde está el cuaderno entero. Las mismas comprobaciones, y
+también en GitHub Pages.

@@ -20,10 +20,12 @@ content/english/generated-clave.tex
 content/firstwords/generated-days.tex
 content/firstwords/generated-clave.tex
 content/firstwords/generated-sonidos.tex
-# ...y los de cada edición (tools/ediciones.py): el cuaderno de verano,
-# generated-days-verano.tex, generated-clave-verano.tex...
+# ...y los de cada edición (tools/ediciones.py): el cuaderno de verano
+# (generated-days-verano.tex, generated-clave-verano.tex...) y la muestra.
 content/generated-*-verano.tex
 content/*/generated-*-verano.tex
+content/generated-*-muestra.tex
+content/*/generated-*-muestra.tex
 
 # Python
 __pycache__/

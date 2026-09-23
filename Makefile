@@ -10,7 +10,7 @@ ENBW   = english-bw
 FW     = firstwords
 FWBW   = firstwords-bw
 
-.PHONY: all all-formats palabras lupa english firstwords verano generate \
+.PHONY: all all-formats palabras lupa english firstwords verano muestra generate \
         build build-bw build-palabras build-palabras-bw build-lupa build-lupa-bw \
         build-english build-english-bw build-firstwords build-firstwords-bw \
         check check-bw check-palabras check-palabras-bw check-lupa check-lupa-bw \
@@ -36,9 +36,10 @@ FWBW   = firstwords-bw
 # \input{preamble} (ver preamble.tex).
 # `all` sigue siendo solo el cuaderno de frases en color, por
 # compatibilidad; `palabras`, `lupa`, `english` y `firstwords` son lo
-# mismo para los otros cuatro, `verano` compila y comprueba los diez
-# cuadernos de verano (ver más abajo), y `all-formats` compila y
-# comprueba los veinte PDF -- es lo que corre el CI.
+# mismo para los otros cuatro, `verano` y `muestra` compilan y
+# comprueban los diez cuadernos de verano y las diez muestras (ver más
+# abajo), y `all-formats` compila y comprueba los treinta PDF -- es lo que
+# corre el CI.
 all: generate build check
 
 palabras: generate build-palabras check-palabras
@@ -54,7 +55,7 @@ all-formats: generate build check build-bw check-bw \
              build-lupa check-lupa build-lupa-bw check-lupa-bw \
              build-english check-english build-english-bw check-english-bw \
              build-firstwords check-firstwords build-firstwords-bw check-firstwords-bw \
-             verano
+             verano muestra
 
 generate:
 	python3 tools/gen_days.py
@@ -143,25 +144,30 @@ check-firstwords-bw:
 	python3 tools/checklog.py $(FWBW).log
 	python3 tools/check_pages.py $(FWBW).aux
 
-# Los cuadernos de verano (ver notes/07-ediciones.md): el verano de cada
-# cuaderno, en color y en blanco y negro. ediciones/<raíz>-verano.tex es
-# el .tex raíz de siempre con \edicion fijado antes, y sus .tex
-# generados los escribe `make generate` a la vez que los del libro
-# entero. `make build-lupa-verano` compila uno, `make check-lupa-verano`
-# lo compila y lo comprueba, y `make verano` los diez.
-VERANO       = $(MAIN) $(BW) $(PAL) $(PALBW) $(LUPA) $(LUPABW) $(EN) $(ENBW) $(FW) $(FWBW)
-BUILD_VERANO = $(foreach r,$(VERANO),build-$(r)-verano)
-CHECK_VERANO = $(foreach r,$(VERANO),check-$(r)-verano)
-.PHONY: $(BUILD_VERANO) $(CHECK_VERANO)
+# Las ediciones (ver notes/07-ediciones.md), en color y en blanco y negro:
+# el cuaderno de verano de cada cuaderno y su muestra gratuita (las cuatro
+# primeras semanas). ediciones/<raíz>-<edición>.tex es el .tex raíz de
+# siempre con \edicion fijado antes, y sus .tex generados los escribe
+# `make generate` a la vez que los del libro entero. `make
+# build-lupa-verano` compila uno, `make check-lupa-verano` lo compila y
+# lo comprueba, y `make verano` / `make muestra`, los diez de cada una.
+RAICES        = $(MAIN) $(BW) $(PAL) $(PALBW) $(LUPA) $(LUPABW) $(EN) $(ENBW) $(FW) $(FWBW)
+BUILD_VERANO  = $(RAICES:%=build-%-verano)
+CHECK_VERANO  = $(RAICES:%=check-%-verano)
+BUILD_MUESTRA = $(RAICES:%=build-%-muestra)
+CHECK_MUESTRA = $(RAICES:%=check-%-muestra)
+.PHONY: $(BUILD_VERANO) $(CHECK_VERANO) $(BUILD_MUESTRA) $(CHECK_MUESTRA)
 
 verano: generate $(CHECK_VERANO)
 
-$(BUILD_VERANO): build-%-verano:
-	$(LATEX) ediciones/$*-verano.tex
+muestra: generate $(CHECK_MUESTRA)
 
-$(CHECK_VERANO): check-%-verano: build-%-verano
-	python3 tools/checklog.py $*-verano.log
-	python3 tools/check_pages.py $*-verano.aux
+$(BUILD_VERANO) $(BUILD_MUESTRA): build-%:
+	$(LATEX) ediciones/$*.tex
+
+$(CHECK_VERANO) $(CHECK_MUESTRA): check-%: build-%
+	python3 tools/checklog.py $*.log
+	python3 tools/check_pages.py $*.aux
 
 clean:
 	latexmk -C $(MAIN).tex
@@ -174,8 +180,9 @@ clean:
 	latexmk -C $(ENBW).tex
 	latexmk -C $(FW).tex
 	latexmk -C $(FWBW).tex
-	for r in $(VERANO); do latexmk -C ediciones/$$r-verano.tex; done
+	for r in $(RAICES); do latexmk -C ediciones/$$r-verano.tex; latexmk -C ediciones/$$r-muestra.tex; done
 	rm -f content/generated-*-verano.tex content/*/generated-*-verano.tex
+	rm -f content/generated-*-muestra.tex content/*/generated-*-muestra.tex
 	rm -f content/generated-days.tex content/generated-clave.tex
 	rm -f content/palabras/generated-days.tex content/palabras/generated-clave.tex
 	rm -f content/lupa/generated-days.tex content/lupa/generated-clave.tex

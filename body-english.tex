@@ -1,5 +1,5 @@
 % body-english.tex -- "Read and Draw" (el cuaderno en inglés) entero, en
-% el orden en que se imprime (ver body.tex para el cuaderno de verano).
+% el orden en que se imprime (ver body.tex para el cuaderno de verano y la muestra).
 \input{frontmatter/english/portada}
 \ifedicionverano
   \input{frontmatter/english/verano}
@@ -14,4 +14,8 @@
 \fi
 \input{content/english/generated-days\sufijoEdicion}
 \input{backmatter/english/clave-respuestas}
-\input{backmatter/english/diploma}
+\ifedicionmuestra
+  \paginaFinMuestra{\lblIngTituloPortada}
+\else
+  \input{backmatter/english/diploma}
+\fi

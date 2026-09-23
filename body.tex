@@ -1,7 +1,9 @@
 % body.tex -- el documento entero, en el orden en que se imprime. El
 % cuaderno de verano (\ifedicionverano, ver preamble.tex) lleva su propia
 % página para el adulto y el mapa del verano, en vez de las del año
-% entero, y solo los días del verano.
+% entero, y solo los días del verano; la muestra (\ifedicionmuestra),
+% las páginas del principio del libro entero, sus cuatro primeras semanas
+% y, en vez del diploma, dónde está el cuaderno entero.
 \input{frontmatter/portada}
 \ifedicionverano
   \input{frontmatter/verano}
@@ -12,4 +14,8 @@
 \fi
 \input{content/generated-days\sufijoEdicion}
 \input{backmatter/clave-respuestas}
-\input{backmatter/diploma}
+\ifedicionmuestra
+  \paginaFinMuestra{\lblTituloPortada}
+\else
+  \input{backmatter/diploma}
+\fi

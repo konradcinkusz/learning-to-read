@@ -1540,8 +1540,8 @@ def generar_ediciones(dias, paginas, entradas):
     cuaderno de verano...), ver tools/ediciones.py. En «First Words»,
     también las tricky words que la edición da por sabidas -- las que el
     libro entero presenta antes de su primer día (los viernes de
-    primavera, ver presentar_tricky) --, para su página del adulto
-    (\\trickyLista, preamble-firstwords.tex)."""
+    primavera, ver presentar_tricky), si hay alguna --, para su página
+    del adulto (\\trickyLista, preamble-firstwords.tex)."""
     salidas = salidas_ediciones(
         dias, paginas, entradas, PERFIL.salida_dias, PERFIL.salida_clave,
         cabecera, PERFIL.idioma,
@@ -1552,9 +1552,10 @@ def generar_ediciones(dias, paginas, entradas):
             palabras = [
                 p for d in dias if d["dia"] < e.desde for p in d.get("tricky", [])
             ]
-            salidas.append((ruta, cabecera(ruta) + "".join(
-                f"\\trickyLista{{{escapar(p)}}}\n" for p in palabras
-            )))
+            if palabras:
+                salidas.append((ruta, cabecera(ruta) + "".join(
+                    f"\\trickyLista{{{escapar(p)}}}\n" for p in palabras
+                )))
     return salidas
 
 
