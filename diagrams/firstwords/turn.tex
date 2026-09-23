@@ -1,0 +1,16 @@
+% diagrams/firstwords/turn.tex -- Mr Brown da la vuelta a la tortita: la
+% lanza al aire con la sartén, y la tortita vuelve dada la vuelta.
+\begin{tikzpicture}[dibujofw]
+  \hombreFW{MrBrown}{Abajo}{Nada}
+  % el brazo, levantando la sartén
+  \filldraw[fill=white, rounded corners=2mm] (1.05,5.45) -- (2.7,4.6) -- (2.55,4.2) -- (0.85,4.9) -- cycle;
+  \filldraw[fill=white] (2.85,4.45) circle (0.3);
+  \filldraw[fill=white, rounded corners=2mm] (2.9,4.35) -- (4.4,5.0) -- (4.5,4.7) -- (3.0,4.05) -- cycle;
+  \filldraw[fill=white] (4.3,5.1) .. controls (4.5,4.4) and (6.9,4.4) .. (7.1,5.1) -- cycle;
+  \filldraw[fill=white] (5.7,5.1) ellipse (1.4 and 0.28);
+  % la tortita, en el aire, dando la vuelta
+  \filldraw[fill=white, rotate around={-25:(5.8,8.3)}] (5.8,8.3) ellipse (1.2 and 0.35);
+  \draw (4.6,6.0) arc[start angle=200, end angle=150, radius=1.5];
+  \draw (7.0,6.3) arc[start angle=-20, end angle=30, radius=1.5];
+  \draw (-2.4,0.2) -- (7.8,0.2);
+\end{tikzpicture}

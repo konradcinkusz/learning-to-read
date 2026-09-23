@@ -1,0 +1,12 @@
+% diagrams/firstwords/jack.tex -- Jack, la planta de alubia de Lucía, en
+% la tierra del jardín de Dad: ya tiene cuatro hojas. Al lado, el palito
+% con su etiqueta.
+\begin{tikzpicture}[dibujofw]
+  \filldraw[fill=white] (-3.4,0) .. controls (-2.4,1.2) and (2.4,1.2) .. (3.4,0) -- cycle;
+  \draw (0,0.8) .. controls (0.3,2.4) and (-0.3,4.0) .. (0,5.6);
+  \foreach \y/\a in {2.2/-60, 3.2/55, 4.2/-55, 5.2/50} {\begin{scope}[shift={(0.05,\y)}, rotate=\a, scale=1.4] \hojaFW \end{scope}}
+  \filldraw[fill=white] (2.3,0.6) rectangle (2.5,3.4);
+  \filldraw[fill=white, rounded corners=1mm] (1.7,3.1) rectangle (3.1,4.1);
+  \begin{scope}[shift={(2.4,3.3)}, scale=0.4] \corazonFW \end{scope}
+  \draw (-4.0,0) -- (4.0,0);
+\end{tikzpicture}

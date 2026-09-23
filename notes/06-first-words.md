@@ -170,8 +170,11 @@ los vecinos, la fiesta de Lucía) y no necesita palabra.
   dibujo, al que le falta algo que dibujar — Toby sin cola, el árbol sin
   estrella, el regalo sin lazo.
 - ***Trace*, *Sounds*, *Find it*, *Write*, *Yes or no?***: la actividad,
-  y debajo *Now colour: …* con el dibujo, en todo el sitio que quede (en
-  *Write*, con dibujo, la palabra hueca va una vez, no dos).
+  y debajo *Now colour: …* con el dibujo, en todo el sitio que quede. Para
+  que el dibujo no salga diminuto, con dibujo la actividad ocupa algo
+  menos: en *Write*, la palabra hueca va una vez, no dos; en *Trace*, las
+  letras de puntos son un poco más pequeñas (siguen siendo grandes para
+  repasarlas con el dedo); en *Find it*, las filas van más juntas.
 - ***Riddle***: la respuesta no se dibuja, se elige — tres tarjetas con
   tres dibujos, el del día y dos `"otros"`, en un orden que cambia de un
   día a otro; se colorea el que contesta la adivinanza. La adivinanza
@@ -325,6 +328,15 @@ por estación:
    castañas, Grandma tejiendo, el murciélago, el cohete de Bonfire
    Night, la tarta de Lucía, la consulta de Mrs Brown, el desayuno
    inglés, Luna en la valla, el árbol de Navidad sin estrella.
-2. **Invierno** (días 66–130).
+2. **Invierno** (días 66–130): los Reyes en la estantería, la cena de
+   Nochebuena, el cracker, el pudin de Mr Brown, las uvas de Año Nuevo,
+   la cabalgata con su camello, las botas de nieve, el muñeco gordito,
+   Dani resfriado, la paloma de la paz, los dinosaurios del museo, los
+   disfraces de Carnaval, la tortita en el aire, las cometas, la niña
+   del barco, las alubias de clase, la mariquita. Las adivinanzas del
+   invierno se contestan también escribiendo, así que su respuesta es
+   siempre una de las dos palabras del día (*letter, pair, Toby, hug,
+   turn, win, Pip*), y *Match*, cuando dos dibujos recientes son de la
+   misma persona, elige otros (`"dibujos"`).
 3. **Primavera** (días 131–195).
 4. **Verano** (días 196–260), y ya todo el cuaderno se colorea.

@@ -1,0 +1,9 @@
+% diagrams/firstwords/neck.tex -- en el museo, un dinosaurio más largo que
+% un autobús, con el cuello larguísimo y la cola larguísima; a sus pies,
+% Sam y Dani, muy pequeños.
+\begin{tikzpicture}[dibujofw]
+  \begin{scope}[scale=1.55] \dinoCuelloFW \end{scope}
+  \begin{scope}[shift={(-3.9,0)}, scale=0.52] \ninoFW{Sam}{Arriba}{Abajo} \end{scope}
+  \begin{scope}[shift={(6.6,0)}, scale=0.52] \ninoFW{Dani}{Abajo}{Arriba} \end{scope}
+  \draw (-7.6,0) -- (7.6,0);
+\end{tikzpicture}

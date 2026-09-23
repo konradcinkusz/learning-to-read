@@ -1,0 +1,17 @@
+% diagrams/firstwords/cap.tex -- la tienda del museo: Sam, con su gorra
+% nueva con un dinosaurio, y el libro de dinosaurios de Dani en la mano.
+\begin{tikzpicture}[dibujofw]
+  \ninoFW{Sam}{Abajo}{Frente}
+  % la gorra: la visera y la copa, con el dinosaurio
+  \begin{scope}[shift={(0,6.3)}]
+    \filldraw[fill=white] (-0.2,0.72) .. controls (0.8,0.9) and (1.7,0.75) .. (1.9,0.5) .. controls (1.4,0.35) and (0.6,0.45) .. (-0.2,0.55) -- cycle;
+    \filldraw[fill=white] (-1.2,0.5) .. controls (-1.25,1.9) and (1.25,1.9) .. (1.2,0.5) -- cycle;
+    \begin{scope}[shift={(-0.1,0.72)}, scale=0.13] \dinoCuelloFW \end{scope}
+    \filldraw[fill=white] (0,1.45) circle (0.12);
+  \end{scope}
+  % el libro de dinosaurios
+  \filldraw[fill=white] (-0.1,2.7) rectangle (1.3,4.2);
+  \begin{scope}[shift={(0.6,3.1)}, scale=0.11] \trexFW{1} \end{scope}
+  \filldraw[fill=white] (0.35,3.12) circle (0.27);
+  \draw (-2.2,0.2) -- (2.8,0.2);
+\end{tikzpicture}

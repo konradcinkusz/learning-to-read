@@ -1,0 +1,14 @@
+% diagrams/firstwords/reyes.tex -- los tres Reyes Magos, de figurita,
+% en la estantería del salón; por la noche se acercan un poco más, y
+% nadie sabe quién los mueve.
+\begin{tikzpicture}[dibujofw]
+  % la estantería, con sus escuadras
+  \filldraw[fill=white] (-5.2,-0.4) rectangle (5.2,0.2);
+  \foreach \x in {-4.2,4.2} {\filldraw[fill=white] (\x-0.2,-1.6) -- (\x+0.2,-1.6) -- (\x+0.2,-0.4) -- (\x-0.2,-0.4) -- cycle;}
+  % los tres reyes
+  \begin{scope}[shift={(-3.4,0)}] \reyFW{1} \end{scope}
+  \begin{scope}[shift={(0,0)}] \reyFW{2} \end{scope}
+  \begin{scope}[shift={(3.4,0)}] \reyFW{3} \end{scope}
+  % la estrella, arriba
+  \begin{scope}[shift={(0,8.6)}, scale=0.7] \estrellaFW \end{scope}
+\end{tikzpicture}

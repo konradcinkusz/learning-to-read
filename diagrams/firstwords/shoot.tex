@@ -1,0 +1,10 @@
+% diagrams/firstwords/shoot.tex -- una alubia que germina: el tallo verde
+% sube, con sus dos hojitas, pero todavía no tiene raíces -- para
+% "completa": se colorea y se le dibujan las raíces, hacia abajo.
+\begin{tikzpicture}[dibujofw]
+  \draw (0.1,1.0) .. controls (0.5,2.2) and (-0.3,3.4) .. (0.1,4.6);
+  \begin{scope}[shift={(0.1,4.5)}, rotate=50, scale=1.1] \hojaFW \end{scope}
+  \begin{scope}[shift={(0.1,4.5)}, rotate=-50, scale=1.1] \hojaFW \end{scope}
+  \begin{scope}[shift={(0,0.6)}, scale=1.8] \alubiaFW \end{scope}
+  \draw[dashed] (-3.4,-0.4) -- (3.4,-0.4);
+\end{tikzpicture}

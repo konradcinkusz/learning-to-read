@@ -1,0 +1,27 @@
+% diagrams/firstwords/rug.tex -- ¡chis! Lucía lee en el sofá, y Amy lee
+% tumbada boca abajo en la alfombra, con el libro delante.
+\begin{tikzpicture}[dibujofw]
+  \begin{scope}[shift={(0,1.1)}]
+    \sofaFW
+    % Lucía, sentada en el sofá, con su libro
+    \filldraw[fill=white] (-0.65,0.5) rectangle (-0.2,1.75);
+    \filldraw[fill=white] (0.2,0.5) rectangle (0.65,1.75);
+    \filldraw[fill=white, rounded corners=2.5mm] (-0.95,4.6) -- (0.95,4.6) -- (1.2,1.55) -- (-1.2,1.55) -- cycle;
+    \filldraw[fill=white] (0,3.0) -- (-1.2,3.25) -- (-1.2,4.2) -- (0,3.95) -- cycle;
+    \filldraw[fill=white] (0,3.0) -- (1.2,3.25) -- (1.2,4.2) -- (0,3.95) -- cycle;
+    \filldraw[fill=white] (-1.15,3.3) circle (0.25); \filldraw[fill=white] (1.15,3.3) circle (0.25);
+    \begin{scope}[shift={(0,5.55)}] \cabezaLucia \end{scope}
+  \end{scope}
+  % la alfombra, con sus flecos
+  \filldraw[fill=white] (-5.6,-0.5) rectangle (5.6,0.5);
+  \foreach \x in {-5.6,5.6} {\foreach \y in {-0.35,0,0.35} {\draw (\x,\y) -- ({\x+0.4*sign(\x)},\y);}}
+  % Amy, tumbada boca abajo: el cuerpo, las piernas levantadas, el libro
+  \begin{scope}[shift={(-2.6,0.5)}]
+    \filldraw[fill=white] (-3.4,0.6) rectangle (-2.95,2.0);
+    \filldraw[fill=white] (-2.75,0.6) rectangle (-2.3,1.8);
+    \filldraw[fill=white, rounded corners=3mm] (-3.3,0) rectangle (0.2,1.0);
+    \filldraw[fill=white] (0.2,0.05) -- (1.3,0.3) -- (1.3,1.0) -- (0.2,0.75) -- cycle;
+    \filldraw[fill=white] (1.3,0.3) -- (2.4,0.05) -- (2.4,0.75) -- (1.3,1.0) -- cycle;
+    \begin{scope}[shift={(0.2,1.9)}, scale=0.85] \cabezaAmy \end{scope}
+  \end{scope}
+\end{tikzpicture}

@@ -212,7 +212,7 @@ FIRSTWORDS = Perfil(
     titulo_medalla=ENGLISH.titulo_medalla,
     nombres_medalla=ENGLISH.nombre_medalla,
     animo_medalla=ENGLISH.animo_medalla,
-    dias_con_dibujo=65,
+    dias_con_dibujo=130,
 )
 
 PERFILES = {p.nombre: p for p in (PALABRAS, FIRSTWORDS)}
@@ -503,7 +503,7 @@ PLANTILLA_TRAZA = Template(
 {\Large\color{colorGris} $mayus~\lblTrazoDe~$palabra}
 
 \vspace{4mm}
-\begin{tikzpicture}
+\begin{tikzpicture}$escala
 \fill[colorResponde] $puntos;
 \end{tikzpicture}
 
@@ -534,7 +534,7 @@ PLANTILLA_ENCUENTRA = Template(
 \end{center}
 \vspace{2mm}
 {\fontsize{26}{32}\selectfont
-\renewcommand{\arraystretch}{1.9}
+\renewcommand{\arraystretch}{$estiramiento}
 \begin{tabularx}{\linewidth}{@{}*{$columnas}{>{\centering\arraybackslash}X}@{}}
 $filas
 \end{tabularx}\par}
@@ -886,6 +886,10 @@ def render_actividad(dia, semana_previa, dibujos_previos=()):
         tex = PLANTILLA_TRAZA.substitute(
             mayus=escapar(letra.upper()),
             palabra=escapar(ejemplo),
+            # Con dibujo debajo, las letras de puntos, algo más pequeñas
+            # (siguen siendo grandes para repasarlas con el dedo), para
+            # que al dibujo le quede sitio.
+            escala="[scale=0.78]" if dibujo else "",
             puntos=puntos_tikz_letra(entrada["mayuscula"], entrada["minuscula"]),
             dibujo=final, opciones=opciones,
         )
@@ -957,6 +961,8 @@ def render_actividad(dia, semana_previa, dibujos_previos=()):
         tex = PLANTILLA_ENCUENTRA.substitute(
             modelo=escapar(modelo),
             columnas=columnas,
+            # Con dibujo debajo, las filas de palabras, más juntas.
+            estiramiento="1.5" if dibujo else "1.9",
             filas=" \\\\\n".join(filas) + " \\\\",
             dibujo=final, opciones=opciones,
         )

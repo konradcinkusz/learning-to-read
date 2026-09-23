@@ -1,0 +1,24 @@
+% diagrams/firstwords/comida-navidad.tex -- la comida de Navidad en casa
+% de los Brown (el viernes de "Two Christmases"): el árbol, la mesa con
+% el pudin, la jaula de Pip en su mesita y Toby debajo de la mesa.
+\begin{tikzpicture}[dibujofw]
+  \begin{scope}[shift={(-6.4,0)}, scale=0.8] \arbolNavidadFW[estrella] \end{scope}
+  % Toby, debajo de la mesa
+  \begin{scope}[shift={(0.2,0)}, scale=0.5] \tobyDormidoFW \end{scope}
+  % la mesa, con los platos y el pudin
+  \filldraw[fill=white] (-3.4,0) rectangle (-3.0,2.8);
+  \filldraw[fill=white] (3.0,0) rectangle (3.4,2.8);
+  \filldraw[fill=white] (-3.8,2.8) rectangle (3.8,3.3);
+  \foreach \x in {-2.6,2.6} {\filldraw[fill=white] (\x,3.4) ellipse (0.8 and 0.15);}
+  \begin{scope}[shift={(0,3.3)}, scale=0.8] \pudinFW \end{scope}
+  % la jaula de Pip, en su mesita
+  \filldraw[fill=white] (5.2,0) rectangle (5.5,2.2);
+  \filldraw[fill=white] (7.3,0) rectangle (7.6,2.2);
+  \filldraw[fill=white] (4.9,2.2) rectangle (7.9,2.5);
+  \begin{scope}[shift={(6.4,2.5)}, scale=0.55]
+    \jaulaFondoFW
+    \begin{scope}[shift={(0,2.9)}, scale=0.62] \perchaFW{-3.2}{3.2} \pipFW \end{scope}
+    \jaulaBaseFW
+  \end{scope}
+  \draw (-9.4,0) -- (8.6,0);
+\end{tikzpicture}

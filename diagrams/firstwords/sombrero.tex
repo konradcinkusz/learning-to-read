@@ -1,0 +1,15 @@
+% diagrams/firstwords/sombrero.tex -- el viento se lleva el sombrero de Dad,
+% y Toby sale corriendo detrás de él.
+\begin{tikzpicture}[dibujofw]
+  % el sombrero, volando
+  \begin{scope}[shift={(4.6,5.2)}, rotate=20]
+    \filldraw[fill=white] (-1.3,0) .. controls (-1.4,0.35) and (1.4,0.35) .. (1.3,0) .. controls (1.2,-0.25) and (-1.2,-0.25) .. (-1.3,0) -- cycle;
+    \filldraw[fill=white] (-0.75,0.1) -- (-0.7,1.2) .. controls (-0.3,1.45) and (0.3,1.45) .. (0.7,1.2) -- (0.75,0.1) -- cycle;
+    \draw (-0.73,0.45) -- (0.73,0.45);
+  \end{scope}
+  % el viento
+  \foreach \y/\l in {7.0/2.6, 6.2/3.4, 4.2/2.2} {\draw (-0.6,\y) .. controls (0.4,{\y+0.4}) and ({\l-0.4},{\y-0.3}) .. (\l,\y);}
+  % Toby, corriendo
+  \tobyCorreFW
+  \draw (-4.2,0) -- (6.4,0);
+\end{tikzpicture}

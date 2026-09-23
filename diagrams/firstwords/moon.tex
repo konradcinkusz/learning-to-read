@@ -1,0 +1,16 @@
+% diagrams/firstwords/moon.tex -- de noche: la luna y las estrellas sobre
+% los tejados de la ciudad, y Lucía, en sueños, volando como una cometa.
+\begin{tikzpicture}[dibujofw]
+  % los tejados, con sus chimeneas y ventanas
+  \foreach \x/\h in {-6/3.0, -3.6/4.2, -1.0/3.4, 1.6/4.6, 4.2/3.2} {
+    \filldraw[fill=white] (\x,0) rectangle ++(2.4,\h);
+    \filldraw[fill=white] (\x-0.2,\h) -- (\x+1.2,\h+1.2) -- (\x+2.6,\h) -- cycle;
+    \filldraw[fill=white] (\x+0.8,1.0) rectangle ++(0.8,0.9);}
+  % la luna y las estrellas
+  \filldraw[fill=white] (3.6,10.2) arc[start angle=110, end angle=-110, radius=1.4]
+    .. controls (4.5,8.3) and (4.5,9.9) .. (3.6,10.2) -- cycle;
+  \foreach \x/\y/\s in {-5.0/9.4/0.4, -2.2/10.4/0.35, 0.6/9.7/0.45, 6.4/9.0/0.35, 6.0/6.8/0.3}
+    {\begin{scope}[shift={(\x,\y)}, scale=\s] \estrellaFW \end{scope}}
+  % Lucía, volando, con los brazos abiertos
+  \begin{scope}[shift={(-4.2,8.4)}, rotate=-75, scale=0.5] \ninaFW{Lucia}{Lado}{Lado} \end{scope}
+\end{tikzpicture}

@@ -1,0 +1,20 @@
+% diagrams/firstwords/sad.tex -- Lucía, en la cena, triste porque se ha
+% enfadado con Amy: la cara de pena y una lágrima, y el plato sin tocar.
+\begin{tikzpicture}[dibujofw]
+  \begin{scope}[shift={(0,1.0)}]
+    \ninaFW{Lucia}{Abajo}{Abajo}
+    \begin{scope}[shift={(0,6.3)}]
+      \cejasPenaFW \bocaTristeFW
+      \filldraw[fill=white] (0.45,-0.3) .. controls (0.35,-0.45) and (0.33,-0.55) .. (0.45,-0.6)
+        .. controls (0.57,-0.55) and (0.55,-0.45) .. (0.45,-0.3) -- cycle;
+    \end{scope}
+  \end{scope}
+  % la mesa, con el plato, la cuchara y el vaso
+  \filldraw[fill=white] (-3.4,0) rectangle (-3.0,3.2);
+  \filldraw[fill=white] (3.0,0) rectangle (3.4,3.2);
+  \filldraw[fill=white] (-3.8,3.2) rectangle (3.8,3.8);
+  \filldraw[fill=white] (0,4.05) ellipse (1.4 and 0.25);
+  \filldraw[fill=white] (-0.8,4.1) .. controls (-0.6,4.6) and (0.6,4.6) .. (0.8,4.1) -- cycle;
+  \filldraw[fill=white] (2.0,3.8) -- (2.1,5.0) -- (2.9,5.0) -- (3.0,3.8) -- cycle;
+  \draw (-2.8,3.95) -- (-1.8,4.2);
+\end{tikzpicture}
