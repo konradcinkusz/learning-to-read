@@ -216,9 +216,9 @@ ENGLISH = Libro(
     }),
     idioma="en",
     motor="english",
-    # Fase 3: las partes 1 y 2 del año, otoño e invierno (días 1-130).
+    # Fase 4: las partes 1, 2 y 3 del año, de otoño a primavera (días 1-195).
     # Ver notes/05-english.md, "Las fases".
-    dias_escritos=130,
+    dias_escritos=195,
     nombre_medalla={1: "Autumn", 2: "Winter", 3: "Spring"},
     titulo_medalla="{} medal!",
     animo_medalla=r"Well done, \rule{55mm}{0.4pt}!",
@@ -229,6 +229,9 @@ ENGLISH = Libro(
         "amy", "sam", "pip", "brown", "browns", "mr", "mrs", "london",
         # el bibliotecario del barrio (el mismo de «Leo con lupa»)
         "tomás",
+        # la granja escuela de la primavera: el granjero y su cabra (los
+        # mismos de «Leo con lupa»)
+        "julián", "lola",
         # el pueblo, en verano
         "andrés", "bigotes", "martín",
     }),

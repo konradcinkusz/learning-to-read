@@ -329,6 +329,13 @@ def _normalizar(texto):
     return " ".join(texto.lower().split())
 
 
+def _sin_cortes(texto):
+    """Una palabra o expresión de una lista (lo que hay que dibujar, las
+    palabras de huecos) en una caja, para que la línea se corte entre dos
+    elementos y nunca por dentro de uno («the paw / prints»)."""
+    return r"\mbox{" + escapar(texto) + "}"
+
+
 def _dibujo(num, nombre):
     if not (DIR_DIBUJOS / f"{nombre}.tex").exists():
         raise ErrorDeContenido(
@@ -374,7 +381,7 @@ def render_dibuja(num, a, contexto):
     arriba = _instruccion(escapar(a["prompt"]))
     abajo = ""
     if a.get("rotula"):
-        palabras = r"\separaPalabras ".join(escapar(p) for p in a["rotula"])
+        palabras = r"\separaPalabras ".join(_sin_cortes(p) for p in a["rotula"])
         abajo += r"{\bfseries\lblIngRotula\par}" + "\n" + r"\palabrasIng{" + palabras + "}\n"
     items = "\n".join(rf"\item {escapar(c)}" for c in comprueba)
     abajo += (
@@ -400,7 +407,7 @@ def render_donde(num, a, contexto):
     cosas = a["cosas"]
     if not 2 <= len(cosas) <= 4:
         raise ErrorDeContenido(f"día {num}: donde necesita entre 2 y 4 'cosas'")
-    lista = r"\separaPalabras ".join(escapar(c) for c in cosas)
+    lista = r"\separaPalabras ".join(_sin_cortes(c) for c in cosas)
     arriba = (
         _instruccion(escapar(a["prompt"])) + "\n"
         + r"{\bfseries\lblIngDibujaEsto}\ " + lista + "\\par\n"
@@ -537,7 +544,7 @@ def render_huecos(num, a, contexto):
         raise ErrorDeContenido(
             f"día {num}: palabras repetidas en la caja de huecos -- cada palabra, una vez"
         )
-    palabras = r"\separaPalabras ".join(escapar(p) for p in _barajar(num, sorted(caja)))
+    palabras = r"\separaPalabras ".join(_sin_cortes(p) for p in _barajar(num, sorted(caja)))
     filas = []
     for i, frase in enumerate(frases, start=1):
         antes, despues = frase.split(HUECO)

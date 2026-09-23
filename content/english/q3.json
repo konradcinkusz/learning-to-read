@@ -1,0 +1,1247 @@
+{
+  "_comentario": "'Read and Draw', el cuaderno en inglés. Datos de origen para tools/gen_days.py --libro english. Este fichero SI se edita a mano; content/english/generated-days.tex NO (se regenera con `make generate`). Parte 3 (primavera): días 131-195, semanas 27-39, en pasado: la historia se cuenta en pasado simple (el diálogo y los textos informativos, en presente). Hilo: el cumpleaños de Amy, Pascua, Toby y Pip se pierden (y se encuentran el uno al otro), el Día del Libro, las orugas, la bici de Sam, el día de la madre, el cumpleaños de Dani, el zoo, la granja escuela, el día del deporte y el último día de colegio -- ver notes/05-english.md.",
+  "dias": [
+    {
+      "dia": 131, "semana": 27, "trimestre": 3,
+      "tema": "Amy is eight",
+      "texto": [
+        "On Monday, Amy gave Lucía an invitation that she made herself.",
+        "It was purple, like her rucksack, with a big yellow 8 on the front. Under the 8, there were two balloons: a red one and a blue one.",
+        "> Come to my party on Saturday, when I am eight!\nLove, Amy"
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Draw Amy's invitation.",
+        "comprueba": ["What colour was it?", "What was on the front?", "What was under the 8?"],
+        "clave": "A purple card with a big yellow 8 on the front and, under the 8, two balloons: a red one and a blue one."
+      }
+    },
+    {
+      "dia": 132, "semana": 27, "trimestre": 3,
+      "tema": "Amy is eight",
+      "texto": [
+        "On Saturday, Lucía and Dani went next door with a present.",
+        "The Browns' garden was full of balloons. On the table, there were sandwiches, crisps and a jelly that wobbled.",
+        "Amy wore a green dress and a badge that said “8 today!”",
+        "Pip was so excited that he said “Hello!” to every guest."
+      ],
+      "actividad": {
+        "tipo": "si_no",
+        "afirmaciones": [
+          "The Browns' garden was full of balloons.",
+          "There were sandwiches and crisps on the table.",
+          "Amy wore a purple dress.",
+          "Amy's badge said “8 today!”",
+          "Pip was very quiet."
+        ],
+        "respuestas": ["yes", "yes", "no", "yes", "no"]
+      }
+    },
+    {
+      "dia": 133, "semana": 27, "trimestre": 3,
+      "tema": "Amy is eight",
+      "texto": [
+        "After the games, Amy opened her presents.",
+        "Lucía gave her a Spanish book with lots of pictures. Sam gave her a toy parrot that looked just like Pip.",
+        "Grandma Rosa knitted her a purple hat. Dani gave her a drawing of Toby.",
+        "When Pip saw the toy parrot, he said “Hello!” to it."
+      ],
+      "actividad": {
+        "tipo": "relaciona",
+        "instruccion": "Who gave Amy each present? Read and match.",
+        "pares": [
+          ["Lucía", "a Spanish book"],
+          ["Sam", "a toy parrot"],
+          ["Grandma Rosa", "a purple hat"],
+          ["Dani", "a drawing of Toby"]
+        ]
+      }
+    },
+    {
+      "dia": 134, "semana": 27, "trimestre": 3,
+      "tema": "Amy is eight",
+      "texto": [
+        "At English parties, children play pass the parcel. They sit in a circle and pass a present round while the music plays.",
+        "When the music stops, the child with it tears off a layer of paper.",
+        "At Amy's party, Dani opened the last layer and found crayons! Then they played musical chairs, and Sam won."
+      ],
+      "actividad": {
+        "tipo": "ordena",
+        "sucesos": [
+          "Lucía and Dani went next door with a present.",
+          "They played pass the parcel.",
+          "They played musical chairs.",
+          "Amy opened her presents."
+        ]
+      }
+    },
+    {
+      "dia": 135, "semana": 27, "trimestre": 3,
+      "tema": "Amy is eight",
+      "texto": [
+        "At the end of the party, Mr Brown brought in the cake. It looked like Pip, and it had eight candles!",
+        "Everyone sang “Happy Birthday” while Amy blew out the candles.",
+        "Before the guests went home, Mrs Brown gave everyone a party bag. Inside, there were sweets and a balloon."
+      ],
+      "actividad": {
+        "tipo": "vinetas",
+        "instruccion": "Draw Amy's party in three pictures.",
+        "pies": [
+          "They played pass the parcel.",
+          "Amy blew out the candles on her Pip cake.",
+          "Everyone got a party bag."
+        ]
+      }
+    },
+    {
+      "dia": 136, "semana": 28, "trimestre": 3,
+      "tema": "Easter",
+      "texto": [
+        "When the school closed for Easter, Amy invited Lucía to paint eggs.",
+        "Lucía painted three eggs. The first one was blue with white spots. The second one was yellow with red stripes. The third one looked like Toby, because it had long brown ears!",
+        "She put them in a basket."
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Draw Lucía's eggs in the basket.",
+        "comprueba": [
+          "How many eggs did Lucía paint?",
+          "What colour was the first egg? And the second one?",
+          "Why did the third egg look like Toby?"
+        ],
+        "clave": "Three eggs in a basket: a blue one with white spots, a yellow one with red stripes, and one that looks like Toby, with long brown ears."
+      }
+    },
+    {
+      "dia": 137, "semana": 28, "trimestre": 3,
+      "tema": "Easter",
+      "texto": [
+        "Amy told Lucía about Easter in England.",
+        "On Easter Sunday, English children look for chocolate eggs that the Easter bunny hides. They also eat hot cross buns, which have got a cross on top.",
+        "In Spain, people eat torrijas, which are made with bread, milk and sugar. On Saturday, Lucía made them herself, but Grandma fried them."
+      ],
+      "actividad": {
+        "tipo": "rodea",
+        "preguntas": [
+          {
+            "pregunta": "Who hides the chocolate eggs in England?",
+            "opciones": ["Father Christmas", "the Easter bunny", "Pip"],
+            "solucion": "the Easter bunny"
+          },
+          {
+            "pregunta": "What have hot cross buns got on top?",
+            "opciones": ["a candle", "a cross", "an egg"],
+            "solucion": "a cross"
+          },
+          {
+            "pregunta": "Who fried the torrijas?",
+            "opciones": ["Lucía", "Grandma", "Dad"],
+            "solucion": "Grandma"
+          }
+        ]
+      }
+    },
+    {
+      "dia": 138, "semana": 28, "trimestre": 3,
+      "tema": "Easter",
+      "texto": [
+        "On Easter Sunday, Mr Brown hid chocolate eggs while the children waited inside.",
+        "He put a big egg under the round table. A small one was next to the flowerpot. The last one was on the fence, between the two gardens.",
+        "Toby stayed at home, because chocolate is bad for dogs."
+      ],
+      "actividad": {
+        "tipo": "donde",
+        "prompt": "Where were the eggs? Read the text and draw them in the gardens.",
+        "escena": "jardin",
+        "cosas": ["the big egg", "the small egg", "the last egg"],
+        "clave": "The big egg under the round table; the small egg next to the flowerpot; the last egg on the fence, between the two gardens."
+      }
+    },
+    {
+      "dia": 139, "semana": 28, "trimestre": 3,
+      "tema": "Easter",
+      "texto": [
+        "Sam found the big egg first, and Dani found the small one.",
+        "Nobody could find the last egg until Lucía looked up. It was on the fence!",
+        "Then Mr Brown gave each child a chocolate bunny. Sam ate the ears first, because he said that they were the best part!"
+      ],
+      "actividad": {
+        "tipo": "huecos",
+        "frases": [
+          "Lucía painted three ___.",
+          "They also eat hot cross buns, which have got a ___ on top.",
+          "Toby stayed at home, because chocolate is bad for ___.",
+          "Nobody could find the last egg until Lucía looked ___."
+        ],
+        "soluciones": ["eggs", "cross", "dogs", "up"],
+        "extra": ["bunny"]
+      }
+    },
+    {
+      "dia": 140, "semana": 28, "trimestre": 3,
+      "tema": "Easter",
+      "texto": [
+        "On the last day of the holidays, the two families went for a walk.",
+        "They saw lambs in a field. In a bush, there was a nest with three blue eggs. Dani wanted one, but Mum said that the mother bird needed them.",
+        "They walked away quietly, so that the bird could come back."
+      ],
+      "actividad": {
+        "tipo": "repasa",
+        "checklist": [
+          "I know what Lucía's third egg looked like.",
+          "I know what hot cross buns have got on top.",
+          "I know where the last chocolate egg was."
+        ],
+        "prompt": "Now draw the nest with the three blue eggs.",
+        "banner": "140 pages read! Well done!"
+      }
+    },
+    {
+      "dia": 141, "semana": 29, "trimestre": 3,
+      "tema": "Toby is lost",
+      "texto": [
+        "After school on Monday, Dad took Lucía, Dani, Amy and Toby to the park.",
+        "Suddenly, Toby saw a red squirrel that had a big bushy tail.",
+        "The squirrel ran up the tallest tree and sat on a high branch. Toby barked at the bottom of the tree, while the squirrel ate a nut."
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Draw Toby and the squirrel.",
+        "comprueba": [
+          "What colour was the squirrel? What was its tail like?",
+          "Where did the squirrel sit?",
+          "Where was Toby? What was the squirrel eating?"
+        ],
+        "clave": "A red squirrel with a big bushy tail on a high branch of the tallest tree, eating a nut; Toby barking at the bottom of the tree."
+      }
+    },
+    {
+      "dia": 142, "semana": 29, "trimestre": 3,
+      "tema": "Toby is lost",
+      "texto": [
+        "When the squirrel jumped to another tree, Toby ran after it.",
+        "Dad called “Toby! Toby!”, but Toby didn't come back. He ran past the pond and into the bushes. Then they couldn't see him any more.",
+        "Dani started to cry, because Toby was lost."
+      ],
+      "actividad": {
+        "tipo": "si_no",
+        "afirmaciones": [
+          "Toby ran after the squirrel.",
+          "Toby came back when Dad called him.",
+          "Toby ran past the pond.",
+          "Dani laughed."
+        ],
+        "respuestas": ["yes", "no", "yes", "no"]
+      }
+    },
+    {
+      "dia": 143, "semana": 29, "trimestre": 3,
+      "tema": "Toby is lost",
+      "texto": [
+        "Everybody looked for Toby. The squirrel was on a branch of the big tree, but Toby wasn't there.",
+        "Amy found Toby's red ball under the bench. Next to the pond, where the ducks were swimming, there were muddy paw prints.",
+        "When it started to get dark, they went home to tell Mum."
+      ],
+      "actividad": {
+        "tipo": "donde",
+        "prompt": "What did they see? Read the text and draw it in the park.",
+        "escena": "parque",
+        "cosas": ["the squirrel", "Toby's red ball", "the ducks", "the paw prints"],
+        "clave": "The squirrel on a branch of the big tree; Toby's red ball under the bench; the ducks on the pond; the muddy paw prints next to the pond."
+      }
+    },
+    {
+      "dia": 144, "semana": 29, "trimestre": 3,
+      "tema": "Toby is lost",
+      "texto": [
+        "When they got home, they heard a voice from next door: “Toby! Biscuit! Toby! Biscuit!”",
+        "It was Pip, who was calling Toby from his cage.",
+        "And there was Toby, next to the fence! He was waiting for a biscuit, because Pip always says that word. Dani hugged him so hard that Toby licked his face."
+      ],
+      "actividad": {
+        "tipo": "mitades",
+        "mitades": [
+          ["When the squirrel jumped to another tree,", "Toby ran after it."],
+          ["Dani started to cry,", "because Toby was lost."],
+          ["It was Pip,", "who was calling Toby from his cage."],
+          ["Dani hugged him so hard", "that Toby licked his face."]
+        ]
+      }
+    },
+    {
+      "dia": 145, "semana": 29, "trimestre": 3,
+      "tema": "Toby is lost",
+      "texto": [
+        "That evening, Toby slept in his basket, because he was very tired.",
+        "Amy said that Pip was a hero, so Lucía made him a paper medal. Pip was very proud of it.",
+        "Dad bought Toby a new lead, which was red, like his ball. Toby didn't like it very much!"
+      ],
+      "actividad": {
+        "tipo": "vinetas",
+        "instruccion": "Draw Toby's adventure in three pictures.",
+        "pies": [
+          "Toby ran after the squirrel.",
+          "Everybody looked for Toby in the park.",
+          "Pip called “Toby! Biscuit!”, and there was Toby."
+        ]
+      }
+    },
+    {
+      "dia": 146, "semana": 30, "trimestre": 3,
+      "tema": "Where is Pip?",
+      "texto": [
+        "On Saturday, Mr Brown cleaned Pip's cage in the garden. While he was getting fresh water, Pip flew out of the open door!",
+        "Amy and Lucía made a poster that said LOST PARROT in big red letters. Under the words, they drew Pip with all his colours."
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Draw the poster that Amy and Lucía made.",
+        "rotula": ["LOST PARROT"],
+        "comprueba": [
+          "What colour were the big letters?",
+          "What did the girls draw under the words? What colours did they use?"
+        ],
+        "clave": "LOST PARROT in big red letters and, under the words, Pip with all his colours: green, with blue wings, a red tail and a yellow beak."
+      }
+    },
+    {
+      "dia": 147, "semana": 30, "trimestre": 3,
+      "tema": "Where is Pip?",
+      "texto": [
+        "The girls put the poster on the gate, and then everybody looked for Pip.",
+        "Mrs Brown, who knew a lot about birds, looked in the street. Luna, Pedro's cat, wanted to help too, but nobody let her!",
+        "Then Lucía found a green feather on the fence, which was a good clue."
+      ],
+      "actividad": {
+        "tipo": "rodea",
+        "preguntas": [
+          {
+            "pregunta": "Where did the girls put the poster?",
+            "opciones": ["on the gate", "on a tree", "in the window"],
+            "solucion": "on the gate"
+          },
+          {
+            "pregunta": "Who wanted to help, but nobody let her?",
+            "opciones": ["Mrs Brown", "Luna", "Amy"],
+            "solucion": "Luna"
+          },
+          {
+            "pregunta": "What did Lucía find on the fence?",
+            "opciones": ["a red ball", "a biscuit", "a green feather"],
+            "solucion": "a green feather"
+          }
+        ]
+      }
+    },
+    {
+      "dia": 148, "semana": 30, "trimestre": 3,
+      "tema": "Where is Pip?",
+      "texto": [
+        "In the afternoon, Toby started to bark under the chestnut tree in Lucía's garden.",
+        "When everyone looked up, a voice said “Hello!” from the tree. It was Pip!",
+        "He was on a high branch, where the leaves hid him. Toby wagged his tail, because he was very proud."
+      ],
+      "actividad": {
+        "tipo": "relaciona",
+        "instruccion": "Who did what? Read and match.",
+        "pares": [
+          ["Mr Brown", "cleaned the cage"],
+          ["Lucía", "found a green feather"],
+          ["Toby", "barked under the tree"],
+          ["Pip", "said “Hello!” from the tree"]
+        ]
+      }
+    },
+    {
+      "dia": 149, "semana": 30, "trimestre": 3,
+      "tema": "Where is Pip?",
+      "texto": [
+        "Mr Brown got a ladder, but Pip flew to a higher branch.",
+        "Then Amy had an idea. She held up a piece of apple, which Pip loves, and said “Hello, Pip!”",
+        "When Pip flew down and landed on her arm, everyone clapped. Mr Brown took him back to his cage, and he closed the door."
+      ],
+      "actividad": {
+        "tipo": "ordena",
+        "sucesos": [
+          "Pip flew out of the open door.",
+          "Lucía found a green feather on the fence.",
+          "Toby barked under the chestnut tree.",
+          "Pip landed on Amy's arm."
+        ]
+      }
+    },
+    {
+      "dia": 150, "semana": 30, "trimestre": 3,
+      "tema": "Where is Pip?",
+      "texto": [
+        "That evening, the Browns came round to say thank you.",
+        "Mr Brown gave Toby a big biscuit, because Toby found Pip. Amy gave Lucía a drawing that showed Pip in the tree. Lucía put it on her wall, next to her bed.",
+        "Pip was fine, but he was very tired after his adventure."
+      ],
+      "actividad": {
+        "tipo": "repasa",
+        "checklist": [
+          "I know how Pip got out of his cage.",
+          "I know what Lucía found on the fence.",
+          "I know how Amy got Pip down."
+        ],
+        "prompt": "Now draw Pip in the chestnut tree.",
+        "banner": "150 pages read! Well done!"
+      }
+    },
+    {
+      "dia": 151, "semana": 31, "trimestre": 3,
+      "tema": "Book Day",
+      "texto": [
+        "For Book Day, Marta asked everyone in the class to make a book.",
+        "Amy wrote a story about Pip, which she called “Pip and the Big Tree”. On the cover, she drew a tall tree with Pip on a high branch. Under the tree, there was a brown dog that was barking."
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Draw the cover of Amy's book.",
+        "rotula": ["Pip and the Big Tree"],
+        "comprueba": [
+          "What did Amy draw on the cover?",
+          "Who was on the high branch?",
+          "What was under the tree? What was it doing?"
+        ],
+        "clave": "A tall tree with Pip on a high branch, and a brown dog barking under the tree; the title, “Pip and the Big Tree”."
+      }
+    },
+    {
+      "dia": 152, "semana": 31, "trimestre": 3,
+      "tema": "Book Day",
+      "texto": [
+        "In Spain, Book Day is on the 23rd of April. On that day, people often give books to their friends.",
+        "Amy said that in England, World Book Day is in March. Children go to school as characters from books, which is great fun.",
+        "Last year, Amy went as a witch, and Sam was a pirate."
+      ],
+      "actividad": {
+        "tipo": "si_no",
+        "afirmaciones": [
+          "In Spain, Book Day is on the 23rd of April.",
+          "In England, World Book Day is in June.",
+          "In England, children go to school as characters from books.",
+          "Last year, Amy went as a pirate."
+        ],
+        "respuestas": ["yes", "no", "yes", "no"]
+      }
+    },
+    {
+      "dia": 153, "semana": 31, "trimestre": 3,
+      "tema": "Book Day",
+      "texto": [
+        "On Wednesday, everyone read their books to the class.",
+        "When Amy read her story, everybody laughed. Marta said that it was a great story, because it was true!",
+        "Lucía's book was about Toby, who can't catch squirrels. Some books were about animals, and some were about families."
+      ],
+      "actividad": {
+        "tipo": "mitades",
+        "mitades": [
+          ["Amy wrote a story about Pip,", "which she called “Pip and the Big Tree”."],
+          ["When Amy read her story,", "everybody laughed."],
+          ["Marta said that it was a great story,", "because it was true!"],
+          ["Lucía's book was about Toby,", "who can't catch squirrels."]
+        ]
+      }
+    },
+    {
+      "dia": 154, "semana": 31, "trimestre": 3,
+      "tema": "Book Day",
+      "texto": [
+        "On Thursday, the class had a secret book swap. Everyone brought a book in wrapping paper, but nobody knew who it was from.",
+        "Amy got a book about animals, which she loved. Lucía got a book of riddles, and she read one to Amy straight away."
+      ],
+      "actividad": {
+        "tipo": "adivina",
+        "adivinanza": "I have got two hands, but I can't clap.\nI have got a face, but I can't smile.\nI say tick-tock all day long.\nWhat am I?",
+        "respuesta": "a clock"
+      }
+    },
+    {
+      "dia": 155, "semana": 31, "trimestre": 3,
+      "tema": "Book Day",
+      "texto": [
+        "On Friday, Marta took the books to the library, where everyone could read them.",
+        "Amy's book was the only one that was in two languages. Lucía helped her, so each page was in English and in Spanish.",
+        "Amy was very proud when she saw her book on the shelf."
+      ],
+      "actividad": {
+        "tipo": "vinetas",
+        "instruccion": "Draw Book Day in three pictures.",
+        "pies": [
+          "Amy drew the cover of her book.",
+          "Everyone got a book in the secret swap.",
+          "Amy's book was on the library shelf."
+        ]
+      }
+    },
+    {
+      "dia": 156, "semana": 32, "trimestre": 3,
+      "tema": "The caterpillars",
+      "texto": [
+        "On Monday, Marta brought a box to class. Inside, there were five tiny caterpillars that were eating green leaves.",
+        "Each caterpillar was black, with a yellow stripe on its back. The box had a lid with little holes, so that the caterpillars could breathe.",
+        "Marta said that one day they would turn into butterflies!"
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Draw the box with the caterpillars.",
+        "comprueba": [
+          "How many caterpillars were there? What were they eating?",
+          "What colour were the caterpillars? What was on their backs?",
+          "What was in the lid?"
+        ],
+        "clave": "A box with five tiny black caterpillars, each with a yellow stripe on its back, eating green leaves; a lid with little holes."
+      }
+    },
+    {
+      "dia": 157, "semana": 32, "trimestre": 3,
+      "tema": "The caterpillars",
+      "texto": [
+        "Every day, the class gave the caterpillars fresh leaves, and they ate and ate.",
+        "Two weeks later, they were much bigger! Then each one hung from the lid, where it made a hard brown case.",
+        "Marta said that this case is called a chrysalis. Inside it, the caterpillar was changing, although nobody could see it."
+      ],
+      "actividad": {
+        "tipo": "rodea",
+        "preguntas": [
+          {
+            "pregunta": "What did the class give the caterpillars every day?",
+            "opciones": ["water", "fresh leaves", "bread"],
+            "solucion": "fresh leaves"
+          },
+          {
+            "pregunta": "Where did each caterpillar hang?",
+            "opciones": ["from the lid", "from a tree", "from the window"],
+            "solucion": "from the lid"
+          },
+          {
+            "pregunta": "What is the hard brown case called?",
+            "opciones": ["a nest", "a chrysalis", "a shell"],
+            "solucion": "a chrysalis"
+          }
+        ]
+      }
+    },
+    {
+      "dia": 158, "semana": 32, "trimestre": 3,
+      "tema": "The caterpillars",
+      "texto": [
+        "One morning, when the class came in, there were five butterflies in the box!",
+        "Their wings were orange, with black edges. On each wing, there was a white spot. Their bodies were brown and thin.",
+        "They opened and closed their wings slowly, because they were drying them."
+      ],
+      "actividad": {
+        "tipo": "colorea",
+        "prompt": "Colour the butterfly. Read the text to find the colours.",
+        "dibujo": "mariposa",
+        "clave": "Orange wings with black edges, a white spot on each wing and a thin brown body."
+      }
+    },
+    {
+      "dia": 159, "semana": 32, "trimestre": 3,
+      "tema": "The caterpillars",
+      "texto": [
+        "Marta wrote the life of a butterfly on the board:",
+        "- First, a butterfly lays a tiny egg on a leaf.",
+        "- When a caterpillar comes out of the egg, it eats a lot.",
+        "- Then the caterpillar makes a chrysalis, where it changes.",
+        "- Last, a butterfly comes out, and it flies away when its wings are dry."
+      ],
+      "actividad": {
+        "tipo": "busca",
+        "instruccion": "Find the four words for the life of a butterfly. Write them in order.",
+        "soluciones": ["egg", "caterpillar", "chrysalis", "butterfly"]
+      }
+    },
+    {
+      "dia": 160, "semana": 32, "trimestre": 3,
+      "tema": "The caterpillars",
+      "texto": [
+        "On Friday, the class took the box to the playground. It was time to let the butterflies go.",
+        "When Marta opened the lid, the butterflies flew away one by one. The last one landed on Amy's hair before it flew over the wall.",
+        "Everybody waved goodbye."
+      ],
+      "actividad": {
+        "tipo": "repasa",
+        "checklist": [
+          "I know how many caterpillars there were.",
+          "I know what a chrysalis is.",
+          "I know the colours of the butterflies."
+        ],
+        "prompt": "Now draw the life of a butterfly: egg, caterpillar, chrysalis and butterfly.",
+        "banner": "160 pages read! Well done!"
+      }
+    },
+    {
+      "dia": 161, "semana": 33, "trimestre": 3,
+      "tema": "Sam's new bike",
+      "texto": [
+        "Sam got a new bike, because his old one was too small for him.",
+        "The new bike was red, with a yellow bell on the handlebars. At the front, there was a little basket, where Sam put his toy dinosaur.",
+        "But the bike had no stabilisers, so Sam couldn't ride it yet."
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Draw Sam's new bike.",
+        "comprueba": [
+          "What colour was the bike?",
+          "What was on the handlebars?",
+          "What was at the front? What was in it?"
+        ],
+        "clave": "A red bike with a yellow bell on the handlebars and a little basket at the front, with Sam's toy dinosaur in it."
+      }
+    },
+    {
+      "dia": 162, "semana": 33, "trimestre": 3,
+      "tema": "Sam's new bike",
+      "texto": [
+        "On Sunday morning, Mr Brown took Sam to the park with Dani and Lucía.",
+        "Sam sat on the bike while his dad held the back of the seat. He pedalled, but after a few metres, he fell off!",
+        "Sam didn't cry, although his knee hurt a little. He said that dinosaurs never give up!"
+      ],
+      "actividad": {
+        "tipo": "si_no",
+        "afirmaciones": [
+          "Mr Brown took Sam to the park on Sunday.",
+          "Mrs Brown held the back of the seat.",
+          "Sam fell off.",
+          "Sam cried a lot."
+        ],
+        "respuestas": ["yes", "no", "yes", "no"]
+      }
+    },
+    {
+      "dia": 163, "semana": 33, "trimestre": 3,
+      "tema": "Sam's new bike",
+      "texto": [
+        "Sam tried again and again. First, he learnt to push the pedals and go straight.",
+        "Then he learnt to stop, because his dad said that stopping is very important. After that, he learnt to go round the big tree.",
+        "Dani ran next to him and shouted “Go, Sam, go!”"
+      ],
+      "actividad": {
+        "tipo": "ordena",
+        "sucesos": [
+          "Sam got a new red bike.",
+          "Sam fell off.",
+          "Sam learnt to stop.",
+          "Sam learnt to go round the big tree."
+        ]
+      }
+    },
+    {
+      "dia": 164, "semana": 33, "trimestre": 3,
+      "tema": "Sam's new bike",
+      "texto": [
+        "At eleven o'clock, Mr Brown let go of the seat, but Sam didn't know.",
+        "Sam rode all the way round the pond on his own! When he looked back, his dad was far away, and he was clapping.",
+        "Sam was so surprised that he rang his bell ten times."
+      ],
+      "actividad": {
+        "tipo": "mitades",
+        "mitades": [
+          ["Sam got a new bike,", "because his old one was too small for him."],
+          ["Sam sat on the bike", "while his dad held the back of the seat."],
+          ["Sam didn't cry,", "although his knee hurt a little."],
+          ["Sam was so surprised", "that he rang his bell ten times."]
+        ]
+      }
+    },
+    {
+      "dia": 165, "semana": 33, "trimestre": 3,
+      "tema": "Sam's new bike",
+      "texto": [
+        "In the afternoon, Lucía brought her bike, and they rode round the park together.",
+        "Dani liked Sam's bike so much that he wanted one for his birthday. His birthday was in two weeks!",
+        "When they got home, Sam told Pip all about it. Pip said “Hello!”, of course."
+      ],
+      "actividad": {
+        "tipo": "vinetas",
+        "instruccion": "Draw how Sam learnt to ride his bike, in three pictures.",
+        "pies": [
+          "Mr Brown held the seat, but Sam fell off.",
+          "Sam learnt to stop and to go round the tree.",
+          "Sam rode round the pond on his own!"
+        ]
+      }
+    },
+    {
+      "dia": 166, "semana": 34, "trimestre": 3,
+      "tema": "Mum's day",
+      "texto": [
+        "Sunday was Mother's Day, so Dad, Lucía and Dani planned a surprise breakfast.",
+        "Lucía drew the tray, so that nobody forgot anything.",
+        "In the middle, there were two pieces of toast that looked like hearts. On the left, there was orange juice, and on the right, a cup of coffee. At the back, there was a yellow rose."
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Draw the breakfast tray.",
+        "comprueba": [
+          "What was in the middle? What did it look like?",
+          "What was on the left? And on the right?",
+          "What was at the back? What colour was it?"
+        ],
+        "clave": "Two pieces of toast that look like hearts in the middle; orange juice on the left; a cup of coffee on the right; a yellow rose at the back."
+      }
+    },
+    {
+      "dia": 167, "semana": 34, "trimestre": 3,
+      "tema": "Mum's day",
+      "texto": [
+        "Keeping a secret was very hard for Dani. When Mum found the rose in the fridge, Dani nearly told her everything!",
+        "Lucía put her hand over his mouth just in time.",
+        "Later, Dani dropped a glass while they were practising with the tray. So Dad decided that Dani would only carry the rose."
+      ],
+      "actividad": {
+        "tipo": "rodea",
+        "preguntas": [
+          {
+            "pregunta": "Where did Mum find the rose?",
+            "opciones": ["in the garden", "in the fridge", "under the bed"],
+            "solucion": "in the fridge"
+          },
+          {
+            "pregunta": "Who put a hand over Dani's mouth?",
+            "opciones": ["Dad", "Lucía", "Toby"],
+            "solucion": "Lucía"
+          },
+          {
+            "pregunta": "What did Dani drop?",
+            "opciones": ["a glass", "the rose", "the toast"],
+            "solucion": "a glass"
+          }
+        ]
+      }
+    },
+    {
+      "dia": 168, "semana": 34, "trimestre": 3,
+      "tema": "Mum's day",
+      "texto": [
+        "Amy, who loves painting, helped Lucía and Dani to make a card.",
+        "On the front, they drew three flowers in a blue pot. On the left, there was a red tulip. In the middle, there was a white daisy that had a yellow centre. On the right, there was a pink rose, and the leaves were green."
+      ],
+      "actividad": {
+        "tipo": "colorea",
+        "prompt": "Colour the flowers on the card. Read the text to find the colours.",
+        "dibujo": "flores",
+        "clave": "A red tulip on the left, a white daisy with a yellow centre in the middle and a pink rose on the right, with green leaves, in a blue pot."
+      }
+    },
+    {
+      "dia": 169, "semana": 34, "trimestre": 3,
+      "tema": "Mum's day",
+      "texto": [
+        "On Thursday, Lucía wrote a poem for Mum. She decided to hide it under the napkin, where Mum would find it on Sunday.",
+        "Amy said that in England, Mother's Day is in March. She and Sam made breakfast for Mrs Brown then, but they burnt the toast!"
+      ],
+      "actividad": {
+        "tipo": "huecos",
+        "frases": [
+          "Lucía drew the tray, so that nobody forgot ___.",
+          "When Mum found the rose in the ___, Dani nearly told her everything!",
+          "In the middle, there was a white daisy that had a yellow ___.",
+          "She and Sam made breakfast for Mrs Brown then, but they burnt the ___!"
+        ],
+        "soluciones": ["anything", "fridge", "centre", "toast"],
+        "extra": ["garden"]
+      }
+    },
+    {
+      "dia": 170, "semana": 34, "trimestre": 3,
+      "tema": "Mum's day",
+      "texto": [
+        "On Sunday, at half past seven, the tray that Lucía drew went into Mum's bedroom.",
+        "Dani carried the rose, and Dad held the tray with both hands. Toby watched the door.",
+        "When Mum read the poem, her eyes were shiny. “It's the best present ever!” she said, and she hugged them all. Toby joined the hug too."
+      ],
+      "actividad": {
+        "tipo": "repasa",
+        "checklist": [
+          "I know what was on the breakfast tray.",
+          "I know where Mum found the rose.",
+          "I know when Mother's Day is in England."
+        ],
+        "prompt": "Now draw a card with flowers for someone you love.",
+        "banner": "170 pages read! Well done!"
+      }
+    },
+    {
+      "dia": 171, "semana": 35, "trimestre": 3,
+      "tema": "Dani is six",
+      "texto": [
+        "On Saturday, Dani was six! Mum and Grandma Rosa made him a cake, which was round and made of chocolate.",
+        "There were six blue candles round the edge. In the middle, there was a green sugar dinosaur, with strawberries all around it.",
+        "Dani didn't know anything, although he asked about his presents all week."
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Draw Dani's birthday cake.",
+        "comprueba": [
+          "What shape was the cake?",
+          "How many candles were there? What colour were they? Where were they?",
+          "What was in the middle? What was all around it?"
+        ],
+        "clave": "A round chocolate cake with six blue candles round the edge and a green sugar dinosaur in the middle, with strawberries all around it."
+      }
+    },
+    {
+      "dia": 172, "semana": 35, "trimestre": 3,
+      "tema": "Dani is six",
+      "texto": [
+        "Lucía made a treasure hunt for Dani's birthday. Before he woke up, she hid three cards around the house.",
+        "On Saturday morning, Dani found the first card under his pillow. It smelled of strawberries, but there was no name on it!",
+        "He read the riddle twice, because good readers always do that. Then he ran to the washing machine."
+      ],
+      "actividad": {
+        "tipo": "si_no",
+        "afirmaciones": [
+          "Lucía hid three cards around the house.",
+          "Dani found the first card in the kitchen.",
+          "The card smelled of strawberries.",
+          "Lucía's name was on the card."
+        ],
+        "respuestas": ["yes", "no", "yes", "no"]
+      }
+    },
+    {
+      "dia": 173, "semana": 35, "trimestre": 3,
+      "tema": "Dani is six",
+      "texto": [
+        "In the afternoon, there was a party, and Amy and Sam came too.",
+        "Mum and Dad gave Dani a blue bike, which was just what he wanted. Grandma Rosa gave him a green jumper with a dinosaur on it.",
+        "Sam gave him a dinosaur that roared when you pressed its tummy. Amy gave him a book about dinosaurs, of course!"
+      ],
+      "actividad": {
+        "tipo": "relaciona",
+        "instruccion": "Who gave Dani each present? Read and match.",
+        "pares": [
+          ["Mum and Dad", "a blue bike"],
+          ["Grandma Rosa", "a green jumper"],
+          ["Sam", "a dinosaur that roared"],
+          ["Amy", "a book about dinosaurs"]
+        ]
+      }
+    },
+    {
+      "dia": 174, "semana": 35, "trimestre": 3,
+      "tema": "Dani is six",
+      "texto": [
+        "Inside the washing machine, between two of Dad's socks, Dani found the second card.",
+        "This riddle was harder, so Dani looked in the oven first. Then he looked in the cupboard where Mum keeps the brooms.",
+        "Toby followed him everywhere, because he thought it was a game. Can you guess where the third card was?"
+      ],
+      "actividad": {
+        "tipo": "adivina",
+        "adivinanza": "Outside, it is hot,\nbut inside me, it is cold.\nI keep milk, fruit and cheese,\nand today, a birthday cake!\nWhat am I?",
+        "respuesta": "the fridge"
+      }
+    },
+    {
+      "dia": 175, "semana": 35, "trimestre": 3,
+      "tema": "Dani is six",
+      "texto": [
+        "In the fridge, next to the cake box, Dani found the last card. Its secret message said: “Look under your bed.”",
+        "Under his bed, there was a parcel in paper with stars. Inside, there was a red notebook, which smelled of strawberries too.",
+        "When Dani saw the writing, he shouted “Lucía! It was you!”"
+      ],
+      "actividad": {
+        "tipo": "vinetas",
+        "instruccion": "Draw Dani's treasure hunt in three pictures.",
+        "pies": [
+          "Dani found a card under his pillow.",
+          "He found the second card in the washing machine.",
+          "He found a red notebook under his bed."
+        ]
+      }
+    },
+    {
+      "dia": 176, "semana": 36, "trimestre": 3,
+      "tema": "The zoo",
+      "texto": [
+        "On Saturday, the two families went to the zoo. First, they saw the giraffes, which were eating leaves from a tall tree.",
+        "The mother giraffe was taller than the tree! Her baby was only as tall as Mr Brown.",
+        "Sam said that the baby had longer legs than Dad!"
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Draw the giraffes, the tree and Mr Brown.",
+        "comprueba": [
+          "What were the giraffes doing?",
+          "Who was taller than the tree?",
+          "How tall was the baby?"
+        ],
+        "clave": "A mother giraffe taller than the tree, eating its leaves, and a baby giraffe as tall as Mr Brown."
+      }
+    },
+    {
+      "dia": 177, "semana": 36, "trimestre": 3,
+      "tema": "The zoo",
+      "texto": [
+        "Next, they went to see the elephants. The biggest elephant was bigger than a car, and its ears were like fans.",
+        "Near the elephants, there was a hippo that was sleeping in the water. When it opened its mouth, Dani saw its teeth, which were bigger than his hand!"
+      ],
+      "actividad": {
+        "tipo": "rodea",
+        "preguntas": [
+          {
+            "pregunta": "What was the biggest elephant bigger than?",
+            "opciones": ["a house", "a car", "a bus"],
+            "solucion": "a car"
+          },
+          {
+            "pregunta": "Where was the hippo sleeping?",
+            "opciones": ["in the water", "under a tree", "in a cave"],
+            "solucion": "in the water"
+          },
+          {
+            "pregunta": "What was bigger than Dani's hand?",
+            "opciones": ["the hippo's teeth", "the elephant's ears", "a giraffe's eye"],
+            "solucion": "the hippo's teeth"
+          }
+        ]
+      }
+    },
+    {
+      "dia": 178, "semana": 36, "trimestre": 3,
+      "tema": "The zoo",
+      "texto": [
+        "After lunch, they watched the monkeys, who were jumping from rope to rope.",
+        "One little monkey took a banana from its mother while she wasn't looking. Everybody laughed, because it ate the whole banana very fast!",
+        "Then they visited the penguins, which were very fast in the water."
+      ],
+      "actividad": {
+        "tipo": "mitades",
+        "mitades": [
+          ["First, they saw the giraffes,", "which were eating leaves from a tall tree."],
+          ["Near the elephants, there was a hippo", "that was sleeping in the water."],
+          ["One little monkey took a banana from its mother", "while she wasn't looking."],
+          ["Everybody laughed,", "because it ate the whole banana very fast!"]
+        ]
+      }
+    },
+    {
+      "dia": 179, "semana": 36, "trimestre": 3,
+      "tema": "The zoo",
+      "texto": [
+        "At the shop, Amy bought a card with animal facts, which she read to everyone:",
+        "- A giraffe's tongue is longer than your arm, and it is dark blue!",
+        "- An elephant's trunk, which has got no bones, can pick up a peanut.",
+        "- A hippo can't swim, but it can run faster than you!"
+      ],
+      "actividad": {
+        "tipo": "busca",
+        "instruccion": "Which animals are on Amy's card? Find three and write them.",
+        "soluciones": ["giraffe", "elephant", "hippo"]
+      }
+    },
+    {
+      "dia": 180, "semana": 36, "trimestre": 3,
+      "tema": "The zoo",
+      "texto": [
+        "Before they went home, the children chose their favourite animals.",
+        "Lucía liked the giraffes best, because they were so tall and gentle. Amy chose the monkeys, which were the funniest. Dani and Sam chose the hippo, because of its big teeth!",
+        "At home, Pip was waiting for them, and he said “Hello!” when they came in."
+      ],
+      "actividad": {
+        "tipo": "repasa",
+        "checklist": [
+          "I know which animal was taller than the tree.",
+          "I know what the little monkey took.",
+          "I know what a hippo can't do."
+        ],
+        "prompt": "Now draw your favourite animal at the zoo.",
+        "banner": "180 pages read! Well done!"
+      }
+    },
+    {
+      "dia": 181, "semana": 37, "trimestre": 3,
+      "tema": "The farm",
+      "texto": [
+        "That week, Marta's class spent two days at a farm school.",
+        "In the pen, there were four goats and three sheep. One goat, which had brown spots, was called Lola. When she saw Lucía, she came over and nibbled her sleeve!",
+        "Julián, the farmer, laughed and said that Lola tasted everything."
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Draw the animals in the pen.",
+        "comprueba": [
+          "How many goats were there? And how many sheep?",
+          "What did Lola look like?",
+          "What did Lola do when she saw Lucía?"
+        ],
+        "clave": "Four goats and three sheep in the pen; Lola, a goat with brown spots, nibbling Lucía's sleeve."
+      }
+    },
+    {
+      "dia": 182, "semana": 37, "trimestre": 3,
+      "tema": "The farm",
+      "texto": [
+        "The next morning, while the class was having breakfast, Julián ran in. “The gate of the pen is open!” he said.",
+        "The goats were in the vegetable garden, where they were eating the cabbages. The sheep were following them.",
+        "Everybody helped to take them back. Julián was sure that he closed the gate, but the goats got out anyway!"
+      ],
+      "actividad": {
+        "tipo": "si_no",
+        "afirmaciones": [
+          "The gate of the pen was open.",
+          "The goats were eating the flowers.",
+          "The sheep followed the goats.",
+          "Nobody helped Julián."
+        ],
+        "respuestas": ["yes", "no", "yes", "no"]
+      }
+    },
+    {
+      "dia": 183, "semana": 37, "trimestre": 3,
+      "tema": "The farm",
+      "texto": [
+        "In the afternoon, Julián told them about the animals, while they fed them.",
+        "Sheep always stay together, and they are scared of everything. Goats are so curious that they climb on everything!",
+        "The donkey, who sleeps in the stable, loves carrots. The hens give eggs, which the class had for breakfast."
+      ],
+      "actividad": {
+        "tipo": "relaciona",
+        "instruccion": "What is each animal like? Read and match.",
+        "pares": [
+          ["sheep", "are scared of everything"],
+          ["goats", "climb on everything"],
+          ["the donkey", "loves carrots"],
+          ["the hens", "give eggs"]
+        ]
+      }
+    },
+    {
+      "dia": 184, "semana": 37, "trimestre": 3,
+      "tema": "The farm",
+      "texto": [
+        "Before the bus came, the class planted new cabbages for Julián. He needed them, because the goats ate the old ones!",
+        "Then Julián gave everyone a photo of the farm. In Lucía's photo, Lola was eating her sleeve again!",
+        "On the bus, the class sang all the way home, and Amy sang the loudest."
+      ],
+      "actividad": {
+        "tipo": "ordena",
+        "sucesos": [
+          "Lola nibbled Lucía's sleeve.",
+          "The goats ate the cabbages.",
+          "Julián told the class about the animals.",
+          "The class planted new cabbages."
+        ]
+      }
+    },
+    {
+      "dia": 185, "semana": 37, "trimestre": 3,
+      "tema": "The farm",
+      "texto": [
+        "When Lucía got home, she showed the photo to Dani and told him about Lola.",
+        "Dani wanted a goat too, but Mum said that a goat would eat Dad's lettuces. So Dani drew a goat, and he put it on the fridge.",
+        "Toby looked at the drawing for a long time. He didn't like goats!"
+      ],
+      "actividad": {
+        "tipo": "vinetas",
+        "instruccion": "Draw the class trip to the farm in three pictures.",
+        "pies": [
+          "Lola nibbled Lucía's sleeve.",
+          "The goats were in the vegetable garden.",
+          "The class sang on the bus."
+        ]
+      }
+    },
+    {
+      "dia": 186, "semana": 38, "trimestre": 3,
+      "tema": "Sports day",
+      "texto": [
+        "Sports day was on Friday, so the class practised when it wasn't too hot.",
+        "Lucía and Amy were in the yellow team. Their T-shirts were yellow, with a green star on the front. Their caps were green, and they had a yellow star on them.",
+        "Amy said that the green star was her lucky star."
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Draw Lucía and Amy in their team clothes.",
+        "comprueba": [
+          "What colour were the T-shirts? What was on the front?",
+          "What colour were the caps? What was on them?"
+        ],
+        "clave": "Lucía and Amy in yellow T-shirts with a green star on the front, and green caps with a yellow star."
+      }
+    },
+    {
+      "dia": 187, "semana": 38, "trimestre": 3,
+      "tema": "Sports day",
+      "texto": [
+        "The first race was the egg-and-spoon race. You run with an egg on a spoon, and if it falls, you start again.",
+        "Amy's egg fell twice, so she came last. Lucía walked slowly and carefully, because she didn't want to drop it. She came second!",
+        "The winner was a boy from the blue team, who was very fast."
+      ],
+      "actividad": {
+        "tipo": "rodea",
+        "preguntas": [
+          {
+            "pregunta": "What happens if the egg falls?",
+            "opciones": ["you win", "you start again", "you eat it"],
+            "solucion": "you start again"
+          },
+          {
+            "pregunta": "Why did Amy come last?",
+            "opciones": ["her egg fell twice", "she was tired", "she lost her spoon"],
+            "solucion": "her egg fell twice"
+          },
+          {
+            "pregunta": "How did Lucía walk?",
+            "opciones": ["fast", "slowly and carefully", "backwards"],
+            "solucion": "slowly and carefully"
+          }
+        ]
+      }
+    },
+    {
+      "dia": 188, "semana": 38, "trimestre": 3,
+      "tema": "Sports day",
+      "texto": [
+        "In the sack race, you jump in a sack until you get to the line.",
+        "Dani and Sam were in the race for the little ones. Sam fell over twice, but he got up again, because dinosaurs never give up!",
+        "Dani won, and he was so happy that he jumped all the way to Mum."
+      ],
+      "actividad": {
+        "tipo": "mitades",
+        "mitades": [
+          ["Sports day was on Friday,", "so the class practised when it wasn't too hot."],
+          ["You run with an egg on a spoon,", "and if it falls, you start again."],
+          ["Lucía walked slowly and carefully,", "because she didn't want to drop it."],
+          ["Dani won, and he was so happy", "that he jumped all the way to Mum."]
+        ]
+      }
+    },
+    {
+      "dia": 189, "semana": 38, "trimestre": 3,
+      "tema": "Sports day",
+      "texto": [
+        "The last race was the three-legged race, and all the families came to watch.",
+        "Lucía and Amy stood side by side, and Marta tied their legs with a scarf. When they walked to the start, they said “one, two, one, two”.",
+        "They practised all week, so now they walked like one person who had three legs!"
+      ],
+      "actividad": {
+        "tipo": "huecos",
+        "frases": [
+          "Their caps were green, and they had a yellow ___ on them.",
+          "Amy's egg fell twice, so she came ___.",
+          "In the sack race, you jump in a ___ until you get to the line.",
+          "Lucía and Amy stood side by side, and Marta tied their legs with a ___."
+        ],
+        "soluciones": ["star", "last", "sack", "scarf"],
+        "extra": ["spoon"]
+      }
+    },
+    {
+      "dia": 190, "semana": 38, "trimestre": 3,
+      "tema": "Sports day",
+      "texto": [
+        "When Marta blew her whistle, the girls started to count: “one, two, one, two”. They didn't fall once, and they came first!",
+        "Dani and Sam jumped up and down, because they were so excited.",
+        "They each got a medal that said “Winner!” At home, Amy showed her medal to Pip, and Pip tried to eat it!"
+      ],
+      "actividad": {
+        "tipo": "repasa",
+        "checklist": [
+          "I know the colours of the yellow team.",
+          "I know what happens in the egg-and-spoon race.",
+          "I know who won the sack race."
+        ],
+        "prompt": "Now draw Lucía and Amy in the three-legged race.",
+        "banner": "190 pages read! Well done!"
+      }
+    },
+    {
+      "dia": 191, "semana": 39, "trimestre": 3,
+      "tema": "The last day of school",
+      "texto": [
+        "In the last week of school, the class made a big card for Marta.",
+        "On the front, they drew a red heart that said “Thank you, Marta!” Around the heart, there were yellow stars, one for each child in the class.",
+        "The card was so big that it didn't fit through the door!"
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Draw the front of the card for Marta.",
+        "comprueba": [
+          "What did the class draw on the front? What colour was it?",
+          "What did it say?",
+          "What was around it? What colour were they?"
+        ],
+        "clave": "A red heart that says “Thank you, Marta!”, with yellow stars around it, one for each child in the class."
+      }
+    },
+    {
+      "dia": 192, "semana": 39, "trimestre": 3,
+      "tema": "The last day of school",
+      "texto": [
+        "At the end-of-year party, the whole school was in the playground. The little ones sang a song about the summer. Dani and Sam were in the front row.",
+        "Sam sang so loudly that everybody laughed. After the songs, there was ice cream for everyone, because it was very hot. Lucía had strawberry, and Amy had chocolate."
+      ],
+      "actividad": {
+        "tipo": "si_no",
+        "afirmaciones": [
+          "The party was in the playground.",
+          "Dani and Sam were at the back.",
+          "Sam sang very quietly.",
+          "There was ice cream for everyone.",
+          "Amy had strawberry ice cream."
+        ],
+        "respuestas": ["yes", "no", "no", "yes", "no"]
+      }
+    },
+    {
+      "dia": 193, "semana": 39, "trimestre": 3,
+      "tema": "The last day of school",
+      "texto": [
+        "On Wednesday, the class decorated the classroom while Marta was in the library.",
+        "They tied balloons to the door, and they put the big card on the board. On Marta's desk, there was a cake that Mr Brown made. Under the desk, Lucía hid the present: a plant in a pot.",
+        "When Marta came back, everyone shouted “Surprise!”"
+      ],
+      "actividad": {
+        "tipo": "donde",
+        "prompt": "Where were they? Read the text and draw them in the classroom.",
+        "escena": "clase",
+        "cosas": ["the balloons", "the big card", "the cake", "the present"],
+        "clave": "The balloons tied to the door; the big card on the board; the cake on Marta's desk; the present (a plant in a pot) under the desk."
+      }
+    },
+    {
+      "dia": 194, "semana": 39, "trimestre": 3,
+      "tema": "The last day of school",
+      "texto": [
+        "On Thursday, Marta asked everyone about the summer.",
+        "Lucía said that she was going to Grandma's village with Dani and Toby. Amy and Sam were going to London, because their grandparents lived there.",
+        "Marta was going to the beach, where she wanted to read lots of books. And Pip was going to stay with Pedro."
+      ],
+      "actividad": {
+        "tipo": "relaciona",
+        "instruccion": "Where was everyone going in the summer? Read and match.",
+        "pares": [
+          ["Lucía, Dani and Toby", "Grandma's village"],
+          ["Amy and Sam", "London"],
+          ["Marta", "the beach"],
+          ["Pip", "Pedro's house"]
+        ]
+      }
+    },
+    {
+      "dia": 195, "semana": 39, "trimestre": 3,
+      "tema": "The last day of school",
+      "texto": [
+        "Friday was the last day of school. Marta hugged everyone, and she said that she would miss them.",
+        "After school, Lucía and Amy sat next to the fence. Amy was leaving for London on Monday. But in August, the Browns were coming to the village!",
+        "“See you soon!” said Pip, who had learnt some new words."
+      ],
+      "actividad": {
+        "tipo": "repasa",
+        "checklist": [
+          "I know who found Toby, and who found Pip.",
+          "I know what Dani found under his bed.",
+          "I know where Amy and Sam are going in the summer."
+        ],
+        "prompt": "Now draw your favourite moment of the spring.",
+        "banner": "195 pages read! Hello, summer!"
+      }
+    }
+  ]
+}

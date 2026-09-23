@@ -329,6 +329,6 @@ sus tres medallas, la clave de respuestas y el diploma. Ver
 PR (ver `notes/05-english.md`, "Las fases"). Hecho: el motor -- con la
 portada, *How to use this book*, *The words in this book*, *Who's who?*,
 el mapa del año, la clave y el diploma, todo en inglés -- y las partes
-1 y 2, otoño e invierno (días 1-130, con sus medallas), que compilan en
-color y en blanco y negro con las mismas comprobaciones que los otros
-tres cuadernos.
+1, 2 y 3, de otoño a primavera (días 1-195, con sus medallas), que
+compilan en color y en blanco y negro con las mismas comprobaciones que
+los otros tres cuadernos.
