@@ -1,0 +1,21 @@
+% diagrams/firstwords/sack.tex -- la carrera de sacos: Dani, saltando dentro
+% de su saco, hasta la meta ("finish").
+\begin{tikzpicture}[dibujofw]
+  % la meta: los postes, el cartel y la cinta
+  \filldraw[fill=white] (3.4,0) rectangle (3.7,7.2); \filldraw[fill=white] (7.3,0) rectangle (7.6,7.2);
+  \filldraw[fill=white] (3.2,5.8) rectangle (7.8,7.4);
+  \node[transform shape, font=\sffamily\bfseries\fontsize{34}{36}\selectfont] at (5.5,6.6) {finish};
+  \filldraw[fill=white] (3.7,3.1) .. controls (4.8,2.9) and (6.2,3.3) .. (7.3,3.1) -- (7.3,3.4) .. controls (6.2,3.6) and (4.8,3.2) .. (3.7,3.4) -- cycle;
+  % Dani, en el aire, dentro del saco
+  \begin{scope}[shift={(0,0.9)}]
+    \ninoFW{Dani}{Frente}{Frente}
+    \begin{scope}[shift={(0,6.3)}] \bocaRisaFW \end{scope}
+    \filldraw[fill=white] (-1.2,3.1) .. controls (-1.55,1.6) and (-1.45,0.3) .. (-0.9,0.05) -- (0.9,0.05)
+      .. controls (1.45,0.3) and (1.55,1.6) .. (1.2,3.1) .. controls (0.6,2.8) and (-0.6,2.8) .. (-1.2,3.1) -- cycle;
+    \draw (-0.6,1.0) -- (-0.3,1.4); \draw (0.5,0.7) -- (0.7,1.1);
+    \brazoNinaFrenteEncima
+    \begin{scope}[xscale=-1] \brazoNinaFrenteEncima \end{scope}
+  \end{scope}
+  \foreach \x in {-0.8,0,0.8} {\draw (\x,0.55) -- (\x,0.2);}
+  \draw (-2.5,0) -- (8.5,0);
+\end{tikzpicture}

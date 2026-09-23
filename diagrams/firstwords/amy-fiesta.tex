@@ -1,0 +1,11 @@
+% diagrams/firstwords/amy-fiesta.tex -- ¡Amy cumple ocho! En su fiesta, con
+% su gorro, su chapa de cumpleaños (una estrella) y los globos.
+\begin{tikzpicture}[dibujofw]
+  \begin{scope}[shift={(-2.6,6.3)}] \globoFW{1.2}{-3.8} \end{scope}
+  \begin{scope}[shift={(-3.9,5.4)}] \globoFW{2.5}{-2.9} \end{scope}
+  \ninaFW{Amy}{Abajo}{Arriba}
+  \begin{scope}[shift={(0,6.3)}] \gorroFiestaFW \end{scope}
+  \filldraw[fill=white] (0.45,3.7) circle (0.5);
+  \begin{scope}[shift={(0.45,3.7)}, scale=0.33] \estrellaFW \end{scope}
+  \foreach \x/\y/\s in {2.8/8.4/0.4, 3.4/6.6/0.35, -1.0/9.6/0.3} {\begin{scope}[shift={(\x,\y)}, scale=\s] \estrellaFW \end{scope}}
+\end{tikzpicture}

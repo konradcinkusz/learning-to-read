@@ -191,15 +191,25 @@
 % punto de unir se sube a media altura del dibujo. El aire entre fila y
 % fila va dentro de la celda, encima y debajo del dibujo: el \\[...] de
 % una tabla no añade nada cuando la fila ya es más alta que su puntal.
+% La columna de las palabras mide 3,6 cm, o lo que mida la palabra más
+% larga con su punto (\anchoUne{palabra}, una vez por fila, antes de la
+% tabla): así, una palabra larga (summer) no parte la línea y deja el
+% punto debajo.
 \newlength\anchoUneDibujo
 \setlength\anchoUneDibujo{55mm}
 \newlength\altoUneDibujo
 \newlength\separacionUne
 \setlength\separacionUne{7mm}
+\newlength\anchoUnePalabra
+\newlength\anchoUneAux
 \newcommand{\columnasCentradas}{%
   \renewcommand{\tabularxcolumn}[1]{m{##1}}%
   \setlength\altoUneDibujo{\dimexpr(\tcbtextheight-14mm)/4-\separacionUne\relax}%
-  \ifdim\altoUneDibujo>34mm \setlength\altoUneDibujo{34mm}\fi}
+  \ifdim\altoUneDibujo>34mm \setlength\altoUneDibujo{34mm}\fi
+  \setlength\anchoUnePalabra{3.6cm}}
+\newcommand{\anchoUne}[1]{%
+  \settowidth\anchoUneAux{#1\quad\textbullet}%
+  \ifdim\anchoUneAux>\anchoUnePalabra \setlength\anchoUnePalabra{\anchoUneAux}\fi}
 \newsavebox\cajaUne
 \newcommand{\dibujoUne}[1]{%
   \sbox\cajaUne{\dibujoColorear{#1}{\dimexpr\anchoUneDibujo-6mm\relax}{\altoUneDibujo}}%

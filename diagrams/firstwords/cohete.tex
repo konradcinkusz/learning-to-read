@@ -1,0 +1,19 @@
+% diagrams/firstwords/cohete.tex -- el viernes del Book Day: la portada de
+% un libro que apetece escribir -- un cohete que vuela entre las estrellas
+% hacia la luna.
+\begin{tikzpicture}[dibujofw]
+  \filldraw[fill=white] (-4.6,0) rectangle (-3.8,9.0);
+  \filldraw[fill=white] (-3.8,0) rectangle (3.6,9.0);
+  % el cohete
+  \begin{scope}[shift={(-0.4,3.6)}, rotate=-30]
+    \filldraw[fill=white] (-0.9,-1.4) -- (-1.6,-2.6) -- (-0.9,-2.1) -- cycle;
+    \filldraw[fill=white] (0.9,-1.4) -- (1.6,-2.6) -- (0.9,-2.1) -- cycle;
+    \filldraw[fill=white] (-0.6,-2.2) -- (0,-3.4) -- (0.6,-2.2) -- cycle;
+    \filldraw[fill=white] (-0.9,-2.2) -- (-0.9,1.2) .. controls (-0.9,2.4) and (0,3.2) .. (0,3.2) .. controls (0,3.2) and (0.9,2.4) .. (0.9,1.2) -- (0.9,-2.2) -- cycle;
+    \filldraw[fill=white] (0,0.8) circle (0.45);
+  \end{scope}
+  % la luna y las estrellas
+  \filldraw[fill=white] (2.4,8.2) arc[start angle=110, end angle=-110, radius=0.9]
+    .. controls (3.0,7.0) and (3.0,8.0) .. (2.4,8.2) -- cycle;
+  \foreach \x/\y/\s in {-2.8/8.0/0.35, -2.4/5.8/0.3, 2.6/4.2/0.35, 1.2/7.4/0.25, -2.9/1.4/0.3} {\begin{scope}[shift={(\x,\y)}, scale=\s] \estrellaFW \end{scope}}
+\end{tikzpicture}

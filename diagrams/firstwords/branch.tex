@@ -1,0 +1,10 @@
+% diagrams/firstwords/branch.tex -- Pip, escondido en una rama alta del
+% castaño, entre las hojas.
+\begin{tikzpicture}[dibujofw]
+  \begin{scope}[scale=1.35] \arbolFW \end{scope}
+  % la rama que sale de la copa, con sus hojas, y Pip encima
+  \filldraw[fill=white] (1.8,8.0) -- (5.8,9.0) -- (5.8,8.6) -- (1.9,7.6) -- cycle;
+  \foreach \x/\a in {3.2/60, 4.4/110, 5.4/70} {\begin{scope}[shift={(\x,{8.2+0.25*(\x-1.8)})}, rotate=\a, scale=0.8] \hojaFW \end{scope}}
+  \begin{scope}[shift={(4.2,9.0)}, scale=0.5] \pipFW \end{scope}
+  \hierbaFW{-4}{6}
+\end{tikzpicture}

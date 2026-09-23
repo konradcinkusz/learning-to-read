@@ -1,0 +1,42 @@
+% diagrams/firstwords/leon.tex -- el viernes del zoo: el león, sentado y
+% de frente, con su gran melena, al sol.
+\begin{tikzpicture}[dibujofw]
+  % el sol
+  \begin{scope}[shift={(5.2,7.2)}]
+    \foreach \a in {0,45,...,315} {\draw (\a:1.1) -- (\a:1.6);}
+    \filldraw[fill=white] (0,0) circle (0.85);
+  \end{scope}
+  % la cola, con su borla
+  \filldraw[fill=white] (1.2,0.6) .. controls (3.4,0.4) and (3.4,2.6) .. (2.8,3.2)
+    .. controls (2.6,3.4) and (2.4,3.2) .. (2.55,3.0) .. controls (3.0,2.3) and (2.8,1.0) .. (1.2,1.1) -- cycle;
+  \filldraw[fill=white] (2.7,3.1) ellipse [x radius=0.25, y radius=0.4, rotate=30];
+  % las patas de atrás, el cuerpo y las de delante
+  \filldraw[fill=white] (-1.3,0.55) ellipse (0.8 and 0.55); \filldraw[fill=white] (1.3,0.55) ellipse (0.8 and 0.55);
+  \filldraw[fill=white] (0,2.0) ellipse (1.5 and 1.9);
+  \foreach \x in {-0.55,0.55} {\filldraw[fill=white, rounded corners=2mm] ({\x-0.35},0.05) rectangle ({\x+0.35},2.2);
+    \draw ({\x-0.12},0.05) -- ({\x-0.12},0.3); \draw ({\x+0.12},0.05) -- ({\x+0.12},0.3);}
+  % la melena, las orejas y la cara
+  \begin{scope}[shift={(0,4.7)}]
+    \filldraw[fill=white] (0,-2)
+      arc[start angle=-148.506, end angle=-3.8, radius=0.502]
+      arc[start angle=-120.815, end angle=23.891, radius=0.502]
+      arc[start angle=-93.121, end angle=51.584, radius=0.502]
+      arc[start angle=-65.43, end angle=79.275, radius=0.502]
+      arc[start angle=-37.737, end angle=106.968, radius=0.502]
+      arc[start angle=-10.045, end angle=134.66, radius=0.502]
+      arc[start angle=17.647, end angle=162.353, radius=0.502]
+      arc[start angle=45.34, end angle=190.045, radius=0.502]
+      arc[start angle=73.032, end angle=217.737, radius=0.502]
+      arc[start angle=100.725, end angle=245.43, radius=0.502]
+      arc[start angle=128.416, end angle=273.121, radius=0.502]
+      arc[start angle=156.109, end angle=300.815, radius=0.502]
+      arc[start angle=-176.2, end angle=-31.494, radius=0.502] -- cycle;
+    \foreach \s in {-1,1} {\filldraw[fill=white] (\s*0.95,1.0) circle (0.35);}
+    \filldraw[fill=white] (0,-0.05) circle (1.3);
+    \fill (-0.45,0.25) circle (0.1); \fill (0.45,0.25) circle (0.1);
+    \filldraw[fill=white] (-0.3,-0.5) circle (0.36); \filldraw[fill=white] (0.3,-0.5) circle (0.36);
+    \filldraw[fill=white] (-0.25,-0.1) -- (0.25,-0.1) -- (0,-0.35) -- cycle;
+    \foreach \x/\y in {-0.4/-0.45, -0.25/-0.6, 0.4/-0.45, 0.25/-0.6} {\fill (\x,\y) circle (0.04);}
+  \end{scope}
+  \hierbaFW{-4}{6}
+\end{tikzpicture}

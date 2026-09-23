@@ -1,0 +1,8 @@
+% diagrams/firstwords/run.tex -- el cuento de Lucía: Toby corre muy
+% deprisa, ¡pero no consigue coger a la ardilla!
+\begin{tikzpicture}[dibujofw]
+  \tobyCorreFW
+  \begin{scope}[shift={(6.2,0.1)}, xscale=-1] \ardillaFW \end{scope}
+  \foreach \y in {1.4,2.2,3.0} {\draw (-4.6,\y) -- (-3.6,\y);}
+  \draw (-4.8,0) -- (8.0,0);
+\end{tikzpicture}

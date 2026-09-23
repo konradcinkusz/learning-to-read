@@ -1,0 +1,22 @@
+% diagrams/firstwords/dani-seis.tex -- ¡Dani cumple seis! Con su gorro y su
+% chapa del 6, junto a la tarta de chocolate: seis velas azules y un
+% dinosaurio verde en medio.
+\begin{tikzpicture}[dibujofw]
+  \begin{scope}[shift={(-4.2,0)}]
+    \ninoFW{Dani}{Arriba}{Abajo}
+    \begin{scope}[shift={(0,6.3)}] \bocaRisaFW \end{scope}
+    \begin{scope}[shift={(0,6.45)}] \gorroFiestaFW \end{scope}
+    \filldraw[fill=white] (0.45,3.75) circle (0.5);
+    \node[transform shape, font=\sffamily\bfseries\fontsize{16}{16}\selectfont] at (0.45,3.75) {6};
+  \end{scope}
+  % la mesa y la tarta, más ancha, con el dinosaurio y las velas
+  \mesaFW{-3.6}{3.6}{2.4}
+  \begin{scope}[shift={(0,2.9)}]
+    \begin{scope}[xscale=1.25] \tartaBaseFW{0} \end{scope}
+    \begin{scope}[shift={(0.17,2.2)}, scale=0.36] \dinoCuelloFW \end{scope}
+    \foreach \x in {-2.55,-2.1,-1.65,1.65,2.1,2.55} {
+      \filldraw[fill=white] ({\x-0.12},2.2) rectangle ({\x+0.12},3.2);
+      \filldraw[fill=white] (\x,3.28) .. controls ({\x-0.22},3.5) and ({\x-0.05},3.75) .. (\x,3.9)
+        .. controls ({\x+0.05},3.75) and ({\x+0.22},3.5) .. (\x,3.28) -- cycle;}
+  \end{scope}
+\end{tikzpicture}

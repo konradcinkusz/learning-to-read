@@ -1,0 +1,23 @@
+% diagrams/firstwords/pink.tex -- la tarjeta para Mum: una flor roja, una
+% blanca y una rosa rosa, en una maceta azul, y "Mum" con un corazón.
+\begin{tikzpicture}[dibujofw]
+  % la tarjeta, abierta y de pie: la hoja de atrás y la de delante
+  \filldraw[fill=white] (3.0,0) -- (4.6,0.6) -- (4.6,8.6) -- (3.0,8.0) -- cycle;
+  \filldraw[fill=white] (-3.0,0) rectangle (3.0,8.0);
+  \node[transform shape, font=\sffamily\bfseries\fontsize{40}{44}\selectfont] at (-0.4,6.95) {Mum};
+  \begin{scope}[shift={(1.75,6.55)}, scale=0.8] \corazonFW \end{scope}
+  % los tallos y las hojas
+  \draw (-0.45,2.1) .. controls (-0.7,3.2) and (-1.3,3.8) .. (-1.4,4.6);
+  \draw (0,2.1) -- (0,5.2);
+  \draw (0.45,2.1) .. controls (0.7,3.2) and (1.3,3.8) .. (1.4,4.6);
+  \begin{scope}[shift={(0.05,3.4)}, rotate=-60, scale=0.6] \hojaFW \end{scope}
+  \begin{scope}[shift={(-0.05,3.0)}, rotate=60, scale=0.6] \hojaFW \end{scope}
+  % la flor roja, la blanca (un tulipán) y la rosa
+  \foreach \a in {0,60,...,300} {\filldraw[fill=white] ([shift={(\a:0.55)}]-1.4,4.75) circle (0.36);}
+  \filldraw[fill=white] (-1.4,4.75) circle (0.33);
+  \begin{scope}[shift={(1.4,4.8)}, scale=1.1] \tulipanFW \end{scope}
+  \begin{scope}[shift={(0,5.45)}, scale=1.2] \rosaFW \end{scope}
+  % la maceta
+  \filldraw[fill=white] (-1.2,0.5) -- (-1.4,2.0) -- (1.4,2.0) -- (1.2,0.5) -- cycle;
+  \filldraw[fill=white] (-1.6,2.0) rectangle (1.6,2.45);
+\end{tikzpicture}

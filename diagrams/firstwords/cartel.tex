@@ -1,0 +1,11 @@
+% diagrams/firstwords/cartel.tex -- el viernes de "Where is Pip?": el
+% cartel que hacen Lucía y Amy -- LOST PARROT, con un dibujo grande de
+% Pip. El texto es de TikZ con transform shape, así que se escala con el
+% dibujo.
+\begin{tikzpicture}[dibujofw]
+  \filldraw[fill=white] (-4.2,0) rectangle (4.2,10.4);
+  \foreach \x in {-3.6,3.6} {\filldraw[fill=white] (\x,9.9) circle (0.2);}
+  \node[transform shape, font=\sffamily\bfseries\fontsize{29}{32}\selectfont] at (0,8.8) {LOST PARROT};
+  \begin{scope}[shift={(0,4.0)}, scale=0.85] \perchaFW{-2.4}{2.4} \pipFW \end{scope}
+  \node[transform shape, font=\sffamily\fontsize{30}{34}\selectfont] at (0,0.8) {Pip};
+\end{tikzpicture}

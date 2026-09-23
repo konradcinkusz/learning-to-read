@@ -1,0 +1,12 @@
+% diagrams/firstwords/found.tex -- Lucía mira hacia arriba y encuentra el
+% último huevo: encima de la valla entre los dos jardines.
+\begin{tikzpicture}[dibujofw]
+  % la valla, con el huevo en lo alto de un poste
+  \begin{scope}[shift={(1.4,0)}] \vallaFW{5} \end{scope}
+  \begin{scope}[shift={(3.2,3.95)}] \huevoFW{0.55} \draw (-0.47,0.55) -- (0.47,0.55); \end{scope}
+  \foreach \a in {30,60,120,150} {\draw ([shift={(\a:0.9)}]3.2,4.5) -- ([shift={(\a:1.3)}]3.2,4.5);}
+  % Lucía, señalándolo
+  \ninaFW{Lucia}{Abajo}{Arriba}
+  \begin{scope}[shift={(0,6.3)}] \bocaOFW \end{scope}
+  \hierbaFW{-2}{6}
+\end{tikzpicture}

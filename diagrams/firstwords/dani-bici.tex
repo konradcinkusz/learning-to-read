@@ -1,0 +1,17 @@
+% diagrams/firstwords/dani-bici.tex -- "These are for you!": el regalo de
+% Dani, una bici azul con un lazo, y Dani, contento, a su lado.
+\begin{tikzpicture}[dibujofw]
+  \biciFW
+  % el lazo, en la barra
+  \filldraw[fill=white] (0.35,2.95) -- (-0.1,2.0) -- (0.2,2.05) -- (0.45,2.8) -- cycle;
+  \filldraw[fill=white] (0.45,2.95) -- (0.95,2.05) -- (0.65,2.0) -- (0.3,2.8) -- cycle;
+  \filldraw[fill=white] (0.4,3.0) .. controls (-0.3,3.9) and (-0.9,3.3) .. (0.4,3.0) -- cycle;
+  \filldraw[fill=white] (0.4,3.0) .. controls (1.1,3.9) and (1.7,3.3) .. (0.4,3.0) -- cycle;
+  \filldraw[fill=white] (0.4,3.0) circle (0.2);
+  % Dani, con la mano en el sillín
+  \begin{scope}[shift={(-4.0,0)}]
+    \ninoFW{Dani}{Arriba}{Lado}
+    \begin{scope}[shift={(0,6.3)}] \bocaRisaFW \end{scope}
+  \end{scope}
+  \draw (-6.0,0) -- (4.2,0);
+\end{tikzpicture}

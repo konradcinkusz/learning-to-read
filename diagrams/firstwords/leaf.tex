@@ -1,0 +1,9 @@
+% diagrams/firstwords/leaf.tex -- las cinco orugas que trae Marta (negras,
+% con una raya amarilla), comiendo en una hoja verde que ya tiene
+% agujeros.
+\begin{tikzpicture}[dibujofw]
+  \begin{scope}[rotate=-60, scale=5.2] \hojaFW \end{scope}
+  \foreach \x/\y/\r in {1.2/1.6/0.25, 3.0/2.3/0.3, 2.2/0.6/0.2} {\filldraw[fill=white] (\x,\y) circle (\r);}
+  \foreach \x/\y/\a in {0.9/1.1/-30, 2.6/2.6/-30, 4.0/1.3/-30, 1.8/-0.2/-30, 3.7/-0.9/-30}
+    {\begin{scope}[shift={(\x,\y)}, rotate=\a, scale=0.42] \orugaFW \end{scope}}
+\end{tikzpicture}

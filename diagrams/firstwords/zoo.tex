@@ -1,0 +1,30 @@
+% diagrams/firstwords/zoo.tex -- ¡al zoo! La puerta, con su cartel, un
+% mono sentado encima y una jirafa que asoma por detrás de la tapia.
+\begin{tikzpicture}[dibujofw]
+  % la jirafa, detrás de la tapia: el cuello con sus manchas y la cabeza
+  \filldraw[fill=white] (6.3,3.0) -- (6.75,7.7) -- (7.55,7.7) -- (7.35,3.0) -- cycle;
+  \foreach \x/\y in {6.85/3.9, 7.05/5.1, 7.1/6.4} {\filldraw[fill=white] (\x,\y) circle (0.28);}
+  \foreach \x in {6.95,7.45} {\draw (\x,8.5) -- ({\x-0.1},9.3); \filldraw[fill=white] ({\x-0.1},9.4) circle (0.17);}
+  \filldraw[fill=white] (6.55,8.5) ellipse [x radius=0.45, y radius=0.2, rotate=20];
+  \filldraw[fill=white] (7.5,8.15) ellipse [x radius=1.05, y radius=0.6, rotate=-25];
+  \fill (7.55,8.45) circle (0.08); \fill (8.25,7.75) circle (0.05);
+  % las tapias
+  \filldraw[fill=white] (-8.4,0) rectangle (-5.0,3.2); \filldraw[fill=white] (5.0,0) rectangle (8.8,3.2);
+  \draw (-8.4,2.7) -- (-5.0,2.7); \draw (5.0,2.7) -- (8.8,2.7);
+  % los pilares, la barra y el cartel
+  \foreach \x in {-4.4,4.4} {
+    \filldraw[fill=white] ({\x-0.6},0) rectangle ({\x+0.6},6.4);
+    \filldraw[fill=white] ({\x-0.8},6.4) rectangle ({\x+0.8},6.8);
+    \filldraw[fill=white] (\x,7.2) circle (0.4);}
+  \filldraw[fill=white] (-3.8,5.5) rectangle (3.8,5.9);
+  \filldraw[fill=white, rounded corners=2mm] (-2.6,5.7) rectangle (2.6,8.1);
+  \node[transform shape, font=\sffamily\bfseries\fontsize{58}{60}\selectfont] at (0,6.95) {zoo};
+  % la verja, cerrada, con sus barrotes
+  \foreach \s in {-1,1} {\begin{scope}[xscale=\s]
+    \filldraw[fill=white] (0.05,0.3) rectangle (3.8,0.6); \filldraw[fill=white] (0.05,4.3) rectangle (3.8,4.6);
+    \foreach \x in {0.35,1.1,1.85,2.6,3.35} {\filldraw[fill=white] (\x,0.3) rectangle ({\x+0.18},4.6);}
+  \end{scope}}
+  % el mono, en lo alto del cartel
+  \begin{scope}[shift={(1.2,8.1)}, scale=0.7] \monoFW \end{scope}
+  \draw (-9.2,0) -- (9.4,0);
+\end{tikzpicture}

@@ -1,0 +1,8 @@
+% diagrams/firstwords/team.tex -- ¡el Sports Day! Lucía y Amy, del equipo
+% amarillo: camiseta con una estrella verde y gorra verde, de la mano.
+\begin{tikzpicture}[dibujofw]
+  \begin{scope}[shift={(-2.42,0)}] \deportistaFW{Lucia}{Arriba}{Lado} \end{scope}
+  \begin{scope}[shift={(2.42,0)}] \deportistaFW{Amy}{Lado}{Arriba} \end{scope}
+  \foreach \x/\y/\s in {-5.2/8.6/0.45, 5.4/8.2/0.4, 0/9.4/0.5} {\begin{scope}[shift={(\x,\y)}, scale=\s] \estrellaFW \end{scope}}
+  \hierbaFW{-5}{4}
+\end{tikzpicture}

@@ -1,0 +1,16 @@
+% diagrams/firstwords/grin.tex -- Lucía le lee una adivinanza a Amy, y Amy
+% se ríe con una sonrisa de oreja a oreja.
+\begin{tikzpicture}[dibujofw]
+  \ninaFW{Lucia}{Frente}{Frente}
+  \filldraw[fill=white] (0,3.25) -- (-1.2,3.55) -- (-1.2,4.6) -- (0,4.3) -- cycle;
+  \filldraw[fill=white] (0,3.25) -- (1.2,3.55) -- (1.2,4.6) -- (0,4.3) -- cycle;
+  \filldraw[fill=white] (-0.95,3.4) circle (0.27); \filldraw[fill=white] (0.95,3.4) circle (0.27);
+  \begin{scope}[shift={(4.6,0)}]
+    \ninaFW{Amy}{Arriba}{Arriba}
+    \begin{scope}[shift={(0,6.3)}]
+      \bocaRisaFW
+      \foreach \x in {-1,1} {\draw ({\x*1.3},0.5) -- ({\x*1.7},0.8); \draw ({\x*1.4},0.1) -- ({\x*1.85},0.1);}
+    \end{scope}
+  \end{scope}
+  \draw (-2.0,0.2) -- (7.0,0.2);
+\end{tikzpicture}

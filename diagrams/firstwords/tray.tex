@@ -1,0 +1,28 @@
+% diagrams/firstwords/tray.tex -- el Día de la Madre: el desayuno sorpresa
+% para Mum, en una bandeja -- dos tostadas con forma de corazón en su
+% plato, el café con su humo y el zumo de naranja, con su rodaja.
+\begin{tikzpicture}[dibujofw]
+  % la bandeja
+  \filldraw[fill=white] (-5.2,0) -- (5.2,0) -- (5.8,0.9) -- (-5.8,0.9) -- cycle;
+  \filldraw[fill=white] (-6.3,0.4) rectangle (-5.5,0.9); \filldraw[fill=white] (5.5,0.4) rectangle (6.3,0.9);
+  % las tostadas, de pie en el plato: la corteza y la miga
+  \foreach \x/\a in {-3.75/8, -1.55/-8} {\begin{scope}[shift={(\x,1.05)}, rotate=\a]
+    \begin{scope}[scale=2.7] \corazonFW \end{scope}
+    \begin{scope}[shift={(0,0.5)}, scale=2.05] \corazonFW \end{scope}
+  \end{scope}}
+  \filldraw[fill=white] (-2.65,1.15) ellipse (2.55 and 0.4);
+  % el café, en su taza con plato, y su humo
+  \begin{scope}[shift={(1.35,0.9)}, scale=1.3, shift={(-1.3,-0.9)}]
+    \filldraw[fill=white] (1.3,1.05) ellipse (1.25 and 0.22);
+    \filldraw[fill=white] (2.2,2.15) circle (0.42); \filldraw[fill=white] (2.2,2.15) circle (0.22);
+    \filldraw[fill=white] (0.4,2.7) -- (0.55,1.45) .. controls (0.7,1.1) and (1.9,1.1) .. (2.05,1.45) -- (2.2,2.7) -- cycle;
+    \filldraw[fill=white] (1.3,2.7) ellipse (0.9 and 0.18);
+    \foreach \x in {0.9,1.4,1.9} {\draw (\x,3.1) .. controls ({\x-0.3},3.5) and ({\x+0.3},3.8) .. (\x,4.2);}
+  \end{scope}
+  % el zumo, con su rodaja de naranja
+  \filldraw[fill=white] (3.35,0.9) -- (3.1,4.6) -- (5.0,4.6) -- (4.75,0.9) -- cycle;
+  \draw (3.14,4.0) -- (4.96,4.0);
+  \filldraw[fill=white] (4.95,4.6) circle (0.7);
+  \draw (4.95,4.6) circle (0.5);
+  \foreach \a in {0,60,...,300} {\draw (4.95,4.6) -- ++(\a:0.5);}
+\end{tikzpicture}

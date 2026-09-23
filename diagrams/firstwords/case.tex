@@ -1,0 +1,15 @@
+% diagrams/firstwords/case.tex -- las orugas, colgadas de la tapa de la
+% caja, cada una dentro de su capullo duro y marrón.
+\begin{tikzpicture}[dibujofw]
+  % la tapa
+  \filldraw[fill=white] (-4.4,6.0) rectangle (4.4,6.8);
+  % los capullos, colgando de su hilo
+  \foreach \x/\l in {-2.8/0.6, -0.9/1.2, 1.0/0.8, 2.9/1.4} {
+    \draw (\x,6.0) -- (\x,{6.0-\l});
+    \filldraw[fill=white] (\x,{6.0-\l}) .. controls ({\x-0.7},{5.6-\l}) and ({\x-0.6},{3.9-\l}) .. (\x,{3.4-\l})
+      .. controls ({\x+0.6},{3.9-\l}) and ({\x+0.7},{5.6-\l}) .. (\x,{6.0-\l}) -- cycle;
+    \foreach \d in {0.6,1.1,1.6} {\draw ({\x-0.42},{6.0-\l-\d}) .. controls (\x,{6.0-\l-\d-0.15}) .. ({\x+0.42},{6.0-\l-\d});}}
+  % la caja, abajo
+  \filldraw[fill=white] (-4.2,0) rectangle (4.2,1.8);
+  \begin{scope}[shift={(-1.0,1.8)}, rotate=-10, scale=0.9] \hojaFW \end{scope}
+\end{tikzpicture}

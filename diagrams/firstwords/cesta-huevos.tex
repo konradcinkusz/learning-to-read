@@ -1,0 +1,17 @@
+% diagrams/firstwords/cesta-huevos.tex -- el viernes de Pascua: una cesta
+% llena de huevos, cada uno pintado de una manera.
+\begin{tikzpicture}[dibujofw]
+  % el asa
+  \draw (-3.4,2.4) .. controls (-3.2,6.8) and (3.2,6.8) .. (3.4,2.4);
+  \draw (-3.0,2.4) .. controls (-2.8,6.3) and (2.8,6.3) .. (3.0,2.4);
+  % los huevos
+  \begin{scope}[shift={(-2.2,1.8)}] \huevoFW{1.0} \foreach \x/\y in {-0.4/0.6, 0.35/0.8, 0/1.4} {\filldraw[fill=white] (\x,\y) circle (0.15);} \end{scope}
+  \begin{scope}[shift={(-0.75,2.1)}] \huevoFW{1.1} \draw (-0.75,0.9) -- (-0.4,1.2) -- (-0.1,0.9) -- (0.2,1.2) -- (0.5,0.9) -- (0.75,1.1); \end{scope}
+  \begin{scope}[shift={(0.75,2.0)}] \huevoFW{1.05} \foreach \y in {0.6,1.1,1.6} {\draw (-0.9,\y) -- (0.9,\y);} \end{scope}
+  \begin{scope}[shift={(2.2,1.8)}] \huevoFW{1.0} \begin{scope}[shift={(0,0.65)}, scale=0.4] \corazonFW \end{scope} \end{scope}
+  \begin{scope}[shift={(0,1.6)}] \huevoFW{0.9} \begin{scope}[shift={(0,0.9)}, scale=0.35] \estrellaFW \end{scope} \end{scope}
+  % la cesta, con su trenzado
+  \filldraw[fill=white] (-3.8,2.6) -- (-3.2,0) -- (3.2,0) -- (3.8,2.6) -- cycle;
+  \foreach \y in {0.9,1.75} {\draw ({-3.8+0.6*(2.6-\y)/2.6},\y) -- ({3.8-0.6*(2.6-\y)/2.6},\y);}
+  \foreach \x in {-2.4,-1.2,0,1.2,2.4} {\draw (\x,0) -- ({\x*1.15},2.6);}
+\end{tikzpicture}

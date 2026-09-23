@@ -1,0 +1,14 @@
+% diagrams/firstwords/primavera.tex -- el viernes que cierra la primavera:
+% Lucía, Amy, Dani y Sam en el jardín, con Toby, Pip volando, las flores
+% y las mariposas, diciendo hola al verano.
+\begin{tikzpicture}[dibujofw]
+  \begin{scope}[shift={(-2.6,0)}] \ninaFW{Lucia}{Abajo}{Arriba} \end{scope}
+  \begin{scope}[shift={(1.4,0)}] \ninaFW{Amy}{Arriba}{Abajo} \end{scope}
+  \begin{scope}[shift={(4.8,0)}, scale=0.85] \ninoFW{Dani}{Abajo}{Arriba} \end{scope}
+  \begin{scope}[shift={(7.9,0)}, scale=0.85] \ninoFW{Sam}{Arriba}{Abajo} \end{scope}
+  \begin{scope}[shift={(-5.9,0.2)}, scale=0.75] \tobySentadoFW \end{scope}
+  \begin{scope}[shift={(-6.2,7.6)}, scale=0.6] \pipVuelaFW \end{scope}
+  \foreach \x/\y/\a in {-0.6/9.2/-10, 3.2/9.4/10, 10.6/7.6/-5} {\begin{scope}[shift={(\x,\y)}, rotate=\a, scale=0.45] \mariposaFW \end{scope}}
+  \foreach \x/\h in {-9.2/1.5, -8.2/1.1, 10.0/1.6, 11.2/1.1} {\begin{scope}[shift={(\x,0)}] \margaritaFW{\h} \end{scope}}
+  \draw (-9.8,0.2) -- (12.0,0.2);
+\end{tikzpicture}

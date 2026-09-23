@@ -1,0 +1,10 @@
+% diagrams/firstwords/clap.tex -- Mr Brown aplaude: Sam ya va solo en su
+% bici. Las manos, juntas delante, con las rayas del aplauso.
+\begin{tikzpicture}[dibujofw]
+  \hombreFW{MrBrown}{Nada}{Nada}
+  \filldraw[fill=white, rounded corners=2mm] (-1.05,5.5) -- (-1.6,4.0) -- (-0.1,4.3) -- (-0.1,4.7) -- (-1.1,4.5) -- (-0.8,5.3) -- cycle;
+  \filldraw[fill=white, rounded corners=2mm] (1.05,5.5) -- (1.6,4.0) -- (0.1,4.3) -- (0.1,4.7) -- (1.1,4.5) -- (0.8,5.3) -- cycle;
+  \filldraw[fill=white, rounded corners=2mm] (-0.35,4.2) -- (0,5.5) -- (0.35,4.2) -- cycle;
+  \foreach \a in {120,150,30,60} {\draw ([shift={(\a:0.9)}]0,5.0) -- ([shift={(\a:1.4)}]0,5.0);}
+  \draw (-2.4,0.2) -- (2.4,0.2);
+\end{tikzpicture}

@@ -1,0 +1,10 @@
+% diagrams/firstwords/spoon.tex -- la carrera del huevo y la cuchara: Lucía,
+% muy despacio, con el huevo en la cuchara.
+\begin{tikzpicture}[dibujofw]
+  \deportistaFW{Lucia}{Abajo}{Lado}
+  \filldraw[fill=white, rounded corners=0.5mm] (2.4,3.93) -- (3.75,4.05) -- (3.75,4.2) -- (2.4,4.1) -- cycle;
+  \filldraw[fill=white] (4.3,4.15) ellipse (0.62 and 0.26);
+  \begin{scope}[shift={(4.3,4.2)}] \huevoFW{0.42} \end{scope}
+  \filldraw[fill=white] (2.42,4.02) circle (0.27);
+  \hierbaFW{-2}{5}
+\end{tikzpicture}

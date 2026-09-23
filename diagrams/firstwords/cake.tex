@@ -1,0 +1,7 @@
+% diagrams/firstwords/cake.tex -- la tarta de cumpleaños de Amy: verde,
+% como Pip, en su plato, pero sin velas -- para "completa": se colorea y
+% se le dibujan las ocho velas.
+\begin{tikzpicture}[dibujofw]
+  \tartaBaseFW{0}
+  \foreach \x in {-1.3,0,1.3} {\filldraw[fill=white] (\x,2.2) circle (0.25);}
+\end{tikzpicture}

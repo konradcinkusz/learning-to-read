@@ -1,0 +1,16 @@
+% diagrams/firstwords/scarf.tex -- una bufanda de rayas, con su nudo, las
+% dos puntas colgando y los flecos.
+\begin{tikzpicture}[dibujofw]
+  % la vuelta al cuello
+  \filldraw[fill=white, even odd rule] (0,3.5) ellipse (2.0 and 0.9) (0,3.6) ellipse (1.35 and 0.45);
+  \foreach \a in {200,240,300,340} {\draw ($(0,3.5)+(\a:2.0 and 0.9)$) -- ($(0,3.6)+(\a:1.35 and 0.45)$);}
+  % las dos puntas, con sus rayas y sus flecos
+  \filldraw[fill=white] (-0.75,2.75) -- (-1.55,0.3) -- (-0.45,0.05) -- (0.1,2.65) -- cycle;
+  \foreach \t in {0.3,0.55} {\draw ($(-0.75,2.75)!\t!(-1.55,0.3)$) -- ($(0.1,2.65)!\t!(-0.45,0.05)$);}
+  \foreach \t in {0.1,0.3,...,0.9} {\draw ($(-1.55,0.3)!\t!(-0.45,0.05)$) -- ++(-0.05,-0.4);}
+  \filldraw[fill=white] (-0.1,2.65) -- (0.55,0.0) -- (1.65,0.25) -- (0.7,2.7) -- cycle;
+  \foreach \t in {0.3,0.55} {\draw ($(-0.1,2.65)!\t!(0.55,0.0)$) -- ($(0.7,2.7)!\t!(1.65,0.25)$);}
+  \foreach \t in {0.1,0.3,...,0.9} {\draw ($(0.55,0.0)!\t!(1.65,0.25)$) -- ++(0.05,-0.4);}
+  % el nudo
+  \filldraw[fill=white, rounded corners=1.5mm] (-0.75,2.45) rectangle (0.55,3.05);
+\end{tikzpicture}

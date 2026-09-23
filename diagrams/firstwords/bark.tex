@@ -1,0 +1,9 @@
+% diagrams/firstwords/bark.tex -- en el parque, Toby ve una ardilla roja,
+% que sube corriendo por el árbol más alto; Toby ladra abajo.
+\begin{tikzpicture}[dibujofw]
+  \begin{scope}[shift={(2.6,0)}, scale=1.3] \arbolFW \end{scope}
+  \begin{scope}[shift={(2.35,5.2)}, rotate=75] \ardillaFW \end{scope}
+  \begin{scope}[shift={(-4.4,0)}] \tobyFW \end{scope}
+  \foreach \r in {0.6,1.0,1.4} {\draw ([shift={(40:\r)}]-0.4,3.4) arc[start angle=40, end angle=-10, radius=\r];}
+  \hierbaFW{-8}{6}
+\end{tikzpicture}

@@ -1,0 +1,8 @@
+% diagrams/firstwords/mariposas.tex -- las cinco mariposas, recién salidas,
+% secando sus alas naranjas: tres en la rama y dos volando.
+\begin{tikzpicture}[dibujofw]
+  \draw (-5.0,0.3) .. controls (-2.0,-0.1) and (2.0,0.6) .. (5.0,0.2);
+  \draw (1.2,0.35) -- (1.9,-0.3);
+  \foreach \x/\y/\a in {-3.2/1.05/-6, 0/1.15/4, 3.2/1.1/-4, -1.6/3.5/-14, 1.6/3.6/12} {
+    \begin{scope}[shift={(\x,\y)}, rotate=\a, scale=0.75] \mariposaFW \end{scope}}
+\end{tikzpicture}

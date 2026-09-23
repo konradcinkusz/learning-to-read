@@ -1,0 +1,21 @@
+% diagrams/firstwords/game.tex -- los niños, sentados en el suelo en
+% corro, juegan a pasarse el paquete (pass the parcel) hasta que para la
+% música.
+\begin{tikzpicture}[dibujofw]
+  \foreach \x/\quien in {-4.2/Lucia, 0/Amy, 4.2/Sam} {
+    \begin{scope}[shift={(\x,0)}]
+      % las piernas cruzadas
+      \filldraw[fill=white, rounded corners=3mm] (-1.5,0) rectangle (1.5,0.9);
+      \draw (-0.2,0.9) -- (0.2,0);
+      \filldraw[fill=white] (-0.2,4.2) rectangle (0.2,5.2);
+      \filldraw[fill=white, rounded corners=2.5mm] (-0.95,4.4) -- (0.95,4.4) -- (1.2,0.8) -- (-1.2,0.8) -- cycle;
+      \begin{scope}[shift={(0,6.0)}] \csname cabeza\quien\endcsname \end{scope}
+    \end{scope}}
+  % los brazos, pasándose el paquete
+  \filldraw[fill=white, rounded corners=2mm] (-3.5,4.1) -- (-2.2,2.8) -- (-2.4,2.5) -- (-3.6,3.6) -- cycle;
+  \filldraw[fill=white, rounded corners=2mm] (-0.7,4.1) -- (-1.8,2.8) -- (-1.6,2.5) -- (-0.6,3.6) -- cycle;
+  \filldraw[fill=white] (-2.7,2.2) rectangle (-1.3,3.2);
+  \draw (-2.0,2.2) -- (-2.0,3.2); \draw (-2.7,2.7) -- (-1.3,2.7);
+  \foreach \x/\y in {-2.2/7.6, 2.4/7.9} {\begin{scope}[shift={(\x,\y)}] \notaFW \end{scope}}
+  \draw (-6.0,0) -- (6.0,0);
+\end{tikzpicture}
