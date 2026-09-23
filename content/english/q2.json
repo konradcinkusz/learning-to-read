@@ -1,0 +1,1262 @@
+{
+  "_comentario": "'Read and Draw', el cuaderno en inglés. Datos de origen para tools/gen_days.py --libro english. Este fichero SI se edita a mano; content/english/generated-days.tex NO (se regenera con `make generate`). Parte 2 (invierno): días 66-130, semanas 14-26, en presente (con presente continuo, like + -ing y comparativos). Hilo: dos Navidades, la nieve, Carnaval y Pancake Day, y la primavera que llega -- ver notes/05-english.md.",
+  "dias": [
+    {
+      "dia": 66, "semana": 14, "trimestre": 2,
+      "tema": "The holidays begin",
+      "texto": [
+        "In the living room, the nativity scene is on the top shelf.",
+        "On the right, there is a stable with a star on top. On the left, three Kings stand next to a palm tree.",
+        "Every night they move closer, but nobody knows who moves them!"
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Draw the nativity scene on the shelf.",
+        "comprueba": [
+          "What is on the right? What is on top of it?",
+          "Where are the Kings?",
+          "What is next to the Kings?"
+        ],
+        "clave": "On the right, a stable with a star on top; on the left, three Kings standing next to a palm tree."
+      }
+    },
+    {
+      "dia": 67, "semana": 14, "trimestre": 2,
+      "tema": "The holidays begin",
+      "texto": [
+        "Next door, the Browns are decorating their house for Christmas.",
+        "Amy is hanging a big red stocking on her bedroom door.",
+        "On Christmas Eve, Father Christmas puts presents in it, if you are good! Sam is sure that he is very good."
+      ],
+      "actividad": {
+        "tipo": "rodea",
+        "preguntas": [
+          {
+            "pregunta": "What are the Browns doing?",
+            "opciones": ["cooking", "decorating their house", "sleeping"],
+            "solucion": "decorating their house"
+          },
+          {
+            "pregunta": "Where is Amy's stocking?",
+            "opciones": ["on the tree", "on her bedroom door", "under the bed"],
+            "solucion": "on her bedroom door"
+          },
+          {
+            "pregunta": "Who puts presents in the stocking?",
+            "opciones": ["the Three Kings", "Father Christmas", "Pip"],
+            "solucion": "Father Christmas"
+          }
+        ]
+      }
+    },
+    {
+      "dia": 68, "semana": 14, "trimestre": 2,
+      "tema": "The holidays begin",
+      "texto": [
+        "Lucía and Amy talk about Christmas in their two countries.",
+        "In England, children open their presents on Christmas Day.",
+        "In Spain, many children wait for the Three Kings, who come in January. Amy thinks that Spanish children are very patient!"
+      ],
+      "actividad": {
+        "tipo": "relaciona",
+        "instruccion": "What goes with each one? Read and match.",
+        "pares": [
+          ["England", "Father Christmas"],
+          ["Spain", "the Three Kings"],
+          ["Amy's door", "a red stocking"],
+          ["the top shelf", "the nativity scene"]
+        ]
+      }
+    },
+    {
+      "dia": 69, "semana": 14, "trimestre": 2,
+      "tema": "The holidays begin",
+      "texto": [
+        "On Thursday, Pip learns something new.",
+        "Every time somebody comes in, he shouts “Merry Christmas!” The postman laughs so much that he drops his letters!",
+        "Amy says that Pip is the best Christmas decoration in the house."
+      ],
+      "actividad": {
+        "tipo": "huecos",
+        "frases": [
+          "In the living room, the nativity scene is on the top ___.",
+          "Amy is hanging a big red ___ on her bedroom door.",
+          "The postman laughs so much that he drops his ___!",
+          "Amy says that Pip is the best Christmas ___ in the house."
+        ],
+        "soluciones": ["shelf", "stocking", "letters", "decoration"]
+      }
+    },
+    {
+      "dia": 70, "semana": 14, "trimestre": 2,
+      "tema": "The holidays begin",
+      "texto": [
+        "On Friday, the two families make paper snowflakes together.",
+        "Lucía's snowflake has got six points, like a real one. Dani cuts his into tiny pieces, which fall like snow!",
+        "They hang all the snowflakes in the windows."
+      ],
+      "actividad": {
+        "tipo": "repasa",
+        "checklist": [
+          "I know where the Kings are in the nativity scene.",
+          "I know what Amy hangs on her door.",
+          "I know what Pip shouts now."
+        ],
+        "prompt": "Now draw a snowflake with six points.",
+        "banner": "70 pages read! Well done!"
+      }
+    },
+    {
+      "dia": 71, "semana": 15, "trimestre": 2,
+      "tema": "Two Christmases",
+      "texto": [
+        "On Christmas Eve, Lucía's family has dinner at Grandma Rosa's flat.",
+        "On the table, there are two red candles and a big fish. For dessert, there are sweets made of almonds and honey.",
+        "Dani eats so many that he falls asleep on the sofa!"
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Draw the table at Grandma Rosa's flat on Christmas Eve.",
+        "comprueba": [
+          "How many candles are there, and what colour are they?",
+          "What is there for dinner?",
+          "What is there for dessert?"
+        ],
+        "clave": "Two red candles and a big fish on the table; sweets made of almonds and honey for dessert."
+      }
+    },
+    {
+      "dia": 72, "semana": 15, "trimestre": 2,
+      "tema": "Two Christmases",
+      "texto": [
+        "On Christmas morning, Amy and Sam wake up very early. Their stockings are full of presents!",
+        "Amy gets a box of paints, which she loves. Sam gets a dinosaur that roars.",
+        "Pip gets a new swing for his cage."
+      ],
+      "actividad": {
+        "tipo": "si_no",
+        "afirmaciones": [
+          "Amy and Sam wake up very late.",
+          "Their stockings are full of presents.",
+          "Amy gets a box of paints.",
+          "Pip gets a new bell."
+        ],
+        "respuestas": ["no", "yes", "yes", "no"]
+      }
+    },
+    {
+      "dia": 73, "semana": 15, "trimestre": 2,
+      "tema": "Two Christmases",
+      "texto": [
+        "At lunchtime, Lucía's family goes next door for Christmas lunch.",
+        "In the Browns' living room, the tree is next to the sofa. Pip's cage is on the little table, so Pip can see everyone.",
+        "Toby lies under the table, where it is warm."
+      ],
+      "actividad": {
+        "tipo": "donde",
+        "prompt": "Where are they? Read the text and draw them in the Browns' living room.",
+        "escena": "salon",
+        "cosas": ["the Christmas tree", "Pip's cage", "Toby"],
+        "clave": "The Christmas tree next to the sofa; Pip's cage on the little table; Toby under the table."
+      }
+    },
+    {
+      "dia": 74, "semana": 15, "trimestre": 2,
+      "tema": "Two Christmases",
+      "texto": [
+        "Before lunch, everyone pulls a Christmas cracker. When you pull it, it goes “Bang!”",
+        "Inside, there is a paper crown, a joke and a little toy.",
+        "Toby runs away, because he doesn't like the bang!"
+      ],
+      "actividad": {
+        "tipo": "mitades",
+        "mitades": [
+          ["When you pull it,", "it goes “Bang!”"],
+          ["Toby runs away,", "because he doesn't like the bang!"],
+          ["Toby lies under the table,", "where it is warm."],
+          ["Dani eats so many", "that he falls asleep on the sofa!"]
+        ]
+      }
+    },
+    {
+      "dia": 75, "semana": 15, "trimestre": 2,
+      "tema": "Two Christmases",
+      "texto": [
+        "After lunch, Mr Brown brings a Christmas pudding. It is dark brown, with a little green leaf on top.",
+        "Everyone is wearing a paper crown from the crackers.",
+        "Lucía says that it is the best Christmas ever!"
+      ],
+      "actividad": {
+        "tipo": "vinetas",
+        "instruccion": "Draw the story of this week: the beginning, the middle and the end.",
+        "pies": [
+          "Lucía's family has dinner at Grandma's flat.",
+          "Amy and Sam open their stockings.",
+          "Everyone pulls a Christmas cracker."
+        ]
+      }
+    },
+    {
+      "dia": 76, "semana": 16, "trimestre": 2,
+      "tema": "New Year",
+      "texto": [
+        "In Spain, people eat twelve grapes on New Year's Eve.",
+        "Mum puts four bowls of grapes on a round tray. Dad's bowl is red, and Mum's is blue. Lucía's is green, and Dani's is yellow.",
+        "Each bowl has got twelve purple grapes, because there are twelve months."
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Draw the tray with the four bowls of grapes.",
+        "comprueba": [
+          "What shape is the tray?",
+          "What colour is each bowl?",
+          "How many grapes are in each bowl, and what colour are they?"
+        ],
+        "clave": "A round tray with four bowls: Dad's red, Mum's blue, Lucía's green and Dani's yellow; twelve purple grapes in each."
+      }
+    },
+    {
+      "dia": 77, "semana": 16, "trimestre": 2,
+      "tema": "New Year",
+      "texto": [
+        "You eat one grape every time the clock goes “Dong!” There are twelve “Dongs”, so you have to eat very fast!",
+        "Next door, Amy is practising with raisins, because they are smaller.",
+        "Toby can't have any grapes, because they are bad for dogs."
+      ],
+      "actividad": {
+        "tipo": "si_no",
+        "afirmaciones": [
+          "You eat one grape every time the clock goes “Dong!”",
+          "There are ten “Dongs”.",
+          "Amy is practising with raisins.",
+          "Grapes are good for dogs."
+        ],
+        "respuestas": ["yes", "no", "yes", "no"]
+      }
+    },
+    {
+      "dia": 78, "semana": 16, "trimestre": 2,
+      "tema": "New Year",
+      "texto": [
+        "At midnight, everyone is watching the big clock on television.",
+        "Dong! Dong! Dong! Lucía eats all her grapes. Next door, Amy eats only five, because she is laughing too much.",
+        "Then there are fireworks, and Toby hides under the bed."
+      ],
+      "actividad": {
+        "tipo": "ordena",
+        "sucesos": [
+          "Mum puts four bowls of grapes on a tray.",
+          "Amy practises with raisins.",
+          "The clock goes “Dong!” twelve times.",
+          "Toby hides under the bed."
+        ]
+      }
+    },
+    {
+      "dia": 79, "semana": 16, "trimestre": 2,
+      "tema": "New Year",
+      "texto": [
+        "On New Year's Day, Lucía and Amy write their wishes.",
+        "Lucía wants to read a whole book in English. Amy wants to learn to ride a horse, because she loves animals.",
+        "Dani wants Toby to talk, like Pip!"
+      ],
+      "actividad": {
+        "tipo": "busca",
+        "instruccion": "What does Lucía want to read? What does Amy want to ride? Find the two words in the text and write them.",
+        "soluciones": ["book", "horse"]
+      }
+    },
+    {
+      "dia": 80, "semana": 16, "trimestre": 2,
+      "tema": "New Year",
+      "texto": [
+        "The next day, the sun is shining, but it is very cold.",
+        "The children go to the park in their new hats and gloves.",
+        "Sam is wearing a dinosaur hat that he got for Christmas. It has got green spikes on top!"
+      ],
+      "actividad": {
+        "tipo": "repasa",
+        "checklist": [
+          "I know how many grapes you eat on New Year's Eve.",
+          "I know why Toby can't have grapes.",
+          "I know what Lucía wants to read this year."
+        ],
+        "prompt": "Now draw your wish for the new year.",
+        "banner": "80 pages read! Happy New Year!"
+      }
+    },
+    {
+      "dia": 81, "semana": 17, "trimestre": 2,
+      "tema": "The Three Kings",
+      "texto": [
+        "Lucía helps Dani to write his letter to the Three Kings.",
+        "Dani wants a torch, so that he can read in bed. He also asks for a red ball for Toby, whose ball is old.",
+        "At the bottom, he draws three crowns and a big star."
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Draw Dani's letter to the Three Kings, with his drawings.",
+        "comprueba": [
+          "What does Dani want for himself?",
+          "What does he want for Toby, and what colour is it?",
+          "What does he draw at the bottom?"
+        ],
+        "clave": "A torch for Dani and a red ball for Toby; at the bottom, three crowns and a big star."
+      }
+    },
+    {
+      "dia": 82, "semana": 17, "trimestre": 2,
+      "tema": "The Three Kings",
+      "texto": [
+        "On the fifth of January, there is a big parade in the city.",
+        "The Kings are riding camels and throwing sweets, which fall like rain! Sam is on Mr Brown's shoulders, so he can see everything.",
+        "Amy catches ten sweets in her hat!"
+      ],
+      "actividad": {
+        "tipo": "rodea",
+        "preguntas": [
+          {
+            "pregunta": "When is the parade?",
+            "opciones": ["on Christmas Day", "on the fifth of January", "on Sunday"],
+            "solucion": "on the fifth of January"
+          },
+          {
+            "pregunta": "What are the Kings throwing?",
+            "opciones": ["flowers", "sweets", "balls"],
+            "solucion": "sweets"
+          },
+          {
+            "pregunta": "Where does Amy catch the sweets?",
+            "opciones": ["in her bag", "in her hat", "in her hands"],
+            "solucion": "in her hat"
+          }
+        ]
+      }
+    },
+    {
+      "dia": 83, "semana": 17, "trimestre": 2,
+      "tema": "The Three Kings",
+      "texto": [
+        "Mr Brown buys a King cake, which is round like a ring.",
+        "It is golden brown, and on top there are orange and green fruits. There is a red cherry, and a gold paper crown in the middle.",
+        "Amy has never seen a cake like this!"
+      ],
+      "actividad": {
+        "tipo": "colorea",
+        "prompt": "Colour the King cake. Read the text to find the colours.",
+        "dibujo": "rosco",
+        "clave": "A golden brown cake with orange and green fruits, a red cherry and a gold paper crown in the middle."
+      }
+    },
+    {
+      "dia": 84, "semana": 17, "trimestre": 2,
+      "tema": "The Three Kings",
+      "texto": [
+        "Inside the King cake, there is a little king and a bean.",
+        "The person who finds the little king wears the crown. Amy finds the king, and Sam finds the bean!",
+        "Now Sam must buy the cake next year, but he is only five!"
+      ],
+      "actividad": {
+        "tipo": "huecos",
+        "frases": [
+          "Inside the King cake, there is a little king and a ___.",
+          "The person who finds the little king wears the ___.",
+          "It is golden brown, and on top there are orange and green ___.",
+          "He also asks for a red ball for Toby, whose ball is ___."
+        ],
+        "soluciones": ["bean", "crown", "fruits", "old"]
+      }
+    },
+    {
+      "dia": 85, "semana": 17, "trimestre": 2,
+      "tema": "The Three Kings",
+      "texto": [
+        "In the afternoon, Dani plays with his new torch all the time.",
+        "He shines it under the sofa, where Toby hides his new ball.",
+        "Sam wants a torch too, so they play together until dinner. The two little boys are very happy."
+      ],
+      "actividad": {
+        "tipo": "vinetas",
+        "instruccion": "Draw the story of this week: the beginning, the middle and the end.",
+        "pies": [
+          "Dani writes a letter to the Three Kings.",
+          "The Kings throw sweets at the parade.",
+          "Amy finds the little king in the King cake."
+        ]
+      }
+    },
+    {
+      "dia": 86, "semana": 18, "trimestre": 2,
+      "tema": "Snow!",
+      "texto": [
+        "The school playground is white with snow!",
+        "In the middle is a snowman that is as tall as a grown-up. It has got two black stones for eyes and a carrot nose.",
+        "Its scarf is green and white, and a broom stands on its left."
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Draw the snowman in the school playground.",
+        "comprueba": [
+          "How tall is the snowman?",
+          "What are its eyes and its nose?",
+          "What colours is its scarf?",
+          "What is on its left?"
+        ],
+        "clave": "A snowman as tall as a grown-up, with two black stones for eyes, a carrot nose, a green and white scarf and a broom on its left."
+      }
+    },
+    {
+      "dia": 87, "semana": 18, "trimestre": 2,
+      "tema": "Snow!",
+      "texto": [
+        "Amy is very excited, because it doesn't often snow here. In London, it snows a little every winter.",
+        "At break time, the children throw snowballs and slide on the ice.",
+        "Lucía's hands are so cold that she puts them in her pockets."
+      ],
+      "actividad": {
+        "tipo": "rodea",
+        "preguntas": [
+          {
+            "pregunta": "Why is Amy excited?",
+            "opciones": [
+              "because it is her birthday",
+              "because it doesn't often snow here",
+              "because she is tired"
+            ],
+            "solucion": "because it doesn't often snow here"
+          },
+          {
+            "pregunta": "What do the children throw at break time?",
+            "opciones": ["balls", "snowballs", "sweets"],
+            "solucion": "snowballs"
+          },
+          {
+            "pregunta": "Where does Lucía put her cold hands?",
+            "opciones": ["in her pockets", "in her bag", "in the snow"],
+            "solucion": "in her pockets"
+          }
+        ]
+      }
+    },
+    {
+      "dia": 88, "semana": 18, "trimestre": 2,
+      "tema": "Snow!",
+      "texto": [
+        "After school, Lucía and Amy make a snowman in the garden.",
+        "It has got Dad's old black hat and Mum's red scarf. Its nose is an orange carrot, and it has got three blue buttons.",
+        "Pip watches from the window, because it is too cold outside."
+      ],
+      "actividad": {
+        "tipo": "colorea",
+        "prompt": "Colour Lucía and Amy's snowman. Read the text to find the colours.",
+        "dibujo": "muneco-nieve",
+        "clave": "A black hat, a red scarf, an orange carrot nose and three blue buttons."
+      }
+    },
+    {
+      "dia": 89, "semana": 18, "trimestre": 2,
+      "tema": "Snow!",
+      "texto": [
+        "Toby loves the snow! He jumps in it and tries to catch the snowflakes with his mouth.",
+        "When he comes inside, he is white and wet.",
+        "Pip looks at him and says “Brrr!”, which makes everyone laugh."
+      ],
+      "actividad": {
+        "tipo": "mitades",
+        "mitades": [
+          ["When he comes inside,", "he is white and wet."],
+          ["Pip looks at him and says “Brrr!”,", "which makes everyone laugh."],
+          ["Pip watches from the window,", "because it is too cold outside."],
+          ["In the middle is a snowman", "that is as tall as a grown-up."]
+        ]
+      }
+    },
+    {
+      "dia": 90, "semana": 18, "trimestre": 2,
+      "tema": "Snow!",
+      "texto": [
+        "By Friday, the snow is melting.",
+        "The snowman in the garden is getting smaller and smaller. Soon, only the hat, the scarf and the carrot are left.",
+        "Lucía is sad, but Amy says that it can snow again."
+      ],
+      "actividad": {
+        "tipo": "repasa",
+        "checklist": [
+          "I know what is on the left of the snowman at school.",
+          "I know why Amy is excited.",
+          "I know what Pip says to Toby."
+        ],
+        "prompt": "Now draw a snowman of your own.",
+        "banner": "90 pages read! Super!"
+      }
+    },
+    {
+      "dia": 91, "semana": 19, "trimestre": 2,
+      "tema": "Dani is ill",
+      "texto": [
+        "Dani has got a cold, so he stays at home today.",
+        "He is in bed with a hot water bottle and his toy dinosaur. Next to his bed, there is a glass of orange juice.",
+        "Toby is sleeping on the rug, because he doesn't want to leave Dani."
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Draw Dani in bed.",
+        "comprueba": [
+          "What has Dani got in his bed?",
+          "What is next to his bed?",
+          "Where is Toby?"
+        ],
+        "clave": "Dani in bed with a hot water bottle and his toy dinosaur; a glass of orange juice next to the bed; Toby sleeping on the rug."
+      }
+    },
+    {
+      "dia": 92, "semana": 19, "trimestre": 2,
+      "tema": "Dani is ill",
+      "texto": [
+        "Mum takes Dani's temperature, and it is a bit high.",
+        "She gives him some medicine that tastes of strawberries. Dani has to drink a lot of water and sleep a lot.",
+        "“Can I watch cartoons?” he asks, and Mum says yes."
+      ],
+      "actividad": {
+        "tipo": "si_no",
+        "afirmaciones": [
+          "Dani's temperature is a bit high.",
+          "The medicine tastes of bananas.",
+          "Dani has to drink a lot of water.",
+          "Mum says that Dani can't watch cartoons."
+        ],
+        "respuestas": ["yes", "no", "yes", "no"]
+      }
+    },
+    {
+      "dia": 93, "semana": 19, "trimestre": 2,
+      "tema": "Dani is ill",
+      "texto": [
+        "Sam can't come in, because Dani is ill. So he makes Dani a card, and Amy brings it.",
+        "Mum puts the card on the desk, where Dani can see it.",
+        "The dinosaur is on the bed, and his slippers are under the chair."
+      ],
+      "actividad": {
+        "tipo": "donde",
+        "prompt": "Where are they? Read the text and draw them in Dani's bedroom.",
+        "escena": "habitacion",
+        "cosas": ["the card", "the toy dinosaur", "the slippers"],
+        "clave": "The card on the desk; the toy dinosaur on the bed; the slippers under the chair."
+      }
+    },
+    {
+      "dia": 94, "semana": 19, "trimestre": 2,
+      "tema": "Dani is ill",
+      "texto": [
+        "The card has got a riddle on it, because Sam loves riddles.",
+        "It is about an animal that Dani loves. Dani reads it three times, and then he shouts the answer!",
+        "Next door, Sam hears him and claps."
+      ],
+      "actividad": {
+        "tipo": "adivina",
+        "adivinanza": "I have got a long neck and a long tail.\nI eat leaves from the tallest trees.\nI am very big, and very, very old.\nWhat am I?",
+        "respuesta": "A dinosaur with a long neck, like a diplodocus."
+      }
+    },
+    {
+      "dia": 95, "semana": 19, "trimestre": 2,
+      "tema": "Dani is ill",
+      "texto": [
+        "On Friday, Dani is well again, and he goes back to school. His friends give him a big hug.",
+        "At home, he makes a card for Sam, which says “Thank you!”",
+        "Mum is happy, because Dani is eating a lot again."
+      ],
+      "actividad": {
+        "tipo": "vinetas",
+        "instruccion": "Draw the story of this week: the beginning, the middle and the end.",
+        "pies": [
+          "Dani has got a cold and stays in bed.",
+          "Sam makes a card with a riddle for Dani.",
+          "Dani is well again and goes back to school."
+        ]
+      }
+    },
+    {
+      "dia": 96, "semana": 20, "trimestre": 2,
+      "tema": "Friends again",
+      "texto": [
+        "On the thirtieth of January, it is Peace Day at school.",
+        "Marta's class paints a big white dove, which means peace. In its beak, there is a green leaf, and its wings are open.",
+        "Around it, the children paint their hands in the colours that they like."
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Draw the Peace Day dove on the wall.",
+        "comprueba": [
+          "What colour is the dove?",
+          "What is in its beak?",
+          "What is around the dove?"
+        ],
+        "clave": "A big white dove with its wings open and a green leaf in its beak; the children's hands in many colours around it."
+      }
+    },
+    {
+      "dia": 97, "semana": 20, "trimestre": 2,
+      "tema": "Friends again",
+      "texto": [
+        "At break time, Lucía and Amy want to play different games.",
+        "Lucía wants to play tag, but Amy wants to play with the skipping rope. They both get angry, because nobody wants to change.",
+        "When the bell rings, they walk back to class alone."
+      ],
+      "actividad": {
+        "tipo": "rodea",
+        "preguntas": [
+          {
+            "pregunta": "What does Lucía want to play?",
+            "opciones": ["tag", "football", "cards"],
+            "solucion": "tag"
+          },
+          {
+            "pregunta": "What does Amy want to play with?",
+            "opciones": ["a ball", "the skipping rope", "a kite"],
+            "solucion": "the skipping rope"
+          },
+          {
+            "pregunta": "Why do they get angry?",
+            "opciones": [
+              "because it is raining",
+              "because nobody wants to change",
+              "because they are hungry"
+            ],
+            "solucion": "because nobody wants to change"
+          }
+        ]
+      }
+    },
+    {
+      "dia": 98, "semana": 20, "trimestre": 2,
+      "tema": "Friends again",
+      "texto": [
+        "That evening, Lucía can't eat her dinner, because she feels bad.",
+        "Mum says that friends don't always want the same things. “You can take turns,” she says.",
+        "Lucía thinks about it while she is brushing her teeth."
+      ],
+      "actividad": {
+        "tipo": "mitades",
+        "mitades": [
+          ["That evening, Lucía can't eat her dinner,", "because she feels bad."],
+          ["Mum says that friends", "don't always want the same things."],
+          ["Lucía thinks about it", "while she is brushing her teeth."],
+          ["They both get angry,", "because nobody wants to change."]
+        ]
+      }
+    },
+    {
+      "dia": 99, "semana": 20, "trimestre": 2,
+      "tema": "Friends again",
+      "texto": [
+        "The next morning, Lucía knocks on Amy's door before school.",
+        "“I'm sorry,” she says. “Me too!” says Amy, and she gives her a hug.",
+        "They decide that today they play tag, and tomorrow they skip. Pip, who is listening, shouts “Hooray!”"
+      ],
+      "actividad": {
+        "tipo": "ordena",
+        "sucesos": [
+          "Lucía and Amy want to play different games.",
+          "They get angry and walk back to class alone.",
+          "Mum says that friends can take turns.",
+          "Lucía says “I'm sorry” to Amy."
+        ]
+      }
+    },
+    {
+      "dia": 100, "semana": 20, "trimestre": 2,
+      "tema": "Friends again",
+      "texto": [
+        "At school, Lucía and Amy write a peace poem together:",
+        "> A friend is someone who listens,\nA friend is someone who shares,\nAnd when we're angry, a friend says sorry,\nBecause a friend always cares.",
+        "Marta puts it on the wall, next to the dove."
+      ],
+      "actividad": {
+        "tipo": "repasa",
+        "checklist": [
+          "I know what the dove has got in its beak.",
+          "I know why Lucía and Amy get angry.",
+          "I know what Lucía says to Amy."
+        ],
+        "prompt": "Now draw you and your best friend playing together.",
+        "banner": "100 pages read! You're a reading star!"
+      }
+    },
+    {
+      "dia": 101, "semana": 21, "trimestre": 2,
+      "tema": "Dinosaur day",
+      "texto": [
+        "On Saturday, Mr Brown takes the boys to the museum.",
+        "In the biggest room is a dinosaur that is longer than a bus! It has got a very long neck, a long tail and four big legs.",
+        "Next to it is a small dinosaur, which is as big as a dog."
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Draw the two dinosaurs in the museum.",
+        "comprueba": [
+          "How long is the big dinosaur?",
+          "What has it got?",
+          "How big is the small dinosaur?"
+        ],
+        "clave": "A big dinosaur, longer than a bus, with a very long neck, a long tail and four big legs; next to it, a small dinosaur as big as a dog."
+      }
+    },
+    {
+      "dia": 102, "semana": 21, "trimestre": 2,
+      "tema": "Dinosaur day",
+      "texto": [
+        "A guide tells the boys about the big dinosaur, which is called a diplodocus.",
+        "It only ate plants, so it wasn't dangerous. It lived millions of years ago, when there were no people.",
+        "Dani asks if it was heavier than an elephant. “Much heavier!” says the guide."
+      ],
+      "actividad": {
+        "tipo": "si_no",
+        "afirmaciones": [
+          "The big dinosaur is called a diplodocus.",
+          "It ate meat.",
+          "It lived when there were no people.",
+          "It was lighter than an elephant."
+        ],
+        "respuestas": ["yes", "no", "yes", "no"]
+      }
+    },
+    {
+      "dia": 103, "semana": 21, "trimestre": 2,
+      "tema": "Dinosaur day",
+      "texto": [
+        "In the next room, there is a Tyrannosaurus rex. It has got big teeth and very short arms.",
+        "It ate meat, not plants. It is the dinosaur that Sam likes best.",
+        "Dani holds Mr Brown's hand, because its teeth are so big."
+      ],
+      "actividad": {
+        "tipo": "relaciona",
+        "instruccion": "Read the texts of this week again and match.",
+        "pares": [
+          ["the diplodocus", "ate plants"],
+          ["the Tyrannosaurus rex", "ate meat"],
+          ["the small dinosaur", "is as big as a dog"],
+          ["the big dinosaur", "is longer than a bus"]
+        ]
+      }
+    },
+    {
+      "dia": 104, "semana": 21, "trimestre": 2,
+      "tema": "Dinosaur day",
+      "texto": [
+        "In the museum shop, the boys can choose one thing each.",
+        "Dani chooses a book about dinosaurs, because he wants to learn all their names. Sam chooses a cap, which has got a diplodocus on it.",
+        "Mr Brown buys a postcard for Amy."
+      ],
+      "actividad": {
+        "tipo": "busca",
+        "instruccion": "What do Dani and Sam choose in the shop? Find the two things in the text and write them.",
+        "soluciones": ["book", "cap"]
+      }
+    },
+    {
+      "dia": 105, "semana": 21, "trimestre": 2,
+      "tema": "Dinosaur day",
+      "texto": [
+        "At home, Dani and Sam tell Amy and Lucía about the museum. Dani says that the diplodocus was longer than their street!",
+        "Then they make a dinosaur museum in the living room.",
+        "Toby is the guard, because he doesn't let anybody touch the dinosaurs!"
+      ],
+      "actividad": {
+        "tipo": "vinetas",
+        "instruccion": "Draw the story of this week: the beginning, the middle and the end.",
+        "pies": [
+          "Mr Brown takes Dani and Sam to the museum.",
+          "A guide tells them about the diplodocus.",
+          "The boys make a dinosaur museum at home."
+        ]
+      }
+    },
+    {
+      "dia": 106, "semana": 22, "trimestre": 2,
+      "tema": "Carnival and pancakes",
+      "texto": [
+        "This week it is Carnival, and Lucía is going to be a detective.",
+        "She has got a brown checked cap and a long beige coat. Her magnifying glass, which hangs from a red string, is Grandma's.",
+        "Amy is going to be a green parrot, because she loves Pip."
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Draw Lucía in her detective costume.",
+        "comprueba": [
+          "What is on her head? What colour is it?",
+          "What is her coat like?",
+          "What hangs from the red string?"
+        ],
+        "clave": "A brown checked cap, a long beige coat and Grandma's magnifying glass hanging from a red string."
+      }
+    },
+    {
+      "dia": 107, "semana": 22, "trimestre": 2,
+      "tema": "Carnival and pancakes",
+      "texto": [
+        "On Tuesday, all the classes meet in the gym for a photo.",
+        "Then they walk around the playground while the music is playing. Dani is the head of a dragon, and Sam is its tail!",
+        "When the parade ends, Lucía finds a purple mask on the floor."
+      ],
+      "actividad": {
+        "tipo": "rodea",
+        "preguntas": [
+          {
+            "pregunta": "Where do the classes meet for a photo?",
+            "opciones": ["in the park", "in the gym", "in the kitchen"],
+            "solucion": "in the gym"
+          },
+          {
+            "pregunta": "What is Sam in the dragon?",
+            "opciones": ["the head", "the wings", "the tail"],
+            "solucion": "the tail"
+          },
+          {
+            "pregunta": "What does Lucía find on the floor?",
+            "opciones": ["a hat", "a purple mask", "a shoe"],
+            "solucion": "a purple mask"
+          }
+        ]
+      }
+    },
+    {
+      "dia": 108, "semana": 22, "trimestre": 2,
+      "tema": "Carnival and pancakes",
+      "texto": [
+        "On Tuesday evening, the Browns have Pancake Day, when English families eat pancakes.",
+        "- Mix flour, eggs and milk in a big bowl.",
+        "- A grown-up puts a little butter in a hot pan.",
+        "- Pour in some of the mix and wait.",
+        "- When it is golden, turn it over!"
+      ],
+      "actividad": {
+        "tipo": "ordena",
+        "instruccion": "Put the recipe in order. Write 1, 2, 3 and 4.",
+        "sucesos": [
+          "Mix flour, eggs and milk in a big bowl.",
+          "A grown-up puts a little butter in a hot pan.",
+          "Pour in some of the mix and wait.",
+          "When it is golden, turn it over!"
+        ]
+      }
+    },
+    {
+      "dia": 109, "semana": 22, "trimestre": 2,
+      "tema": "Carnival and pancakes",
+      "texto": [
+        "Mr Brown can turn the pancakes over by throwing them in the air!",
+        "When he throws the last one, it doesn't come back down. Then they hear Toby, who is barking under the table.",
+        "The pancake is on his back, like a little blanket!"
+      ],
+      "actividad": {
+        "tipo": "mitades",
+        "mitades": [
+          ["When he throws the last one,", "it doesn't come back down."],
+          ["Then they hear Toby,", "who is barking under the table."],
+          ["Her magnifying glass, which hangs from a red string,", "is Grandma's."],
+          ["Amy is going to be a green parrot,", "because she loves Pip."]
+        ]
+      }
+    },
+    {
+      "dia": 110, "semana": 22, "trimestre": 2,
+      "tema": "Carnival and pancakes",
+      "texto": [
+        "On Friday, Marta shows the class the photo from the gym.",
+        "Lucía looks like a real detective, and Amy looks like a real parrot! Amy says that this is her new favourite week.",
+        "Lucía still has the purple mask, because she doesn't know whose it is yet."
+      ],
+      "actividad": {
+        "tipo": "repasa",
+        "checklist": [
+          "I know what Lucía is at Carnival.",
+          "I know what Dani and Sam are.",
+          "I know where the last pancake lands."
+        ],
+        "prompt": "Now draw your favourite carnival costume.",
+        "banner": "110 pages read! Hooray!"
+      }
+    },
+    {
+      "dia": 111, "semana": 23, "trimestre": 2,
+      "tema": "A windy day",
+      "texto": [
+        "It is very windy, so Dad takes the children to the hill.",
+        "He has got a big kite, which is shaped like a diamond. It is red and yellow, and its long tail has got four blue bows.",
+        "When the wind blows, the kite flies higher than the trees!"
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Draw Dad's kite in the sky.",
+        "comprueba": [
+          "What shape is the kite?",
+          "What colours is it?",
+          "How many bows has its tail got, and what colour are they?"
+        ],
+        "clave": "A red and yellow kite shaped like a diamond, with a long tail and four blue bows, flying higher than the trees."
+      }
+    },
+    {
+      "dia": 112, "semana": 23, "trimestre": 2,
+      "tema": "A windy day",
+      "texto": [
+        "Amy and Sam have got a kite too, but theirs is smaller.",
+        "Their kite, which is shaped like a fish, is orange. Sam holds the string while Amy runs as fast as she can.",
+        "At last, the fish flies too, and Sam shouts with joy."
+      ],
+      "actividad": {
+        "tipo": "si_no",
+        "afirmaciones": [
+          "Amy and Sam's kite is bigger than Dad's.",
+          "Their kite is shaped like a fish.",
+          "Sam holds the string.",
+          "The fish kite never flies."
+        ],
+        "respuestas": ["no", "yes", "yes", "no"]
+      }
+    },
+    {
+      "dia": 113, "semana": 23, "trimestre": 2,
+      "tema": "A windy day",
+      "texto": [
+        "When they get home, Lucía draws Dad's kite.",
+        "The two top parts are red, and the two bottom parts are yellow. The tail is black, and the four bows on it are blue.",
+        "Dad puts the drawing on the fridge, where everybody can see it."
+      ],
+      "actividad": {
+        "tipo": "colorea",
+        "prompt": "Colour Lucía's drawing of the kite. Read the text to find the colours.",
+        "dibujo": "cometa",
+        "clave": "The two top parts red, the two bottom parts yellow, a black tail and four blue bows."
+      }
+    },
+    {
+      "dia": 114, "semana": 23, "trimestre": 2,
+      "tema": "A windy day",
+      "texto": [
+        "On the way home, the wind is so strong that Dad's hat flies away!",
+        "Toby brings it back, because he thinks it is a game. He is very proud of himself.",
+        "Everybody laughs, but Dad's hat is very wet now."
+      ],
+      "actividad": {
+        "tipo": "huecos",
+        "frases": [
+          "On the way home, the wind is so strong that Dad's ___ flies away!",
+          "Toby brings it ___, because he thinks it is a game.",
+          "He has got a big kite, which is shaped like a ___.",
+          "Sam holds the ___ while Amy runs as fast as she can."
+        ],
+        "soluciones": ["hat", "back", "diamond", "string"]
+      }
+    },
+    {
+      "dia": 115, "semana": 23, "trimestre": 2,
+      "tema": "A windy day",
+      "texto": [
+        "That night, the wind is still blowing.",
+        "Pip's cage is inside, because the wind is too strong for a little bird. Lucía listens to the wind while she is falling asleep.",
+        "She dreams that she is flying like a kite, high above the city."
+      ],
+      "actividad": {
+        "tipo": "vinetas",
+        "instruccion": "Draw the story of this week: the beginning, the middle and the end.",
+        "pies": [
+          "Dad and the children fly a kite on the hill.",
+          "The wind takes Dad's hat, and Toby brings it back.",
+          "Lucía dreams that she is flying like a kite."
+        ]
+      }
+    },
+    {
+      "dia": 116, "semana": 24, "trimestre": 2,
+      "tema": "The library",
+      "texto": [
+        "After school, the girls go to the library, which is next to the park.",
+        "In the corner, there is a small shelf that has got books in English. There is a green sofa under the window, and a rug with stars.",
+        "Tomás, the librarian, gives them two library cards."
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Draw the English corner in the library.",
+        "comprueba": [
+          "What is in the corner?",
+          "What colour is the sofa, and where is it?",
+          "What is on the rug?"
+        ],
+        "clave": "A small shelf with books in English in the corner; a green sofa under the window; a rug with stars."
+      }
+    },
+    {
+      "dia": 117, "semana": 24, "trimestre": 2,
+      "tema": "The library",
+      "texto": [
+        "Lucía chooses a book about a girl who lives on a boat.",
+        "Amy chooses a book of poems, because she likes reading aloud. They can take the books home for two weeks.",
+        "Tomás says that they must bring them back on time."
+      ],
+      "actividad": {
+        "tipo": "rodea",
+        "preguntas": [
+          {
+            "pregunta": "What is Lucía's book about?",
+            "opciones": ["a boy on a horse", "a girl who lives on a boat", "a dog"],
+            "solucion": "a girl who lives on a boat"
+          },
+          {
+            "pregunta": "What does Amy choose?",
+            "opciones": ["a comic", "a book of poems", "a recipe book"],
+            "solucion": "a book of poems"
+          },
+          {
+            "pregunta": "How long can they keep the books?",
+            "opciones": ["one day", "two weeks", "a year"],
+            "solucion": "two weeks"
+          }
+        ]
+      }
+    },
+    {
+      "dia": 118, "semana": 24, "trimestre": 2,
+      "tema": "The library",
+      "texto": [
+        "The next day, Lucía and Amy read in the English corner.",
+        "Lucía is sitting on the sofa, and Amy is lying on the rug. Their books are on the little table, which is next to the sofa.",
+        "They read quietly, because it is a library!"
+      ],
+      "actividad": {
+        "tipo": "donde",
+        "prompt": "Where are they? Read the text and draw them in the library.",
+        "escena": "biblioteca",
+        "cosas": ["Lucía", "Amy", "their books"],
+        "clave": "Lucía sitting on the sofa; Amy lying on the rug; their books on the little table next to the sofa."
+      }
+    },
+    {
+      "dia": 119, "semana": 24, "trimestre": 2,
+      "tema": "The library",
+      "texto": [
+        "At the library, there is a riddle on the board every week.",
+        "The child who guesses it gets a sticker. This week, Lucía and Amy guess it together, so they get two stickers!",
+        "Tomás writes a new riddle every Monday, because he loves riddles."
+      ],
+      "actividad": {
+        "tipo": "adivina",
+        "adivinanza": "I have got pages and pictures.\nI have got a cover, but I am not a bed.\nYou open me when you want a story.\nWhat am I?",
+        "respuesta": "A book."
+      }
+    },
+    {
+      "dia": 120, "semana": 24, "trimestre": 2,
+      "tema": "The library",
+      "texto": [
+        "On Friday, Lucía finishes her book, which is her first book in English!",
+        "She tells Tomás the whole story, and he gives her a gold star. Amy learns a poem by heart, because she wants to say it to Pip.",
+        "Pip listens and says “Again!”"
+      ],
+      "actividad": {
+        "tipo": "repasa",
+        "checklist": [
+          "I know where the English corner is.",
+          "I know what Lucía's book is about.",
+          "I know what Tomás gives Lucía."
+        ],
+        "prompt": "Now draw the cover of your favourite book.",
+        "banner": "120 pages read! Wonderful!"
+      }
+    },
+    {
+      "dia": 121, "semana": 25, "trimestre": 2,
+      "tema": "Beans in the classroom",
+      "texto": [
+        "Marta's class, which loves science, is going to grow beans.",
+        "Each child puts wet cotton wool in a cup, and then two beans. Lucía writes her name on her cup in red letters.",
+        "The cups go on the window sill, where there is a lot of sun."
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Draw Lucía's bean cup on the window sill.",
+        "comprueba": [
+          "What is inside the cup?",
+          "How many beans are there?",
+          "What is on the cup, and what colour is it?"
+        ],
+        "clave": "A cup with wet cotton wool and two beans; Lucía's name in red letters on the cup; the cup on the sunny window sill."
+      }
+    },
+    {
+      "dia": 122, "semana": 25, "trimestre": 2,
+      "tema": "Beans in the classroom",
+      "texto": [
+        "Every morning, the children look at their beans with a magnifying glass.",
+        "On Wednesday, Amy's beans have got little white roots! Lucía's beans haven't got roots yet, because her cotton wool is dry.",
+        "She gives them some water, and she hopes that they grow."
+      ],
+      "actividad": {
+        "tipo": "si_no",
+        "afirmaciones": [
+          "The children look at their beans every morning.",
+          "Amy's beans have got little white roots.",
+          "Lucía's cotton wool is too wet.",
+          "Lucía gives her beans some water."
+        ],
+        "respuestas": ["yes", "yes", "no", "yes"]
+      }
+    },
+    {
+      "dia": 123, "semana": 25, "trimestre": 2,
+      "tema": "Beans in the classroom",
+      "texto": [
+        "On Thursday, Lucía's beans have got roots too! Marta explains that plants need water, light and warm air.",
+        "If a bean hasn't got water, it can't grow. The roots go down, while the little green shoot goes up.",
+        "Amy draws her bean every day in her notebook."
+      ],
+      "actividad": {
+        "tipo": "mitades",
+        "mitades": [
+          ["If a bean hasn't got water,", "it can't grow."],
+          ["The roots go down,", "while the little green shoot goes up."],
+          ["Marta explains that plants need", "water, light and warm air."],
+          ["Lucía's beans haven't got roots yet,", "because her cotton wool is dry."]
+        ]
+      }
+    },
+    {
+      "dia": 124, "semana": 25, "trimestre": 2,
+      "tema": "Beans in the classroom",
+      "texto": [
+        "How a bean grows:",
+        "- First, the bean drinks water and gets bigger.",
+        "- Then a little white root comes out.",
+        "- After that, a green shoot grows up towards the light.",
+        "- Last, the first leaves open.",
+        "Amy thinks that it is like magic, but Marta says that it is science!"
+      ],
+      "actividad": {
+        "tipo": "ordena",
+        "instruccion": "How does a bean grow? Put it in order. Write 1, 2, 3 and 4.",
+        "sucesos": [
+          "The bean drinks water and gets bigger.",
+          "A little white root comes out.",
+          "A green shoot grows up towards the light.",
+          "The first leaves open."
+        ]
+      }
+    },
+    {
+      "dia": 125, "semana": 25, "trimestre": 2,
+      "tema": "Beans in the classroom",
+      "texto": [
+        "On Friday, the children take their beans home.",
+        "Lucía plants hers in Dad's vegetable garden, next to the lettuces. Toby watches, because he likes digging too!",
+        "Dad says that they can eat beans in summer, if it grows well. Lucía gives her plant a name: Jack!"
+      ],
+      "actividad": {
+        "tipo": "vinetas",
+        "instruccion": "Draw the story of this week: the beginning, the middle and the end.",
+        "pies": [
+          "The children put two beans in each cup.",
+          "The beans grow little white roots.",
+          "Lucía plants her bean in Dad's garden."
+        ]
+      }
+    },
+    {
+      "dia": 126, "semana": 26, "trimestre": 2,
+      "tema": "Spring is coming",
+      "texto": [
+        "It is spring at last! Under the chestnut tree, there are five yellow flowers.",
+        "A blackbird, which is black with an orange beak, is singing on the wall. The rose bush has got its first pink rose.",
+        "Grandma is knitting on the bench, because it is warm now."
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Draw Lucía's garden in spring.",
+        "comprueba": [
+          "How many flowers are under the tree, and what colour are they?",
+          "What colour is the bird, and its beak?",
+          "Where is Grandma, and what is she doing?"
+        ],
+        "clave": "Five yellow flowers under the chestnut tree; a black blackbird with an orange beak singing on the wall; the first pink rose; Grandma knitting on the bench."
+      }
+    },
+    {
+      "dia": 127, "semana": 26, "trimestre": 2,
+      "tema": "Spring is coming",
+      "texto": [
+        "The girls go to the park, where the trees have got new green leaves.",
+        "Sam finds a ladybird on a leaf, and he counts its spots: seven! When Dani tries to catch it, it flies away.",
+        "Amy says that ladybirds bring good luck."
+      ],
+      "actividad": {
+        "tipo": "rodea",
+        "preguntas": [
+          {
+            "pregunta": "What have the trees got?",
+            "opciones": ["red leaves", "new green leaves", "snow"],
+            "solucion": "new green leaves"
+          },
+          {
+            "pregunta": "How many spots has the ladybird got?",
+            "opciones": ["five", "six", "seven"],
+            "solucion": "seven"
+          },
+          {
+            "pregunta": "What happens when Dani tries to catch it?",
+            "opciones": ["it bites him", "it flies away", "it sleeps"],
+            "solucion": "it flies away"
+          }
+        ]
+      }
+    },
+    {
+      "dia": 128, "semana": 26, "trimestre": 2,
+      "tema": "Spring is coming",
+      "texto": [
+        "In the afternoon, a butterfly lands on Grandma's knitting.",
+        "Its wings are yellow, and they have got black edges. On each wing, there is a blue spot that looks like an eye.",
+        "Its body is thin and black. Grandma stays very still until the butterfly flies away."
+      ],
+      "actividad": {
+        "tipo": "colorea",
+        "prompt": "Colour the butterfly. Read the text to find the colours.",
+        "dibujo": "mariposa",
+        "clave": "Yellow wings with black edges, a blue spot on each wing and a thin black body."
+      }
+    },
+    {
+      "dia": 129, "semana": 26, "trimestre": 2,
+      "tema": "Spring is coming",
+      "texto": [
+        "Pip can see the butterfly from his cage, and he gets very excited.",
+        "He says all the words that he knows: “Hello! Toby! Biscuit! Merry Christmas!” Everybody laughs, because it isn't Christmas any more!",
+        "Then Pip sings a long song, which sounds like spring."
+      ],
+      "actividad": {
+        "tipo": "busca",
+        "instruccion": "Which words does Pip know? Find three of them in the text and write them.",
+        "soluciones": ["Hello", "Toby", "Biscuit"]
+      }
+    },
+    {
+      "dia": 130, "semana": 26, "trimestre": 2,
+      "tema": "Spring is coming",
+      "texto": [
+        "Today is the last day of winter.",
+        "Lucía's bean plant has got four leaves, and it is taller than her hand. The girls make a list of things that they want to do in spring.",
+        "The first thing is Amy's birthday party, which is next week!"
+      ],
+      "actividad": {
+        "tipo": "repasa",
+        "checklist": [
+          "I know how many grapes Spanish families eat on New Year's Eve.",
+          "I know who finds the little king in the King cake.",
+          "I know what the snowman at school has got on its left.",
+          "I know what beans need to grow."
+        ],
+        "prompt": "Now draw your favourite moment of the winter.",
+        "banner": "130 pages read! Hello, spring!"
+      }
+    }
+  ]
+}

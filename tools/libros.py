@@ -216,9 +216,9 @@ ENGLISH = Libro(
     }),
     idioma="en",
     motor="english",
-    # Fase 2: la parte 1 del año, el otoño (días 1-65). Ver
-    # notes/05-english.md, "Las fases".
-    dias_escritos=65,
+    # Fase 3: las partes 1 y 2 del año, otoño e invierno (días 1-130).
+    # Ver notes/05-english.md, "Las fases".
+    dias_escritos=130,
     nombre_medalla={1: "Autumn", 2: "Winter", 3: "Spring"},
     titulo_medalla="{} medal!",
     animo_medalla=r"Well done, \rule{55mm}{0.4pt}!",
@@ -227,6 +227,8 @@ ENGLISH = Libro(
         "mum", "dad", "grandma",
         # los vecinos nuevos, de Londres
         "amy", "sam", "pip", "brown", "browns", "mr", "mrs", "london",
+        # el bibliotecario del barrio (el mismo de «Leo con lupa»)
+        "tomás",
         # el pueblo, en verano
         "andrés", "bigotes", "martín",
     }),

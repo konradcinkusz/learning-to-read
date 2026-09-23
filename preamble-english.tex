@@ -40,13 +40,16 @@
 \newcommand{\letraActividadIngles}{\fontsize{15}{20}\selectfont}
 
 % La caja de todas las actividades: actividadLupa (preamble-lupa.tex, ver
-% allí por qué height fill + height plus) con la letra de este cuaderno.
+% allí por qué height fill + height plus) con la letra de este cuaderno,
+% y en bandera (\raggedright): sin guiones, una frase justificada con un
+% hueco para escribir dentro (The missing words) estiraba los espacios
+% de su primera línea hasta dejarla irreconocible.
 \newtcolorbox{actividadIngles}[2]{cajabase,
   colback=#1Claro, colframe=#1, colbacktitle=#1, title={#2},
   height fill, height plus=100cm, space to upper, segmentation hidden, middle=1mm,
   fontupper=\letraActividadIngles, fontlower=\letraActividadIngles,
-  before upper={\hyphenpenalty=10000\exhyphenpenalty=10000},
-  before lower={\hyphenpenalty=10000\exhyphenpenalty=10000}}
+  before upper={\raggedright\hyphenpenalty=10000\exhyphenpenalty=10000},
+  before lower={\raggedright\hyphenpenalty=10000\exhyphenpenalty=10000}}
 
 % --- piezas de las actividades ---------------------------------------
 
@@ -101,9 +104,10 @@
 
 % Draw the story: como \vineta de preamble-lupa.tex, pero más alta (hay
 % más sitio: el texto es más corto) y con el pie a la letra de la
-% actividad, que lo lee la niña.
+% actividad, que lo lee la niña. 6,5 cm: con 7,5, un viernes de texto
+% largo (el día 105) ya no cabía en la página.
 \newcommand{\vinetaIng}[2]{%
-  \framebox[\linewidth]{\rule{0pt}{7.5cm}}\par\vspace{1.5mm}
+  \framebox[\linewidth]{\rule{0pt}{6.5cm}}\par\vspace{1.5mm}
   {\raggedright\textbf{#1.} #2\par}}
 
 % Un dibujo para colorear o una escena donde dibujar (diagrams/english/).
