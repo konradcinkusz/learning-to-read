@@ -1,7 +1,7 @@
 """Los cuadernos que genera tools/gen_days.py -- uno por nivel.
 
-El repositorio tiene tres cuadernos, uno por nivel, con los mismos
-personajes:
+El repositorio tiene tres cuadernos en español, uno por nivel, y uno en
+inglés, con los mismos personajes:
 
   - nivel 1, "Primeras palabras" (palabras.tex): tiene su propio
     generador, tools/gen_palabras.py, y no pasa por aquí.
@@ -12,16 +12,24 @@ personajes:
     actividad de análisis cada día (dibujar con detalle lo que describe
     el texto, resolver un caso con pistas, una tabla lógica, un mapa, un
     mensaje en clave...). Ver notes/04-nivel-lupa.md.
+  - "Read and Draw" (english.tex, content/english/q*.json): todo en
+    inglés, un nivel por debajo de "Leo con lupa" -- textos más cortos,
+    pero hechos también de oraciones compuestas (because, when, who,
+    that...), y cada día un análisis muy sencillo de lo leído: casi
+    siempre dibujar exactamente lo que dice el texto. Ver
+    notes/05-english.md.
 
-Los dos últimos comparten generador (tools/gen_days.py), escalera
-(tools/metricas.py) y página; todo lo que distingue a uno del otro vive
+Los tres últimos comparten generador (tools/gen_days.py), escalera
+(tools/metricas.py) y página; todo lo que distingue a uno de otro vive
 aquí, en un solo sitio: dónde está su contenido, qué ficheros genera,
-qué escalera sigue, cuántas frases lleva una página (o si su texto va
-en párrafos), qué tipos de actividad admite, qué instrucción de lectura
+qué escalera sigue, en qué idioma está, cuántas frases lleva una página
+(o si su texto va en párrafos, y qué módulo genera entonces sus
+actividades), qué tipos de actividad admite, qué instrucción de lectura
 y qué tamaño de letra lleva cada trimestre. gen_days.py, metricas.py y
-check_pages.py reciben `--libro frases` o `--libro lupa`; sin la opción,
-`frases` -- así `python3 tools/gen_days.py` a secas sigue haciendo
-exactamente lo mismo que antes de que existiera "Leo con lupa".
+check_pages.py reciben `--libro frases`, `--libro lupa` o `--libro
+english`; sin la opción, `frases` -- así `python3 tools/gen_days.py` a
+secas sigue haciendo exactamente lo mismo que antes de que existiera
+"Leo con lupa".
 """
 
 from dataclasses import dataclass
@@ -68,6 +76,30 @@ class Libro:
     # Nombres propios del reparto: no cuentan como vocabulario nuevo en
     # tools/metricas.py (se repiten constantemente a propósito).
     nombres_propios: frozenset = frozenset()
+    # Idioma del cuaderno: qué fichero de cadenas carga (lang/<idioma>.tex,
+    # elegido por \booklang antes de \input{preamble}, ver preamble.tex),
+    # contra cuál comprueba tools/gen_days.py \totaldias, y cómo mide
+    # tools/metricas.py sus textos (palabras funcionales, nexos, dónde
+    # acaba una frase).
+    idioma: str = "es"
+    # Un libro con el texto en párrafos (ver `parrafos`): qué módulo de
+    # tools/ valida su texto y genera su página y su clave -- "lupa"
+    # (tools/lupa.py) o "english" (tools/english.py). El cuaderno de
+    # frases no tiene: lo genera tools/gen_days.py solo.
+    motor: str = None
+    # Mientras un cuaderno se escribe por partes (un PR por trimestre, cada
+    # uno en verde antes de fusionarse), cuántos días tiene ya escritos:
+    # tools/gen_days.py exige exactamente esos, del día 1 en adelante y sin
+    # huecos, en vez del libro entero. None = el libro está terminado y
+    # tiene que tener sus total_dias -- la regla de siempre. Se quita en
+    # cuanto se escribe el último trimestre.
+    dias_escritos: int = None
+    # La página de medalla de fin de trimestre (PLANTILLA_MEDALLA en
+    # tools/gen_days.py), en el idioma del cuaderno: el título ({} = la
+    # estación, de nombre_medalla) y la frase de ánimo, con su línea para
+    # escribir el nombre.
+    titulo_medalla: str = "¡Medalla de {}!"
+    animo_medalla: str = r"¡Sigue así, \rule{55mm}{0.4pt}!"
 
     def __post_init__(self):
         if self.rango_trimestre is None:
@@ -77,8 +109,9 @@ class Libro:
 
     @property
     def parrafos(self):
-        """True si el texto del día va en párrafos y las actividades son
-        las de análisis de tools/lupa.py (el cuaderno "Leo con lupa")."""
+        """True si el texto del día va en párrafos y la página y las
+        actividades las genera el módulo de `motor` ("Leo con lupa" y
+        "Read and Draw"), no tools/gen_days.py."""
         return self.frases_por_trimestre is None
 
     @property
@@ -151,9 +184,56 @@ LUPA = Libro(
         # la granja escuela
         "julián", "lola",
     }),
+    motor="lupa",
 )
 
-LIBROS = {libro.nombre: libro for libro in (FRASES, LUPA)}
+ENGLISH = Libro(
+    nombre="english",
+    # Un nivel por debajo de "Leo con lupa" (ver notes/05-english.md): en
+    # inglés, la lectora está donde en español estaba con el cuaderno de
+    # frases.
+    nivel=2,
+    dir_contenido=CONTENT_DIR / "english",
+    salida_dias=CONTENT_DIR / "english" / "generated-days.tex",
+    salida_clave=CONTENT_DIR / "english" / "generated-clave.tex",
+    progresion=CONTENT_DIR / "english" / "progresion.json",
+    instruccion_lectura={
+        1: r"\lblIngInstruccionUno",
+        2: r"\lblIngInstruccionDos",
+        3: r"\lblIngInstruccionTres",
+        4: r"\lblIngInstruccionCuatro",
+    },
+    # \fuenteIngles (preamble-english.tex): más grande que la de "Leo con
+    # lupa" -- textos más cortos, y en un idioma que todavía se está
+    # aprendiendo.
+    fuente_trimestre={1: 1, 2: 2, 3: 3, 4: 4},
+    tipos_validos=frozenset({
+        # ver tools/english.py: casi todas acaban dibujando, marcando o
+        # uniendo, casi nunca escribiendo más de una palabra
+        "dibuja", "colorea", "donde", "si_no", "rodea", "relaciona",
+        "mitades", "ordena", "huecos", "busca", "adivina", "vinetas",
+        "repasa", "crea",
+    }),
+    idioma="en",
+    motor="english",
+    # Fase 1 (el motor): las dos primeras semanas, para que el motor tenga algo
+    # real que generar, compilar y comprobar. Ver notes/05-english.md,
+    # "Las fases".
+    dias_escritos=10,
+    nombre_medalla={1: "Autumn", 2: "Winter", 3: "Spring"},
+    titulo_medalla="{} medal!",
+    animo_medalla=r"Well done, \rule{55mm}{0.4pt}!",
+    nombres_propios=frozenset({
+        "lucía", "dani", "toby", "rosa", "marta", "sofía", "pedro", "luna",
+        "mum", "dad", "grandma",
+        # los vecinos nuevos, de Londres
+        "amy", "sam", "pip", "brown", "browns", "mr", "mrs", "london",
+        # el pueblo, en verano
+        "andrés", "bigotes", "martín",
+    }),
+)
+
+LIBROS = {libro.nombre: libro for libro in (FRASES, LUPA, ENGLISH)}
 
 
 def libro_desde_argv(argv):

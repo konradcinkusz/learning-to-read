@@ -1,0 +1,13 @@
+% english.tex -- "Read and Draw", el cuaderno en inglés (ver
+% notes/05-english.md): un nivel por debajo de "Leo con lupa" (lupa.tex),
+% todo en inglés. Mismo motor: \booklang elige el idioma (babel y
+% lang/en.tex) antes de \input{preamble}, y encima va lo propio de este
+% cuaderno (preamble-english.tex, que a su vez carga preamble-lupa.tex).
+\documentclass[11pt]{article}
+\def\bookcolor{color}
+\def\booklang{en}
+\input{preamble}
+\input{preamble-english}
+\begin{document}
+\input{body-english}
+\end{document}

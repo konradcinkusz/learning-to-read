@@ -46,7 +46,7 @@ jobs:
       # matplotlib/fonttools (eso solo hace falta para regenerarlo, ver
       # tools/gen_letras_puntos.py), así que este job no gana ninguna
       # dependencia pesada por esa actividad.
-      - name: Genera los .tex de los tres cuadernos desde su JSON
+      - name: Genera los .tex de los cuatro cuadernos desde su JSON
         run: make generate
 
       - name: Valida el contenido (frases por trimestre, campos de actividad)
@@ -105,6 +105,26 @@ jobs:
             python3 tools/metricas.py --libro lupa --tabla
           } >> "$GITHUB_STEP_SUMMARY"
 
+      # "Read and Draw", el cuaderno en inglés (content/english/q*.json, ver
+      # notes/05-english.md): las mismas puertas que "Leo con lupa", con
+      # las comprobaciones propias de tools/english.py -- cada frase de
+      # "The missing words" y de "Match the halves" está tal cual en el
+      # texto de la semana, cada palabra de "Word hunt" en el del día, el
+      # texto en inglés británico y sin rastros del español -- y su propia
+      # escalera, que también exige oraciones subordinadas en cada texto.
+      # Mientras se escribe por trimestres, tools/libros.py dice cuántos
+      # días tiene ya (dias_escritos) y se valida exactamente eso.
+      - name: Valida Read and Draw (inglés, actividades, frases del texto)
+        run: python3 tools/gen_days.py --libro english --check
+
+      - name: Mide la progresión de Read and Draw (palabras, frase, subordinadas)
+        run: |
+          {
+            echo '## Read and Draw: escalera por semana'
+            echo
+            python3 tools/metricas.py --libro english --tabla
+          } >> "$GITHUB_STEP_SUMMARY"
+
   build:
     name: PDF (${{ matrix.variant }})
     needs: gates
@@ -135,6 +155,11 @@ jobs:
             root: lupa
           - variant: lupa-bw
             root: lupa-bw
+          # "Read and Draw" (english.tex), el cuaderno en inglés: las mismas.
+          - variant: english-color
+            root: english
+          - variant: english-bw
+            root: english-bw
     steps:
       - uses: actions/checkout@v4
 
@@ -143,7 +168,7 @@ jobs:
           python-version: '3.11'
 
       # Otro runner, otro checkout -- este job genera para sí mismo.
-      - name: Genera los .tex de los tres cuadernos desde su JSON
+      - name: Genera los .tex de los cuatro cuadernos desde su JSON
         run: make generate
 
       # LuaLaTeX, no pdflatex: la letra es Andika (fonts/andika/, ver

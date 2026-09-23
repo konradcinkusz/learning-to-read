@@ -12,19 +12,24 @@ del código y las herramientas (que están bajo MIT, ver LICENSE-CODE):
     palabras: las palabras de cada día, las adivinanzas, los enunciados
   - content/lupa/*.json -- lo mismo para "Leo con lupa": los textos de
     cada día, los casos, las pistas y las actividades
+  - content/english/*.json -- lo mismo para "Read and Draw", el cuaderno
+    en inglés: los textos de cada día, los vecinos de Londres (Amy, Sam,
+    Pip) y las actividades
   - content/generated-*.tex, content/palabras/generated-*.tex,
-    content/lupa/generated-*.tex -- lo que se genera de lo anterior
+    content/lupa/generated-*.tex, content/english/generated-*.tex -- lo
+    que se genera de lo anterior
   - frontmatter/ -- portada, "cómo usar este cuaderno", mapa del curso
-    (de los tres cuadernos)
+    (de los cuatro cuadernos)
   - backmatter/diploma.tex, backmatter/palabras/diploma.tex,
-    backmatter/lupa/diploma.tex
+    backmatter/lupa/diploma.tex, backmatter/english/diploma.tex
   - notes/01-curriculum.md, notes/03-nivel-palabras.md,
-    notes/04-nivel-lupa.md -- el plan narrativo del curso completo, en
-    los tres niveles
+    notes/04-nivel-lupa.md, notes/05-english.md -- el plan narrativo del
+    curso completo, en los cuatro cuadernos
 
 NO cubre (esos quedan bajo MIT, ver LICENSE-CODE): preamble.tex,
-preamble-palabras.tex, preamble-lupa.tex, lang/es.tex, main*.tex,
-palabras*.tex, lupa*.tex, body*.tex, tools/, Makefile, .github/, diagrams/
+preamble-palabras.tex, preamble-lupa.tex, preamble-english.tex,
+lang/es.tex, lang/en.tex, main*.tex, palabras*.tex, lupa*.tex,
+english*.tex, body*.tex, tools/, Makefile, .github/, diagrams/
 (las técnicas de dibujo lineal son reutilizables como técnica, no como
 "historia").
 

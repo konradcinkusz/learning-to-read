@@ -42,6 +42,7 @@ from pathlib import Path
 from string import Template
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+from libros import FRASES  # noqa: E402
 from gen_days import (  # noqa: E402
     ErrorDeContenido,
     NOMBRE_MEDALLA_TRIMESTRE,
@@ -814,6 +815,7 @@ def generar(dias):
                 dia=num,
                 titulo=f"¡Medalla de {NOMBRE_MEDALLA_TRIMESTRE[trimestre]}!",
                 banner=escapar(banner),
+                animo=FRASES.animo_medalla,
             ))
     return "\n".join(piezas), "".join(claves)
 

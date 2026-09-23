@@ -5,10 +5,13 @@ Cuaderno de frases (nivel 2, el libro por defecto): content/q*.json ->
 content/generated-days.tex y content/generated-clave.tex.
 "Leo con lupa" (nivel 3, `--libro lupa`): content/lupa/q*.json ->
 content/lupa/generated-days.tex y content/lupa/generated-clave.tex.
-Qué distingue un libro de otro (rutas, reglas, tipos de actividad) está
-en tools/libros.py; las plantillas y validaciones propias de "Leo con
-lupa", en tools/lupa.py. (El cuaderno de primeras palabras, nivel 1,
-tiene su propio generador: tools/gen_palabras.py.)
+"Read and Draw" (en inglés, `--libro english`): content/english/q*.json
+-> content/english/generated-days.tex y generated-clave.tex.
+Qué distingue un libro de otro (rutas, reglas, idioma, tipos de
+actividad) está en tools/libros.py; las plantillas y validaciones
+propias de "Leo con lupa", en tools/lupa.py, y las de "Read and Draw",
+en tools/english.py. (El cuaderno de primeras palabras, nivel 1, tiene
+su propio generador: tools/gen_palabras.py.)
 
 No editar los generated-*.tex a mano -- se sobrescriben cada vez que se
 ejecuta este script. Los ficheros que SÍ se editan a mano son los
@@ -17,6 +20,7 @@ q1.json ... q4.json de cada libro, uno por trimestre.
 Uso:
     python3 tools/gen_days.py                    # regenera el cuaderno de frases
     python3 tools/gen_days.py --libro lupa       # regenera "Leo con lupa"
+    python3 tools/gen_days.py --libro english    # regenera "Read and Draw"
     python3 tools/gen_days.py [--libro X] --check
                                   # solo valida, no escribe nada; falla
                                   # (exit 1) si algo no cuadra o si el
@@ -30,13 +34,28 @@ import sys
 from pathlib import Path
 from string import Template
 
+import english
 import lupa
 from comun import ErrorDeContenido, escapar
 from libros import CONTENT_DIR, FRASES, ROOT, libro_desde_argv
 
 LETRAS_TRAZO_FILE = CONTENT_DIR / "letras-trazo.json"
 PALABRAS_TRAZO_FILE = CONTENT_DIR / "palabras-trazo.json"
-LANG_FILE = ROOT / "lang" / "es.tex"
+
+# El módulo que genera la página de un libro con el texto en párrafos
+# (Libro.motor, ver tools/libros.py). Los dos tienen la misma forma:
+# validar_texto(num, d), pagina_dia(d, libro, semana) y entrada_clave(d).
+MOTORES = {"lupa": lupa, "english": english}
+
+
+def motor(libro):
+    return MOTORES[libro.motor]
+
+
+def fichero_lang(libro):
+    """lang/es.tex, lang/en.tex... -- las cadenas del idioma del libro."""
+    return ROOT / "lang" / f"{libro.idioma}.tex"
+
 
 # cm por unidad "em" para la actividad "traza" (ver PLANTILLA_TRAZA) --
 # el contorno de cada letra (content/letras-trazo.json, generado por
@@ -189,7 +208,7 @@ PLANTILLA_MEDALLA = Template(
 \vspace{7mm}
 {\fontsize{26}{31}\selectfont\bfseries\color{colorLectura} $titulo}\\[6mm]
 {\Large\color{colorGris} $banner}\\[10mm]
-{\large ¡Sigue así, \rule{55mm}{0.4pt}!}
+{\large $animo}
 \end{center}
 \vspace*{\fill}
 \newpage
@@ -577,7 +596,7 @@ def validar_dia(num, d, libro=FRASES):
         )
 
     if libro.parrafos:
-        lupa.validar_texto(num, d)
+        motor(libro).validar_texto(num, d)
         return
 
     if tipo_actividad == "relee":
@@ -602,7 +621,9 @@ def validar_dia(num, d, libro=FRASES):
 
 def validar_dias(dias, libro=FRASES):
     """Comprueba las reglas del curso -- exige además que los días sean
-    1..260 sin huecos, que es lo que hace a esta lista EL libro real."""
+    1..260 sin huecos, que es lo que hace a esta lista EL libro real (o
+    1..N, con N = libro.dias_escritos, mientras el libro se escribe por
+    trimestres -- ver tools/libros.py)."""
     if not dias:
         raise ErrorDeContenido(f"no hay ningún día en {origen_json(libro)}")
 
@@ -619,8 +640,18 @@ def validar_dias(dias, libro=FRASES):
 
     # Y que el libro esté entero: un cuaderno al que le faltan semanas
     # compila igual de bien (todas sus páginas caben, todas sus
-    # actividades se validan) y no se notaría hasta imprimirlo.
-    if len(dias) != libro.total_dias:
+    # actividades se validan) y no se notaría hasta imprimirlo. Mientras
+    # se escribe por partes, exactamente los días que dice que tiene: ni
+    # uno menos (se ha perdido algo) ni uno más (hay que subir
+    # dias_escritos, o quitarlo si ya está entero).
+    esperados = libro.dias_escritos or libro.total_dias
+    if len(dias) != esperados:
+        if libro.dias_escritos:
+            raise ErrorDeContenido(
+                f"el cuaderno «{libro.nombre}» tiene {len(dias)} días y "
+                f"dias_escritos (tools/libros.py) dice {esperados} -- "
+                "actualízalo (o quítalo, si el libro ya está entero)"
+            )
         raise ErrorDeContenido(
             f"el cuaderno «{libro.nombre}» tiene {len(dias)} días y deberían ser "
             f"{libro.total_dias} -- faltan los días {len(dias) + 1}-{libro.total_dias}"
@@ -696,8 +727,9 @@ def pagina_medalla(d, libro):
         )
     return PLANTILLA_MEDALLA.substitute(
         dia=d["dia"],
-        titulo=f"¡Medalla de {libro.nombre_medalla[d['trimestre']]}!",
+        titulo=libro.titulo_medalla.format(libro.nombre_medalla[d["trimestre"]]),
         banner=escapar(banner),
+        animo=libro.animo_medalla,
     )
 
 
@@ -712,7 +744,7 @@ def generar_tex(dias, libro=FRASES):
             semana = sorted(
                 dias_por_semana[(d["trimestre"], d["semana"])], key=lambda x: x["dia"]
             )
-            piezas.append(lupa.pagina_dia(d, libro, semana))
+            piezas.append(motor(libro).pagina_dia(d, libro, semana))
             medalla = pagina_medalla(d, libro)
             if medalla:
                 piezas.append(medalla)
@@ -751,14 +783,15 @@ def generar_clave(dias, libro=FRASES):
     """generated-clave.tex: la respuesta de cada actividad que tiene una
     respuesta que comprobar, para que un adulto pueda hacerlo sin
     resolverla él mismo -- ver la revisión de un lector externo. En el
-    cuaderno de frases, 'adivina' y 'relaciona'; en "Leo con lupa", casi
-    todas (ver tools/lupa.py, entrada_clave). No se imprime en la página del día
+    cuaderno de frases, 'adivina' y 'relaciona'; en "Leo con lupa" y en
+    "Read and Draw", casi todas (ver entrada_clave en tools/lupa.py y en
+    tools/english.py). No se imprime en la página del día
     (ver PLANTILLA_ADIVINA); vive aparte, en la clave de respuestas del
     final de cada libro."""
     piezas = _cabecera_generada(libro.salida_clave, libro)
     if libro.parrafos:
         for d in dias:
-            entrada = lupa.entrada_clave(d)
+            entrada = motor(libro).entrada_clave(d)
             if entrada:
                 piezas.append(entrada)
         return "".join(piezas)
@@ -779,16 +812,18 @@ def generar_clave(dias, libro=FRASES):
 
 
 def comprobar_totaldias(libro):
-    """lang/es.tex promete que \\totaldias (el pie de página y el
-    diploma) y el total de días del libro son el mismo número -- esto es
-    lo que lo comprueba (ver notes/02-revision-y-plan.md, punto 9)."""
-    texto = LANG_FILE.read_text(encoding="utf-8")
+    """lang/es.tex (o el lang/ del idioma del libro) promete que
+    \\totaldias (el pie de página y el diploma) y el total de días del
+    libro son el mismo número -- esto es lo que lo comprueba (ver
+    notes/02-revision-y-plan.md, punto 9)."""
+    lang = fichero_lang(libro)
+    texto = lang.read_text(encoding="utf-8")
     m = re.search(r"\\newcommand\{\\totaldias\}\{(\d+)\}", texto)
     if not m:
-        raise ErrorDeContenido(f"{_ruta_legible(LANG_FILE)} no define \\totaldias")
+        raise ErrorDeContenido(f"{_ruta_legible(lang)} no define \\totaldias")
     if int(m.group(1)) != libro.total_dias:
         raise ErrorDeContenido(
-            f"\\totaldias vale {m.group(1)} en {_ruta_legible(LANG_FILE)}, "
+            f"\\totaldias vale {m.group(1)} en {_ruta_legible(lang)}, "
             f"pero el cuaderno «{libro.nombre}» tiene {libro.total_dias} días"
         )
 
@@ -819,8 +854,11 @@ def main():
                     file=sys.stderr,
                 )
                 return 1
+        en_obras = ""
+        if libro.dias_escritos:
+            en_obras = f" (en obras: {len(dias)} de {libro.total_dias} días escritos)"
         print(
-            f"OK ({libro.nombre}): {len(dias)} días validados, "
+            f"OK ({libro.nombre}): {len(dias)} días validados{en_obras}, "
             f"{libro.salida_dias.name} y {libro.salida_clave.name} al día."
         )
         return 0

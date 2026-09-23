@@ -18,7 +18,7 @@ Lo que sí tiene sentido, y es bienvenido:
   en silencio; el arreglo está documentado en `preamble.tex` junto al
   código, como ejemplo del tipo de problema que merece un *issue* o un PR).
 - **Los generadores** (`tools/gen_days.py`, `tools/gen_palabras.py`,
-  `tools/lupa.py`) y sus validaciones -- por ejemplo, si detectas un
+  `tools/lupa.py`, `tools/english.py`) y sus validaciones -- por ejemplo, si detectas un
   caso que debería fallar la validación y no lo hace, o al revés (una
   tabla lógica con dos soluciones que el generador no detecta, una ruta
   de mapa que llega a otra casilla...).
@@ -39,24 +39,27 @@ Lo que sí tiene sentido, y es bienvenido:
 ## La vía principal: haz un fork
 
 El repositorio está deliberadamente construido para esto: el motor LaTeX
-(`preamble*.tex`, `lang/es.tex`, `tools/`) es independiente del contenido
-(`content/*.json`, `content/palabras/*.json`, `content/lupa/*.json`). Si
+(`preamble*.tex`, `lang/es.tex`, `lang/en.tex`, `tools/`) es independiente
+del contenido (`content/*.json`, `content/palabras/*.json`,
+`content/lupa/*.json`, `content/english/*.json`). Si
 quieres un cuaderno parecido para otro niño o niña, haz un fork,
 sustituye `content/q1.json` a `q4.json` (frases), `content/palabras/q1.json`
-a `q4.json` (primeras palabras) y/o `content/lupa/q1.json` a `q4.json`
-(Leo con lupa) por tus propios personajes, frases y palabras, y
+a `q4.json` (primeras palabras), `content/lupa/q1.json` a `q4.json`
+(Leo con lupa) y/o `content/english/q1.json` a `q4.json` (Read and
+Draw, en inglés) por tus propios personajes, frases y palabras, y
 conserva el resto tal cual -- es exactamente el reparto MIT/CC BY-NC-SA de `LICENSE`: el motor
 es tuyo para reutilizar, la historia concreta de esta familia no.
 
 ## Flujo de trabajo
 
 ```sh
-make generate       # content/q*.json, content/palabras/q*.json y content/lupa/q*.json -> .tex generados
+make generate       # content/q*.json, content/{palabras,lupa,english}/q*.json -> .tex generados
 make build           # compila el cuaderno de frases en color (main.tex)
 make palabras        # genera, compila y comprueba el de primeras palabras (palabras.tex)
 make lupa            # genera, compila y comprueba Leo con lupa (lupa.tex)
+make english         # genera, compila y comprueba Read and Draw (english.tex)
 make check            # tools/checklog.py + tools/check_pages.py + tools/gen_days.py --check + tools/metricas.py
-make all-formats      # los tres cuadernos, color Y blanco-y-negro -- ejecútalo
+make all-formats      # los cuatro cuadernos, color Y blanco-y-negro -- ejecútalo
                        # antes de abrir un PR, es lo mismo que corre el CI
 ```
 
@@ -83,13 +86,22 @@ Las barreras duras que tienen que quedar en verde:
   C): palabras por página y frase más larga no pueden superar el
   objetivo de esa semana. El vocabulario nuevo por día solo avisa, no
   bloquea. En Leo con lupa (`--libro lupa`, contra
-  `content/lupa/progresion.json`) hay además un mínimo de oraciones
-  subordinadas por texto.
+  `content/lupa/progresion.json`) y en Read and Draw (`--libro english`,
+  contra `content/english/progresion.json`) hay además un mínimo de
+  oraciones subordinadas por texto.
 - **Las actividades de Leo con lupa** (`tools/gen_days.py --libro lupa
   --check`, ver `tools/lupa.py`): cada tabla lógica con una sola
   solución, cada ruta de mapa llegando a donde dice la clave, cada
   corrección de «Caza los errores» presente de verdad en el texto de la
   semana, y el libro entero, con sus 260 días.
+- **Las actividades de Read and Draw** (`tools/gen_days.py --libro
+  english --check`, ver `tools/english.py`): cada frase de «The missing
+  words» y de «Match the halves» presente tal cual en el texto de la
+  semana, cada palabra de «Word hunt» en el del día, cada dibujo de
+  `diagrams/english/` que se pide existiendo, y el texto en inglés
+  británico, sin rastros del español. Mientras el libro se escribe por
+  partes, exactamente los días que dice `dias_escritos`
+  (`tools/libros.py`).
 
 `.github/workflows/build.yml` corre exactamente estas mismas comprobaciones
 en cada *push* y *pull request*, así que un PR con `make all-formats` en
