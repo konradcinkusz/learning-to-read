@@ -1,0 +1,16 @@
+% diagrams/firstwords/cup.tex -- el vaso de Lucía para las alubias de
+% clase: el algodón mojado y las dos alubias, y la etiqueta con su nombre.
+\begin{tikzpicture}[dibujofw]
+  % el algodón, que asoma
+  \filldraw[fill=white] (-2.0,5.0) .. controls (-2.4,5.8) and (-1.4,6.3) .. (-0.9,5.9)
+    .. controls (-0.6,6.6) and (0.6,6.6) .. (0.9,5.9) .. controls (1.4,6.3) and (2.4,5.8) .. (2.0,5.0) -- cycle;
+  % el vaso
+  \filldraw[fill=white] (-2.2,5.2) -- (-1.6,0) -- (1.6,0) -- (2.2,5.2) -- cycle;
+  \filldraw[fill=white] (-2.4,5.0) rectangle (2.4,5.4);
+  % las alubias, que se ven por el vaso
+  \begin{scope}[shift={(-0.8,3.4)}, rotate=20] \alubiaFW \end{scope}
+  \begin{scope}[shift={(0.8,3.1)}, rotate=-15] \alubiaFW \end{scope}
+  % la etiqueta
+  \filldraw[fill=white, rounded corners=1mm] (-1.3,0.8) rectangle (1.3,1.9);
+  \begin{scope}[shift={(0,1.0)}, scale=0.5] \corazonFW \end{scope}
+\end{tikzpicture}

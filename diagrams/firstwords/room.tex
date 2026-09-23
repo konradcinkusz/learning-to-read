@@ -1,0 +1,12 @@
+% diagrams/firstwords/room.tex -- el museo de dinosaurios de juguete en el
+% salón: los dinosaurios en fila en la alfombra, el sofá detrás y Toby
+% vigilándolos.
+\begin{tikzpicture}[dibujofw]
+  \begin{scope}[shift={(0,1.2)}, scale=0.9] \sofaFW \end{scope}
+  \filldraw[fill=white] (0.6,0.35) ellipse (5.2 and 0.45);
+  \begin{scope}[shift={(-2.8,0.45)}, scale=0.45] \dinoCuelloFW \end{scope}
+  \begin{scope}[shift={(0.4,0.45)}, scale=0.32] \trexFW{1} \end{scope}
+  \begin{scope}[shift={(3.4,0.45)}, scale=0.45] \estegoFW \end{scope}
+  \begin{scope}[shift={(6.6,0)}, xscale=-0.75, yscale=0.75] \tobySentadoFW \end{scope}
+  \draw (-5.8,0) -- (8.8,0);
+\end{tikzpicture}

@@ -1,0 +1,18 @@
+% diagrams/firstwords/letter.tex -- una carta: el sobre abierto, la
+% carta que asoma con sus renglones, el sello con una estrella y el
+% corazón que la cierra.
+\begin{tikzpicture}[dibujofw]
+  % la parte de atrás del sobre y la solapa abierta
+  \filldraw[fill=white] (-3.2,0) rectangle (3.2,3.8);
+  \filldraw[fill=white] (-3.2,3.8) -- (0,6.0) -- (3.2,3.8) -- cycle;
+  % la carta, asomando, con sus renglones
+  \filldraw[fill=white] (-2.5,1.5) rectangle (2.5,6.2);
+  \foreach \y in {5.5,4.9,4.3,3.7} {\draw (-1.9,\y) -- (1.9,\y);}
+  % la parte de delante del sobre
+  \filldraw[fill=white] (-3.2,3.8) -- (0,1.7) -- (3.2,3.8) -- (3.2,0) -- (-3.2,0) -- cycle;
+  \draw (-3.2,0) -- (-0.6,2.1); \draw (3.2,0) -- (0.6,2.1);
+  \begin{scope}[shift={(0,1.35)}, scale=0.75] \corazonFW \end{scope}
+  % el sello
+  \filldraw[fill=white] (1.7,4.4) rectangle (2.9,5.7);
+  \begin{scope}[shift={(2.3,5.05)}, scale=0.4] \estrellaFW \end{scope}
+\end{tikzpicture}

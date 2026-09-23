@@ -1,0 +1,20 @@
+% diagrams/firstwords/boat.tex -- el libro en inglés que encuentra Lucía
+% en la biblioteca: una niña que vive en un barco, en el mar.
+\begin{tikzpicture}[dibujofw]
+  % la vela, el mástil y la banderita
+  \filldraw[fill=white] (0.2,2.4) -- (0.2,9.0) -- (0.5,9.0) -- (0.5,2.4) -- cycle;
+  \filldraw[fill=white] (0.5,8.8) -- (4.6,3.2) -- (0.5,3.2) -- cycle;
+  \filldraw[fill=white] (0.2,3.4) -- (-3.2,3.4) -- (0.2,7.8) -- cycle;
+  \filldraw[fill=white] (0.5,9.0) -- (1.6,9.4) -- (0.5,9.8) -- cycle;
+  % la niña, en cubierta
+  \begin{scope}[shift={(-2.0,2.1)}, scale=0.55] \ninaFW{Trenzas}{Abajo}{Arriba} \end{scope}
+  % el casco, con sus ojos de buey
+  \filldraw[fill=white] (-5.0,2.6) -- (5.4,2.6) -- (4.0,0.4) -- (-3.8,0.4) -- cycle;
+  \foreach \x in {-2.0,0.4,2.8} {\filldraw[fill=white] (\x,1.5) circle (0.35);}
+  % el mar
+  \draw (-6.4,0.6) .. controls (-5.6,1.0) and (-5.0,0.2) .. (-4.2,0.6) .. controls (-3.4,1.0) and (-2.8,0.2) .. (-2.0,0.6)
+    .. controls (-1.2,1.0) and (-0.6,0.2) .. (0.2,0.6) .. controls (1.0,1.0) and (1.6,0.2) .. (2.4,0.6)
+    .. controls (3.2,1.0) and (3.8,0.2) .. (4.6,0.6) .. controls (5.4,1.0) and (6.0,0.2) .. (6.8,0.6);
+  \draw (-5.4,-0.4) .. controls (-4.6,0) and (-4.0,-0.8) .. (-3.2,-0.4) .. controls (-2.4,0) and (-1.8,-0.8) .. (-1.0,-0.4)
+    .. controls (-0.2,0) and (0.4,-0.8) .. (1.2,-0.4) .. controls (2.0,0) and (2.6,-0.8) .. (3.4,-0.4) .. controls (4.2,0) and (4.8,-0.8) .. (5.6,-0.4);
+\end{tikzpicture}

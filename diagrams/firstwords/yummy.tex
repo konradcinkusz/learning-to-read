@@ -1,0 +1,16 @@
+% diagrams/firstwords/yummy.tex -- Sam, en la comida de Navidad, con su
+% corona de papel, comiéndose el pudin con la cuchara: ¡qué rico!
+\begin{tikzpicture}[dibujofw]
+  \ninoFW{Sam}{Abajo}{Frente}
+  \begin{scope}[shift={(0,6.3)}]
+    \bocaRisaFW
+    \filldraw[fill=white] (0.05,-0.72) ellipse (0.2 and 0.14);
+    \begin{scope}[shift={(0,1.0)}] \coronaFW{0.85} \end{scope}
+  \end{scope}
+  % la cuchara, en la mano
+  \draw (0.4,3.3) -- (0.95,5.1);
+  \filldraw[fill=white, rotate around={-18:(1.0,5.35)}] (1.0,5.35) ellipse (0.2 and 0.32);
+  % la mesa, con el plato y el pudin
+  \filldraw[fill=white] (-3.4,2.3) rectangle (3.4,2.85);
+  \begin{scope}[shift={(-1.6,2.85)}, scale=0.75] \pudinFW \end{scope}
+\end{tikzpicture}

@@ -1,0 +1,12 @@
+% diagrams/firstwords/hill.tex -- un día de viento: Dad lleva a los niños
+% a la colina, y su cometa grande, roja y amarilla, vuela más alta que los
+% árboles.
+\begin{tikzpicture}[dibujofw]
+  % la colina y el árbol
+  \filldraw[fill=white] (-6.5,0) .. controls (-4.0,3.2) and (1.0,3.4) .. (4.5,1.2) .. controls (5.5,0.6) .. (6.5,0) -- cycle;
+  \begin{scope}[shift={(4.3,1.3)}, scale=0.55] \arbolFW \end{scope}
+  % Dad, en lo alto, con el hilo de la cometa
+  \begin{scope}[shift={(-1.6,2.55)}, scale=0.72] \hombreFW{Dad}{Abajo}{Arriba} \end{scope}
+  \draw (0.3,7.25) .. controls (1.5,9.0) and (2.8,10.2) .. (3.6,11.2);
+  \begin{scope}[shift={(3.9,12.6)}, rotate=-15] \cometaFW{-2.4}{-4.5} \end{scope}
+\end{tikzpicture}

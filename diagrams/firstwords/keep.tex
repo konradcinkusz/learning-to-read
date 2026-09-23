@@ -1,0 +1,13 @@
+% diagrams/firstwords/keep.tex -- Lucía y Amy, con sus libros de la
+% biblioteca: se los pueden quedar dos semanas.
+\begin{tikzpicture}[dibujofw]
+  \foreach \x/\quien in {0/Lucia, 4.6/Amy} {
+    \begin{scope}[shift={(\x,0)}]
+      \ninaFW{\quien}{Frente}{Frente}
+      \filldraw[fill=white] (-1.0,3.25) rectangle (1.0,3.75);
+      \filldraw[fill=white] (-0.85,3.75) rectangle (0.9,4.25);
+      \draw (-0.8,3.5) -- (0.8,3.5); \draw (-0.65,4.0) -- (0.7,4.0);
+      \filldraw[fill=white] (-0.95,3.3) circle (0.27); \filldraw[fill=white] (0.95,3.3) circle (0.27);
+    \end{scope}}
+  \draw (-2.0,0.2) -- (6.6,0.2);
+\end{tikzpicture}

@@ -1,0 +1,14 @@
+% diagrams/firstwords/dot.tex -- una mariquita roja con siete puntos
+% negros, en una hoja. ¡Las mariquitas dan buena suerte!
+\begin{tikzpicture}[dibujofw]
+  \begin{scope}[rotate=-10, scale=3.2] \hojaFW \end{scope}
+  \begin{scope}[shift={(0.5,2.3)}, rotate=-10]
+    \foreach \s in {-1,1} {\foreach \y in {0.1,-0.5,-1.1} {\draw (\s*1.1,\y) -- (\s*1.7,\y-0.25);}}
+    \filldraw[fill=white] (0,1.35) circle (0.6);
+    \draw (-0.25,1.85) .. controls (-0.4,2.3) .. (-0.7,2.35); \draw (0.25,1.85) .. controls (0.4,2.3) .. (0.7,2.35);
+    \filldraw[fill=white] (0,-0.3) circle (1.35);
+    \draw (0,1.05) -- (0,-1.65);
+    \foreach \x/\y in {-0.6,0.3, -0.75,-0.55, -0.45,-1.2, 0.6,0.3, 0.75,-0.55, 0.45,-1.2} {}
+    \foreach \p in {(-0.6,0.3),(-0.75,-0.55),(-0.45,-1.2),(0.6,0.3),(0.75,-0.55),(0.45,-1.2),(0,0.85)} {\fill \p circle (0.22);}
+  \end{scope}
+\end{tikzpicture}

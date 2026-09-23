@@ -1,0 +1,10 @@
+% diagrams/firstwords/pip-canta.tex -- Pip, en su percha, canta una
+% canción larga porque ha visto una mariposa (las notas, por el aire).
+\begin{tikzpicture}[dibujofw]
+  \filldraw[fill=white] (-0.15,-4.0) rectangle (0.15,0);
+  \filldraw[fill=white] (-1.2,-4.0) rectangle (1.2,-3.7);
+  \perchaFW{-2.4}{2.4}
+  \pipFW
+  \foreach \x/\y/\a in {2.6/5.6/0, 3.6/6.6/10, 2.8/7.6/-10} {\begin{scope}[shift={(\x,\y)}, rotate=\a] \notaFW \end{scope}}
+  \begin{scope}[shift={(4.8,3.6)}, rotate=15] \mariposaFW \end{scope}
+\end{tikzpicture}

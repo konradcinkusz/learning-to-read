@@ -2,15 +2,5 @@
 % maceta, pero sin la estrella de arriba -- para "completa": se colorea
 % y se le dibuja una estrella grande en lo alto.
 \begin{tikzpicture}[dibujofw]
-  % la maceta y el tronco
-  \filldraw[fill=white] (-1.2,0) -- (-1.45,1.4) -- (1.45,1.4) -- (1.2,0) -- cycle;
-  \filldraw[fill=white] (-1.6,1.4) rectangle (1.6,1.8);
-  \filldraw[fill=white] (-0.4,1.8) rectangle (0.4,2.5);
-  % los tres pisos del árbol, de abajo arriba
-  \filldraw[fill=white] (-3.4,2.5) -- (3.4,2.5) -- (1.6,4.4) -- (-1.6,4.4) -- cycle;
-  \filldraw[fill=white] (-2.7,4.2) -- (2.7,4.2) -- (1.1,6.0) -- (-1.1,6.0) -- cycle;
-  \filldraw[fill=white] (-2.0,5.8) -- (2.0,5.8) -- (0,8.2) -- cycle;
-  % las bolas
-  \foreach \x/\y in {-2.2/2.9, -0.6/3.3, 1.2/2.9, 2.3/3.4, -1.4/4.7, 0.5/4.9, 1.7/4.6, -0.7/6.3, 0.8/6.4, 0/7.3}
-    {\filldraw[fill=white] (\x,\y) circle (0.26);}
+  \arbolNavidadFW
 \end{tikzpicture}

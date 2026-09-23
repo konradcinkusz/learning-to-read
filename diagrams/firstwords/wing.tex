@@ -1,0 +1,26 @@
+% diagrams/firstwords/wing.tex -- el Día de la Paz: una paloma blanca,
+% grande, con las alas abiertas y una ramita verde en el pico.
+\begin{tikzpicture}[dibujofw]
+  % las alas, anchas, con sus plumas
+  \foreach \s in {-1,1} {
+    \begin{scope}[xscale=\s]
+      \filldraw[fill=white] (0.5,1.9) .. controls (1.5,3.8) and (3.0,5.4) .. (4.6,5.8)
+        .. controls (4.4,5.2) and (4.5,4.8) .. (4.2,4.5)
+        .. controls (4.2,4.0) and (4.0,3.7) .. (3.6,3.55)
+        .. controls (3.5,3.0) and (3.2,2.8) .. (2.8,2.75)
+        .. controls (2.6,2.2) and (2.2,2.0) .. (1.8,2.0)
+        .. controls (1.5,1.4) and (1.0,1.0) .. (0.6,0.8) -- cycle;
+      \draw (1.4,2.4) .. controls (2.3,3.6) .. (3.7,4.7);
+      \draw (1.1,1.7) .. controls (1.9,2.5) .. (2.9,3.3);
+    \end{scope}}
+  % la cola, en abanico
+  \filldraw[fill=white] (-0.5,-0.2) -- (-1.1,-1.9) -- (-0.4,-1.7) -- (0,-2.1) -- (0.4,-1.7) -- (1.1,-1.9) -- (0.5,-0.2) -- cycle;
+  % el cuerpo y la cabeza
+  \filldraw[fill=white] (0,0.9) ellipse (0.95 and 1.4);
+  \filldraw[fill=white] (0,2.6) circle (0.75);
+  \fill (-0.28,2.75) circle (0.08); \fill (0.28,2.75) circle (0.08);
+  \filldraw[fill=white] (-0.2,2.45) -- (0.2,2.45) -- (0,2.05) -- cycle;
+  % la ramita, con sus hojas
+  \draw (0.05,2.2) -- (1.2,1.6);
+  \foreach \x/\y/\a in {0.55/1.95/-60, 0.95/1.75/-110, 1.2/1.6/-60} {\begin{scope}[shift={(\x,\y)}, rotate=\a, scale=0.4] \hojaFW \end{scope}}
+\end{tikzpicture}

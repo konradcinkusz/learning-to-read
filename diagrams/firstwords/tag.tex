@@ -1,0 +1,14 @@
+% diagrams/firstwords/tag.tex -- Lucía quiere jugar al pilla-pilla (tag) y
+% Amy quiere saltar a la comba: las dos, un poco enfadadas.
+\begin{tikzpicture}[dibujofw]
+  % Lucía, con la mano estirada para pillar
+  \ninaFW{Lucia}{Abajo}{Lado}
+  \begin{scope}[shift={(0,6.3)}] \cejasEnfadoFW \bocaTristeFW \end{scope}
+  % Amy, con la comba
+  \begin{scope}[shift={(5.6,0)}]
+    \ninaFW{Amy}{Abajo}{Abajo}
+    \begin{scope}[shift={(0,6.3)}] \cejasEnfadoFW \bocaTristeFW \end{scope}
+    \combaFW{-1.4}{2.45}{1.4}{2.45}{9.4}
+  \end{scope}
+  \draw (-2.2,0.2) -- (8.0,0.2);
+\end{tikzpicture}

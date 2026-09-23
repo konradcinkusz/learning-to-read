@@ -186,7 +186,7 @@ el diploma:
   como se escriben: se presentan los viernes de primavera, enteras y en
   un marco, y son las únicas que no se leen sonido a sonido en las
   frases del verano;
-- **un dibujo para colorear cada día** (de momento, en otoño): el de una
+- **un dibujo para colorear cada día** (de momento, en otoño e invierno): el de una
   palabra que se acaba de leer -- si se lee *van*, se colorea una
   furgoneta --; en la adivinanza se colorea, de tres dibujos, el que la
   contesta, y en *Match* cada palabra se une con su dibujo. Siempre los

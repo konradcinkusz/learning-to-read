@@ -1,0 +1,19 @@
+% diagrams/firstwords/jack-jardin.tex -- el viernes de las alubias: Lucía
+% planta su alubia (Jack) en el jardín de Dad, con la pala, y Toby cava al
+% lado, tirando tierra.
+\begin{tikzpicture}[dibujofw]
+  \ninaFW{Lucia}{Abajo}{Frente}
+  % la pala, en la mano
+  \filldraw[fill=white, rotate around={30:(0.35,3.1)}] (0.25,1.6) rectangle (0.45,3.2);
+  \filldraw[fill=white] (0.95,1.0) -- (1.35,1.75) -- (0.9,2.05) -- (0.5,1.35) -- cycle;
+  \filldraw[fill=white] (0.35,3.12) circle (0.27);
+  % la plantita, en su montón de tierra
+  \filldraw[fill=white] (1.4,0.2) .. controls (1.8,0.9) and (3.0,0.9) .. (3.4,0.2) -- cycle;
+  \draw (2.4,0.7) -- (2.4,1.8);
+  \begin{scope}[shift={(2.4,1.8)}, rotate=45, scale=0.5] \hojaFW \end{scope}
+  \begin{scope}[shift={(2.4,1.8)}, rotate=-45, scale=0.5] \hojaFW \end{scope}
+  % Toby, cavando, y la tierra que salta
+  \begin{scope}[shift={(6.2,0.2)}, rotate=-12, scale=0.75] \tobyFW \end{scope}
+  \foreach \x/\y/\r in {3.9/2.6/0.18, 3.5/3.3/0.14, 4.3/3.5/0.16, 3.2/2.2/0.12} {\filldraw[fill=white] (\x,\y) circle (\r);}
+  \draw (-2.2,0.2) -- (9.4,0.2);
+\end{tikzpicture}

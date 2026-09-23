@@ -1,0 +1,21 @@
+% diagrams/firstwords/happy.tex -- ¡Feliz Año Nuevo! La familia de Lucía,
+% con su cuenco de uvas cada uno, y el reloj a punto de dar las doce.
+\begin{tikzpicture}[dibujofw]
+  % el reloj
+  \begin{scope}[shift={(0,10.3)}]
+    \filldraw[fill=white] (0,0) circle (1.2);
+    \foreach \a in {0,30,...,330} {\fill ({0.95*cos(\a)},{0.95*sin(\a)}) circle (0.06);}
+    \draw (0,0) -- (0,0.85); \draw (0,0) -- (0.1,0.6);
+  \end{scope}
+  % Dad, Mum, Lucía y Dani, cada uno con su cuenco
+  \begin{scope}[shift={(-6.3,0)}] \hombreFW{Dad}{Frente}{Frente} \end{scope}
+  \begin{scope}[shift={(-2.3,0)}] \mujerFW{Mama}{Frente}{Frente} \end{scope}
+  \begin{scope}[shift={(1.7,0)}] \ninaFW{Lucia}{Frente}{Frente} \end{scope}
+  \begin{scope}[shift={(5.1,0)}, scale=0.85] \ninoFW{Dani}{Frente}{Frente} \end{scope}
+  \foreach \x/\y in {-6.3/3.75, -2.3/3.75, 1.7/3.2, 5.1/2.72} {
+    \begin{scope}[shift={(\x,\y)}]
+      \foreach \u/\v in {-0.35/0.45, 0/0.5, 0.35/0.45, -0.18/0.72, 0.18/0.72} {\filldraw[fill=white] (\u,\v) circle (0.17);}
+      \filldraw[fill=white] (-0.75,0.4) .. controls (-0.7,-0.25) and (0.7,-0.25) .. (0.75,0.4) -- cycle;
+    \end{scope}}
+  \draw (-8.2,0.2) -- (7.0,0.2);
+\end{tikzpicture}

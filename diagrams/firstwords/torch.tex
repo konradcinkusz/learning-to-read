@@ -1,0 +1,23 @@
+% diagrams/firstwords/torch.tex -- Dani, sentado en la cama, lee un libro
+% a la luz de su linterna (la que pidió a los Reyes): la linterna en una
+% mano, el libro en la otra, y el haz de luz entre los dos.
+\begin{tikzpicture}[dibujofw]
+  \camaFW
+  % Dani, sentado, saliendo de la manta
+  \begin{scope}[shift={(3.4,2.3)}, scale=0.75]
+    \filldraw[fill=white] (-0.2,2.2) rectangle (0.2,3.0);
+    \filldraw[fill=white, rounded corners=2.5mm] (-1.0,2.5) -- (1.0,2.5) -- (1.05,0) -- (-1.05,0) -- cycle;
+    \draw (-0.45,2.5) .. controls (0,2.1) .. (0.45,2.5);
+    \begin{scope}[shift={(0,3.8)}] \cabezaDani \end{scope}
+  \end{scope}
+  % el libro, abierto, en la mano de la izquierda
+  \filldraw[fill=white] (2.9,2.55) -- (1.7,2.85) -- (1.7,4.0) -- (2.9,3.7) -- cycle;
+  \filldraw[fill=white] (2.9,2.55) -- (4.1,2.85) -- (4.1,4.0) -- (2.9,3.7) -- cycle;
+  \filldraw[fill=white] (1.8,2.75) circle (0.2);
+  % la luz de la linterna, hasta el libro, y la linterna en la otra mano
+  \filldraw[fill=white] (5.15,3.95) -- (3.3,3.9) -- (3.6,2.8) -- (5.3,3.55) -- cycle;
+  \filldraw[fill=white] (5.1,3.45) rectangle (6.4,4.05);
+  \filldraw[fill=white] (5.0,3.35) rectangle (5.3,4.15);
+  \filldraw[fill=white] (5.95,3.5) circle (0.22);
+  \draw (-0.8,0) -- (7.8,0);
+\end{tikzpicture}

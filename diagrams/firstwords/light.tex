@@ -1,0 +1,20 @@
+% diagrams/firstwords/light.tex -- las alubias de la clase, en sus vasos,
+% en el alféizar de la ventana, al sol.
+\begin{tikzpicture}[dibujofw]
+  % la ventana, con el sol fuera
+  \filldraw[fill=white] (-5.0,1.0) rectangle (5.0,8.0);
+  \begin{scope}
+    \clip (-5.0,1.0) rectangle (5.0,8.0);
+    \filldraw[fill=white] (2.8,6.0) circle (1.1);
+    \foreach \a in {0,45,...,315} {\draw ([shift={(\a:1.35)}]2.8,6.0) -- ([shift={(\a:1.9)}]2.8,6.0);}
+  \end{scope}
+  \draw (0,1.0) -- (0,8.0);
+  \filldraw[fill=white] (-5.6,0.5) rectangle (5.6,1.0);
+  % los vasos, con sus brotes
+  \foreach \x/\h in {-3.2/1.2, 0/2.0, 3.2/1.6} {
+    \draw (\x,2.9) -- (\x,{2.9+\h});
+    \begin{scope}[shift={(\x,{2.9+\h})}, rotate=45, scale=0.6] \hojaFW \end{scope}
+    \begin{scope}[shift={(\x,{2.9+\h})}, rotate=-45, scale=0.6] \hojaFW \end{scope}
+    \filldraw[fill=white] (\x-0.9,3.0) -- (\x-0.65,1.0) -- (\x+0.65,1.0) -- (\x+0.9,3.0) -- cycle;
+    \filldraw[fill=white] (\x-1.0,2.85) rectangle (\x+1.0,3.1);}
+\end{tikzpicture}

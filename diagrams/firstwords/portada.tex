@@ -1,0 +1,24 @@
+% diagrams/firstwords/portada.tex -- el viernes de "The library": la
+% portada de un libro que apetece leer -- un castillo, un dragón y una
+% bandera, en la tapa, con su lomo.
+\begin{tikzpicture}[dibujofw]
+  % el libro, de pie: el lomo y la tapa
+  \filldraw[fill=white] (-4.6,0) rectangle (-3.8,9.0);
+  \filldraw[fill=white] (-3.8,0) rectangle (3.6,9.0);
+  \filldraw[fill=white] (-3.2,7.2) rectangle (3.0,8.4);
+  % el castillo
+  \filldraw[fill=white] (-2.4,0.8) rectangle (1.6,4.0);
+  \foreach \x in {-2.4,-0.8,0.8} {\filldraw[fill=white] (\x,4.0) rectangle ++(0.8,0.6);}
+  \filldraw[fill=white] (-3.0,0.8) rectangle (-2.0,5.2);
+  \filldraw[fill=white] (-3.2,5.2) -- (-2.5,6.3) -- (-1.8,5.2) -- cycle;
+  \draw (-2.5,6.3) -- (-2.5,6.9); \filldraw[fill=white] (-2.5,6.9) -- (-1.9,6.7) -- (-2.5,6.5) -- cycle;
+  \filldraw[fill=white] (-0.8,0.8) -- (-0.8,2.0) arc[start angle=180, end angle=0, radius=0.6] -- (0.4,0.8) -- cycle;
+  % el dragón, volando
+  \begin{scope}[shift={(1.9,5.4)}, scale=0.5]
+    \filldraw[fill=white] (-0.5,0.5) -- (0.2,2.6) -- (1.0,0.6) -- cycle;
+    \filldraw[fill=white] (-2.0,0) .. controls (-1.2,0.8) and (1.2,0.9) .. (2.0,0.3) .. controls (1.2,-0.5) and (-1.2,-0.5) .. (-2.0,0) -- cycle;
+    \filldraw[fill=white] (1.9,0.3) circle (0.55);
+    \fill (2.1,0.45) circle (0.08);
+    \filldraw[fill=white] (-2.0,0) -- (-2.9,-0.4) -- (-2.6,0.1) -- cycle;
+  \end{scope}
+\end{tikzpicture}

@@ -1,0 +1,11 @@
+% diagrams/firstwords/abrazo.tex -- Lucía y Amy se piden perdón y se dan
+% un abrazo: juntas, con el brazo por encima de los hombros de la otra.
+\begin{tikzpicture}[dibujofw]
+  \ninaFW{Lucia}{Abajo}{Nada}
+  \begin{scope}[shift={(2.5,0)}] \ninaFW{Amy}{Nada}{Abajo} \end{scope}
+  % el brazo de Amy, por encima de los hombros de Lucía
+  \filldraw[fill=white, rounded corners=2mm] (1.8,4.75) -- (-0.4,4.95) -- (-0.75,4.55) -- (1.7,4.3) -- cycle;
+  \filldraw[fill=white] (-0.8,4.72) circle (0.27);
+  \foreach \x/\y/\s in {1.25/8.7/0.7, 0.1/9.6/0.45, 2.5/9.8/0.5} {\begin{scope}[shift={(\x,\y)}, scale=\s] \corazonFW \end{scope}}
+  \draw (-2.0,0.2) -- (4.5,0.2);
+\end{tikzpicture}

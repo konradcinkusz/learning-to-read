@@ -1,0 +1,21 @@
+\documentclass[11pt]{article}
+\def\bookcolor{color}
+\def\booklang{en}
+\input{preamble}
+\input{preamble-palabras}
+\input{preamble-firstwords}
+\newcommand{\muestra}[1]{\begin{minipage}[b]{0.31\linewidth}\centering
+  \fcolorbox{gray!30}{colorDibujaClaro}{\begin{minipage}[c][52mm]{0.95\linewidth}\centering
+  \dibujoColorear{#1}{\linewidth}{50mm}\end{minipage}}\\[0.5mm]{\small\detokenize{#1}}\end{minipage}}
+\begin{document}\pagestyle{empty}
+\noindent
+\muestra{firstwords/cup}\hfill
+\muestra{firstwords/shoot}\hfill
+\muestra{firstwords/bee}\hfill
+\par\vspace{3mm}\noindent
+\muestra{firstwords/jack}\hfill
+\muestra{firstwords/dot}\hfill
+\muestra{firstwords/pip-canta}\hfill
+\par\vspace{3mm}\noindent
+\muestra{firstwords/invierno}\hfill
+\end{document}

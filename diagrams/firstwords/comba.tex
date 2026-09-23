@@ -1,0 +1,11 @@
+% diagrams/firstwords/comba.tex -- el viernes de "Friends again": Lucía y
+% Amy, amigas otra vez, saltando juntas a la comba (cada una sujeta una
+% punta).
+\begin{tikzpicture}[dibujofw]
+  \begin{scope}[shift={(0,0.8)}] \ninaFW{Lucia}{Abajo}{Abajo} \end{scope}
+  \begin{scope}[shift={(3.4,0.8)}] \ninaFW{Amy}{Abajo}{Abajo} \end{scope}
+  \combaFW{-1.4}{3.25}{4.8}{3.25}{10.6}
+  \foreach \x in {0,3.4} {\draw ({\x-0.7},0.55) -- ({\x-0.3},0.3); \draw ({\x+0.7},0.55) -- ({\x+0.3},0.3);}
+  \foreach \x/\y/\s in {-2.8/7.8/0.45, 6.3/7.6/0.5} {\begin{scope}[shift={(\x,\y)}, scale=\s] \corazonFW \end{scope}}
+  \draw (-3.2,0) -- (6.6,0);
+\end{tikzpicture}

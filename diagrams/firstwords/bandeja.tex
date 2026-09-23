@@ -1,0 +1,26 @@
+% diagrams/firstwords/bandeja.tex -- el viernes de "Dani is ill": lo que
+% ayuda a ponerse bueno, en una bandeja -- la sopa caliente, el zumo de
+% naranja, una flor y la tarjeta de Sam.
+\begin{tikzpicture}[dibujofw]
+  % la bandeja
+  \filldraw[fill=white] (-5.2,0) -- (5.2,0) -- (5.8,0.9) -- (-5.8,0.9) -- cycle;
+  \filldraw[fill=white] (-6.3,0.4) rectangle (-5.5,0.9); \filldraw[fill=white] (5.5,0.4) rectangle (6.3,0.9);
+  % la sopa, con su humo
+  \filldraw[fill=white] (-4.6,1.4) .. controls (-4.5,0.2) and (-1.9,0.2) .. (-1.8,1.4) -- cycle;
+  \filldraw[fill=white] (-3.2,1.45) ellipse (1.45 and 0.25);
+  \filldraw[fill=white] (-2.1,1.9) -- (-1.2,3.0) -- (-1.0,2.85) -- (-1.85,1.7) -- cycle;
+  \foreach \x in {-3.8,-3.2,-2.6} {\draw (\x,2.0) .. controls ({\x-0.3},2.4) and ({\x+0.3},2.7) .. (\x,3.1);}
+  % el zumo
+  \filldraw[fill=white] (-0.7,0.9) -- (-0.9,3.4) -- (0.9,3.4) -- (0.7,0.9) -- cycle;
+  \draw (-0.85,2.8) -- (0.85,2.8);
+  \filldraw[fill=white] (0.2,3.4) -- (0.9,4.4) -- (1.05,4.3) -- (0.4,3.4) -- cycle;
+  % la flor, en su jarrón
+  \filldraw[fill=white] (1.6,0.9) -- (1.5,2.2) .. controls (1.5,2.6) and (2.5,2.6) .. (2.5,2.2) -- (2.4,0.9) -- cycle;
+  \draw (2.0,2.5) -- (2.0,4.4);
+  \foreach \a in {0,72,...,288} {\filldraw[fill=white] ([shift={(\a:0.45)}]2.0,4.8) circle (0.32);}
+  \filldraw[fill=white] (2.0,4.8) circle (0.3);
+  % la tarjeta de Sam
+  \filldraw[fill=white] (3.0,0.9) -- (3.0,3.6) -- (4.4,3.9) -- (4.4,1.2) -- cycle;
+  \filldraw[fill=white] (4.4,1.2) -- (4.4,3.9) -- (5.4,3.3) -- (5.4,0.9) -- cycle;
+  \begin{scope}[shift={(3.7,2.0)}, scale=0.5] \corazonFW \end{scope}
+\end{tikzpicture}
