@@ -1,0 +1,98 @@
+% preamble-firstwords.tex
+% -----------------------------------------------------------------------
+% Lo propio de «First Words» (firstwords.tex, firstwords-bw.tex), el
+% cuaderno de primeras palabras en inglés, cargado DESPUÉS de preamble.tex
+% y de preamble-palabras.tex: la página, las cajas de actividad y el pie
+% son los del cuaderno de primeras palabras en español (ver
+% notes/06-first-words.md); aquí solo cambia la tarjeta de la palabra.
+%
+% En español, la tarjeta enseña la palabra partida en sílabas y entera.
+% En inglés se lee por sonidos, así que la tarjeta enseña la palabra
+% entera con un "botón" debajo de cada sonido (sound buttons, como en
+% los colegios ingleses): un punto si el sonido es una sola letra (c, a,
+% t), una raya si son varias (sh, ee, ck), y un arco que une la vocal con
+% la e del final si es una e mágica (cake). Se lee tocando cada botón y
+% diciendo su sonido, y luego la palabra de corrido.
+% -----------------------------------------------------------------------
+
+\usetikzlibrary{calc}
+
+% Sin ligaduras: Andika junta ff, fi y fl en una sola letra, con una sola
+% barra, y en este cuaderno cada letra cuenta -- off se lee o-ff, y esas
+% dos efes tienen que verse como dos, igual que en la tabla de sonidos de
+% cualquier colegio. La misma letra de preamble.tex, solo sin "liga" (los
+% guiones y las comillas de TeX, -- y ``, siguen funcionando).
+\setmainfont{Andika}[
+  Path = fonts/andika/,
+  Extension = .ttf,
+  UprightFont = *-Regular,
+  BoldFont = *-Bold,
+  ItalicFont = *-Italic,
+  BoldItalicFont = *-BoldItalic,
+  Ligatures = NoCommon,
+]
+\setsansfont{Andika}[
+  Path = fonts/andika/,
+  Extension = .ttf,
+  UprightFont = *-Regular,
+  BoldFont = *-Bold,
+  ItalicFont = *-Italic,
+  BoldItalicFont = *-BoldItalic,
+  Ligatures = NoCommon,
+]
+
+% Cada grafema es un nodo pegado al anterior por la línea base
+% (tools/gen_palabras.py, tarjeta_sonidos): la palabra se ve entera, como
+% si fuera un solo texto, y los botones caen debajo de sus letras.
+\tikzset{grafema/.style={anchor=base west, inner sep=0pt, outer sep=0pt}}
+
+% Los botones, en unidades de la letra (em), para que sirvan igual con la
+% palabra enorme del otoño que con las tres más pequeñas de la
+% primavera. A 0,36 em por debajo de la línea base quedan por debajo de
+% las letras que bajan (p, g, y).
+\newcommand{\botonPunto}[1]{%
+  \fill[colorLectura] ($(#1.base)+(0,-0.36em)$) circle (0.075em);}
+\newcommand{\botonRaya}[1]{%
+  \draw[colorLectura, line width=0.06em, line cap=round]
+    ($(#1.base west)+(0.12em,-0.36em)$) -- ($(#1.base east)+(-0.12em,-0.36em)$);}
+% La e mágica: un arco por debajo, de la vocal a la e, que pasa por
+% debajo del botón de la consonante de en medio.
+\newcommand{\botonArco}[2]{%
+  \draw[colorLectura, line width=0.06em, line cap=round]
+    ($(#1.base)+(0,-0.3em)$) .. controls +(0.05em,-0.42em) and +(-0.05em,-0.42em)
+    .. ($(#2.base)+(0,-0.3em)$);}
+
+% La tarjeta: #1 el trimestre (el tamaño, \fuentePalabra), #2 los nodos
+% y los botones. La letra se elige antes del dibujo para que los em de
+% los botones sean los de la palabra.
+\newcommand{\tarjetaSonidos}[2]{%
+  {\fuentePalabra{#1}\ajustado{\begin{tikzpicture}[baseline=(g1.base)]#2\end{tikzpicture}}\par}%
+}
+
+% Un nombre que se lee de un golpe (Toby, Amy): la palabra entera, sin
+% botones, con el mismo aire debajo que una tarjeta con botones.
+\newcommand{\tarjetaEntera}[2]{%
+  {\fuentePalabra{#1}\ajustado{#2}\par\vspace{0.3em}}%
+}
+
+% =========================================================================
+% La tabla de sonidos (frontmatter/firstwords/sonidos.tex; las secciones
+% las genera tools/gen_palabras.py en content/firstwords/generated-sonidos.tex)
+% =========================================================================
+% Cada sonido en grande, y debajo una palabra que lo tiene, con sus
+% letras resaltadas (en blanco y negro, la negrita sola ya lo dice). Las
+% casillas son cajas de ancho fijo dentro de un párrafo: salen nueve por
+% línea -- los nueve sonidos de la segunda parte del otoño, una línea
+% justa --, y el párrafo las parte donde haga falta. El \strut iguala el
+% alto y el fondo de todos los sonidos, bajen o no de la línea (g, j, p,
+% y): así las palabras de debajo quedan todas a la misma altura.
+\newcommand{\resalta}[1]{\textcolor{colorLectura}{\bfseries #1}}
+\newcommand{\seccionSonidos}[1]{%
+  \par\vspace{4mm}{\large\bfseries #1\par}\vspace{1mm}%
+  \noindent\raggedright\ignorespaces}
+\newcommand{\sonido}[2]{%
+  \makebox[18mm][c]{\begin{tabular}[t]{@{}c@{}}%
+    {\fontsize{26}{30}\selectfont\strut #1}\\[-0.8mm]{\large #2}%
+  \end{tabular}}\hspace{0.8mm plus 1mm}\ignorespaces}
+\newcommand{\finSonidos}{\par}
+

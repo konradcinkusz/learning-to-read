@@ -46,7 +46,7 @@ jobs:
       # matplotlib/fonttools (eso solo hace falta para regenerarlo, ver
       # tools/gen_letras_puntos.py), así que este job no gana ninguna
       # dependencia pesada por esa actividad.
-      - name: Genera los .tex de los cuatro cuadernos desde su JSON
+      - name: Genera los .tex de los cinco cuadernos desde su JSON
         run: make generate
 
       - name: Valida el contenido (frases por trimestre, campos de actividad)
@@ -125,6 +125,33 @@ jobs:
             python3 tools/metricas.py --libro english --tabla
           } >> "$GITHUB_STEP_SUMMARY"
 
+      # «First Words», las primeras palabras en inglés
+      # (content/firstwords/q*.json, ver notes/06-first-words.md): las
+      # mismas puertas que el cuaderno de primeras palabras en español,
+      # con sonidos en vez de sílabas. Primero el partido automático en
+      # sonidos contra casos conocidos (tools/fonetica.py: grafemas, e
+      # mágica, rr, las trampas que tiene que rechazar); después el
+      # contenido -- cada palabra partida a mano igual que la parte
+      # tools/fonetica.py, dentro de la escalera de sonidos de su semana,
+      # sin tricky words en las tarjetas, y en verano solo palabras ya
+      # leídas --, la tabla de sonidos del principio generada de la
+      # misma escalera, y un resumen semana a semana. Mientras se escribe
+      # por partes, su Perfil (tools/gen_palabras.py) dice cuántos días
+      # tiene ya (dias_escritos) y se valida exactamente eso.
+      - name: Comprueba el partido en sonidos del inglés (casos conocidos)
+        run: python3 tools/fonetica.py --prueba
+
+      - name: Valida First Words (sonidos, escalera, tabla de sonidos)
+        run: python3 tools/gen_palabras.py --libro firstwords --check
+
+      - name: Resume la escalera de First Words
+        run: |
+          {
+            echo '## First Words: escalera de sonidos por semana'
+            echo
+            python3 tools/gen_palabras.py --libro firstwords --tabla
+          } >> "$GITHUB_STEP_SUMMARY"
+
   build:
     name: PDF (${{ matrix.variant }})
     needs: gates
@@ -160,6 +187,12 @@ jobs:
             root: english
           - variant: english-bw
             root: english-bw
+          # «First Words» (firstwords.tex), las primeras palabras en
+          # inglés: las mismas.
+          - variant: firstwords-color
+            root: firstwords
+          - variant: firstwords-bw
+            root: firstwords-bw
     steps:
       - uses: actions/checkout@v4
 
@@ -168,7 +201,7 @@ jobs:
           python-version: '3.11'
 
       # Otro runner, otro checkout -- este job genera para sí mismo.
-      - name: Genera los .tex de los cuatro cuadernos desde su JSON
+      - name: Genera los .tex de los cinco cuadernos desde su JSON
         run: make generate
 
       # LuaLaTeX, no pdflatex: la letra es Andika (fonts/andika/, ver

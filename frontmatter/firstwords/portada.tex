@@ -1,0 +1,33 @@
+% frontmatter/firstwords/portada.tex -- página de título de «First
+% Words». El icono es el libro abierto de las portadas de la serie
+% (frontmatter/palabras/portada.tex) con tres botones de sonido debajo --
+% dos puntos y una raya, los de d-u-ck --, que es lo propio de este
+% cuaderno. La disposición es la de "Read and Draw"
+% (frontmatter/english/portada.tex), su hermano mayor en inglés.
+\begin{center}
+\vspace*{2.6cm}
+
+\begin{tikzpicture}[line width=1.6pt, line cap=round, line join=round, color=colorLectura]
+  \draw (-1.6,0) -- (0,0.35) -- (1.6,0) -- (1.6,-1.9) -- (0,-1.55) -- (-1.6,-1.9) -- cycle;
+  \draw (0,0.35) -- (0,-1.55);
+  \draw (-1.25,-0.3) -- (-0.25,-0.15);
+  \draw (-1.25,-0.7) -- (-0.25,-0.55);
+  \draw (0.25,-0.15) -- (1.25,-0.3);
+  \draw (0.25,-0.55) -- (1.25,-0.7);
+  \fill (-0.95,-2.5) circle (0.14);
+  \fill (-0.2,-2.5) circle (0.14);
+  \draw[line width=3pt] (0.4,-2.5) -- (1.15,-2.5);
+\end{tikzpicture}
+
+\vspace{10mm}
+{\large\color{colorGris} \lblFwNivelPortada}\\[4mm]
+{\fontsize{44}{50}\selectfont\bfseries\color{colorLectura} \lblFwTituloPortada}\\[6mm]
+{\Large\color{colorGris} \lblFwSubtituloPortada}\\[4mm]
+{\normalsize\color{colorGris}\parbox{0.8\linewidth}{\centering \lblFwSubtituloPortadaMetodo}}
+
+\vspace{16mm}
+{\large \lblPortadaNombre:\ \rule{75mm}{0.4pt}}\\[6mm]
+{\large \lblPortadaCurso:\ \rule{75mm}{0.4pt}}
+\end{center}
+\vspace*{\fill}
+\newpage

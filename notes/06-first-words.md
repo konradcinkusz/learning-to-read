@@ -1,0 +1,190 @@
+# «First Words» — primeras palabras en inglés
+
+El quinto cuaderno, y el segundo en inglés: el nivel más bajo en inglés,
+**muy por debajo** de *Read and Draw* (`english.tex`, ver
+`notes/05-english.md`). *Read and Draw* es para quien ya lee con soltura
+y lee textos cortos de oraciones compuestas; *First Words* es para quien
+**empieza** a leer en inglés: conoce las letras (o casi todas) y empieza
+a juntar sus sonidos. Es, en inglés, lo que el cuaderno de primeras
+palabras (`palabras.tex`, `notes/03-nivel-palabras.md`) es en español:
+una palabra al día y casi siempre un dibujo. Todo está en inglés — la
+palabra, las instrucciones, la portada, la página para el adulto, la
+clave y el diploma.
+
+Ficheros: `firstwords.tex` / `firstwords-bw.tex`, `body-firstwords.tex`,
+`preamble-firstwords.tex` (encima de `preamble-palabras.tex`),
+`frontmatter/firstwords/`, `backmatter/firstwords/`,
+`content/firstwords/q1.json`…`q4.json`, `tools/fonetica.py`, y el mismo
+generador que el español, `tools/gen_palabras.py --libro firstwords`
+(todo lo que cambia de un cuaderno a otro está en su `Perfil`). `make
+firstwords` lo genera, compila y comprueba.
+
+## Lo que se mantiene igual que en el cuaderno de primeras palabras
+
+- **260 días, 52 semanas, cuatro partes = cuatro estaciones**, con
+  vacaciones incluidas, y una medalla al final de otoño, invierno y
+  primavera.
+- **La escalera de cuánto se lee**: una palabra al día en otoño, dos en
+  invierno, tres en primavera y una frase en verano, de dos palabras a
+  cuatro — los mismos tramos que el español (`ESCALERA_EN`, al lado de
+  `ESCALERA` en `tools/gen_palabras.py`).
+- **La página**: la caja de lectura arriba y la caja de actividad
+  llenando todo lo que queda (`preamble-palabras.tex`, las mismas cajas y
+  las mismas plantillas). Las instrucciones son para el adulto, pequeñas
+  y en gris; lo que lee la niña o el niño va siempre grande.
+- **El ciclo semanal y las actividades** (ver la tabla de
+  `notes/03-nivel-palabras.md`): lunes *Draw*; martes *Trace* (semanas
+  pares) o *Finish the picture* (impares); miércoles *Sounds* → *Find it*
+  → *Write*, rotando cada semana (en verano, *Yes or no?*); jueves
+  *Riddle* (pares) o *Match* (impares); viernes *Read again* (impares) o
+  *Look back* (pares, con el cartel de "10 pages read!").
+- **Las barreras duras** en `make` y en CI: 1 día = 1 página
+  (`tools/check_pages.py`), log sin errores ni `Overfull`
+  (`tools/checklog.py`), JSON y `.tex` generado al día (`--check`).
+
+## Los temas: los de *Read and Draw*
+
+Las 52 semanas tienen los mismos temas, en el mismo orden, que *Read and
+Draw* (*New neighbours*, *Amy's first day*, *Toby meets Pip*…, ver
+`notes/05-english.md`): el mismo año, la misma familia y los mismos
+vecinos de Londres — Amy, su hermano Sam y Pip, el loro. Si en casa hay
+dos hermanos, uno con cada cuaderno, esa semana leen los dos sobre lo
+mismo. Con una palabra al día no se puede contar la historia: la cuenta
+el adulto, que lee la instrucción de cada actividad (*A big van stops
+next to Lucía's house. Draw the van.*), y la palabra del día es una pieza
+de ella (*van*, *mum*, *Pip*, *Amy*).
+
+## Lo que cambia: se lee por sonidos, no por sílabas
+
+En español se aprende a leer por sílabas (*pe·lo·ta*); en inglés, por
+sonidos (*phonics*): se dice cada sonido y se juntan — *c, a, t: cat*.
+La unidad es el **grafema**, la letra o grupo de letras que se lee como
+un solo sonido: *c-a-t*, *sh-ee-p*, *n-igh-t*, y la "e mágica" (*split
+digraph*) de *cake*, que es un solo sonido escrito con dos letras
+separadas (`c-a_e-k`).
+
+La tarjeta de la palabra no la parte en trozos: la enseña entera, con un
+**botón de sonido** debajo de cada grafema, como en los colegios
+ingleses — un punto si el sonido es una letra, una raya si son varias
+(*sh*, *ee*, *ck*), un arco de la vocal a la *e* si es una e mágica. Se
+lee tocando cada botón, diciendo su sonido, y luego la palabra de
+corrido. Cada grafema es un nodo de TikZ pegado al anterior por la línea
+base (`tarjeta_sonidos` en `tools/gen_palabras.py`, `\tarjetaSonidos`
+en `preamble-firstwords.tex`): la palabra se ve como un solo texto, y
+los botones, medidos en `em`, caen debajo de sus letras a cualquier
+tamaño. La letra es Andika sin ligaduras (en *off*, las dos efes tienen
+que verse como dos).
+
+### La escalera de sonidos
+
+| Parte | Semanas | Lee | Sonidos nuevos | Máx. sonidos | Dos consonantes seguidas |
+|---|---|---|---|---|---|
+| 1 (otoño) | 1–5 | 1 palabra | una letra = un sonido: todas menos q, x, y (*van, mum, Pip, bag*) | 3 | no |
+| 1 (otoño) | 6–13 | 1 palabra | + ck ff ll ss zz gg, x, y, qu (*duck, bell, box, yes, quack*) | 3 | no |
+| 2 (invierno) | 14–26 | 2 palabras | + sh ch th ng, ai ee igh oa oo ar or ur ow oi ear air ure er, bb dd mm nn pp rr tt (*ship, rain, night, moon, car, letter*) | 4 | no |
+| 3 (primavera) | 27–39 | 3 palabras | + ay ou ie ea oy ir ue aw ew oe au ey wh ph tch dge, la e mágica (*day, bird, blue, cake, bike, bone*) | 5 | sí (*frog, nest*) |
+| 4 (verano) | 40–43 | frase de 2 palabras | ninguno: solo palabras ya leídas, tricky words y nombres | — | — |
+| 4 (verano) | 44–47 | frase de 2–3 palabras | ídem | — | — |
+| 4 (verano) | 48–52 | frase de 3–4 palabras | ídem | — | — |
+
+**Por qué este orden.** Es el de *Letters and Sounds* (DfE, 2007), el
+programa de los colegios ingleses: primero una letra = un sonido (fase
+2–3), después dos o tres letras para un sonido (fase 3), después dos
+consonantes seguidas (fase 4) y otras formas de escribir los mismos
+sonidos (fase 5). Las fases 4 y 5 van juntas en primavera: con tres
+palabras al día y cinco sonidos por palabra hay sitio para las dos. Hasta
+la primavera, ninguna palabra lleva dos consonantes seguidas: en
+invierno se juntan hasta cuatro sonidos, pero cada uno está solo entre
+vocales (*b-oa-t*, *h-a-mm-er*).
+
+**La tabla de sonidos.** La página *The sounds in this book*, justo
+después de la del adulto, enseña todos los sonidos del cuaderno en el
+orden en que llegan, cada uno con una palabra que lo tiene (*sh — ship*,
+*a–e — cake*). No está escrita a mano: la genera `tools/gen_palabras.py`
+(`content/firstwords/generated-sonidos.tex`) a partir de `ESCALERA_EN` y
+de `fonetica.EJEMPLOS`, y falla si a un grafema le falta su ejemplo, si
+sobra alguno o si un ejemplo no se puede leer todavía en su tramo — así
+la tabla no puede decir una cosa y la escalera otra.
+
+**Nombres que se leen de un golpe.** Como *Lucía* y *Toby* en el
+cuaderno español, los nombres del reparto que no se pueden leer sonido a
+sonido con lo que se sabe (*Lucía, Toby, Amy, Dani, Grandma, Brown*…)
+se saltan la escalera (`PALABRAS_GLOBALES_EN`): van enteros en el JSON,
+sin guiones, y su tarjeta no lleva botones (y, si es la única del día,
+la instrucción dice que se lee "in one go, like your own name"). *Pip*,
+*Sam*, *mum* y *dad* no están: se leen sonido a sonido desde el primer
+día.
+
+**Tricky words.** Las palabras muy frecuentes que no se leen como se
+escriben (*the, was, said, you*) o que se leen antes de haber visto sus
+sonidos (*he, my, no*) se aprenden enteras (`fonetica.TRICKY`). Hasta el
+verano no hacen falta — se leen palabras sueltas — y nunca pueden salir
+como una palabra de tarjeta (`tools/gen_palabras.py` lo rechaza). En
+verano, las frases las necesitan; se presentan antes, en primavera, unas
+pocas cada viernes (fase 4 de la escritura, ver "Las fases").
+
+**Por qué el verano ya son frases.** Por lo mismo que en el cuaderno
+español: *Read and Draw* empieza con textos de unas 30 palabras, y pasar
+de 39 semanas de palabras sueltas a eso de golpe sería demasiado. El
+verano es el puente, y en él **nada es nuevo**: cada palabra de una
+frase tiene que haber salido antes en una tarjeta (o ser su plural), ser
+una tricky word o un nombre del reparto.
+
+## Cómo se comprueba
+
+- Cada palabra de una tarjeta se escribe en el JSON **ya partida en sus
+  sonidos** (`"sh-ee-p"`, `"c-a_e-k"`), y tiene que coincidir con el
+  partido automático de `tools/fonetica.py`, `segmentar()`: un
+  emparejamiento voraz, de izquierda a derecha, que prueba primero los
+  grafemas más largos (*igh* antes que *i*), con dos reglas — la e
+  mágica (vocal + una consonante + *e* final) y la *rr* (*cherry* es
+  *ch-e-rr-y*, no *ch-er-r-y*). Dos fuentes que tienen que estar de
+  acuerdo, como el silabeo del español.
+- `segmentar()` rechaza las **trampas**: palabras que se pueden partir
+  pero cuyos botones mentirían — una *e* final que no suena y no es una e
+  mágica (*house, apple*), letras mudas (*knee, write, lamb, ghost*),
+  una *c* que suena /s/ (*nice, city*), la *a* de *ball* y la *o* de
+  *cold*. Mejor un error que una tarjeta con un botón debajo de una
+  letra que no suena.
+- `tools/fonetica.py --prueba` comprueba el partido automático contra 67
+  palabras con respuesta conocida, que las 16 trampas de prueba se
+  rechacen y que cada ejemplo de la tabla de sonidos tenga su sonido —
+  en CI, antes que nada.
+- Cada palabra que lee la niña o el niño — en la tarjeta y **dentro de
+  una actividad** (los distractores de *Find it*, los pares escritos a
+  mano de *Match*) — pasa por la escalera de su semana: solo grafemas ya
+  vistos, no más sonidos de los que admite, dos consonantes seguidas
+  solo desde la primavera, nunca una tricky word. El error dice qué
+  palabra, qué sonido y por qué: *«ship» (sh-i-p) tiene sh, que la
+  escalera no admite hasta más adelante (semana 3)*.
+- En verano, cada palabra de cada frase tiene que ser conocida (ver
+  arriba).
+- La clave de respuestas trae, además de lo del cuaderno español,
+  cuántos sonidos tiene cada palabra de *Sounds*: quien no aprendió a
+  leer en inglés no tiene por qué saber que *sheep* tiene tres.
+- `tools/gen_palabras.py --libro firstwords --tabla` resume la escalera
+  semana a semana (qué se lee, sonidos máximos, grafemas que salen por
+  primera vez) y CI la publica en el resumen del job.
+- Mientras el cuaderno se escribe por partes, su `Perfil` dice cuántos
+  días tiene ya (`dias_escritos`) y se validan exactamente esos.
+
+## Las fases
+
+Como *Read and Draw*, un PR por fase, cada una en verde antes de la
+siguiente:
+
+1. **El motor, el diseño y las dos primeras semanas** (días 1–10):
+   `tools/fonetica.py`, el perfil `firstwords` de `tools/gen_palabras.py`
+   (el cuaderno español sale idéntico, byte a byte), la tarjeta con
+   botones, la portada, *How to use this book*, la tabla de sonidos, el
+   mapa del año, la clave y el diploma.
+2. **Otoño** (días 1–65): una letra = un sonido; desde la semana 6, las
+   letras dobles, x, y, qu.
+3. **Invierno** (días 66–130): dos palabras al día, dos o tres letras
+   para un sonido.
+4. **Primavera** (días 131–195): tres palabras al día, las otras formas
+   de escribir los sonidos, la e mágica, dos consonantes seguidas — y la
+   presentación de las tricky words, los viernes.
+5. **Verano** (días 196–260) y publicación: una frase al día hecha de
+   palabras conocidas; el libro entero (sin `dias_escritos`), y los dos
+   PDF en GitHub Pages con los demás.

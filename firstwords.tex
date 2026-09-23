@@ -1,0 +1,18 @@
+% firstwords.tex -- «First Words», el cuaderno de primeras palabras en
+% inglés (ver notes/06-first-words.md): el nivel más bajo en inglés, muy
+% por debajo de "Read and Draw" (english.tex) -- el equivalente inglés
+% del cuaderno de primeras palabras en español (palabras.tex). Mismo
+% motor: \booklang elige el idioma (babel y lang/en.tex) antes de
+% \input{preamble}; encima va lo del cuaderno de primeras palabras
+% (preamble-palabras.tex: la página, las cajas de actividad) y lo propio
+% de este (preamble-firstwords.tex: la tarjeta con los botones de
+% sonidos).
+\documentclass[11pt]{article}
+\def\bookcolor{color}
+\def\booklang{en}
+\input{preamble}
+\input{preamble-palabras}
+\input{preamble-firstwords}
+\begin{document}
+\input{body-firstwords}
+\end{document}
