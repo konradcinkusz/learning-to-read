@@ -95,7 +95,9 @@ Las barreras duras que tienen que quedar en verde:
   los sonidos que su semana ya admite, no ser una trampa (*house*,
   *knee*) ni una *tricky word*; en verano, cada palabra de una frase
   tiene que haberse leído antes. Y la tabla de sonidos del principio,
-  generada de la misma escalera, sin ningún sonido sin ejemplo.
+  generada de la misma escalera, sin ningún sonido sin ejemplo, y con
+  cada uno de sus sonidos en alguna tarjeta antes de que acabe su
+  estación.
 - **La escalera de progresión** (`tools/metricas.py`, contra
   `content/progresion.json` -- ver `notes/02-revision-y-plan.md`, Parte
   C): palabras por página y frase más larga no pueden superar el

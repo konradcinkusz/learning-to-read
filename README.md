@@ -187,8 +187,9 @@ Al generar el libro se comprueba a máquina que cada palabra se parta en
 sonidos igual a mano que en `tools/fonetica.py`, que solo use los
 sonidos que ya se han visto, que no sea una palabra cuyos botones
 mentirían (*house*, *knee*, *nice*: una letra que no suena) ni una
-*tricky word* (*the, said*), y que la tabla de sonidos diga lo mismo que
-la escalera. Ver `notes/06-first-words.md` para el diseño completo y las
+*tricky word* (*the, said*), que la tabla de sonidos diga lo mismo que
+la escalera y que cada sonido de la tabla salga en alguna tarjeta de su
+estación. Ver `notes/06-first-words.md` para el diseño completo y las
 fases.
 
 ## Descargar el PDF sin instalar nada
@@ -385,10 +386,10 @@ en color y en blanco y negro con las mismas comprobaciones que los otros
 tres cuadernos, y se publica en GitHub Pages con ellos.
 
 **First Words (en inglés)**: en obras, en cinco fases, una por PR (ver
-`notes/06-first-words.md`, "Las fases"). Escrita la fase 1: el motor
-(`tools/fonetica.py` y el perfil `firstwords` de `tools/gen_palabras.py`,
-con el cuaderno de primeras palabras en español idéntico byte a byte),
-la tarjeta con botones de sonido, la portada, *How to use this book*, la
-tabla de sonidos, el mapa del año, la clave, el diploma y los días 1-10.
-Compila en color y en blanco y negro con las mismas comprobaciones que
-los demás.
+`notes/06-first-words.md`, "Las fases"). Escritas las fases 1 y 2: el
+motor (`tools/fonetica.py` y el perfil `firstwords` de
+`tools/gen_palabras.py`, con el cuaderno de primeras palabras en español
+idéntico byte a byte), la tarjeta con botones de sonido, la portada,
+*How to use this book*, la tabla de sonidos, el mapa del año, la clave,
+el diploma y el otoño entero (días 1-65, con su medalla). Compila en
+color y en blanco y negro con las mismas comprobaciones que los demás.

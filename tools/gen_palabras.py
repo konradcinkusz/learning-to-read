@@ -198,9 +198,9 @@ FIRSTWORDS = Perfil(
     titulo_medalla=ENGLISH.titulo_medalla,
     nombres_medalla=ENGLISH.nombre_medalla,
     animo_medalla=ENGLISH.animo_medalla,
-    # Fase 1: el motor y las dos primeras semanas (días 1-10). Ver
-    # notes/06-first-words.md, "Las fases".
-    dias_escritos=10,
+    # Fase 2: el otoño entero (días 1-65). Ver notes/06-first-words.md,
+    # "Las fases".
+    dias_escritos=65,
 )
 
 PERFILES = {p.nombre: p for p in (PALABRAS, FIRSTWORDS)}
@@ -1115,6 +1115,44 @@ def comprobar_trazo(dias):
         )
 
 
+def comprobar_cobertura(dias):
+    """«First Words»: cada sonido que llega en una estación sale en alguna
+    tarjeta antes de que se acabe. La tabla de sonidos del principio
+    (generar_sonidos) enseña todos los de la escalera, en su estación, y
+    dice "every sound in the book": tiene que ser verdad, y cada sonido
+    nuevo, practicarse en alguna palabra. Una estación se comprueba en
+    cuanto está escrita entera."""
+    if PERFIL.idioma != "en":
+        return
+    vistos = set()
+    al_acabar = {}  # trimestre -> los grafemas vistos hasta su último día
+    fin_de = {fin: trimestre for trimestre, fin in ULTIMO_DIA_TRIMESTRE.items()}
+    for d in dias:
+        for _, grafemas in d.get("tarjetas", []):
+            vistos.update(g.lower() for g in grafemas or [])
+        if d["dia"] in fin_de:
+            al_acabar[fin_de[d["dia"]]] = set(vistos)
+    anteriores = frozenset()
+    for t in PERFIL.escalera:
+        if "grafemas" not in t:
+            continue
+        nuevos = t["grafemas"] - anteriores
+        anteriores = t["grafemas"]
+        lo, hi = t["semanas"]
+        trimestre = (hi - 1) // 13 + 1
+        if trimestre not in al_acabar:
+            continue  # esa estación todavía no está escrita entera
+        faltan = sorted(nuevos - al_acabar[trimestre])
+        if faltan:
+            raise ErrorDeContenido(
+                f"{', '.join(faltan)}: la escalera los trae en las semanas "
+                f"{lo}-{hi} y la tabla de sonidos los enseña, pero no salen "
+                "en ninguna tarjeta antes del día "
+                f"{ULTIMO_DIA_TRIMESTRE[trimestre]} -- alguna palabra de esa "
+                "estación tiene que tenerlos"
+            )
+
+
 def tabla(dias):
     """Resumen por semana, en Markdown, para GITHUB_STEP_SUMMARY."""
     if PERFIL.idioma == "en":
@@ -1303,6 +1341,7 @@ def main():
         dias = cargar_dias()
         validar_dias(dias)
         comprobar_trazo(dias)
+        comprobar_cobertura(dias)
         tex, clave = generar(dias)
         salidas = [(PERFIL.salida_dias, tex), (PERFIL.salida_clave, clave)]
         if PERFIL.idioma == "en":

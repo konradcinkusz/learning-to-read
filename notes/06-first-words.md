@@ -159,6 +159,12 @@ una tricky word o un nombre del reparto.
   escalera no admite hasta más adelante (semana 3)*.
 - En verano, cada palabra de cada frase tiene que ser conocida (ver
   arriba).
+- **Cada sonido de la tabla se practica**: todo grafema que la escalera
+  trae en una estación tiene que salir en alguna tarjeta antes de que
+  esa estación se acabe (`comprobar_cobertura`) — la tabla de sonidos
+  dice "every sound in the book", y tiene que ser verdad. En el otoño,
+  por ejemplo, la *z* sola solo cabía en *zip* (día 36): sin esa
+  palabra, el libro no se genera.
 - La clave de respuestas trae, además de lo del cuaderno español,
   cuántos sonidos tiene cada palabra de *Sounds*: quien no aprendió a
   leer en inglés no tiene por qué saber que *sheep* tiene tres.
@@ -179,7 +185,11 @@ siguiente:
    botones, la portada, *How to use this book*, la tabla de sonidos, el
    mapa del año, la clave y el diploma.
 2. **Otoño** (días 1–65): una letra = un sonido; desde la semana 6, las
-   letras dobles, x, y, qu.
+   letras dobles, x, y, qu. Las palabras de las tarjetas son piezas de
+   la historia de *Read and Draw* de cada semana (*Toby, dog, wag, nap*;
+   *cat, bat, ten, yell* en Halloween; *six, top, sock, yes* en
+   Navidad), y las seis letras de *Trace* (*s, d, h, m, f, b*) son las
+   iniciales de una de ellas.
 3. **Invierno** (días 66–130): dos palabras al día, dos o tres letras
    para un sonido.
 4. **Primavera** (días 131–195): tres palabras al día, las otras formas
