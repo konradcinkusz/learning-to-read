@@ -1,0 +1,16 @@
+% diagrams/firstwords/helado.tex -- el helado de Amy, con tres bolas: rosa,
+% marrón y amarilla, en su cucurucho.
+\begin{tikzpicture}[dibujofw]
+  % el cucurucho, con sus cuadros
+  \filldraw[fill=white] (-1.4,4.0) -- (0,0) -- (1.4,4.0) -- cycle;
+  \begin{scope}
+    \clip (-1.4,4.0) -- (0,0) -- (1.4,4.0) -- cycle;
+    \foreach \k in {-3,...,3} {\draw ({\k*0.8-2},-1) -- ++(4,8); \draw ({\k*0.8+2},-1) -- ++(-4,8);}
+  \end{scope}
+  % las tres bolas, de abajo arriba, con las gotas
+  \foreach \y/\r in {4.3/1.55, 6.15/1.4, 7.8/1.2} {
+    \filldraw[fill=white] ({-\r},\y) arc[start angle=180, end angle=0, radius=\r]
+      .. controls ({0.8*\r},{\y-0.5}) and ({0.55*\r},{\y-0.5}) .. ({0.45*\r},{\y-0.15})
+      .. controls ({0.3*\r},{\y-0.6}) and ({-0.1*\r},{\y-0.6}) .. ({-0.2*\r},{\y-0.1})
+      .. controls ({-0.4*\r},{\y-0.45}) and ({-0.8*\r},{\y-0.4}) .. ({-\r},\y) -- cycle;}
+\end{tikzpicture}

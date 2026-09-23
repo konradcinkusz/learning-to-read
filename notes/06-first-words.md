@@ -35,8 +35,8 @@ firstwords` lo genera, compila y comprueba.
   las mismas plantillas). Las instrucciones son para el adulto, pequeñas
   y en gris; lo que lee la niña o el niño va siempre grande.
 - **El ciclo semanal y las actividades** (ver la tabla de
-  `notes/03-nivel-palabras.md`): lunes *Draw* (con dibujo para
-  colorear, *Colour*); martes *Trace* (semanas
+  `notes/03-nivel-palabras.md`): lunes *Colour* (el dibujo, que
+  llena la caja); martes *Trace* (semanas
   pares) o *Finish the picture* (impares); miércoles *Sounds* → *Find it*
   → *Write*, rotando cada semana (en verano, *Yes or no?*); jueves
   *Riddle* (pares) o *Match* (impares); viernes *Read again* (impares) o
@@ -160,7 +160,10 @@ una barra, la ruta desde `diagrams/`, para los dibujos que ya tenía *Read
 and Draw*: `english/calabaza`). De lunes a jueves, la palabra tiene que
 ser **una de las leídas ese día** — lo que se colorea es lo que se acaba
 de leer —; los viernes, el dibujo es una escena de la semana (la casa de
-los vecinos, la fiesta de Lucía) y no necesita palabra.
+los vecinos, la fiesta de Lucía) y no necesita palabra. En verano, las
+palabras leídas son las de la frase del día: con *Amy packs.*, el dibujo
+es el de *packs* (Amy haciendo la maleta), y las adivinanzas se
+contestan con una de ellas (*Who is she? Amy.*).
 
 **En la página.**
 
@@ -212,10 +215,11 @@ caja de TikZ incluye el grueso de la línea, que no se escala, mide el
 dibujo dos veces (a escala 1 y 2) y calcula la escala exacta para que
 quepa sin una caja *overfull*.
 
-**Por partes.** Los dibujos se hacen estación por estación, un PR cada
-una: `dias_con_dibujo`, en el `Perfil`, dice cuántos días (del 1 en
-adelante) los llevan ya, y se exigen exactamente esos; los demás siguen
-dibujándose.
+**Por partes.** Los dibujos se hicieron estación por estación, un PR
+cada una: `dias_con_dibujo`, en el `Perfil`, dice cuántos días (del 1 en
+adelante) los llevan, y se exigen exactamente esos. Ya son los 260: en
+*First Words* todo se colorea, nada se dibuja desde cero (solo lo que
+falta, en *Finish the picture*).
 
 ## Cómo se comprueba
 
@@ -352,4 +356,19 @@ por estación:
    *summer* partía la línea), y se eligen otros dibujos (`"dibujos"`)
    cuando dos recientes se parecen demasiado (la bici de Sam y la misma
    bici sin rueda; Lola y la cabra que se come las coles).
-4. **Verano** (días 196–260), y ya todo el cuaderno se colorea.
+4. **Verano** (días 196–260), y ya todo el cuaderno se colorea: las
+   maletas y el taxi de los Brown, la casa de Grandma en el pueblo (el
+   limonero, el gallinero, las gallinas, Bigotes, el gato de Andrés), la
+   postal de Londres, la paella de Dad, el río (la merienda, los peces,
+   el barquito con vela de hoja), las abejas de Andrés, las estrellas
+   (el cazo, la estrella fugaz), la tormenta, las fiestas (los
+   banderines de la plaza, los churros, el escenario, los fuegos), el
+   molino, la búsqueda del tesoro (el mapa, la piedra con la X, las
+   gafas de nadar), la vuelta a la ciudad y al cole (la mochila del
+   tiranosaurio, el uniforme de Sam, Paco en la puerta) y, el último
+   día, todos con un libro que dice *I can read!* En `kit.tex`, lo que
+   se repite: el coche, las maletas, la mochila, el limonero, la
+   colmena, la estrella fugaz, los fuegos, los banderines y las cabezas
+   nuevas (Martín, Paco, Andrés con su velo). Como las respuestas de las
+   adivinanzas se escriben, las del verano son palabras de la frase del
+   día (*Lucía, licks, bees, Dani, Amy, smiles, sing*).

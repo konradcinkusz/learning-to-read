@@ -1,0 +1,20 @@
+% diagrams/firstwords/paco.tex -- ¡vuelve el cole! Paco, el conserje, saluda
+% a todos en la puerta, y Dani y Sam llegan a la clase de Marta.
+\begin{tikzpicture}[dibujofw]
+  % el colegio, al fondo, con su reloj
+  \filldraw[fill=white] (-7.0,3.0) rectangle (7.0,9.6);
+  \filldraw[fill=white] (-7.4,9.6) -- (7.4,9.6) -- (6.6,10.6) -- (-6.6,10.6) -- cycle;
+  \filldraw[fill=white] (0,10.0) circle (0.9); \draw (0,10.0) -- (0,10.55); \draw (0,10.0) -- (0.4,9.8);
+  \foreach \x in {-6.2,-3.6,2.2,4.8} {\filldraw[fill=white] (\x,6.4) rectangle ++(1.4,1.8); \draw ({\x+0.7},6.4) -- ++(0,1.8);}
+  % la verja, abierta
+  \foreach \s in {-1,1} {\begin{scope}[xscale=\s]
+    \filldraw[fill=white] (5.6,0) rectangle (6.2,5.0);
+    \filldraw[fill=white] (5.6,0.4) -- (3.6,0.9) -- (3.6,4.3) -- (5.6,4.6) -- (5.6,4.2) -- (3.9,3.95) -- (3.9,1.2) -- (5.6,0.8) -- cycle;
+    \foreach \x in {4.3,4.95} {\draw (\x,{0.9-0.25*(\x-3.6)}) -- (\x,{4.3+0.15*(\x-3.6)});}
+  \end{scope}}
+  % Paco, saludando, y Dani y Sam
+  \begin{scope}[shift={(-2.0,0)}] \hombreFW{Paco}{Abajo}{Arriba} \end{scope}
+  \begin{scope}[shift={(2.0,0)}, scale=0.85] \ninoFW{Dani}{Abajo}{Arriba} \end{scope}
+  \begin{scope}[shift={(4.0,0)}, scale=0.85] \ninoFW{Sam}{Abajo}{Abajo} \end{scope}
+  \draw (-7.6,0) -- (7.6,0);
+\end{tikzpicture}

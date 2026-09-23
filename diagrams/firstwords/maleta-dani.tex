@@ -1,0 +1,10 @@
+% diagrams/firstwords/maleta-dani.tex -- Dani también hace su maleta: la
+% pequeña, verde, con un dinosaurio naranja.
+\begin{tikzpicture}[dibujofw]
+  \ninoFW{Dani}{Arriba}{Abajo}
+  \begin{scope}[shift={(2.8,0)}]
+    \maletaFW{3.0}{2.4}
+    \begin{scope}[shift={(0.12,0.6)}, scale=0.25] \dinoCuelloFW \end{scope}
+  \end{scope}
+  \draw (-2.4,0) -- (4.4,0);
+\end{tikzpicture}

@@ -1,0 +1,20 @@
+% diagrams/firstwords/luces.tex -- se apagan las luces del pueblo: la
+% farola, apagada, las casas a oscuras, y encima, la luna y las estrellas.
+\begin{tikzpicture}[dibujofw]
+  \filldraw[fill=white] (-5.8,8.2) arc[start angle=110, end angle=-160, radius=1.0]
+    .. controls (-5.3,6.9) and (-5.0,7.8) .. (-5.8,8.2) -- cycle;
+  \foreach \x/\y/\s in {-2.8/8.6/0.4, -0.4/7.6/0.35, 1.6/8.8/0.45, 3.8/7.8/0.35, 5.6/8.8/0.4, 0.8/6.6/0.3} {\begin{scope}[shift={(\x,\y)}, scale=\s] \estrellaFW \end{scope}}
+  % las casas
+  \filldraw[fill=white] (-6.2,0) rectangle (-2.6,3.4);
+  \filldraw[fill=white] (-6.6,3.4) -- (-4.4,5.0) -- (-2.2,3.4) -- cycle;
+  \filldraw[fill=white] (-5.6,1.6) rectangle (-4.6,2.6); \filldraw[fill=white] (-4.0,0) rectangle (-3.2,1.9);
+  \filldraw[fill=white] (1.4,0) rectangle (5.4,4.0);
+  \filldraw[fill=white] (1.0,4.0) -- (3.4,5.6) -- (5.8,4.0) -- cycle;
+  \foreach \x in {1.9,3.9} {\filldraw[fill=white] (\x,2.3) rectangle ({\x+1.0},3.3);}
+  \filldraw[fill=white] (2.9,0) rectangle (3.9,1.8);
+  % la farola, apagada
+  \filldraw[fill=white] (-1.0,0) rectangle (-0.6,5.0);
+  \filldraw[fill=white] (-1.4,5.0) -- (-0.2,5.0) -- (0.1,6.0) -- (-1.7,6.0) -- cycle;
+  \filldraw[fill=white] (-1.9,6.0) -- (0.3,6.0) -- (-0.8,6.6) -- cycle;
+  \draw (-6.8,0) -- (6.2,0);
+\end{tikzpicture}

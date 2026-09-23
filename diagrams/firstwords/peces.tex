@@ -1,0 +1,14 @@
+% diagrams/firstwords/peces.tex -- Dani, en la orilla, mira los cinco
+% pececillos que nadan entre las piedras del río.
+\begin{tikzpicture}[dibujofw]
+  % la orilla y Dani
+  \filldraw[fill=white] (-7.0,-2.6) -- (-7.0,0.6) -- (-2.6,0.6) .. controls (-2.2,-0.4) and (-2.8,-1.6) .. (-2.4,-2.6) -- cycle;
+  \begin{scope}[shift={(-5.0,0.4)}, scale=0.8] \ninoFW{Dani}{Abajo}{Lado} \end{scope}
+  % el agua, las piedras y los peces
+  \filldraw[fill=white] (-2.4,-2.6) .. controls (-2.8,-1.6) and (-2.2,-0.4) .. (-2.6,0.6)
+    -- plot[domain=-2.6:6.0, samples=40, smooth] (\x,{0.6+0.1*sin(\x*140)}) -- (6.0,-2.6) -- cycle;
+  \foreach \x/\y/\a/\b in {-1.2/-2.3/0.7/0.35, 0.6/-2.35/0.9/0.3, 2.6/-2.3/0.6/0.35, 4.6/-2.3/0.9/0.35, 3.7/-2.1/0.5/0.3}
+    {\filldraw[fill=white] (\x,\y) ellipse [x radius=\a, y radius=\b];}
+  \foreach \x/\y/\s/\d in {-0.6/-0.4/0.6/1, 1.6/-1.2/0.55/-1, 2.4/0.0/0.5/1, 4.2/-0.8/0.6/-1, 0.8/-1.8/0.45/1}
+    {\begin{scope}[shift={(\x,\y)}, xscale=\s*\d, yscale=\s] \pezFW \end{scope}}
+\end{tikzpicture}

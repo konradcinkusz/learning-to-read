@@ -28,8 +28,8 @@ los dos con los mismos temas):
 - **First Words** (`firstwords.tex`) -- en inglés, muy por debajo de
   *Read and Draw*: para quien empieza a leer en inglés, una palabra al
   día que se lee sonido a sonido (*c-a-t: cat*), con un "botón" debajo
-  de cada sonido, y casi siempre un dibujo. Es el cuaderno de primeras
-  palabras, en inglés. Ver "First Words" más abajo.
+  de cada sonido, y cada día un dibujo para colorear. Es el cuaderno de
+  primeras palabras, en inglés. Ver "First Words" más abajo.
 
 Cuaderno diario de lectura en español, en A4, una página por día
 laborable (lunes a viernes, 260 días = un año completo, de una estación
@@ -186,12 +186,12 @@ el diploma:
   como se escriben: se presentan los viernes de primavera, enteras y en
   un marco, y son las únicas que no se leen sonido a sonido en las
   frases del verano;
-- **un dibujo para colorear cada día** (de momento, en otoño, invierno y
-  primavera): el de una palabra que se acaba de leer -- si se lee *van*,
-  se colorea una furgoneta --; en la adivinanza se colorea, de tres
-  dibujos, el que la contesta, y en *Match* cada palabra se une con su
-  dibujo. Siempre los mismos personajes (`diagrams/firstwords/kit.tex`),
-  y cada parte del dibujo, cerrada, para colorearla aparte.
+- **un dibujo para colorear cada día**: el de una palabra que se acaba
+  de leer -- si se lee *van*, se colorea una furgoneta --; en la
+  adivinanza se colorea, de tres dibujos, el que la contesta, y en
+  *Match* cada palabra se une con su dibujo. Siempre los mismos
+  personajes (`diagrams/firstwords/kit.tex`), y cada parte del dibujo,
+  cerrada, para colorearla aparte.
 
 Al generar el libro se comprueba a máquina que cada palabra se parta en
 sonidos igual a mano que en `tools/fonetica.py`, que solo use los

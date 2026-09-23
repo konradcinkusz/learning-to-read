@@ -1,0 +1,13 @@
+% diagrams/firstwords/toby-mesa.tex -- en el patio de Grandma, Toby duerme
+% a la sombra, debajo de la mesa, con su mantel.
+\begin{tikzpicture}[dibujofw]
+  \mesaFW{-4.6}{4.6}{3.6}
+  \filldraw[fill=white] (-4.8,4.1) -- (4.8,4.1) -- (4.8,2.9) .. controls (3.6,3.2) and (2.4,2.6) .. (1.2,2.9)
+    .. controls (0,3.2) and (-1.2,2.6) .. (-2.4,2.9) .. controls (-3.6,3.2) and (-4.4,2.7) .. (-4.8,2.9) -- cycle;
+  \filldraw[fill=white] (-2.2,4.1) -- (-1.9,5.3) -- (-0.9,5.3) -- (-0.6,4.1) -- cycle;
+  \filldraw[fill=white] (1.0,4.1) rectangle (2.6,4.35);
+  \filldraw[fill=white] (1.8,4.6) ellipse (0.9 and 0.25);
+  \begin{scope}[shift={(-0.6,0)}, scale=0.8] \tobyDormidoFW \end{scope}
+  \zetasFW{2.8}{1.6}
+  \draw (-5.8,0) -- (5.8,0);
+\end{tikzpicture}

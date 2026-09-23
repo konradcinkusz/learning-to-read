@@ -1,0 +1,34 @@
+% diagrams/firstwords/plaza.tex -- ¡semana de fiestas! La plaza del
+% pueblo: la iglesia con su torre, el ayuntamiento con su balcón y su
+% bandera, la fuente, y los banderines rojos y amarillos de una a otro.
+\begin{tikzpicture}[dibujofw]
+  % la iglesia
+  \filldraw[fill=white] (-5.0,0) rectangle (-1.8,4.5);
+  \filldraw[fill=white] (-5.2,4.5) -- (-3.4,5.8) -- (-1.6,4.5) -- cycle;
+  \filldraw[fill=white] (-3.9,0) -- (-3.9,1.8) arc[start angle=180, end angle=0, radius=0.5] -- (-2.9,0) -- cycle;
+  \filldraw[fill=white] (-7.2,0) rectangle (-5.0,9.0);
+  \filldraw[fill=white] (-7.4,9.0) -- (-6.1,10.6) -- (-4.8,9.0) -- cycle;
+  \filldraw[fill=white] (-6.6,7.0) -- (-6.6,7.8) arc[start angle=180, end angle=0, radius=0.5] -- (-5.6,7.0) -- cycle;
+  \filldraw[fill=white] (-6.1,7.5) circle (0.25);
+  % el ayuntamiento
+  \filldraw[fill=white] (2.0,0) rectangle (7.6,6.2);
+  \filldraw[fill=white] (1.8,6.2) rectangle (7.8,6.6);
+  \filldraw[fill=white] (4.8,6.6) rectangle (4.95,8.6);
+  \filldraw[fill=white] (4.95,8.6) -- (6.4,8.4) -- (6.4,7.5) -- (4.95,7.7) -- cycle;
+  \foreach \x in {2.6,4.4,6.2} {\filldraw[fill=white] (\x,4.3) rectangle ({\x+0.8},5.6);}
+  \filldraw[fill=white] (3.6,3.6) rectangle (6.0,3.9);
+  \foreach \x in {3.8,4.3,4.8,5.3,5.8} {\draw (\x,3.9) -- (\x,4.5);}
+  \draw (3.6,4.5) -- (6.0,4.5);
+  \filldraw[fill=white] (4.1,0) rectangle (5.5,2.4);
+  \draw (4.8,0) -- (4.8,2.4);
+  \foreach \x in {2.6,6.2} {\filldraw[fill=white] (\x,1.2) rectangle ({\x+0.8},2.4);}
+  % la fuente
+  \filldraw[fill=white] (-0.1,1.0) rectangle (0.3,2.6);
+  \draw (0.1,2.6) .. controls (-0.6,3.4) and (-1.0,2.4) .. (-1.1,1.6);
+  \draw (0.1,2.6) .. controls (0.8,3.4) and (1.2,2.4) .. (1.3,1.6);
+  \filldraw[fill=white] (-1.4,0) rectangle (1.6,1.2);
+  \filldraw[fill=white] (0.1,1.2) ellipse (1.6 and 0.3);
+  % los banderines
+  \banderinesFW{-5.0}{8.2}{1.8}{6.4}{1.2}{7}
+  \draw (-8.0,0) -- (8.4,0);
+\end{tikzpicture}

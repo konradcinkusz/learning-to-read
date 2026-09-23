@@ -1,0 +1,24 @@
+% diagrams/firstwords/cena-patio.tex -- el viernes del pueblo: la cena en
+% el patio, debajo del limonero, cuando salen las estrellas: Grandma,
+% Mum, Lucía y Dani, a la mesa.
+\begin{tikzpicture}[dibujofw]
+  \begin{scope}[shift={(7.6,0)}, scale=0.9] \limoneroFW \end{scope}
+  % la luna y las estrellas
+  \filldraw[fill=white] (-7.2,10.0) arc[start angle=110, end angle=-160, radius=0.9]
+    .. controls (-6.8,8.8) and (-6.5,9.6) .. (-7.2,10.0) -- cycle;
+  \foreach \x/\y/\s in {-2.8/9.8/0.4, 0.4/10.2/0.35, 3.0/9.6/0.45, 5.4/10.4/0.3, -5.2/10.6/0.35} {\begin{scope}[shift={(\x,\y)}, scale=\s] \estrellaFW \end{scope}}
+  % la familia, detrás de la mesa
+  \begin{scope}[shift={(-4.2,0)}] \mujerFW{Grandma}{Abajo}{Abajo} \end{scope}
+  \begin{scope}[shift={(-1.4,0)}] \mujerFW{Mama}{Abajo}{Abajo} \end{scope}
+  \begin{scope}[shift={(1.4,0)}] \ninaFW{Lucia}{Abajo}{Arriba} \end{scope}
+  \begin{scope}[shift={(4.0,0)}, scale=0.85] \ninoFW{Dani}{Arriba}{Abajo} \end{scope}
+  % la mesa, con el mantel, los platos, la jarra y la vela
+  \mesaFW{-6.2}{6.0}{3.0}
+  \filldraw[fill=white] (-6.4,3.5) -- (6.2,3.5) -- (6.2,2.4) .. controls (4.0,2.7) and (2.0,2.1) .. (0,2.4)
+    .. controls (-2.0,2.7) and (-4.0,2.1) .. (-6.4,2.4) -- cycle;
+  \foreach \x in {-4.2,-1.4,1.4,4.0} {\filldraw[fill=white] (\x,3.62) ellipse (0.9 and 0.18);}
+  \filldraw[fill=white] (-2.95,3.5) -- (-3.05,4.9) -- (-2.25,4.9) -- (-2.35,3.5) -- cycle;
+  \filldraw[fill=white] (2.6,3.5) rectangle (2.9,4.5);
+  \filldraw[fill=white] (2.75,4.6) .. controls (2.55,4.8) and (2.7,5.05) .. (2.75,5.15) .. controls (2.8,5.05) and (2.95,4.8) .. (2.75,4.6) -- cycle;
+  \draw (-8.0,0) -- (10.6,0);
+\end{tikzpicture}

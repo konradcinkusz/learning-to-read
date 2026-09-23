@@ -1,0 +1,13 @@
+% diagrams/firstwords/fuegos.tex -- el viernes de las fiestas: los fuegos
+% artificiales sobre el pueblo, a medianoche.
+\begin{tikzpicture}[dibujofw]
+  \begin{scope}[shift={(-3.4,8.0)}] \fuegoFW{2.0} \end{scope}
+  \begin{scope}[shift={(2.8,9.2)}] \fuegoFW{2.4} \end{scope}
+  \begin{scope}[shift={(0.2,5.6)}] \fuegoFW{1.3} \end{scope}
+  \foreach \x/\y/\s in {-6.2/10.4/0.3, 5.8/6.4/0.35, -0.4/11.4/0.3} {\begin{scope}[shift={(\x,\y)}, scale=\s] \estrellaFW \end{scope}}
+  % el pueblo: la torre de la iglesia y las casas
+  \filldraw[fill=white] (-6.8,0) -- (-6.8,2.2) -- (-5.4,3.2) -- (-4.0,2.2) -- (-4.0,4.6) -- (-3.2,5.6) -- (-2.4,4.6) -- (-2.4,1.6)
+    -- (-0.6,1.6) -- (-0.6,2.4) -- (0.8,3.3) -- (2.2,2.4) -- (2.2,1.2) -- (3.6,1.2) -- (3.6,2.2) -- (5.0,3.1) -- (6.4,2.2) -- (6.4,0) -- cycle;
+  \filldraw[fill=white] (-3.5,3.6) -- (-3.5,4.0) arc[start angle=180, end angle=0, radius=0.3] -- (-2.9,3.6) -- cycle;
+  \foreach \x/\y in {-5.8/0.8, 0.2/1.0, 4.6/0.8} {\filldraw[fill=white] (\x,\y) rectangle ({\x+0.7},{\y+0.7});}
+\end{tikzpicture}

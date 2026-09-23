@@ -1,0 +1,15 @@
+% diagrams/firstwords/pip-vuelve.tex -- ¡Pip ha vuelto! Su jaula, otra vez
+% en la mesa redonda de la casa de al lado.
+\begin{tikzpicture}[dibujofw]
+  % la mesa redonda: el tablero, la pata y el pie
+  \filldraw[fill=white] (-0.3,-4.6) rectangle (0.3,-0.4);
+  \filldraw[fill=white] (-1.8,-4.9) -- (1.8,-4.9) -- (1.2,-4.5) -- (-1.2,-4.5) -- cycle;
+  \filldraw[fill=white] (-3.8,-0.2) -- (-3.8,-0.55) arc[start angle=180, end angle=360, x radius=3.8, y radius=0.55]
+    -- (3.8,-0.2) arc[start angle=0, end angle=-180, x radius=3.8, y radius=0.55] -- cycle;
+  \filldraw[fill=white] (0,-0.2) ellipse [x radius=3.8, y radius=0.55];
+  % la jaula, con Pip
+  \jaulaFondoFW
+  \begin{scope}[shift={(0.6,1.5)}] \perchaFW{-1.9}{1.9} \end{scope}
+  \begin{scope}[shift={(-0.1,1.6)}, scale=0.7] \pipFW \end{scope}
+  \jaulaBaseFW
+\end{tikzpicture}

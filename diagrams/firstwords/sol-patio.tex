@@ -1,0 +1,20 @@
+% diagrams/firstwords/sol-patio.tex -- después de la tormenta, el sol
+% brilla otra vez en el patio: una rama grande encima de la mesa, tres
+% limones debajo y los charcos.
+\begin{tikzpicture}[dibujofw]
+  \begin{scope}[shift={(5.0,8.0)}]
+    \foreach \a in {0,30,...,330} {\draw (\a:1.35) -- (\a:1.9);}
+    \filldraw[fill=white] (0,0) circle (1.05);
+    \fill (-0.35,0.15) circle (0.08); \fill (0.35,0.15) circle (0.08);
+    \draw (-0.4,-0.3) .. controls (0,-0.6) .. (0.4,-0.3);
+  \end{scope}
+  \mesaFW{-4.4}{4.4}{3.0}
+  % la rama, encima de la mesa
+  \filldraw[fill=white] (-4.8,3.55) -- (-1.0,3.95) -- (1.2,4.9) -- (1.35,4.7) -- (-0.5,3.75) -- (4.0,3.7) -- (4.0,3.5) -- (-4.8,3.5) -- cycle;
+  \foreach \x/\y/\a in {-3.8/3.7/40, -2.2/3.9/-30, 0.4/4.5/25, 1.2/4.9/-20, 2.6/3.75/35, 3.8/3.7/-40, -0.8/3.9/60}
+    {\begin{scope}[shift={(\x,\y)}, rotate=\a, scale=0.75] \hojaFW \end{scope}}
+  % los limones y los charcos
+  \foreach \x/\a in {-1.6/15, -0.4/-10, 0.9/20} {\filldraw[fill=white] (\x,0.35) ellipse [x radius=0.5, y radius=0.34, rotate=\a];}
+  \foreach \x/\a in {-6.4/1.0, 5.4/1.3} {\filldraw[fill=white] (\x,0.05) ellipse [x radius=\a, y radius=0.25];}
+  \draw (-7.6,0) -- (7.0,0);
+\end{tikzpicture}

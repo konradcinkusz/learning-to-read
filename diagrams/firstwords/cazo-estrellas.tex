@@ -1,0 +1,16 @@
+% diagrams/firstwords/cazo-estrellas.tex -- de noche, en el pueblo, Grandma
+% señala siete estrellas que parecen un cazo (cuatro, el cazo; tres, el
+% mango), y Lucía y Dani miran hacia arriba.
+\begin{tikzpicture}[dibujofw]
+  % las siete estrellas y el cazo
+  \draw[line width=0.8pt, dash pattern=on 3pt off 3pt] (2.4,11.0) -- (4.4,11.4) -- (4.8,9.6) -- (2.8,9.3) -- cycle;
+  \draw[line width=0.8pt, dash pattern=on 3pt off 3pt] (2.4,11.0) -- (0.8,11.8) -- (-0.8,12.2) -- (-2.4,11.9);
+  \foreach \x/\y in {2.4/11.0, 4.4/11.4, 4.8/9.6, 2.8/9.3, 0.8/11.8, -0.8/12.2, -2.4/11.9}
+    {\begin{scope}[shift={(\x,\y)}, scale=0.5] \estrellaFW \end{scope}}
+  % Grandma, señalando, y Lucía y Dani
+  \begin{scope}[shift={(-3.6,0)}] \mujerFW{Grandma}{Abajo}{Arriba} \end{scope}
+  \draw (-0.95,6.85) -- (-0.55,7.3);
+  \begin{scope}[shift={(1.4,0)}] \ninaFW{Lucia}{Abajo}{Abajo} \begin{scope}[shift={(0,6.3)}] \bocaOFW \end{scope} \end{scope}
+  \begin{scope}[shift={(4.4,0)}, scale=0.85] \ninoFW{Dani}{Abajo}{Arriba} \begin{scope}[shift={(0,6.3)}] \bocaOFW \end{scope} \end{scope}
+  \hierbaFW{-6}{6}
+\end{tikzpicture}

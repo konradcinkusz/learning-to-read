@@ -1,0 +1,8 @@
+% diagrams/firstwords/cantan.tex -- Amy y Lucía cantan juntas, de la mano,
+% el último día.
+\begin{tikzpicture}[dibujofw]
+  \begin{scope}[shift={(-2.42,0)}] \ninaFW{Lucia}{Arriba}{Lado} \begin{scope}[shift={(0,6.3)}] \bocaOFW \end{scope} \end{scope}
+  \begin{scope}[shift={(2.42,0)}] \ninaFW{Amy}{Lado}{Arriba} \begin{scope}[shift={(0,6.3)}] \bocaOFW \end{scope} \end{scope}
+  \foreach \x/\y/\a in {-5.2/9.2/-10, -1.0/9.6/10, 1.4/10.0/-5, 5.0/9.0/15, 0.2/8.2/0} {\begin{scope}[shift={(\x,\y)}, rotate=\a] \notaFW \end{scope}}
+  \draw (-4.8,0.2) -- (4.8,0.2);
+\end{tikzpicture}

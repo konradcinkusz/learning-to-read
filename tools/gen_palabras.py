@@ -212,7 +212,7 @@ FIRSTWORDS = Perfil(
     titulo_medalla=ENGLISH.titulo_medalla,
     nombres_medalla=ENGLISH.nombre_medalla,
     animo_medalla=ENGLISH.animo_medalla,
-    dias_con_dibujo=195,
+    dias_con_dibujo=260,
 )
 
 PERFILES = {p.nombre: p for p in (PALABRAS, FIRSTWORDS)}

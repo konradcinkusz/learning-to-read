@@ -1,0 +1,10 @@
+% diagrams/firstwords/cazadores.tex -- el viernes de la búsqueda del
+% tesoro: los tres cazadores de tesoros -- Dani, Sam y Martín --, con
+% sus gafas de nadar nuevas y los caramelos.
+\begin{tikzpicture}[dibujofw]
+  \begin{scope}[shift={(-4.2,0)}] \ninoFW{Dani}{Arriba}{Abajo} \begin{scope}[shift={(0,6.3)}] \gafasNadarFW \bocaRisaFW \end{scope} \end{scope}
+  \begin{scope}[shift={(0,0)}] \ninoFW{Sam}{Arriba}{Arriba} \begin{scope}[shift={(0,6.3)}] \gafasNadarFW \end{scope} \end{scope}
+  \begin{scope}[shift={(4.2,0)}] \ninoFW{Martin}{Abajo}{Arriba} \begin{scope}[shift={(0,6.3)}] \gafasNadarFW \bocaRisaFW \end{scope} \end{scope}
+  \foreach \x/\y/\a in {-6.4/4.6/20, 6.6/5.2/-15, -2.2/8.6/10, 2.2/8.8/-20, 0/0.3/5} {\begin{scope}[shift={(\x,\y)}, rotate=\a] \carameloFW \end{scope}}
+  \draw (-6.4,0.2) -- (6.6,0.2);
+\end{tikzpicture}

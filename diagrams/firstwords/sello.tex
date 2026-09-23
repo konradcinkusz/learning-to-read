@@ -1,0 +1,47 @@
+% diagrams/firstwords/sello.tex -- Lucía lame el sello de la postal para
+% Amy: un sello con un limón.
+\begin{tikzpicture}[dibujofw]
+  \begin{scope}[scale=2.2]
+    \cabezaLucia
+    \fill[white] (0,-0.58) ellipse (0.5 and 0.2);
+    \filldraw[fill=white] (0.05,-0.62) ellipse (0.26 and 0.16);
+    \filldraw[fill=white] (0.12,-0.66) .. controls (0.35,-0.75) and (0.6,-0.95) .. (0.72,-1.1)
+      .. controls (0.55,-1.2) and (0.3,-1.0) .. (0.02,-0.72) -- cycle;
+  \end{scope}
+  % el sello, con su borde de dientes y el limón
+  \begin{scope}[shift={(2.75,-3.25)}, rotate=-15]
+    \filldraw[fill=white] (-1.3,-1.6)
+      -- (-1.183,-1.6) arc[start angle=180, end angle=0, radius=0.1]
+      -- (-0.75,-1.6) arc[start angle=180, end angle=0, radius=0.1]
+      -- (-0.317,-1.6) arc[start angle=180, end angle=0, radius=0.1]
+      -- (0.117,-1.6) arc[start angle=180, end angle=0, radius=0.1]
+      -- (0.55,-1.6) arc[start angle=180, end angle=0, radius=0.1]
+      -- (0.983,-1.6) arc[start angle=180, end angle=0, radius=0.1]
+      -- (1.3,-1.6)
+      -- (1.3,-1.471) arc[start angle=-90, end angle=-270, radius=0.1]
+      -- (1.3,-1.014) arc[start angle=-90, end angle=-270, radius=0.1]
+      -- (1.3,-0.557) arc[start angle=-90, end angle=-270, radius=0.1]
+      -- (1.3,-0.1) arc[start angle=-90, end angle=-270, radius=0.1]
+      -- (1.3,0.357) arc[start angle=-90, end angle=-270, radius=0.1]
+      -- (1.3,0.814) arc[start angle=-90, end angle=-270, radius=0.1]
+      -- (1.3,1.271) arc[start angle=-90, end angle=-270, radius=0.1]
+      -- (1.3,1.6)
+      -- (1.183,1.6) arc[start angle=0, end angle=-180, radius=0.1]
+      -- (0.75,1.6) arc[start angle=0, end angle=-180, radius=0.1]
+      -- (0.317,1.6) arc[start angle=0, end angle=-180, radius=0.1]
+      -- (-0.117,1.6) arc[start angle=0, end angle=-180, radius=0.1]
+      -- (-0.55,1.6) arc[start angle=0, end angle=-180, radius=0.1]
+      -- (-0.983,1.6) arc[start angle=0, end angle=-180, radius=0.1]
+      -- (-1.3,1.6)
+      -- (-1.3,1.471) arc[start angle=90, end angle=-90, radius=0.1]
+      -- (-1.3,1.014) arc[start angle=90, end angle=-90, radius=0.1]
+      -- (-1.3,0.557) arc[start angle=90, end angle=-90, radius=0.1]
+      -- (-1.3,0.1) arc[start angle=90, end angle=-90, radius=0.1]
+      -- (-1.3,-0.357) arc[start angle=90, end angle=-90, radius=0.1]
+      -- (-1.3,-0.814) arc[start angle=90, end angle=-90, radius=0.1]
+      -- (-1.3,-1.271) arc[start angle=90, end angle=-90, radius=0.1] -- cycle;
+    \draw (-1.0,-1.3) rectangle (1.0,1.3);
+    \filldraw[fill=white] (0,0) ellipse (0.7 and 0.5);
+    \filldraw[fill=white] (0.3,0.45) .. controls (0.5,0.95) and (0.9,0.95) .. (1.0,0.8) .. controls (0.8,0.55) and (0.5,0.45) .. (0.3,0.45) -- cycle;
+  \end{scope}
+\end{tikzpicture}

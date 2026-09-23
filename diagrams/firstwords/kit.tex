@@ -325,7 +325,8 @@
   \filldraw[fill=white, rounded corners=1.5mm] (#1,-0.25) rectangle (#2,0.1);}
 
 % Un gato sentado, de frente (Luna; el de Halloween): la base en y = 0.
-\newcommand{\gatoFW}{%
+% \gatoFW[0], sin bigotes (para dibujárselos).
+\newcommand{\gatoFW}[1][1]{%
   \filldraw[fill=white] (1.3,0.6) .. controls (3.2,0.4) and (3.4,2.4) .. (2.6,3.2)
     .. controls (2.35,3.45) and (2.05,3.25) .. (2.25,3.0)
     .. controls (2.85,2.3) and (2.6,1.0) .. (1.3,1.1) -- cycle;
@@ -341,8 +342,10 @@
   \filldraw[fill=white] (-0.14,4.35) -- (0.14,4.35) -- (0,4.18) -- cycle;
   \draw (0,4.18) -- (0,4.05) .. controls (-0.15,3.9) .. (-0.32,3.98);
   \draw (0,4.05) .. controls (0.15,3.9) .. (0.32,3.98);
-  \draw (-0.45,4.2) -- (-1.7,4.4); \draw (-0.45,4.05) -- (-1.7,3.95);
-  \draw (0.45,4.2) -- (1.7,4.4); \draw (0.45,4.05) -- (1.7,3.95);}
+  \ifnum#1=1
+    \draw (-0.45,4.2) -- (-1.7,4.4); \draw (-0.45,4.05) -- (-1.7,3.95);
+    \draw (0.45,4.2) -- (1.7,4.4); \draw (0.45,4.05) -- (1.7,3.95);
+  \fi}
 % Luna, la gata de Pedro: el gato, con su collar y su cascabel.
 \newcommand{\lunaFW}{%
   \gatoFW
@@ -1187,3 +1190,175 @@
   \csname brazoNina#2Encima\endcsname
   \begin{scope}[xscale=-1]\csname brazoNina#3Encima\endcsname\end{scope}
   \begin{scope}[shift={(0,6.3)}]\csname cabeza#1\endcsname \gorraFW\end{scope}}
+
+% Un coche, de lado, mirando a la derecha, con las ruedas en el suelo
+% (y = 0): la carrocería, las dos ventanillas (la de atrás de x = -1,75
+% a 0,05, la de delante de 0,3 a 2,1, entre y = 2,55 y 3,7), las
+% puertas, los faros y las ruedas. Lo que se asome por las ventanillas
+% se dibuja después.
+\newcommand{\cocheFW}{%
+  \filldraw[fill=white, rounded corners=3mm] (-4.0,0.7) -- (-4.0,2.3) -- (-2.1,2.45) -- (-1.25,3.95) -- (1.45,3.95)
+    -- (2.55,2.5) -- (4.2,2.25) -- (4.2,0.7) -- cycle;
+  \filldraw[fill=white, rounded corners=1mm] (-1.75,2.55) -- (-1.05,3.72) -- (0.05,3.72) -- (0.05,2.55) -- cycle;
+  \filldraw[fill=white, rounded corners=1mm] (0.3,2.55) -- (0.3,3.72) -- (1.32,3.72) -- (2.1,2.55) -- cycle;
+  \draw (0.18,0.8) -- (0.18,3.72); \draw (-2.1,0.8) -- (-2.1,2.45); \draw (2.3,0.8) -- (2.3,2.5);
+  \filldraw[fill=white] (-0.55,1.95) rectangle (-0.15,2.08); \filldraw[fill=white] (1.55,1.95) rectangle (1.95,2.08);
+  \filldraw[fill=white] (3.85,1.55) rectangle (4.2,1.95); \filldraw[fill=white] (-4.0,1.55) rectangle (-3.75,1.95);
+  \foreach \x in {-2.6,2.7} {\filldraw[fill=white] (\x,0.75) circle (0.75); \filldraw[fill=white] (\x,0.75) circle (0.3);}}
+
+% Una maleta de frente, con la base en y = 0, de #1 de ancho y #2 de
+% alto, centrada en x = 0: el asa, las dos correas y las ruedas.
+\newcommand{\maletaFW}[2]{%
+  \filldraw[fill=white, rounded corners=0.5mm] (-0.55,{#2-0.1}) -- (-0.55,{#2+0.45}) -- (0.55,{#2+0.45}) -- (0.55,{#2-0.1})
+    -- (0.33,{#2-0.1}) -- (0.33,{#2+0.23}) -- (-0.33,{#2+0.23}) -- (-0.33,{#2-0.1}) -- cycle;
+  \foreach \s in {-1,1} {\filldraw[fill=white] ({\s*(0.5*#1-0.35)},0.15) circle (0.15);}
+  \filldraw[fill=white, rounded corners=1.2mm] ({-0.5*#1},0.3) rectangle ({0.5*#1},{#2});
+  \foreach \s in {-1,1} {\filldraw[fill=white] ({\s*0.25*#1-0.15},0.3) rectangle ({\s*0.25*#1+0.15},{#2});}}
+
+% Un limonero: el árbol, con sus limones, y la base en y = 0.
+\newcommand{\limoneroFW}{%
+  \arbolFW
+  \foreach \x/\y/\a in {-1.6/5.2/20, 0.3/6.6/-15, 1.7/5.0/10, -0.6/4.6/-20, 1.0/7.4/25, -1.3/7.0/0}
+    {\filldraw[fill=white] (\x,\y) ellipse [x radius=0.34, y radius=0.24, rotate=\a];}}
+
+% Una mujer sentada en el suelo, de frente (Grandma en el picnic): la
+% falda extendida, las manos en el regazo, los zapatos asomando. #1 la
+% cabeza. La base en y = 0.
+\newcommand{\sentadaFW}[1]{%
+  \filldraw[fill=white] (-0.65,0.25) ellipse (0.42 and 0.22); \filldraw[fill=white] (0.65,0.25) ellipse (0.42 and 0.22);
+  \filldraw[fill=white, rounded corners=3mm] (-1.1,4.3) -- (1.1,4.3) -- (2.3,0.45) -- (-2.3,0.45) -- cycle;
+  \filldraw[fill=white] (-0.22,4.1) rectangle (0.22,4.6);
+  \draw (-0.45,4.3) .. controls (0,3.9) .. (0.45,4.3);
+  \foreach \s in {-1,1} {\begin{scope}[xscale=\s]
+    \filldraw[fill=white, rounded corners=2mm] (-1.05,4.15) -- (-1.55,2.4) -- (-0.45,1.75) -- (-0.3,2.15) -- (-1.0,2.6) -- (-0.65,3.95) -- cycle;
+    \filldraw[fill=white] (-0.38,1.95) circle (0.28);
+  \end{scope}}
+  \begin{scope}[shift={(0,5.55)}, scale=1.05]\csname cabeza#1\endcsname\end{scope}}
+
+% Un pez, de lado, mirando a la derecha, centrado en el origen: la cola,
+% el cuerpo, la aleta y el ojo.
+\newcommand{\pezFW}{%
+  \filldraw[fill=white] (-1.0,0) -- (-1.6,0.5) -- (-1.6,-0.5) -- cycle;
+  \filldraw[fill=white] (0,0) ellipse (1.1 and 0.6);
+  \filldraw[fill=white] (-0.1,0.2) .. controls (0.1,0.05) and (0.1,-0.25) .. (-0.1,-0.35) .. controls (-0.35,-0.25) and (-0.35,0.1) .. (-0.1,0.2) -- cycle;
+  \fill (0.6,0.15) circle (0.08);}
+
+% Una colmena de cajas, con la base en y = 0: las patas, dos cajas, la
+% piquera (la ranura por donde entran las abejas) y el tejadillo.
+\newcommand{\colmenaFW}{%
+  \foreach \x in {-1.1,0.8} {\filldraw[fill=white] (\x,0) rectangle ({\x+0.3},0.6);}
+  \filldraw[fill=white] (-1.4,0.6) rectangle (1.4,2.1);
+  \filldraw[fill=white] (-1.4,2.1) rectangle (1.4,3.6);
+  \filldraw[fill=white] (-0.6,0.8) rectangle (0.6,1.0);
+  \filldraw[fill=white] (-1.7,3.6) -- (1.7,3.6) -- (1.4,4.2) -- (-1.4,4.2) -- cycle;}
+
+% Andrés, el apicultor: la cabeza, con su sombrero de ala ancha y el velo
+% de red (sus coordenadas, como las de las otras cabezas).
+\newcommand{\cabezaAndres}{%
+  \filldraw[fill=white] (-1.08,0.05) .. controls (-1.12,0.9) and (-0.7,1.2) .. (0,1.2)
+    .. controls (0.7,1.2) and (1.12,0.9) .. (1.08,0.05) -- cycle;
+  \orejasFW
+  \caraFW
+  \flequilloFW{(0.93,0.37) .. controls (0.5,0.6) and (-0.5,0.6) .. (-0.93,0.37)}{22}{158}%
+  \draw[rounded corners=3mm] (-1.35,1.0) -- (-1.5,-1.35) -- (1.5,-1.35) -- (1.35,1.0);
+  \foreach \x in {-1.0,-0.5,0,0.5,1.0} {\draw[line width=0.6pt, dash pattern=on 2pt off 2pt] (\x,1.0) -- (\x,-1.3);}
+  \filldraw[fill=white] (-1.05,1.0) .. controls (-1.05,2.1) and (1.05,2.1) .. (1.05,1.0) -- cycle;
+  \filldraw[fill=white] (0,1.0) ellipse (2.1 and 0.32);}
+
+% Los ojos cerrados (en las coordenadas de la cabeza): se tapan los de
+% \caraFW y se dibujan dos arcos.
+\newcommand{\ojosCerradosFW}{%
+  \fill[white] (-0.36,-0.05) circle (0.13); \fill[white] (0.36,-0.05) circle (0.13);
+  \draw (-0.52,0.0) arc[start angle=180, end angle=360, radius=0.16];
+  \draw (0.2,0.0) arc[start angle=180, end angle=360, radius=0.16];}
+
+% Una estrella fugaz: la estrella, de radio #1, en el origen, y su cola
+% de fuego hacia abajo a la izquierda, con dos llamas por dentro.
+\newcommand{\estrellaFugazFW}[1]{%
+  \begin{scope}[rotate=215, scale=#1]
+    \filldraw[fill=white] (0.3,-0.5) .. controls (1.6,-0.45) and (2.8,-0.25) .. (4.0,0)
+      .. controls (2.8,0.25) and (1.6,0.45) .. (0.3,0.5) -- cycle;
+    \draw (0.8,-0.18) .. controls (1.8,-0.12) .. (3.0,0); \draw (0.8,0.18) .. controls (1.8,0.12) .. (3.0,0);
+    \estrellaFW
+  \end{scope}}
+
+% Un rayo, con la punta abajo, en el origen, de alto 3.
+\newcommand{\rayoFW}{%
+  \filldraw[fill=white] (0,0) -- (0.55,1.45) -- (0.15,1.45) -- (0.75,3.0) -- (-0.35,3.0) -- (-0.75,1.2) -- (-0.3,1.2) -- cycle;}
+
+% Un vaso de limonada, con la base en el origen: el vaso, la limonada,
+% la rodaja de limón en el borde y la pajita (hasta la altura #1).
+\newcommand{\limonadaFW}[1]{%
+  \filldraw[fill=white] (0.05,1.8) -- (0.35,1.8) -- (0.25,#1) -- (0.1,#1) -- cycle;
+  \filldraw[fill=white] (-0.55,0) -- (-0.7,2.2) -- (0.7,2.2) -- (0.55,0) -- cycle;
+  \draw (-0.66,1.7) -- (0.66,1.7);
+  \filldraw[fill=white] (0.65,2.15) circle (0.38); \draw (0.65,2.15) circle (0.24);}
+
+% Una cuerda de banderines, de (#1,#2) a (#3,#4), que cuelga #5 por en
+% medio, con #6 banderines.
+\newcommand{\banderinesFW}[6]{%
+  \draw (#1,#2) .. controls ({#1+(#3-#1)/3},{#2+(#4-#2)/3-4*#5/3}) and ({#1+2*(#3-#1)/3},{#2+2*(#4-#2)/3-4*#5/3}) .. (#3,#4);
+  \foreach \i in {1,...,#6} {
+    \pgfmathsetmacro{\t}{\i/(#6+1)}
+    \pgfmathsetmacro{\x}{#1+(#3-#1)*\t}
+    \pgfmathsetmacro{\y}{#2+(#4-#2)*\t-4*#5*\t*(1-\t)}
+    \filldraw[fill=white] ({\x-0.35},\y) -- (\x,{\y-0.9}) -- ({\x+0.35},\y) -- cycle;}}
+
+% Martín, el amigo del pueblo: pelo liso, con el flequillo recto.
+\newcommand{\cabezaMartin}{%
+  \filldraw[fill=white] (-1.1,0.1) .. controls (-1.15,1.25) and (-0.6,1.28) .. (0,1.28)
+    .. controls (0.6,1.28) and (1.15,1.25) .. (1.1,0.1) -- cycle;
+  \orejasFW
+  \caraFW
+  \flequilloFW{(0.872,0.49) -- (-0.872,0.49)}{29.3}{150.7}%
+  \foreach \x in {-0.5,0,0.5} {\draw (\x,0.49) -- ({\x+0.08},0.8);}}
+
+% Un castillo de fuegos artificiales, de radio #1, en el origen.
+\newcommand{\fuegoFW}[1]{%
+  \foreach \a in {0,45,...,315} {
+    \filldraw[fill=white] ($(0,0)+(\a:0.55*#1)$) ellipse [x radius=0.32*#1, y radius=0.1*#1, rotate=\a];
+    \filldraw[fill=white] (\a:1.05*#1) circle (0.09*#1);}
+  \foreach \a in {22.5,67.5,...,337.5} {\filldraw[fill=white] (\a:0.8*#1) circle (0.07*#1);}
+  \filldraw[fill=white] (0,0) circle (0.18*#1);}
+
+% Unas gafas de nadar en la frente (en las coordenadas de la cabeza): la
+% goma y los dos cristales.
+\newcommand{\gafasNadarFW}{%
+  \draw (-1.08,0.42) .. controls (-0.6,0.55) and (0.6,0.55) .. (1.08,0.42);
+  \filldraw[fill=white] (-0.42,0.45) ellipse (0.33 and 0.24); \filldraw[fill=white] (0.42,0.45) ellipse (0.33 and 0.24);
+  \draw (-0.09,0.47) -- (0.09,0.47);}
+
+% Unas gafas de nadar sueltas, en el origen, y un caramelo envuelto.
+\newcommand{\gafasSueltasFW}{%
+  \draw (-0.75,0) .. controls (-1.4,-0.9) and (1.4,-0.9) .. (0.75,0);
+  \filldraw[fill=white] (-0.42,0) ellipse (0.36 and 0.27); \filldraw[fill=white] (0.42,0) ellipse (0.36 and 0.27);}
+\newcommand{\carameloFW}{%
+  \filldraw[fill=white] (-0.35,0) -- (-0.75,0.28) -- (-0.75,-0.28) -- cycle;
+  \filldraw[fill=white] (0.35,0) -- (0.75,0.28) -- (0.75,-0.28) -- cycle;
+  \filldraw[fill=white] (0,0) ellipse (0.42 and 0.26);}
+
+% Una mochila, de frente, con la base en y = 0: las asas de los lados, el
+% asa de arriba, el cuerpo, la cremallera y el bolsillo de delante (de
+% (-1,4, 0,5) a (1,4, 2,9): lo que se le pinte encima va ahí).
+\newcommand{\mochilaFW}{%
+  \filldraw[fill=white] (-0.5,5.3) .. controls (-0.5,6.1) and (0.5,6.1) .. (0.5,5.3) -- (0.3,5.3) .. controls (0.3,5.85) and (-0.3,5.85) .. (-0.3,5.3) -- cycle;
+  \foreach \s in {-1,1} {\filldraw[fill=white, rounded corners=2mm] (\s*1.9,4.6) -- (\s*2.35,4.3) -- (\s*2.25,1.0) -- (\s*1.9,0.8) -- cycle;}
+  \filldraw[fill=white, rounded corners=5mm] (-2.0,0) -- (-2.0,4.3) .. controls (-2.0,5.6) and (2.0,5.6) .. (2.0,4.3) -- (2.0,0) -- cycle;
+  \draw (-1.75,3.4) .. controls (-1.6,4.9) and (1.6,4.9) .. (1.75,3.4);
+  \filldraw[fill=white] (1.55,4.05) rectangle (1.75,4.55);
+  \filldraw[fill=white, rounded corners=3mm] (-1.4,0.5) rectangle (1.4,2.9);
+  \draw (-1.2,2.55) -- (1.2,2.55);}
+
+% Paco, el conserje del colegio: calvo por arriba, con pelo a los lados,
+% cejas pobladas y un bigote grande.
+\newcommand{\cabezaPaco}{%
+  \foreach \s in {-1,1} {\filldraw[fill=white] (\s*0.72,0.65) .. controls (\s*1.25,0.55) and (\s*1.3,-0.2) .. (\s*1.08,-0.45)
+    .. controls (\s*1.0,0.0) and (\s*0.9,0.35) .. (\s*0.72,0.65) -- cycle;}
+  \orejasFW
+  \caraFW
+  \draw (-0.6,0.28) -- (-0.18,0.3); \draw (0.6,0.28) -- (0.18,0.3);
+  \draw (-0.25,0.85) arc[start angle=150, end angle=110, radius=0.6];
+  \filldraw[fill=white] (0,-0.28) .. controls (-0.25,-0.15) and (-0.65,-0.18) .. (-0.75,-0.5)
+    .. controls (-0.45,-0.52) and (-0.15,-0.45) .. (0,-0.36)
+    .. controls (0.15,-0.45) and (0.45,-0.52) .. (0.75,-0.5)
+    .. controls (0.65,-0.18) and (0.25,-0.15) .. (0,-0.28) -- cycle;}

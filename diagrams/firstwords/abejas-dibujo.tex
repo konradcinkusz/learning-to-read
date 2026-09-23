@@ -1,0 +1,13 @@
+% diagrams/firstwords/abejas-dibujo.tex -- el dibujo que hace Lucía: tres
+% abejas y una flor, en una hoja de papel, con dos ceras al lado.
+\begin{tikzpicture}[dibujofw]
+  \filldraw[fill=white] (-4.0,0) rectangle (4.0,6.0);
+  \begin{scope}[shift={(-1.5,0.6)}, scale=0.9] \margaritaFW{2.8} \end{scope}
+  \foreach \x/\y/\a in {1.2/4.4/10, -2.2/4.6/-10, 2.2/2.0/5} {\begin{scope}[shift={(\x,\y)}, rotate=\a, scale=0.7] \abejaFW \end{scope}}
+  % las ceras
+  \foreach \x/\a in {4.6/-15, 5.5/-25} {\begin{scope}[shift={(\x,0.4)}, rotate=\a]
+    \filldraw[fill=white] (-0.25,0) rectangle (0.25,2.8);
+    \filldraw[fill=white] (-0.25,2.8) -- (0,3.4) -- (0.25,2.8) -- cycle;
+    \draw (-0.25,0.6) -- (0.25,0.6);
+  \end{scope}}
+\end{tikzpicture}

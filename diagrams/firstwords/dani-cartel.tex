@@ -1,0 +1,17 @@
+% diagrams/firstwords/dani-cartel.tex -- Dani lee el cartel de las fiestas,
+% en la puerta del ayuntamiento. Para "completa": el cartel está en blanco,
+% y se dibuja lo que dice.
+\begin{tikzpicture}[dibujofw]
+  \filldraw[fill=white] (-3.2,0) -- (-3.2,6.8) arc[start angle=180, end angle=0, radius=3.2] -- (3.2,0) -- cycle;
+  \draw (0,0) -- (0,10.0);
+  \foreach \x in {-1.6,1.6} {\draw (\x,0) -- (\x,{6.8+sqrt(10.24-\x*\x)});}
+  \filldraw[fill=white] (-0.55,3.6) circle (0.18); \filldraw[fill=white] (0.55,3.6) circle (0.18);
+  % el cartel, en blanco
+  \filldraw[fill=white] (-2.6,4.6) rectangle (2.6,9.2);
+  \foreach \x in {-2.3,2.3} {\filldraw[fill=white] (\x,8.9) circle (0.12);}
+  % Dani, señalándolo
+  \begin{scope}[shift={(5.4,0)}, scale=0.85]
+    \ninoFW{Dani}{Arriba}{Abajo}
+  \end{scope}
+  \draw (-4.4,0) -- (7.6,0);
+\end{tikzpicture}

@@ -1,0 +1,15 @@
+% diagrams/firstwords/dani-carta.tex -- ha llegado una carta de Martín con
+% un mensaje secreto, y Dani sonríe de oreja a oreja.
+\begin{tikzpicture}[dibujofw]
+  \ninoFW{Dani}{Frente}{Frente}
+  \begin{scope}[shift={(0,6.3)}] \bocaRisaFW \end{scope}
+  % la carta, abierta, en las manos
+  \filldraw[fill=white] (-1.5,2.9) -- (1.5,2.9) -- (1.4,5.2) -- (-1.4,5.2) -- cycle;
+  \foreach \y in {3.6,4.0,4.4} {\draw (-1.0,\y) -- (1.0,\y);}
+  \begin{scope}[shift={(0.75,4.75)}, scale=0.3] \estrellaFW \end{scope}
+  \filldraw[fill=white] (-0.35,3.12) circle (0.27); \filldraw[fill=white] (0.35,3.12) circle (0.27);
+  % el sobre, en el suelo
+  \filldraw[fill=white] (1.8,0) rectangle (4.4,1.6);
+  \draw (1.8,1.6) -- (3.1,0.7) -- (4.4,1.6);
+  \draw (-2.4,0) -- (4.8,0);
+\end{tikzpicture}

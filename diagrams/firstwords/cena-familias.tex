@@ -1,0 +1,25 @@
+% diagrams/firstwords/cena-familias.tex -- el viernes de Amy en el pueblo:
+% la cena de las dos familias en el patio de Grandma, y Mr Brown con su
+% plato de scones.
+\begin{tikzpicture}[dibujofw]
+  \banderinesFW{-8.8}{10.4}{8.8}{10.4}{1.0}{11}
+  % detrás de la mesa: Grandma, Mrs Brown, Amy, Lucía, Sam y Dani
+  \begin{scope}[shift={(-7.2,0)}] \mujerFW{Grandma}{Abajo}{Abajo} \end{scope}
+  \begin{scope}[shift={(-4.4,0)}] \mujerFW{MrsBrown}{Abajo}{Abajo} \end{scope}
+  \begin{scope}[shift={(-1.6,0)}] \ninaFW{Amy}{Abajo}{Arriba} \end{scope}
+  \begin{scope}[shift={(1.0,0)}] \ninaFW{Lucia}{Arriba}{Abajo} \end{scope}
+  \begin{scope}[shift={(3.4,0)}, scale=0.85] \ninoFW{Sam}{Abajo}{Abajo} \end{scope}
+  \begin{scope}[shift={(5.4,0)}, scale=0.85] \ninoFW{Dani}{Abajo}{Abajo} \end{scope}
+  % la mesa, con su mantel y los platos
+  \mesaFW{-8.8}{6.8}{3.0}
+  \filldraw[fill=white] (-9.0,3.5) -- (7.0,3.5) -- (7.0,2.4) .. controls (4.5,2.7) and (2.0,2.1) .. (-1.0,2.4)
+    .. controls (-4.0,2.7) and (-6.5,2.1) .. (-9.0,2.4) -- cycle;
+  \foreach \x in {-7.2,-4.4,-1.6,1.0,3.4,5.4} {\filldraw[fill=white] (\x,3.62) ellipse (0.8 and 0.16);}
+  % Mr Brown, con los scones
+  \begin{scope}[shift={(8.8,0)}] \hombreFW{MrBrown}{Frente}{Frente} \end{scope}
+  \filldraw[fill=white] (8.8,4.0) ellipse (1.6 and 0.3);
+  \foreach \x/\y in {8.2/4.35, 9.1/4.35, 8.65/4.95} {\filldraw[fill=white] ({\x-0.4},{\y-0.2}) .. controls ({\x-0.4},{\y+0.45}) and ({\x+0.4},{\y+0.45}) .. ({\x+0.4},{\y-0.2}) -- cycle;
+    \draw ({\x-0.38},\y) -- ({\x+0.38},\y);}
+  \filldraw[fill=white] (8.35,3.65) circle (0.3); \filldraw[fill=white] (9.25,3.65) circle (0.3);
+  \draw (-9.8,0) -- (11.2,0);
+\end{tikzpicture}
