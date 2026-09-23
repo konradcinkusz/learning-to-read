@@ -99,9 +99,8 @@ Las barreras duras que tienen que quedar en verde:
   words» y de «Match the halves» presente tal cual en el texto de la
   semana, cada palabra de «Word hunt» en el del día, cada dibujo de
   `diagrams/english/` que se pide existiendo, y el texto en inglés
-  británico, sin rastros del español. Mientras el libro se escribe por
-  partes, exactamente los días que dice `dias_escritos`
-  (`tools/libros.py`).
+  británico, sin rastros del español; y el libro entero, con sus 260
+  días.
 
 `.github/workflows/build.yml` corre exactamente estas mismas comprobaciones
 en cada *push* y *pull request*, así que un PR con `make all-formats` en

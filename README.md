@@ -24,7 +24,6 @@ inglés, ese mismo año siguiente, desde la casa de al lado):
   debajo de *Leo con lupa*: textos cortos hechos de oraciones compuestas
   (*because*, *when*, *who*...) y cada día un análisis muy sencillo de lo
   leído, casi siempre un dibujo. Ver "Read and Draw" más abajo.
-  *En construcción:* se escribe por partes del año, una por PR.
 
 Cuaderno diario de lectura en español, en A4, una página por día
 laborable (lunes a viernes, 260 días = un año completo, de una estación
@@ -167,9 +166,9 @@ Nivel 3, Leo con lupa:
 **[⬇ PDF (color)](https://konradcinkusz.github.io/learning-to-read/leo-con-lupa.pdf)**
 · **[⬇ PDF (blanco y negro)](https://konradcinkusz.github.io/learning-to-read/leo-con-lupa-bn.pdf)**
 
-*Read and Draw*, en inglés, se publicará aquí en cuanto esté entero;
-mientras se escribe, cada build deja sus PDF en los artefactos
-`pdf-english-color` / `pdf-english-bw` (ver más abajo).
+*Read and Draw*, en inglés:
+**[⬇ PDF (color)](https://konradcinkusz.github.io/learning-to-read/read-and-draw.pdf)**
+· **[⬇ PDF (blanco y negro)](https://konradcinkusz.github.io/learning-to-read/read-and-draw-bw.pdf)**
 
 Enlaces fijos, publicados por GitHub Pages en cada push a `main` (ver
 `.github/workflows/pages.yml`). Las dos versiones tienen exactamente el
@@ -184,8 +183,8 @@ despliegue), los mismos PDF están también en la pestaña
 [*Actions*](https://github.com/konradcinkusz/learning-to-read/actions/workflows/build.yml)
 → el último run de *Build* → artefactos `pdf-color` / `pdf-bw` /
 `pdf-palabras-color` / `pdf-palabras-bw` / `pdf-lupa-color` /
-`pdf-lupa-bw` (se guardan 30 días, hace falta estar identificado en
-GitHub para descargarlos).
+`pdf-lupa-bw` / `pdf-english-color` / `pdf-english-bw` (se guardan 30
+días, hace falta estar identificado en GitHub para descargarlos).
 
 ## Construir el PDF a mano
 
@@ -325,10 +324,10 @@ mapa que llegan a donde dicen, correcciones que están en el texto), con
 sus tres medallas, la clave de respuestas y el diploma. Ver
 `notes/04-nivel-lupa.md`.
 
-**Read and Draw (en inglés)**: en construcción, una parte del año por
-PR (ver `notes/05-english.md`, "Las fases"). Hecho: el motor -- con la
-portada, *How to use this book*, *The words in this book*, *Who's who?*,
-el mapa del año, la clave y el diploma, todo en inglés -- y las partes
-1, 2 y 3, de otoño a primavera (días 1-195, con sus medallas), que
-compilan en color y en blanco y negro con las mismas comprobaciones que
-los otros tres cuadernos.
+**Read and Draw (en inglés)**: completo, los 260 días (las cuatro
+partes del año, con sus tres medallas, la clave de respuestas y el
+diploma), escrito en cinco fases, una por PR (ver `notes/05-english.md`,
+"Las fases"). Todo está en inglés, también la portada, *How to use this
+book*, *The words in this book*, *Who's who?* y el mapa del año. Compila
+en color y en blanco y negro con las mismas comprobaciones que los otros
+tres cuadernos, y se publica en GitHub Pages con ellos.
