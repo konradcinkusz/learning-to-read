@@ -74,6 +74,7 @@ español.
 | **Pip** *(nuevo)* | el loro de los Brown: verde, con las alas azules, la cola roja y el pico amarillo. Habla: *Hello!*, y en la semana 3 aprende *Toby!* |
 | **Marta** | la maestra de Lucía y de Amy |
 | **Pedro** y **Luna** | el vecino y su gata blanca (un ojo verde y otro azul, collar con cascabel), que vigila la jaula de Pip |
+| **Tomás**, **Julián** y **Lola** | los mismos de «Leo con lupa»: el bibliotecario del barrio (invierno), y el granjero de la granja escuela y su cabra más curiosa, de manchas marrones (primavera) |
 | **Andrés**, **Bigotes**, **Martín** | el pueblo, en verano: el vecino de las abejas, su gato blanco y naranja, y el amigo de Dani |
 
 Todos los nombres propios del reparto están en `tools/libros.py`
@@ -193,7 +194,7 @@ de verdad.
 |---|---|---|---|---|
 | 1 | 1–13 | 1–65 | otoño | **Los vecinos nuevos.** Llega una furgoneta: los Brown, de Londres, con Amy, Sam y Pip, el loro que habla. Amy empieza en la clase de Lucía. Halloween a la inglesa, el cumpleaños de Lucía, la Navidad que se acerca |
 | 2 | 14–26 | 66–130 | invierno | **Dos Navidades.** Crackers y calcetines en casa de Amy, las uvas y los Reyes en la de Lucía; nieve, Pancake Day, Carnaval, una cometa |
-| 3 | 27–39 | 131–195 | primavera | **En pasado.** El cumpleaños de Amy, la búsqueda de huevos de Pascua, la granja, ¿dónde está Pip?, el Día del Libro, el cumpleaños de Dani, el último día de colegio |
+| 3 | 27–39 | 131–195 | primavera | **En pasado.** El cumpleaños de Amy, la búsqueda de huevos de Pascua, Toby y Pip se pierden (y cada uno encuentra al otro), el Día del Libro, las orugas, el día de la madre, el cumpleaños de Dani, la granja escuela, el último día de colegio |
 | 4 | 40–52 | 196–260 | verano | **Cartas.** Amy pasa julio en Londres y escribe postales; Lucía, en el pueblo de la abuela; en agosto los Brown van al pueblo. Vuelta al cole: Dani y Sam empiezan 1.º juntos |
 
 ### Parte 1 — otoño (presente)
@@ -244,21 +245,46 @@ decir.
 
 ### Parte 3 — primavera (pasado)
 
+La historia se cuenta en pasado simple; el diálogo, lo que dicen las
+notas y los textos informativos (cómo se juega a *pass the parcel*, la
+vida de una mariposa, la tarjeta de datos del zoo, cómo son las cabras
+y las ovejas) siguen en presente. Como en invierno, las fechas son las
+de «Leo con lupa»:
+
+- las vacaciones de Semana Santa en la semana 28, con las torrijas del
+  sábado, que Lucía hace sola y fríe la abuela;
+- el Día del Libro, con su intercambio secreto, en la 31;
+- el día de la madre en la 34, con la misma bandeja: dos tostadas con
+  forma de corazón, el zumo de naranja a la izquierda, el café a la
+  derecha y la rosa amarilla detrás. La rosa, escondida en la nevera; la
+  lleva Dani, Papá lleva la bandeja y Toby vigila la puerta;
+- el sexto cumpleaños de Dani en la 35: la tarta redonda de chocolate
+  con seis velas azules y un dinosaurio verde de azúcar rodeado de
+  fresas, y la búsqueda del tesoro de Lucía (la almohada, la lavadora,
+  la nevera y el cuaderno rojo debajo de la cama);
+- los dos días en la granja escuela en la 37: Julián, la cabra Lola que
+  mordisquea la manga de Lucía, las cabras comiéndose las coles;
+- la fiesta de fin de curso y el último día de clase, el viernes 195, en
+  la 39.
+
+No se desvela nada: quién abrió la puerta del corral no se dice, y ni la
+cápsula ni la carta de Marta salen.
+
 | Sem. | Tema | Historia | Lunes | Martes | Miércoles | Jueves | Viernes |
 |---|---|---|---|---|---|---|---|
-| 27 | Amy is eight | la invitación; *pass the parcel*, *musical chairs*, las bolsas de la fiesta | dibuja | si_no | relaciona (los regalos) | ordena | vinetas |
-| 28 | Toby is lost | Toby persiguió una ardilla en el parque; lo buscaron por todas partes | dibuja | rodea | donde (el parque) | mitades | repasa |
-| 29 | Easter | la búsqueda de huevos de Pascua en el jardín de los Brown (el chocolate, nunca para Toby) | dibuja (los huevos) | si_no | donde (dónde estaban los huevos) | huecos | vinetas |
-| 30 | The farm | la excursión a la granja: vacas, ovejas, cerdos, gallinas, un cordero | dibuja | rodea | relaciona | busca | repasa |
-| 31 | Where is Pip? | Pip se escapó: una pluma verde en la valla, un *Hello!* desde el castaño | dibuja | si_no | donde | ordena | vinetas |
-| 32 | Book Day | el 23 de abril; la clase hace libros; el de Amy se llama *Pip the parrot* | dibuja (una portada) | rodea | mitades | adivina | repasa |
-| 33 | Mum's day | el Día de la Madre: el desayuno en la cama, una tarjeta, un poema | dibuja (la bandeja) | si_no | colorea (las flores) | huecos | vinetas |
-| 34 | Sam's new bike | Sam aprende a montar sin ruedines | dibuja (la bici) | rodea | ordena | mitades | repasa |
-| 35 | Dani is six | la tarta de dinosaurio; los juegos; el regalo de Sam | dibuja (la tarta) | si_no | relaciona | adivina | vinetas |
-| 36 | The zoo | la excursión al zoo: más alto, más grande, más rápido | dibuja | rodea | relaciona | busca | repasa |
-| 37 | The caterpillars | las orugas de la clase se convierten en mariposas | dibuja (una oruga) | si_no | colorea (la mariposa) | ordena | vinetas |
-| 38 | Sports day | la carrera del huevo y la cuchara, la de sacos; Lucía y Amy, atadas por una pierna | dibuja | rodea | mitades | huecos | repasa |
-| 39 | The last day of school | adiós a Marta; los planes del verano | dibuja | si_no | relaciona | ordena | repasa + medalla |
+| 27 | Amy is eight | la invitación morada; *pass the parcel* y *musical chairs*; la tarta con forma de Pip; las bolsas de la fiesta | dibuja (la invitación) | si_no | relaciona (los regalos) | ordena (la fiesta) | vinetas |
+| 28 | Easter | los huevos pintados; los *hot cross buns* y las torrijas; Mr Brown esconde huevos de chocolate en el jardín (el chocolate, nunca para Toby); un nido con tres huevos azules que no se toca | dibuja (los huevos) | rodea | donde (el jardín) | huecos | repasa |
+| 29 | Toby is lost | Toby persigue una ardilla en el parque y se pierde; lo encuentra Pip, que grita *Toby! Biscuit!* desde su jaula | dibuja (Toby y la ardilla) | si_no | donde (el parque) | mitades | vinetas |
+| 30 | Where is Pip? | Pip se escapa mientras limpian su jaula; el cartel LOST PARROT; una pluma verde en la valla; Toby lo encuentra en el castaño y Amy lo baja con un trozo de manzana | dibuja (el cartel) | rodea | relaciona (quién hizo qué) | ordena | repasa |
+| 31 | Book Day | el 23 de abril, y el *World Book Day* inglés, en marzo; el libro de Amy, *Pip and the Big Tree*; el intercambio secreto | dibuja (la portada) | si_no | mitades | adivina (el reloj) | vinetas |
+| 32 | The caterpillars | las orugas de la clase, la crisálida y las mariposas; la vida de una mariposa | dibuja (la caja de las orugas) | rodea | colorea (la mariposa) | busca (las cuatro etapas) | repasa |
+| 33 | Sam's new bike | la bici roja, sin ruedines: Sam se cae, aprende a frenar y a girar, y da la vuelta al estanque él solo | dibuja (la bici) | si_no | ordena | mitades | vinetas |
+| 34 | Mum's day | el desayuno sorpresa; la tarjeta con flores; en Inglaterra, el día de la madre es en marzo | dibuja (la bandeja) | rodea | colorea (las flores) | huecos | repasa |
+| 35 | Dani is six | la tarta; la búsqueda del tesoro; los regalos (una bici azul, un jersey con un dinosaurio...) | dibuja (la tarta) | si_no | relaciona (los regalos) | adivina (la nevera) | vinetas |
+| 36 | The zoo | las jirafas, los elefantes, el hipopótamo, los monos y los pingüinos: más alto que, tan alto como; la tarjeta de datos | dibuja (las jirafas) | rodea | mitades | busca (los animales) | repasa |
+| 37 | The farm | la granja escuela: Lola, las cabras en el huerto, las ovejas, el burro y las gallinas | dibuja (el corral) | si_no | relaciona (cómo es cada animal) | ordena | vinetas |
+| 38 | Sports day | el equipo amarillo; la carrera del huevo y la cuchara, la de sacos y la de tres piernas | dibuja (el equipo) | rodea | mitades | huecos | repasa |
+| 39 | The last day of school | la tarjeta para Marta; la fiesta de fin de curso; la clase decorada; los planes del verano; Pip: *See you soon!* | dibuja (la tarjeta) | si_no | donde (la clase) | relaciona (el verano) | repasa + medalla |
 
 ### Parte 4 — verano (pasado y futuro; postales, cartas, diario, poemas)
 
@@ -287,12 +313,15 @@ actividades encajen.
 `colorea` y `donde` necesitan un dibujo de línea hecho de antemano, en
 `diagrams/english/` (TikZ, trazo negro de 1,4 pt sobre blanco, cada
 parte cerrada para poder colorearla): un personaje u objeto para
-colorear (Pip, una calabaza, una tarta, un árbol de Navidad, un muñeco
-de nieve, una cometa, una mariposa, un autobús de Londres, un
-helado...) o una escena donde dibujar cosas en su sitio (el jardín, el
-cuarto de Lucía, la entrada, la cocina, el salón, el parque, el patio
-del pueblo). Cada uno se usa varias veces a lo largo del año, con otros
-colores u otras cosas que dibujar.
+colorear (Pip, un árbol de otoño, una calabaza, un árbol de Navidad, un
+roscón, un muñeco de nieve, una cometa, una mariposa, unas flores en una
+maceta; y en verano, un autobús de Londres, un helado...) o una escena
+donde dibujar cosas en su sitio (los dos jardines, el cuarto de Lucía,
+la entrada, la cocina, el salón de los Brown, la biblioteca, el parque,
+la clase; y en verano, el patio del pueblo). Cada uno se puede usar
+varias veces a lo largo del año, con otros colores u otras cosas que
+dibujar: la mariposa del invierno vuelve en primavera, naranja, y el
+jardín de Pip es donde Mr Brown esconde los huevos de Pascua.
 
 ## Reglas para escribir (y revisar) un día
 
