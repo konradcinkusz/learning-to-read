@@ -1,0 +1,21 @@
+% diagrams/firstwords/fiesta.tex -- la fiesta de Lucía (el viernes de su
+% cumpleaños): Lucía, Amy y Dani detrás de la mesa, con la tarta, todos
+% con gorro de papel -- y Toby también, delante.
+\begin{tikzpicture}[dibujofw]
+  % los tres, detrás de la mesa, con sus gorros
+  \foreach \x/\quien/\s/\cuerpo in {-3.6/Amy/1/nina, 0/Lucia/1/nina, 3.4/Dani/0.9/nino} {
+    \begin{scope}[shift={(\x,1.2)}, scale=\s]
+      \csname \cuerpo FW\endcsname{\quien}{Arriba}{Abajo}
+      \begin{scope}[shift={(0,6.3)}] \gorroFiestaFW \end{scope}
+    \end{scope}}
+  % la mesa, con su mantel de ondas, y la tarta
+  \filldraw[fill=white] (-5.6,4.0) -- (5.6,4.0) -- (5.6,2.6)
+    \foreach \i in {0,...,6} { arc[start angle=0, end angle=-180, radius={0.8}] } -- cycle;
+  \begin{scope}[shift={(0,4.0)}, scale=0.7] \tartaFW{8} \end{scope}
+  % Toby, delante, con su gorro
+  \begin{scope}[shift={(-3.8,0)}, scale=0.75]
+    \tobySentadoFW
+    \begin{scope}[shift={(0.75+1.5,4.0)}, rotate=-15, scale=0.8] \gorroFiestaFW \end{scope}
+  \end{scope}
+  \draw (-6.2,0) -- (6.2,0);
+\end{tikzpicture}

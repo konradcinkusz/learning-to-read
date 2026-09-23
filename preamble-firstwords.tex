@@ -102,3 +102,122 @@
   \end{tabular}}\hspace{0.8mm plus 1mm}\ignorespaces}
 \newcommand{\finSonidos}{\par}
 
+
+% =========================================================================
+% Los dibujos para colorear (diagrams/firstwords/; qué dibujo lleva cada
+% día lo decide tools/gen_palabras.py, preparar_dibujo)
+% =========================================================================
+% Las piezas comunes (el estilo de línea, la cabeza de cada personaje).
+\input{diagrams/firstwords/kit}
+
+% Un dibujo (#1, su ruta dentro de diagrams/, sin .tex) del tamaño que
+% quepa en #2 de ancho por #3 de alto. Se escala cambiando la escala de
+% las coordenadas, no la de la caja: escalar la caja adelgazaría las
+% líneas en los dibujos pequeños, y así todas salen igual de gruesas --
+% lo que importa para colorear sin salirse. Pero entonces el tamaño del
+% dibujo no es proporcional a la escala: la caja de TikZ incluye el
+% grueso de la línea, que no se escala. Así que se mide dos veces (a
+% escala 1 y 2): el ancho es a·escala + c, y de ahí sale la escala justa
+% para que quepa -- ni un punto de más, que sería una caja "overfull".
+\newsavebox\cajaDibujo
+\newlength\anchoUno \newlength\altoUno
+\newlength\anchoDos \newlength\altoDos
+\NewDocumentCommand{\dibujoColorear}{m m m}{%
+  \begingroup
+  \sbox\cajaDibujo{\input{diagrams/#1}\unskip}%
+  \setlength\anchoUno{\wd\cajaDibujo}\setlength\altoUno{\dimexpr\ht\cajaDibujo+\dp\cajaDibujo\relax}%
+  \sbox\cajaDibujo{\tikzset{every picture/.append style={scale=2}}\input{diagrams/#1}\unskip}%
+  \setlength\anchoDos{\wd\cajaDibujo}\setlength\altoDos{\dimexpr\ht\cajaDibujo+\dp\cajaDibujo\relax}%
+  \edef\escalaDibujo{\fpeval{min(
+    (\the\dimexpr#2\relax - (2*\the\anchoUno - \the\anchoDos)) / (\the\anchoDos - \the\anchoUno),
+    (\the\dimexpr#3\relax - (2*\the\altoUno - \the\altoDos)) / (\the\altoDos - \the\altoUno))}}%
+  \tikzset{every picture/.append style={scale=\escalaDibujo}}%
+  \input{diagrams/#1}\unskip
+  \endgroup}
+
+% El dibujo en la parte de abajo de una caja de actividad (\tcblower,
+% con `centrado abajo`): tan grande como el sitio que deja la parte de
+% arriba -- la altura del texto de la caja (\tcbtextheight, fija con
+% `height fill`) menos lo que ya ocupa la de arriba (\tcb@upperbox, que
+% tcolorbox ya ha compuesto cuando compone la de abajo), el hueco entre
+% las dos (2 x middle = 4 mm) y un margen. #1 lo que se reserva debajo
+% del dibujo (la línea de la adivinanza, el cartel del viernes). Si no
+% queda sitio para un dibujo que se pueda colorear, es un error: la
+% actividad es demasiado larga para ese día.
+\newlength\altoHueco
+\makeatletter
+\newcommand{\calculaHueco}[2]{%
+  \setlength\altoHueco{\dimexpr\tcbtextheight-\ht\tcb@upperbox-\dp\tcb@upperbox-6mm-#1\relax}%
+  \ifdim\altoHueco<30mm
+    \PackageError{firstwords}{No queda sitio para el dibujo #2: \the\altoHueco}{}%
+  \fi}
+\makeatother
+\NewDocumentCommand{\dibujoHueco}{O{0pt} m}{%
+  \calculaHueco{#1}{#2}%
+  {\centering\dibujoColorear{#2}{\linewidth}{\altoHueco}\par}}
+
+% La adivinanza con dibujos: tres tarjetas, una al lado de otra, en el
+% sitio que quede; la respuesta es una de ellas. La tarjeta, blanca y
+% con un marco fino, dice "elige una"; el dibujo, dentro, del tamaño
+% que quepa.
+\newlength\anchoOpcion
+\newlength\altoOpcion
+\newcommand{\opcionDibujo}[1]{%
+  \begin{tcolorbox}[enhanced, width=\anchoOpcion, height=\altoOpcion, valign=center,
+      halign=center, colback=white, colframe=colorGris!55, boxrule=0.6pt, arc=3mm,
+      boxsep=0pt, left=2mm, right=2mm, top=2mm, bottom=2mm, nobeforeafter, box align=center]
+    \dibujoColorear{#1}{\linewidth}{\tcbtextheight}%
+  \end{tcolorbox}}
+\NewDocumentCommand{\tresDibujos}{O{0pt} m m m}{%
+  \calculaHueco{#1}{#2, #3, #4}%
+  \setlength\anchoOpcion{0.31\linewidth}%
+  \setlength\altoOpcion{\altoHueco}%
+  \ifdim\altoOpcion>1.3\anchoOpcion \setlength\altoOpcion{1.3\anchoOpcion}\fi
+  {\noindent\opcionDibujo{#2}\hfill\opcionDibujo{#3}\hfill\opcionDibujo{#4}\par}}
+% Desde el invierno, la respuesta se escribe también, debajo.
+\newlength\altoLineaAdivina
+\setlength\altoLineaAdivina{12mm}
+\newcommand{\lineaAdivina}{\par\vspace{9mm}{\centering\rule{0.55\linewidth}{0.5pt}\par}}
+
+% "une" con dibujos: cada palabra, a la izquierda, con su dibujo, a la
+% derecha; todas las columnas centradas en vertical (m), para que la
+% palabra quede a media altura del dibujo. Los puntos de unir, en fila
+% a cada lado (detrás de la palabra, delante del dibujo), y entre las
+% dos filas todo el ancho que sobra, para las líneas.
+% El alto de cada dibujo sale del sitio que hay en la caja (las cuatro
+% filas y la instrucción), hasta un máximo. El dibujo va en una caja
+% normal, que la columna m centra con la palabra de su fila (con un
+% \vcenter dentro de la celda, la columna m deja de centrarla), y el
+% punto de unir se sube a media altura del dibujo. El aire entre fila y
+% fila va dentro de la celda, encima y debajo del dibujo: el \\[...] de
+% una tabla no añade nada cuando la fila ya es más alta que su puntal.
+\newlength\anchoUneDibujo
+\setlength\anchoUneDibujo{55mm}
+\newlength\altoUneDibujo
+\newlength\separacionUne
+\setlength\separacionUne{7mm}
+\newcommand{\columnasCentradas}{%
+  \renewcommand{\tabularxcolumn}[1]{m{##1}}%
+  \setlength\altoUneDibujo{\dimexpr(\tcbtextheight-14mm)/4-\separacionUne\relax}%
+  \ifdim\altoUneDibujo>34mm \setlength\altoUneDibujo{34mm}\fi}
+\newsavebox\cajaUne
+\newcommand{\dibujoUne}[1]{%
+  \sbox\cajaUne{\dibujoColorear{#1}{\dimexpr\anchoUneDibujo-6mm\relax}{\altoUneDibujo}}%
+  \raisebox{\dimexpr0.5\ht\cajaUne-0.25em\relax}{\textbullet}\hfill
+  \raisebox{0pt}[\dimexpr\ht\cajaUne+0.5\separacionUne\relax][0.5\separacionUne]{\usebox\cajaUne}%
+  \hfill\null}
+
+% "Now colour: ..." -- el remate de las actividades que llevan dibujo,
+% como el "Now draw: ..." del cuaderno en español.
+\newcommand{\ahoraColorea}[1]{\par\vspace{6mm}{\footnotesize\color{colorGris}\lblFwAhoraColorea}\ {\large #1}\par}
+
+% El viernes que cierra dos semanas ("repasa"), el cartel va debajo del
+% dibujo.
+\newlength\altoCartel
+\setlength\altoCartel{12mm}
+\newcommand{\cartelRepasa}[1]{\par\vspace{4mm}{\centering\bfseries\Large\color{colorCrea} #1\par}}
+
+% El lunes: el dibujo del día llena la caja.
+\newtcolorbox{cajaPalColorea}[1][]{cajapalabras, #1,
+  colback=colorDibujaClaro, colframe=colorDibuja, colbacktitle=colorDibuja,
+  title=\lblColorea}

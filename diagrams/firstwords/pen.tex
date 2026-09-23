@@ -1,0 +1,17 @@
+% diagrams/firstwords/pen.tex -- un bolígrafo, en diagonal: el
+% capuchón con su clip, el cuerpo, la punta, y una línea que acaba de
+% escribir.
+\begin{tikzpicture}[dibujofw]
+  \draw (0.4,0.9) .. controls (1.5,1.6) and (2.2,0.2) .. (3.2,0.9)
+    .. controls (4.0,1.5) and (4.6,0.4) .. (5.4,0.8);
+  \begin{scope}[shift={(0.9,1.6)}, rotate=38]
+    % la punta
+    \filldraw[fill=white] (0,0) -- (0.8,0.3) -- (0.8,-0.3) -- cycle;
+    % el cuerpo
+    \filldraw[fill=white, rounded corners=1mm] (0.8,-0.42) rectangle (5.0,0.42);
+    % el capuchón y su clip
+    \filldraw[fill=white, rounded corners=2mm] (5.0,-0.5) rectangle (7.6,0.5);
+    \filldraw[fill=white, rounded corners=1mm] (5.6,0.5) -- (5.6,0.8) -- (7.4,0.8)
+      -- (7.4,0.5) -- cycle;
+  \end{scope}
+\end{tikzpicture}

@@ -1,0 +1,26 @@
+% diagrams/firstwords/funcion.tex -- la función de Navidad (el viernes que
+% cierra el otoño): Lucía y Amy cantando "Jingle Bells" en el escenario,
+% entre las cortinas, con las notas volando y dos cascabeles colgados.
+\begin{tikzpicture}[dibujofw]
+  % el escenario
+  \filldraw[fill=white] (-5.2,-0.8) rectangle (10.2,0);
+  \filldraw[fill=white] (-5.6,10.2) rectangle (10.6,11.0);
+  % las cortinas
+  \filldraw[fill=white] (-5.6,10.2) -- (-5.6,0) -- (-4.0,0) .. controls (-3.2,3.0) and (-2.4,8.0) .. (-2.8,10.2) -- cycle;
+  \draw (-4.8,10.2) -- (-4.8,0.3); \draw (-3.9,10.2) .. controls (-3.8,6.0) .. (-3.3,1.2);
+  \filldraw[fill=white] (10.6,10.2) -- (10.6,0) -- (9.0,0) .. controls (8.2,3.0) and (7.4,8.0) .. (7.8,10.2) -- cycle;
+  \draw (9.8,10.2) -- (9.8,0.3); \draw (8.9,10.2) .. controls (8.8,6.0) .. (8.3,1.2);
+  % Lucía y Amy, cantando (la boca en o)
+  \foreach \x/\quien in {0/Lucia, 5.0/Amy} {
+    \begin{scope}[shift={(\x,0)}]
+      \ninaFW{\quien}{Abajo}{Abajo}
+      \begin{scope}[shift={(0,6.3)}]
+        \fill[white] (0,-0.58) ellipse (0.5 and 0.2);
+        \filldraw[fill=white] (0,-0.55) ellipse (0.2 and 0.24);
+      \end{scope}
+    \end{scope}}
+  % las notas y los cascabeles
+  \foreach \x/\y/\a in {-1.8/8.8/0, 1.9/9.2/10, 3.2/8.0/-10, 6.9/8.9/5}
+    {\begin{scope}[shift={(\x,\y)}, rotate=\a] \notaFW \end{scope}}
+  \foreach \x in {-0.5,5.5} {\draw (\x,10.2) -- (\x,9.6); \begin{scope}[shift={(\x,9.0)}, scale=0.9] \cascabelFW \end{scope}}
+\end{tikzpicture}

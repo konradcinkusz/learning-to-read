@@ -1,0 +1,9 @@
+% diagrams/firstwords/kiss.tex -- Grandma Rosa le da a Lucía un beso de
+% cumpleaños muy grande: Grandma la abraza por el hombro, y los besos
+% vuelan en corazones.
+\begin{tikzpicture}[dibujofw]
+  \begin{scope}[shift={(3.1,0)}] \ninaFW{Lucia}{Abajo}{Abajo} \end{scope}
+  \mujerFW{Grandma}{Abajo}{Lado}
+  \foreach \x/\y/\s/\a in {1.7/8.3/0.7/-15, 2.6/9.4/0.5/10, 1.0/9.6/0.45/-25}
+    {\begin{scope}[shift={(\x,\y)}, scale=\s, rotate=\a] \corazonFW \end{scope}}
+\end{tikzpicture}

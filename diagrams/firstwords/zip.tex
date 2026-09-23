@@ -1,0 +1,38 @@
+% diagrams/firstwords/zip.tex -- Lucía subiéndose la cremallera del
+% impermeable (rojo) para ir al colegio, con la capucha puesta y sus
+% botas de agua (amarillas); llueve.
+\begin{tikzpicture}[dibujofw]
+  % las botas de agua
+  \filldraw[fill=white, rounded corners=1.5mm] (-0.95,0.2) -- (-0.95,1.75) -- (-0.2,1.75)
+    -- (-0.2,0.2) -- cycle;
+  \filldraw[fill=white, rounded corners=1.5mm] (0.2,0.2) -- (0.2,1.75) -- (0.95,1.75)
+    -- (0.95,0.2) -- cycle;
+  \draw (-0.95,1.45) -- (-0.2,1.45); \draw (0.2,1.45) -- (0.95,1.45);
+  % el brazo de la derecha, caído
+  \begin{scope}[xscale=-1] \brazoNinaAbajo \end{scope}
+  % el impermeable, con la cremallera y los bolsillos
+  \filldraw[fill=white] (-0.2,4.5) rectangle (0.2,5.5);
+  \filldraw[fill=white, rounded corners=2.5mm] (-1.0,4.75) -- (1.0,4.75) -- (1.4,1.6)
+    -- (-1.4,1.6) -- cycle;
+  \draw (0,4.75) -- (0,1.6);
+  \filldraw[fill=white] (-1.05,2.1) rectangle (-0.45,2.7);
+  \filldraw[fill=white] (0.45,2.1) rectangle (1.05,2.7);
+  \filldraw[fill=white] (-0.1,3.45) rectangle (0.1,3.85);
+  % el brazo de la izquierda, subiendo la cremallera
+  \filldraw[fill=white, rounded corners=2mm] (-0.95,4.55) -- (-1.4,3.35) -- (-0.4,3.2)
+    -- (-0.3,3.6) -- (-0.95,3.7) -- (-0.6,4.35) -- cycle;
+  \filldraw[fill=white] (-0.15,3.55) circle (0.27);
+  % la cabeza, con la capucha puesta
+  \begin{scope}[shift={(0,6.3)}]
+    \filldraw[fill=white] (-0.75,-1.2) .. controls (-1.65,-0.5) and (-1.6,1.55) .. (0,1.6)
+      .. controls (1.6,1.55) and (1.65,-0.5) .. (0.75,-1.2) -- cycle;
+    \caraFW
+    \flequilloFW{(0.899,0.438) .. controls (0.45,0.68) and (0.05,0.55) .. (-0.2,0.78)
+      .. controls (-0.45,0.55) and (-0.7,0.55) .. (-0.899,0.438)}{26}{154}%
+    \filldraw[fill=white] (-50:1.0) arc[start angle=-50, end angle=230, radius=1.0]
+      -- (230:1.2) arc[start angle=230, end angle=-50, radius=1.2] -- cycle;
+  \end{scope}
+  % la lluvia
+  \foreach \x/\y in {-2.6/7.6, -2.1/5.0, -2.9/2.9, 2.4/8.0, 2.8/5.6, 2.2/3.4, -1.6/8.6, 1.3/8.9}
+    {\begin{scope}[shift={(\x,\y)}] \gotaFW \end{scope}}
+\end{tikzpicture}

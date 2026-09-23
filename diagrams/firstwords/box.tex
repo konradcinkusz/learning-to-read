@@ -1,0 +1,11 @@
+% diagrams/firstwords/box.tex -- el regalo para Lucía: la caja, la tapa y
+% la cinta, con lunares en el papel, pero sin lazo -- para "completa":
+% se colorea y se le dibuja un lazo grande encima.
+\begin{tikzpicture}[dibujofw]
+  \filldraw[fill=white] (-2.6,0) rectangle (2.6,3.6);
+  \filldraw[fill=white] (-2.95,3.6) rectangle (2.95,4.7);
+  \filldraw[fill=white] (-0.4,0) rectangle (0.4,3.6);
+  \filldraw[fill=white] (-0.4,3.6) rectangle (0.4,4.7);
+  \foreach \x/\y in {-1.9/0.8, -1.2/1.9, -1.9/2.9, 1.2/0.8, 1.9/1.9, 1.2/2.9, -1.6/4.15, 1.6/4.15}
+    {\filldraw[fill=white] (\x,\y) circle (0.2);}
+\end{tikzpicture}

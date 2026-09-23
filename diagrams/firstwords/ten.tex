@@ -1,0 +1,13 @@
+% diagrams/firstwords/ten.tex -- los caramelos que le dan a Amy en
+% Halloween: diez, en dos filas de cinco, para contarlos.
+\begin{tikzpicture}[dibujofw]
+  \foreach \i in {0,...,9} {
+    \pgfmathsetmacro{\x}{mod(\i,5)*2.3 + (\i>4)*1.15}
+    \pgfmathsetmacro{\y}{(\i>4)*-1.9}
+    \begin{scope}[shift={(\x,\y)}, rotate={mod(\i,3)*12-12}]
+      \filldraw[fill=white] (-0.6,0) -- (-1.05,0.4) -- (-1.0,-0.4) -- cycle;
+      \filldraw[fill=white] (0.6,0) -- (1.05,0.4) -- (1.0,-0.4) -- cycle;
+      \filldraw[fill=white] (0,0) ellipse (0.65 and 0.5);
+      \ifodd\i \draw (-0.2,0.46) -- (-0.2,-0.46); \draw (0.2,0.46) -- (0.2,-0.46); \fi
+    \end{scope}}
+\end{tikzpicture}

@@ -185,16 +185,22 @@ el diploma:
 - **tricky words** (*the, said, you*...), las palabras que no se leen
   como se escriben: se presentan los viernes de primavera, enteras y en
   un marco, y son las únicas que no se leen sonido a sonido en las
-  frases del verano.
+  frases del verano;
+- **un dibujo para colorear cada día** (de momento, en otoño): el de una
+  palabra que se acaba de leer -- si se lee *van*, se colorea una
+  furgoneta --; en la adivinanza se colorea, de tres dibujos, el que la
+  contesta, y en *Match* cada palabra se une con su dibujo. Siempre los
+  mismos personajes (`diagrams/firstwords/kit.tex`), y cada parte del
+  dibujo, cerrada, para colorearla aparte.
 
 Al generar el libro se comprueba a máquina que cada palabra se parta en
 sonidos igual a mano que en `tools/fonetica.py`, que solo use los
 sonidos que ya se han visto, que no sea una palabra cuyos botones
 mentirían (*house*, *knee*, *nice*: una letra que no suena) ni una
 *tricky word* (*the, said*), que la tabla de sonidos diga lo mismo que
-la escalera y que cada sonido de la tabla salga en alguna tarjeta de su
-estación. Ver `notes/06-first-words.md` para el diseño completo y las
-fases.
+la escalera, que cada sonido de la tabla salga en alguna tarjeta de su
+estación y que cada dibujo sea el de una palabra que se lee ese día.
+Ver `notes/06-first-words.md` para el diseño completo y las fases.
 
 ## Descargar el PDF sin instalar nada
 

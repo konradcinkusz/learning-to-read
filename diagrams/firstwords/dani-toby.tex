@@ -1,0 +1,19 @@
+% diagrams/firstwords/dani-toby.tex -- el viernes de "Grandma Rosa":
+% Dani con su bufanda nueva, y Toby saltando para coger los pompones.
+\begin{tikzpicture}[dibujofw]
+  \begin{scope}[shift={(0,0)}]
+    \ninoFW{Dani}{Abajo}{Abajo}
+    \filldraw[fill=white] (-0.25,4.9) -- (-0.75,4.5) -- (-0.85,1.3) -- (-0.15,1.3) -- (0.05,4.3) -- cycle;
+    \foreach \y in {1.8,2.4,3.0,3.6} {\draw (-0.82,\y) -- (-0.12,{\y+0.05});}
+    \filldraw[fill=white] (0.3,4.8) .. controls (1.6,4.6) and (2.4,3.9) .. (3.0,3.2)
+      -- (3.4,3.6) .. controls (2.7,4.4) and (1.8,5.2) .. (0.3,5.15) -- cycle;
+    \foreach \t in {0.3,0.5,0.7} {\draw ({0.3+2.9*\t},{4.8-1.4*\t+0.25}) -- ++(0.3,0.35);}
+    \filldraw[fill=white, rounded corners=2mm] (-1.05,4.55) -- (1.05,4.55) -- (0.95,5.15)
+      -- (-0.95,5.15) -- cycle;
+    \filldraw[fill=white] (-0.5,1.05) circle (0.32);
+    \filldraw[fill=white] (3.45,3.2) circle (0.32);
+  \end{scope}
+  % Toby, de pie sobre las patas de atrás, a por el pompón
+  \begin{scope}[shift={(7.4,0.1)}, xscale=-1, rotate=32] \tobyFW \end{scope}
+  \draw (-2,0) -- (9.8,0);
+\end{tikzpicture}

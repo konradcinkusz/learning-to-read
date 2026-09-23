@@ -1,0 +1,11 @@
+% diagrams/firstwords/vet.tex -- Mrs Brown, la veterinaria (la bata
+% blanca, el fonendo), y a su lado un gatito sentado en la mesa de la
+% consulta.
+\begin{tikzpicture}[dibujofw]
+  \veterinariaFW
+  % la mesa de la consulta y el gatito
+  \filldraw[fill=white] (2.6,2.2) rectangle (6.4,2.6);
+  \filldraw[fill=white] (2.9,0.2) rectangle (3.3,2.2);
+  \filldraw[fill=white] (5.7,0.2) rectangle (6.1,2.2);
+  \begin{scope}[shift={(4.5,2.6)}, scale=0.55] \gatoFW \end{scope}
+\end{tikzpicture}

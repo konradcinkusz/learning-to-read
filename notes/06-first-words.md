@@ -7,7 +7,9 @@ y lee textos cortos de oraciones compuestas; *First Words* es para quien
 **empieza** a leer en inglés: conoce las letras (o casi todas) y empieza
 a juntar sus sonidos. Es, en inglés, lo que el cuaderno de primeras
 palabras (`palabras.tex`, `notes/03-nivel-palabras.md`) es en español:
-una palabra al día y casi siempre un dibujo. Todo está en inglés — la
+una palabra al día y casi siempre un dibujo — aquí, para colorear: el
+de una palabra que se acaba de leer (ver *Los dibujos para colorear*,
+más abajo). Todo está en inglés — la
 palabra, las instrucciones, la portada, la página para el adulto, la
 clave y el diploma.
 
@@ -33,7 +35,8 @@ firstwords` lo genera, compila y comprueba.
   las mismas plantillas). Las instrucciones son para el adulto, pequeñas
   y en gris; lo que lee la niña o el niño va siempre grande.
 - **El ciclo semanal y las actividades** (ver la tabla de
-  `notes/03-nivel-palabras.md`): lunes *Draw*; martes *Trace* (semanas
+  `notes/03-nivel-palabras.md`): lunes *Draw* (con dibujo para
+  colorear, *Colour*); martes *Trace* (semanas
   pares) o *Finish the picture* (impares); miércoles *Sounds* → *Find it*
   → *Write*, rotando cada semana (en verano, *Yes or no?*); jueves
   *Riddle* (pares) o *Match* (impares); viernes *Read again* (impares) o
@@ -139,6 +142,78 @@ primavera: todos los grafemas, hasta cinco sonidos), o es una tricky
 word que ya se ha presentado un viernes, o un nombre del reparto (con
 su *'s*: *Toby's*). Sin tarjetas ni botones: ya no hacen falta.
 
+## Los dibujos para colorear
+
+La primera versión del cuaderno se dibujaba, como el español: *Draw the
+van*, y una caja en blanco. Pero quien empieza a leer en inglés tiene
+cuatro o cinco años, y dibujar una furgoneta a partir de una palabra es
+más difícil que leerla. Así que cada día trae **el dibujo de una palabra
+que se acaba de leer, para colorearlo**: si se lee *van*, se colorea una
+furgoneta. Colorearlo es comprobar que la palabra se ha entendido, no
+solo sonorizado — y la adivinanza y *Match* lo comprueban de verdad:
+hay que elegir el dibujo que corresponde a lo que se ha leído.
+
+**En el JSON.** Cada día lleva su `"dibujo"`: `"van"` es
+`diagrams/firstwords/van.tex`, y su palabra es *van*; si el fichero no se
+llama como la palabra, `{"imagen": "disfraz", "palabra": "cat"}` (con
+una barra, la ruta desde `diagrams/`, para los dibujos que ya tenía *Read
+and Draw*: `english/calabaza`). De lunes a jueves, la palabra tiene que
+ser **una de las leídas ese día** — lo que se colorea es lo que se acaba
+de leer —; los viernes, el dibujo es una escena de la semana (la casa de
+los vecinos, la fiesta de Lucía) y no necesita palabra.
+
+**En la página.**
+
+- **Lunes, *Colour*** (`"colorea"`): el enunciado y el dibujo, que llena
+  la caja.
+- **Martes, *Finish the picture*** (`"completa"`, sin `"diagrama"`): el
+  dibujo, al que le falta algo que dibujar — Toby sin cola, el árbol sin
+  estrella, el regalo sin lazo.
+- ***Trace*, *Sounds*, *Find it*, *Write*, *Yes or no?***: la actividad,
+  y debajo *Now colour: …* con el dibujo, en todo el sitio que quede (en
+  *Write*, con dibujo, la palabra hueca va una vez, no dos).
+- ***Riddle***: la respuesta no se dibuja, se elige — tres tarjetas con
+  tres dibujos, el del día y dos `"otros"`, en un orden que cambia de un
+  día a otro; se colorea el que contesta la adivinanza. La adivinanza
+  describe la palabra del día (*I help sick animals… Who am I?* el día
+  de *vet*).
+- ***Match***: cada palabra con su dibujo, no con sus MAYÚSCULAS — las
+  cuatro palabras más recientes que tienen dibujo, la del día incluida, o
+  las que diga `"dibujos"` cuando dos dibujos recientes se parecen
+  demasiado (la semana de *Toby, dog, wag, nap* son cuatro Tobys).
+- **Viernes**: la escena de la semana, para colorear, debajo de las
+  palabras de la semana (y del cartel, en *Look back*).
+
+**Cómo están hechos.** En TikZ, a línea gruesa (1,5 pt, extremos
+redondos), y **cada parte es una zona cerrada y rellena de blanco**, para
+colorearla aparte y sin que se vea lo que queda detrás. Los personajes
+son siempre los mismos: `diagrams/firstwords/kit.tex` (cargado por
+`preamble-firstwords.tex`) tiene la cabeza de cada uno — la coleta de
+Lucía, los rizos de Amy, la melena de Mrs Brown, el remolino de Dani, el
+bigote de Dad, el moño y las gafas de Grandma —, los cuerpos con los
+brazos en cuatro posturas, Toby (de pie, sentado, dormido), Pip, Luna,
+la jaula, la valla, la cama, el sofá, el árbol, la tarta… Cada dibujo
+los coloca con un `scope` (`shift`, `scale`). El flequillo tapa el borde
+de arriba de la cara (se rellena de blanco sin borde y solo se traza su
+línea), así que todo el pelo es una sola zona.
+
+**Del tamaño del sitio que quede.** El dibujo va en la parte de abajo
+de la caja (`\tcblower`), y `\dibujoHueco` le da justo el sitio que deja
+la actividad: la altura del texto de la caja (fija, con `height fill`)
+menos lo que ocupa la parte de arriba, que tcolorbox ya ha compuesto.
+Si no quedan 30 mm, es un error de compilación: la actividad es
+demasiado larga para ese día. Para escalar, `\dibujoColorear` cambia la
+escala de las coordenadas, no la de la caja — así las líneas salen
+igual de gruesas en un dibujo grande que en uno pequeño —, y como la
+caja de TikZ incluye el grueso de la línea, que no se escala, mide el
+dibujo dos veces (a escala 1 y 2) y calcula la escala exacta para que
+quepa sin una caja *overfull*.
+
+**Por partes.** Los dibujos se hacen estación por estación, un PR cada
+una: `dias_con_dibujo`, en el `Perfil`, dice cuántos días (del 1 en
+adelante) los llevan ya, y se exigen exactamente esos; los demás siguen
+dibujándose.
+
 ## Cómo se comprueba
 
 - Cada palabra de una tarjeta se escribe en el JSON **ya partida en sus
@@ -186,6 +261,13 @@ su *'s*: *Toby's*). Sin tarjetas ni botones: ya no hacen falta.
   primera vez) y CI la publica en el resumen del job.
 - Mientras el cuaderno se escribe por partes, su `Perfil` dice cuántos
   días tiene ya (`dias_escritos`) y se validan exactamente esos.
+- **Los dibujos**: cada día hasta `dias_con_dibujo` tiene el suyo, su
+  fichero existe y su palabra es una de las leídas ese día (o, un
+  viernes, de las de la semana); un día con dibujo no es *Draw*, sino
+  *Colour*; la adivinanza trae dos `"otros"` distintos del suyo; *Match*
+  junta al menos tres palabras, cada una con un dibujo distinto, la del
+  día incluida; y ningún dibujo de `diagrams/firstwords/` se queda sin
+  salir en ningún día (`comprobar_dibujos`).
 
 ## Las fases
 
@@ -231,3 +313,18 @@ siguiente:
    (*comes*) es la misma tricky word. El libro entero, sin
    `dias_escritos`, y los dos PDF en GitHub Pages (`first-words.pdf`,
    `first-words-bw.pdf`) con los demás.
+
+Y después, **los dibujos para colorear** (ver arriba), otra vez un PR
+por estación:
+
+1. **El motor y el otoño** (días 1–65): el campo `"dibujo"`, *Colour*,
+   *Now colour*, la adivinanza con tres dibujos y *Match* con dibujos;
+   `diagrams/firstwords/kit.tex` con el reparto entero; y los dibujos
+   del otoño — la furgoneta de los vecinos, Pip en su jaula, Toby (con
+   cola, sin cola, moviéndola, durmiendo), la cama de Lucía, las
+   castañas, Grandma tejiendo, el murciélago, el cohete de Bonfire
+   Night, la tarta de Lucía, la consulta de Mrs Brown, el desayuno
+   inglés, Luna en la valla, el árbol de Navidad sin estrella.
+2. **Invierno** (días 66–130).
+3. **Primavera** (días 131–195).
+4. **Verano** (días 196–260), y ya todo el cuaderno se colorea.

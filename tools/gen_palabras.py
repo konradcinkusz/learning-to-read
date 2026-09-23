@@ -34,6 +34,15 @@ escribe partida en grafemas ("sh-ee-p") y ese partido tiene que
 coincidir con el automático de tools/fonetica.py. Todo lo que cambia de
 un cuaderno a otro está en su Perfil, más abajo.
 
+Y en «First Words» no se dibuja: se colorea. Cada día lleva un
+`dibujo` (diagrams/firstwords/), el de una palabra que se lee ese día
+-- si se lee van, se colorea una furgoneta --, y el script lo
+comprueba: que el dibujo existe y que su palabra es de las leídas. El
+lunes el dibujo llena la caja ("colorea"); los demás días va debajo de
+la actividad, en el sitio que quede ("Now colour: ..."); la adivinanza
+se contesta coloreando uno de tres dibujos, y "une" junta cada palabra
+con su dibujo. Los viernes, una escena de la semana.
+
 No editar content/palabras/generated-*.tex (ni content/firstwords/) a
 mano -- se sobrescriben cada vez que se ejecuta este script.
 
@@ -154,6 +163,11 @@ class Perfil:
     # cuántos días tiene ya escritos: se exigen exactamente esos, del 1
     # en adelante. None = el cuaderno está entero, con sus 260 días.
     dias_escritos: int = None
+    # Cuántos días, del 1 en adelante, llevan su dibujo para colorear
+    # (solo «First Words»: ver preparar_dibujo). 0 = ninguno, el cuaderno
+    # se dibuja; mientras los dibujos se hacen por partes (un PR por
+    # estación), los días que faltan siguen como estaban.
+    dias_con_dibujo: int = 0
 
     @property
     def salida_dias(self):
@@ -198,6 +212,7 @@ FIRSTWORDS = Perfil(
     titulo_medalla=ENGLISH.titulo_medalla,
     nombres_medalla=ENGLISH.nombre_medalla,
     animo_medalla=ENGLISH.animo_medalla,
+    dias_con_dibujo=65,
 )
 
 PERFILES = {p.nombre: p for p in (PALABRAS, FIRSTWORDS)}
@@ -219,10 +234,21 @@ MAX_TRICKY_VIERNES = 4
 # propias ("relee", "repasa") son los viernes: la caja de lectura
 # recoge las palabras de toda la semana.
 TIPOS_VALIDOS = {
-    "dibuja", "completa", "traza", "escribe", "encuentra", "palmadas",
-    "adivina", "une", "si_no", "relee", "repasa",
+    "dibuja", "colorea", "completa", "traza", "escribe", "encuentra",
+    "palmadas", "adivina", "une", "si_no", "relee", "repasa",
 }
 TIPOS_VIERNES = {"relee", "repasa"}
+
+# «First Words»: el dibujo que se colorea (ver preparar_dibujo) va en
+# diagrams/, y cada palabra tiene el suyo en diagrams/firstwords/, salvo
+# las piezas que comparten todos (kit.tex, cargado por
+# preamble-firstwords.tex). La adivinanza con dibujos da a elegir entre
+# el del día y otros tantos.
+DIR_DIBUJOS = ROOT / "diagrams"
+DIBUJOS_QUE_NO_SE_COLOREAN = {"firstwords/kit"}
+OTROS_ADIVINA = 2
+# "une" con dibujos: cuántas palabras, cada una con el suyo.
+PAREJAS_UNE_DIBUJOS = 4
 TIPOS_SOLO_PALABRAS = {"palmadas"}  # necesitan sílabas: T1-T3
 TIPOS_SOLO_FRASES = {"si_no"}       # necesitan frases: T4
 
@@ -472,7 +498,7 @@ $enunciado
 )
 
 PLANTILLA_TRAZA = Template(
-    r"""\begin{cajaPalTraza}
+    r"""\begin{cajaPalTraza}$opciones
 \begin{center}
 {\Large\color{colorGris} $mayus~\lblTrazoDe~$palabra}
 
@@ -490,11 +516,10 @@ $dibujo
 )
 
 PLANTILLA_ESCRIBE = Template(
-    r"""\begin{cajaPalEscribe}
+    r"""\begin{cajaPalEscribe}$opciones
 \instruccion{\lblPalInstruccionEscribe}
 \begin{center}
-\palabraHueca{$palabra}
-\palabraHueca{$palabra}
+$huecas
 \end{center}
 \lineaEscribir
 $dibujo
@@ -502,7 +527,7 @@ $dibujo
 )
 
 PLANTILLA_ENCUENTRA = Template(
-    r"""\begin{cajaPalEncuentra}
+    r"""\begin{cajaPalEncuentra}$opciones
 \instruccion{\lblPalInstruccionEncuentra}
 \begin{center}
 \fcolorbox{colorCompleta}{white}{\fontsize{30}{36}\selectfont\ $modelo\ }
@@ -518,7 +543,7 @@ $dibujo
 )
 
 PLANTILLA_PALMADAS = Template(
-    r"""\begin{cajaPalPalmadas}
+    r"""\begin{cajaPalPalmadas}$opciones
 \instruccion{\lblPalInstruccionPalmadas}
 \begin{tabularx}{\linewidth}{@{}>{\fontsize{30}{36}\selectfont}X r@{}}
 $filas
@@ -536,7 +561,7 @@ $linea
 )
 
 PLANTILLA_UNE = Template(
-    r"""\begin{cajaPalUne}
+    r"""\begin{cajaPalUne}$opciones
 \instruccion{$instruccion}
 {\fontsize{$tam}{$salto}\selectfont
 \renewcommand{\arraystretch}{1.9}
@@ -548,7 +573,7 @@ $dibujo
 )
 
 PLANTILLA_SI_NO = Template(
-    r"""\begin{cajaPalSiNo}
+    r"""\begin{cajaPalSiNo}$opciones
 \instruccion{\lblPalInstruccionSiNo}
 {\fontsize{24}{30}\selectfont
 \renewcommand{\arraystretch}{1.8}
@@ -574,6 +599,64 @@ PLANTILLA_REPASA = Template(
 )
 
 
+# «First Words», con dibujo para colorear (ver preparar_dibujo). El
+# dibujo va en la parte de abajo de la caja (\tcblower, `centrado
+# abajo`) y \dibujoHueco (preamble-firstwords.tex) lo hace del tamaño
+# del sitio que deja la actividad: nunca se sale de la página.
+
+PLANTILLA_COLOREA = Template(
+    r"""\begin{cajaPalColorea}[centrado abajo]
+{\Large $prompt\par}
+\tcblower
+\dibujoHueco{$dibujo}
+\end{cajaPalColorea}"""
+)
+
+PLANTILLA_COMPLETA_DIBUJO = Template(
+    r"""\begin{cajaPalCompleta}[centrado abajo]
+{\Large $prompt\par}
+\tcblower
+\dibujoHueco{$dibujo}
+\end{cajaPalCompleta}"""
+)
+
+PLANTILLA_ADIVINA_DIBUJOS = Template(
+    r"""\begin{cajaPalAdivina}[centrado abajo]
+\instruccion{$instruccion}
+{\Large $adivinanza\par}
+\tcblower
+\tresDibujos$reserva{$a}{$b}{$c}$linea
+\end{cajaPalAdivina}"""
+)
+
+PLANTILLA_UNE_DIBUJOS = Template(
+    r"""\begin{cajaPalUne}
+\instruccion{\lblFwInstruccionUneDibujos}
+{\fontsize{26}{32}\selectfont\columnasCentradas
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}m{3.6cm} X >{\raggedright\arraybackslash}m{\anchoUneDibujo}@{}}
+$filas
+\end{tabularx}\par}
+\end{cajaPalUne}"""
+)
+
+PLANTILLA_RELEE_DIBUJO = Template(
+    r"""\begin{cajaPalRelee}[centrado abajo]
+{\Large $prompt\par}
+\tcblower
+\dibujoHueco{$dibujo}
+\end{cajaPalRelee}"""
+)
+
+PLANTILLA_REPASA_DIBUJO = Template(
+    r"""\begin{cajaPalRepasa}[centrado abajo]
+{\Large $prompt\par}
+\tcblower
+\dibujoHueco[\altoCartel]{$dibujo}
+\cartelRepasa{$banner}
+\end{cajaPalRepasa}"""
+)
+
+
 def remate_dibujo(actividad):
     """El "Ahora, dibuja: ..." opcional con que terminan las actividades
     que no son de dibujo en sí mismas -- en este nivel, casi todas."""
@@ -581,6 +664,22 @@ def remate_dibujo(actividad):
     if not prompt:
         return ""
     return r"\ahoraDibuja{" + escapar(prompt) + "}"
+
+
+def remate(dia, actividad):
+    """El remate de la actividad y las opciones de su caja: sin dibujo,
+    el "Now draw: ..." de siempre; con dibujo («First Words»), "Now
+    colour: ..." y el dibujo debajo, en todo el sitio que quede."""
+    dibujo = dia.get("dibujo")
+    if dibujo is None:
+        return remate_dibujo(actividad), ""
+    _campos_requeridos(dia["dia"], actividad, ["prompt"])
+    return (
+        r"\ahoraColorea{" + escapar(actividad["prompt"]) + "}\n"
+        + r"\tcblower" + "\n"
+        + r"\dibujoHueco{" + dibujo["ruta"] + "}",
+        "[centrado abajo]",
+    )
 
 
 # --------------------------------------------------------------------
@@ -692,7 +791,9 @@ def lectura_tricky(palabras):
 # Actividades
 # --------------------------------------------------------------------
 
-def render_actividad(dia, semana_previa):
+def render_actividad(dia, semana_previa, dibujos_previos=()):
+    """dibujos_previos: los dibujos con palabra de los días anteriores,
+    [(palabra, ruta)] en orden (para "une" con dibujos)."""
     num = dia["dia"]
     trimestre = dia["trimestre"]
     semana = dia["semana"]
@@ -701,6 +802,7 @@ def render_actividad(dia, semana_previa):
     # Las palabras sueltas que ha leído la niña o el niño ese día: las
     # de las tarjetas (T1-T3) o las de la frase (T4) -- ver preparar_dia.
     leidas = dia["palabras_leidas"]
+    dibujo = dia.get("dibujo")
     clave = None
 
     if tipo not in TIPOS_VALIDOS:
@@ -715,9 +817,36 @@ def render_actividad(dia, semana_previa):
             f"día {num}: '{tipo}' necesita frases -- solo se usa en el trimestre 4"
         )
 
+    if dibujo is None and tipo == "colorea":
+        raise ErrorDeContenido(f"día {num}: 'colorea' necesita un 'dibujo'")
+    if dibujo is not None and tipo == "dibuja":
+        raise ErrorDeContenido(
+            f"día {num}: tiene dibujo para colorear, así que su actividad "
+            "es 'colorea', no 'dibuja'"
+        )
+
     if tipo == "dibuja":
         _campos_requeridos(num, actividad, ["prompt"])
         tex = PLANTILLA_DIBUJA.substitute(prompt=escapar(actividad["prompt"]))
+
+    elif tipo == "colorea":
+        _campos_requeridos(num, actividad, ["prompt"])
+        tex = PLANTILLA_COLOREA.substitute(
+            prompt=escapar(actividad["prompt"]), dibujo=dibujo["ruta"]
+        )
+
+    elif tipo == "completa" and dibujo is not None:
+        # Terminar el dibujo: colorearlo y añadirle lo que dice el
+        # enunciado (un sombrero, las ruedas...).
+        _campos_requeridos(num, actividad, ["prompt"])
+        if "diagrama" in actividad:
+            raise ErrorDeContenido(
+                f"día {num}: 'completa' con dibujo para colorear no lleva "
+                "'diagrama' -- se termina el dibujo"
+            )
+        tex = PLANTILLA_COMPLETA_DIBUJO.substitute(
+            prompt=escapar(actividad["prompt"]), dibujo=dibujo["ruta"]
+        )
 
     elif tipo == "completa":
         _campos_requeridos(num, actividad, ["diagrama"])
@@ -753,11 +882,12 @@ def render_actividad(dia, semana_previa):
                 f"palabra de ese día empieza por ella ({', '.join(leidas)})"
             )
         entrada = letras[letra]
+        final, opciones = remate(dia, actividad)
         tex = PLANTILLA_TRAZA.substitute(
             mayus=escapar(letra.upper()),
             palabra=escapar(ejemplo),
             puntos=puntos_tikz_letra(entrada["mayuscula"], entrada["minuscula"]),
-            dibujo=remate_dibujo(actividad),
+            dibujo=final, opciones=opciones,
         )
 
     elif tipo == "escribe":
@@ -774,8 +904,13 @@ def render_actividad(dia, semana_previa):
                 f"día {num}: 'escribe' pide «{palabra}», que no es ninguna "
                 f"de las palabras leídas ese día ({', '.join(leidas)})"
             )
+        final, opciones = remate(dia, actividad)
+        # Dos veces la palabra hueca; con dibujo debajo, una, para que
+        # al dibujo le quede sitio.
+        hueca = r"\palabraHueca{" + escapar(palabra) + "}"
         tex = PLANTILLA_ESCRIBE.substitute(
-            palabra=escapar(palabra), dibujo=remate_dibujo(actividad)
+            huecas=hueca if dibujo else hueca + "\n" + hueca,
+            dibujo=final, opciones=opciones,
         )
 
     elif tipo == "encuentra":
@@ -818,11 +953,12 @@ def render_actividad(dia, semana_previa):
             fila = [escapar(p) for p in todas[i:i + columnas]]
             fila += [""] * (columnas - len(fila))
             filas.append(" & ".join(fila))
+        final, opciones = remate(dia, actividad)
         tex = PLANTILLA_ENCUENTRA.substitute(
             modelo=escapar(modelo),
             columnas=columnas,
             filas=" \\\\\n".join(filas) + " \\\\",
-            dibujo=remate_dibujo(actividad),
+            dibujo=final, opciones=opciones,
         )
         if PERFIL.idioma == "en":
             clave = ("encuentra", f"“{modelo}”: {veces} times")
@@ -835,7 +971,8 @@ def render_actividad(dia, semana_previa):
             escapar(p) + " & " + r"\hspace{2mm}".join([r"\circuloPalmada"] * circulos)
             for p in leidas
         ) + " \\\\"
-        tex = PLANTILLA_PALMADAS.substitute(filas=filas, dibujo=remate_dibujo(actividad))
+        final, opciones = remate(dia, actividad)
+        tex = PLANTILLA_PALMADAS.substitute(filas=filas, dibujo=final, opciones=opciones)
         if PERFIL.idioma == "en":
             # Cuántos sonidos tiene cada palabra no es evidente para
             # quien no aprendió a leer en inglés (sheep: tres), así que
@@ -844,6 +981,39 @@ def render_actividad(dia, semana_previa):
                 f"{p}: {len(g)}" for p, g in dia["tarjetas"] if g is not None
             ]
             clave = ("palmadas", ", ".join(cuentas))
+
+    elif tipo == "adivina" and dibujo is not None:
+        # «First Words»: la adivinanza se contesta coloreando uno de
+        # tres dibujos -- el del día, que es la respuesta, y dos 'otros'
+        # --, en un orden que cambia de un día a otro (reproducible).
+        _campos_requeridos(num, actividad, ["adivinanza", "respuesta", "otros"])
+        if "prompt" in actividad:
+            raise ErrorDeContenido(
+                f"día {num}: 'adivina' con dibujos no lleva 'prompt' -- lo "
+                "que se colorea es la respuesta"
+            )
+        otros = actividad["otros"]
+        if len(otros) != OTROS_ADIVINA:
+            raise ErrorDeContenido(
+                f"día {num}: 'adivina' con dibujos lleva {OTROS_ADIVINA} "
+                f"'otros' (los dibujos que no son la respuesta), no {len(otros)}"
+            )
+        rutas = [dibujo["ruta"]] + [ruta_dibujo(num, o) for o in otros]
+        if len(set(rutas)) != len(rutas):
+            raise ErrorDeContenido(
+                f"día {num}: en 'adivina', los tres dibujos tienen que ser distintos"
+            )
+        random.Random(num).shuffle(rutas)
+        escribe = trimestre >= 2
+        tex = PLANTILLA_ADIVINA_DIBUJOS.substitute(
+            instruccion=(r"\lblFwInstruccionAdivinaColoreaEscribe" if escribe
+                         else r"\lblFwInstruccionAdivinaColorea"),
+            adivinanza=escapar(actividad["adivinanza"]),
+            reserva=(r"[\altoLineaAdivina]" if escribe else ""),
+            a=rutas[0], b=rutas[1], c=rutas[2],
+            linea=("\n" + r"\lineaAdivina" if escribe else ""),
+        )
+        clave = ("adivina", actividad["respuesta"])
 
     elif tipo == "adivina":
         # La respuesta no sale en la página -- solo en la clave de
@@ -858,6 +1028,63 @@ def render_actividad(dia, semana_previa):
             linea=(r"\tcblower" + "\n" + r"\noindent\rule{0.55\linewidth}{0.5pt}" if escribe else ""),
         )
         clave = ("adivina", actividad["respuesta"])
+
+    elif tipo == "une" and dibujo is not None and "pares" not in actividad:
+        if "prompt" in actividad:
+            raise ErrorDeContenido(
+                f"día {num}: 'une' con dibujos no lleva 'prompt' -- lo que se "
+                "colorea son los dibujos de las palabras"
+            )
+        # «First Words»: cada palabra con su dibujo -- las más recientes
+        # que tienen uno, la del día incluida, o las que diga 'dibujos'
+        # (cuando dos dibujos recientes se parecen demasiado: Toby y
+        # dog). Solo palabras ya leídas: son las de los dibujos de días
+        # anteriores.
+        disponibles = list(dibujos_previos) + [(dibujo["palabra"], dibujo["ruta"])]
+        elegidas = actividad.get("dibujos")
+        pares = []
+        if elegidas is None:
+            for palabra, ruta in reversed(disponibles):
+                if any(palabra.lower() == p.lower() or ruta == r for p, r in pares):
+                    continue
+                pares.append((palabra, ruta))
+                if len(pares) == PAREJAS_UNE_DIBUJOS:
+                    break
+            pares.reverse()
+        else:
+            for palabra in elegidas:
+                ruta = next((r for p, r in reversed(disponibles)
+                             if p.lower() == palabra.lower()), None)
+                if ruta is None:
+                    raise ErrorDeContenido(
+                        f"día {num}: 'une' pide el dibujo de «{palabra}», y "
+                        "ningún día hasta hoy lo tiene"
+                    )
+                pares.append((palabra, ruta))
+            if dibujo["palabra"].lower() not in (p.lower() for p, _ in pares):
+                raise ErrorDeContenido(
+                    f"día {num}: en 'une', 'dibujos' tiene que llevar la "
+                    f"palabra del dibujo del día («{dibujo['palabra']}»)"
+                )
+            if len({r for _, r in pares}) != len(pares):
+                raise ErrorDeContenido(
+                    f"día {num}: en 'une', dos palabras con el mismo dibujo"
+                )
+        if len(pares) < 3:
+            raise ErrorDeContenido(
+                f"día {num}: 'une' con dibujos necesita al menos 3 palabras "
+                f"que tengan dibujo, y hasta hoy hay {len(pares)}"
+            )
+        derecha = [r for _, r in pares]
+        rng = random.Random(num)
+        mezclada = derecha[:]
+        while any(a == b for a, b in zip(mezclada, derecha)):
+            rng.shuffle(mezclada)
+        filas = " \\\\\n".join(
+            f"{escapar(p)}\\hfill\\textbullet & & \\dibujoUne{{{r}}}"
+            for (p, _), r in zip(pares, mezclada)
+        ) + " \\\\"
+        tex = PLANTILLA_UNE_DIBUJOS.substitute(filas=filas)
 
     elif tipo == "une":
         pares = actividad.get("pares")
@@ -901,9 +1128,10 @@ def render_actividad(dia, semana_previa):
         ) + " \\\\"
         largo = max(len(x) for x in izquierda + derecha)
         tam = 26 if largo <= 9 else 20
+        final, opciones = remate(dia, actividad)
         tex = PLANTILLA_UNE.substitute(
             instruccion=instruccion, filas=filas, tam=tam, salto=tam + 6,
-            dibujo=remate_dibujo(actividad),
+            dibujo=final, opciones=opciones,
         )
         # "mamá -> MAMÁ" no necesita clave; los pares escritos a mano
         # (animal y sonido, contrarios, rimas) sí.
@@ -926,7 +1154,8 @@ def render_actividad(dia, semana_previa):
         filas = " \\\\\n".join(
             escapar(t) + r" & \lblSi\hspace{8mm}\lblNo" for t, _ in afirmaciones
         ) + " \\\\"
-        tex = PLANTILLA_SI_NO.substitute(filas=filas, dibujo=remate_dibujo(actividad))
+        final, opciones = remate(dia, actividad)
+        tex = PLANTILLA_SI_NO.substitute(filas=filas, dibujo=final, opciones=opciones)
         respuestas = {True: r"\lblSi", False: r"\lblNo"}
         clave = ("si_no", ", ".join(
             f"{escapar(t)} {respuestas[v]}" for t, v in afirmaciones
@@ -934,13 +1163,24 @@ def render_actividad(dia, semana_previa):
 
     elif tipo == "relee":
         _campos_requeridos(num, actividad, ["prompt"])
-        tex = PLANTILLA_RELEE.substitute(prompt=escapar(actividad["prompt"]))
+        if dibujo is not None:
+            tex = PLANTILLA_RELEE_DIBUJO.substitute(
+                prompt=escapar(actividad["prompt"]), dibujo=dibujo["ruta"]
+            )
+        else:
+            tex = PLANTILLA_RELEE.substitute(prompt=escapar(actividad["prompt"]))
 
     elif tipo == "repasa":
         _campos_requeridos(num, actividad, ["prompt", "banner"])
-        tex = PLANTILLA_REPASA.substitute(
-            prompt=escapar(actividad["prompt"]), banner=escapar(actividad["banner"])
-        )
+        if dibujo is not None:
+            tex = PLANTILLA_REPASA_DIBUJO.substitute(
+                prompt=escapar(actividad["prompt"]), dibujo=dibujo["ruta"],
+                banner=escapar(actividad["banner"]),
+            )
+        else:
+            tex = PLANTILLA_REPASA.substitute(
+                prompt=escapar(actividad["prompt"]), banner=escapar(actividad["banner"])
+            )
 
     else:
         raise AssertionError("tipo validado arriba")
@@ -1027,6 +1267,93 @@ def preparar_dia(d):
     return d
 
 
+def ruta_dibujo(num, nombre):
+    """El dibujo `nombre` -> su ruta dentro de diagrams/, sin el .tex:
+    "van" es diagrams/firstwords/van.tex; con una barra, la ruta desde
+    diagrams/ ("english/loro"), para los dibujos que ya tenía el libro."""
+    ruta = nombre if "/" in nombre else f"firstwords/{nombre}"
+    if ruta in DIBUJOS_QUE_NO_SE_COLOREAN:
+        raise ErrorDeContenido(f"día {num}: diagrams/{ruta}.tex no es un dibujo")
+    if not (DIR_DIBUJOS / f"{ruta}.tex").exists():
+        raise ErrorDeContenido(f"día {num}: el dibujo diagrams/{ruta}.tex no existe")
+    return ruta
+
+
+def preparar_dibujo(d):
+    """«First Words»: el dibujo para colorear del día, `"dibujo": "van"`
+    o `{"imagen": ..., "palabra": ...}` (cuando el fichero no se llama
+    como la palabra). De lunes a jueves es el de una palabra que se lee
+    ese día -- lo que se colorea es lo que se acaba de leer --; los
+    viernes, una escena de la semana, que no necesita palabra (y si la
+    lleva, es de las de la semana: ver generar). Deja en d["dibujo"]
+    {"ruta", "palabra"}, con la palabra escrita como se lee (Amy)."""
+    num = d["dia"]
+    dibujo = d.get("dibujo")
+    hasta = PERFIL.dias_con_dibujo
+    if dibujo is None:
+        if num <= hasta:
+            raise ErrorDeContenido(
+                f"día {num}: falta su 'dibujo' para colorear (lo llevan los "
+                f"días 1-{hasta}: dias_con_dibujo, en el Perfil)"
+            )
+        return
+    if num > hasta:
+        raise ErrorDeContenido(
+            f"día {num}: lleva 'dibujo', pero en este cuaderno solo lo llevan "
+            f"los días 1-{hasta} (dias_con_dibujo, en su Perfil)"
+        )
+    if isinstance(dibujo, str):
+        dibujo = {"imagen": dibujo}
+    if (not isinstance(dibujo, dict) or "imagen" not in dibujo
+            or set(dibujo) - {"imagen", "palabra"}):
+        raise ErrorDeContenido(
+            f"día {num}: 'dibujo' es el nombre del dibujo, o "
+            "{\"imagen\": ..., \"palabra\": ...}"
+        )
+    ruta = ruta_dibujo(num, dibujo["imagen"])
+    palabra = dibujo.get("palabra")
+    if num % 5 != 0:
+        if palabra is None:
+            if "/" in dibujo["imagen"]:
+                raise ErrorDeContenido(
+                    f"día {num}: el dibujo {dibujo['imagen']} necesita su 'palabra'"
+                )
+            palabra = dibujo["imagen"]
+        leida = next(
+            (p for p in d["palabras_leidas"] if p.lower() == palabra.lower()), None
+        )
+        if leida is None:
+            raise ErrorDeContenido(
+                f"día {num}: el dibujo es de «{palabra}», que no es ninguna de "
+                f"las palabras leídas ese día ({', '.join(d['palabras_leidas'])})"
+            )
+        palabra = leida
+    d["dibujo"] = {"ruta": ruta, "palabra": palabra}
+
+
+def comprobar_dibujos(dias):
+    """«First Words»: ningún dibujo de diagrams/firstwords/ se queda sin
+    usar -- un dibujo que no sale en ninguna página es trabajo perdido,
+    o el de un día al que se le cambió la palabra y se quedó con otro."""
+    if not PERFIL.dias_con_dibujo:
+        return
+    usados = set()
+    for d in dias:
+        if d.get("dibujo"):
+            usados.add(d["dibujo"]["ruta"])
+        for otro in d["actividad"].get("otros", []):
+            usados.add(ruta_dibujo(d["dia"], otro))
+    hay = {
+        f"firstwords/{f.stem}" for f in (DIR_DIBUJOS / "firstwords").glob("*.tex")
+    } - DIBUJOS_QUE_NO_SE_COLOREAN
+    sobran = sorted(hay - usados)
+    if sobran:
+        raise ErrorDeContenido(
+            "estos dibujos no salen en ningún día: "
+            + ", ".join(f"diagrams/{r}.tex" for r in sobran)
+        )
+
+
 def presentar_tricky(d, t):
     """«First Words»: un viernes de primavera presenta unas pocas tricky
     words (fonetica.TRICKY), que se leen enteras. Cada una se presenta
@@ -1074,6 +1401,7 @@ def validar_dias(dias):
                 f"el día {esperado}, se encontró el día {d['dia']}"
             )
         preparar_dia(d)
+        preparar_dibujo(d)
 
 
 def semana_hasta(dias, d):
@@ -1104,10 +1432,21 @@ CABECERA = (
 def generar(dias):
     piezas = [CABECERA.format(nombre=f"{PERFIL.ruta}/generated-days.tex", ruta=PERFIL.ruta)]
     claves = [CABECERA.format(nombre=f"{PERFIL.ruta}/generated-clave.tex", ruta=PERFIL.ruta)]
+    dibujos_previos = []  # [(palabra, ruta)], para "une" con dibujos
     for d in dias:
         num, trimestre = d["dia"], d["trimestre"]
         tipo = d["actividad"]["tipo"]
         previas = semana_hasta(dias, d)
+        dibujo = d.get("dibujo")
+        if tipo in TIPOS_VIERNES and dibujo and dibujo["palabra"]:
+            palabra = dibujo["palabra"]
+            leida = next((p for p in previas if p.lower() == palabra.lower()), None)
+            if leida is None:
+                raise ErrorDeContenido(
+                    f"día {num}: el dibujo del viernes es de «{palabra}», que "
+                    "no se ha leído esa semana"
+                )
+            dibujo["palabra"] = leida
         if tipo in TIPOS_VIERNES:
             if not previas:
                 raise ErrorDeContenido(
@@ -1132,7 +1471,9 @@ def generar(dias):
         # Para "une" por defecto hacen falta las palabras previas de la
         # semana, no las frases.
         previas_palabras = previas if trimestre != 4 else []
-        actividad_tex, clave = render_actividad(d, previas_palabras)
+        actividad_tex, clave = render_actividad(d, previas_palabras, dibujos_previos)
+        if dibujo and dibujo["palabra"]:
+            dibujos_previos.append((dibujo["palabra"], dibujo["ruta"]))
         piezas.append(PLANTILLA_DIA.substitute(
             dia=num,
             semana=d["semana"],
@@ -1411,6 +1752,7 @@ def main():
         validar_dias(dias)
         comprobar_trazo(dias)
         comprobar_cobertura(dias)
+        comprobar_dibujos(dias)
         tex, clave = generar(dias)
         salidas = [(PERFIL.salida_dias, tex), (PERFIL.salida_clave, clave)]
         if PERFIL.idioma == "en":
@@ -1438,7 +1780,11 @@ def main():
             obras = f" (en obras: {len(dias)} de {TOTAL_DIAS} días escritos)"
         prefijo = "" if PERFIL is PALABRAS else f" ({PERFIL.nombre})"
         nombres = [ruta.name for ruta, _ in salidas]
-        print(f"OK{prefijo}: {len(dias)} días validados{obras}, "
+        dibujos = ""
+        if PERFIL.dias_con_dibujo:
+            n = len({d["dibujo"]["ruta"] for d in dias if d.get("dibujo")})
+            dibujos = f", {n} dibujos para colorear"
+        print(f"OK{prefijo}: {len(dias)} días validados{obras}{dibujos}, "
               f"{', '.join(nombres[:-1])} y {nombres[-1]} al día.")
         return 0
 

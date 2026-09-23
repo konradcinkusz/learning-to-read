@@ -1,0 +1,17 @@
+% diagrams/firstwords/amigas.tex -- Lucía y Amy, de la mano delante del
+% colegio: dos amigas nuevas. El colegio, al fondo: la fachada, el reloj
+% y las ventanas.
+\begin{tikzpicture}[dibujofw]
+  % el colegio, al fondo
+  \filldraw[fill=white] (-3.0,3.2) rectangle (7.8,9.2);
+  \filldraw[fill=white] (-3.4,9.2) -- (8.2,9.2) -- (7.4,10.2) -- (-2.6,10.2) -- cycle;
+  \filldraw[fill=white] (2.4,9.6) circle (0.95);
+  \draw (2.4,9.6) -- (2.4,10.2); \draw (2.4,9.6) -- (2.85,9.6);
+  \foreach \x in {-2.4,-0.3,3.9,6.0}
+    {\filldraw[fill=white] (\x,6.4) rectangle ++(1.5,1.8);}
+  % el suelo
+  \draw (-4,0) -- (8.8,0);
+  % Lucía y Amy, de la mano
+  \begin{scope}[shift={(0,0)}] \ninaFW{Lucia}{Abajo}{Lado} \end{scope}
+  \begin{scope}[shift={(4.84,0)}] \ninaFW{Amy}{Lado}{Abajo} \end{scope}
+\end{tikzpicture}

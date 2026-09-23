@@ -1,0 +1,21 @@
+% diagrams/firstwords/vet-sala.tex -- la consulta de Mrs Brown (el
+% viernes de "At the vet's"): el conejo en la mesa, la tortuga en su caja
+% y el gatito en su cesta.
+\begin{tikzpicture}[dibujofw]
+  \veterinariaFW
+  % la mesa, con el conejo
+  \filldraw[fill=white] (2.6,2.2) rectangle (6.4,2.6);
+  \filldraw[fill=white] (2.9,0.2) rectangle (3.3,2.2);
+  \filldraw[fill=white] (5.7,0.2) rectangle (6.1,2.2);
+  \begin{scope}[shift={(4.5,2.6)}, scale=0.75] \conejoFW \end{scope}
+  % la tortuga, en su caja
+  \filldraw[fill=white] (7.2,0.2) rectangle (11.2,1.6);
+  \begin{scope}[shift={(9.1,1.2)}, scale=0.7] \tortugaFW \end{scope}
+  \filldraw[fill=white] (7.2,0.2) rectangle (11.2,1.2);
+  % el gatito, en su cesta
+  \filldraw[fill=white] (13.2,1.3) ellipse (1.5 and 0.35);
+  \begin{scope}[shift={(13.2,0.9)}, scale=0.45] \gatoFW \end{scope}
+  \filldraw[fill=white] (11.7,1.3) -- (12.0,0.2) -- (14.4,0.2) -- (14.7,1.3)
+    arc[start angle=0, end angle=-180, x radius=1.5, y radius=0.35] -- cycle;
+  \draw (-2.4,0.2) -- (15.2,0.2);
+\end{tikzpicture}

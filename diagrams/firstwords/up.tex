@@ -1,0 +1,19 @@
+% diagrams/firstwords/up.tex -- la jaula de Pip, colgada muy arriba de
+% su soporte, donde Luna no llega; Luna, abajo, mirando hacia arriba.
+\begin{tikzpicture}[dibujofw]
+  % el soporte, con su gancho
+  \filldraw[fill=white] (3.6,0) rectangle (4.0,11.7);
+  \filldraw[fill=white] (2.7,0) rectangle (4.9,0.35);
+  \filldraw[fill=white] (-0.2,11.3) rectangle (4.0,11.7);
+  \draw (0.2,11.3) -- (0.2,10.9);
+  % la jaula, colgada del gancho
+  \begin{scope}[shift={(0.2,6.3)}, scale=0.6]
+    \jaulaFondoFW
+    \begin{scope}[shift={(0,2.9)}, scale=0.62] \perchaFW{-3.2}{3.2} \pipFW \end{scope}
+    \jaulaBaseFW
+  \end{scope}
+  % Luna, abajo, mirando hacia arriba (sin llegar)
+  \begin{scope}[shift={(-0.2,0)}, scale=0.75] \lunaFW \end{scope}
+  \foreach \x in {-0.5,0.1} {\draw (\x,5.0) -- (\x,5.5);}
+  \draw (-3.2,0) -- (5.4,0);
+\end{tikzpicture}
