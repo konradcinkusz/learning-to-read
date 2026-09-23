@@ -191,7 +191,13 @@ siguiente:
    Navidad), y las seis letras de *Trace* (*s, d, h, m, f, b*) son las
    iniciales de una de ellas.
 3. **Invierno** (días 66–130): dos palabras al día, dos o tres letras
-   para un sonido.
+   para un sonido (*king, night*; *torch, cherry*; *teeth, short*;
+   *root, shoot*), con los 25 grafemas nuevos en alguna tarjeta antes
+   del día 130 — la *ure* en *cure*, cuando Dani está malo; la *bb* en
+   el muñeco de nieve *chubby*. Las adivinanzas ya se contestan
+   escribiendo, así que su respuesta es siempre una palabra que se puede
+   leer (*Pip, hat, Toby, sorry, pan, book*), y las letras de *Trace*
+   son *g, l, c, r, n, k, j*.
 4. **Primavera** (días 131–195): tres palabras al día, las otras formas
    de escribir los sonidos, la e mágica, dos consonantes seguidas — y la
    presentación de las tricky words, los viernes.

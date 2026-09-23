@@ -386,10 +386,11 @@ en color y en blanco y negro con las mismas comprobaciones que los otros
 tres cuadernos, y se publica en GitHub Pages con ellos.
 
 **First Words (en inglés)**: en obras, en cinco fases, una por PR (ver
-`notes/06-first-words.md`, "Las fases"). Escritas las fases 1 y 2: el
+`notes/06-first-words.md`, "Las fases"). Escritas las fases 1 a 3: el
 motor (`tools/fonetica.py` y el perfil `firstwords` de
 `tools/gen_palabras.py`, con el cuaderno de primeras palabras en español
 idéntico byte a byte), la tarjeta con botones de sonido, la portada,
 *How to use this book*, la tabla de sonidos, el mapa del año, la clave,
-el diploma y el otoño entero (días 1-65, con su medalla). Compila en
-color y en blanco y negro con las mismas comprobaciones que los demás.
+el diploma, el otoño y el invierno (días 1-130, con sus dos medallas).
+Compila en color y en blanco y negro con las mismas comprobaciones que
+los demás.
