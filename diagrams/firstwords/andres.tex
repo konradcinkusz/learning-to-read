@@ -1,0 +1,11 @@
+% diagrams/firstwords/andres.tex -- Andrés enseña sus colmenas: el traje
+% blanco, los guantes amarillos y el sombrero con red; alrededor, las
+% abejas.
+\begin{tikzpicture}[dibujofw]
+  \begin{scope}[shift={(3.6,0)}] \colmenaFW \end{scope}
+  \begin{scope}[shift={(7.0,0)}] \colmenaFW \end{scope}
+  \hombreFW{Andres}{Abajo}{Lado}
+  \foreach \x/\y in {-1.75/3.1, 2.8/4.75} {\filldraw[fill=white] (\x,\y) circle (0.42);}
+  \foreach \x/\y/\a in {4.4/5.4/10, 6.2/6.2/-15, 8.2/5.0/20, 5.4/7.4/0, -3.2/6.6/15} {\begin{scope}[shift={(\x,\y)}, rotate=\a, scale=0.4] \abejaFW \end{scope}}
+  \hierbaFW{-3}{9}
+\end{tikzpicture}

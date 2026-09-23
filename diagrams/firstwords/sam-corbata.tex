@@ -1,0 +1,15 @@
+% diagrams/firstwords/sam-corbata.tex -- Sam, con el uniforme del colegio
+% inglés: la chaqueta, la camisa... y la corbata torcida, que no le gusta
+% nada.
+\begin{tikzpicture}[dibujofw]
+  \ninoFW{Sam}{Abajo}{Abajo}
+  \begin{scope}[shift={(0,6.3)}] \cejasEnfadoFW \bocaTristeFW \end{scope}
+  % la camisa, la corbata torcida y las solapas de la chaqueta
+  \filldraw[fill=white] (-0.55,4.75) -- (0,4.2) -- (0.55,4.75) -- (0.2,4.85) -- (0,4.6) -- (-0.2,4.85) -- cycle;
+  \begin{scope}[shift={(0,4.45)}, rotate=18]
+    \filldraw[fill=white] (-0.18,0) -- (0.18,0) -- (0.12,-0.25) -- (-0.12,-0.25) -- cycle;
+    \filldraw[fill=white] (-0.12,-0.25) -- (0.12,-0.25) -- (0.3,-1.6) -- (0,-1.9) -- (-0.3,-1.6) -- cycle;
+  \end{scope}
+  \draw (-0.55,4.75) -- (-0.7,3.2) -- (-0.4,2.3); \draw (0.55,4.75) -- (0.75,3.2) -- (0.45,2.3);
+  \filldraw[fill=white] (-0.95,3.35) rectangle (-0.55,3.6);
+\end{tikzpicture}

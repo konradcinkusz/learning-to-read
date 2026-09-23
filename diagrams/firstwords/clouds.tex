@@ -1,0 +1,26 @@
+% diagrams/firstwords/clouds.tex -- se pone el cielo negro: tres nubes
+% grandes y negras llegan por encima de la colina, y el viento dobla el
+% árbol y se lleva las hojas.
+\begin{tikzpicture}[dibujofw]
+  \foreach \x/\y/\s in {-4.4/7.6/1.5, 0.4/8.4/1.8, 4.8/7.4/1.4} {\begin{scope}[shift={(\x,\y)}, scale=\s] \nubeFW \end{scope}}
+  % la colina, con una casa
+  \filldraw[fill=white] (-7.0,0) -- (-7.0,2.2) .. controls (-4.0,5.2) and (-0.5,4.8) .. (2.5,3.0) .. controls (4.0,2.2) and (5.5,1.8) .. (7.0,1.9) -- (7.0,0) -- cycle;
+  \filldraw[fill=white] (-3.6,3.9) rectangle (-2.2,5.0);
+  \filldraw[fill=white] (-3.9,5.0) -- (-2.9,5.8) -- (-1.9,5.0) -- cycle;
+  % el árbol, doblado por el viento
+  \filldraw[fill=white] (4.1,1.95) .. controls (4.3,3.2) and (4.1,4.2) .. (3.3,5.0) -- (3.7,5.3) .. controls (4.6,4.4) and (4.9,3.2) .. (4.7,1.95) -- cycle;
+  \begin{scope}[shift={(2.6,5.6)}, rotate=20, scale=0.55]
+    \filldraw[fill=white] (0,2.0)
+      arc[start angle=160.216, end angle=-2.716, radius=0.493] arc[start angle=137.716, end angle=-25.216, radius=0.493]
+      arc[start angle=115.216, end angle=-47.716, radius=0.493] arc[start angle=92.716, end angle=-70.216, radius=0.493]
+      arc[start angle=70.216, end angle=-92.716, radius=0.493] arc[start angle=47.716, end angle=-115.216, radius=0.493]
+      arc[start angle=25.216, end angle=-137.716, radius=0.493] arc[start angle=2.716, end angle=-160.216, radius=0.493]
+      arc[start angle=-19.784, end angle=-182.716, radius=0.493] arc[start angle=-42.284, end angle=-205.216, radius=0.493]
+      arc[start angle=-64.784, end angle=-227.716, radius=0.493] arc[start angle=-87.284, end angle=-250.216, radius=0.493]
+      arc[start angle=-109.784, end angle=-272.716, radius=0.493] arc[start angle=-132.284, end angle=-295.216, radius=0.493]
+      arc[start angle=-154.784, end angle=-317.716, radius=0.493] arc[start angle=-177.284, end angle=-340.216, radius=0.493] -- cycle;
+  \end{scope}
+  % el viento y las hojas que vuelan
+  \foreach \y in {4.6,5.8} {\draw (-6.6,\y) .. controls (-5.4,{\y+0.4}) and (-4.6,{\y-0.4}) .. (-3.8,\y) arc[start angle=-90, end angle=180, radius=0.3];}
+  \foreach \x/\y/\a in {0.2/5.4/-40, -1.0/6.2/30, 5.8/5.2/-70} {\begin{scope}[shift={(\x,\y)}, rotate=\a, scale=0.6] \hojaFW \end{scope}}
+\end{tikzpicture}

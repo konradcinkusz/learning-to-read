@@ -1,0 +1,14 @@
+% diagrams/firstwords/lucia-lee.tex -- Lucía, leyendo uno de los dos
+% libros en inglés que se lleva al pueblo; el otro, a sus pies.
+\begin{tikzpicture}[dibujofw]
+  \ninaFW{Lucia}{Frente}{Frente}
+  % el libro abierto, en las manos
+  \filldraw[fill=white] (0,3.0) -- (-1.5,3.25) -- (-1.5,5.0) -- (0,4.75) -- cycle;
+  \filldraw[fill=white] (0,3.0) -- (1.5,3.25) -- (1.5,5.0) -- (0,4.75) -- cycle;
+  \foreach \y in {3.7,4.1,4.5} {\draw (-1.25,{\y+0.05}) -- (-0.25,{\y-0.12}); \draw (0.25,{\y-0.12}) -- (1.25,{\y+0.05});}
+  \filldraw[fill=white] (-0.35,3.12) circle (0.27); \filldraw[fill=white] (0.35,3.12) circle (0.27);
+  % el otro libro, en el suelo
+  \filldraw[fill=white, rounded corners=1mm] (1.8,0) rectangle (4.2,0.6);
+  \draw (1.95,0.15) -- (4.05,0.15);
+  \draw (-2.2,0) -- (4.6,0);
+\end{tikzpicture}

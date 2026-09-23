@@ -1,0 +1,12 @@
+% diagrams/firstwords/storm.tex -- ¡una tormenta! Por la ventana, la
+% lluvia y un rayo; en la mesa, las dos velas que enciende Grandma.
+\begin{tikzpicture}[dibujofw]
+  \ventanaFW{-2.6}{3.6}{5.2}{4.4}
+  \begin{scope}[shift={(-1.0,4.6)}, scale=0.95] \rayoFW \end{scope}
+  \foreach \x/\y in {-2.0/7.0, -0.2/6.9, 0.6/5.1, 1.7/7.2, 2.1/4.5, 1.1/6.1, -2.1/4.3} {\draw (\x,\y) -- ({\x-0.2},{\y-0.5});}
+  \mesaFW{-4.6}{4.6}{2.0}
+  \foreach \x in {-1.8,1.8} {\filldraw[fill=white] ({\x-0.35},2.5) rectangle ({\x+0.35},4.1);
+    \filldraw[fill=white] (\x,4.2) .. controls ({\x-0.35},4.55) and ({\x-0.1},4.95) .. (\x,5.15) .. controls ({\x+0.1},4.95) and ({\x+0.35},4.55) .. (\x,4.2) -- cycle;
+    \filldraw[fill=white] (\x,2.6) ellipse (0.75 and 0.2);}
+  \draw (-5.4,0) -- (5.4,0);
+\end{tikzpicture}

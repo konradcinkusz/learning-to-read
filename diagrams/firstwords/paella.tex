@@ -1,0 +1,22 @@
+% diagrams/firstwords/paella.tex -- Dad hace una paella en el patio de
+% Grandma, con una cuchara de madera, y Toby lo mira todo.
+\begin{tikzpicture}[dibujofw]
+  % el fuego y las patas del trípode
+  \foreach \x/\h in {0.8/1.3, 1.6/1.7, 2.4/1.2} {\filldraw[fill=white] (\x,0.2) .. controls ({\x-0.5},{0.2+0.5*\h}) and ({\x-0.1},{0.2+0.8*\h}) .. (\x,{0.2+\h})
+    .. controls ({\x+0.1},{0.2+0.8*\h}) and ({\x+0.5},{0.2+0.5*\h}) .. (\x,0.2) -- cycle;}
+  \draw (-0.3,0) -- (0.3,2.8); \draw (3.5,0) -- (2.9,2.8);
+  % la paellera, con sus asas, el arroz, las gambas y el limón
+  \filldraw[fill=white] (-1.2,3.2) ellipse (0.35 and 0.18); \filldraw[fill=white] (4.4,3.2) ellipse (0.35 and 0.18);
+  \filldraw[fill=white] (1.6,3.2) ellipse (2.9 and 0.75);
+  \filldraw[fill=white] (1.6,3.3) ellipse (2.6 and 0.58);
+  \foreach \x/\y in {0.3/3.35, 1.3/3.6, 2.5/3.4, 3.2/3.25} {\draw (\x,\y) arc[start angle=200, end angle=-20, radius=0.22];}
+  \filldraw[fill=white] (1.6,3.05) -- (2.1,3.05) arc[start angle=0, end angle=180, radius=0.25] -- cycle;
+  % Dad, con la cuchara
+  \begin{scope}[shift={(-3.4,0)}] \hombreFW{Dad}{Abajo}{Lado} \end{scope}
+  \filldraw[fill=white, rounded corners=0.5mm] (-0.75,4.65) -- (0.95,3.55) -- (1.05,3.7) -- (-0.65,4.8) -- cycle;
+  \filldraw[fill=white] (1.15,3.45) ellipse [x radius=0.32, y radius=0.2, rotate=-30];
+  \filldraw[fill=white] (-0.6,4.75) circle (0.3);
+  % Toby
+  \begin{scope}[shift={(6.0,0)}, scale=0.75] \tobySentadoFW \end{scope}
+  \draw (-5.8,0) -- (8.2,0);
+\end{tikzpicture}

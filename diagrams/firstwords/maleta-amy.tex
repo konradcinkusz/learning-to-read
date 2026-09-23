@@ -1,0 +1,24 @@
+% diagrams/firstwords/maleta-amy.tex -- Amy hace la maleta para Londres:
+% las camisetas, los pantalones cortos, el chubasquero, las pinturas... y
+% la foto de Pip, que lleva en la mano.
+\begin{tikzpicture}[dibujofw]
+  % la tapa, abierta, y lo que asoma de la maleta
+  \filldraw[fill=white, rounded corners=3mm] (1.9,2.0) rectangle (8.1,5.8);
+  \draw[rounded corners=2mm] (2.2,2.3) rectangle (7.8,5.5);
+  \filldraw[fill=white] (2.3,2.2) -- (2.3,3.2) -- (2.0,3.1) -- (2.35,3.75) -- (2.95,3.75) .. controls (3.1,3.55) and (3.4,3.55) .. (3.55,3.75)
+    -- (4.15,3.75) -- (4.5,3.1) -- (4.2,3.2) -- (4.2,2.2) -- cycle;
+  \filldraw[fill=white] (4.6,2.2) -- (4.7,3.5) -- (5.95,3.5) -- (6.05,2.2) -- (5.5,2.2) -- (5.33,3.0) -- (5.15,2.2) -- cycle;
+  \filldraw[fill=white] (6.3,2.2) rectangle (7.6,3.3);
+  \foreach \x/\y in {6.6/2.95, 6.95/2.95, 7.3/2.95, 6.6/2.55, 6.95/2.55, 7.3/2.55} {\filldraw[fill=white] (\x,\y) circle (0.12);}
+  % la maleta
+  \filldraw[fill=white, rounded corners=3mm] (1.6,0) rectangle (8.4,2.6);
+  \draw (1.6,2.2) -- (8.4,2.2);
+  \foreach \x in {3.2,6.8} {\filldraw[fill=white] (\x,1.9) rectangle ({\x+0.4},2.4);}
+  % Amy, con la foto de Pip
+  \begin{scope}[shift={(-2.2,0)}]
+    \ninaFW{Amy}{Abajo}{Lado}
+  \end{scope}
+  \filldraw[fill=white] (0.05,3.2) rectangle (1.45,4.8);
+  \begin{scope}[shift={(0.6,3.55)}, scale=0.22] \pipFW \end{scope}
+  \filldraw[fill=white] (0.22,4.02) circle (0.27);
+\end{tikzpicture}

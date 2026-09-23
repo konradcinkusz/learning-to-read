@@ -1,0 +1,14 @@
+% diagrams/firstwords/amy-nada.tex -- Amy nada muy deprisa en el río,
+% salpicando.
+\begin{tikzpicture}[dibujofw]
+  \filldraw[fill=white] (-5.5,-2.0) -- (-5.5,1.0) -- plot[domain=-5.5:5.5, samples=50, smooth] (\x,{1.0+0.14*sin(\x*140)}) -- (5.5,-2.0) -- cycle;
+  % Amy: un brazo fuera, la cabeza y las ondas
+  \filldraw[fill=white, rounded corners=2mm] (1.3,1.2) -- (2.8,2.9) -- (2.5,3.2) -- (0.9,1.6) -- cycle;
+  \filldraw[fill=white] (2.75,3.15) circle (0.28);
+  \begin{scope}[shift={(0.2,1.95)}, scale=0.95] \cabezaAmy \end{scope}
+  \fill[white] (-1.3,0.55) rectangle (1.7,0.95);
+  \draw (-1.5,0.95) .. controls (-0.7,0.7) and (1.1,0.7) .. (1.9,0.95);
+  % las salpicaduras y las rayas de ir deprisa
+  \foreach \x/\y/\a in {-2.2/1.5/40, -2.8/2.1/60, -1.8/2.4/20} {\begin{scope}[shift={(\x,\y)}, rotate=\a, scale=0.8] \gotaFW \end{scope}}
+  \foreach \y in {0.2,-0.4,-1.0} {\draw (-5.0,\y) -- (-3.4,\y);}
+\end{tikzpicture}

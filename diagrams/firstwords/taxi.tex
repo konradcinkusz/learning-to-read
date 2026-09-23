@@ -1,0 +1,18 @@
+% diagrams/firstwords/taxi.tex -- el taxi que se lleva a los Brown al
+% aeropuerto, con las maletas en el techo, y Amy diciendo adiós por la
+% ventanilla.
+\begin{tikzpicture}[dibujofw]
+  % las maletas en el techo y el cartel
+  \filldraw[fill=white, rounded corners=1mm] (-1.0,3.95) rectangle (0.9,4.75);
+  \filldraw[fill=white, rounded corners=1mm] (-0.7,4.75) rectangle (0.6,5.4);
+  \cocheFW
+  \filldraw[fill=white] (1.35,3.95) rectangle (2.35,4.4);
+  \node[transform shape, font=\sffamily\bfseries\fontsize{10}{10}\selectfont] at (1.85,4.17) {TAXI};
+  % Amy, en la ventanilla de atrás, diciendo adiós
+  \begin{scope}[shift={(-0.75,3.05)}, scale=0.5] \cabezaAmy \end{scope}
+  \filldraw[fill=white, rounded corners=1.5mm] (-1.35,2.8) -- (-2.05,4.55) -- (-1.75,4.65) -- (-1.1,2.95) -- cycle;
+  \filldraw[fill=white] (-1.95,4.75) circle (0.25);
+  % el camino y las rayas de ir deprisa
+  \draw (-6.0,0) -- (5.2,0);
+  \foreach \y in {1.2,1.8,2.4} {\draw (-5.6,\y) -- (-4.4,\y);}
+\end{tikzpicture}

@@ -1,0 +1,7 @@
+% diagrams/firstwords/gallinas.tex -- las cinco gallinas de Grandma, por
+% el patio.
+\begin{tikzpicture}[dibujofw]
+  \foreach \x/\y/\s/\d in {-5.6/0/1.0/1, -1.9/0.3/0.9/-1, 1.8/0/1.0/1, 5.5/0.25/0.9/-1, -0.1/-2.6/1.05/1}
+    {\begin{scope}[shift={(\x,\y)}, xscale=\s*\d, yscale=\s] \gallinaFW \end{scope}}
+  \foreach \x/\y in {-3.6/-1.5, 2.6/-1.8, 4.6/-1.4} {\filldraw[fill=white] (\x,\y) circle (0.08); \filldraw[fill=white] ({\x+0.3},{\y+0.1}) circle (0.08);}
+\end{tikzpicture}

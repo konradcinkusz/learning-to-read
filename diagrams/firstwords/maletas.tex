@@ -1,0 +1,20 @@
+% diagrams/firstwords/maletas.tex -- el viernes de hacer las maletas:
+% las de la familia, listas en la puerta (la grande de Dad, la de Mum,
+% la de Lucía y la pequeña de Dani), y Toby, que también quiere ir.
+\begin{tikzpicture}[dibujofw]
+  % la puerta
+  \filldraw[fill=white] (-7.6,0) rectangle (-4.6,7.2);
+  \draw (-7.3,0) -- (-7.3,6.9) -- (-4.9,6.9) -- (-4.9,0);
+  \filldraw[fill=white] (-5.3,3.4) circle (0.2);
+  % las maletas, en dos montones
+  \begin{scope}[shift={(-1.8,0)}] \maletaFW{4.2}{2.7} \end{scope}
+  \begin{scope}[shift={(-1.8,2.75)}] \maletaFW{3.4}{2.3} \end{scope}
+  \begin{scope}[shift={(2.6,0)}] \maletaFW{3.4}{2.4}
+    \foreach \x in {-0.85,0.85} {\begin{scope}[shift={(\x,1.35)}, scale=0.35] \estrellaFW \end{scope}}
+  \end{scope}
+  \begin{scope}[shift={(2.6,2.45)}] \maletaFW{2.6}{1.9}
+    \begin{scope}[shift={(0.08,0.55)}, scale=0.17] \dinoCuelloFW \end{scope}
+  \end{scope}
+  \begin{scope}[shift={(6.3,0)}, scale=0.8] \tobySentadoFW \end{scope}
+  \draw (-8.2,0) -- (8.4,0);
+\end{tikzpicture}

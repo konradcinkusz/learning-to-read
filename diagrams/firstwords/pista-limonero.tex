@@ -1,0 +1,14 @@
+% diagrams/firstwords/pista-limonero.tex -- los chicos (Dani, Sam y Martín)
+% leen la segunda pista, atada a una rama del limonero.
+\begin{tikzpicture}[dibujofw]
+  \begin{scope}[shift={(-1.0,0)}, scale=1.25] \limoneroFW \end{scope}
+  % la pista, colgada de la rama
+  \draw (0.2,5.0) -- (0.4,4.2);
+  \filldraw[fill=white] (-0.5,2.6) -- (1.3,2.8) -- (1.2,4.3) -- (-0.6,4.1) -- cycle;
+  \foreach \y in {3.1,3.5,3.9} {\draw (-0.3,{\y-0.05}) -- (1.0,{\y+0.08});}
+  % los tres chicos, mirándola
+  \begin{scope}[shift={(3.4,0)}, scale=0.8] \ninoFW{Dani}{Abajo}{Arriba} \begin{scope}[shift={(0,6.3)}] \bocaOFW \end{scope} \end{scope}
+  \begin{scope}[shift={(5.8,0)}, scale=0.8] \ninoFW{Sam}{Abajo}{Abajo} \begin{scope}[shift={(0,6.3)}] \bocaOFW \end{scope} \end{scope}
+  \begin{scope}[shift={(8.2,0)}, scale=0.8] \ninoFW{Martin}{Arriba}{Abajo} \end{scope}
+  \draw (-5.0,0) -- (10.0,0);
+\end{tikzpicture}

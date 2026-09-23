@@ -1,0 +1,25 @@
+% diagrams/firstwords/comic.tex -- el viernes de la vuelta a casa: el
+% cómic del verano de Lucía, en tres viñetas -- el río, las abejas de
+% Andrés y los fuegos de las fiestas.
+\begin{tikzpicture}[dibujofw]
+  \foreach \x in {-7.8,-2.4,3.0} {\filldraw[fill=white] (\x,0) rectangle ({\x+5.0},5.6);}
+  % 1: el río, con Lucía nadando y el sol
+  \begin{scope}[shift={(-5.3,0)}]
+    \filldraw[fill=white] (-2.5,0) -- (-2.5,2.0) -- plot[domain=-2.5:2.5, samples=25, smooth] (\x,{2.0+0.1*sin(\x*160)}) -- (2.5,0) -- cycle;
+    \begin{scope}[shift={(-0.4,2.45)}, scale=0.55] \cabezaLucia \end{scope}
+    \fill[white] (-1.0,1.9) rectangle (0.3,2.25); \draw (-1.1,2.25) .. controls (-0.4,2.05) .. (0.35,2.25);
+    \begin{scope}[shift={(1.4,4.4)}] \foreach \a in {0,45,...,315} {\draw (\a:0.6) -- (\a:0.85);} \filldraw[fill=white] (0,0) circle (0.45); \end{scope}
+  \end{scope}
+  % 2: las abejas, la flor y la colmena
+  \begin{scope}[shift={(0.1,0)}]
+    \begin{scope}[shift={(1.1,0)}, scale=0.7] \colmenaFW \end{scope}
+    \begin{scope}[shift={(-1.3,0)}] \margaritaFW{2.4} \end{scope}
+    \foreach \x/\y in {-1.2/4.2, 0.9/4.4} {\begin{scope}[shift={(\x,\y)}, scale=0.4] \abejaFW \end{scope}}
+  \end{scope}
+  % 3: los fuegos
+  \begin{scope}[shift={(5.5,0)}]
+    \begin{scope}[shift={(-0.9,3.6)}] \fuegoFW{1.1} \end{scope}
+    \begin{scope}[shift={(1.1,2.2)}] \fuegoFW{0.9} \end{scope}
+    \filldraw[fill=white] (-2.5,0) -- (-2.5,0.9) -- (-1.6,1.5) -- (-0.7,0.9) -- (-0.7,0.6) -- (0.6,0.6) -- (0.6,1.0) -- (1.5,1.6) -- (2.5,1.0) -- (2.5,0) -- cycle;
+  \end{scope}
+\end{tikzpicture}

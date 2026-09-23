@@ -1,0 +1,12 @@
+% diagrams/firstwords/dani-estatua.tex -- el viernes de las abejas: Dani,
+% quieto como una estatua, con una abeja en el brazo; detrás, una
+% colmena.
+\begin{tikzpicture}[dibujofw]
+  \begin{scope}[shift={(5.2,0)}] \colmenaFW \end{scope}
+  \ninoFW{Dani}{Lado}{Lado}
+  \begin{scope}[shift={(0,6.3)}] \bocaOFW \end{scope}
+  \foreach \s in {-1,1} {\filldraw[fill=white] (\s*0.36,6.25) circle (0.2); \fill (\s*0.36,6.25) circle (0.09);}
+  \begin{scope}[shift={(1.6,4.75)}, rotate=5, scale=0.42] \abejaFW \end{scope}
+  \foreach \x/\h in {-4.4/1.6, -3.4/2.1, 3.4/1.8} {\begin{scope}[shift={(\x,0)}] \margaritaFW{\h} \end{scope}}
+  \hierbaFW{-5}{7}
+\end{tikzpicture}

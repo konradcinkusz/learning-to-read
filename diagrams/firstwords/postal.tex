@@ -1,0 +1,26 @@
+% diagrams/firstwords/postal.tex -- la postal de Amy desde Londres: la
+% torre del reloj, el autobús rojo de dos pisos y la lluvia ("It rains
+% every day!").
+\begin{tikzpicture}[dibujofw]
+  \filldraw[fill=white] (-6.0,0) rectangle (6.0,8.4);
+  \draw (-5.6,0.4) rectangle (5.6,8.0);
+  % la nube y la lluvia
+  \begin{scope}[shift={(2.6,6.7)}, scale=1.1] \nubeFW \end{scope}
+  \foreach \x/\y in {1.3/5.1, 2.3/4.8, 3.3/5.1, 4.2/4.8, 1.8/4.4, 3.8/4.3} {\begin{scope}[shift={(\x,\y)}, rotate=180, scale=0.6] \gotaFW \end{scope}}
+  % la torre del reloj
+  \filldraw[fill=white] (-4.5,0.4) rectangle (-2.7,5.4);
+  \foreach \x in {-4.05,-3.6,-3.15} {\draw (\x,1.0) -- (\x,5.0);}
+  \filldraw[fill=white] (-4.75,5.4) rectangle (-2.45,6.9);
+  \filldraw[fill=white] (-3.6,6.15) circle (0.6);
+  \draw (-3.6,6.15) -- (-3.6,6.55); \draw (-3.6,6.15) -- (-3.3,6.0);
+  \filldraw[fill=white] (-4.6,6.9) -- (-3.6,7.95) -- (-2.6,6.9) -- cycle;
+  % el autobús de dos pisos
+  \filldraw[fill=white, rounded corners=2mm] (-1.9,1.1) rectangle (4.9,4.2);
+  \draw (-1.9,2.65) -- (4.9,2.65);
+  \foreach \x in {-1.5,-0.1,1.3,2.7} {\filldraw[fill=white, rounded corners=0.5mm] (\x,3.0) rectangle ({\x+1.1},3.9);}
+  \filldraw[fill=white, rounded corners=0.5mm] (4.1,3.0) rectangle (4.7,3.9);
+  \foreach \x in {-1.5,-0.1,1.3} {\filldraw[fill=white, rounded corners=0.5mm] (\x,1.75) rectangle ({\x+1.1},2.45);}
+  \filldraw[fill=white] (2.75,1.1) rectangle (3.75,2.45); \draw (3.25,1.1) -- (3.25,2.45);
+  \filldraw[fill=white, rounded corners=0.5mm] (4.0,1.75) rectangle (4.7,2.45);
+  \foreach \x in {-0.6,3.9} {\filldraw[fill=white] (\x,1.05) circle (0.55); \filldraw[fill=white] (\x,1.05) circle (0.2);}
+\end{tikzpicture}

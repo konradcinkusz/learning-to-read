@@ -1,0 +1,11 @@
+% diagrams/firstwords/wish.tex -- ¡pide un deseo! Dani, con los ojos
+% cerrados y las manos juntas, debajo de una estrella fugaz.
+\begin{tikzpicture}[dibujofw]
+  \begin{scope}[shift={(4.2,10.0)}] \estrellaFugazFW{0.9} \end{scope}
+  \foreach \x/\y/\s in {-3.4/8.8/0.35, -1.6/10.2/0.3, 5.0/6.8/0.3} {\begin{scope}[shift={(\x,\y)}, scale=\s] \estrellaFW \end{scope}}
+  \ninoFW{Dani}{Frente}{Frente}
+  \begin{scope}[shift={(0,6.3)}] \ojosCerradosFW \end{scope}
+  \filldraw[fill=white] (0,3.0) .. controls (-0.45,3.3) and (-0.3,3.9) .. (0,4.2) .. controls (0.3,3.9) and (0.45,3.3) .. (0,3.0) -- cycle;
+  \draw (0,3.05) -- (0,4.1);
+  \hierbaFW{-4}{5}
+\end{tikzpicture}

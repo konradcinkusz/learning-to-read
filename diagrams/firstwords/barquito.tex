@@ -1,0 +1,18 @@
+% diagrams/firstwords/barquito.tex -- el viernes del río: el barquito de
+% madera con una hoja de vela, río abajo, y Lucía y Dani en la orilla.
+\begin{tikzpicture}[dibujofw]
+  % la orilla, con Lucía y Dani
+  \filldraw[fill=white] (-8.6,0) -- (-8.6,2.2) -- (-3.2,2.2) .. controls (-2.6,1.4) and (-3.0,0.6) .. (-2.4,0) -- cycle;
+  \begin{scope}[shift={(-7.2,2.0)}, scale=0.62] \ninaFW{Lucia}{Arriba}{Abajo} \end{scope}
+  \begin{scope}[shift={(-4.9,2.0)}, scale=0.55] \ninoFW{Dani}{Abajo}{Arriba} \end{scope}
+  % el río
+  \filldraw[fill=white] (-2.4,0) .. controls (-3.0,0.6) and (-2.6,1.4) .. (-3.2,2.2)
+    -- plot[domain=-3.2:6.8, samples=50, smooth] (\x,{2.2+0.1*sin(\x*140)}) -- (6.8,0) -- cycle;
+  \foreach \x/\y in {-1.4/0.8, 4.6/1.4, 5.4/0.5} {\draw (\x,\y) .. controls ({\x+0.4},{\y+0.2}) .. ({\x+0.8},\y);}
+  % el barquito: el casco, el palo y la hoja
+  \begin{scope}[shift={(2.05,3.0)}, scale=2.6] \hojaFW \end{scope}
+  \foreach \y in {4.0,4.8,5.6} {\draw (2.05,\y) -- (1.55,{\y+0.35}); \draw (2.05,\y) -- (2.55,{\y+0.35});}
+  \filldraw[fill=white] (1.97,3.2) rectangle (2.13,6.7);
+  \filldraw[fill=white] (-0.2,3.3) -- (4.4,3.3) .. controls (4.0,2.4) and (3.6,2.2) .. (3.1,2.2) -- (1.0,2.2) .. controls (0.5,2.2) and (0.1,2.5) .. (-0.2,3.3) -- cycle;
+  \draw (0.9,2.5) -- (3.5,2.5);
+\end{tikzpicture}

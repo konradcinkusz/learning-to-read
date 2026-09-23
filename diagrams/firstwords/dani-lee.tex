@@ -1,0 +1,13 @@
+% diagrams/firstwords/dani-lee.tex -- Dani lee despacio, con el dedo debajo
+% de las palabras. Para "completa": las páginas del libro están en
+% blanco, y se dibuja lo que cuenta.
+\begin{tikzpicture}[dibujofw]
+  \ninoFW{Dani}{Frente}{Frente}
+  % el libro, grande y abierto
+  \filldraw[fill=white] (0,1.6) -- (-3.4,2.0) -- (-3.4,5.2) -- (0,4.8) -- cycle;
+  \filldraw[fill=white] (0,1.6) -- (3.4,2.0) -- (3.4,5.2) -- (0,4.8) -- cycle;
+  \draw (1.1,2.35) -- (2.9,2.55);
+  \filldraw[fill=white] (-0.35,1.95) circle (0.27);
+  \filldraw[fill=white, rounded corners=1mm] (0.2,1.85) -- (1.15,2.25) -- (1.1,2.42) -- (0.15,2.1) -- cycle;
+  \filldraw[fill=white] (0.35,1.95) circle (0.27);
+\end{tikzpicture}
