@@ -198,9 +198,9 @@ FIRSTWORDS = Perfil(
     titulo_medalla=ENGLISH.titulo_medalla,
     nombres_medalla=ENGLISH.nombre_medalla,
     animo_medalla=ENGLISH.animo_medalla,
-    # Fase 2: el otoño entero (días 1-65). Ver notes/06-first-words.md,
-    # "Las fases".
-    dias_escritos=65,
+    # Fase 3: el otoño y el invierno (días 1-130). Ver
+    # notes/06-first-words.md, "Las fases".
+    dias_escritos=130,
 )
 
 PERFILES = {p.nombre: p for p in (PALABRAS, FIRSTWORDS)}
