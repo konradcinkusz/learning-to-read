@@ -113,6 +113,11 @@ _POR_LONGITUD = sorted(
 
 VOCALES_SIMPLES = frozenset("aeiou")
 
+# Consonantes (grafemas) que suenan como una s o una z: detrás de ellas,
+# la terminación -es de un plural se pronuncia (boxes, wishes, buses),
+# así que no es la e mágica de un plural como cakes.
+SIBILANTES = frozenset({"s", "z", "x", "sh", "ch", "tch", "dge"})
+
 # Grafemas que son una vocal (un sonido vocálico). Todo lo demás es
 # consonante -- salvo la y, que depende de dónde esté: al principio de
 # la palabra es consonante (yes), en cualquier otro sitio es vocal
@@ -172,6 +177,21 @@ def segmentar(palabra):
     ):
         vocal = grafemas[-3]
         grafemas = grafemas[:-3] + [vocal + "_e", grafemas[-2]]
+    # Y el plural (o la tercera persona) de una palabra con e mágica:
+    # cakes es cake + s, c-a_e-k-s, no c-a-k-e-s. Detrás de una
+    # consonante que suena como s (boxes, buses) la -es sí se pronuncia,
+    # y no es una e mágica.
+    elif (
+        len(grafemas) >= 4
+        and grafemas[-1].lower() == "s"
+        and grafemas[-2].lower() == "e"
+        and grafemas[-4].lower() in VOCALES_SIMPLES
+        and not es_vocal(grafemas[-3], len(grafemas) - 3)
+        and not _es_doble(grafemas[-3])
+        and grafemas[-3].lower() not in SIBILANTES
+    ):
+        vocal = grafemas[-4]
+        grafemas = grafemas[:-4] + [vocal + "_e", grafemas[-3], grafemas[-1]]
     _comprobar_trampas(palabra, minus, grafemas)
     return grafemas
 
@@ -205,10 +225,35 @@ def _comprobar_trampas(palabra, minus, grafemas):
             f"«{palabra}» ({partido}) tiene una c que suena /s/ (ce, ci, cy): "
             "en este cuaderno la c suena siempre como en cat"
         )
-    if re.search(r"all(?![aeiouy])|old", minus):
+    if re.search(r"all(?![aeiouy])|old|al[kfm]|wa(sh|tch|nt|sp|ter|nd)", minus):
         raise ErrorFonetica(
-            f"«{palabra}» ({partido}): la a de ball y la o de cold no suenan "
-            "como en cat y en dog -- no se puede leer sonido a sonido"
+            f"«{palabra}» ({partido}): la a de ball, talk o want y la o de "
+            "cold no suenan como en cat y en dog -- no se puede leer sonido "
+            "a sonido"
+        )
+    # El pasado en -ed detrás de otra vocal (played, hugged): esa e no
+    # suena -- salvo detrás de t o d (landed, painted). En bed o shed, la
+    # e es la única vocal, y sí suena.
+    if (
+        len(grafemas) >= 3
+        and [g.lower() for g in grafemas[-2:]] == ["e", "d"]
+        and any(es_vocal(g, i) for i, g in enumerate(grafemas[:-2]))
+        and minus[-3:-2] not in ("t", "d")
+    ):
+        raise ErrorFonetica(
+            f"«{palabra}» ({partido}): la e del pasado en -ed no suena -- no "
+            "se puede leer sonido a sonido"
+        )
+    # Una consonante + le, en plural (apples, tables): esa e tampoco
+    # suena. En singular (apple) ya lo para la e muda de arriba.
+    if (
+        len(grafemas) >= 4
+        and [g.lower() for g in grafemas[-3:]] == ["l", "e", "s"]
+        and not es_vocal(grafemas[-4], len(grafemas) - 4)
+    ):
+        raise ErrorFonetica(
+            f"«{palabra}» ({partido}) termina en -les detrás de una "
+            "consonante, con una e que no suena"
         )
 
 
@@ -218,23 +263,26 @@ def _es_doble(grafema):
 
 
 def unir(grafemas):
-    """El inverso de segmentar(): ['c', 'a_e', 'k'] -> 'cake'."""
+    """El inverso de segmentar(): ['c', 'a_e', 'k'] -> 'cake', y
+    ['c', 'a_e', 'k', 's'] -> 'cakes'."""
     letras = []
-    pendiente = None
     for i, g in enumerate(grafemas):
-        if "_" in g:
-            if i != len(grafemas) - 2:
-                raise ErrorFonetica(
-                    f"«{'-'.join(grafemas)}»: la e mágica ({g}) solo puede ir "
-                    "en el penúltimo sonido (c-a_e-k)"
-                )
-            vocal, e = g.split("_")
-            letras.append(vocal)
-            pendiente = e
-        else:
+        if "_" not in g:
             letras.append(g)
-    if pendiente:
-        letras.append(pendiente)
+            continue
+        resto = [x.lower() for x in grafemas[i + 2:]]
+        if i + 1 >= len(grafemas) or resto not in ([], ["s"]):
+            raise ErrorFonetica(
+                f"«{'-'.join(grafemas)}»: la e mágica ({g}) solo puede ir en "
+                "el penúltimo sonido (c-a_e-k), o en el antepenúltimo de un "
+                "plural (c-a_e-k-s)"
+            )
+        vocal, e = g.split("_")
+        letras.append(vocal)
+        letras.append(grafemas[i + 1])
+        letras.append(e)
+        letras.extend(grafemas[i + 2:])
+        break
     return "".join(letras)
 
 
@@ -329,6 +377,10 @@ PRUEBA = {
     "spring": "s-p-r-i-ng", "rabbit": "r-a-bb-i-t",
     "cherry": "ch-e-rr-y", "carrot": "c-a-rr-o-t", "sorry": "s-o-rr-y",
     "hurry": "h-u-rr-y", "mirror": "m-i-rr-or", "he": "h-e", "the": "th-e",
+    "cakes": "c-a_e-k-s", "bikes": "b-i_e-k-s", "shines": "sh-i_e-n-s",
+    "waves": "w-a_e-v-s", "hates": "h-a_e-t-s", "boxes": "b-o-x-e-s",
+    "wishes": "w-i-sh-e-s", "buses": "b-u-s-e-s", "shed": "sh-e-d",
+    "landed": "l-a-n-d-e-d", "treasure": "t-r-ea-s-ure",
 }
 
 # Palabras que se pueden partir pero no leer sonido a sonido (ver
@@ -336,6 +388,8 @@ PRUEBA = {
 PRUEBA_TRAMPAS = [
     "house", "horse", "apple", "cheese", "knee", "write", "gnome", "lamb",
     "ghost", "eight", "nice", "city", "juice", "ball", "small", "cold",
+    "talk", "walk", "half", "want", "wash", "water", "played", "hugged",
+    "liked", "apples", "tables",
 ]
 
 

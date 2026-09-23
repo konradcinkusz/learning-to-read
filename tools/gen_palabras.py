@@ -198,9 +198,6 @@ FIRSTWORDS = Perfil(
     titulo_medalla=ENGLISH.titulo_medalla,
     nombres_medalla=ENGLISH.nombre_medalla,
     animo_medalla=ENGLISH.animo_medalla,
-    # Fase 4: otoño, invierno y primavera (días 1-195). Ver
-    # notes/06-first-words.md, "Las fases".
-    dias_escritos=195,
 )
 
 PERFILES = {p.nombre: p for p in (PALABRAS, FIRSTWORDS)}
@@ -325,6 +322,12 @@ def comprobar_sonidos(num, palabra, semana, donde, grafemas=None):
             minus = minus[:-2]
             palabra = palabra[:-2]
         if minus in PERFIL.globales or minus in TRICKY_VISTAS:
+            return
+        # Una tricky word con -s o -es (comes, likes, does) es la misma
+        # tricky word: se lee entera, y la s se añade.
+        if (minus.endswith("s") and minus[:-1] in TRICKY_VISTAS) or (
+            minus.endswith("es") and minus[:-2] in TRICKY_VISTAS
+        ):
             return
         if minus in fonetica.TRICKY:
             raise ErrorDeContenido(
@@ -596,22 +599,24 @@ def tarjeta_sonidos(trimestre, palabra, grafemas):
         return r"\tarjetaEntera{%d}{%s}" % (trimestre, escapar(palabra))
     nodos = []
     botones = []
-    n = 0
-    arco = None
+    arco = None  # el nodo de la vocal de una e mágica, a la espera de su e
     for g in grafemas:
-        n += 1
         if "_" in g:
             nodos.append(g.split("_")[0])
-            arco = n
+            arco = len(nodos)
             continue
         nodos.append(g)
+        n = len(nodos)
         if fonetica.es_grafema_de_varias(g):
             botones.append(r"\botonRaya{g%d}" % n)
         else:
             botones.append(r"\botonPunto{g%d}" % n)
-    if arco is not None:
-        nodos.append("e")
-        botones.append(r"\botonArco{g%d}{g%d}" % (arco, len(nodos)))
+        if arco is not None:
+            # La e va justo detrás de la consonante de la e mágica: en
+            # cakes, c-a-k-e-s.
+            nodos.append("e")
+            botones.append(r"\botonArco{g%d}{g%d}" % (arco, len(nodos)))
+            arco = None
     piezas = []
     for i, texto in enumerate(nodos, start=1):
         donde = "(0,0)" if i == 1 else f"(g{i - 1}.base east)"
@@ -1321,19 +1326,20 @@ def ejemplo_resaltado(grafema, ejemplo):
     ('sh', 'ship') -> '\\resalta{sh}ip'; ('a_e', 'cake') ->
     'c\\resalta{a}k\\resalta{e}' (la e mágica: la vocal y la e del final)."""
     piezas = []
-    final = ""
+    e_pendiente = None  # la e de una e mágica, que va tras su consonante
     for g in fonetica.segmentar(ejemplo):
         if "_" in g:
             vocal, e = g.split("_")
             if g.lower() == grafema:
                 vocal, e = r"\resalta{%s}" % vocal, r"\resalta{%s}" % e
             piezas.append(vocal)
-            final = e
-        elif g.lower() == grafema:
-            piezas.append(r"\resalta{%s}" % g)
-        else:
-            piezas.append(g)
-    return "".join(piezas) + final
+            e_pendiente = e
+            continue
+        piezas.append(r"\resalta{%s}" % g if g.lower() == grafema else g)
+        if e_pendiente is not None:
+            piezas.append(e_pendiente)
+            e_pendiente = None
+    return "".join(piezas)
 
 
 def generar_sonidos():
