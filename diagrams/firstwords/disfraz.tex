@@ -1,0 +1,25 @@
+% diagrams/firstwords/disfraz.tex -- Halloween: Lucía disfrazada de gato
+% negro, con orejas, bigotes y cola, y su cesta de calabaza.
+\begin{tikzpicture}[dibujofw]
+  % la cola del disfraz, por detrás
+  \filldraw[fill=white] (0.9,2.3) .. controls (2.6,2.0) and (3.0,3.6) .. (2.4,4.6)
+    .. controls (2.2,4.9) and (1.85,4.7) .. (2.0,4.4)
+    .. controls (2.45,3.6) and (2.2,2.6) .. (0.9,2.75) -- cycle;
+  \ninaFW{Lucia}{Abajo}{Abajo}
+  \begin{scope}[shift={(0,6.3)}]
+    % las orejas de gato, en la diadema
+    \filldraw[fill=white] (-1.05,0.75) -- (-0.95,1.85) -- (-0.3,1.15) -- cycle;
+    \filldraw[fill=white] (1.05,0.75) -- (0.95,1.85) -- (0.3,1.15) -- cycle;
+    % los bigotes pintados y la nariz
+    \draw (-0.35,-0.28) -- (-0.9,-0.18); \draw (-0.35,-0.36) -- (-0.9,-0.42);
+    \draw (0.35,-0.28) -- (0.9,-0.18); \draw (0.35,-0.36) -- (0.9,-0.42);
+    \fill (0,-0.25) circle (0.08);
+  \end{scope}
+  % la cesta de calabaza, en la mano
+  \begin{scope}[shift={(-1.4,1.2)}]
+    \draw (-0.55,1.0) .. controls (-0.5,1.8) and (0.5,1.8) .. (0.55,1.0);
+    \filldraw[fill=white] (0,0.35) ellipse (0.8 and 0.72);
+    \draw (0,1.07) .. controls (-0.3,0.4) .. (0,-0.37); \draw (0,1.07) .. controls (0.3,0.4) .. (0,-0.37);
+  \end{scope}
+  \filldraw[fill=white] (-1.4,2.5) circle (0.27);
+\end{tikzpicture}

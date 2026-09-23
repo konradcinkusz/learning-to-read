@@ -1,0 +1,15 @@
+% diagrams/firstwords/parque-otono.tex -- el parque en otoño (el viernes
+% de "Autumn in the park"): un árbol grande que pierde las hojas, el
+% estanque y tres patos.
+\begin{tikzpicture}[dibujofw]
+  \hierbaFW{-4}{13}
+  \begin{scope}[scale=0.85] \arbolFW \end{scope}
+  \foreach \x/\y/\a in {-2.4/1.2/30, 2.4/2.6/-35, -3.0/3.3/-20}
+    {\begin{scope}[shift={(\x,\y)}, rotate=\a, scale=0.6] \hojaFW \end{scope}}
+  % el estanque, con los patos
+  \filldraw[fill=white] (7.6,1.0) ellipse (5.3 and 1.0);
+  \begin{scope}[shift={(4.2,0.85)}] \patoFW \end{scope}
+  \begin{scope}[shift={(7.7,0.85)}] \patoFW \end{scope}
+  \begin{scope}[shift={(11.1,0.85)}, xscale=-1] \patoFW \end{scope}
+  \foreach \x in {4.2,7.7,11.1} {\draw ({\x-1.1},0.72) -- ({\x-0.6},0.72); \draw ({\x+0.6},0.72) -- ({\x+1.1},0.72);}
+\end{tikzpicture}

@@ -1,0 +1,13 @@
+% diagrams/firstwords/charcos.tex -- el concurso de saltos en los
+% charcos (el viernes de la semana de lluvia): Lucía, Amy y Sam saltando,
+% cada uno encima de su charco, y el agua que salpica.
+\begin{tikzpicture}[dibujofw]
+  \foreach \x/\a in {0/1.0, 5.2/2.2, 10.0/0.6} {
+    \filldraw[fill=white] (\x,0.3) ellipse (2.1 and 0.45);
+    \foreach \dx/\dy/\r in {-1.9/0.9/-25, -1.3/1.4/-12, 1.3/1.4/12, 1.9/0.9/25}
+      {\begin{scope}[shift={({\x+\dx},{0.3+\dy})}, rotate=\r, scale=0.8] \gotaFW \end{scope}}}
+  \begin{scope}[shift={(0,1.0)}] \ninaFW{Amy}{Arriba}{Arriba} \end{scope}
+  \begin{scope}[shift={(5.2,2.2)}] \ninaFW{Lucia}{Arriba}{Arriba} \end{scope}
+  \begin{scope}[shift={(10.0,0.6)}, scale=0.85] \ninoFW{Sam}{Arriba}{Lado} \end{scope}
+  \draw (-2.8,-0.2) -- (12.8,-0.2);
+\end{tikzpicture}

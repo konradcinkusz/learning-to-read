@@ -1,0 +1,25 @@
+% diagrams/firstwords/amy.tex -- Amy, la niña nueva de la casa de al
+% lado: los rizos (rojos, dice el cuento), el vestido con su cuello, los
+% brazos, las piernas y los zapatos.
+\begin{tikzpicture}[dibujofw]
+  % las piernas y los zapatos
+  \filldraw[fill=white] (-0.6,0.55) rectangle (-0.2,2.0);
+  \filldraw[fill=white] (0.2,0.55) rectangle (0.6,2.0);
+  \filldraw[fill=white, rounded corners=1.5mm] (-0.95,0.2) rectangle (-0.15,0.6);
+  \filldraw[fill=white, rounded corners=1.5mm] (0.15,0.2) rectangle (0.95,0.6);
+  % los brazos
+  \filldraw[fill=white, rounded corners=2mm] (-0.9,4.45) -- (-1.6,2.75) -- (-1.2,2.6)
+    -- (-0.6,3.95) -- cycle;
+  \filldraw[fill=white] (-1.4,2.5) circle (0.27);
+  \filldraw[fill=white, rounded corners=2mm] (0.9,4.45) -- (1.6,2.75) -- (1.2,2.6)
+    -- (0.6,3.95) -- cycle;
+  \filldraw[fill=white] (1.4,2.5) circle (0.27);
+  % el cuello y el vestido, con su cuello de tela
+  \filldraw[fill=white] (-0.2,4.5) rectangle (0.2,5.5);
+  \filldraw[fill=white, rounded corners=2.5mm] (-0.95,4.7) -- (0.95,4.7) -- (1.45,1.9)
+    -- (-1.45,1.9) -- cycle;
+  \filldraw[fill=white] (-0.6,4.7) -- (0,4.2) -- (0.6,4.7) -- (0.25,4.75) -- (0,4.55)
+    -- (-0.25,4.75) -- cycle;
+  % la cabeza (diagrams/firstwords/kit.tex)
+  \begin{scope}[shift={(0,6.3)}] \cabezaAmy \end{scope}
+\end{tikzpicture}

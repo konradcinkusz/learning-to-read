@@ -1,0 +1,16 @@
+% diagrams/firstwords/pet.tex -- una mascota: Toby, sentado en casa al
+% lado de su cuenco, con su hueso, y un corazón.
+\begin{tikzpicture}[dibujofw]
+  \tobySentadoFW
+  % el cuenco, con el hueso dentro
+  \filldraw[fill=white] (3.0,0.65) ellipse (1.2 and 0.28);
+  \begin{scope}[shift={(3.0,0.85)}, rotate=10]
+    \filldraw[fill=white] (-0.7,-0.12) rectangle (0.7,0.12);
+    \foreach \x in {-0.75,0.75} {\filldraw[fill=white] (\x,0.12) circle (0.16); \filldraw[fill=white] (\x,-0.12) circle (0.16);}
+    \fill[white] (-0.68,-0.1) rectangle (0.68,0.1);
+  \end{scope}
+  \filldraw[fill=white] (1.8,0.65) -- (2.05,0) -- (3.95,0) -- (4.2,0.65)
+    arc[start angle=0, end angle=-180, x radius=1.2, y radius=0.28] -- cycle;
+  \begin{scope}[shift={(2.9,4.6)}, scale=0.8] \corazonFW \end{scope}
+  \draw (-3,0) -- (4.8,0);
+\end{tikzpicture}

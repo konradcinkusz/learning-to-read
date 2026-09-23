@@ -1,0 +1,11 @@
+% diagrams/firstwords/six.tex -- las seis tarjetas de Navidad de Amy, en
+% dos filas de tres, con un muñeco de nieve en cada una.
+\begin{tikzpicture}[dibujofw]
+  \foreach \i in {0,...,5} {
+    \pgfmathsetmacro{\x}{mod(\i,3)*3.4}
+    \pgfmathsetmacro{\y}{(\i>2)*-4.6}
+    \begin{scope}[shift={(\x,\y)}, rotate={mod(\i,2)*6-3}]
+      \filldraw[fill=white, rounded corners=1.5mm] (-1.4,-2.0) rectangle (1.4,2.0);
+      \begin{scope}[shift={(0,-1.75)}, scale=0.78] \munecoNieveFW \end{scope}
+    \end{scope}}
+\end{tikzpicture}

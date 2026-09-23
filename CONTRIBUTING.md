@@ -100,6 +100,15 @@ Las barreras duras que tienen que quedar en verde:
   generada de la misma escalera, sin ningún sonido sin ejemplo, y con
   cada uno de sus sonidos en alguna tarjeta antes de que acabe su
   estación.
+- **Los dibujos para colorear** de First Words (el mismo `--check`): el
+  `"dibujo"` de cada día existe en `diagrams/` y es el de una palabra que
+  se lee ese día; ningún dibujo de `diagrams/firstwords/` se queda sin
+  usar. Un dibujo nuevo va en `diagrams/firstwords/<palabra>.tex`, en un
+  `tikzpicture` con el estilo `dibujofw`, con cada parte cerrada y
+  rellena de blanco, y con los personajes y las cosas de
+  `diagrams/firstwords/kit.tex` (la cabeza de cada uno, Toby, Pip, la
+  jaula...) para que sean siempre los mismos. El tamaño lo pone la
+  página: no hace falta escalarlo a mano.
 - **La escalera de progresión** (`tools/metricas.py`, contra
   `content/progresion.json` -- ver `notes/02-revision-y-plan.md`, Parte
   C): palabras por página y frase más larga no pueden superar el

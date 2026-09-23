@@ -1,0 +1,20 @@
+% diagrams/firstwords/cascabeles.tex -- el viernes de "Luna": Luna y Pip
+% jugando a su juego de los dos cascabeles -- Luna le da con la pata a
+% uno, Pip sujeta el otro con el pico.
+\begin{tikzpicture}[dibujofw]
+  \begin{scope}[shift={(-2.4,0)}] \lunaFW \end{scope}
+  % la pata de Luna, levantada hacia el cascabel
+  \filldraw[fill=white, rounded corners=2mm] (-2.0,2.2) -- (-0.3,3.3) -- (0.0,2.9) -- (-1.6,1.8) -- cycle;
+  \begin{scope}[shift={(0.5,3.6)}] \cascabelFW \end{scope}
+  \foreach \a in {20,50,80} {\draw ([shift={(\a:0.8)}]0.5,3.6) -- ([shift={(\a:1.1)}]0.5,3.6);}
+  % Pip, en su percha, con el otro cascabel
+  \begin{scope}[shift={(4.2,3.1)}, xscale=-0.9, yscale=0.9]
+    \perchaFW{-2.2}{2.2}
+    \pipFW
+  \end{scope}
+  \filldraw[fill=white] (4.05,0) rectangle (4.35,2.9);
+  \filldraw[fill=white] (3.2,0) rectangle (5.2,0.3);
+  \draw (2.65,6.75) -- (2.65,6.2);
+  \begin{scope}[shift={(2.65,5.7)}, scale=0.8] \cascabelFW \end{scope}
+  \draw (-4.6,0) -- (6.2,0);
+\end{tikzpicture}

@@ -1,0 +1,11 @@
+% diagrams/firstwords/hug.tex -- Lucía dándole un abrazo a su osito:
+% el osito, delante, y los brazos de Lucía alrededor.
+\begin{tikzpicture}[dibujofw]
+  \ninaFW{Lucia}{Nada}{Nada}
+  \begin{scope}[shift={(0,3.35)}, scale=0.95] \ositoFW \end{scope}
+  \filldraw[fill=white, rounded corners=2mm] (-0.8,4.65) -- (-1.4,3.55) -- (-0.25,2.9)
+    -- (-0.1,3.3) -- (-0.95,3.8) -- (-0.55,4.45) -- cycle;
+  \filldraw[fill=white, rounded corners=2mm] (0.8,4.65) -- (1.4,3.55) -- (0.25,2.9)
+    -- (0.1,3.3) -- (0.95,3.8) -- (0.55,4.45) -- cycle;
+  \filldraw[fill=white] (-0.2,3.08) circle (0.26); \filldraw[fill=white] (0.2,3.12) circle (0.26);
+\end{tikzpicture}

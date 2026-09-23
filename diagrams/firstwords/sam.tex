@@ -1,0 +1,16 @@
+% diagrams/firstwords/sam.tex -- Sam, el hermano pequeño de Amy, saltando
+% con Dani en un montón de hojas en el parque; las hojas vuelan.
+\begin{tikzpicture}[dibujofw]
+  % Sam y Dani, saltando, con los brazos arriba
+  \begin{scope}[shift={(-1.6,0.9)}, scale=0.85] \ninoFW{Sam}{Arriba}{Arriba} \end{scope}
+  \begin{scope}[shift={(1.9,0.7)}, scale=0.85] \ninoFW{Dani}{Arriba}{Arriba} \end{scope}
+  % el montón de hojas
+  \filldraw[fill=white] (-4.3,0) .. controls (-3.5,2.6) and (3.8,2.6) .. (4.6,0) -- cycle;
+  \foreach \x/\y/\a in {-3.0/0.3/20, -1.8/1.2/-30, -0.6/0.4/60, 0.6/1.35/-10, 1.8/0.5/35,
+      2.9/1.1/-50, -2.4/0.9/80, 3.4/0.25/10}
+    {\begin{scope}[shift={(\x,\y)}, rotate=\a, scale=0.55] \hojaFW \end{scope}}
+  % las hojas que vuelan
+  \foreach \x/\y/\a in {-4.0/4.5/30, -3.6/6.4/-40, 4.3/5.2/-20, 3.9/7.0/50, 0.2/7.9/10}
+    {\begin{scope}[shift={(\x,\y)}, rotate=\a, scale=0.6] \hojaFW \end{scope}}
+  \draw (-5,0) -- (5.4,0);
+\end{tikzpicture}

@@ -1,0 +1,30 @@
+% diagrams/firstwords/sit.tex -- Lucía y Amy sentadas en clase, cada una
+% en su silla, vistas de lado (la cabeza, de frente, como en todos los
+% dibujos): la espalda recta, el muslo sobre el asiento, la pierna
+% colgando y las manos en las rodillas.
+\begin{tikzpicture}[dibujofw]
+  \foreach \x/\quien in {0/Lucia, 3.6/Amy} {
+    \begin{scope}[shift={(\x,0)}]
+      % la silla, de lado: el respaldo, el asiento y las patas
+      \filldraw[fill=white] (0,0) rectangle (0.22,4.5);
+      \filldraw[fill=white, rounded corners=1mm] (-0.05,3.3) rectangle (0.3,4.55);
+      \filldraw[fill=white] (1.8,0) rectangle (2.02,2.1);
+      \filldraw[fill=white] (-0.05,2.1) rectangle (2.15,2.4);
+      % la pierna, colgando, y el zapato
+      \filldraw[fill=white] (1.95,0.75) rectangle (2.32,2.6);
+      \filldraw[fill=white, rounded corners=1.5mm] (1.9,0.45) rectangle (2.8,0.8);
+      % el cuello y el vestido, del hombro a la rodilla
+      \filldraw[fill=white] (0.72,4.3) rectangle (1.06,4.95);
+      \filldraw[fill=white, rounded corners=2.5mm] (0.4,4.6) -- (1.35,4.6) -- (1.45,3.35)
+        -- (2.4,3.05) -- (2.4,2.4) -- (0.3,2.4) -- cycle;
+      % el brazo, con la mano en la rodilla
+      \filldraw[fill=white, rounded corners=2mm] (0.7,4.45) -- (1.75,3.3) -- (1.55,3.05)
+        -- (0.6,3.95) -- cycle;
+      \filldraw[fill=white] (1.85,3.2) circle (0.22);
+      % la cabeza (diagrams/firstwords/kit.tex)
+      \begin{scope}[shift={(0.89,5.75)}, scale=0.85] \csname cabeza\quien\endcsname \end{scope}
+    \end{scope}
+  }
+  % el suelo
+  \draw (-0.5,0) -- (6.9,0);
+\end{tikzpicture}

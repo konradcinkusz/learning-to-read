@@ -1,0 +1,16 @@
+% diagrams/firstwords/bad.tex -- el conejo blanco con una oreja mala,
+% vendada, sentado en la mesa de la consulta; Mrs Brown le pone una
+% tirita.
+\begin{tikzpicture}[dibujofw]
+  \veterinariaFW
+  % la mesa y el conejo, con la venda en la oreja
+  \filldraw[fill=white] (2.6,2.2) rectangle (6.8,2.6);
+  \filldraw[fill=white] (2.9,0.2) rectangle (3.3,2.2);
+  \filldraw[fill=white] (6.1,0.2) rectangle (6.5,2.2);
+  \begin{scope}[shift={(4.7,2.6)}, scale=0.85]
+    \conejoFW
+    \filldraw[fill=white, rotate around={12:(-0.45,3.55)}] (-0.72,4.5) rectangle (-0.18,5.1);
+    \draw[rotate around={12:(-0.45,3.55)}] (-0.72,4.8) -- (-0.18,4.8);
+    \filldraw[fill=white, rotate around={20:(0.6,2.8)}] (0.45,2.72) rectangle (0.95,2.95);
+  \end{scope}
+\end{tikzpicture}

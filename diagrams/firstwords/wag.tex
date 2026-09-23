@@ -1,0 +1,19 @@
+% diagrams/firstwords/wag.tex -- Toby moviendo la cola (las rayas de
+% movimiento) delante de la valla; al otro lado, solo la jaula de Pip.
+\begin{tikzpicture}[dibujofw]
+  % la jaula de Pip, al otro lado de la valla
+  \begin{scope}[shift={(5.8,1.2)}, scale=0.62]
+    \jaulaFondoFW
+    \begin{scope}[shift={(0,2.9)}, scale=0.62] \perchaFW{-3.2}{3.2} \pipFW \end{scope}
+    \jaulaBaseFW
+  \end{scope}
+  \begin{scope}[shift={(-3.6,0)}, scale=0.7] \vallaFW{17} \end{scope}
+  \hierbaFW{-4}{7}
+  % Toby, con la cola que se mueve
+  \begin{scope}[shift={(0,0.05)}]
+    \tobyFW
+    \draw (-3.05,3.55) arc[start angle=150, end angle=100, radius=1.2];
+    \draw (-3.45,3.4) arc[start angle=150, end angle=95, radius=1.65];
+    \draw (-2.85,2.45) arc[start angle=210, end angle=250, radius=1.0];
+  \end{scope}
+\end{tikzpicture}

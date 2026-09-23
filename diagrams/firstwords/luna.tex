@@ -1,0 +1,10 @@
+% diagrams/firstwords/luna.tex -- Luna, la gata de Pedro (blanca, con un
+% ojo verde y otro azul), sentada encima de la valla, con su collar rojo.
+\begin{tikzpicture}[dibujofw]
+  % la valla, con una tabla plana arriba para sentarse
+  \foreach \i in {0,...,6} {\filldraw[fill=white] ({0.9*\i-2.9},0) rectangle ++(0.6,3.3);}
+  \filldraw[fill=white] (-3.1,1.0) rectangle (3.3,1.4);
+  \filldraw[fill=white] (-3.3,3.3) rectangle (3.5,3.75);
+  \hierbaFW{-4}{4}
+  \begin{scope}[shift={(0,3.75)}] \lunaFW \end{scope}
+\end{tikzpicture}

@@ -1,0 +1,13 @@
+% diagrams/firstwords/pal.tex -- Luna y Pip, dos amigos (pals): la gata y
+% el loro, uno al lado del otro, y un corazón.
+\begin{tikzpicture}[dibujofw]
+  \begin{scope}[shift={(-2.2,0)}] \lunaFW \end{scope}
+  \begin{scope}[shift={(3.4,3.1)}, xscale=-0.9, yscale=0.9]
+    \perchaFW{-2.2}{2.2}
+    \pipFW
+  \end{scope}
+  \filldraw[fill=white] (3.25,0) rectangle (3.55,2.9);
+  \filldraw[fill=white] (2.4,0) rectangle (4.4,0.3);
+  \begin{scope}[shift={(0.7,6.9)}, scale=0.9] \corazonFW \end{scope}
+  \draw (-4.4,0) -- (5.4,0);
+\end{tikzpicture}

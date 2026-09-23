@@ -1,0 +1,21 @@
+% diagrams/firstwords/puff.tex -- Lucía sopla las ocho velas de su tarta:
+% puff! Detrás de la mesa, con los mofletes hinchados y la boca en o;
+% de las velas ya sale el humo.
+\begin{tikzpicture}[dibujofw]
+  \begin{scope}[shift={(0,1.6)}]
+    \ninaFW{Lucia}{Abajo}{Abajo}
+    \begin{scope}[shift={(0,6.3)}]
+      \fill[white] (0,-0.58) ellipse (0.5 and 0.2);
+      \filldraw[fill=white] (0,-0.55) circle (0.16);
+      \draw (-0.62,-0.3) arc[start angle=200, end angle=250, radius=0.5];
+      \draw (0.62,-0.3) arc[start angle=-20, end angle=-70, radius=0.5];
+    \end{scope}
+  \end{scope}
+  % el soplido
+  \foreach \y in {-0.25,0,0.25} {\draw (0.45,{7.35+\y}) .. controls (1.2,{7.45+\y}) and (1.6,{7.0+\y}) .. (2.3,{6.9+1.5*\y});}
+  % la mesa y la tarta
+  \filldraw[fill=white] (-4.2,2.6) rectangle (4.2,3.2);
+  \filldraw[fill=white] (-3.8,0) rectangle (-3.4,2.6);
+  \filldraw[fill=white] (3.4,0) rectangle (3.8,2.6);
+  \begin{scope}[shift={(0.9,3.2)}, scale=0.85] \tartaApagadaFW{8} \end{scope}
+\end{tikzpicture}

@@ -1,0 +1,12 @@
+% diagrams/firstwords/hot.tex -- Amy con un cucurucho de castañas asadas,
+% calientes: el humo sale del cucurucho.
+\begin{tikzpicture}[dibujofw]
+  \ninaFW{Amy}{Frente}{Abajo}
+  % el cucurucho de papel, en la mano, con las castañas y el humo
+  \foreach \x in {-0.95,-0.4,0.15} {\filldraw[fill=white] (\x,4.02) circle (0.33);}
+  \filldraw[fill=white] (-1.45,3.95) -- (0.65,3.95) -- (-0.4,2.3) -- cycle;
+  \draw (-1.1,3.4) -- (0.3,3.4);
+  \filldraw[fill=white] (-0.35,3.12) circle (0.27);
+  \foreach \x in {-1.0,-0.4,0.2}
+    {\draw (\x,4.55) .. controls ({\x-0.3},4.9) and ({\x+0.3},5.1) .. (\x,5.45);}
+\end{tikzpicture}

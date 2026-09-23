@@ -1,0 +1,28 @@
+% diagrams/firstwords/egg.tex -- el desayuno inglés de Mr Brown en un
+% plato grande, visto desde arriba: dos huevos fritos, tres salchichas,
+% alubias y una tostada; al lado, el tenedor y el cuchillo.
+\begin{tikzpicture}[dibujofw]
+  \filldraw[fill=white] (0,0) circle (4.0);
+  \draw (0,0) circle (3.3);
+  % los huevos: la clara, con su borde de ondas, y la yema
+  \foreach \x/\y in {-1.2/1.2, 1.1/1.5} {
+    \filldraw[fill=white] (\x-1.0,\y) .. controls (\x-1.1,\y+0.9) and (\x-0.1,\y+1.2) .. (\x+0.5,\y+0.8)
+      .. controls (\x+1.2,\y+0.6) and (\x+1.1,\y-0.4) .. (\x+0.5,\y-0.7)
+      .. controls (\x-0.1,\y-1.0) and (\x-0.9,\y-0.7) .. (\x-1.0,\y) -- cycle;
+    \filldraw[fill=white] (\x,\y+0.05) circle (0.42);}
+  % las salchichas
+  \foreach \y in {-0.4,-1.1,-1.8} {\filldraw[fill=white, rounded corners=3mm] (-2.4,\y-0.28) rectangle (-0.3,\y+0.28);}
+  % las alubias
+  \foreach \x/\y in {0.5/-0.5, 0.95/-0.35, 1.4/-0.55, 0.7/-0.95, 1.2/-1.0, 1.65/-0.95, 0.45/-1.4, 0.95/-1.45, 1.45/-1.45, 1.0/-1.9}
+    {\filldraw[fill=white] (\x,\y) ellipse (0.22 and 0.15);}
+  % la tostada
+  \filldraw[fill=white, rounded corners=2mm] (2.0,-2.3) -- (2.0,-0.3) .. controls (2.0,0.3) and (3.2,0.3) .. (3.2,-0.3)
+    -- (3.2,-2.3) -- cycle;
+  \draw[rounded corners=1mm] (2.2,-2.1) -- (2.2,-0.35) .. controls (2.2,0.05) and (3.0,0.05) .. (3.0,-0.35) -- (3.0,-2.1) -- cycle;
+  % el tenedor y el cuchillo
+  \filldraw[fill=white, rounded corners=1mm] (-4.9,-3.2) rectangle (-4.55,1.2);
+  \filldraw[fill=white] (-5.05,1.2) rectangle (-4.4,1.8);
+  \foreach \x in {-4.95,-4.72,-4.5} {\draw (\x,1.8) -- (\x,2.8);}
+  \filldraw[fill=white, rounded corners=1mm] (4.55,-3.2) rectangle (4.9,0.6);
+  \filldraw[fill=white] (4.55,0.6) -- (4.55,3.0) .. controls (5.2,2.8) and (5.2,1.0) .. (4.9,0.6) -- cycle;
+\end{tikzpicture}

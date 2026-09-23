@@ -1,0 +1,12 @@
+% diagrams/firstwords/quack.tex -- patos nadando en un charco grande,
+% bajo la lluvia. Quack, quack!
+\begin{tikzpicture}[dibujofw]
+  \filldraw[fill=white] (-4.4,0.8) .. controls (-4.6,-0.2) and (-1.0,-0.4) .. (1.0,-0.3)
+    .. controls (3.5,-0.2) and (5.2,0.1) .. (4.9,0.9) .. controls (4.6,1.7) and (2.0,1.6) .. (0.5,1.6)
+    .. controls (-1.5,1.7) and (-4.2,1.7) .. (-4.4,0.8) -- cycle;
+  \begin{scope}[shift={(-2.0,0.75)}, scale=1.2] \patoFW \end{scope}
+  \begin{scope}[shift={(2.3,0.55)}, xscale=-1.2, yscale=1.2] \patoFW \end{scope}
+  \foreach \x/\w in {-2.0/1.3, 2.3/1.3} {\draw ({\x-\w-0.4},0.6) -- ({\x-\w+0.2},0.6); \draw ({\x+\w-0.2},0.5) -- ({\x+\w+0.4},0.5);}
+  \foreach \x/\y in {-3.9/4.0, -2.9/5.3, -0.4/4.6, 0.9/5.6, 3.4/4.8, 4.4/3.6, -4.6/2.7, 2.1/3.8}
+    {\begin{scope}[shift={(\x,\y)}] \gotaFW \end{scope}}
+\end{tikzpicture}

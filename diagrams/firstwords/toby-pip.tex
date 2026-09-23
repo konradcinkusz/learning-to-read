@@ -1,0 +1,18 @@
+% diagrams/firstwords/toby-pip.tex -- el viernes de "Toby meets Pip":
+% Toby en la hierba, a un lado de la valla, y Pip en su jaula, al otro.
+\begin{tikzpicture}[dibujofw]
+  \hierbaFW{-4}{11}
+  % la valla, en medio
+  \begin{scope}[shift={(3.0,0)}] \vallaFW{4} \end{scope}
+  % Toby, mirando a la valla
+  \begin{scope}[shift={(-1.2,0.05)}, scale=0.8] \tobyFW \end{scope}
+  % Pip, en su jaula, sobre una mesa
+  \filldraw[fill=white] (7.4,0) rectangle (7.7,2.2);
+  \filldraw[fill=white] (10.1,0) rectangle (10.4,2.2);
+  \filldraw[fill=white] (7.0,2.2) rectangle (10.8,2.55);
+  \begin{scope}[shift={(8.9,2.55)}, scale=0.68]
+    \jaulaFondoFW
+    \begin{scope}[shift={(0,2.9)}, scale=0.62] \perchaFW{-3.2}{3.2} \begin{scope}[xscale=-1] \pipFW \end{scope} \end{scope}
+    \jaulaBaseFW
+  \end{scope}
+\end{tikzpicture}
