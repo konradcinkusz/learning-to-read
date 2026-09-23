@@ -328,6 +328,6 @@ sus tres medallas, la clave de respuestas y el diploma. Ver
 **Read and Draw (en inglés)**: en construcción, una parte del año por
 PR (ver `notes/05-english.md`, "Las fases"). Hecho: el motor -- con la
 portada, *How to use this book*, *The words in this book*, *Who's who?*,
-el mapa del año, la clave y el diploma, todo en inglés -- y las dos
-primeras semanas (días 1-10), que compilan en color y en blanco y negro
-con las mismas comprobaciones que los otros tres cuadernos.
+el mapa del año, la clave y el diploma, todo en inglés -- y la parte 1,
+el otoño (días 1-65, con su medalla), que compila en color y en blanco y
+negro con las mismas comprobaciones que los otros tres cuadernos.

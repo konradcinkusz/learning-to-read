@@ -139,7 +139,7 @@ Campos en el JSON — ver `tools/english.py` para el detalle:
 | `rodea` | Read and circle | `preguntas` (2–4, cada una con `pregunta`, `opciones` (2–3) y `solucion`) | la solución es una de las opciones |
 | `relaciona` | Read and match | `pares` (3–5), `instruccion` (opcional) | — |
 | `mitades` | Match the halves | `mitades` (3–4 pares `[principio, final]`) | **cada frase, entera, está tal cual en los textos de la semana hasta hoy** |
-| `ordena` | What happened first? | `sucesos` (3–4, en orden: se barajan solos) | — |
+| `ordena` | What happened first? | `sucesos` (3–4, en orden: se barajan solos), `instruccion` (opcional: «Put the recipe in order...») | — |
 | `huecos` | The missing words | `frases` (3–4, con `___`), `soluciones`, `extra` (opcional: palabras que sobran) | **cada frase, con su palabra, está tal cual en los textos de la semana hasta hoy** |
 | `busca` | Word hunt | `instruccion`, `soluciones` (2–4 palabras) | **cada palabra está en el texto de hoy** |
 | `adivina` | Riddle | `adivinanza` (con `\n`), `respuesta` | — |
@@ -202,17 +202,17 @@ de verdad.
 |---|---|---|---|---|---|---|---|
 | 1 | New neighbours | una furgoneta blanca; llegan los Brown en un coche verde: Amy (pelo rojo y rizado), Sam (con su dinosaurio) y Pip (verde, alas azules, cola roja, pico amarillo), que dice *Hello!*; Mum les lleva una tarta | dibuja (la furgoneta) | si_no | colorea (Pip) | relaciona (quién es quién) | vinetas |
 | 2 | Amy's first day | Amy en la clase de Lucía; cuando no sabe una palabra, la dibuja; Mrs Brown es veterinaria; un cartel de bienvenida | dibuja (la mochila) | rodea | mitades | huecos | repasa |
-| 3 | Toby meets Pip | la jaula de Pip en el jardín, junto a la valla; Pip aprende a decir *Toby!* y Toby corre a la puerta cada vez, pero no hay nadie | dibuja (los dos jardines) | si_no | donde (el jardín) | ordena | vinetas |
+| 3 | Toby meets Pip | la jaula de Pip en el jardín, junto a la valla; Pip aprende a decir *Toby!* y Toby corre a la valla cada vez, pero no hay nadie; Amy le enseña a Pip otra palabra, *Biscuit!*, y cada vez que la dice Toby se lleva una galleta | dibuja (los dos jardines) | si_no | donde (el jardín) | ordena | vinetas |
 | 4 | Lucía's house | Lucía le enseña su casa a Amy: la cocina, el salón, su cuarto, la cesta de Toby | dibuja (el cuarto de Lucía) | rodea | donde (el cuarto) | busca (las habitaciones) | repasa |
 | 5 | Autumn in the park | hojas rojas, amarillas y marrones; los patos del estanque; Amy enseña a jugar a los *conkers* | dibuja (el árbol) | si_no | colorea | mitades | vinetas |
-| 6 | Grandma Rosa | la abuela viene a merendar; castañas asadas; teje una bufanda; Amy aprende *abuela* | dibuja (la bufanda) | rodea | relaciona | huecos | repasa |
+| 6 | Grandma Rosa | la abuela teje una bufanda para Dani (rayas verdes y azules, dos pompones rojos); castañas asadas; el cuento del ratón que vive en un reloj, y Amy canta *Hickory, dickory, dock* | dibuja (la bufanda) | rodea | relaciona | huecos | repasa |
 | 7 | Halloween | calabazas; disfraces (Amy de bruja, Sam de fantasma, Dani de dinosaurio, Lucía de gato negro); *trick or treat*; Toby y las máscaras; Pip dice *Boo!* | dibuja (los disfraces) | si_no | colorea (la calabaza) | adivina | vinetas |
 | 8 | A rainy week | lluvia, botas de agua, paraguas, charcos; Toby lleno de barro; Amy cuenta la *Bonfire Night* | dibuja (Lucía bajo la lluvia) | rodea | donde (la entrada: abrigos, botas, paraguas) | mitades | repasa |
-| 9 | Lucía is eight! | el cumpleaños: la tarta con ocho velas, los regalos (Amy le regala un libro en inglés), los juegos | dibuja (la tarta) | si_no | relaciona (los regalos) | ordena | vinetas |
+| 9 | Lucía is eight! | el cumpleaños, como en «Leo con lupa»: la tarta redonda de chocolate con ocho velas alrededor y tres fresas, la piedra con forma de corazón de Dani, el gorro que Dani le pone a Toby, y la abuela que vuelve del pueblo el sábado con un bizcocho de limón; Amy le regala un libro en inglés | dibuja (la tarta) | si_no | relaciona (quién hace qué) | ordena | vinetas |
 | 10 | At the vet | Toby va a la clínica de Mrs Brown; en la sala de espera, un conejo, una tortuga y un gatito | dibuja (la sala de espera) | rodea | relaciona (cada animal con su dueño) | huecos | repasa |
 | 11 | Mr Brown's kitchen | Mr Brown hace *scones* (receta) y un desayuno inglés; la lista de la compra | dibuja (el desayuno) | si_no | donde (la cocina) | ordena (la receta) | vinetas |
 | 12 | Luna and Pip | Luna, la gata de Pedro, vigila la jaula de Pip; Pip le dice *Go away!*; al final, Luna solo quería jugar | dibuja (Luna) | rodea | mitades | adivina | repasa |
-| 13 | Christmas is coming | la función de Navidad del colegio; las tarjetas; el árbol; los calcetines de Amy | dibuja (el árbol) | si_no | colorea (el árbol) | busca | repasa + medalla |
+| 13 | Christmas is coming | la función de Navidad del colegio (Lucía y Amy cantan *Jingle Bells*); las tarjetas de Amy; el árbol de Navidad; los Brown pasan la Navidad en España | dibuja (el escenario) | si_no | colorea (el árbol) | busca | repasa + medalla |
 
 ### Parte 2 — invierno (presente continuo, *like* + -ing, comparativos)
 

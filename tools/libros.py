@@ -216,10 +216,9 @@ ENGLISH = Libro(
     }),
     idioma="en",
     motor="english",
-    # Fase 1 (el motor): las dos primeras semanas, para que el motor tenga algo
-    # real que generar, compilar y comprobar. Ver notes/05-english.md,
-    # "Las fases".
-    dias_escritos=10,
+    # Fase 2: la parte 1 del año, el otoño (días 1-65). Ver
+    # notes/05-english.md, "Las fases".
+    dias_escritos=65,
     nombre_medalla={1: "Autumn", 2: "Winter", 3: "Spring"},
     titulo_medalla="{} medal!",
     animo_medalla=r"Well done, \rule{55mm}{0.4pt}!",

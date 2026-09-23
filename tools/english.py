@@ -442,10 +442,13 @@ def render_rodea(num, a, contexto):
             raise ErrorDeContenido(
                 f"día {num}: la solución {p['solucion']!r} no es una de las opciones"
             )
-        opciones = r"\separaOpciones ".join(escapar(o) for o in p["opciones"])
+        # En una línea si caben, una debajo de otra si no: lo decide
+        # \opcionesRodea (preamble-english.tex), que mide la línea de verdad.
+        en_linea = r"\separaOpciones ".join(escapar(o) for o in p["opciones"])
+        en_lista = r"\par ".join(escapar(o) for o in p["opciones"])
         bloques.append(
             rf"\preguntaNumerada{{{i}}}{{{escapar(p['pregunta'])}}}"
-            + "\n" + rf"\opcionesRodea{{{opciones}}}"
+            + "\n" + rf"\opcionesRodea{{{en_linea}}}{{{en_lista}}}"
         )
     arriba = _instruccion(r"\lblIngInstruccionRodea") + "\n" + "\n".join(bloques)
     return _caja("rodea", arriba, "", a)
@@ -491,8 +494,14 @@ def render_ordena(num, a, contexto):
     filas = "\n".join(
         rf"\item \casillaNumero\ {escapar(s)}" for s in _barajar(num, sucesos)
     )
+    # "Put the story in order", salvo que el día pida otra cosa (una
+    # receta, unas instrucciones: "Put the recipe in order...").
+    if a.get("instruccion"):
+        instruccion = escapar(a["instruccion"])
+    else:
+        instruccion = rf"\lblIngInstruccionOrdena{{{_y(range(1, len(sucesos) + 1))}}}"
     arriba = (
-        _instruccion(rf"\lblIngInstruccionOrdena{{{_y(range(1, len(sucesos) + 1))}}}")
+        _instruccion(instruccion)
         + "\n\\begin{listaOrdena}\n" + filas + "\n\\end{listaOrdena}"
     )
     return _caja("ordena", arriba, "", a)
