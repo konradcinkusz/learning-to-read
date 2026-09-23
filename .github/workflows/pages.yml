@@ -36,7 +36,7 @@ concurrency:
 jobs:
   publish:
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    timeout-minutes: 40
     environment:
       name: github-pages
       url: ${{ steps.deploy.outputs.page_url }}
@@ -208,6 +208,36 @@ jobs:
       - name: Cada día ocupa exactamente una página (First Words, blanco y negro)
         run: python3 tools/check_pages.py firstwords-bw.aux
 
+      # Los cuadernos de verano (ediciones/<raíz>-verano.tex, ver
+      # notes/07-ediciones.md): el verano de cada cuaderno, en los dos
+      # formatos. Se compilan desde la raíz del repositorio, así que cada
+      # PDF, log y .aux sale aquí (<raíz>-verano.pdf...), y los diez se
+      # comprueban igual que los libros enteros antes de publicar nada.
+      - name: Compila los cuadernos de verano
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: |
+            ediciones/main-verano.tex
+            ediciones/main-bw-verano.tex
+            ediciones/palabras-verano.tex
+            ediciones/palabras-bw-verano.tex
+            ediciones/lupa-verano.tex
+            ediciones/lupa-bw-verano.tex
+            ediciones/english-verano.tex
+            ediciones/english-bw-verano.tex
+            ediciones/firstwords-verano.tex
+            ediciones/firstwords-bw-verano.tex
+          latexmk_use_lualatex: true
+          args: -interaction=nonstopmode -file-line-error
+
+      - name: Lee los logs y comprueba las páginas (cuadernos de verano)
+        run: |
+          for r in main main-bw palabras palabras-bw lupa lupa-bw \
+                   english english-bw firstwords firstwords-bw; do
+            python3 tools/checklog.py "$r-verano.log"
+            python3 tools/check_pages.py "$r-verano.aux"
+          done
+
       - name: Monta el sitio
         run: |
           mkdir -p _site
@@ -222,6 +252,16 @@ jobs:
           cp english-bw.pdf _site/read-and-draw-bw.pdf
           cp firstwords.pdf _site/first-words.pdf
           cp firstwords-bw.pdf _site/first-words-bw.pdf
+          cp main-verano.pdf _site/aprendo-a-leer-verano.pdf
+          cp main-bw-verano.pdf _site/aprendo-a-leer-verano-bn.pdf
+          cp palabras-verano.pdf _site/aprendo-a-leer-palabras-verano.pdf
+          cp palabras-bw-verano.pdf _site/aprendo-a-leer-palabras-verano-bn.pdf
+          cp lupa-verano.pdf _site/leo-con-lupa-verano.pdf
+          cp lupa-bw-verano.pdf _site/leo-con-lupa-verano-bn.pdf
+          cp english-verano.pdf _site/read-and-draw-summer.pdf
+          cp english-bw-verano.pdf _site/read-and-draw-summer-bw.pdf
+          cp firstwords-verano.pdf _site/first-words-summer.pdf
+          cp firstwords-bw-verano.pdf _site/first-words-summer-bw.pdf
 
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3

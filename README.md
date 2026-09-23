@@ -31,6 +31,10 @@ los dos con los mismos temas):
   de cada sonido, y cada día un dibujo para colorear. Es el cuaderno de
   primeras palabras, en inglés. Ver "First Words" más abajo.
 
+Y de cada uno, un **cuaderno de verano**: su verano -- las últimas 13
+semanas, 65 páginas -- en un cuaderno aparte, para las vacaciones. Ver
+"Los cuadernos de verano" más abajo.
+
 Cuaderno diario de lectura en español, en A4, una página por día
 laborable (lunes a viernes, 260 días = un año completo, de una estación
 a la siguiente -- no "un curso" en el sentido escolar: se lee también
@@ -202,6 +206,27 @@ la escalera, que cada sonido de la tabla salga en alguna tarjeta de su
 estación y que cada dibujo sea el de una palabra que se lee ese día.
 Ver `notes/06-first-words.md` para el diseño completo y las fases.
 
+## Los cuadernos de verano
+
+El verano de cada cuaderno (sus últimas 13 semanas, del día 196 al 260)
+es también un cuaderno aparte, para quien solo quiere leer un poco cada
+día de las vacaciones: 65 páginas, numeradas del día 1 al 65 y de la
+semana 1 a la 13, con su propia portada (la del libro, con la insignia
+"Cuaderno de verano"), una página para el adulto que explica el verano
+y no el año entero, un mapa del verano -- cada semana con su tema y
+cinco soles, uno por día, para colorear cada día que se lee --, su
+parte de la clave de respuestas y un diploma del verano.
+
+Las páginas de los días no se escriben dos veces: son las mismas del
+libro entero, una a una. Los generadores escriben, además del libro,
+los `.tex` de cada edición escogiendo esas páginas, y lo único que
+cambia dentro de una es el cartel de cada diez páginas ("¡200 páginas
+leídas!" es "¡5 páginas leídas!"); el número del día y de la semana que
+se imprime lo resta LaTeX. `ediciones/<raíz>-verano.tex` es el `.tex`
+raíz de siempre con `\edicion` fijado antes -- como `\bookcolor` para el
+blanco y negro --, así que cada uno sale en los dos formatos. Ver
+`notes/07-ediciones.md`.
+
 ## Descargar el PDF sin instalar nada
 
 Nivel 1, primeras palabras:
@@ -224,6 +249,23 @@ Nivel 3, Leo con lupa:
 **[⬇ PDF (color)](https://konradcinkusz.github.io/learning-to-read/first-words.pdf)**
 · **[⬇ PDF (blanco y negro)](https://konradcinkusz.github.io/learning-to-read/first-words-bw.pdf)**
 
+Los cuadernos de verano (65 páginas cada uno):
+nivel 1, primeras palabras
+([color](https://konradcinkusz.github.io/learning-to-read/aprendo-a-leer-palabras-verano.pdf) ·
+[blanco y negro](https://konradcinkusz.github.io/learning-to-read/aprendo-a-leer-palabras-verano-bn.pdf));
+nivel 2, frases
+([color](https://konradcinkusz.github.io/learning-to-read/aprendo-a-leer-verano.pdf) ·
+[blanco y negro](https://konradcinkusz.github.io/learning-to-read/aprendo-a-leer-verano-bn.pdf));
+nivel 3, Leo con lupa
+([color](https://konradcinkusz.github.io/learning-to-read/leo-con-lupa-verano.pdf) ·
+[blanco y negro](https://konradcinkusz.github.io/learning-to-read/leo-con-lupa-verano-bn.pdf));
+*Read and Draw*
+([color](https://konradcinkusz.github.io/learning-to-read/read-and-draw-summer.pdf) ·
+[blanco y negro](https://konradcinkusz.github.io/learning-to-read/read-and-draw-summer-bw.pdf));
+*First Words*
+([color](https://konradcinkusz.github.io/learning-to-read/first-words-summer.pdf) ·
+[blanco y negro](https://konradcinkusz.github.io/learning-to-read/first-words-summer-bw.pdf)).
+
 Enlaces fijos, publicados por GitHub Pages en cada push a `main` (ver
 `.github/workflows/pages.yml`). Las dos versiones tienen exactamente el
 mismo contenido y la misma paginación — la de blanco y negro es para
@@ -238,8 +280,10 @@ despliegue), los mismos PDF están también en la pestaña
 → el último run de *Build* → artefactos `pdf-color` / `pdf-bw` /
 `pdf-palabras-color` / `pdf-palabras-bw` / `pdf-lupa-color` /
 `pdf-lupa-bw` / `pdf-english-color` / `pdf-english-bw` /
-`pdf-firstwords-color` / `pdf-firstwords-bw` (se guardan 30 días, hace
-falta estar identificado en GitHub para descargarlos).
+`pdf-firstwords-color` / `pdf-firstwords-bw`, y los de verano
+`pdf-verano-color` / `pdf-verano-bw` / `pdf-palabras-verano-color`...
+(se guardan 30 días, hace falta estar identificado en GitHub para
+descargarlos).
 
 ## Construir el PDF a mano
 
@@ -254,7 +298,8 @@ make palabras     # lo mismo para el cuaderno de primeras palabras (color)
 make lupa         # lo mismo para Leo con lupa (color)
 make english      # lo mismo para Read and Draw, en inglés (color)
 make firstwords   # lo mismo para First Words, en inglés (color)
-make all-formats  # los diez PDF: palabras, frases, lupa, english y firstwords, color Y blanco-y-negro
+make verano       # los diez cuadernos de verano: los cinco, color Y blanco-y-negro
+make all-formats  # los veinte PDF: palabras, frases, lupa, english y firstwords, color Y blanco-y-negro, y sus cuadernos de verano
 make generate     # solo regenera los .tex de los cinco cuadernos desde el JSON
 make build        # solo compila frases en color (asume que ya está generado)
 make build-bw     # solo compila frases en blanco y negro
@@ -268,6 +313,7 @@ make build-english / build-english-bw     # lo mismo, Read and Draw
 make check-english / check-english-bw     # lo mismo, Read and Draw (+ actividades, inglés británico y escalera)
 make build-firstwords / build-firstwords-bw   # lo mismo, First Words
 make check-firstwords / check-firstwords-bw   # lo mismo, First Words (+ partido en sonidos y escalera de sonidos)
+make build-lupa-verano / check-lupa-verano    # un cuaderno de verano (main, main-bw, palabras, lupa-bw...: <raíz>-verano)
 make clean
 ```
 
@@ -279,6 +325,7 @@ palabras.tex, palabras-bw.tex         -- cuaderno de primeras palabras, color y 
 lupa.tex, lupa-bw.tex                 -- Leo con lupa (nivel 3), color y blanco-y-negro
 english.tex, english-bw.tex           -- Read and Draw (en inglés), color y blanco-y-negro
 firstwords.tex, firstwords-bw.tex     -- First Words (primeras palabras en inglés), color y blanco-y-negro
+ediciones/<raíz>-verano.tex           -- los cuadernos de verano: cada .tex raíz de arriba con \edicion fijado antes
 preamble.tex, lang/es.tex             -- el motor LaTeX (la paleta de main-bw.tex está en preamble.tex)
 lang/en.tex                           -- las cadenas en inglés (\booklang = en, ver preamble.tex)
 preamble-palabras.tex                 -- lo propio del cuaderno de primeras palabras (tarjetas, cajas que llenan la página)
@@ -286,7 +333,7 @@ preamble-lupa.tex                     -- lo propio de Leo con lupa (caja de acti
 preamble-english.tex                  -- lo propio de Read and Draw (sobre preamble-lupa.tex: letra más grande, piezas de sus actividades, iconos)
 preamble-firstwords.tex               -- lo propio de First Words (sobre preamble-palabras.tex: la tarjeta con botones de sonido, la tabla de sonidos)
 body.tex, body-palabras.tex, body-lupa.tex, body-english.tex, body-firstwords.tex -- orden del documento de cada cuaderno
-frontmatter/                          -- portada, instrucciones, mapa del curso (frontmatter/palabras/: nivel 1; frontmatter/lupa/: nivel 3, con "Cómo lee un detective" y el carné del club; frontmatter/english/: en inglés, con los iconos de las actividades y "Who's who?"; frontmatter/firstwords/: First Words, con la tabla de sonidos)
+frontmatter/                          -- portada, instrucciones, mapa del curso (frontmatter/palabras/: nivel 1; frontmatter/lupa/: nivel 3, con "Cómo lee un detective" y el carné del club; frontmatter/english/: en inglés, con los iconos de las actividades y "Who's who?"; frontmatter/firstwords/: First Words, con la tabla de sonidos); verano.tex, en cada uno: la página para el adulto de su cuaderno de verano
 content/q1.json, q2.json, q3.json, q4.json  -- los 260 días, uno por trimestre, editados a mano
 content/generated-days.tex            -- GENERADO por tools/gen_days.py, no editar
 content/progresion.json               -- objetivos semanales de la escalera de progresión (52 filas)
@@ -313,6 +360,7 @@ tools/libros.py                       -- lo que distingue el cuaderno de frases 
 tools/lupa.py                         -- plantillas y comprobaciones de las actividades de Leo con lupa (tablas lógicas, mapas, errores...)
 tools/english.py                      -- lo mismo para Read and Draw (frases del texto, inglés británico, sin español)
 tools/comun.py                        -- lo que comparten gen_days.py y lupa.py
+tools/ediciones.py                    -- las ediciones (el cuaderno de verano): qué días, cómo se renumeran, los carteles y los .tex que escriben los dos generadores
 tools/gen_palabras.py                 -- lo mismo para el cuaderno de primeras palabras, + la escalera de sílabas (y First Words con --libro firstwords, + la escalera de sonidos)
 tools/silabas.py                      -- silabeo automático del español y rasgos de cada sílaba (cerrada, trabada...)
 tools/fonetica.py                     -- partido automático del inglés en sonidos (grafemas, e mágica), trampas, tricky words (First Words)
@@ -332,11 +380,12 @@ notes/03-nivel-palabras.md            -- diseño del cuaderno de primeras palabr
 notes/04-nivel-lupa.md                -- diseño de Leo con lupa (nivel 3): escalera, actividades, reparto y las 52 semanas
 notes/05-english.md                   -- diseño de Read and Draw (en inglés): escalera, actividades, reparto, las 52 semanas y las fases
 notes/06-first-words.md               -- diseño de First Words (primeras palabras en inglés): escalera de sonidos, botones, comprobaciones y las fases
+notes/07-ediciones.md                 -- las ediciones de los cinco cuadernos: el cuaderno de verano
 ```
 
 ## Licencia
 
-El motor -- LaTeX (`preamble*.tex`, `lang/*.tex`, `main*.tex`, `palabras*.tex`, `lupa*.tex`, `english*.tex`, `firstwords*.tex`, `body*.tex`),
+El motor -- LaTeX (`preamble*.tex`, `lang/*.tex`, `main*.tex`, `palabras*.tex`, `lupa*.tex`, `english*.tex`, `firstwords*.tex`, `body*.tex`, `ediciones/*.tex`),
 las herramientas Python (`tools/`), el `Makefile` y la configuración de CI
 (`.github/`) -- está bajo MIT ([`LICENSE-CODE`](LICENSE-CODE)): reutilízalo
 libremente, incluido un fork para otro niño o niña.
@@ -407,3 +456,9 @@ primeras palabras en español (`tools/gen_palabras.py`, que sigue
 generándolo idéntico byte a byte) con `tools/fonetica.py`. Compila en
 color y en blanco y negro con las mismas comprobaciones que los otros
 cuatro cuadernos, y se publica en GitHub Pages con ellos.
+
+**Los cuadernos de verano**: los cinco, en color y en blanco y negro --
+el verano de cada cuaderno, con su portada, su página para el adulto,
+su mapa del verano, su clave y su diploma. Compilan con las mismas
+comprobaciones que los libros enteros (1 día = 1 página, log limpio), y
+se publican en GitHub Pages con ellos. Ver `notes/07-ediciones.md`.

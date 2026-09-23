@@ -37,6 +37,7 @@ from string import Template
 import english
 import lupa
 from comun import ErrorDeContenido, escapar
+from ediciones import comprobar_campos, comprobar_preamble, salidas_ediciones
 from libros import CONTENT_DIR, FRASES, ROOT, libro_desde_argv
 
 LETRAS_TRAZO_FILE = CONTENT_DIR / "letras-trazo.json"
@@ -733,26 +734,21 @@ def pagina_medalla(d, libro):
     )
 
 
-def generar_tex(dias, libro=FRASES):
-    piezas = _cabecera_generada(libro.salida_dias, libro)
+def paginas_dia(dias, libro=FRASES):
+    """[(d, tex)]: la página de cada día, en orden -- sin las medallas de
+    fin de trimestre, que pone generar_tex (y las ediciones no llevan)."""
+    paginas = []
+    dias_por_semana = {}
+    for d in dias:
+        dias_por_semana.setdefault((d["trimestre"], d["semana"]), []).append(d)
 
     if libro.parrafos:
-        dias_por_semana = {}
-        for d in dias:
-            dias_por_semana.setdefault((d["trimestre"], d["semana"]), []).append(d)
         for d in dias:
             semana = sorted(
                 dias_por_semana[(d["trimestre"], d["semana"])], key=lambda x: x["dia"]
             )
-            piezas.append(motor(libro).pagina_dia(d, libro, semana))
-            medalla = pagina_medalla(d, libro)
-            if medalla:
-                piezas.append(medalla)
-        return "\n".join(piezas)
-
-    dias_por_semana = {}
-    for d in dias:
-        dias_por_semana.setdefault((d["trimestre"], d["semana"]), []).append(d)
+            paginas.append((d, motor(libro).pagina_dia(d, libro, semana)))
+        return paginas
 
     for d in dias:
         actividad_tex = render_actividad(d["dia"], d["actividad"])
@@ -760,27 +756,31 @@ def generar_tex(dias, libro=FRASES):
             oraciones_dia = texto_semana(dias_por_semana, d)
         else:
             oraciones_dia = d["oraciones"]
-        piezas.append(
-            PLANTILLA_DIA.substitute(
-                dia=d["dia"],
-                semana=d["semana"],
-                trimestre=d["trimestre"],
-                fuente=fuente_lectura(d),
-                tema=escapar(d.get("tema", "")),
-                instruccion=libro.instruccion_lectura[d["trimestre"]],
-                oraciones=formatear_oraciones(oraciones_dia, d["trimestre"]),
-                actividad=actividad_tex,
-            )
-        )
+        paginas.append((d, PLANTILLA_DIA.substitute(
+            dia=d["dia"],
+            semana=d["semana"],
+            trimestre=d["trimestre"],
+            fuente=fuente_lectura(d),
+            tema=escapar(d.get("tema", "")),
+            instruccion=libro.instruccion_lectura[d["trimestre"]],
+            oraciones=formatear_oraciones(oraciones_dia, d["trimestre"]),
+            actividad=actividad_tex,
+        )))
+    return paginas
 
+
+def generar_tex(dias, libro=FRASES):
+    piezas = _cabecera_generada(libro.salida_dias, libro)
+    for d, tex in paginas_dia(dias, libro):
+        piezas.append(tex)
         medalla = pagina_medalla(d, libro)
         if medalla:
             piezas.append(medalla)
     return "\n".join(piezas)
 
 
-def generar_clave(dias, libro=FRASES):
-    """generated-clave.tex: la respuesta de cada actividad que tiene una
+def entradas_clave(dias, libro=FRASES):
+    """[(d, entrada)]: la respuesta de cada actividad que tiene una
     respuesta que comprobar, para que un adulto pueda hacerlo sin
     resolverla él mismo -- ver la revisión de un lector externo. En el
     cuaderno de frases, 'adivina' y 'relaciona'; en "Leo con lupa" y en
@@ -788,27 +788,44 @@ def generar_clave(dias, libro=FRASES):
     tools/english.py). No se imprime en la página del día
     (ver PLANTILLA_ADIVINA); vive aparte, en la clave de respuestas del
     final de cada libro."""
-    piezas = _cabecera_generada(libro.salida_clave, libro)
+    entradas = []
     if libro.parrafos:
         for d in dias:
             entrada = motor(libro).entrada_clave(d)
             if entrada:
-                piezas.append(entrada)
-        return "".join(piezas)
+                entradas.append((d, entrada))
+        return entradas
 
     for d in dias:
         actividad = d["actividad"]
         tipo = actividad.get("tipo")
         if tipo == "adivina":
             texto = escapar(actividad["respuesta"])
-            piezas.append(f"\\claveEntrada{{{d['dia']}}}{{\\lblAdivina}}{{{texto}}}\n")
+            entradas.append((d, f"\\claveEntrada{{{d['dia']}}}{{\\lblAdivina}}{{{texto}}}\n"))
         elif tipo == "relaciona":
             texto = " \\quad ".join(
                 f"{escapar(i)} $\\rightarrow$ {escapar(j)}"
                 for i, j in actividad["pares"]
             )
-            piezas.append(f"\\claveEntrada{{{d['dia']}}}{{\\lblRelaciona}}{{{texto}}}\n")
+            entradas.append((d, f"\\claveEntrada{{{d['dia']}}}{{\\lblRelaciona}}{{{texto}}}\n"))
+    return entradas
+
+
+def generar_clave(dias, libro=FRASES):
+    """generated-clave.tex: las entradas de entradas_clave, en orden."""
+    piezas = _cabecera_generada(libro.salida_clave, libro)
+    piezas.extend(entrada for _, entrada in entradas_clave(dias, libro))
     return "".join(piezas)
+
+
+def generar_ediciones(dias, libro=FRASES):
+    """[(ruta, contenido)]: los .tex de cada edición del libro (el
+    cuaderno de verano...), ver tools/ediciones.py."""
+    return salidas_ediciones(
+        dias, paginas_dia(dias, libro), entradas_clave(dias, libro),
+        libro.salida_dias, libro.salida_clave,
+        lambda ruta: "".join(_cabecera_generada(ruta, libro)), libro.idioma,
+    )
 
 
 def comprobar_totaldias(libro):
@@ -834,15 +851,19 @@ def main():
 
     try:
         comprobar_totaldias(libro)
+        comprobar_preamble()
         dias = cargar_dias(libro)
         validar_dias(dias, libro)
+        for d in dias:
+            comprobar_campos(d)
         tex = generar_tex(dias, libro)
         clave = generar_clave(dias, libro)
+        ediciones = generar_ediciones(dias, libro)
     except ErrorDeContenido as exc:
         print(f"ERROR ({libro.nombre}): {exc}", file=sys.stderr)
         return 1
 
-    salidas = [(libro.salida_dias, tex), (libro.salida_clave, clave)]
+    salidas = [(libro.salida_dias, tex), (libro.salida_clave, clave)] + ediciones
 
     if check_only:
         for ruta, contenido in salidas:
@@ -857,15 +878,18 @@ def main():
         en_obras = ""
         if libro.dias_escritos:
             en_obras = f" (en obras: {len(dias)} de {libro.total_dias} días escritos)"
+        nombres = [ruta.name for ruta, _ in salidas]
         print(
             f"OK ({libro.nombre}): {len(dias)} días validados{en_obras}, "
-            f"{libro.salida_dias.name} y {libro.salida_clave.name} al día."
+            f"{', '.join(nombres[:-1])} y {nombres[-1]} al día."
         )
         return 0
 
     for ruta, contenido in salidas:
         ruta.write_text(contenido, encoding="utf-8")
     print(f"Escrito {_ruta_legible(libro.salida_dias)} con {len(dias)} días, y {_ruta_legible(libro.salida_clave)}.")
+    for ruta, _ in ediciones:
+        print(f"Escrito {_ruta_legible(ruta)}.")
     return 0
 
 

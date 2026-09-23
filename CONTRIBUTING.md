@@ -66,8 +66,10 @@ make lupa            # genera, compila y comprueba Leo con lupa (lupa.tex)
 make english         # genera, compila y comprueba Read and Draw (english.tex)
 make firstwords      # genera, compila y comprueba First Words (firstwords.tex)
 make check            # tools/checklog.py + tools/check_pages.py + tools/gen_days.py --check + tools/metricas.py
-make all-formats      # los cinco cuadernos, color Y blanco-y-negro -- ejecútalo
-                       # antes de abrir un PR, es lo mismo que corre el CI
+make verano           # los cinco cuadernos de verano, color Y blanco-y-negro
+make all-formats      # los cinco cuadernos y sus cuadernos de verano, color Y
+                       # blanco-y-negro -- ejecútalo antes de abrir un PR, es lo
+                       # mismo que corre el CI
 ```
 
 Las barreras duras que tienen que quedar en verde:

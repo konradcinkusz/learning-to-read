@@ -1361,7 +1361,8 @@
           "Resuelvo un caso con las pistas de toda la semana."
         ],
         "prompt": "Dibuja al Club de la Lupa en la caseta, con la lupa y la brújula encima de la mesa. ¿Quién crees que ha enviado el sobre? Escribe tu idea debajo del dibujo.",
-        "banner": "¡260 páginas leídas! Un año entero leyendo con lupa."
+        "banner": "¡260 páginas leídas! Un año entero leyendo con lupa.",
+        "banner_verano": "¡65 páginas leídas! Un verano entero leyendo con lupa."
       }
     }
   ]

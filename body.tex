@@ -1,7 +1,15 @@
-% body.tex -- el documento entero, en el orden en que se imprime.
+% body.tex -- el documento entero, en el orden en que se imprime. El
+% cuaderno de verano (\ifedicionverano, ver preamble.tex) lleva su propia
+% página para el adulto y el mapa del verano, en vez de las del año
+% entero, y solo los días del verano.
 \input{frontmatter/portada}
-\input{frontmatter/como-usar}
-\input{frontmatter/mapa-del-curso}
-\input{content/generated-days}
+\ifedicionverano
+  \input{frontmatter/verano}
+  \mapaEdicion{content}
+\else
+  \input{frontmatter/como-usar}
+  \input{frontmatter/mapa-del-curso}
+\fi
+\input{content/generated-days\sufijoEdicion}
 \input{backmatter/clave-respuestas}
 \input{backmatter/diploma}

@@ -30,7 +30,7 @@
 \makeatletter
 \def\ps@piepalabras{%
   \let\@oddhead\@empty\let\@evenhead\@empty
-  \def\@oddfoot{\hfil\footnotesize\color{colorGris}\lblDia~\palabrapagina@actual~/ \totaldias\hfil}%
+  \def\@oddfoot{\hfil\footnotesize\color{colorGris}\lblDia~\numeroDia{\palabrapagina@actual}~/ \totaldias\hfil}%
   \let\@evenfoot\@oddfoot
 }
 

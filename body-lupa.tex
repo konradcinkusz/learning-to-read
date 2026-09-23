@@ -1,9 +1,15 @@
 % body-lupa.tex -- "Leo con lupa" (nivel 3) entero, en el orden en que se
-% imprime.
+% imprime (ver body.tex para el cuaderno de verano).
 \input{frontmatter/lupa/portada}
-\input{frontmatter/lupa/como-usar}
-\input{frontmatter/lupa/detective}
-\input{frontmatter/lupa/mapa-del-curso}
-\input{content/lupa/generated-days}
+\ifedicionverano
+  \input{frontmatter/lupa/verano}
+  \input{frontmatter/lupa/detective}
+  \mapaEdicion{content/lupa}
+\else
+  \input{frontmatter/lupa/como-usar}
+  \input{frontmatter/lupa/detective}
+  \input{frontmatter/lupa/mapa-del-curso}
+\fi
+\input{content/lupa/generated-days\sufijoEdicion}
 \input{backmatter/lupa/clave-respuestas}
 \input{backmatter/lupa/diploma}

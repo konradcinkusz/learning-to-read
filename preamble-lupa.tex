@@ -29,7 +29,7 @@
 \makeatletter
 \def\ps@pielupa{%
   \let\@oddhead\@empty\let\@evenhead\@empty
-  \def\@oddfoot{\hfil\footnotesize\color{colorGris}\lblDia~\lupapagina@actual~/ \totaldias\hfil}%
+  \def\@oddfoot{\hfil\footnotesize\color{colorGris}\lblDia~\numeroDia{\lupapagina@actual}~/ \totaldias\hfil}%
   \let\@evenfoot\@oddfoot
 }
 
