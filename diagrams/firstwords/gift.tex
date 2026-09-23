@@ -1,0 +1,23 @@
+% diagrams/firstwords/gift.tex -- los regalos de Amy: una caja abierta,
+% un loro de juguete, un gorro y el dibujo de Toby que le ha hecho Lucía.
+\begin{tikzpicture}[dibujofw]
+  % la caja abierta, con su tapa al lado
+  \filldraw[fill=white] (-4.2,0) rectangle (-1.4,2.2);
+  \filldraw[fill=white] (-1.4,0) -- (-1.4,2.2) -- (-0.7,2.8) -- (-0.7,0.6) -- cycle;
+  \filldraw[fill=white] (-4.2,2.2) -- (-3.5,2.8) -- (-0.7,2.8) -- (-1.4,2.2) -- cycle;
+  \draw (-2.8,0) -- (-2.8,2.2);
+  % el loro de juguete, saliendo de la caja
+  \begin{scope}[shift={(-2.6,2.5)}, scale=0.42] \pipFW \end{scope}
+  % el gorro
+  \begin{scope}[shift={(1.2,0)}]
+    \filldraw[fill=white] (-1.2,0.1) .. controls (-1.3,0.45) and (1.3,0.45) .. (1.2,0.1) .. controls (1.1,-0.2) and (-1.1,-0.2) .. (-1.2,0.1) -- cycle;
+    \filldraw[fill=white] (-0.75,0.2) -- (-0.7,1.3) .. controls (-0.3,1.55) and (0.3,1.55) .. (0.7,1.3) -- (0.75,0.2) -- cycle;
+    \draw (-0.73,0.55) -- (0.73,0.55);
+  \end{scope}
+  % el dibujo de Toby, en su papel
+  \begin{scope}[shift={(4.0,0)}, rotate=8]
+    \filldraw[fill=white] (-1.5,0) rectangle (1.5,3.6);
+    \begin{scope}[shift={(0,0.7)}, scale=0.34] \tobyFW \end{scope}
+  \end{scope}
+  \draw (-5.0,0) -- (6.2,0);
+\end{tikzpicture}

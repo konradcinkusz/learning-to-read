@@ -1,0 +1,20 @@
+% diagrams/firstwords/rope.tex -- los monos del zoo, colgados de las
+% cuerdas, y el pequeño, sentado en el suelo, comiéndose un plátano.
+\begin{tikzpicture}[dibujofw]
+  % el marco de madera y las cuerdas, con su nudo
+  \filldraw[fill=white] (-5.6,0) rectangle (-5.0,7.6); \filldraw[fill=white] (5.0,0) rectangle (5.6,7.6);
+  \filldraw[fill=white] (-6.0,7.6) rectangle (6.0,8.2);
+  \foreach \x in {-2.8,1.6} {\filldraw[fill=white] ({\x-0.12},2.2) rectangle ({\x+0.12},7.6);
+    \filldraw[fill=white] (\x,2.2) circle (0.22);}
+  % los dos monos colgados, de la mano
+  \begin{scope}[shift={(-2.02,1.5)}] \monoColgadoFW \end{scope}
+  \begin{scope}[shift={(0.82,1.5)}, xscale=-1] \monoColgadoFW \end{scope}
+  % el pequeño, con su plátano
+  \begin{scope}[shift={(3.5,0)}, scale=0.62]
+    \filldraw[fill=white] (1.1,0.95) .. controls (1.6,0.9) and (2.0,1.5) .. (1.9,2.3)
+      .. controls (1.75,1.75) and (1.45,1.35) .. (1.05,1.2) -- cycle;
+    \filldraw[fill=white] (1.9,2.3) -- (1.95,2.65) -- (1.8,2.65) -- (1.78,2.2) -- cycle;
+    \monoFW
+  \end{scope}
+  \hierbaFW{-7}{6}
+\end{tikzpicture}

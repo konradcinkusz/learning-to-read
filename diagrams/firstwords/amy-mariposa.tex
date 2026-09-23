@@ -1,0 +1,10 @@
+% diagrams/firstwords/amy-mariposa.tex -- el viernes de las orugas: las
+% mariposas se van volando, y la última se posa en el pelo de Amy.
+\begin{tikzpicture}[dibujofw]
+  \ninaFW{Amy}{Arriba}{Abajo}
+  \begin{scope}[shift={(0,6.3)}] \bocaOFW \end{scope}
+  \begin{scope}[shift={(0.6,8.2)}, rotate=10, scale=0.6] \mariposaFW \end{scope}
+  \foreach \x/\y/\a/\s in {-3.4/9.0/-20/0.55, 3.4/9.6/15/0.5, 4.0/6.8/-10/0.6, -3.8/6.4/25/0.5}
+    {\begin{scope}[shift={(\x,\y)}, rotate=\a, scale=\s] \mariposaFW \end{scope}}
+  \hierbaFW{-3}{3}
+\end{tikzpicture}

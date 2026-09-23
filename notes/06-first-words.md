@@ -338,5 +338,18 @@ por estación:
    siempre una de las dos palabras del día (*letter, pair, Toby, hug,
    turn, win, Pip*), y *Match*, cuando dos dibujos recientes son de la
    misma persona, elige otros (`"dibujos"`).
-3. **Primavera** (días 131–195).
+3. **Primavera** (días 131–195): la fiesta de Amy y su tarta verde, los
+   huevos de Pascua y el conejo, Toby perdido (la ardilla, el estanque,
+   el banco con las huellas), Pip escapado (la escalera, la pluma, el
+   cartel de *LOST PARROT*), Amy de bruja en el Book Day, las orugas y
+   sus mariposas, las bicis de Sam y de Dani, el desayuno del Día de la
+   Madre y la tostada quemada, la búsqueda del tesoro de Dani, el zoo
+   (la jirafa, los pingüinos, los monos, el elefante, el león), la
+   granja (Lola la cabra, la oveja, el burro, la gallina en su nido),
+   el Sports Day y la tarjeta para Marta. Las adivinanzas nuevas
+   también se contestan con una palabra del día (*smoke, trunk*); en
+   *Match*, la columna de las palabras se ensancha si hace falta (con
+   *summer* partía la línea), y se eligen otros dibujos (`"dibujos"`)
+   cuando dos recientes se parecen demasiado (la bici de Sam y la misma
+   bici sin rueda; Lola y la cabra que se come las coles).
 4. **Verano** (días 196–260), y ya todo el cuaderno se colorea.

@@ -1,0 +1,13 @@
+% diagrams/firstwords/witch.tex -- en el Book Day, Amy va de bruja: la
+% capa y la escoba, pero sin el sombrero -- para "completa": se colorea y
+% se le dibuja su sombrero de pico.
+\begin{tikzpicture}[dibujofw]
+  % la capa, por detrás
+  \filldraw[fill=white] (-1.0,4.9) -- (1.0,4.9) -- (2.2,0.9) -- (-2.2,0.9) -- cycle;
+  \ninaFW{Amy}{Abajo}{Frente}
+  % la escoba, en la mano
+  \begin{scope}[shift={(0.35,0.4)}, rotate=-8] \escobaFW{5.6} \end{scope}
+  \filldraw[fill=white] (0.35,3.12) circle (0.27);
+  % el broche de la capa
+  \filldraw[fill=white] (0,4.85) circle (0.18);
+\end{tikzpicture}

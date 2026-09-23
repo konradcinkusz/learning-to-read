@@ -1,0 +1,15 @@
+% diagrams/firstwords/medalla.tex -- el viernes del Sports Day: la medalla
+% de "Winner!", con su cinta... y Pip, que se la quiere comer.
+\begin{tikzpicture}[dibujofw]
+  % la cinta
+  \filldraw[fill=white] (2.3,8.2) -- (1.1,8.2) -- (-0.45,4.35) -- (0.45,4.0) -- cycle;
+  \filldraw[fill=white] (-2.3,8.2) -- (-1.1,8.2) -- (0.45,4.35) -- (-0.45,4.0) -- cycle;
+  % la medalla
+  \filldraw[fill=white] (0,4.55) circle (0.35);
+  \filldraw[fill=white] (0,2.2) circle (2.2);
+  \draw (0,2.2) circle (1.8);
+  \node[transform shape, font=\sffamily\bfseries\fontsize{19}{21}\selectfont] at (0,2.55) {Winner!};
+  \begin{scope}[shift={(0,1.35)}, scale=0.45] \estrellaFW \end{scope}
+  % Pip, volando, con la cinta en el pico
+  \begin{scope}[shift={(-3.85,5.2)}, scale=0.8] \pipVuelaFW \end{scope}
+\end{tikzpicture}

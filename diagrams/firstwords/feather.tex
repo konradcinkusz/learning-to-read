@@ -1,0 +1,12 @@
+% diagrams/firstwords/feather.tex -- la pluma verde que Lucía encuentra en
+% la valla: una buena pista.
+\begin{tikzpicture}[dibujofw]
+  \begin{scope}[shift={(-3.6,0)}] \vallaFW{9} \end{scope}
+  \begin{scope}[shift={(0.8,3.95)}, rotate=-60]
+    \filldraw[fill=white] (0,0) .. controls (0.9,0.8) and (3.6,1.0) .. (5.2,0.1)
+      .. controls (3.6,-0.8) and (0.9,-0.7) .. (0,0) -- cycle;
+    \draw (-0.8,0) -- (5.0,0.1);
+    \foreach \x in {1.2,2.2,3.2,4.1} {\draw (\x,0.05) -- (\x+0.5,0.55); \draw (\x,0.05) -- (\x+0.5,-0.45);}
+  \end{scope}
+  \hierbaFW{-4}{4}
+\end{tikzpicture}

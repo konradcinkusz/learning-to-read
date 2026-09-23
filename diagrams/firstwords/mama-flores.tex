@@ -1,0 +1,18 @@
+% diagrams/firstwords/mama-flores.tex -- el viernes del Día de la Madre:
+% Mum, con su ramo de flores, y Lucía y Dani, contentos, a su lado.
+\begin{tikzpicture}[dibujofw]
+  \begin{scope}[shift={(-3.8,0)}] \ninaFW{Lucia}{Arriba}{Abajo} \end{scope}
+  \begin{scope}[shift={(3.6,0)}, scale=0.85] \ninoFW{Dani}{Abajo}{Arriba} \end{scope}
+  \mujerFW{Mama}{Nada}{Nada}
+  % el ramo: los tallos, las flores y el papel
+  \foreach \x in {-0.6,0,0.6} {\draw (0,3.2) -- (\x,5.0);}
+  \foreach \x/\y in {-0.75/5.2, 0.75/5.2} {\foreach \a in {0,72,...,288} {\filldraw[fill=white] ([shift={(\a:0.32)}]\x,\y) circle (0.22);}
+    \filldraw[fill=white] (\x,\y) circle (0.2);}
+  \begin{scope}[shift={(0,5.35)}] \rosaFW \end{scope}
+  \filldraw[fill=white] (0,2.8) -- (-1.05,4.75) .. controls (-0.4,4.45) and (0.4,4.45) .. (1.05,4.75) -- cycle;
+  \brazoMayorFrenteEncima
+  \begin{scope}[xscale=-1] \brazoMayorFrenteEncima \end{scope}
+  % los corazones
+  \foreach \x/\y/\s/\a in {-5.6/9.2/0.7/15, 2.4/9.6/0.6/-10, 5.6/8.4/0.75/-20, -2.0/10.1/0.5/5} {\begin{scope}[shift={(\x,\y)}, rotate=\a, scale=\s] \corazonFW \end{scope}}
+  \draw (-6.2,0.2) -- (6.2,0.2);
+\end{tikzpicture}

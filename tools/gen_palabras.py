@@ -212,7 +212,7 @@ FIRSTWORDS = Perfil(
     titulo_medalla=ENGLISH.titulo_medalla,
     nombres_medalla=ENGLISH.nombre_medalla,
     animo_medalla=ENGLISH.animo_medalla,
-    dias_con_dibujo=130,
+    dias_con_dibujo=195,
 )
 
 PERFILES = {p.nombre: p for p in (PALABRAS, FIRSTWORDS)}
@@ -633,7 +633,8 @@ PLANTILLA_UNE_DIBUJOS = Template(
     r"""\begin{cajaPalUne}
 \instruccion{\lblFwInstruccionUneDibujos}
 {\fontsize{26}{32}\selectfont\columnasCentradas
-\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}m{3.6cm} X >{\raggedright\arraybackslash}m{\anchoUneDibujo}@{}}
+$anchos
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}m{\anchoUnePalabra} X >{\raggedright\arraybackslash}m{\anchoUneDibujo}@{}}
 $filas
 \end{tabularx}\par}
 \end{cajaPalUne}"""
@@ -1090,7 +1091,10 @@ def render_actividad(dia, semana_previa, dibujos_previos=()):
             f"{escapar(p)}\\hfill\\textbullet & & \\dibujoUne{{{r}}}"
             for (p, _), r in zip(pares, mezclada)
         ) + " \\\\"
-        tex = PLANTILLA_UNE_DIBUJOS.substitute(filas=filas)
+        tex = PLANTILLA_UNE_DIBUJOS.substitute(
+            anchos="".join(f"\\anchoUne{{{escapar(p)}}}" for p, _ in pares),
+            filas=filas,
+        )
 
     elif tipo == "une":
         pares = actividad.get("pares")

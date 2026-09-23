@@ -1,0 +1,15 @@
+% diagrams/firstwords/swim.tex -- los pingüinos del zoo: uno, en la roca;
+% otro, saltando al agua (¡splash!), y otro, nadando muy deprisa.
+\begin{tikzpicture}[dibujofw]
+  % el agua
+  \filldraw[fill=white] (-6.5,0) -- plot[domain=-6.5:6.5, samples=80, smooth] (\x,{2.6+0.14*sin(\x*140)}) -- (6.5,0) -- cycle;
+  % la roca, con un pingüino
+  \filldraw[fill=white] (2.9,2.5) .. controls (3.1,4.3) and (6.3,4.5) .. (6.5,2.5) -- cycle;
+  \begin{scope}[shift={(4.8,3.85)}, scale=0.8] \pinguinoFW \end{scope}
+  % el que salta, y las gotas
+  \begin{scope}[shift={(-0.6,4.2)}, rotate=-30] \pinguinoNadaFW \end{scope}
+  \foreach \x/\y/\a in {-1.9/3.2/30, -2.5/3.7/50, -1.2/3.6/10, -2.9/3.1/70} {\begin{scope}[shift={(\x,\y)}, rotate=\a, scale=0.9] \gotaFW \end{scope}}
+  % el que nada, con sus burbujas
+  \begin{scope}[shift={(-2.8,1.2)}] \pinguinoNadaFW \end{scope}
+  \foreach \x/\y/\r in {-5.4/1.4/0.2, -5.9/1.9/0.15, -5.2/2.1/0.12} {\draw (\x,\y) circle (\r);}
+\end{tikzpicture}

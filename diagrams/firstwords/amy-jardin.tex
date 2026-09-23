@@ -1,0 +1,24 @@
+% diagrams/firstwords/amy-jardin.tex -- el viernes del cumpleaños de Amy:
+% la fiesta en el jardín, con los banderines, los globos y la mesa con la
+% tarta; Amy y Lucía, contentas.
+\begin{tikzpicture}[dibujofw]
+  % los banderines
+  \draw (-6.0,10.0) .. controls (-2.0,8.8) and (2.0,8.8) .. (6.0,10.0);
+  \foreach \t in {0.1,0.25,0.4,0.55,0.7,0.85} {
+    \pgfmathsetmacro{\x}{-6.0+12.0*\t}
+    \pgfmathsetmacro{\y}{10.0-3.6*\t*(1-\t)*1.1}
+    \filldraw[fill=white] (\x-0.35,\y) -- (\x,\y-0.9) -- (\x+0.35,\y) -- cycle;}
+  % los globos, atados a la mesa
+  \begin{scope}[shift={(-5.2,5.2)}] \globoFW{0.8}{-2.6} \end{scope}
+  \begin{scope}[shift={(5.2,5.4)}] \globoFW{-0.8}{-2.8} \end{scope}
+  % Amy y Lucía
+  \begin{scope}[shift={(-1.8,0)}] \ninaFW{Amy}{Abajo}{Arriba} \end{scope}
+  \begin{scope}[shift={(1.8,0)}] \ninaFW{Lucia}{Arriba}{Abajo} \end{scope}
+  \begin{scope}[shift={(-1.8,6.3)}] \gorroFiestaFW \end{scope}
+  % la mesa, con la tarta
+  \filldraw[fill=white] (-5.8,0) rectangle (-5.4,2.4);
+  \filldraw[fill=white] (5.4,0) rectangle (5.8,2.4);
+  \filldraw[fill=white] (-6.2,2.4) rectangle (6.2,2.9);
+  \begin{scope}[shift={(0,2.9)}, scale=0.55] \tartaFW{8} \end{scope}
+  \draw (-6.8,0) -- (6.8,0);
+\end{tikzpicture}

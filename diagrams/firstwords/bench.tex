@@ -1,0 +1,15 @@
+% diagrams/firstwords/bench.tex -- la pelota roja de Toby, debajo del banco
+% del parque, y las huellas de barro que van hacia el estanque.
+\begin{tikzpicture}[dibujofw]
+  % el banco: el respaldo, el asiento y las patas
+  \filldraw[fill=white] (-3.8,0) rectangle (-3.4,4.2);
+  \filldraw[fill=white] (3.4,0) rectangle (3.8,4.2);
+  \foreach \y in {3.0,3.7} {\filldraw[fill=white, rounded corners=1mm] (-4.0,\y) rectangle (4.0,\y+0.45);}
+  \filldraw[fill=white, rounded corners=1mm] (-4.2,1.7) rectangle (4.2,2.2);
+  % la pelota, debajo
+  \filldraw[fill=white] (0,0.6) circle (0.6);
+  \draw (-0.5,0.85) .. controls (0,0.5) .. (0.5,0.85);
+  % las huellas
+  \foreach \x/\y in {5.0/-0.4, 5.8/0.1, 6.6/-0.4, 7.4/0.1} {\begin{scope}[shift={(\x,\y)}, rotate=-90, scale=0.9] \huellaFW \end{scope}}
+  \draw (-4.8,0) -- (4.4,0);
+\end{tikzpicture}

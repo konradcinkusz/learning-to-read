@@ -1,0 +1,9 @@
+% diagrams/firstwords/lick.tex -- Toby, en casa otra vez: Dani lo abraza
+% y Toby le da un lametazo en la cara.
+\begin{tikzpicture}[dibujofw]
+  \begin{scope}[scale=0.85] \ninoFW{Dani}{Abajo}{Lado} \end{scope}
+  \begin{scope}[shift={(1.47,1.29)}, xscale=-1, rotate=40] \tobyFW \end{scope}
+  \filldraw[fill=white] (0.95,5.2) .. controls (0.7,4.75) and (0.35,4.85) .. (0.45,5.15) -- cycle;
+  \foreach \x/\y/\s in {-0.6/8.3/0.5, 0.8/9.2/0.4, 2.4/8.6/0.45} {\begin{scope}[shift={(\x,\y)}, scale=\s] \corazonFW \end{scope}}
+  \draw (-2.0,0.2) -- (5.6,0.2);
+\end{tikzpicture}
