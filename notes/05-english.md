@@ -216,21 +216,31 @@ de verdad.
 
 ### Parte 2 — invierno (presente continuo, *like* + -ing, comparativos)
 
+Las fiestas coinciden con las de «Leo con lupa», que es el mismo año: el
+belén en la balda más alta, la Nochebuena en casa de la abuela, los
+cuatro cuencos de uvas (rojo de Papá, azul de Mamá, verde de Lucía,
+amarillo de Dani), la carta de Dani con la linterna y la pelota roja
+para Toby, la nieve en el patio del colegio con el muñeco de la escoba,
+el desfile de Carnaval del martes (Lucía de detective, el antifaz
+morado) y el mirlo del jardín. Nunca se desvela ningún caso de «Leo con
+lupa»: quién mueve los Reyes o de quién es el antifaz se queda sin
+decir.
+
 | Sem. | Tema | Historia | Lunes | Martes | Miércoles | Jueves | Viernes |
 |---|---|---|---|---|---|---|---|
-| 14 | Two Christmases | la Nochebuena en casa de Lucía; el día de Navidad en casa de Amy: calcetines, *crackers* con coronas de papel, el *Christmas pudding* | dibuja (la mesa) | rodea | relaciona (España / Inglaterra) | mitades | repasa |
-| 15 | New Year | las doce uvas; los fuegos artificiales; Toby se esconde | dibuja (el reloj y las uvas) | si_no | donde (el salón) | ordena | vinetas |
-| 16 | The Three Kings | la cabalgata, los zapatos en la ventana, el roscón: Amy encuentra el rey y lleva la corona | dibuja (el roscón) | rodea | colorea (la corona) | huecos | repasa |
-| 17 | Snow! | nieva en la ciudad; un muñeco de nieve; Toby en la nieve; Pip, dentro: *Brrr!* | dibuja (el muñeco) | si_no | colorea (el muñeco) | mitades | vinetas |
-| 18 | Dani is ill | Dani tiene fiebre; Sam le hace una tarjeta | dibuja (Dani en la cama) | rodea | donde (el cuarto) | adivina | repasa |
-| 19 | Dinosaur day | Dani y Sam en el museo de los dinosaurios (texto informativo: más grande, más largo...) | dibuja (un dinosaurio) | si_no | relaciona | busca | vinetas |
-| 20 | Friends again | el Día de la Paz: Lucía y Amy se enfadan por un juego y hacen las paces; una paloma | dibuja (la paloma) | rodea | mitades | ordena | repasa |
-| 21 | The library | la biblioteca del barrio y su rincón en inglés; los carnés | dibuja (la biblioteca) | si_no | donde | huecos | vinetas |
-| 22 | Pancake Day | Mr Brown hace tortitas (receta); una cae encima de Toby | dibuja (las tortitas) | rodea | ordena (la receta) | mitades | repasa |
-| 23 | Carnival | los disfraces; el desfile del colegio | dibuja (los disfraces) | si_no | colorea | adivina | vinetas |
-| 24 | A windy day | la cometa de Dad; un sombrero que sale volando | dibuja (la cometa) | rodea | colorea (la cometa) | huecos | repasa |
-| 25 | Beans in the classroom | la clase planta judías: regar, medir, esperar | dibuja (las macetas) | si_no | mitades | ordena | vinetas |
-| 26 | Spring is coming | las primeras flores, un nido, una mariposa | dibuja (el jardín) | rodea | colorea (la mariposa) | busca | repasa + medalla |
+| 14 | The holidays begin | el belén (los Reyes se acercan cada noche, y nadie sabe quién los mueve); el calcetín de Amy; Navidad en Inglaterra y en España; Pip grita *Merry Christmas!* | dibuja (el belén) | rodea | relaciona | huecos | repasa |
+| 15 | Two Christmases | la Nochebuena en casa de la abuela; los calcetines de Amy y Sam; la comida de Navidad con los Brown: *crackers* y *Christmas pudding* | dibuja (la mesa) | si_no | donde (el salón) | mitades | vinetas |
+| 16 | New Year | las doce uvas; Amy practica con pasas; los fuegos, y Toby debajo de la cama; los deseos del año nuevo | dibuja (la bandeja de las uvas) | si_no | ordena | busca | repasa |
+| 17 | The Three Kings | la carta de Dani, la cabalgata, el *King cake* de los Brown: Amy encuentra el rey y Sam el haba | dibuja (la carta) | rodea | colorea (el roscón) | huecos | vinetas |
+| 18 | Snow! | el muñeco del patio del colegio; bolas de nieve; el muñeco del jardín; Toby en la nieve y Pip: *Brrr!* | dibuja (el muñeco del patio) | rodea | colorea (el muñeco del jardín) | mitades | repasa |
+| 19 | Dani is ill | Dani con catarro; la tarjeta de Sam con una adivinanza | dibuja (Dani en la cama) | si_no | donde (el cuarto de Dani) | adivina | vinetas |
+| 20 | Friends again | el Día de la Paz; Lucía y Amy se enfadan por un juego, y hacen las paces; un poema | dibuja (la paloma) | rodea | mitades | ordena | repasa |
+| 21 | Dinosaur day | Mr Brown lleva a Dani y a Sam al museo: el diplodocus y el tiranosaurio (más largo que, tan grande como) | dibuja (los dos dinosaurios) | si_no | relaciona | busca | vinetas |
+| 22 | Carnival and pancakes | los disfraces; el desfile del martes; ese mismo martes, Pancake Day en casa de los Brown (receta); la última tortita cae encima de Toby | dibuja (el disfraz de Lucía) | rodea | ordena (la receta) | mitades | repasa |
+| 23 | A windy day | la cometa de Dad, la de Amy y Sam; el sombrero que sale volando | dibuja (la cometa) | si_no | colorea (la cometa) | huecos | vinetas |
+| 24 | The library | el rincón inglés de la biblioteca; Tomás, el bibliotecario; el primer libro en inglés de Lucía | dibuja (el rincón inglés) | rodea | donde (la biblioteca) | adivina | repasa |
+| 25 | Beans in the classroom | la clase planta judías; cómo crece una judía; Lucía planta la suya en el huerto de Papá | dibuja (el vaso) | si_no | mitades | ordena | vinetas |
+| 26 | Spring is coming | las primeras flores, el mirlo, una mariquita, una mariposa; Pip dice todas sus palabras | dibuja (el jardín) | rodea | colorea (la mariposa) | busca | repasa + medalla |
 
 ### Parte 3 — primavera (pasado)
 
