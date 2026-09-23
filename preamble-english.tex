@@ -70,8 +70,19 @@
 \newcommand{\filaSiNo}[1]{\par\vspace{7mm}\noindent
   \begin{tabularx}{\linewidth}{@{}X r@{}}#1 & \lblSi\ \casillaIng\quad\lblNo\ \casillaIng\end{tabularx}}
 
-% Rodea: las opciones, grandes y separadas, debajo de su pregunta.
-\newcommand{\opcionesRodea}[1]{\par\vspace{3mm}{\centering\fontsize{18}{24}\selectfont #1\par}\vspace{7mm}}
+% Rodea: las opciones, grandes y separadas, debajo de su pregunta -- en
+% una línea (#1, separadas por \separaOpciones) si caben, y si no, una
+% debajo de otra (#2, separadas por \par): se mide aquí, con la letra de
+% verdad, en vez de adivinarlo desde tools/english.py. Una opción partida
+% entre dos líneas ya no se sabe dónde empieza y dónde acaba.
+\newsavebox{\cajaOpciones}
+\newcommand{\opcionesRodea}[2]{%
+  \sbox{\cajaOpciones}{\fontsize{18}{24}\selectfont #1}%
+  \ifdim\wd\cajaOpciones>\linewidth
+    \par\vspace{1.5mm}{\fontsize{17}{23}\selectfont\leftskip=10mm #2\par}\vspace{4mm}%
+  \else
+    \par\vspace{3mm}{\centering\usebox{\cajaOpciones}\par}\vspace{7mm}%
+  \fi}
 \newcommand{\separaOpciones}{\hspace{16mm plus 8mm}}
 
 % Une (relaciona, mitades): un punto al final de cada lado, pegado al
