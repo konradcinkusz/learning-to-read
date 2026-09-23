@@ -83,9 +83,9 @@ que verse como dos).
 | 1 (otoño) | 6–13 | 1 palabra | + ck ff ll ss zz gg, x, y, qu (*duck, bell, box, yes, quack*) | 3 | no |
 | 2 (invierno) | 14–26 | 2 palabras | + sh ch th ng, ai ee igh oa oo ar or ur ow oi ear air ure er, bb dd mm nn pp rr tt (*ship, rain, night, moon, car, letter*) | 4 | no |
 | 3 (primavera) | 27–39 | 3 palabras | + ay ou ie ea oy ir ue aw ew oe au ey wh ph tch dge, la e mágica (*day, bird, blue, cake, bike, bone*) | 5 | sí (*frog, nest*) |
-| 4 (verano) | 40–43 | frase de 2 palabras | ninguno: solo palabras ya leídas, tricky words y nombres | — | — |
-| 4 (verano) | 44–47 | frase de 2–3 palabras | ídem | — | — |
-| 4 (verano) | 48–52 | frase de 3–4 palabras | ídem | — | — |
+| 4 (verano) | 40–43 | frase de 2 palabras | ninguno: palabras que se leen sonido a sonido, tricky words ya presentadas y nombres | — (5) | sí |
+| 4 (verano) | 44–47 | frase de 2–3 palabras | ídem | — (5) | sí |
+| 4 (verano) | 48–52 | frase de 3–4 palabras | ídem | — (5) | sí |
 
 **Por qué este orden.** Es el de *Letters and Sounds* (DfE, 2007), el
 programa de los colegios ingleses: primero una letra = un sonido (fase
@@ -117,18 +117,27 @@ día.
 
 **Tricky words.** Las palabras muy frecuentes que no se leen como se
 escriben (*the, was, said, you*) o que se leen antes de haber visto sus
-sonidos (*he, my, no*) se aprenden enteras (`fonetica.TRICKY`). Hasta el
-verano no hacen falta — se leen palabras sueltas — y nunca pueden salir
-como una palabra de tarjeta (`tools/gen_palabras.py` lo rechaza). En
-verano, las frases las necesitan; se presentan antes, en primavera, unas
-pocas cada viernes (fase 4 de la escritura, ver "Las fases").
+sonidos (*he, my, no*) se aprenden enteras (`fonetica.TRICKY`, las 47
+de las listas de los colegios ingleses, más *a, is, his, has, as, of*).
+Hasta el verano no hacen falta — se leen palabras sueltas — y nunca
+pueden salir como una palabra de tarjeta (`tools/gen_palabras.py` lo
+rechaza). Se presentan en primavera: cada viernes, debajo de las
+palabras de la semana, tres o cuatro tricky words, cada una en un marco
+y con su casilla, sin botones (`"tricky"` en el JSON; `presentar_tricky`
+exige que cada una sea de la lista, que no se haya presentado antes y
+que sea un viernes de primavera). En trece viernes salen las 47, más o
+menos en el orden de *Letters and Sounds*: *a, the, I, is* el primero;
+*Mr, Mrs, called, asked* el último.
 
 **Por qué el verano ya son frases.** Por lo mismo que en el cuaderno
 español: *Read and Draw* empieza con textos de unas 30 palabras, y pasar
 de 39 semanas de palabras sueltas a eso de golpe sería demasiado. El
-verano es el puente, y en él **nada es nuevo**: cada palabra de una
-frase tiene que haber salido antes en una tarjeta (o ser su plural), ser
-una tricky word o un nombre del reparto.
+verano es el puente, y en él **nada es nuevo**: las frases son lo que en
+los colegios ingleses se llama *decodable text* — cada palabra se lee
+sonido a sonido con todo lo aprendido (cabe en la escalera de la
+primavera: todos los grafemas, hasta cinco sonidos), o es una tricky
+word que ya se ha presentado un viernes, o un nombre del reparto (con
+su *'s*: *Toby's*). Sin tarjetas ni botones: ya no hacen falta.
 
 ## Cómo se comprueba
 
@@ -157,8 +166,10 @@ una tricky word o un nombre del reparto.
   solo desde la primavera, nunca una tricky word. El error dice qué
   palabra, qué sonido y por qué: *«ship» (sh-i-p) tiene sh, que la
   escalera no admite hasta más adelante (semana 3)*.
-- En verano, cada palabra de cada frase tiene que ser conocida (ver
-  arriba).
+- En verano, cada palabra de cada frase — y de *Yes or no?* y *Match* —
+  tiene que ser *decodable* (ver arriba): una tricky word que todavía
+  no se ha presentado es un error que dice en qué viernes de primavera
+  falta.
 - **Cada sonido de la tabla se practica**: todo grafema que la escalera
   trae en una estación tiene que salir en alguna tarjeta antes de que
   esa estación se acabe (`comprobar_cobertura`) — la tabla de sonidos
@@ -199,8 +210,13 @@ siguiente:
    leer (*Pip, hat, Toby, sorry, pan, book*), y las letras de *Trace*
    son *g, l, c, r, n, k, j*.
 4. **Primavera** (días 131–195): tres palabras al día, las otras formas
-   de escribir los sonidos, la e mágica, dos consonantes seguidas — y la
-   presentación de las tricky words, los viernes.
-5. **Verano** (días 196–260) y publicación: una frase al día hecha de
-   palabras conocidas; el libro entero (sin `dias_escritos`), y los dos
+   de escribir los sonidos, la e mágica, dos consonantes seguidas
+   (*party, badge*; *nest, blue, chick*; *wheel, ride*; *phone*; *June,
+   summer, play*), con los 21 grafemas nuevos en alguna tarjeta antes
+   del día 195 — la *oe* en *goes*, la *au* en *August*, la *e_e* en
+   *these*. Los viernes, las 47 tricky words. *Trace*: *p, t, w, v, q,
+   x* (*X as in next*: casi ninguna palabra que se pueda leer empieza
+   por x).
+5. **Verano** (días 196–260) y publicación: una frase al día, de
+   *decodable text*; el libro entero (sin `dias_escritos`), y los dos
    PDF en GitHub Pages con los demás.

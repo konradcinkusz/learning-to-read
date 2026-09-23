@@ -179,9 +179,13 @@ el diploma:
 - **una escalera de sonidos**: primero una letra = un sonido, después
   las letras dobles, *x*, *y*, *qu*, en invierno dos o tres letras para
   un sonido (*sh, ee, igh, oa*...), en primavera las otras formas de
-  escribirlos y la e mágica, y en verano solo palabras ya leídas. Una
-  página al principio, *The sounds in this book*, enseña todos los
-  sonidos en ese orden, cada uno con una palabra.
+  escribirlos y la e mágica, y en verano frases que se leen enteras con
+  lo aprendido. Una página al principio, *The sounds in this book*,
+  enseña todos los sonidos en ese orden, cada uno con una palabra;
+- **tricky words** (*the, said, you*...), las palabras que no se leen
+  como se escriben: se presentan los viernes de primavera, enteras y en
+  un marco, y son las únicas que no se leen sonido a sonido en las
+  frases del verano.
 
 Al generar el libro se comprueba a máquina que cada palabra se parta en
 sonidos igual a mano que en `tools/fonetica.py`, que solo use los
@@ -386,11 +390,12 @@ en color y en blanco y negro con las mismas comprobaciones que los otros
 tres cuadernos, y se publica en GitHub Pages con ellos.
 
 **First Words (en inglés)**: en obras, en cinco fases, una por PR (ver
-`notes/06-first-words.md`, "Las fases"). Escritas las fases 1 a 3: el
+`notes/06-first-words.md`, "Las fases"). Escritas las fases 1 a 4: el
 motor (`tools/fonetica.py` y el perfil `firstwords` de
 `tools/gen_palabras.py`, con el cuaderno de primeras palabras en español
 idéntico byte a byte), la tarjeta con botones de sonido, la portada,
 *How to use this book*, la tabla de sonidos, el mapa del año, la clave,
-el diploma, el otoño y el invierno (días 1-130, con sus dos medallas).
+el diploma, el otoño, el invierno y la primavera (días 1-195, con sus
+tres medallas y las 47 *tricky words* de los viernes de primavera).
 Compila en color y en blanco y negro con las mismas comprobaciones que
 los demás.

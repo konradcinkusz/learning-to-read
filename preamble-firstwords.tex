@@ -75,6 +75,12 @@
   {\fuentePalabra{#1}\ajustado{#2}\par\vspace{0.3em}}%
 }
 
+% Una tricky word, los viernes de primavera (tools/gen_palabras.py,
+% lectura_tricky): con su casilla, como las palabras de la semana, pero
+% dentro de un marco y sin botones -- se lee entera.
+\newcommand{\palabraTricky}[1]{\mbox{\casillaGrande\hspace{2mm}%
+  \fcolorbox{colorCrea}{white}{\fontsize{24}{28}\selectfont\strut\ #1\ }}}
+
 % =========================================================================
 % La tabla de sonidos (frontmatter/firstwords/sonidos.tex; las secciones
 % las genera tools/gen_palabras.py en content/firstwords/generated-sonidos.tex)
