@@ -151,14 +151,16 @@ su *'s*: *Toby's*). Sin tarjetas ni botones: ya no hacen falta.
   acuerdo, como el silabeo del español.
 - `segmentar()` rechaza las **trampas**: palabras que se pueden partir
   pero cuyos botones mentirían — una *e* final que no suena y no es una e
-  mágica (*house, apple*), letras mudas (*knee, write, lamb, ghost*),
-  una *c* que suena /s/ (*nice, city*), la *a* de *ball* y la *o* de
-  *cold*. Mejor un error que una tarjeta con un botón debajo de una
+  mágica (*house, apple, tables*), letras mudas (*knee, write, lamb,
+  ghost*), una *c* que suena /s/ (*nice, city*), la *a* de *ball*,
+  *talk* y *want* y la *o* de *cold*, y la *e* del pasado en -ed
+  (*played*). Mejor un error que una tarjeta con un botón debajo de una
   letra que no suena.
-- `tools/fonetica.py --prueba` comprueba el partido automático contra 67
-  palabras con respuesta conocida, que las 16 trampas de prueba se
-  rechacen y que cada ejemplo de la tabla de sonidos tenga su sonido —
-  en CI, antes que nada.
+- `tools/fonetica.py --prueba` comprueba el partido automático contra 78
+  palabras con respuesta conocida (también los plurales con e mágica,
+  *cakes*: c-a_e-k-s, y los que no lo son, *boxes*: b-o-x-e-s), que las
+  27 trampas de prueba se rechacen y que cada ejemplo de la tabla de
+  sonidos tenga su sonido — en CI, antes que nada.
 - Cada palabra que lee la niña o el niño — en la tarjeta y **dentro de
   una actividad** (los distractores de *Find it*, los pares escritos a
   mano de *Match*) — pasa por la escalera de su semana: solo grafemas ya
@@ -218,5 +220,14 @@ siguiente:
    x* (*X as in next*: casi ninguna palabra que se pueda leer empieza
    por x).
 5. **Verano** (días 196–260) y publicación: una frase al día, de
-   *decodable text*; el libro entero (sin `dias_escritos`), y los dos
-   PDF en GitHub Pages con los demás.
+   *decodable text* — de dos palabras (*Amy packs.*, *Hens cluck.*) a
+   cuatro (*The hens lay eggs.*, *Dani zips his bag.*) —, con *Yes or
+   no?* los miércoles (*Toby barks. / Toby sings.*) y parejas escritas a
+   mano en *Match* (animales y sus sonidos, contrarios, rimas, dónde
+   vive cada animal, sus crías). *Trace*: *a, u, i, o, e, y, z*, con lo
+   que están las 26 letras. Para leer bien las frases, el partido en
+   sonidos aprende los plurales con e mágica (*cakes*: c-a_e-k-s) y dos
+   trampas más (*played*, *talk*, *want*), y una tricky word con -s
+   (*comes*) es la misma tricky word. El libro entero, sin
+   `dias_escritos`, y los dos PDF en GitHub Pages (`first-words.pdf`,
+   `first-words-bw.pdf`) con los demás.

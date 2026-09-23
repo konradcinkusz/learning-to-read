@@ -29,7 +29,7 @@ los dos con los mismos temas):
   *Read and Draw*: para quien empieza a leer en inglés, una palabra al
   día que se lee sonido a sonido (*c-a-t: cat*), con un "botón" debajo
   de cada sonido, y casi siempre un dibujo. Es el cuaderno de primeras
-  palabras, en inglés. En obras. Ver "First Words" más abajo.
+  palabras, en inglés. Ver "First Words" más abajo.
 
 Cuaderno diario de lectura en español, en A4, una página por día
 laborable (lunes a viernes, 260 días = un año completo, de una estación
@@ -214,6 +214,10 @@ Nivel 3, Leo con lupa:
 **[⬇ PDF (color)](https://konradcinkusz.github.io/learning-to-read/read-and-draw.pdf)**
 · **[⬇ PDF (blanco y negro)](https://konradcinkusz.github.io/learning-to-read/read-and-draw-bw.pdf)**
 
+*First Words*, en inglés:
+**[⬇ PDF (color)](https://konradcinkusz.github.io/learning-to-read/first-words.pdf)**
+· **[⬇ PDF (blanco y negro)](https://konradcinkusz.github.io/learning-to-read/first-words-bw.pdf)**
+
 Enlaces fijos, publicados por GitHub Pages en cada push a `main` (ver
 `.github/workflows/pages.yml`). Las dos versiones tienen exactamente el
 mismo contenido y la misma paginación — la de blanco y negro es para
@@ -229,9 +233,7 @@ despliegue), los mismos PDF están también en la pestaña
 `pdf-palabras-color` / `pdf-palabras-bw` / `pdf-lupa-color` /
 `pdf-lupa-bw` / `pdf-english-color` / `pdf-english-bw` /
 `pdf-firstwords-color` / `pdf-firstwords-bw` (se guardan 30 días, hace
-falta estar identificado en GitHub para descargarlos). *First Words*,
-mientras se escribe, solo está ahí; se publicará en Pages con los demás
-cuando esté entero.
+falta estar identificado en GitHub para descargarlos).
 
 ## Construir el PDF a mano
 
@@ -389,13 +391,13 @@ book*, *The words in this book*, *Who's who?* y el mapa del año. Compila
 en color y en blanco y negro con las mismas comprobaciones que los otros
 tres cuadernos, y se publica en GitHub Pages con ellos.
 
-**First Words (en inglés)**: en obras, en cinco fases, una por PR (ver
-`notes/06-first-words.md`, "Las fases"). Escritas las fases 1 a 4: el
-motor (`tools/fonetica.py` y el perfil `firstwords` de
-`tools/gen_palabras.py`, con el cuaderno de primeras palabras en español
-idéntico byte a byte), la tarjeta con botones de sonido, la portada,
-*How to use this book*, la tabla de sonidos, el mapa del año, la clave,
-el diploma, el otoño, el invierno y la primavera (días 1-195, con sus
-tres medallas y las 47 *tricky words* de los viernes de primavera).
-Compila en color y en blanco y negro con las mismas comprobaciones que
-los demás.
+**First Words (en inglés)**: completo, los 260 días (las cuatro
+partes del año, con sus tres medallas, las 47 *tricky words* de los
+viernes de primavera, la clave de respuestas y el diploma), escrito en
+cinco fases, una por PR (ver `notes/06-first-words.md`, "Las fases").
+Todo está en inglés, también la portada, *How to use this book*, *The
+sounds in this book* y el mapa del año. El motor es el del cuaderno de
+primeras palabras en español (`tools/gen_palabras.py`, que sigue
+generándolo idéntico byte a byte) con `tools/fonetica.py`. Compila en
+color y en blanco y negro con las mismas comprobaciones que los otros
+cuatro cuadernos, y se publica en GitHub Pages con ellos.
