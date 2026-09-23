@@ -94,7 +94,9 @@ Las barreras duras que tienen que quedar en verde:
   coincidir con el partido automático de `tools/fonetica.py`, usar solo
   los sonidos que su semana ya admite, no ser una trampa (*house*,
   *knee*) ni una *tricky word*; en verano, cada palabra de una frase
-  tiene que haberse leído antes. Y la tabla de sonidos del principio,
+  tiene que leerse sonido a sonido con lo aprendido, o ser una *tricky
+  word* ya presentada un viernes de primavera, o un nombre del reparto.
+  Cada *tricky word* se presenta una sola vez. Y la tabla de sonidos del principio,
   generada de la misma escalera, sin ningún sonido sin ejemplo, y con
   cada uno de sus sonidos en alguna tarjeta antes de que acabe su
   estación.

@@ -198,9 +198,9 @@ FIRSTWORDS = Perfil(
     titulo_medalla=ENGLISH.titulo_medalla,
     nombres_medalla=ENGLISH.nombre_medalla,
     animo_medalla=ENGLISH.animo_medalla,
-    # Fase 3: el otoño y el invierno (días 1-130). Ver
+    # Fase 4: otoño, invierno y primavera (días 1-195). Ver
     # notes/06-first-words.md, "Las fases".
-    dias_escritos=130,
+    dias_escritos=195,
 )
 
 PERFILES = {p.nombre: p for p in (PALABRAS, FIRSTWORDS)}
@@ -208,11 +208,15 @@ PERFILES = {p.nombre: p for p in (PALABRAS, FIRSTWORDS)}
 # El cuaderno que se está generando (main() lo cambia con --libro).
 PERFIL = PALABRAS
 
-# «First Words»: las palabras de las tarjetas que ya han salido, en
-# minúscula, según se van validando los días en orden -- en verano, cada
-# palabra de una frase tiene que ser una de estas (o una tricky word, o
-# un nombre del reparto): nada de lo que se lee en verano es nuevo.
-VISTAS = set()
+# «First Words»: las tricky words que ya se han presentado (los viernes
+# de primavera, ver preparar_dia), en minúscula, según se van validando
+# los días en orden. En verano, una frase solo puede llevar estas -- y
+# palabras que se leen sonido a sonido, y nombres del reparto --: nada
+# de lo que se lee en verano es nuevo.
+TRICKY_VISTAS = set()
+
+# Cuántas tricky words presenta un viernes de primavera, como mucho.
+MAX_TRICKY_VIERNES = 4
 
 # Tipos de actividad de este cuaderno. Los que no llevan palabras
 # propias ("relee", "repasa") son los viernes: la caja de lectura
@@ -250,6 +254,14 @@ def max_partes(t):
     """Cuántas sílabas (español) o sonidos (inglés) puede tener una
     palabra en este tramo -- los círculos de "palmadas" son uno más."""
     return t["max_silabas"] if PERFIL.idioma == "es" else t["max_sonidos"]
+
+
+def ultimo_tramo_de_palabras():
+    """El último tramo de la escalera que todavía es de palabras (la
+    primavera): en verano, una palabra de una frase tiene que caber en
+    él -- todos los sonidos, pero no palabras más largas que en
+    primavera."""
+    return [t for t in PERFIL.escalera if "frase" not in t][-1]
 
 
 def inicial(palabra):
@@ -297,28 +309,32 @@ def comprobar_sonidos(num, palabra, semana, donde, grafemas=None):
     """La escalera de «First Words» para una palabra que lee la niña o
     el niño: en otoño, invierno y primavera, que solo tenga sonidos que
     ya se han visto, no más de los que admite su semana, y dos
-    consonantes seguidas solo desde la primavera; en verano, que sea una
-    palabra ya leída en una tarjeta (o su plural), una tricky word o un
-    nombre del reparto."""
+    consonantes seguidas solo desde la primavera. En verano, las frases
+    son lo que en los colegios ingleses se llama decodable text: cada
+    palabra se lee sonido a sonido con todo lo que ya se sabe (la
+    escalera de la primavera), o es una tricky word que ya se ha
+    presentado, o un nombre del reparto."""
     t = tramo(semana)
     minus = palabra.lower()
     # num = None: una palabra que no es de ningún día (la tabla de sonidos).
     lugar = donde if num is None else f"día {num} ({donde})"
-    if minus in PERFIL.globales:
-        return
     if "frase" in t:
-        conocida = (
-            minus in VISTAS or minus in fonetica.TRICKY
-            or (minus.endswith("s") and minus[:-1] in VISTAS)
-            or (minus.endswith("es") and minus[:-2] in VISTAS)
-        )
-        if not conocida:
+        # El genitivo de un nombre o de una palabra (Toby's, Mum's) es
+        # la misma palabra: la 's se lee sola.
+        if minus.endswith(("'s", "’s")):
+            minus = minus[:-2]
+            palabra = palabra[:-2]
+        if minus in PERFIL.globales or minus in TRICKY_VISTAS:
+            return
+        if minus in fonetica.TRICKY:
             raise ErrorDeContenido(
-                f"{lugar}: «{palabra}» no ha salido en ninguna "
-                "tarjeta antes, y no es una tricky word (tools/fonetica.py, "
-                "TRICKY) ni un nombre del reparto -- en verano solo se lee lo "
-                "que ya se ha leído"
+                f"{lugar}: «{palabra}» es una tricky word que todavía no se "
+                "ha presentado -- tiene que salir antes en un viernes de "
+                "primavera ('tricky')"
             )
+        t = ultimo_tramo_de_palabras()
+        grafemas = None
+    elif minus in PERFIL.globales:
         return
     if minus in fonetica.TRICKY:
         raise ErrorDeContenido(
@@ -654,6 +670,19 @@ def lectura_semana(trimestre, elementos):
     )
 
 
+def lectura_tricky(palabras):
+    """«First Words», los viernes de primavera: las tricky words de la
+    semana, debajo de las palabras, cada una con su casilla y en un
+    marco -- se leen enteras, no sonido a sonido."""
+    celdas = r"\hspace{7mm}".join(
+        r"\palabraTricky{" + escapar(p) + "}" for p in palabras
+    )
+    return (
+        r"\par\vspace{4mm}{\footnotesize\color{colorGris}\lblFwTricky\par}\vspace{2mm}"
+        + "\n" + r"{\centering " + celdas + r"\par}"
+    )
+
+
 # --------------------------------------------------------------------
 # Actividades
 # --------------------------------------------------------------------
@@ -967,6 +996,8 @@ def preparar_dia(d):
                 "de lectura recoge las de lunes a jueves"
             )
         d["palabras_leidas"] = []
+        if "tricky" in d:
+            presentar_tricky(d, t)
         return d
 
     if "frase" in t:
@@ -986,10 +1017,40 @@ def preparar_dia(d):
         )
     d["tarjetas"] = [leer_palabra(num, e, semana) for e in escritas]
     d["palabras_leidas"] = [p for p, _ in d["tarjetas"]]
-    VISTAS.update(p.lower() for p in d["palabras_leidas"])
     if len(set(d["palabras_leidas"])) != len(d["palabras_leidas"]):
         raise ErrorDeContenido(f"día {num}: una palabra repetida el mismo día")
     return d
+
+
+def presentar_tricky(d, t):
+    """«First Words»: un viernes de primavera presenta unas pocas tricky
+    words (fonetica.TRICKY), que se leen enteras. Cada una se presenta
+    una sola vez en el año, y ninguna frase del verano puede llevar una
+    que no se haya presentado antes."""
+    num = d["dia"]
+    tricky = d["tricky"]
+    if PERFIL.idioma != "en" or "grupos" not in t or not t["grupos"]:
+        raise ErrorDeContenido(
+            f"día {num}: las tricky words solo se presentan los viernes de "
+            "primavera, en «First Words»"
+        )
+    if not (1 <= len(tricky) <= MAX_TRICKY_VIERNES):
+        raise ErrorDeContenido(
+            f"día {num}: un viernes presenta entre 1 y {MAX_TRICKY_VIERNES} "
+            f"tricky words, no {len(tricky)}"
+        )
+    for palabra in tricky:
+        minus = palabra.lower()
+        if minus not in fonetica.TRICKY:
+            raise ErrorDeContenido(
+                f"día {num}: «{palabra}» no es una tricky word "
+                "(tools/fonetica.py, TRICKY)"
+            )
+        if minus in TRICKY_VISTAS:
+            raise ErrorDeContenido(
+                f"día {num}: la tricky word «{palabra}» ya se ha presentado antes"
+            )
+        TRICKY_VISTAS.add(minus)
 
 
 def validar_dias(dias):
@@ -1048,6 +1109,8 @@ def generar(dias):
                     f"día {num}: '{tipo}' no encuentra nada leído esa semana"
                 )
             lectura = lectura_semana(trimestre, previas)
+            if d.get("tricky"):
+                lectura += "\n" + lectura_tricky(d["tricky"])
             instruccion = (r"\lblPalInstruccionSemanaFrases" if trimestre == 4
                            else r"\lblPalInstruccionSemana")
         elif trimestre == 4:
