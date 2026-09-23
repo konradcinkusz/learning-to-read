@@ -180,14 +180,30 @@
 % las secciones, una por tramo de la escalera, las genera
 % tools/gen_palabras.py).
 \newcommand{\lblFwSonidosTitulo}{The sounds in this book}
-\newcommand{\lblFwSonidosIntro}{Every sound in the book, in the order it comes, with a word that has it. Say the sound, not the name of the letter.}
-\newcommand{\lblFwSonidosUno}{Autumn: one letter, one sound}
-\newcommand{\lblFwSonidosDos}{Autumn, from week 6: double letters, x, y and qu}
-\newcommand{\lblFwSonidosTres}{Winter: two or three letters, one sound}
-\newcommand{\lblFwSonidosCuatro}{Spring: new ways to write the sounds, and the magic e}
+% En el cuaderno de verano (\segunEdicion, preamble.tex) todos los sonidos
+% llegan ya sabidos: la tabla es la misma, sin las estaciones en que
+% llegan en el libro entero.
+\newcommand{\lblFwSonidosIntro}{\segunEdicion{Every sound in the book, in the order it comes, with a word that has it.}{Every sound in this book, each with a word that has it.} Say the sound, not the name of the letter.}
+\newcommand{\lblFwSonidosUno}{\segunEdicion{Autumn: one letter, one sound}{One letter, one sound}}
+\newcommand{\lblFwSonidosDos}{\segunEdicion{Autumn, from week 6: double letters, x, y and qu}{Double letters, x, y and qu}}
+\newcommand{\lblFwSonidosTres}{\segunEdicion{Winter: two or three letters, one sound}{Two or three letters, one sound}}
+\newcommand{\lblFwSonidosCuatro}{\segunEdicion{Spring: new ways to write the sounds, and the magic e}{New ways to write the sounds, and the magic e}}
 
 % Portada.
 \newcommand{\lblFwTituloPortada}{First Words}
 \newcommand{\lblFwNivelPortada}{Learning to read \textperiodcentered\ English}
-\newcommand{\lblFwSubtituloPortada}{One English word a day -- and a picture to colour}
-\newcommand{\lblFwSubtituloPortadaMetodo}{A daily reading book for children who are starting to read in English: one word a day, read sound by sound -- the step before Read and Draw}
+% En el cuaderno de verano, una frase corta al día: la del verano del
+% libro entero.
+\newcommand{\lblFwSubtituloPortada}{\segunEdicion{One English word a day}{One short English sentence a day} -- and a picture to colour}
+\newcommand{\lblFwSubtituloPortadaMetodo}{\segunEdicion{A daily reading book for children who are starting to read in English: one word a day, read sound by sound}{A summer reading book for children who can already read English words sound by sound, and are starting to read sentences} -- the step before Read and Draw}
+
+% -----------------------------------------------------------------------
+% Las ediciones (ver "la edición" en preamble.tex, y notes/07-ediciones.md):
+% el cuaderno de verano -- la insignia de su portada y el mapa del verano,
+% que va en vez del mapa del curso.
+% -----------------------------------------------------------------------
+\newcommand{\lblInsigniaVerano}{Summer book}
+\newcommand{\lblMapaVeranoTitulo}{The summer, week by week}
+\newcommand{\lblMapaVeranoIntro}{Every day you read, colour a sun.}
+\newcommand{\lblMapaDias}{Days}
+\newcommand{\lblMapaTema}{What happens}

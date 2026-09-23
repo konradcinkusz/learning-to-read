@@ -1,8 +1,14 @@
 % body-palabras.tex -- el cuaderno de primeras palabras entero, en el
-% orden en que se imprime (ver body.tex para el de frases).
+% orden en que se imprime (ver body.tex para el de frases, y para el
+% cuaderno de verano).
 \input{frontmatter/palabras/portada}
-\input{frontmatter/palabras/como-usar}
-\input{frontmatter/palabras/mapa-del-curso}
-\input{content/palabras/generated-days}
+\ifedicionverano
+  \input{frontmatter/palabras/verano}
+  \mapaEdicion{content/palabras}
+\else
+  \input{frontmatter/palabras/como-usar}
+  \input{frontmatter/palabras/mapa-del-curso}
+\fi
+\input{content/palabras/generated-days\sufijoEdicion}
 \input{backmatter/palabras/clave-respuestas}
 \input{backmatter/palabras/diploma}

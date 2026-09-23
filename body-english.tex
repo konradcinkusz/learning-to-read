@@ -1,10 +1,17 @@
 % body-english.tex -- "Read and Draw" (el cuaderno en inglés) entero, en
-% el orden en que se imprime.
+% el orden en que se imprime (ver body.tex para el cuaderno de verano).
 \input{frontmatter/english/portada}
-\input{frontmatter/english/como-usar}
-\input{frontmatter/english/palabras}
-\input{frontmatter/english/personajes}
-\input{frontmatter/english/mapa-del-curso}
-\input{content/english/generated-days}
+\ifedicionverano
+  \input{frontmatter/english/verano}
+  \input{frontmatter/english/palabras}
+  \input{frontmatter/english/personajes}
+  \mapaEdicion{content/english}
+\else
+  \input{frontmatter/english/como-usar}
+  \input{frontmatter/english/palabras}
+  \input{frontmatter/english/personajes}
+  \input{frontmatter/english/mapa-del-curso}
+\fi
+\input{content/english/generated-days\sufijoEdicion}
 \input{backmatter/english/clave-respuestas}
 \input{backmatter/english/diploma}

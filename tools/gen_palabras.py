@@ -65,6 +65,10 @@ from string import Template
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import fonetica  # noqa: E402
 from libros import ENGLISH, FRASES  # noqa: E402
+from ediciones import (  # noqa: E402
+    comprobar_campos, comprobar_preamble, ediciones_completas, ruta_edicion,
+    salidas_ediciones,
+)
 from gen_days import (  # noqa: E402
     ErrorDeContenido,
     NOMBRE_MEDALLA_TRIMESTRE,
@@ -1439,9 +1443,18 @@ CABECERA = (
 )
 
 
+def cabecera(ruta):
+    return CABECERA.format(nombre=f"{PERFIL.ruta}/{ruta.name}", ruta=PERFIL.ruta)
+
+
 def generar(dias):
-    piezas = [CABECERA.format(nombre=f"{PERFIL.ruta}/generated-days.tex", ruta=PERFIL.ruta)]
-    claves = [CABECERA.format(nombre=f"{PERFIL.ruta}/generated-clave.tex", ruta=PERFIL.ruta)]
+    """(tex, clave, paginas, entradas): el libro entero y su clave, y la
+    página y la entrada de la clave de cada día -- [(d, tex)] sin las
+    medallas y [(d, entrada)] --, de donde salen las ediciones
+    (generar_ediciones)."""
+    piezas = [cabecera(PERFIL.salida_dias)]
+    claves = [cabecera(PERFIL.salida_clave)]
+    paginas, entradas = [], []
     dibujos_previos = []  # [(palabra, ruta)], para "une" con dibujos
     for d in dias:
         num, trimestre = d["dia"], d["trimestre"]
@@ -1484,7 +1497,7 @@ def generar(dias):
         actividad_tex, clave = render_actividad(d, previas_palabras, dibujos_previos)
         if dibujo and dibujo["palabra"]:
             dibujos_previos.append((dibujo["palabra"], dibujo["ruta"]))
-        piezas.append(PLANTILLA_DIA.substitute(
+        pagina = PLANTILLA_DIA.substitute(
             dia=num,
             semana=d["semana"],
             trimestre=trimestre,
@@ -1492,7 +1505,9 @@ def generar(dias):
             instruccion=instruccion,
             lectura=lectura,
             actividad=actividad_tex,
-        ))
+        )
+        piezas.append(pagina)
+        paginas.append((d, pagina))
         if clave:
             etiqueta = {
                 "adivina": r"\lblAdivina", "une": r"\lblUne",
@@ -1500,7 +1515,9 @@ def generar(dias):
                 "palmadas": r"\lblPalmadas",
             }[clave[0]]
             texto = clave[1] if clave[0] in ("une", "si_no") else escapar(clave[1])
-            claves.append(f"\\claveEntrada{{{num}}}{{{etiqueta}}}{{{texto}}}\n")
+            entrada = f"\\claveEntrada{{{num}}}{{{etiqueta}}}{{{texto}}}\n"
+            claves.append(entrada)
+            entradas.append((d, entrada))
 
         if num == ULTIMO_DIA_TRIMESTRE.get(trimestre) and trimestre in PERFIL.nombres_medalla:
             banner = d["actividad"].get("banner")
@@ -1515,7 +1532,30 @@ def generar(dias):
                 banner=escapar(banner),
                 animo=PERFIL.animo_medalla,
             ))
-    return "\n".join(piezas), "".join(claves)
+    return "\n".join(piezas), "".join(claves), paginas, entradas
+
+
+def generar_ediciones(dias, paginas, entradas):
+    """[(ruta, contenido)]: los .tex de cada edición del cuaderno (el
+    cuaderno de verano...), ver tools/ediciones.py. En «First Words»,
+    también las tricky words que la edición da por sabidas -- las que el
+    libro entero presenta antes de su primer día (los viernes de
+    primavera, ver presentar_tricky) --, para su página del adulto
+    (\\trickyLista, preamble-firstwords.tex)."""
+    salidas = salidas_ediciones(
+        dias, paginas, entradas, PERFIL.salida_dias, PERFIL.salida_clave,
+        cabecera, PERFIL.idioma,
+    )
+    if PERFIL.idioma == "en":
+        for e in ediciones_completas(dias):
+            ruta = ruta_edicion(PERFIL.dir_contenido / "generated-tricky.tex", e)
+            palabras = [
+                p for d in dias if d["dia"] < e.desde for p in d.get("tricky", [])
+            ]
+            salidas.append((ruta, cabecera(ruta) + "".join(
+                f"\\trickyLista{{{escapar(p)}}}\n" for p in palabras
+            )))
+    return salidas
 
 
 def comprobar_trazo(dias):
@@ -1758,15 +1798,20 @@ def main():
     modo_tabla = "--tabla" in sys.argv
 
     try:
+        comprobar_preamble()
         dias = cargar_dias()
         validar_dias(dias)
+        for d in dias:
+            comprobar_campos(d)
         comprobar_trazo(dias)
         comprobar_cobertura(dias)
         comprobar_dibujos(dias)
-        tex, clave = generar(dias)
+        tex, clave, paginas, entradas = generar(dias)
         salidas = [(PERFIL.salida_dias, tex), (PERFIL.salida_clave, clave)]
         if PERFIL.idioma == "en":
             salidas.append((PERFIL.salida_sonidos, generar_sonidos()))
+        ediciones = generar_ediciones(dias, paginas, entradas)
+        salidas += ediciones
     except ErrorDeContenido as exc:
         print(f"ERROR: {exc}", file=sys.stderr)
         return 1
@@ -1803,6 +1848,8 @@ def main():
     print(f"Escrito {PERFIL.salida_dias} con {len(dias)} días, y {PERFIL.salida_clave}.")
     if PERFIL.idioma == "en":
         print(f"Escrito {PERFIL.salida_sonidos}.")
+    for ruta, _ in ediciones:
+        print(f"Escrito {ruta}.")
     return 0
 
 

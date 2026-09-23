@@ -81,6 +81,13 @@
 \newcommand{\palabraTricky}[1]{\mbox{\casillaGrande\hspace{2mm}%
   \fcolorbox{colorCrea}{white}{\fontsize{24}{28}\selectfont\strut\ #1\ }}}
 
+% Las tricky words que el cuaderno de verano da por sabidas (las que el
+% libro entero presenta los viernes de primavera), todas juntas y más
+% pequeñas, en la página para el adulto (frontmatter/firstwords/verano.tex;
+% la lista la escribe tools/gen_palabras.py en
+% content/firstwords/generated-tricky-verano.tex).
+\newcommand{\trickyLista}[1]{\mbox{\fcolorbox{colorCrea}{white}{\large\strut\ #1\ }}\hspace{1.5mm}\ignorespaces}
+
 % =========================================================================
 % La tabla de sonidos (frontmatter/firstwords/sonidos.tex; las secciones
 % las genera tools/gen_palabras.py en content/firstwords/generated-sonidos.tex)

@@ -69,7 +69,8 @@
       "actividad": {
         "tipo": "repasa",
         "prompt": "Dibuja la maleta que te llevarías tú de vacaciones.",
-        "banner": "¡200 páginas leídas! ¡Doscientas!"
+        "banner": "¡200 páginas leídas! ¡Doscientas!",
+        "banner_verano": "¡5 páginas leídas! ¡Una semana entera!"
       }
     },
     {
