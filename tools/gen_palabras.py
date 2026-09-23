@@ -25,24 +25,37 @@ Casi todas las actividades de este nivel terminan dibujando, y la caja
 de actividad llena todo lo que queda de página (ver
 preamble-palabras.tex): el sitio para dibujar es todo el que haya.
 
-No editar content/palabras/generated-*.tex a mano -- se sobrescriben
-cada vez que se ejecuta este script.
+El mismo generador hace también «First Words», el cuaderno de primeras
+palabras en inglés (`--libro firstwords`, content/firstwords/q*.json,
+ver notes/06-first-words.md): mismo calendario, mismo ciclo semanal y
+mismas actividades, pero la escalera es de sonidos, no de sílabas -- en
+inglés se lee juntando sonidos (c, a, t: cat), así que cada palabra se
+escribe partida en grafemas ("sh-ee-p") y ese partido tiene que
+coincidir con el automático de tools/fonetica.py. Todo lo que cambia de
+un cuaderno a otro está en su Perfil, más abajo.
+
+No editar content/palabras/generated-*.tex (ni content/firstwords/) a
+mano -- se sobrescriben cada vez que se ejecuta este script.
 
 Uso:
     python3 tools/gen_palabras.py            # regenera content/palabras/generated-*.tex
     python3 tools/gen_palabras.py --check    # solo valida; exit 1 si algo no cuadra
                                              # o si lo generado está desactualizado
     python3 tools/gen_palabras.py --tabla    # resumen por semana, en Markdown (CI)
+    python3 tools/gen_palabras.py --libro firstwords [--check | --tabla]
+                                             # lo mismo, para «First Words»
 """
 
 import json
 import random
 import sys
+from dataclasses import dataclass
 from pathlib import Path
 from string import Template
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from libros import FRASES  # noqa: E402
+import fonetica  # noqa: E402
+from libros import ENGLISH, FRASES  # noqa: E402
 from gen_days import (  # noqa: E402
     ErrorDeContenido,
     NOMBRE_MEDALLA_TRIMESTRE,
@@ -58,9 +71,6 @@ from gen_days import (  # noqa: E402
 from silabas import rasgos, silabear  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
-CONTENT_DIR = ROOT / "content" / "palabras"
-OUTPUT_FILE = CONTENT_DIR / "generated-days.tex"
-CLAVE_FILE = CONTENT_DIR / "generated-clave.tex"
 
 TODOS_LOS_RASGOS = {
     "cerrada", "suave", "h", "trabada", "digrafo", "diptongo", "rara",
@@ -97,6 +107,113 @@ ESCALERA = [
 # 3. Solo nombres propios del reparto, nunca palabras comunes.
 PALABRAS_GLOBALES = {"lucía", "toby"}
 
+# La escalera de «First Words», el cuaderno en inglés: lo que sube no es
+# el número de sílabas sino qué sonidos se pueden leer (los grafemas de
+# tools/fonetica.py, acumulativos), cuántos tiene una palabra como mucho
+# (max_sonidos) y si puede llevar dos consonantes seguidas (grupos: frog,
+# nest). Mismos tramos que la española -- una palabra al día en otoño,
+# dos en invierno, tres en primavera y una frase en verano --, para que
+# los dos cuadernos se lleven igual.
+ESCALERA_EN = [
+    {"semanas": (1, 5), "palabras": 1, "max_sonidos": 3, "grupos": False,
+     "grafemas": fonetica.GRAFEMAS_T1A},
+    {"semanas": (6, 13), "palabras": 1, "max_sonidos": 3, "grupos": False,
+     "grafemas": fonetica.GRAFEMAS_T1A | fonetica.GRAFEMAS_T1B},
+    {"semanas": (14, 26), "palabras": 2, "max_sonidos": 4, "grupos": False,
+     "grafemas": fonetica.GRAFEMAS_T1A | fonetica.GRAFEMAS_T1B | fonetica.GRAFEMAS_T2},
+    {"semanas": (27, 39), "palabras": 3, "max_sonidos": 5, "grupos": True,
+     "grafemas": fonetica.TODOS},
+    {"semanas": (40, 43), "frase": (2, 2)},
+    {"semanas": (44, 47), "frase": (2, 3)},
+    {"semanas": (48, 52), "frase": (3, 4)},
+]
+
+# En inglés, los nombres del reparto que no se pueden leer sonido a
+# sonido con lo que se sabe (Lu-cí-a, To-by, A-my, Da-ni...) se leen de
+# un golpe, como el propio nombre. Pip, Sam, Mum y Dad no están: se leen
+# juntando sus sonidos desde el primer día.
+PALABRAS_GLOBALES_EN = frozenset({
+    "lucía", "toby", "amy", "dani", "rosa", "grandma", "marta", "luna",
+    "pedro", "brown", "browns", "mr", "mrs", "andrés", "bigotes", "martín",
+    "tomás", "julián", "lola", "paco",
+})
+
+
+@dataclass(frozen=True)
+class Perfil:
+    """Lo que distingue a los dos cuadernos de este generador."""
+    nombre: str
+    idioma: str
+    dir_contenido: Path
+    escalera: list
+    globales: frozenset
+    titulo_medalla: str
+    nombres_medalla: dict
+    animo_medalla: str
+    # Mientras un cuaderno se escribe por partes (un PR por trimestre),
+    # cuántos días tiene ya escritos: se exigen exactamente esos, del 1
+    # en adelante. None = el cuaderno está entero, con sus 260 días.
+    dias_escritos: int = None
+
+    @property
+    def salida_dias(self):
+        return self.dir_contenido / "generated-days.tex"
+
+    @property
+    def salida_clave(self):
+        return self.dir_contenido / "generated-clave.tex"
+
+    @property
+    def salida_sonidos(self):
+        """Solo «First Words»: la tabla de sonidos del principio."""
+        return self.dir_contenido / "generated-sonidos.tex"
+
+    @property
+    def ruta(self):
+        """'content/palabras': para los mensajes y la cabecera de lo generado."""
+        return self.dir_contenido.relative_to(ROOT).as_posix()
+
+    @property
+    def total(self):
+        return self.dias_escritos or TOTAL_DIAS
+
+
+PALABRAS = Perfil(
+    nombre="palabras",
+    idioma="es",
+    dir_contenido=ROOT / "content" / "palabras",
+    escalera=ESCALERA,
+    globales=frozenset(PALABRAS_GLOBALES),
+    titulo_medalla="¡Medalla de {}!",
+    nombres_medalla=NOMBRE_MEDALLA_TRIMESTRE,
+    animo_medalla=FRASES.animo_medalla,
+)
+
+FIRSTWORDS = Perfil(
+    nombre="firstwords",
+    idioma="en",
+    dir_contenido=ROOT / "content" / "firstwords",
+    escalera=ESCALERA_EN,
+    globales=PALABRAS_GLOBALES_EN,
+    titulo_medalla=ENGLISH.titulo_medalla,
+    nombres_medalla=ENGLISH.nombre_medalla,
+    animo_medalla=ENGLISH.animo_medalla,
+    # Fase 1: el motor y las dos primeras semanas (días 1-10). Ver
+    # notes/06-first-words.md, "Las fases".
+    dias_escritos=10,
+)
+
+PERFILES = {p.nombre: p for p in (PALABRAS, FIRSTWORDS)}
+
+# El cuaderno que se está generando (main() lo cambia con --libro).
+PERFIL = PALABRAS
+
+# «First Words»: las palabras de las tarjetas que ya han salido, en
+# minúscula, según se van validando los días en orden -- en verano, cada
+# palabra de una frase tiene que ser una de estas (o una tricky word, o
+# un nombre del reparto): nada de lo que se lee en verano es nuevo.
+VISTAS = set()
+
 # Tipos de actividad de este cuaderno. Los que no llevan palabras
 # propias ("relee", "repasa") son los viernes: la caja de lectura
 # recoge las palabras de toda la semana.
@@ -122,11 +239,17 @@ COLUMNAS_SEMANA = {1: 2, 2: 3, 3: 3, 4: 1}
 
 
 def tramo(semana):
-    for t in ESCALERA:
+    for t in PERFIL.escalera:
         lo, hi = t["semanas"]
         if lo <= semana <= hi:
             return t
-    raise ErrorDeContenido(f"la semana {semana} no está en ESCALERA")
+    raise ErrorDeContenido(f"la semana {semana} no está en la escalera")
+
+
+def max_partes(t):
+    """Cuántas sílabas (español) o sonidos (inglés) puede tener una
+    palabra en este tramo -- los círculos de "palmadas" son uno más."""
+    return t["max_silabas"] if PERFIL.idioma == "es" else t["max_sonidos"]
 
 
 def inicial(palabra):
@@ -148,8 +271,10 @@ def comprobar_escalera(num, palabra, semana, donde):
     """Una palabra suelta que lee la niña o el niño (en la caja de
     lectura o dentro de una actividad) tiene que respetar la escalera de
     su semana. En T4 (frases) no hay restricción de sílabas."""
+    if PERFIL.idioma == "en":
+        return comprobar_sonidos(num, palabra, semana, donde)
     t = tramo(semana)
-    if "frase" in t or palabra.lower() in PALABRAS_GLOBALES:
+    if "frase" in t or palabra.lower() in PERFIL.globales:
         return
     silabas = silabear(palabra)
     if len(silabas) > t["max_silabas"]:
@@ -168,10 +293,73 @@ def comprobar_escalera(num, palabra, semana, donde):
             )
 
 
+def comprobar_sonidos(num, palabra, semana, donde, grafemas=None):
+    """La escalera de «First Words» para una palabra que lee la niña o
+    el niño: en otoño, invierno y primavera, que solo tenga sonidos que
+    ya se han visto, no más de los que admite su semana, y dos
+    consonantes seguidas solo desde la primavera; en verano, que sea una
+    palabra ya leída en una tarjeta (o su plural), una tricky word o un
+    nombre del reparto."""
+    t = tramo(semana)
+    minus = palabra.lower()
+    # num = None: una palabra que no es de ningún día (la tabla de sonidos).
+    lugar = donde if num is None else f"día {num} ({donde})"
+    if minus in PERFIL.globales:
+        return
+    if "frase" in t:
+        conocida = (
+            minus in VISTAS or minus in fonetica.TRICKY
+            or (minus.endswith("s") and minus[:-1] in VISTAS)
+            or (minus.endswith("es") and minus[:-2] in VISTAS)
+        )
+        if not conocida:
+            raise ErrorDeContenido(
+                f"{lugar}: «{palabra}» no ha salido en ninguna "
+                "tarjeta antes, y no es una tricky word (tools/fonetica.py, "
+                "TRICKY) ni un nombre del reparto -- en verano solo se lee lo "
+                "que ya se ha leído"
+            )
+        return
+    if minus in fonetica.TRICKY:
+        raise ErrorDeContenido(
+            f"{lugar}: «{palabra}» es una tricky word (tools/fonetica.py, "
+            "TRICKY): se aprende entera, así que no puede salir como una "
+            "palabra que se lee sonido a sonido"
+        )
+    if grafemas is None:
+        try:
+            grafemas = fonetica.segmentar(palabra)
+        except fonetica.ErrorFonetica as exc:
+            raise ErrorDeContenido(f"{lugar}: {exc}") from None
+    r = fonetica.rasgos_de(grafemas)
+    sobra = sorted(set(r["grafemas"]) - t["grafemas"])
+    if sobra:
+        raise ErrorDeContenido(
+            f"{lugar}: «{palabra}» ({'-'.join(grafemas)}) tiene "
+            f"{', '.join(sobra)}, que la escalera no admite hasta más "
+            f"adelante (semana {semana})"
+        )
+    if r["sonidos"] > t["max_sonidos"]:
+        raise ErrorDeContenido(
+            f"{lugar}: «{palabra}» tiene {r['sonidos']} sonidos "
+            f"({'-'.join(grafemas)}); en la semana {semana} el máximo es "
+            f"{t['max_sonidos']}"
+        )
+    if r["grupo"] and not t["grupos"]:
+        raise ErrorDeContenido(
+            f"{lugar}: «{palabra}» ({'-'.join(grafemas)}) tiene "
+            "dos consonantes seguidas, que la escalera no admite hasta la "
+            f"primavera (semana {semana})"
+        )
+
+
 def leer_palabra(num, escrita, semana):
     """'pe-lo-ta' -> ('pelota', ['pe', 'lo', 'ta']), comprobando que el
     silabeo escrito a mano coincide con el automático y que la palabra
-    cabe en la escalera de su semana."""
+    cabe en la escalera de su semana. En inglés, lo mismo con sus
+    sonidos: 'sh-ee-p' -> ('sheep', ['sh', 'ee', 'p'])."""
+    if PERFIL.idioma == "en":
+        return leer_palabra_en(num, escrita, semana)
     if not escrita or escrita != escrita.strip() or " " in escrita:
         raise ErrorDeContenido(f"día {num}: palabra mal escrita: {escrita!r}")
     silabas = escrita.split("-")
@@ -185,6 +373,25 @@ def leer_palabra(num, escrita, semana):
         )
     comprobar_escalera(num, palabra, semana, "palabra del día")
     return palabra, silabas
+
+
+def leer_palabra_en(num, escrita, semana):
+    """Una tarjeta de «First Words». Los nombres del reparto que se leen
+    de un golpe (Toby, Amy) van enteros, sin guiones: su tarjeta no
+    lleva botones de sonidos."""
+    if escrita.lower() in PERFIL.globales:
+        if "-" in escrita:
+            raise ErrorDeContenido(
+                f"día {num}: «{escrita}» es un nombre que se lee de un golpe "
+                "-- va entero, sin guiones"
+            )
+        return escrita, None
+    try:
+        palabra, grafemas = fonetica.leer_escrita(escrita)
+    except fonetica.ErrorFonetica as exc:
+        raise ErrorDeContenido(f"día {num}: {exc}") from None
+    comprobar_sonidos(num, palabra, semana, "palabra del día", grafemas)
+    return palabra, grafemas
 
 
 def validar_frase(num, frase, semana, donde, minimo=None):
@@ -211,6 +418,9 @@ def validar_frase(num, frase, semana, donde, minimo=None):
         raise ErrorDeContenido(
             f"día {num} ({donde}): «{frase}» no empieza por mayúscula"
         )
+    if PERFIL.idioma == "en":
+        for token in frase.split():
+            comprobar_sonidos(num, limpiar(token), semana, donde)
 
 
 # --------------------------------------------------------------------
@@ -358,16 +568,58 @@ def remate_dibujo(actividad):
 # La caja de lectura
 # --------------------------------------------------------------------
 
+def tarjeta_sonidos(trimestre, palabra, grafemas):
+    """La tarjeta de «First Words»: la palabra, grande, con el botón de
+    cada sonido debajo -- un punto si el sonido es una letra, una raya si
+    son varias (sh, ee, ck), un arco de la vocal a la e si es una e
+    mágica (cake). Cada grafema es un nodo de TikZ pegado al anterior, así
+    que la palabra se ve entera y los botones caen debajo de sus letras.
+    Los nombres que se leen de un golpe (grafemas = None) van sin
+    botones."""
+    if grafemas is None:
+        return r"\tarjetaEntera{%d}{%s}" % (trimestre, escapar(palabra))
+    nodos = []
+    botones = []
+    n = 0
+    arco = None
+    for g in grafemas:
+        n += 1
+        if "_" in g:
+            nodos.append(g.split("_")[0])
+            arco = n
+            continue
+        nodos.append(g)
+        if fonetica.es_grafema_de_varias(g):
+            botones.append(r"\botonRaya{g%d}" % n)
+        else:
+            botones.append(r"\botonPunto{g%d}" % n)
+    if arco is not None:
+        nodos.append("e")
+        botones.append(r"\botonArco{g%d}{g%d}" % (arco, len(nodos)))
+    piezas = []
+    for i, texto in enumerate(nodos, start=1):
+        donde = "(0,0)" if i == 1 else f"(g{i - 1}.base east)"
+        piezas.append(r"\node[grafema] (g%d) at %s {%s};" % (i, donde, escapar(texto)))
+    return (
+        r"\tarjetaSonidos{%d}{" % trimestre
+        + " ".join(piezas) + " " + "".join(botones) + "}"
+    )
+
+
 def lectura_palabras(trimestre, palabras):
-    """Tarjetas de palabra: sílabas arriba, palabra entera debajo."""
-    tarjetas = [
-        r"\tarjeta{%d}{%s}{%s}" % (
-            trimestre,
-            r"\sep ".join(escapar(s) for s in silabas),
-            escapar(palabra),
-        )
-        for palabra, silabas in palabras
-    ]
+    """Tarjetas de palabra: sílabas arriba, palabra entera debajo (en
+    inglés, la palabra con sus botones de sonidos, ver tarjeta_sonidos)."""
+    if PERFIL.idioma == "en":
+        tarjetas = [tarjeta_sonidos(trimestre, p, g) for p, g in palabras]
+    else:
+        tarjetas = [
+            r"\tarjeta{%d}{%s}{%s}" % (
+                trimestre,
+                r"\sep ".join(escapar(s) for s in silabas),
+                escapar(palabra),
+            )
+            for palabra, silabas in palabras
+        ]
     if len(tarjetas) == 1:
         return r"\centering" + "\n" + tarjetas[0]
     columnas = len(tarjetas)
@@ -457,6 +709,10 @@ def render_actividad(dia, semana_previa):
         # leído ese día, no una lista aparte: así la letra que se traza
         # es la de algo que se acaba de leer.
         ejemplo = next((p for p in leidas if inicial(p) == letra), None)
+        if ejemplo is None and PERFIL.idioma == "en":
+            # "X as in box": en inglés casi ninguna palabra que se pueda
+            # leer empieza por x, así que vale que la letra esté dentro.
+            ejemplo = next((p for p in leidas if letra in p.lower()), None)
         if ejemplo is None:
             raise ErrorDeContenido(
                 f"día {num}: 'traza' pide la letra {letra!r}, pero ninguna "
@@ -534,15 +790,26 @@ def render_actividad(dia, semana_previa):
             filas=" \\\\\n".join(filas) + " \\\\",
             dibujo=remate_dibujo(actividad),
         )
-        clave = ("encuentra", f"«{modelo}»: {veces} veces")
+        if PERFIL.idioma == "en":
+            clave = ("encuentra", f"“{modelo}”: {veces} times")
+        else:
+            clave = ("encuentra", f"«{modelo}»: {veces} veces")
 
     elif tipo == "palmadas":
-        circulos = tramo(semana)["max_silabas"] + 1
+        circulos = max_partes(tramo(semana)) + 1
         filas = " \\\\[7mm]\n".join(
             escapar(p) + " & " + r"\hspace{2mm}".join([r"\circuloPalmada"] * circulos)
             for p in leidas
         ) + " \\\\"
         tex = PLANTILLA_PALMADAS.substitute(filas=filas, dibujo=remate_dibujo(actividad))
+        if PERFIL.idioma == "en":
+            # Cuántos sonidos tiene cada palabra no es evidente para
+            # quien no aprendió a leer en inglés (sheep: tres), así que
+            # va en la clave.
+            cuentas = [
+                f"{p}: {len(g)}" for p, g in dia["tarjetas"] if g is not None
+            ]
+            clave = ("palmadas", ", ".join(cuentas))
 
     elif tipo == "adivina":
         # La respuesta no sale en la página -- solo en la clave de
@@ -653,7 +920,7 @@ def render_actividad(dia, semana_previa):
 
 def cargar_dias():
     dias = []
-    for fichero in sorted(CONTENT_DIR.glob("q*.json")):
+    for fichero in sorted(PERFIL.dir_contenido.glob("q*.json")):
         datos = json.loads(fichero.read_text(encoding="utf-8"))
         dias.extend(datos.get("dias", []))
     dias.sort(key=lambda d: d["dia"])
@@ -719,6 +986,7 @@ def preparar_dia(d):
         )
     d["tarjetas"] = [leer_palabra(num, e, semana) for e in escritas]
     d["palabras_leidas"] = [p for p, _ in d["tarjetas"]]
+    VISTAS.update(p.lower() for p in d["palabras_leidas"])
     if len(set(d["palabras_leidas"])) != len(d["palabras_leidas"]):
         raise ErrorDeContenido(f"día {num}: una palabra repetida el mismo día")
     return d
@@ -726,7 +994,13 @@ def preparar_dia(d):
 
 def validar_dias(dias):
     if not dias:
-        raise ErrorDeContenido("no hay ningún día en content/palabras/q*.json")
+        raise ErrorDeContenido(f"no hay ningún día en {PERFIL.ruta}/q*.json")
+    if len(dias) != PERFIL.total:
+        raise ErrorDeContenido(
+            f"{PERFIL.ruta}/q*.json tiene {len(dias)} días, y el cuaderno "
+            f"necesita {PERFIL.total}"
+            + (" (dias_escritos, en su Perfil)" if PERFIL.dias_escritos else "")
+        )
     for esperado, d in enumerate(dias, start=1):
         if d["dia"] != esperado:
             raise ErrorDeContenido(
@@ -755,15 +1029,15 @@ def semana_hasta(dias, d):
 
 CABECERA = (
     "% {nombre}\n"
-    "% GENERADO por tools/gen_palabras.py a partir de content/palabras/q*.json.\n"
+    "% GENERADO por tools/gen_palabras.py a partir de {ruta}/q*.json.\n"
     "% NO EDITAR A MANO -- los cambios se perderán en la siguiente\n"
-    "% ejecución de `make generate`. Edita content/palabras/q*.json en su lugar.\n\n"
+    "% ejecución de `make generate`. Edita {ruta}/q*.json en su lugar.\n\n"
 )
 
 
 def generar(dias):
-    piezas = [CABECERA.format(nombre="content/palabras/generated-days.tex")]
-    claves = [CABECERA.format(nombre="content/palabras/generated-clave.tex")]
+    piezas = [CABECERA.format(nombre=f"{PERFIL.ruta}/generated-days.tex", ruta=PERFIL.ruta)]
+    claves = [CABECERA.format(nombre=f"{PERFIL.ruta}/generated-clave.tex", ruta=PERFIL.ruta)]
     for d in dias:
         num, trimestre = d["dia"], d["trimestre"]
         tipo = d["actividad"]["tipo"]
@@ -782,6 +1056,10 @@ def generar(dias):
         else:
             lectura = lectura_palabras(trimestre, d["tarjetas"])
             instruccion = INSTRUCCION_LECTURA[trimestre]
+            if PERFIL.idioma == "en" and all(g is None for _, g in d["tarjetas"]):
+                # Solo un nombre que se lee de un golpe: no hay botones
+                # que tocar.
+                instruccion = r"\lblFwInstruccionNombre"
 
         # Para "une" por defecto hacen falta las palabras previas de la
         # semana, no las frases.
@@ -800,11 +1078,12 @@ def generar(dias):
             etiqueta = {
                 "adivina": r"\lblAdivina", "une": r"\lblUne",
                 "encuentra": r"\lblEncuentra", "si_no": r"\lblSiNo",
+                "palmadas": r"\lblPalmadas",
             }[clave[0]]
             texto = clave[1] if clave[0] in ("une", "si_no") else escapar(clave[1])
             claves.append(f"\\claveEntrada{{{num}}}{{{etiqueta}}}{{{texto}}}\n")
 
-        if num == ULTIMO_DIA_TRIMESTRE.get(trimestre) and trimestre in NOMBRE_MEDALLA_TRIMESTRE:
+        if num == ULTIMO_DIA_TRIMESTRE.get(trimestre) and trimestre in PERFIL.nombres_medalla:
             banner = d["actividad"].get("banner")
             if not banner:
                 raise ErrorDeContenido(
@@ -813,9 +1092,9 @@ def generar(dias):
                 )
             piezas.append(PLANTILLA_MEDALLA.substitute(
                 dia=num,
-                titulo=f"¡Medalla de {NOMBRE_MEDALLA_TRIMESTRE[trimestre]}!",
+                titulo=PERFIL.titulo_medalla.format(PERFIL.nombres_medalla[trimestre]),
                 banner=escapar(banner),
-                animo=FRASES.animo_medalla,
+                animo=PERFIL.animo_medalla,
             ))
     return "\n".join(piezas), "".join(claves)
 
@@ -825,6 +1104,9 @@ def comprobar_trazo(dias):
     -- igual que en el cuaderno de frases, pero aquí cada letra es la
     inicial de una palabra que se acaba de leer."""
     letras, _ = datos_trazo()
+    if PERFIL.idioma == "en":
+        # En inglés, las 26 letras: la ñ no está.
+        letras = [l for l in letras if l in "abcdefghijklmnopqrstuvwxyz"]
     trazadas = {d["actividad"]["letra"] for d in dias if d["actividad"]["tipo"] == "traza"}
     faltan = sorted(set(letras) - trazadas)
     if faltan and len(dias) == TOTAL_DIAS:
@@ -835,6 +1117,8 @@ def comprobar_trazo(dias):
 
 def tabla(dias):
     """Resumen por semana, en Markdown, para GITHUB_STEP_SUMMARY."""
+    if PERFIL.idioma == "en":
+        return tabla_en(dias)
     lineas = [
         "| Semana | Trim. | Tema | Lee | Sílabas (máx.) | Estructuras nuevas |",
         "|---|---|---|---|---|---|",
@@ -857,7 +1141,7 @@ def tabla(dias):
             nuevos_semana = set()
             for d in grupo:
                 for palabra, sil in d.get("tarjetas", []):
-                    if palabra.lower() in PALABRAS_GLOBALES:
+                    if palabra.lower() in PERFIL.globales:
                         continue
                     maxima = max(maxima, len(sil))
                     for s in sil:
@@ -872,7 +1156,146 @@ def tabla(dias):
     return "\n".join(lineas)
 
 
+def tabla_en(dias):
+    """La tabla de «First Words»: qué se lee cada semana, cuántos sonidos
+    tiene la palabra más larga y qué grafemas salen por primera vez."""
+    lineas = [
+        "| Semana | Trim. | Tema | Lee | Sonidos (máx.) | Grafemas nuevos |",
+        "|---|---|---|---|---|---|",
+    ]
+    vistos = set()
+    por_semana = {}
+    for d in dias:
+        por_semana.setdefault(d["semana"], []).append(d)
+    for semana, grupo in sorted(por_semana.items()):
+        t = tramo(semana)
+        if "frase" in t:
+            n = [len(d["frase"].split()) for d in grupo if "frase" in d]
+            rango = str(min(n)) if min(n) == max(n) else f"{min(n)}–{max(n)}"
+            lee = f"frase de {rango} palabras"
+            sonidos = "–"
+            nuevos = ""
+        else:
+            lee = f"{t['palabras']} {'palabra' if t['palabras'] == 1 else 'palabras'}/día"
+            maxima = 0
+            nuevos_semana = set()
+            for d in grupo:
+                for _, grafemas in d.get("tarjetas", []):
+                    if grafemas is None:
+                        continue
+                    maxima = max(maxima, len(grafemas))
+                    nuevos_semana |= {g.lower() for g in grafemas}
+            nuevos = " ".join(sorted(nuevos_semana - vistos))
+            vistos |= nuevos_semana
+            sonidos = f"{maxima} (obj. {t['max_sonidos']})"
+        lineas.append(
+            f"| {semana} | {grupo[0]['trimestre']} | {grupo[0]['tema']} | "
+            f"{lee} | {sonidos} | {nuevos} |"
+        )
+    return "\n".join(lineas)
+
+
+# --------------------------------------------------------------------
+# «First Words»: la tabla de sonidos del principio del cuaderno
+# --------------------------------------------------------------------
+
+# El título de cada sección de la tabla (lang/en.tex): una por tramo de
+# la escalera que trae sonidos nuevos.
+TITULOS_SONIDOS = [
+    r"\lblFwSonidosUno", r"\lblFwSonidosDos",
+    r"\lblFwSonidosTres", r"\lblFwSonidosCuatro",
+]
+
+CABECERA_SONIDOS = (
+    "% {nombre}\n"
+    "% GENERADO por tools/gen_palabras.py a partir de tools/fonetica.py\n"
+    "% (EJEMPLOS) y de la escalera de «First Words» (ESCALERA_EN).\n"
+    "% NO EDITAR A MANO -- los cambios se perderán en la siguiente\n"
+    "% ejecución de `make generate`.\n\n"
+)
+
+
+def ejemplo_resaltado(grafema, ejemplo):
+    """La palabra de ejemplo, con las letras de su sonido resaltadas:
+    ('sh', 'ship') -> '\\resalta{sh}ip'; ('a_e', 'cake') ->
+    'c\\resalta{a}k\\resalta{e}' (la e mágica: la vocal y la e del final)."""
+    piezas = []
+    final = ""
+    for g in fonetica.segmentar(ejemplo):
+        if "_" in g:
+            vocal, e = g.split("_")
+            if g.lower() == grafema:
+                vocal, e = r"\resalta{%s}" % vocal, r"\resalta{%s}" % e
+            piezas.append(vocal)
+            final = e
+        elif g.lower() == grafema:
+            piezas.append(r"\resalta{%s}" % g)
+        else:
+            piezas.append(g)
+    return "".join(piezas) + final
+
+
+def generar_sonidos():
+    """La tabla de sonidos de «First Words» (frontmatter/firstwords/
+    sonidos.tex): cada grafema en el tramo de la escalera en que llega,
+    con una palabra de ejemplo (fonetica.EJEMPLOS) que ya se puede leer
+    entonces. Sale de ESCALERA_EN, así que la tabla no puede decir una
+    cosa y la escalera otra: falla si a un grafema le falta su ejemplo,
+    si sobra alguno, o si un ejemplo no cabe en la escalera de su tramo."""
+    piezas = [CABECERA_SONIDOS.format(nombre=f"{PERFIL.ruta}/generated-sonidos.tex")]
+    titulos = iter(TITULOS_SONIDOS)
+    anteriores = frozenset()
+    for t in PERFIL.escalera:
+        if "grafemas" not in t:
+            continue
+        nuevos = t["grafemas"] - anteriores
+        anteriores = t["grafemas"]
+        faltan = sorted(nuevos - set(fonetica.EJEMPLOS))
+        if faltan:
+            raise ErrorDeContenido(
+                "tabla de sonidos: falta una palabra de ejemplo para "
+                f"{', '.join(faltan)} (tools/fonetica.py, EJEMPLOS)"
+            )
+        piezas.append(r"\seccionSonidos{%s}" % next(titulos))
+        for g in (g for g in fonetica.EJEMPLOS if g in nuevos):
+            ejemplo = fonetica.EJEMPLOS[g]
+            comprobar_sonidos(
+                None, ejemplo, t["semanas"][0],
+                f"tabla de sonidos, el ejemplo de «{g}»",
+            )
+            piezas.append(r"\sonido{%s}{%s}" % (
+                g.replace("_", r"\textendash{}"), ejemplo_resaltado(g, ejemplo)
+            ))
+        piezas.append(r"\finSonidos")
+    sobran = sorted(set(fonetica.EJEMPLOS) - anteriores)
+    if sobran:
+        raise ErrorDeContenido(
+            f"tabla de sonidos: {', '.join(sobran)} tiene(n) ejemplo en "
+            "tools/fonetica.py (EJEMPLOS), pero no está(n) en la escalera"
+        )
+    return "\n".join(piezas) + "\n"
+
+
+def perfil_desde_argv(argv):
+    """`--libro firstwords` (o `--libro=firstwords`) -> su Perfil; sin la
+    opción, el cuaderno de primeras palabras en español, como siempre."""
+    nombre = "palabras"
+    for i, arg in enumerate(argv):
+        if arg == "--libro" and i + 1 < len(argv):
+            nombre = argv[i + 1]
+        elif arg.startswith("--libro="):
+            nombre = arg.split("=", 1)[1]
+    if nombre not in PERFILES:
+        raise SystemExit(
+            f"ERROR: libro desconocido {nombre!r} -- los de este generador: "
+            + ", ".join(sorted(PERFILES))
+        )
+    return PERFILES[nombre]
+
+
 def main():
+    global PERFIL
+    PERFIL = perfil_desde_argv(sys.argv[1:])
     check_only = "--check" in sys.argv
     modo_tabla = "--tabla" in sys.argv
 
@@ -881,6 +1304,9 @@ def main():
         validar_dias(dias)
         comprobar_trazo(dias)
         tex, clave = generar(dias)
+        salidas = [(PERFIL.salida_dias, tex), (PERFIL.salida_clave, clave)]
+        if PERFIL.idioma == "en":
+            salidas.append((PERFIL.salida_sonidos, generar_sonidos()))
     except ErrorDeContenido as exc:
         print(f"ERROR: {exc}", file=sys.stderr)
         return 1
@@ -889,23 +1315,30 @@ def main():
         print(tabla(dias))
         return 0
 
-    salidas = [(OUTPUT_FILE, tex), (CLAVE_FILE, clave)]
     if check_only:
         for ruta, contenido in salidas:
             actual = ruta.read_text(encoding="utf-8") if ruta.exists() else None
             if actual != contenido:
                 print(
                     f"DESACTUALIZADO: {ruta} no coincide con "
-                    "content/palabras/q*.json -- ejecuta `make generate`.",
+                    f"{PERFIL.ruta}/q*.json -- ejecuta `make generate`.",
                     file=sys.stderr,
                 )
                 return 1
-        print(f"OK: {len(dias)} días validados, {OUTPUT_FILE.name} y {CLAVE_FILE.name} al día.")
+        obras = ""
+        if PERFIL.dias_escritos:
+            obras = f" (en obras: {len(dias)} de {TOTAL_DIAS} días escritos)"
+        prefijo = "" if PERFIL is PALABRAS else f" ({PERFIL.nombre})"
+        nombres = [ruta.name for ruta, _ in salidas]
+        print(f"OK{prefijo}: {len(dias)} días validados{obras}, "
+              f"{', '.join(nombres[:-1])} y {nombres[-1]} al día.")
         return 0
 
     for ruta, contenido in salidas:
         ruta.write_text(contenido, encoding="utf-8")
-    print(f"Escrito {OUTPUT_FILE} con {len(dias)} días, y {CLAVE_FILE}.")
+    print(f"Escrito {PERFIL.salida_dias} con {len(dias)} días, y {PERFIL.salida_clave}.")
+    if PERFIL.idioma == "en":
+        print(f"Escrito {PERFIL.salida_sonidos}.")
     return 0
 
 

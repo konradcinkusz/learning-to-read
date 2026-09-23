@@ -1,0 +1,12 @@
+% firstwords-bw.tex -- «First Words» sin color, igual que palabras-bw.tex
+% respecto a palabras.tex: mismo body-firstwords.tex, mismos preambles;
+% solo cambia \bookcolor, fijado ANTES de \input{preamble}.
+\documentclass[11pt]{article}
+\def\bookcolor{bw}
+\def\booklang{en}
+\input{preamble}
+\input{preamble-palabras}
+\input{preamble-firstwords}
+\begin{document}
+\input{body-firstwords}
+\end{document}

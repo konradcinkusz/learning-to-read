@@ -1,0 +1,15 @@
+{
+  "_comentario": "Datos de origen para tools/gen_palabras.py --libro firstwords («First Words», el cuaderno de primeras palabras en inglés, ver notes/06-first-words.md). Este fichero SÍ se edita a mano; content/firstwords/generated-*.tex NO (se regeneran con `make generate`). Cada palabra va partida en sus sonidos con guiones («v-a-n», «sh-ee-p»; la e mágica, «c-a_e-k»), y tiene que coincidir con el partido automático de tools/fonetica.py; los nombres que se leen de un golpe (Amy, Toby) van enteros. Los mismos temas, semana a semana, que «Read and Draw» (content/english/). Trimestre 1 (otoño), días 1-65: una palabra al día; semanas 1-5, una letra = un sonido (cat, Pip); desde la semana 6, también ck, ff, ll, ss, zz, gg, x, y, qu.",
+  "dias": [
+    {"dia": 1, "semana": 1, "trimestre": 1, "tema": "New neighbours", "palabras": ["v-a-n"], "actividad": {"tipo": "dibuja", "prompt": "A big van stops next to Lucía's house. Draw the van. What is in it?"}},
+    {"dia": 2, "semana": 1, "trimestre": 1, "tema": "New neighbours", "palabras": ["m-u-m"], "actividad": {"tipo": "completa", "diagrama": "lineas-circulo", "prompt": "The new neighbours are here! Turn the circle into the face of their mum."}},
+    {"dia": 3, "semana": 1, "trimestre": 1, "tema": "New neighbours", "palabras": ["P-i-p"], "actividad": {"tipo": "palmadas", "prompt": "Pip, the green parrot, in his big cage."}},
+    {"dia": 4, "semana": 1, "trimestre": 1, "tema": "New neighbours", "palabras": ["Amy"], "actividad": {"tipo": "une", "prompt": "Amy at her door. She has got curly red hair."}},
+    {"dia": 5, "semana": 1, "trimestre": 1, "tema": "New neighbours", "actividad": {"tipo": "relee", "prompt": "Draw the house next door, with the new neighbours at the windows."}},
+    {"dia": 6, "semana": 2, "trimestre": 1, "tema": "Amy's first day", "palabras": ["b-a-g"], "actividad": {"tipo": "dibuja", "prompt": "Today Amy starts at Lucía's school. Draw her school bag: it is purple, with a yellow star on it."}},
+    {"dia": 7, "semana": 2, "trimestre": 1, "tema": "Amy's first day", "palabras": ["s-i-t"], "actividad": {"tipo": "traza", "letra": "s", "prompt": "Amy and Lucía, sitting side by side in class."}},
+    {"dia": 8, "semana": 2, "trimestre": 1, "tema": "Amy's first day", "palabras": ["p-e-n"], "actividad": {"tipo": "encuentra", "distractores": ["pin", "pan", "hen", "ten", "pet"], "prompt": "three pens: a red one, a blue one and a green one."}},
+    {"dia": 9, "semana": 2, "trimestre": 1, "tema": "Amy's first day", "palabras": ["v-e-t"], "actividad": {"tipo": "adivina", "adivinanza": "I am green, I live in a cage next door, and I say “Hello!” to everyone. Who am I?", "respuesta": "Pip, the parrot."}},
+    {"dia": 10, "semana": 2, "trimestre": 1, "tema": "Amy's first day", "actividad": {"tipo": "repasa", "prompt": "Draw Lucía and Amy at school: two new friends.", "banner": "10 pages read! Wow!"}}
+  ]
+}

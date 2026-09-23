@@ -18,14 +18,18 @@ Lo que sí tiene sentido, y es bienvenido:
   en silencio; el arreglo está documentado en `preamble.tex` junto al
   código, como ejemplo del tipo de problema que merece un *issue* o un PR).
 - **Los generadores** (`tools/gen_days.py`, `tools/gen_palabras.py`,
-  `tools/lupa.py`, `tools/english.py`) y sus validaciones -- por ejemplo, si detectas un
+  `tools/lupa.py`, `tools/english.py`, `tools/fonetica.py`) y sus validaciones -- por ejemplo, si detectas un
   caso que debería fallar la validación y no lo hace, o al revés (una
   tabla lógica con dos soluciones que el generador no detecta, una ruta
   de mapa que llega a otra casilla...).
 - **El silabeo** (`tools/silabas.py`) -- una palabra real que las reglas
   parten mal es exactamente el tipo de error que merece un *issue* (con
   la palabra y el silabeo correcto; si es un caso legítimo que las
-  reglas no cubren, se añade a `EXCEPCIONES` y a `CASOS_PRUEBA`).
+  reglas no cubren, se añade a `EXCEPCIONES` y a `CASOS_PRUEBA`). Lo
+  mismo con el partido en sonidos del inglés (`tools/fonetica.py`): una
+  palabra que `segmentar()` parte mal, o una trampa que no rechaza (una
+  letra que no suena y que tendría botón), va a `EXCEPCIONES`, a
+  `PRUEBA` o a `PRUEBA_TRAMPAS`.
 - **`tools/check_pages.py`** y el invariante "1 día = 1 página" -- si
   encuentras un caso donde se rompe sin que el *build* lo detecte.
 - **CI** (`.github/workflows/`), el `Makefile`, o cualquier parte de la
@@ -41,25 +45,28 @@ Lo que sí tiene sentido, y es bienvenido:
 El repositorio está deliberadamente construido para esto: el motor LaTeX
 (`preamble*.tex`, `lang/es.tex`, `lang/en.tex`, `tools/`) es independiente
 del contenido (`content/*.json`, `content/palabras/*.json`,
-`content/lupa/*.json`, `content/english/*.json`). Si
+`content/lupa/*.json`, `content/english/*.json`,
+`content/firstwords/*.json`). Si
 quieres un cuaderno parecido para otro niño o niña, haz un fork,
 sustituye `content/q1.json` a `q4.json` (frases), `content/palabras/q1.json`
 a `q4.json` (primeras palabras), `content/lupa/q1.json` a `q4.json`
-(Leo con lupa) y/o `content/english/q1.json` a `q4.json` (Read and
-Draw, en inglés) por tus propios personajes, frases y palabras, y
+(Leo con lupa), `content/english/q1.json` a `q4.json` (Read and
+Draw, en inglés) y/o `content/firstwords/q1.json` a `q4.json` (First
+Words, en inglés) por tus propios personajes, frases y palabras, y
 conserva el resto tal cual -- es exactamente el reparto MIT/CC BY-NC-SA de `LICENSE`: el motor
 es tuyo para reutilizar, la historia concreta de esta familia no.
 
 ## Flujo de trabajo
 
 ```sh
-make generate       # content/q*.json, content/{palabras,lupa,english}/q*.json -> .tex generados
+make generate       # content/q*.json, content/{palabras,lupa,english,firstwords}/q*.json -> .tex generados
 make build           # compila el cuaderno de frases en color (main.tex)
 make palabras        # genera, compila y comprueba el de primeras palabras (palabras.tex)
 make lupa            # genera, compila y comprueba Leo con lupa (lupa.tex)
 make english         # genera, compila y comprueba Read and Draw (english.tex)
+make firstwords      # genera, compila y comprueba First Words (firstwords.tex)
 make check            # tools/checklog.py + tools/check_pages.py + tools/gen_days.py --check + tools/metricas.py
-make all-formats      # los cuatro cuadernos, color Y blanco-y-negro -- ejecútalo
+make all-formats      # los cinco cuadernos, color Y blanco-y-negro -- ejecútalo
                        # antes de abrir un PR, es lo mismo que corre el CI
 ```
 
@@ -81,6 +88,14 @@ Las barreras duras que tienen que quedar en verde:
   sílabas (`"pe-lo-ta"`) tiene que coincidir con el silabeo automático
   de `tools/silabas.py`, y no puede usar estructuras de sílaba que su
   semana todavía no admite (una `rr` en otoño, por ejemplo).
+- **La escalera de sonidos** de First Words (`tools/gen_palabras.py
+  --libro firstwords --check`, ver `notes/06-first-words.md`): cada
+  palabra escrita a mano con sus sonidos (`"sh-ee-p"`) tiene que
+  coincidir con el partido automático de `tools/fonetica.py`, usar solo
+  los sonidos que su semana ya admite, no ser una trampa (*house*,
+  *knee*) ni una *tricky word*; en verano, cada palabra de una frase
+  tiene que haberse leído antes. Y la tabla de sonidos del principio,
+  generada de la misma escalera, sin ningún sonido sin ejemplo.
 - **La escalera de progresión** (`tools/metricas.py`, contra
   `content/progresion.json` -- ver `notes/02-revision-y-plan.md`, Parte
   C): palabras por página y frase más larga no pueden superar el

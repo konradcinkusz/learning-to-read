@@ -7,15 +7,17 @@ LUPA   = lupa
 LUPABW = lupa-bw
 EN     = english
 ENBW   = english-bw
+FW     = firstwords
+FWBW   = firstwords-bw
 
-.PHONY: all all-formats palabras lupa english generate \
+.PHONY: all all-formats palabras lupa english firstwords generate \
         build build-bw build-palabras build-palabras-bw build-lupa build-lupa-bw \
-        build-english build-english-bw \
+        build-english build-english-bw build-firstwords build-firstwords-bw \
         check check-bw check-palabras check-palabras-bw check-lupa check-lupa-bw \
-        check-english check-english-bw \
+        check-english check-english-bw check-firstwords check-firstwords-bw \
         clean watch
 
-# Cuatro cuadernos -- tres niveles en español y uno en inglés --, el
+# Cinco cuadernos -- tres niveles en español y dos en inglés --, el
 # mismo motor:
 #   - palabras.tex / palabras-bw.tex -- nivel 1, primeras palabras
 #     (content/palabras/q*.json, tools/gen_palabras.py);
@@ -25,14 +27,17 @@ ENBW   = english-bw
 #     (content/lupa/q*.json, tools/gen_days.py --libro lupa);
 #   - english.tex / english-bw.tex   -- "Read and Draw", en inglés, un
 #     nivel por debajo de "Leo con lupa"
-#     (content/english/q*.json, tools/gen_days.py --libro english).
+#     (content/english/q*.json, tools/gen_days.py --libro english);
+#   - firstwords.tex / firstwords-bw.tex -- «First Words», las primeras
+#     palabras en inglés, muy por debajo de "Read and Draw"
+#     (content/firstwords/q*.json, tools/gen_palabras.py --libro firstwords).
 # El color y el blanco-y-negro de cada uno comparten body y contenido
 # generado -- lo único que cambia es \bookcolor, fijado antes de
 # \input{preamble} (ver preamble.tex).
 # `all` sigue siendo solo el cuaderno de frases en color, por
-# compatibilidad; `palabras`, `lupa` y `english` son lo mismo para los
-# otros tres, y `all-formats` compila y comprueba los ocho PDF -- es lo
-# que corre el CI.
+# compatibilidad; `palabras`, `lupa`, `english` y `firstwords` son lo
+# mismo para los otros cuatro, y `all-formats` compila y comprueba los
+# diez PDF -- es lo que corre el CI.
 all: generate build check
 
 palabras: generate build-palabras check-palabras
@@ -41,16 +46,20 @@ lupa: generate build-lupa check-lupa
 
 english: generate build-english check-english
 
+firstwords: generate build-firstwords check-firstwords
+
 all-formats: generate build check build-bw check-bw \
              build-palabras check-palabras build-palabras-bw check-palabras-bw \
              build-lupa check-lupa build-lupa-bw check-lupa-bw \
-             build-english check-english build-english-bw check-english-bw
+             build-english check-english build-english-bw check-english-bw \
+             build-firstwords check-firstwords build-firstwords-bw check-firstwords-bw
 
 generate:
 	python3 tools/gen_days.py
 	python3 tools/gen_palabras.py
 	python3 tools/gen_days.py --libro lupa
 	python3 tools/gen_days.py --libro english
+	python3 tools/gen_palabras.py --libro firstwords
 
 build:
 	$(LATEX) $(MAIN).tex
@@ -75,6 +84,12 @@ build-english:
 
 build-english-bw:
 	$(LATEX) $(ENBW).tex
+
+build-firstwords:
+	$(LATEX) $(FW).tex
+
+build-firstwords-bw:
+	$(LATEX) $(FWBW).tex
 
 check:
 	python3 tools/checklog.py $(MAIN).log
@@ -116,6 +131,16 @@ check-english-bw:
 	python3 tools/checklog.py $(ENBW).log
 	python3 tools/check_pages.py $(ENBW).aux
 
+check-firstwords:
+	python3 tools/checklog.py $(FW).log
+	python3 tools/check_pages.py $(FW).aux
+	python3 tools/fonetica.py --prueba
+	python3 tools/gen_palabras.py --libro firstwords --check
+
+check-firstwords-bw:
+	python3 tools/checklog.py $(FWBW).log
+	python3 tools/check_pages.py $(FWBW).aux
+
 clean:
 	latexmk -C $(MAIN).tex
 	latexmk -C $(BW).tex
@@ -125,10 +150,14 @@ clean:
 	latexmk -C $(LUPABW).tex
 	latexmk -C $(EN).tex
 	latexmk -C $(ENBW).tex
+	latexmk -C $(FW).tex
+	latexmk -C $(FWBW).tex
 	rm -f content/generated-days.tex content/generated-clave.tex
 	rm -f content/palabras/generated-days.tex content/palabras/generated-clave.tex
 	rm -f content/lupa/generated-days.tex content/lupa/generated-clave.tex
 	rm -f content/english/generated-days.tex content/english/generated-clave.tex
+	rm -f content/firstwords/generated-days.tex content/firstwords/generated-clave.tex \
+	      content/firstwords/generated-sonidos.tex
 
 watch:
 	$(LATEX) -pvc $(MAIN).tex

@@ -1,16 +1,18 @@
 % lang/en.tex
 % -----------------------------------------------------------------------
-% Todas las cadenas del cuaderno en inglés, "Read and Draw" (english.tex,
-% ver notes/05-english.md), en un solo sitio -- el equivalente de
-% lang/es.tex para este libro. preamble.tex carga uno u otro según
-% \booklang (lo fija english.tex antes de \input{preamble}).
+% Todas las cadenas de los cuadernos en inglés -- "Read and Draw"
+% (english.tex, ver notes/05-english.md) y «First Words» (firstwords.tex,
+% ver notes/06-first-words.md) --, en un solo sitio: el equivalente de
+% lang/es.tex. preamble.tex carga uno u otro según \booklang (lo fija
+% cada .tex raíz antes de \input{preamble}).
 %
-% Dos bloques: primero, las mismas etiquetas que define lang/es.tex para
+% Tres bloques: primero, las mismas etiquetas que define lang/es.tex para
 % las piezas compartidas (la cabecera de cada día, el pie, las cajas de
-% preamble.tex y de preamble-lupa.tex) -- todas, aunque este cuaderno no
-% use alguna de esas cajas, para que ninguna macro compartida se quede
-% sin definir en inglés. Después, lo propio de "Read and Draw" (prefijo
-% \lblIng...).
+% preamble.tex, preamble-lupa.tex y preamble-palabras.tex) -- todas,
+% aunque un cuaderno no use alguna de esas cajas, para que ninguna macro
+% compartida se quede sin definir en inglés. Después, lo propio de "Read
+% and Draw" (prefijo \lblIng...) y lo de «First Words» (las macros
+% \lblPal... del cuaderno de primeras palabras, y \lblFw...).
 % -----------------------------------------------------------------------
 
 % Total de días del cuaderno -- tools/gen_days.py --check comprueba que
@@ -31,16 +33,19 @@
 \newcommand{\lblLeidoConAyuda}{with help}
 \newcommand{\lblLeidoConDificultad}{with difficulty}
 
-% Títulos de las cajas de preamble.tex y preamble-lupa.tex (este cuaderno
-% no las usa: sus actividades son las de tools/english.py, más abajo).
+% Títulos de las cajas de preamble.tex, preamble-lupa.tex y
+% preamble-palabras.tex. "Read and Draw" no las usa (sus actividades son
+% las de tools/english.py, más abajo); «First Words» sí, las del cuaderno
+% de primeras palabras (Draw, Finish the picture, Trace, Riddle, Read
+% again, Look back...).
 \newcommand{\lblDibuja}{Draw}
-\newcommand{\lblCompleta}{Complete}
+\newcommand{\lblCompleta}{Finish the picture}
 \newcommand{\lblCopia}{Copy}
 \newcommand{\lblResponde}{Answer}
 \newcommand{\lblRelaciona}{Match}
 \newcommand{\lblAdivina}{Riddle}
 \newcommand{\lblCrea}{Create}
-\newcommand{\lblRepasa}{Review}
+\newcommand{\lblRepasa}{Look back}
 \newcommand{\lblRodea}{Circle}
 \newcommand{\lblVerdaderoFalso}{True or false}
 \newcommand{\lblBusca}{Find}
@@ -108,3 +113,69 @@
 \newcommand{\lblIngNivelPortada}{Learning to read \textperiodcentered\ English}
 \newcommand{\lblIngSubtituloPortada}{A page to read in English every day -- and something to draw}
 \newcommand{\lblIngSubtituloPortadaMetodo}{A daily reading book for children who can read in Spanish and are learning English: short texts with long sentences, and every day something to find in the text and draw}
+
+% -----------------------------------------------------------------------
+% «First Words» (firstwords.tex, ver notes/06-first-words.md): el
+% cuaderno de primeras palabras en inglés. Usa las cajas y las plantillas
+% del cuaderno de primeras palabras en español (preamble-palabras.tex,
+% tools/gen_palabras.py), así que aquí van, en inglés, las mismas macros
+% que define lang/es.tex para ese cuaderno (\lblPal..., \lblTrazoDe...).
+% Las instrucciones son para el adulto (pequeñas y en gris): quien lee,
+% todavía no las puede leer.
+% -----------------------------------------------------------------------
+
+% Instrucción de lectura (título de la caja verde), una por parte del
+% año: en otoño, invierno y primavera, sonido a sonido y luego de
+% corrido; en verano, la frase, señalando cada palabra.
+\newcommand{\lblPalInstruccionUno}{Touch each button and say its sound. Then read the word}
+\newcommand{\lblPalInstruccionDos}{Touch each button and say its sound. Then read the two words}
+\newcommand{\lblPalInstruccionTres}{Read the three words: sound by sound, then fast}
+\newcommand{\lblPalInstruccionCuatro}{Read the sentence, pointing to each word}
+\newcommand{\lblPalInstruccionSemana}{The words of the week: read them again}
+\newcommand{\lblPalInstruccionSemanaFrases}{The sentences of the week: read them again}
+\newcommand{\lblPalMarcaSemana}{Tick each one you can read on your own.}
+
+% Títulos de las actividades de preamble-palabras.tex que no tiene el
+% cuaderno de frases.
+\newcommand{\lblEscribe}{Write}
+\newcommand{\lblEncuentra}{Find it}
+\newcommand{\lblPalmadas}{Sounds}
+\newcommand{\lblUne}{Match}
+\newcommand{\lblSiNo}{Yes or no?}
+
+% Lo que se le dice a quien lee en cada actividad (lo lee el adulto).
+\newcommand{\lblPalInstruccionCompleta}{Turn these lines into a drawing.}
+\newcommand{\lblPalInstruccionEscribe}{Trace the word with a pencil, slowly, inside the letters. Then write it on the line.}
+\newcommand{\lblPalInstruccionEncuentra}{Circle this word every time you see it:}
+\newcommand{\lblPalInstruccionPalmadas}{Read each word one sound at a time. Colour a circle for each sound.}
+\newcommand{\lblPalInstruccionAdivina}{A grown-up reads you the riddle. Draw the answer.}
+\newcommand{\lblPalInstruccionAdivinaEscribe}{A grown-up reads you the riddle. Draw the answer and write it on the line.}
+\newcommand{\lblPalInstruccionUne}{Draw a line from each word to the same word in CAPITAL LETTERS.}
+\newcommand{\lblPalInstruccionSiNo}{Read each sentence. Circle \lblSi\ or \lblNo.}
+\newcommand{\lblPalAhoraDibuja}{Now draw:}
+
+% "Traza": la letra y una palabra leída ese día que la lleva -- "P as in
+% Pip", y también "X as in box" (en inglés casi ninguna palabra que se
+% pueda leer empieza por x).
+\newcommand{\lblTrazoDe}{as in}
+\newcommand{\lblInstruccionTrazo}{Trace the dots with your finger or a pencil. Then write the letter on the line.}
+
+% La tarjeta de un nombre que se lee de un golpe (Amy, Toby: sin
+% botones), cuando es la única del día.
+\newcommand{\lblFwInstruccionNombre}{A name to read in one go, like your own name}
+
+% La tabla de sonidos del principio (frontmatter/firstwords/sonidos.tex;
+% las secciones, una por tramo de la escalera, las genera
+% tools/gen_palabras.py).
+\newcommand{\lblFwSonidosTitulo}{The sounds in this book}
+\newcommand{\lblFwSonidosIntro}{Every sound in the book, in the order it comes, with a word that has it. Say the sound, not the name of the letter.}
+\newcommand{\lblFwSonidosUno}{Autumn: one letter, one sound}
+\newcommand{\lblFwSonidosDos}{Autumn, from week 6: double letters, x, y and qu}
+\newcommand{\lblFwSonidosTres}{Winter: two or three letters, one sound}
+\newcommand{\lblFwSonidosCuatro}{Spring: new ways to write the sounds, and the magic e}
+
+% Portada.
+\newcommand{\lblFwTituloPortada}{First Words}
+\newcommand{\lblFwNivelPortada}{Learning to read \textperiodcentered\ English}
+\newcommand{\lblFwSubtituloPortada}{One English word a day -- and a drawing}
+\newcommand{\lblFwSubtituloPortadaMetodo}{A daily reading book for children who are starting to read in English: one word a day, read sound by sound -- the step before Read and Draw}

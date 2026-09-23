@@ -17,6 +17,9 @@ content/lupa/generated-days.tex
 content/lupa/generated-clave.tex
 content/english/generated-days.tex
 content/english/generated-clave.tex
+content/firstwords/generated-days.tex
+content/firstwords/generated-clave.tex
+content/firstwords/generated-sonidos.tex
 
 # Python
 __pycache__/
