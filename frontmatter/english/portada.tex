@@ -1,0 +1,38 @@
+% frontmatter/english/portada.tex -- página de título de "Read and Draw",
+% el cuaderno en inglés. El icono junta los dos verbos del título: el
+% libro abierto de la portada del cuaderno de frases, y encima el lápiz
+% de "Read and draw" (\icoLapiz, preamble-english.tex), en el azul de
+% dibujar.
+\begin{center}
+\vspace*{2.6cm}
+
+\begin{tikzpicture}[line width=1.6pt, line cap=round, line join=round]
+  \begin{scope}[color=colorLectura]
+  \draw (-1.6,0) -- (0,0.35) -- (1.6,0) -- (1.6,-1.9) -- (0,-1.55) -- (-1.6,-1.9) -- cycle;
+  \draw (0,0.35) -- (0,-1.55);
+  \draw (-1.25,-0.3) -- (-0.25,-0.15);
+  \draw (-1.25,-0.7) -- (-0.25,-0.55);
+  \draw (0.25,-0.15) -- (1.25,-0.3);
+  \draw (0.25,-0.55) -- (1.25,-0.7);
+  \end{scope}
+  \begin{scope}[color=colorDibuja, shift={(0.55,-1.35)}, scale=1.9, line width=1.9pt]
+  \fill[white] (0.08,0.08) -- (0.14,0.36) -- (0.7,0.92) -- (0.92,0.7) -- (0.36,0.14) -- cycle;
+  \draw (0.08,0.08) -- (0.14,0.36) -- (0.7,0.92) -- (0.92,0.7) -- (0.36,0.14) -- cycle;
+  \draw (0.14,0.36) -- (0.36,0.14);
+  \draw (0.6,0.82) -- (0.82,0.6);
+  \fill (0.08,0.08) -- (0.1,0.19) -- (0.19,0.1) -- cycle;
+  \end{scope}
+\end{tikzpicture}
+
+\vspace{10mm}
+{\large\color{colorGris} \lblIngNivelPortada}\\[4mm]
+{\fontsize{44}{50}\selectfont\bfseries\color{colorLectura} \lblIngTituloPortada}\\[6mm]
+{\Large\color{colorGris} \lblIngSubtituloPortada}\\[4mm]
+{\normalsize\color{colorGris}\parbox{0.8\linewidth}{\centering \lblIngSubtituloPortadaMetodo}}
+
+\vspace{16mm}
+{\large \lblPortadaNombre:\ \rule{75mm}{0.4pt}}\\[6mm]
+{\large \lblPortadaCurso:\ \rule{75mm}{0.4pt}}
+\end{center}
+\vspace*{\fill}
+\newpage

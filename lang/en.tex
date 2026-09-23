@@ -1,0 +1,110 @@
+% lang/en.tex
+% -----------------------------------------------------------------------
+% Todas las cadenas del cuaderno en inglés, "Read and Draw" (english.tex,
+% ver notes/05-english.md), en un solo sitio -- el equivalente de
+% lang/es.tex para este libro. preamble.tex carga uno u otro según
+% \booklang (lo fija english.tex antes de \input{preamble}).
+%
+% Dos bloques: primero, las mismas etiquetas que define lang/es.tex para
+% las piezas compartidas (la cabecera de cada día, el pie, las cajas de
+% preamble.tex y de preamble-lupa.tex) -- todas, aunque este cuaderno no
+% use alguna de esas cajas, para que ninguna macro compartida se quede
+% sin definir en inglés. Después, lo propio de "Read and Draw" (prefijo
+% \lblIng...).
+% -----------------------------------------------------------------------
+
+% Total de días del cuaderno -- tools/gen_days.py --check comprueba que
+% coincide con el total del libro (ver lang/es.tex).
+\newcommand{\totaldias}{260}
+
+\newcommand{\lblFecha}{Date}
+\newcommand{\lblNotas}{Notes}
+\newcommand{\lblDia}{Day}
+\newcommand{\lblSemana}{Week}
+% Las cuatro partes del año son las cuatro estaciones, no los tres
+% "terms" del curso escolar inglés -- por eso "Part", y no "Term".
+\newcommand{\lblTrimestre}{Part}
+\newcommand{\lblRespuesta}{Answer}
+
+\newcommand{\lblLeido}{Read}
+\newcommand{\lblLeidoSola}{alone}
+\newcommand{\lblLeidoConAyuda}{with help}
+\newcommand{\lblLeidoConDificultad}{with difficulty}
+
+% Títulos de las cajas de preamble.tex y preamble-lupa.tex (este cuaderno
+% no las usa: sus actividades son las de tools/english.py, más abajo).
+\newcommand{\lblDibuja}{Draw}
+\newcommand{\lblCompleta}{Complete}
+\newcommand{\lblCopia}{Copy}
+\newcommand{\lblResponde}{Answer}
+\newcommand{\lblRelaciona}{Match}
+\newcommand{\lblAdivina}{Riddle}
+\newcommand{\lblCrea}{Create}
+\newcommand{\lblRepasa}{Review}
+\newcommand{\lblRodea}{Circle}
+\newcommand{\lblVerdaderoFalso}{True or false}
+\newcommand{\lblBusca}{Find}
+\newcommand{\lblOrdena}{Put in order}
+\newcommand{\lblRelee}{Read again}
+\newcommand{\lblTraza}{Trace}
+\newcommand{\lblVerdadero}{T}
+\newcommand{\lblFalso}{F}
+\newcommand{\lblSalida}{START}
+\newcommand{\lblLosDos}{both}
+\newcommand{\lblSi}{yes}
+\newcommand{\lblNo}{no}
+
+\newcommand{\lblPortadaNombre}{Name}
+\newcommand{\lblPortadaCurso}{Class}
+
+% -----------------------------------------------------------------------
+% "Read and Draw" (preamble-english.tex, tools/english.py).
+% -----------------------------------------------------------------------
+
+% Instrucción de lectura (título de la caja verde), una por parte del año
+% -- igual que en los cuadernos en español, cambia a medida que cambia
+% lo que se espera: leer acompañada al principio, en silencio al final.
+\newcommand{\lblIngInstruccionUno}{Read it with a grown-up. Then read it again by yourself}
+\newcommand{\lblIngInstruccionDos}{Read it aloud, slowly. Then read it again}
+\newcommand{\lblIngInstruccionTres}{Read it aloud, like a storyteller}
+\newcommand{\lblIngInstruccionCuatro}{Read it first in your head. Then read it aloud}
+
+% Título de cada actividad (tools/english.py, TITULO). En la caja van
+% detrás de su icono (preamble-english.tex); en la clave de respuestas,
+% solos.
+\newcommand{\lblIngDibuja}{Read and draw}
+\newcommand{\lblIngColorea}{Read and colour}
+\newcommand{\lblIngDonde}{Where is it?}
+\newcommand{\lblIngSiNo}{Yes or no?}
+\newcommand{\lblIngRodea}{Read and circle}
+\newcommand{\lblIngRelaciona}{Read and match}
+\newcommand{\lblIngMitades}{Match the halves}
+\newcommand{\lblIngOrdena}{What happened first?}
+\newcommand{\lblIngHuecos}{The missing words}
+\newcommand{\lblIngBusca}{Word hunt}
+\newcommand{\lblIngAdivina}{Riddle}
+\newcommand{\lblIngVinetas}{Draw the story}
+\newcommand{\lblIngRepasa}{Look back}
+\newcommand{\lblIngCrea}{Your turn}
+
+% Lo que se lee dentro de cada actividad: frases cortas, con las mismas
+% palabras de la página "The words in this book".
+\newcommand{\lblIngCompruebaDibujo}{Read the text again. Is it in your drawing?}
+\newcommand{\lblIngRotula}{Write these words in your drawing:}
+\newcommand{\lblIngDibujaEsto}{Draw:}
+\newcommand{\lblIngInstruccionSiNo}{Read and tick: yes or no?}
+\newcommand{\lblIngInstruccionRodea}{Read and circle the right answer.}
+\newcommand{\lblIngInstruccionRelaciona}{Read and match. Draw lines.}
+\newcommand{\lblIngInstruccionMitades}{Find these sentences in the text. Draw lines to join the two halves.}
+\newcommand{\lblIngInstruccionOrdena}[1]{Put the story in order. Write #1.}
+\newcommand{\lblIngInstruccionHuecos}{Find these sentences in the text. Write the missing words.}
+\newcommand{\lblIngDibujaRespuesta}{Draw the answer here.}
+\newcommand{\lblIngRespuestaAdivina}{The answer is:}
+\newcommand{\lblIngInstruccionRepasa}{Can you remember? Tick the ones you know.}
+\newcommand{\lblIngY}{and}
+
+% Portada.
+\newcommand{\lblIngTituloPortada}{Read and Draw}
+\newcommand{\lblIngNivelPortada}{Learning to read \textperiodcentered\ English}
+\newcommand{\lblIngSubtituloPortada}{A page to read in English every day -- and something to draw}
+\newcommand{\lblIngSubtituloPortadaMetodo}{A daily reading book for children who can read in Spanish and are learning English: short texts with long sentences, and every day something to find in the text and draw}

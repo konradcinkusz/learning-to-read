@@ -1,0 +1,232 @@
+{
+  "_comentario": "'Read and Draw', el cuaderno en inglés. Datos de origen para tools/gen_days.py --libro english. Este fichero SI se edita a mano; content/english/generated-days.tex NO (se regenera con `make generate`). Parte 1 (otoño): días 1-65, semanas 1-13, en presente. Hilo: los vecinos nuevos de Londres -- ver notes/05-english.md.",
+  "personajes": {
+    "Lucía": "protagonista, 7 años (cumple 8 en la semana 9)",
+    "Dani": "su hermano, 5 años; le encantan los dinosaurios",
+    "Toby": "el perro de la familia: marrón, de orejas largas, con su pelota roja",
+    "Mum y Dad": "los padres",
+    "Grandma Rosa": "la abuela, la madre de Mum",
+    "Amy": "la vecina nueva, de Londres; 7 años, pelo rojo y rizado; cuando no sabe una palabra, la dibuja",
+    "Sam": "el hermano de Amy, 5 años; también le encantan los dinosaurios",
+    "Mr y Mrs Brown": "los padres de Amy y Sam; Mrs Brown es veterinaria, Mr Brown cocina",
+    "Pip": "el loro de los Brown: verde, alas azules, cola roja, pico amarillo; habla",
+    "Marta": "la maestra de Lucía (y de Amy)"
+  },
+  "dias": [
+    {
+      "dia": 1,
+      "semana": 1,
+      "trimestre": 1,
+      "tema": "New neighbours",
+      "texto": [
+        "A big white van stops next to Lucía's house.",
+        "Two men take out a blue sofa and three boxes.",
+        "Lucía looks out of her window. She is happy because new neighbours are coming!"
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Draw the van next to Lucía's house. Draw the sofa and the boxes too.",
+        "comprueba": [
+          "What colour is the van?",
+          "What colour is the sofa?",
+          "How many boxes are there?"
+        ],
+        "clave": "A big white van; a blue sofa; three boxes."
+      }
+    },
+    {
+      "dia": 2,
+      "semana": 1,
+      "trimestre": 1,
+      "tema": "New neighbours",
+      "texto": [
+        "In the afternoon a green car arrives.",
+        "A man, a woman and two children get out.",
+        "The girl has got curly red hair. The boy has got a toy dinosaur that he loves."
+      ],
+      "actividad": {
+        "tipo": "si_no",
+        "afirmaciones": [
+          "The car is green.",
+          "Three children get out of the car.",
+          "The girl has got long black hair.",
+          "The boy has got a toy dinosaur."
+        ],
+        "respuestas": ["yes", "no", "no", "yes"]
+      }
+    },
+    {
+      "dia": 3,
+      "semana": 1,
+      "trimestre": 1,
+      "tema": "New neighbours",
+      "texto": [
+        "The woman takes out a big cage.",
+        "In the cage, there is a green parrot. It has got blue wings, a red tail and a yellow beak.",
+        "Lucía laughs when the parrot says “Hello!”"
+      ],
+      "actividad": {
+        "tipo": "colorea",
+        "prompt": "Colour the parrot. Read the text to find the colours.",
+        "dibujo": "loro",
+        "clave": "A green parrot with blue wings, a red tail and a yellow beak."
+      }
+    },
+    {
+      "dia": 4,
+      "semana": 1,
+      "trimestre": 1,
+      "tema": "New neighbours",
+      "texto": [
+        "Mum takes a cake to the new neighbours.",
+        "The girl who opens the door says: “I'm Amy.”",
+        "Her brother is Sam and the parrot is Pip. They come from London, so they speak English."
+      ],
+      "actividad": {
+        "tipo": "relaciona",
+        "instruccion": "Who is it? Read and match.",
+        "pares": [
+          ["Amy", "opens the door"],
+          ["Sam", "is Amy's brother"],
+          ["Pip", "is a parrot"],
+          ["Mum", "takes a cake"]
+        ]
+      }
+    },
+    {
+      "dia": 5,
+      "semana": 1,
+      "trimestre": 1,
+      "tema": "New neighbours",
+      "texto": [
+        "That night, Lucía can't sleep.",
+        "She thinks about Amy, who lives next door now.",
+        "Amy speaks English and Lucía knows some English from school.",
+        "“We can be friends,” she thinks, and she smiles."
+      ],
+      "actividad": {
+        "tipo": "vinetas",
+        "instruccion": "Draw the story of this week: the beginning, the middle and the end.",
+        "pies": [
+          "A big white van stops next door.",
+          "A green parrot says “Hello!”",
+          "Mum takes a cake to the new neighbours."
+        ]
+      }
+    },
+    {
+      "dia": 6,
+      "semana": 2,
+      "trimestre": 1,
+      "tema": "Amy's first day",
+      "texto": [
+        "On Monday, Amy starts at Lucía's school.",
+        "She has got a purple school bag with two badges. One is a yellow star and one is a black cat.",
+        "Amy sits next to Lucía, who helps her."
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Draw Amy's school bag.",
+        "comprueba": [
+          "What colour is the bag?",
+          "How many badges has it got?",
+          "What are the badges, and what colour are they?"
+        ],
+        "clave": "A purple school bag with two badges: a yellow star and a black cat."
+      }
+    },
+    {
+      "dia": 7,
+      "semana": 2,
+      "trimestre": 1,
+      "tema": "Amy's first day",
+      "texto": [
+        "Amy doesn't speak Spanish yet, so the first day is hard.",
+        "When she doesn't know a word, she draws it!",
+        "She draws a pencil, a clock and a sandwich. Lucía tells her the words in Spanish."
+      ],
+      "actividad": {
+        "tipo": "rodea",
+        "preguntas": [
+          {
+            "pregunta": "What does Amy do when she doesn't know a word?",
+            "opciones": ["she sings it", "she draws it", "she cries"],
+            "solucion": "she draws it"
+          },
+          {
+            "pregunta": "What does Amy draw first?",
+            "opciones": ["a clock", "a sandwich", "a pencil"],
+            "solucion": "a pencil"
+          },
+          {
+            "pregunta": "Who tells Amy the words in Spanish?",
+            "opciones": ["Marta", "Lucía", "Dani"],
+            "solucion": "Lucía"
+          }
+        ]
+      }
+    },
+    {
+      "dia": 8,
+      "semana": 2,
+      "trimestre": 1,
+      "tema": "Amy's first day",
+      "texto": [
+        "At break time, Lucía and Amy sit on a bench.",
+        "Amy has got a sandwich that her dad makes every day. Lucía has got an apple because she loves fruit.",
+        "They share and laugh a lot."
+      ],
+      "actividad": {
+        "tipo": "mitades",
+        "mitades": [
+          ["Amy has got a sandwich", "that her dad makes every day."],
+          ["Lucía has got an apple", "because she loves fruit."],
+          ["Amy sits next to Lucía,", "who helps her."],
+          ["When she doesn't know a word,", "she draws it!"]
+        ]
+      }
+    },
+    {
+      "dia": 9,
+      "semana": 2,
+      "trimestre": 1,
+      "tema": "Amy's first day",
+      "texto": [
+        "After school, Amy's mum is at the gate.",
+        "She is a vet, so she helps sick animals.",
+        "Amy says that Pip is happy in the new house. “He says hello to everyone!” she laughs."
+      ],
+      "actividad": {
+        "tipo": "huecos",
+        "frases": [
+          "She has got a ___ school bag with two badges.",
+          "Amy's mum is at the ___.",
+          "She is a ___, so she helps sick animals.",
+          "Amy says that ___ is happy in the new house."
+        ],
+        "soluciones": ["purple", "gate", "vet", "Pip"]
+      }
+    },
+    {
+      "dia": 10,
+      "semana": 2,
+      "trimestre": 1,
+      "tema": "Amy's first day",
+      "texto": [
+        "On Friday, the class makes a big poster.",
+        "It says “Welcome, Amy!” in English and in Spanish.",
+        "Amy is very happy because now she has got a new friend. Her name is Lucía!"
+      ],
+      "actividad": {
+        "tipo": "repasa",
+        "checklist": [
+          "I know the colour of Amy's school bag.",
+          "I know what Amy does when she doesn't know a word.",
+          "I know what Amy's mum does."
+        ],
+        "prompt": "Now draw you and your best friend at school.",
+        "banner": "10 pages read! Well done!"
+      }
+    }
+  ]
+}

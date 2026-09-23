@@ -1,0 +1,176 @@
+% preamble-english.tex
+% -----------------------------------------------------------------------
+% Lo propio de "Read and Draw" (english.tex, english-bw.tex), el cuaderno
+% en inglés -- ver notes/05-english.md. Se carga DESPUÉS de preamble.tex
+% (con \booklang = en: babel en inglés británico y las cadenas de
+% lang/en.tex) y carga a su vez preamble-lupa.tex: este cuaderno es un
+% nivel por debajo de "Leo con lupa" y comparte con él la página entera
+% -- la cabecera, el pie "Day N / 260", la caja de actividad que llena
+% lo que queda de página, el texto en párrafos con sus notas y listas.
+% Aquí solo lo que cambia:
+%
+%   - el tamaño del texto del día (\fuenteIngles): textos más cortos que
+%     en "Leo con lupa", en un idioma que todavía se está aprendiendo --
+%     letra más grande, de 20 a 17 pt;
+%   - la caja de actividad (actividadIngles): la misma que actividadLupa,
+%     con la letra de dentro más grande (15 pt, lo que lee la niña);
+%   - las piezas de las actividades de tools/english.py: sí o no, rodear,
+%     unir, los huecos con su caja de palabras, los dibujos para colorear
+%     y las escenas donde dibujar (diagrams/english/);
+%   - un icono por actividad, delante del título de su caja y en la
+%     página "The words in this book" (frontmatter/english/palabras.tex):
+%     quien empieza a leer en inglés reconoce antes un lápiz que la
+%     palabra "draw".
+% -----------------------------------------------------------------------
+\input{preamble-lupa}
+\usetikzlibrary{arrows.meta, calc}
+
+% Tamaño del texto del día, según la parte del año (tools/libros.py,
+% ENGLISH): de 30-35 palabras en otoño a 60-75 en verano.
+\newcommand{\fuenteIngles}[1]{%
+  \ifcase#1\relax
+  \or \fontsize{20}{27}\selectfont
+  \or \fontsize{19}{25.5}\selectfont
+  \or \fontsize{18}{24}\selectfont
+  \or \fontsize{17}{23}\selectfont
+  \fi
+}
+
+% Todo lo que la niña lee dentro de una actividad.
+\newcommand{\letraActividadIngles}{\fontsize{15}{20}\selectfont}
+
+% La caja de todas las actividades: actividadLupa (preamble-lupa.tex, ver
+% allí por qué height fill + height plus) con la letra de este cuaderno.
+\newtcolorbox{actividadIngles}[2]{cajabase,
+  colback=#1Claro, colframe=#1, colbacktitle=#1, title={#2},
+  height fill, height plus=100cm, space to upper, segmentation hidden, middle=1mm,
+  fontupper=\letraActividadIngles, fontlower=\letraActividadIngles,
+  before upper={\hyphenpenalty=10000\exhyphenpenalty=10000},
+  before lower={\hyphenpenalty=10000\exhyphenpenalty=10000}}
+
+% --- piezas de las actividades ---------------------------------------
+
+% La instrucción de cada actividad: en inglés, corta y en negrita -- la
+% lee la niña, no el adulto (en "Leo con lupa" iba en pequeño y gris).
+\newcommand{\instruccionIng}[1]{{\bfseries #1\par}\vspace{2.5mm}}
+
+% Casilla para marcar, más grande que \casillaMarca (la letra es más
+% grande, y la mano que marca, más pequeña).
+\newcommand{\casillaIng}{\raisebox{-0.4ex}{\framebox[5.5mm][c]{\rule{0pt}{4.4mm}}}}
+
+% La lista para comprobar un dibujo o para repasar (como listaRepaso de
+% preamble.tex), con la casilla grande.
+\newenvironment{listaComprueba}{%
+  \begin{itemize}[label=\casillaIng, leftmargin=9mm, itemsep=2.5mm, topsep=2mm]
+}{%
+  \end{itemize}
+}
+
+% Sí o no: la frase a la izquierda y las dos casillas a la derecha.
+\newcommand{\filaSiNo}[1]{\par\vspace{7mm}\noindent
+  \begin{tabularx}{\linewidth}{@{}X r@{}}#1 & \lblSi\ \casillaIng\quad\lblNo\ \casillaIng\end{tabularx}}
+
+% Rodea: las opciones, grandes y separadas, debajo de su pregunta.
+\newcommand{\opcionesRodea}[1]{\par\vspace{3mm}{\centering\fontsize{18}{24}\selectfont #1\par}\vspace{7mm}}
+\newcommand{\separaOpciones}{\hspace{16mm plus 8mm}}
+
+% Une (relaciona, mitades): un punto al final de cada lado, pegado al
+% texto (al final de la última línea a la izquierda, al principio de la
+% primera a la derecha), para trazar la línea de punto a punto.
+\newcommand{\puntoUne}{\raisebox{0.35ex}{\tikz\fill (0,0) circle (1mm);}}
+
+% Huecos: la caja con las palabras que faltan, y el hueco de cada frase.
+\newtcolorbox{cajaPalabrasIng}{enhanced, colback=white, colframe=colorGris,
+  boxrule=0.8pt, arc=2mm, halign=center, left=3mm, right=3mm, top=2.5mm, bottom=2.5mm,
+  fontupper=\fontsize{17}{22}\selectfont\bfseries, before skip=1mm, after skip=3mm}
+\newcommand{\palabrasIng}[1]{\begin{cajaPalabrasIng}#1\end{cajaPalabrasIng}}
+\newcommand{\separaPalabras}{\hspace{9mm plus 4mm}}
+\newcommand{\huecoIng}{\rule[-0.6mm]{32mm}{0.5pt}}
+\newcommand{\separaFrases}{\par\vspace{7mm}}
+
+% Draw the story: como \vineta de preamble-lupa.tex, pero más alta (hay
+% más sitio: el texto es más corto) y con el pie a la letra de la
+% actividad, que lo lee la niña.
+\newcommand{\vinetaIng}[2]{%
+  \framebox[\linewidth]{\rule{0pt}{7.5cm}}\par\vspace{1.5mm}
+  {\raggedright\textbf{#1.} #2\par}}
+
+% Un dibujo para colorear o una escena donde dibujar (diagrams/english/).
+\newcommand{\dibujoIng}[1]{\par\vspace{1mm}{\centering\input{diagrams/english/#1}\par}}
+
+% =========================================================================
+% Iconos: uno por actividad, del tamaño de una letra. Sin color propio:
+% toman el del texto que los rodea -- blanco en el título de una caja,
+% el color de la actividad en la página de las palabras (y gris/negro en
+% blanco y negro, como todo lo demás).
+% =========================================================================
+\tikzset{icono/.style={x=1em, y=1em, line width=0.09em, line cap=round,
+  line join=round, baseline=0.05em}}
+% Lápiz: dibuja.
+\newcommand{\icoLapiz}{\tikz[icono]{%
+  \draw (0.08,0.08) -- (0.14,0.36) -- (0.7,0.92) -- (0.92,0.7) -- (0.36,0.14) -- cycle;
+  \draw (0.14,0.36) -- (0.36,0.14);
+  \fill (0.08,0.08) -- (0.1,0.19) -- (0.19,0.1) -- cycle;}}
+% Cera de colores, gruesa y rellena (el lápiz de dibuja es solo el
+% contorno): colorea.
+\newcommand{\icoCera}{\tikz[icono]{%
+  \begin{scope}[rotate around={-45:(0.5,0.5)}]
+  \fill (0.33,0.02) rectangle (0.67,0.2);
+  \fill (0.33,0.27) rectangle (0.67,0.56);
+  \fill (0.33,0.63) -- (0.67,0.63) -- (0.56,0.95) -- (0.44,0.95) -- cycle;
+  \end{scope}}}
+% Chincheta de mapa: ¿dónde está?
+\newcommand{\icoSitio}{\tikz[icono]{%
+  \draw (0.5,0.02) .. controls (0.3,0.35) and (0.14,0.5) .. (0.14,0.66)
+    arc (180:0:0.36) .. controls (0.86,0.5) and (0.7,0.35) .. (0.5,0.02) -- cycle;
+  \fill (0.5,0.66) circle (0.12);}}
+% Casilla marcada: sí o no.
+\newcommand{\icoMarca}{\tikz[icono]{%
+  \draw (0.06,0.06) rectangle (0.94,0.94);
+  \draw (0.24,0.5) -- (0.44,0.28) -- (0.78,0.74);}}
+% Una letra rodeada: rodea.
+\newcommand{\icoRodea}{\tikz[icono]{%
+  \draw (0.5,0.45) ellipse (0.55 and 0.42);
+  \node[inner sep=0, scale=0.75] at (0.5,0.4) {\bfseries a};}}
+% Dos puntos a cada lado, y una línea que ya une dos: relaciona, mitades.
+\newcommand{\icoUne}{\tikz[icono]{%
+  \fill (0.08,0.8) circle (0.1); \fill (0.08,0.2) circle (0.1);
+  \fill (0.92,0.8) circle (0.1); \fill (0.92,0.2) circle (0.1);
+  \draw (0.08,0.8) -- (0.92,0.2);}}
+% Tres momentos en una flecha: ordena (primero, luego, al final).
+\newcommand{\icoOrden}{\tikz[icono]{%
+  \draw[-{Latex[length=0.3em, width=0.32em]}] (-0.1,0.5) -- (1.2,0.5);
+  \fill (0.12,0.5) circle (0.12); \fill (0.5,0.5) circle (0.12); \fill (0.88,0.5) circle (0.12);}}
+% Una palabra a la que le falta un trozo: huecos.
+\newcommand{\icoHueco}{\tikz[icono]{%
+  \node[inner sep=0, anchor=base] at (0.05,0.1) {a};
+  \draw (0.32,0.08) -- (0.78,0.08);
+  \node[inner sep=0, anchor=base] at (1.05,0.1) {c};}}
+% Lupa: busca palabras en el texto.
+\newcommand{\icoBusca}{\tikz[icono]{%
+  \draw (0.42,0.58) circle (0.32);
+  \draw[line width=0.16em] (0.64,0.36) -- (0.92,0.08);}}
+% Interrogación: adivina.
+\newcommand{\icoAdivina}{\tikz[icono]{%
+  \draw (0.5,0.5) circle (0.46);
+  \draw (0.34,0.64) arc (160:-60:0.18) -- (0.5,0.38);
+  \fill (0.5,0.22) circle (0.06);}}
+% Tres viñetas: dibuja la historia.
+\newcommand{\icoVinetas}{\tikz[icono]{%
+  \draw (0.02,0.2) rectangle (0.3,0.8);
+  \draw (0.36,0.2) rectangle (0.64,0.8);
+  \draw (0.7,0.2) rectangle (0.98,0.8);}}
+% Estrella: mira atrás, repasa.
+\newcommand{\icoEstrella}{\tikz[icono]{%
+  \fill (0.5,0.97) -- (0.62,0.63) -- (0.97,0.63) -- (0.69,0.42) -- (0.8,0.07)
+    -- (0.5,0.28) -- (0.2,0.07) -- (0.31,0.42) -- (0.03,0.63) -- (0.38,0.63) -- cycle;}}
+% Cara sonriente: tu turno.
+\newcommand{\icoCara}{\tikz[icono]{%
+  \draw (0.5,0.5) circle (0.46);
+  \fill (0.35,0.62) circle (0.06); \fill (0.65,0.62) circle (0.06);
+  \draw (0.28,0.4) arc (200:340:0.24);}}
+% Libro abierto: lee (la caja verde del texto, en la página de las
+% palabras) -- el mismo icono de la portada del cuaderno de frases.
+\newcommand{\icoLibro}{\tikz[icono]{%
+  \draw (0.02,0.85) -- (0.5,0.95) -- (0.98,0.85) -- (0.98,0.12) -- (0.5,0.22) -- (0.02,0.12) -- cycle;
+  \draw (0.5,0.95) -- (0.5,0.22);}}

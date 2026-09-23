@@ -1,0 +1,473 @@
+{
+  "_comentario": "Objetivos de la escalera de progresión de 'Read and Draw' (el cuaderno en inglés), uno por semana (52 filas) -- ver notes/05-english.md, 'La escalera'. Generados con una fórmula lineal por tramos entre los puntos de control de esa tabla (semanas 1, 13, 26, 39, 52); se pueden corregir a mano fila a fila. Lo usa tools/metricas.py --libro english. 'palabras_min'/'palabras_max' = palabras del texto de un día (todos sus párrafos). 'frase_max' = máximo de palabras en UNA oración ese día. 'subordinadas_min' = mínimo de nexos que abren una oración subordinada (because, when, if, that, who, which, where, before, after...) en el texto del día: es lo que garantiza que, aunque los textos sean cortos, estén hechos de oraciones compuestas. 'nuevas_max' = máximo de lemas de contenido nuevos ese día, contando como ya sabidas las palabras de content/english/vocabulario-base.json. palabras_max, frase_max y subordinadas_min son límites duros (error si no se cumplen); palabras_min y nuevas_max son avisos, no bloquean make check.",
+  "semanas": [
+    {
+      "semana": 1,
+      "trimestre": 1,
+      "palabras_min": 25,
+      "palabras_max": 35,
+      "frase_max": 12,
+      "subordinadas_min": 1,
+      "nuevas_max": 8
+    },
+    {
+      "semana": 2,
+      "trimestre": 1,
+      "palabras_min": 26,
+      "palabras_max": 36,
+      "frase_max": 12,
+      "subordinadas_min": 1,
+      "nuevas_max": 8
+    },
+    {
+      "semana": 3,
+      "trimestre": 1,
+      "palabras_min": 26,
+      "palabras_max": 37,
+      "frase_max": 12,
+      "subordinadas_min": 1,
+      "nuevas_max": 8
+    },
+    {
+      "semana": 4,
+      "trimestre": 1,
+      "palabras_min": 27,
+      "palabras_max": 38,
+      "frase_max": 12,
+      "subordinadas_min": 1,
+      "nuevas_max": 8
+    },
+    {
+      "semana": 5,
+      "trimestre": 1,
+      "palabras_min": 27,
+      "palabras_max": 38,
+      "frase_max": 12,
+      "subordinadas_min": 1,
+      "nuevas_max": 8
+    },
+    {
+      "semana": 6,
+      "trimestre": 1,
+      "palabras_min": 28,
+      "palabras_max": 39,
+      "frase_max": 12,
+      "subordinadas_min": 1,
+      "nuevas_max": 8
+    },
+    {
+      "semana": 7,
+      "trimestre": 1,
+      "palabras_min": 29,
+      "palabras_max": 40,
+      "frase_max": 13,
+      "subordinadas_min": 1,
+      "nuevas_max": 8
+    },
+    {
+      "semana": 8,
+      "trimestre": 1,
+      "palabras_min": 29,
+      "palabras_max": 41,
+      "frase_max": 13,
+      "subordinadas_min": 1,
+      "nuevas_max": 7
+    },
+    {
+      "semana": 9,
+      "trimestre": 1,
+      "palabras_min": 30,
+      "palabras_max": 42,
+      "frase_max": 13,
+      "subordinadas_min": 1,
+      "nuevas_max": 7
+    },
+    {
+      "semana": 10,
+      "trimestre": 1,
+      "palabras_min": 30,
+      "palabras_max": 43,
+      "frase_max": 13,
+      "subordinadas_min": 1,
+      "nuevas_max": 7
+    },
+    {
+      "semana": 11,
+      "trimestre": 1,
+      "palabras_min": 31,
+      "palabras_max": 43,
+      "frase_max": 13,
+      "subordinadas_min": 1,
+      "nuevas_max": 7
+    },
+    {
+      "semana": 12,
+      "trimestre": 1,
+      "palabras_min": 31,
+      "palabras_max": 44,
+      "frase_max": 13,
+      "subordinadas_min": 1,
+      "nuevas_max": 7
+    },
+    {
+      "semana": 13,
+      "trimestre": 1,
+      "palabras_min": 32,
+      "palabras_max": 45,
+      "frase_max": 13,
+      "subordinadas_min": 1,
+      "nuevas_max": 7
+    },
+    {
+      "semana": 14,
+      "trimestre": 2,
+      "palabras_min": 33,
+      "palabras_max": 46,
+      "frase_max": 13,
+      "subordinadas_min": 1,
+      "nuevas_max": 7
+    },
+    {
+      "semana": 15,
+      "trimestre": 2,
+      "palabras_min": 34,
+      "palabras_max": 47,
+      "frase_max": 13,
+      "subordinadas_min": 1,
+      "nuevas_max": 7
+    },
+    {
+      "semana": 16,
+      "trimestre": 2,
+      "palabras_min": 34,
+      "palabras_max": 47,
+      "frase_max": 13,
+      "subordinadas_min": 1,
+      "nuevas_max": 7
+    },
+    {
+      "semana": 17,
+      "trimestre": 2,
+      "palabras_min": 35,
+      "palabras_max": 48,
+      "frase_max": 13,
+      "subordinadas_min": 1,
+      "nuevas_max": 7
+    },
+    {
+      "semana": 18,
+      "trimestre": 2,
+      "palabras_min": 36,
+      "palabras_max": 49,
+      "frase_max": 13,
+      "subordinadas_min": 1,
+      "nuevas_max": 7
+    },
+    {
+      "semana": 19,
+      "trimestre": 2,
+      "palabras_min": 37,
+      "palabras_max": 50,
+      "frase_max": 13,
+      "subordinadas_min": 1,
+      "nuevas_max": 7
+    },
+    {
+      "semana": 20,
+      "trimestre": 2,
+      "palabras_min": 37,
+      "palabras_max": 50,
+      "frase_max": 14,
+      "subordinadas_min": 2,
+      "nuevas_max": 7
+    },
+    {
+      "semana": 21,
+      "trimestre": 2,
+      "palabras_min": 38,
+      "palabras_max": 51,
+      "frase_max": 14,
+      "subordinadas_min": 2,
+      "nuevas_max": 7
+    },
+    {
+      "semana": 22,
+      "trimestre": 2,
+      "palabras_min": 39,
+      "palabras_max": 52,
+      "frase_max": 14,
+      "subordinadas_min": 2,
+      "nuevas_max": 7
+    },
+    {
+      "semana": 23,
+      "trimestre": 2,
+      "palabras_min": 40,
+      "palabras_max": 53,
+      "frase_max": 14,
+      "subordinadas_min": 2,
+      "nuevas_max": 7
+    },
+    {
+      "semana": 24,
+      "trimestre": 2,
+      "palabras_min": 40,
+      "palabras_max": 53,
+      "frase_max": 14,
+      "subordinadas_min": 2,
+      "nuevas_max": 7
+    },
+    {
+      "semana": 25,
+      "trimestre": 2,
+      "palabras_min": 41,
+      "palabras_max": 54,
+      "frase_max": 14,
+      "subordinadas_min": 2,
+      "nuevas_max": 7
+    },
+    {
+      "semana": 26,
+      "trimestre": 2,
+      "palabras_min": 42,
+      "palabras_max": 55,
+      "frase_max": 14,
+      "subordinadas_min": 2,
+      "nuevas_max": 7
+    },
+    {
+      "semana": 27,
+      "trimestre": 3,
+      "palabras_min": 43,
+      "palabras_max": 56,
+      "frase_max": 14,
+      "subordinadas_min": 2,
+      "nuevas_max": 7
+    },
+    {
+      "semana": 28,
+      "trimestre": 3,
+      "palabras_min": 43,
+      "palabras_max": 57,
+      "frase_max": 14,
+      "subordinadas_min": 2,
+      "nuevas_max": 7
+    },
+    {
+      "semana": 29,
+      "trimestre": 3,
+      "palabras_min": 44,
+      "palabras_max": 57,
+      "frase_max": 14,
+      "subordinadas_min": 2,
+      "nuevas_max": 7
+    },
+    {
+      "semana": 30,
+      "trimestre": 3,
+      "palabras_min": 44,
+      "palabras_max": 58,
+      "frase_max": 14,
+      "subordinadas_min": 2,
+      "nuevas_max": 7
+    },
+    {
+      "semana": 31,
+      "trimestre": 3,
+      "palabras_min": 45,
+      "palabras_max": 59,
+      "frase_max": 14,
+      "subordinadas_min": 2,
+      "nuevas_max": 7
+    },
+    {
+      "semana": 32,
+      "trimestre": 3,
+      "palabras_min": 46,
+      "palabras_max": 60,
+      "frase_max": 14,
+      "subordinadas_min": 2,
+      "nuevas_max": 7
+    },
+    {
+      "semana": 33,
+      "trimestre": 3,
+      "palabras_min": 46,
+      "palabras_max": 60,
+      "frase_max": 15,
+      "subordinadas_min": 2,
+      "nuevas_max": 8
+    },
+    {
+      "semana": 34,
+      "trimestre": 3,
+      "palabras_min": 47,
+      "palabras_max": 61,
+      "frase_max": 15,
+      "subordinadas_min": 2,
+      "nuevas_max": 8
+    },
+    {
+      "semana": 35,
+      "trimestre": 3,
+      "palabras_min": 48,
+      "palabras_max": 62,
+      "frase_max": 15,
+      "subordinadas_min": 2,
+      "nuevas_max": 8
+    },
+    {
+      "semana": 36,
+      "trimestre": 3,
+      "palabras_min": 48,
+      "palabras_max": 63,
+      "frase_max": 15,
+      "subordinadas_min": 2,
+      "nuevas_max": 8
+    },
+    {
+      "semana": 37,
+      "trimestre": 3,
+      "palabras_min": 49,
+      "palabras_max": 63,
+      "frase_max": 15,
+      "subordinadas_min": 2,
+      "nuevas_max": 8
+    },
+    {
+      "semana": 38,
+      "trimestre": 3,
+      "palabras_min": 49,
+      "palabras_max": 64,
+      "frase_max": 15,
+      "subordinadas_min": 2,
+      "nuevas_max": 8
+    },
+    {
+      "semana": 39,
+      "trimestre": 3,
+      "palabras_min": 50,
+      "palabras_max": 65,
+      "frase_max": 15,
+      "subordinadas_min": 2,
+      "nuevas_max": 8
+    },
+    {
+      "semana": 40,
+      "trimestre": 4,
+      "palabras_min": 51,
+      "palabras_max": 66,
+      "frase_max": 15,
+      "subordinadas_min": 2,
+      "nuevas_max": 8
+    },
+    {
+      "semana": 41,
+      "trimestre": 4,
+      "palabras_min": 51,
+      "palabras_max": 67,
+      "frase_max": 15,
+      "subordinadas_min": 2,
+      "nuevas_max": 8
+    },
+    {
+      "semana": 42,
+      "trimestre": 4,
+      "palabras_min": 52,
+      "palabras_max": 67,
+      "frase_max": 15,
+      "subordinadas_min": 2,
+      "nuevas_max": 8
+    },
+    {
+      "semana": 43,
+      "trimestre": 4,
+      "palabras_min": 52,
+      "palabras_max": 68,
+      "frase_max": 15,
+      "subordinadas_min": 2,
+      "nuevas_max": 8
+    },
+    {
+      "semana": 44,
+      "trimestre": 4,
+      "palabras_min": 53,
+      "palabras_max": 69,
+      "frase_max": 15,
+      "subordinadas_min": 2,
+      "nuevas_max": 8
+    },
+    {
+      "semana": 45,
+      "trimestre": 4,
+      "palabras_min": 54,
+      "palabras_max": 70,
+      "frase_max": 15,
+      "subordinadas_min": 2,
+      "nuevas_max": 8
+    },
+    {
+      "semana": 46,
+      "trimestre": 4,
+      "palabras_min": 54,
+      "palabras_max": 70,
+      "frase_max": 16,
+      "subordinadas_min": 3,
+      "nuevas_max": 8
+    },
+    {
+      "semana": 47,
+      "trimestre": 4,
+      "palabras_min": 55,
+      "palabras_max": 71,
+      "frase_max": 16,
+      "subordinadas_min": 3,
+      "nuevas_max": 8
+    },
+    {
+      "semana": 48,
+      "trimestre": 4,
+      "palabras_min": 56,
+      "palabras_max": 72,
+      "frase_max": 16,
+      "subordinadas_min": 3,
+      "nuevas_max": 8
+    },
+    {
+      "semana": 49,
+      "trimestre": 4,
+      "palabras_min": 56,
+      "palabras_max": 73,
+      "frase_max": 16,
+      "subordinadas_min": 3,
+      "nuevas_max": 8
+    },
+    {
+      "semana": 50,
+      "trimestre": 4,
+      "palabras_min": 57,
+      "palabras_max": 73,
+      "frase_max": 16,
+      "subordinadas_min": 3,
+      "nuevas_max": 8
+    },
+    {
+      "semana": 51,
+      "trimestre": 4,
+      "palabras_min": 57,
+      "palabras_max": 74,
+      "frase_max": 16,
+      "subordinadas_min": 3,
+      "nuevas_max": 8
+    },
+    {
+      "semana": 52,
+      "trimestre": 4,
+      "palabras_min": 58,
+      "palabras_max": 75,
+      "frase_max": 16,
+      "subordinadas_min": 3,
+      "nuevas_max": 8
+    }
+  ]
+}

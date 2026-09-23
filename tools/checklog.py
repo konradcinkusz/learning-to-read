@@ -13,7 +13,11 @@ Falla (exit 1) si encuentra:
     occurred, no output PDF file produced");
   - una caja `Overfull \\hbox` o `Overfull \\vbox` -- en este cuaderno,
     donde cada día tiene que caber en una sola página con un diseño
-    fijo, una caja desbordada es un defecto visual real, no ruido.
+    fijo, una caja desbordada es un defecto visual real, no ruido;
+  - un carácter que la letra del cuaderno no tiene ("Missing character:
+    There is no ★ in font ...") -- LuaLaTeX lo deja en blanco y sigue,
+    sin error: un símbolo o un emoji copiado en un texto desaparece de la
+    página en silencio.
 
 Solo informa (no falla) de las cajas `Underfull`, que casi siempre son
 inofensivas.
@@ -29,6 +33,7 @@ from pathlib import Path
 PATRON_ERROR_RUTA = re.compile(r"^[^\s:][^:\n]*:\d+:\s")
 PATRON_OVERFULL = re.compile(r"^Overfull \\[hv]box")
 PATRON_UNDERFULL = re.compile(r"^Underfull \\[hv]box")
+PATRON_SIN_GLIFO = re.compile(r"^Missing character: There is no ")
 
 
 def revisar(ruta):
@@ -44,7 +49,7 @@ def revisar(ruta):
         errores.append("Fatal error occurred, no output PDF file produced")
 
     for linea in lineas:
-        if PATRON_ERROR_RUTA.match(linea):
+        if PATRON_ERROR_RUTA.match(linea) or PATRON_SIN_GLIFO.match(linea):
             errores.append(linea)
         elif PATRON_OVERFULL.match(linea):
             overfull.append(linea)

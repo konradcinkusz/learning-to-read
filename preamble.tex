@@ -29,18 +29,33 @@
   BoldItalicFont = *-BoldItalic,
 ]
 
-\usepackage[spanish]{babel}
-% babel-spanish makes " an ACTIVE character (shorthand for <</>> and other
-% combinations) -- a literal " typed in prose (dialogue, "quoted speech")
-% collides with it and garbles silently, worst right before a capital
-% letter ("E -> a stray accent, e.g. "Estoy" rendered as ".Ëtoy"). Plain
-% \shorthandoff{"} here in the preamble does NOT work and fails silently
-% -- babel re-activates its shorthands for the main language at
-% \begin{document}, AFTER the preamble has already run, so it wins.
-% \AtBeginDocument defers the command to run right after that, which is
-% the only point it sticks -- verified against a minimal standalone file
-% both ways before trusting either.
-\AtBeginDocument{\shorthandoff{"}}
+% Idioma del cuaderno: \booklang, fijado (como \bookcolor, más abajo)
+% por el .tex raíz ANTES de \input{preamble} -- english.tex pone
+% \def\booklang{en}; los cuadernos en español no lo definen y se quedan
+% en español, exactamente como antes de que hubiera un cuaderno en inglés.
+% Decide dos cosas: el idioma de babel (guiones, y las comillas de
+% babel-spanish, abajo) y qué fichero de cadenas se carga (lang/es.tex o
+% lang/en.tex, ver "cadenas de texto").
+\makeatletter
+\def\aal@booklang@en{en}
+\@ifundefined{booklang}{\def\booklang{es}}{}
+\ifx\booklang\aal@booklang@en
+  \usepackage[british]{babel}
+\else
+  \usepackage[spanish]{babel}
+  % babel-spanish makes " an ACTIVE character (shorthand for <</>> and other
+  % combinations) -- a literal " typed in prose (dialogue, "quoted speech")
+  % collides with it and garbles silently, worst right before a capital
+  % letter ("E -> a stray accent, e.g. "Estoy" rendered as ".Ëtoy"). Plain
+  % \shorthandoff{"} here in the preamble does NOT work and fails silently
+  % -- babel re-activates its shorthands for the main language at
+  % \begin{document}, AFTER the preamble has already run, so it wins.
+  % \AtBeginDocument defers the command to run right after that, which is
+  % the only point it sticks -- verified against a minimal standalone file
+  % both ways before trusting either.
+  \AtBeginDocument{\shorthandoff{"}}
+\fi
+\makeatother
 
 \usepackage[a4paper,top=18mm,bottom=16mm,left=22mm,right=18mm]{geometry}
 
@@ -56,8 +71,9 @@
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{2pt}
 
-% --- cadenas de texto (español; centralizadas, ver lang/es.tex) -------
-\input{lang/es}
+% --- cadenas de texto (centralizadas: lang/es.tex, o lang/en.tex en el
+%     cuaderno en inglés -- ver \booklang arriba) -----------------------
+\input{lang/\booklang}
 
 % =========================================================================
 % Paleta

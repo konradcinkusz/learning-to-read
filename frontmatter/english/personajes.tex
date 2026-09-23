@@ -1,0 +1,36 @@
+% frontmatter/english/personajes.tex -- para la niña: quién es quién.
+% La familia de siempre, con un recuadro para dibujar a cada uno cuando
+% salga en el libro, y tres recuadros con una interrogación para los
+% vecinos nuevos: sus nombres no se dicen aquí -- se descubren leyendo la
+% primera semana, y entonces se dibujan (el primer "Read and draw" del
+% cuaderno, antes incluso del día 1).
+\section*{Who's who?}
+
+{\large Draw everyone when you read about them in the book.\par}
+\vspace{4mm}
+
+\newcommand{\retrato}[2]{%
+  \begin{minipage}[t]{0.47\linewidth}
+  \framebox[34mm]{\rule{0pt}{34mm}}\hfill
+  \begin{minipage}[b]{0.52\linewidth}\raggedright
+  {\Large\bfseries #1\par}\vspace{1mm}{\large #2\par}
+  \end{minipage}
+  \end{minipage}}
+\noindent\retrato{Lucía}{She is seven and she loves stories.}\hfill
+\retrato{Dani}{Lucía's little brother. He is five.}\par\vspace{6mm}
+\noindent\retrato{Toby}{The family's dog. He is brown and he has got long ears.}\hfill
+\retrato{Mum and Dad}{Lucía and Dani's mum and dad.}\par\vspace{6mm}
+\noindent\retrato{Grandma Rosa}{Mum's mum. She tells the best stories.}\par
+
+\vspace{8mm}
+{\Large\bfseries The new neighbours\par}
+\vspace{1mm}
+{\large Who are they? Read Week 1 and find out. Then draw them and write their names.\par}
+\vspace{4mm}
+\noindent\begin{tabular}{@{}c@{\hspace{8mm}}c@{\hspace{8mm}}c@{}}
+\framebox[46mm]{\rule{0pt}{40mm}\raisebox{17mm}{\fontsize{30}{30}\selectfont\color{colorGris}?}} &
+\framebox[46mm]{\rule{0pt}{40mm}\raisebox{17mm}{\fontsize{30}{30}\selectfont\color{colorGris}?}} &
+\framebox[46mm]{\rule{0pt}{40mm}\raisebox{17mm}{\fontsize{30}{30}\selectfont\color{colorGris}?}} \\[3mm]
+\rule{40mm}{0.4pt} & \rule{40mm}{0.4pt} & \rule{40mm}{0.4pt} \\
+\end{tabular}
+\newpage
