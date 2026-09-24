@@ -31,9 +31,10 @@ infantil):
   - Entre dos vocales, una consonante va con la sílaba siguiente
     (ma-ma, ko-ło). De dos o más, solo la última -- o las dos últimas, si
     son una consonante seguida de r, l, ł o rz, de las que no se separan
-    (tr, kr, bl, pł, sł, prz...: ko-bra, ta-bli-ca, ma-sło, po-krzy-wa)
-    --, y las demás se quedan con la sílaba anterior (lal-ka, mat-ka,
-    ok-no, jabł-ko, łyż-ka, wios-na, sios-tra, mar-chew-ka).
+    (tr, kr, bl, pł, sł, prz...: ko-bra, ta-bli-ca, ma-sło, po-krzy-wa),
+    o c, s, z + j (wa-ka-cje) --, y las demás se quedan con la sílaba
+    anterior (lal-ka, mat-ka, ok-no, jabł-ko, łyż-ka, wios-na, sios-tra,
+    mar-chew-ka).
 
 El polaco admite varios silabeos para una misma palabra (sio-stra,
 sios-tra, siost-ra): este cuaderno usa siempre el mismo, el de arriba,
@@ -65,13 +66,16 @@ ZMIEKCZANE_PRZED_I = {"c", "n", "s", "z", "dz"}
 
 # Consonante + r, l, ł o rz: dos consonantes que no se separan entre
 # vocales (van juntas a la sílaba siguiente). t y d + l o ł no están: se
-# separan, como en español (kot-let, pod-ło-ga).
+# separan, como en español (kot-let, pod-ło-ga). Y c, s, z + j, la j de
+# las palabras que vienen de fuera (wa-ka-cje, ko-la-cja, lek-cja), que
+# se pronuncia pegada a la consonante.
 GRUPY = {
     "pr", "br", "tr", "dr", "kr", "gr", "fr", "wr", "chr",
     "prz", "brz", "trz", "drz", "krz", "grz", "chrz", "wrz",
     "pl", "bl", "kl", "gl", "fl",
     "pł", "bł", "kł", "gł", "wł", "chł", "sł", "zł", "szł",
     "śl",
+    "cj", "sj", "zj",
 }
 
 # Letras que no son del alfabeto polaco: solo salen en palabras de fuera.
@@ -232,6 +236,7 @@ CASOS_PRUEBA = {
     "kobra": "ko-bra", "tablica": "ta-bli-ca", "masło": "ma-sło",
     "krzesło": "krze-sło", "pokrzywa": "po-krzy-wa", "wiadro": "wia-dro",
     "jabłoń": "ja-błoń", "szuflada": "szu-fla-da",
+    "wakacje": "wa-ka-cje", "kolacja": "ko-la-cja", "lekcja": "lek-cja",
     # y las que sí (s + consonante, t + ł...)
     "wiosna": "wios-na", "miska": "mis-ka", "kotlet": "kot-let",
     "podłoga": "pod-ło-ga", "łyżka": "łyż-ka", "książka": "książ-ka",

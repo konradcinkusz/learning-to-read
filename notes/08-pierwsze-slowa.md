@@ -52,19 +52,21 @@ escuela:
 - entre dos vocales, una consonante va con la sílaba siguiente
   (*ko-ło*); de dos o más, solo la última -- o las dos últimas si son
   una consonante con *r, l, ł* o *rz* (*ko-bra*, *ma-sło*,
-  *po-krzy-wa*) --, y las demás se quedan con la anterior (*lal-ka*,
-  *jabł-ko*, *wios-na*, *sios-tra*).
+  *po-krzy-wa*), o *c, s, z* con la *j* de las palabras que vienen de
+  fuera (*wa-ka-cje*, *ko-la-cja*) --, y las demás se quedan con la
+  anterior (*lal-ka*, *jabł-ko*, *wios-na*, *sios-tra*).
 
 El polaco admite varios silabeos para la misma palabra (*sio-stra,
 sios-tra, siost-ra*): el cuaderno usa siempre ese, para que las sílabas
 que se imprimen sean previsibles, y porque es el que deja las sílabas
 más fáciles. Una palabra que necesite otro (un prefijo:
-*przed-szko-le*) va en `WYJATKI`, con su porqué.
+*przed-szko-le*, *nie-spo-dzian-ka*) va en `WYJATKI`, con su porqué; de
+momento, el cuaderno las evita.
 
 Cada palabra se escribe en el JSON ya partida (`"ło-pa-ta"`) y tiene
 que coincidir con `tools/sylaby.py`, como en español con
 `tools/silabas.py`. `tools/sylaby.py --prueba` comprueba el silabeo
-contra 54 palabras con respuesta conocida y los rasgos de 17 sílabas,
+contra 57 palabras con respuesta conocida y los rasgos de 17 sílabas,
 en CI antes que nada.
 
 ### La escalera
@@ -98,6 +100,8 @@ la escalera (`PALABRAS_GLOBALES_PL`): la *í* de *Lucía* no es polaca, la
 (`\tarjetaEntera`, la de *First Words*); si es lo único que se lee ese
 día, la instrucción dice que se lee entero, "jak swoje własne imię".
 *Mama*, *tata* y *Rosa* se leen por sílabas desde el primer día.
+Al lado de otras palabras, la tarjeta de un nombre deja vacía la línea
+de las sílabas, para que las palabras queden a la misma altura.
 
 **Para quien lee también en español.** La página para el adulto avisa
 de las letras que en polaco suenan distinto: *c, j, h, w, z, y, ł*, y
@@ -108,17 +112,24 @@ la *ó*, que suena como *u* (y no como una *o* con tilde).
 *Traza* es la misma actividad que en español (el glifo real de Andika,
 en puntos), y la letra es la inicial de una palabra que se lee ese día
 (*Ł jak łapa*). En polaco son 32 letras, cinco más que en español, así
-que además de los martes de las semanas pares hay seis martes más en
-las semanas impares; `content/letras-trazo.json` trae las nueve que el
-español no tiene (*ą, ć, ę, ł, ń, ó, ś, ź, ż*: `tools/gen_letras_puntos.py`
-las añade al final, y las 27 de antes salen igual, letra por letra).
+que además de los martes de las semanas pares hay seis días más (martes
+de semana impar, y el miércoles de la semana de las letras).
+`content/letras-trazo.json` trae las nueve que el español no tiene (*ą,
+ć, ę, ł, ń, ó, ś, ź, ż*: `tools/gen_letras_puntos.py` las añade al
+final, y las 27 de antes salen igual, letra por letra).
 Ninguna palabra polaca empieza por *ą, ę, ń* o *y*: para esas vale que
 estén dentro de una palabra del día (*Ą jak wąż*, *Y jak ryby*), como la
 *x* en inglés. Al terminar el año tienen que estar las 32
 (`comprobar_trazo`, con el abecedario del `Perfil`).
 
 En otoño: *ł* (*łapa*), *r* (*ryba*), *s* (*sowa*), *k* (*kora*), *p*
-(*papuga*) y *m* (*morele*).
+(*papuga*) y *m* (*morele*). En invierno: *z* (*zima*), *b* (*bal*), *l*
+(*lekarka*), *ż* (*żyrafa*), *h* (*huśtawka*), *d* (*Dani*) y *w*
+(*wiewiórka*). En primavera, diez, cuatro de ellas en días de más -- tres
+martes de semana impar y el miércoles de la semana de las letras --: *ą*
+(*ząb*), *j* (*jajka*), *n* (*nasiona*), *u* (*upadek*), *f* (*foka*),
+*ś* (*śniadanie*), *c* (*cyfry*), *y* (*tygrys*), *t* (*tańczyć*) y *o*
+(*okulary*). Quedan nueve para el verano: *a, ć, e, ę, g, i, ń, ó, ź*.
 
 ## Lo que cambia en el motor
 
@@ -149,7 +160,9 @@ cuántos días están escritos (`dias_escritos`).
    `lang/pl.tex`, las páginas para el adulto, la clave, el diploma, las
    nueve letras nuevas y los 65 días. **Hecho.**
 2. **El invierno y la primavera** (días 66–195): las cerradas, las
-   blandas, la *ó* y la *ż*; después los dígrafos, las nasales y dos
-   consonantes juntas.
+   blandas, la *ó* y la *ż* (*kurt-ka, zi-ma, pie-cyk, po-kój,
+   ży-ra-fa*); después los dígrafos, las nasales y dos consonantes
+   juntas (*smycz, zą-bek, szczo-tecz-ka, dżdżow-ni-ca, gą-sie-ni-ca*).
+   Diecisiete letras más en *Pisz po śladzie*. **Hecho.**
 3. **El verano** (días 196–260), las 32 letras, el cuaderno de verano y
    la muestra, y publicarlo.

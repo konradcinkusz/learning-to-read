@@ -301,7 +301,7 @@ SLOWA = Perfil(
     titulo_medalla="Medal za {}!",
     nombres_medalla={1: "jesień", 2: "zimę", 3: "wiosnę"},
     animo_medalla=r"Tak trzymaj, \rule{55mm}{0.4pt}!",
-    dias_escritos=65,
+    dias_escritos=195,
     alfabeto=ALFABETO_PL,
     letras_dentro=frozenset("ąęńy"),
     instruccion_nombre=r"\lblSlInstruccionNombre",
@@ -859,9 +859,13 @@ def lectura_palabras(trimestre, palabras):
         tarjetas = [tarjeta_sonidos(trimestre, p, g) for p, g in palabras]
     else:
         # silabas = None: un nombre que se lee de un golpe («Pierwsze
-        # słowa»), entero y sin partir.
+        # słowa»), entero y sin partir. Solo, es su tarjeta entera; al
+        # lado de otras, una tarjeta con la línea de las sílabas vacía
+        # (\strut), para que las palabras queden a la misma altura.
         tarjetas = [
-            r"\tarjetaEntera{%d}{%s}" % (trimestre, escapar(palabra))
+            (r"\tarjetaEntera{%d}{%s}" % (trimestre, escapar(palabra))
+             if len(palabras) == 1 else
+             r"\tarjeta{%d}{\strut}{%s}" % (trimestre, escapar(palabra)))
             if silabas is None else
             r"\tarjeta{%d}{%s}{%s}" % (
                 trimestre,
