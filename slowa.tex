@@ -1,0 +1,15 @@
+% slowa.tex -- «Pierwsze słowa», el cuaderno de primeras palabras en
+% polaco (ver notes/08-pierwsze-slowa.md): lo que el cuaderno de
+% primeras palabras (palabras.tex) es en español, con las sílabas del
+% polaco. Mismo motor: \booklang elige el idioma (babel y lang/pl.tex)
+% antes de \input{preamble}; encima va lo del cuaderno de primeras
+% palabras (preamble-palabras.tex: la página, las tarjetas, las cajas de
+% actividad).
+\documentclass[11pt]{article}
+\def\bookcolor{color}
+\def\booklang{pl}
+\input{preamble}
+\input{preamble-palabras}
+\begin{document}
+\input{body-slowa}
+\end{document}

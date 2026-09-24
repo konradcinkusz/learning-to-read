@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
-"""Extrae el contorno real de cada letra del alfabeto español, desde la
-propia fuente del cuaderno (fonts/andika/Andika-Bold.ttf), y lo guarda
-como una nube de puntos en content/letras-trazo.json.
+"""Extrae el contorno real de cada letra del alfabeto español -- y de
+las que añade el polaco --, desde la propia fuente del cuaderno
+(fonts/andika/Andika-Bold.ttf), y lo guarda como una nube de puntos en
+content/letras-trazo.json.
 
 Herramienta de desarrollo, NO forma parte de `make generate`: se
 ejecuta a mano solo si cambia la fuente o el conjunto de letras -- su
@@ -41,8 +42,11 @@ ROOT = Path(__file__).resolve().parent.parent
 FONT_PATH = ROOT / "fonts" / "andika" / "Andika-Bold.ttf"
 OUTPUT_FILE = ROOT / "content" / "letras-trazo.json"
 
-# El alfabeto español (RAE, sin ch/ll como letras aparte desde 2010).
-LETRAS = list("abcdefghijklmnñopqrstuvwxyz")
+# El alfabeto español (RAE, sin ch/ll como letras aparte desde 2010), y
+# detrás las nueve letras del polaco que no tiene («Pierwsze słowa»
+# traza las 32 del alfabeto polaco). Van al final a propósito: la salida
+# de las 27 primeras sigue siendo la misma, letra por letra.
+LETRAS = list("abcdefghijklmnñopqrstuvwxyz") + list("ąćęłńóśźż")
 
 # Distancia entre puntos, en unidades de em (tamaño de fuente = 1.0) --
 # ajustada a ojo: suficientemente densa para que el contorno se lea

@@ -1,0 +1,18 @@
+% body-slowa.tex -- «Pierwsze słowa» (el cuaderno de primeras palabras
+% en polaco) entero, en el orden en que se imprime (ver body.tex para el
+% cuaderno de verano y la muestra).
+\input{frontmatter/slowa/portada}
+\ifedicionverano
+  \input{frontmatter/slowa/verano}
+  \mapaEdicion{content/slowa}
+\else
+  \input{frontmatter/slowa/como-usar}
+  \input{frontmatter/slowa/mapa-del-curso}
+\fi
+\input{content/slowa/generated-days\sufijoEdicion}
+\input{backmatter/slowa/clave-respuestas}
+\ifedicionmuestra
+  \paginaFinMuestra{\lblPalTituloPortada\ \textperiodcentered\ \lblPalNivelPortada}
+\else
+  \input{backmatter/slowa/diploma}
+\fi

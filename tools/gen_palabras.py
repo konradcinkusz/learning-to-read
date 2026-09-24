@@ -43,8 +43,18 @@ la actividad, en el sitio que quede ("Now colour: ..."); la adivinanza
 se contesta coloreando uno de tres dibujos, y "une" junta cada palabra
 con su dibujo. Los viernes, una escena de la semana.
 
-No editar content/palabras/generated-*.tex (ni content/firstwords/) a
-mano -- se sobrescriben cada vez que se ejecuta este script.
+Y hace también «Pierwsze słowa», el cuaderno de primeras palabras en
+polaco (`--libro slowa`, content/slowa/q*.json, ver
+notes/08-pierwsze-slowa.md): se lee por sílabas, como el español, pero
+con las del polaco -- cada palabra se escribe partida ("ko-ło") y ese
+silabeo tiene que coincidir con el de tools/sylaby.py --, y con su
+propia escalera (ESCALERA_PL): primero sílabas directas, después las
+cerradas y las blandas (kot, zi-ma, pies), y en primavera los dígrafos,
+las nasales y dos consonantes juntas (szko-ła, rę-ka, kra-ta).
+
+No editar content/palabras/generated-*.tex (ni content/firstwords/, ni
+content/slowa/) a mano -- se sobrescriben cada vez que se ejecuta este
+script.
 
 Uso:
     python3 tools/gen_palabras.py            # regenera content/palabras/generated-*.tex
@@ -53,6 +63,8 @@ Uso:
     python3 tools/gen_palabras.py --tabla    # resumen por semana, en Markdown (CI)
     python3 tools/gen_palabras.py --libro firstwords [--check | --tabla]
                                              # lo mismo, para «First Words»
+    python3 tools/gen_palabras.py --libro slowa [--check | --tabla]
+                                             # y para «Pierwsze słowa»
 """
 
 import json
@@ -64,6 +76,7 @@ from string import Template
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import fonetica  # noqa: E402
+import sylaby  # noqa: E402
 from libros import ENGLISH, FRASES  # noqa: E402
 from ediciones import (  # noqa: E402
     comprobar_campos, comprobar_preamble, ediciones_completas, ruta_edicion,
@@ -151,6 +164,51 @@ PALABRAS_GLOBALES_EN = frozenset({
     "tomás", "julián", "lola", "paco",
 })
 
+TODOS_LOS_RASGOS_PL = {
+    "zamknieta", "miekka", "znak", "dwuznak", "nosowa", "grupa", "obca",
+}
+
+# La escalera de «Pierwsze słowa», el cuaderno en polaco: por sílabas,
+# como la española, y con sus mismos tramos, pero con las sílabas del
+# polaco (tools/sylaby.py, cechy()). En otoño, solo sílabas directas --
+# una consonante de una letra y una vocal (ma-ma, ko-ło, ło-pa-ta) --;
+# en invierno, además, las que terminan en consonante (kot, lal-ka), las
+# blandas (zi-ma, pies, koń) y la ó y la ż, una letra cada una; en
+# primavera, todo: los dígrafos (sz, cz, rz, ch...), las nasales (ą, ę)
+# y dos consonantes delante de la vocal (szko-ła, kra-ta). El polaco
+# está lleno de dígrafos y de consonantes blandas, así que el orden es
+# el de sus cartillas: primero lo que se lee letra a letra, después lo
+# que una letra cambia de sonido (la i que ablanda, la ó), y al final
+# dos letras para un sonido y dos consonantes juntas.
+ESCALERA_PL = [
+    {"semanas": (1, 5), "palabras": 1, "max_silabas": 2, "rasgos": set()},
+    {"semanas": (6, 13), "palabras": 1, "max_silabas": 3, "rasgos": set()},
+    {"semanas": (14, 26), "palabras": 2, "max_silabas": 3,
+     "rasgos": {"zamknieta", "miekka", "znak"}},
+    {"semanas": (27, 39), "palabras": 3, "max_silabas": 4,
+     "rasgos": TODOS_LOS_RASGOS_PL},
+    {"semanas": (40, 43), "frase": (2, 2)},
+    {"semanas": (44, 47), "frase": (2, 3)},
+    {"semanas": (48, 52), "frase": (3, 4)},
+]
+
+# En polaco, los nombres del reparto que no se leen como se escriben en
+# polaco -- la í de Lucía, Sofía y Martín, la é de Andrés, la y de Toby,
+# que suena como una i, la ni de Dani, que en polaco sería blanda -- se
+# leen de un golpe, como el propio nombre: van enteros en el JSON, sin
+# guiones, y su tarjeta no se parte. Los demás se leen por sílabas en
+# cuanto las tienen: mama, tata y Rosa desde el primer día; Mar-ta y
+# Bi-go-tes desde el invierno (sílabas cerradas).
+PALABRAS_GLOBALES_PL = frozenset({
+    "lucía", "toby", "dani", "sofía", "andrés", "martín",
+})
+
+# Las letras del abecedario que traza cada cuaderno ("traza"): las 27
+# del español, las 26 del inglés y las 32 del polaco.
+ALFABETO_ES = "abcdefghijklmnñopqrstuvwxyz"
+ALFABETO_EN = "abcdefghijklmnopqrstuvwxyz"
+ALFABETO_PL = "aąbcćdeęfghijklłmnńoóprsśtuwyzźż"
+
 
 @dataclass(frozen=True)
 class Perfil:
@@ -172,6 +230,17 @@ class Perfil:
     # se dibuja; mientras los dibujos se hacen por partes (un PR por
     # estación), los días que faltan siguen como estaban.
     dias_con_dibujo: int = 0
+    # Las letras que traza ("traza"): todas tienen que salir en el año.
+    alfabeto: str = ALFABETO_ES
+    # Las letras que ninguna palabra tiene al principio (en inglés, casi
+    # ninguna que se pueda leer empieza por x; en polaco, ninguna empieza
+    # por ą, ę, ń o y): para trazarlas basta con que estén dentro de una
+    # palabra del día ("Ą jak wąż").
+    letras_dentro: frozenset = frozenset()
+    # La instrucción de la caja de lectura cuando lo único que se lee ese
+    # día es un nombre que se lee de un golpe (sin sílabas ni sonidos que
+    # juntar). None: la de siempre.
+    instruccion_nombre: str = None
 
     @property
     def salida_dias(self):
@@ -217,9 +286,28 @@ FIRSTWORDS = Perfil(
     nombres_medalla=ENGLISH.nombre_medalla,
     animo_medalla=ENGLISH.animo_medalla,
     dias_con_dibujo=260,
+    alfabeto=ALFABETO_EN,
+    letras_dentro=frozenset(ALFABETO_EN),
+    instruccion_nombre=r"\lblFwInstruccionNombre",
 )
 
-PERFILES = {p.nombre: p for p in (PALABRAS, FIRSTWORDS)}
+SLOWA = Perfil(
+    nombre="slowa",
+    idioma="pl",
+    dir_contenido=ROOT / "content" / "slowa",
+    escalera=ESCALERA_PL,
+    globales=PALABRAS_GLOBALES_PL,
+    # La medalla lleva la estación en acusativo: "Medal za jesień!"
+    titulo_medalla="Medal za {}!",
+    nombres_medalla={1: "jesień", 2: "zimę", 3: "wiosnę"},
+    animo_medalla=r"Tak trzymaj, \rule{55mm}{0.4pt}!",
+    dias_escritos=65,
+    alfabeto=ALFABETO_PL,
+    letras_dentro=frozenset("ąęńy"),
+    instruccion_nombre=r"\lblSlInstruccionNombre",
+)
+
+PERFILES = {p.nombre: p for p in (PALABRAS, FIRSTWORDS, SLOWA)}
 
 # El cuaderno que se está generando (main() lo cambia con --libro).
 PERFIL = PALABRAS
@@ -280,7 +368,7 @@ def tramo(semana):
 def max_partes(t):
     """Cuántas sílabas (español) o sonidos (inglés) puede tener una
     palabra en este tramo -- los círculos de "palmadas" son uno más."""
-    return t["max_silabas"] if PERFIL.idioma == "es" else t["max_sonidos"]
+    return t["max_sonidos"] if PERFIL.idioma == "en" else t["max_silabas"]
 
 
 def ultimo_tramo_de_palabras():
@@ -293,13 +381,32 @@ def ultimo_tramo_de_palabras():
 
 def inicial(palabra):
     """Primera letra, en minúscula y sin tilde -- pero la ñ sigue siendo
-    ñ (no se puede quitar la "tilde" de la ñ: es otra letra)."""
+    ñ (no se puede quitar la "tilde" de la ñ: es otra letra). En polaco,
+    ninguna se quita: ó, ł, ś, ż... son letras del abecedario."""
+    if PERFIL.idioma == "pl":
+        return palabra[:1].lower()
     return palabra[:1].lower().translate(str.maketrans("áéíóúü", "aeiouu"))
 
 
 def limpiar(token):
     """Una palabra de una frase, sin la puntuación de alrededor."""
-    return token.strip(".,;:!¡?¿\"«»—-")
+    return token.strip(".,;:!¡?¿\"«»„”—-")
+
+
+def partir(palabra):
+    """Las sílabas de una palabra, con el silabeo de su idioma
+    (tools/silabas.py o tools/sylaby.py)."""
+    if PERFIL.idioma == "pl":
+        try:
+            return sylaby.podziel(palabra)
+        except ValueError as exc:
+            raise ErrorDeContenido(str(exc)) from None
+    return silabear(palabra)
+
+
+def rasgos_de(silaba):
+    """Los rasgos de dificultad de una sílaba, en su idioma."""
+    return sylaby.cechy(silaba) if PERFIL.idioma == "pl" else rasgos(silaba)
 
 
 # --------------------------------------------------------------------
@@ -315,7 +422,7 @@ def comprobar_escalera(num, palabra, semana, donde):
     t = tramo(semana)
     if "frase" in t or palabra.lower() in PERFIL.globales:
         return
-    silabas = silabear(palabra)
+    silabas = partir(palabra)
     if len(silabas) > t["max_silabas"]:
         raise ErrorDeContenido(
             f"día {num} ({donde}): «{palabra}» tiene {len(silabas)} sílabas "
@@ -323,7 +430,7 @@ def comprobar_escalera(num, palabra, semana, donde):
             f"{t['max_silabas']}"
         )
     for s in silabas:
-        sobra = rasgos(s) - t["rasgos"]
+        sobra = rasgos_de(s) - t["rasgos"]
         if sobra:
             raise ErrorDeContenido(
                 f"día {num} ({donde}): «{palabra}» tiene la sílaba «{s}» "
@@ -411,14 +518,28 @@ def leer_palabra(num, escrita, semana):
         return leer_palabra_en(num, escrita, semana)
     if not escrita or escrita != escrita.strip() or " " in escrita:
         raise ErrorDeContenido(f"día {num}: palabra mal escrita: {escrita!r}")
+    if PERFIL.idioma == "pl" and escrita.replace("-", "").lower() in PERFIL.globales:
+        # Un nombre que se lee de un golpe: entero, sin partir (su
+        # tarjeta no lleva sílabas).
+        if "-" in escrita:
+            raise ErrorDeContenido(
+                f"día {num}: «{escrita}» es un nombre que se lee de un golpe "
+                "-- va entero, sin guiones"
+            )
+        return escrita, None
     silabas = escrita.split("-")
     palabra = "".join(silabas)
-    automatico = silabear(palabra)
+    try:
+        automatico = partir(palabra)
+    except ErrorDeContenido as exc:
+        raise ErrorDeContenido(f"día {num}: {exc}") from None
     if silabas != automatico:
+        donde = ("WYJATKI en tools/sylaby.py" if PERFIL.idioma == "pl"
+                 else "EXCEPCIONES en tools/silabas.py")
         raise ErrorDeContenido(
             f"día {num}: «{escrita}» -- el silabeo automático da "
             f"«{'-'.join(automatico)}». Si el de a mano es el correcto, "
-            "añade la palabra a EXCEPCIONES en tools/silabas.py, con su porqué"
+            f"añade la palabra a {donde}, con su porqué"
         )
     comprobar_escalera(num, palabra, semana, "palabra del día")
     return palabra, silabas
@@ -737,7 +858,11 @@ def lectura_palabras(trimestre, palabras):
     if PERFIL.idioma == "en":
         tarjetas = [tarjeta_sonidos(trimestre, p, g) for p, g in palabras]
     else:
+        # silabas = None: un nombre que se lee de un golpe («Pierwsze
+        # słowa»), entero y sin partir.
         tarjetas = [
+            r"\tarjetaEntera{%d}{%s}" % (trimestre, escapar(palabra))
+            if silabas is None else
             r"\tarjeta{%d}{%s}{%s}" % (
                 trimestre,
                 r"\sep ".join(escapar(s) for s in silabas),
@@ -873,13 +998,19 @@ def render_actividad(dia, semana_previa, dibujos_previos=()):
                 f"día {num}: 'traza' pide la letra {letra!r}, que no está "
                 "en content/letras-trazo.json"
             )
+        if letra not in PERFIL.alfabeto:
+            raise ErrorDeContenido(
+                f"día {num}: 'traza' pide la letra {letra!r}, que no es del "
+                "abecedario de este cuaderno"
+            )
         # La palabra de ejemplo ("M de mamá") es una de las que se han
         # leído ese día, no una lista aparte: así la letra que se traza
         # es la de algo que se acaba de leer.
         ejemplo = next((p for p in leidas if inicial(p) == letra), None)
-        if ejemplo is None and PERFIL.idioma == "en":
+        if ejemplo is None and letra in PERFIL.letras_dentro:
             # "X as in box": en inglés casi ninguna palabra que se pueda
-            # leer empieza por x, así que vale que la letra esté dentro.
+            # leer empieza por x, y en polaco ninguna por ą, ę, ń o y
+            # ("Ą jak wąż"), así que vale que la letra esté dentro.
             ejemplo = next((p for p in leidas if letra in p.lower()), None)
         if ejemplo is None:
             raise ErrorDeContenido(
@@ -973,6 +1104,8 @@ def render_actividad(dia, semana_previa, dibujos_previos=()):
         )
         if PERFIL.idioma == "en":
             clave = ("encuentra", f"“{modelo}”: {veces} times")
+        elif PERFIL.idioma == "pl":
+            clave = ("encuentra", f"„{modelo}”: {veces} razy")
         else:
             clave = ("encuentra", f"«{modelo}»: {veces} veces")
 
@@ -1486,10 +1619,10 @@ def generar(dias):
         else:
             lectura = lectura_palabras(trimestre, d["tarjetas"])
             instruccion = INSTRUCCION_LECTURA[trimestre]
-            if PERFIL.idioma == "en" and all(g is None for _, g in d["tarjetas"]):
+            if PERFIL.instruccion_nombre and all(g is None for _, g in d["tarjetas"]):
                 # Solo un nombre que se lee de un golpe: no hay botones
-                # que tocar.
-                instruccion = r"\lblFwInstruccionNombre"
+                # que tocar, ni sílabas que juntar.
+                instruccion = PERFIL.instruccion_nombre
 
         # Para "une" por defecto hacen falta las palabras previas de la
         # semana, no las frases.
@@ -1560,13 +1693,12 @@ def generar_ediciones(dias, paginas, entradas):
 
 
 def comprobar_trazo(dias):
-    """Las 27 letras del abecedario se trazan al menos una vez en el año
-    -- igual que en el cuaderno de frases, pero aquí cada letra es la
-    inicial de una palabra que se acaba de leer."""
+    """Las letras del abecedario (las 27 del español, las 26 del inglés,
+    las 32 del polaco) se trazan al menos una vez en el año -- igual que
+    en el cuaderno de frases, pero aquí cada letra es la inicial de una
+    palabra que se acaba de leer."""
     letras, _ = datos_trazo()
-    if PERFIL.idioma == "en":
-        # En inglés, las 26 letras: la ñ no está.
-        letras = [l for l in letras if l in "abcdefghijklmnopqrstuvwxyz"]
+    letras = [l for l in letras if l in PERFIL.alfabeto]
     trazadas = {d["actividad"]["letra"] for d in dias if d["actividad"]["tipo"] == "traza"}
     faltan = sorted(set(letras) - trazadas)
     if faltan and len(dias) == TOTAL_DIAS:
@@ -1641,9 +1773,11 @@ def tabla(dias):
                 for palabra, sil in d.get("tarjetas", []):
                     if palabra.lower() in PERFIL.globales:
                         continue
+                    if sil is None:
+                        continue
                     maxima = max(maxima, len(sil))
                     for s in sil:
-                        nuevos_semana |= rasgos(s)
+                        nuevos_semana |= rasgos_de(s)
             nuevos = ", ".join(sorted(nuevos_semana - vistos))
             vistos |= nuevos_semana
             silabas = f"{maxima} (obj. {t['max_silabas']})"

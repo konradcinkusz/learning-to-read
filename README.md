@@ -6,11 +6,12 @@
 [![Licencia](https://img.shields.io/github/license/konradcinkusz/learning-to-read)](LICENSE)
 [![Hecho con](https://img.shields.io/badge/hecho%20con-LaTeX-2E7D32)](preamble.tex)
 
-Tres cuadernos diarios de lectura en español, uno por nivel, y dos en
-inglés, con la misma familia (los dos primeros cuentan el mismo año con
-los mismos temas semana a semana; el tercero, el año siguiente; los de
-inglés, ese mismo año siguiente, desde la casa de al lado, y también
-los dos con los mismos temas):
+Tres cuadernos diarios de lectura en español, uno por nivel, dos en
+inglés y, en obras, los de polaco, con la misma familia (los dos
+primeros cuentan el mismo año con los mismos temas semana a semana; el
+tercero, el año siguiente; los de inglés, ese mismo año siguiente,
+desde la casa de al lado, y también los dos con los mismos temas; el de
+polaco, el año de los dos primeros):
 
 - **Nivel 1 · Primeras palabras** (`palabras.tex`) -- para quien empieza
   a juntar sílabas: una palabra al día, partida en sílabas, y casi
@@ -30,6 +31,9 @@ los dos con los mismos temas):
   día que se lee sonido a sonido (*c-a-t: cat*), con un "botón" debajo
   de cada sonido, y cada día un dibujo para colorear. Es el cuaderno de
   primeras palabras, en inglés. Ver "First Words" más abajo.
+- **Pierwsze słowa** (`slowa.tex`) -- en polaco, en obras: el cuaderno
+  de primeras palabras, con las sílabas del polaco (*ko·ło*, *ło·pa·ta*)
+  y los mismos temas, semana a semana. Ver "Pierwsze słowa" más abajo.
 
 Y de cada uno, un **cuaderno de verano**: su verano -- las últimas 13
 semanas, 65 páginas -- en un cuaderno aparte, para las vacaciones; y una
@@ -208,6 +212,30 @@ la escalera, que cada sonido de la tabla salga en alguna tarjeta de su
 estación y que cada dibujo sea el de una palabra que se lee ese día.
 Ver `notes/06-first-words.md` para el diseño completo y las fases.
 
+## Pierwsze słowa (en polaco)
+
+El cuaderno de primeras palabras en polaco, para quien conoce las
+letras y empieza a juntarlas en polaco: una familia que habla polaco en
+casa, o quien lo aprende. El mismo generador (`tools/gen_palabras.py
+--libro slowa`), la misma página, el mismo ciclo semanal y los mismos
+temas que el español, y todo en polaco, también la portada, *Jak
+korzystać z tego zeszytu*, el mapa del año, la clave y el diploma.
+
+Se lee por sílabas, como en español, pero con las del polaco
+(`tools/sylaby.py`): *ch, cz, dz, rz, sz* son una consonante, la *i*
+delante de una vocal ablanda la consonante (*pies*, *zie·mia*), y una
+consonante con *r, l, ł* o *rz* no se separa (*ma·sło*). La escalera
+(`ESCALERA_PL`) es la de las cartillas polacas: en otoño, solo sílabas
+directas (*ma·ma*, *ło·pa·ta*); en invierno, además, las cerradas
+(*kot*), las blandas (*zi·ma*, *koń*), la *ó* y la *ż*; en primavera,
+los dígrafos, las nasales (*rę·ka*) y dos consonantes juntas
+(*kro·wa*); en verano, frases. *Lucía*, *Dani* y *Toby* se leen de un
+golpe, enteros. *Pisz po śladzie* traza las 32 letras del alfabeto
+polaco a lo largo del año.
+
+Se está escribiendo: el otoño, días 1--65, ya está. Ver
+[`notes/08-pierwsze-slowa.md`](notes/08-pierwsze-slowa.md).
+
 ## Los cuadernos de verano y las muestras
 
 El verano de cada cuaderno (sus últimas 13 semanas, del día 196 al 260)
@@ -326,6 +354,7 @@ make palabras     # lo mismo para el cuaderno de primeras palabras (color)
 make lupa         # lo mismo para Leo con lupa (color)
 make english      # lo mismo para Read and Draw, en inglés (color)
 make firstwords   # lo mismo para First Words, en inglés (color)
+make slowa        # lo mismo para Pierwsze słowa, en polaco (color)
 make verano       # los diez cuadernos de verano: los cinco, color Y blanco-y-negro
 make muestra      # las diez muestras gratuitas: los cinco, color Y blanco-y-negro
 make all-formats  # los treinta PDF: palabras, frases, lupa, english y firstwords, color Y blanco-y-negro, y sus ediciones
@@ -342,6 +371,8 @@ make build-english / build-english-bw     # lo mismo, Read and Draw
 make check-english / check-english-bw     # lo mismo, Read and Draw (+ actividades, inglés británico y escalera)
 make build-firstwords / build-firstwords-bw   # lo mismo, First Words
 make check-firstwords / check-firstwords-bw   # lo mismo, First Words (+ partido en sonidos y escalera de sonidos)
+make build-slowa / build-slowa-bw             # lo mismo, Pierwsze słowa
+make check-slowa / check-slowa-bw             # lo mismo, Pierwsze słowa (+ silabeo del polaco y su escalera)
 make build-lupa-verano / check-lupa-verano    # un cuaderno de verano (main, main-bw, palabras, lupa-bw...: <raíz>-verano)
 make build-lupa-muestra / check-lupa-muestra  # una muestra gratuita (<raíz>-muestra)
 make clean
@@ -355,15 +386,17 @@ palabras.tex, palabras-bw.tex         -- cuaderno de primeras palabras, color y 
 lupa.tex, lupa-bw.tex                 -- Leo con lupa (nivel 3), color y blanco-y-negro
 english.tex, english-bw.tex           -- Read and Draw (en inglés), color y blanco-y-negro
 firstwords.tex, firstwords-bw.tex     -- First Words (primeras palabras en inglés), color y blanco-y-negro
+slowa.tex, slowa-bw.tex               -- Pierwsze słowa (primeras palabras en polaco), color y blanco-y-negro
 ediciones/<raíz>-verano.tex           -- los cuadernos de verano: cada .tex raíz de arriba con \edicion fijado antes
 ediciones/<raíz>-muestra.tex          -- las muestras gratuitas (las cuatro primeras semanas), igual
 preamble.tex, lang/es.tex             -- el motor LaTeX (la paleta de main-bw.tex está en preamble.tex)
 lang/en.tex                           -- las cadenas en inglés (\booklang = en, ver preamble.tex)
+lang/pl.tex                           -- las cadenas en polaco (\booklang = pl)
 preamble-palabras.tex                 -- lo propio del cuaderno de primeras palabras (tarjetas, cajas que llenan la página)
 preamble-lupa.tex                     -- lo propio de Leo con lupa (caja de actividad a toda página, mapas, tablas, códigos, la lupa)
 preamble-english.tex                  -- lo propio de Read and Draw (sobre preamble-lupa.tex: letra más grande, piezas de sus actividades, iconos)
 preamble-firstwords.tex               -- lo propio de First Words (sobre preamble-palabras.tex: la tarjeta con botones de sonido, la tabla de sonidos)
-body.tex, body-palabras.tex, body-lupa.tex, body-english.tex, body-firstwords.tex -- orden del documento de cada cuaderno
+body.tex, body-palabras.tex, body-lupa.tex, body-english.tex, body-firstwords.tex, body-slowa.tex -- orden del documento de cada cuaderno
 frontmatter/                          -- portada, instrucciones, mapa del curso (frontmatter/palabras/: nivel 1; frontmatter/lupa/: nivel 3, con "Cómo lee un detective" y el carné del club; frontmatter/english/: en inglés, con los iconos de las actividades y "Who's who?"; frontmatter/firstwords/: First Words, con la tabla de sonidos); verano.tex, en cada uno: la página para el adulto de su cuaderno de verano
 content/q1.json, q2.json, q3.json, q4.json  -- los 260 días, uno por trimestre, editados a mano
 content/generated-days.tex            -- GENERADO por tools/gen_days.py, no editar
@@ -382,6 +415,8 @@ content/english/vocabulario-base.json -- el inglés que se da por sabido (para e
 content/english/generated-*.tex       -- GENERADO por tools/gen_days.py --libro english, no editar
 content/firstwords/q1.json ... q4.json -- los días de First Words, editados a mano (cada palabra partida en sonidos)
 content/firstwords/generated-*.tex    -- GENERADO por tools/gen_palabras.py --libro firstwords (días, clave, tabla de sonidos), no editar
+content/slowa/q1.json ...             -- los días de Pierwsze słowa, editados a mano (cada palabra partida en sílabas)
+content/slowa/generated-*.tex         -- GENERADO por tools/gen_palabras.py --libro slowa, no editar
 diagrams/                             -- dibujos de línea (TikZ) para las páginas "Completa"
 diagrams/english/                     -- dibujos para colorear y escenas donde dibujar, de Read and Draw
 backmatter/diploma.tex, clave-respuestas.tex -- diploma y clave de respuestas (backmatter/palabras/: nivel 1; backmatter/lupa/: nivel 3; backmatter/english/: Read and Draw; backmatter/firstwords/: First Words)
@@ -395,6 +430,7 @@ tools/ediciones.py                    -- las ediciones (el cuaderno de verano, l
 tools/gen_palabras.py                 -- lo mismo para el cuaderno de primeras palabras, + la escalera de sílabas (y First Words con --libro firstwords, + la escalera de sonidos)
 tools/silabas.py                      -- silabeo automático del español y rasgos de cada sílaba (cerrada, trabada...)
 tools/fonetica.py                     -- partido automático del inglés en sonidos (grafemas, e mágica), trampas, tricky words (First Words)
+tools/sylaby.py                       -- silabeo automático del polaco y rasgos de cada sílaba (Pierwsze słowa)
 tools/gen_letras_puntos.py            -- fuente -> contorno de cada letra (matplotlib/fonttools; no forma parte de `make`)
 tools/check_pages.py                  -- comprueba que cada día ocupa una sola página
 tools/checklog.py                     -- lee el .log de LuaLaTeX correctamente (nunca grep '^!')
@@ -412,20 +448,21 @@ notes/04-nivel-lupa.md                -- diseño de Leo con lupa (nivel 3): esca
 notes/05-english.md                   -- diseño de Read and Draw (en inglés): escalera, actividades, reparto, las 52 semanas y las fases
 notes/06-first-words.md               -- diseño de First Words (primeras palabras en inglés): escalera de sonidos, botones, comprobaciones y las fases
 notes/07-ediciones.md                 -- las ediciones de los cinco cuadernos: el cuaderno de verano y la muestra gratuita
+notes/08-pierwsze-slowa.md            -- diseño de Pierwsze słowa (primeras palabras en polaco): las sílabas del polaco, la escalera, las 32 letras y las fases
 ```
 
 ## Licencia
 
-El motor -- LaTeX (`preamble*.tex`, `lang/*.tex`, `main*.tex`, `palabras*.tex`, `lupa*.tex`, `english*.tex`, `firstwords*.tex`, `body*.tex`, `ediciones/*.tex`),
+El motor -- LaTeX (`preamble*.tex`, `lang/*.tex`, `main*.tex`, `palabras*.tex`, `lupa*.tex`, `english*.tex`, `firstwords*.tex`, `slowa*.tex`, `body*.tex`, `ediciones/*.tex`),
 las herramientas Python (`tools/`), el `Makefile` y la configuración de CI
 (`.github/`) -- está bajo MIT ([`LICENSE-CODE`](LICENSE-CODE)): reutilízalo
 libremente, incluido un fork para otro niño o niña.
 
 El contenido narrativo -- las frases, las palabras, los nombres y la
 trama de `content/*.json`, `content/palabras/*.json`,
-`content/lupa/*.json`, `content/english/*.json` y
-`content/firstwords/*.json`, y lo que se genera de ahí a las páginas de
-los cinco cuadernos --
+`content/lupa/*.json`, `content/english/*.json`,
+`content/firstwords/*.json` y `content/slowa/*.json`, y lo que se
+genera de ahí a las páginas de los cuadernos --
 está bajo Creative Commons Atribución-NoComercial-CompartirIgual 4.0
 ([`LICENSE-CONTENT`](LICENSE-CONTENT)): se puede adaptar (por ejemplo,
 cambiar los personajes) pero no usar comercialmente, y cualquier adaptación
@@ -487,6 +524,13 @@ primeras palabras en español (`tools/gen_palabras.py`, que sigue
 generándolo idéntico byte a byte) con `tools/fonetica.py`. Compila en
 color y en blanco y negro con las mismas comprobaciones que los otros
 cuatro cuadernos, y se publica en GitHub Pages con ellos.
+
+**Pierwsze słowa (en polaco)**: en obras, un PR por fase. El otoño
+(días 1--65) está escrito y compila en color y en blanco y negro, con
+las mismas comprobaciones que los demás (1 día = 1 página, log limpio,
+cada palabra partida igual que la parte `tools/sylaby.py` y dentro de
+la escalera de su semana) y su medalla. Faltan el invierno, la
+primavera y el verano: ver `notes/08-pierwsze-slowa.md`.
 
 **Los cuadernos de verano**: los cinco, en color y en blanco y negro --
 el verano de cada cuaderno, con su portada, su página para el adulto,
