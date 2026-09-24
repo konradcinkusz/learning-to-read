@@ -233,8 +233,8 @@ los dígrafos, las nasales (*rę·ka*) y dos consonantes juntas
 golpe, enteros. *Pisz po śladzie* traza las 32 letras del alfabeto
 polaco a lo largo del año.
 
-Se está escribiendo: el otoño, días 1--65, ya está. Ver
-[`notes/08-pierwsze-slowa.md`](notes/08-pierwsze-slowa.md).
+Se está escribiendo: del otoño a la primavera, días 1--195, ya está.
+Ver [`notes/08-pierwsze-slowa.md`](notes/08-pierwsze-slowa.md).
 
 ## Los cuadernos de verano y las muestras
 
@@ -525,12 +525,12 @@ generándolo idéntico byte a byte) con `tools/fonetica.py`. Compila en
 color y en blanco y negro con las mismas comprobaciones que los otros
 cuatro cuadernos, y se publica en GitHub Pages con ellos.
 
-**Pierwsze słowa (en polaco)**: en obras, un PR por fase. El otoño
-(días 1--65) está escrito y compila en color y en blanco y negro, con
-las mismas comprobaciones que los demás (1 día = 1 página, log limpio,
-cada palabra partida igual que la parte `tools/sylaby.py` y dentro de
-la escalera de su semana) y su medalla. Faltan el invierno, la
-primavera y el verano: ver `notes/08-pierwsze-slowa.md`.
+**Pierwsze słowa (en polaco)**: en obras, un PR por fase. Del otoño a
+la primavera (días 1--195) está escrito y compila en color y en blanco
+y negro, con las mismas comprobaciones que los demás (1 día = 1 página,
+log limpio, cada palabra partida igual que la parte `tools/sylaby.py` y
+dentro de la escalera de su semana) y sus tres medallas. Falta el
+verano: ver `notes/08-pierwsze-slowa.md`.
 
 **Los cuadernos de verano**: los cinco, en color y en blanco y negro --
 el verano de cada cuaderno, con su portada, su página para el adulto,
