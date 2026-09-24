@@ -117,10 +117,11 @@ de semana impar, y el miércoles de la semana de las letras).
 `content/letras-trazo.json` trae las nueve que el español no tiene (*ą,
 ć, ę, ł, ń, ó, ś, ź, ż*: `tools/gen_letras_puntos.py` las añade al
 final, y las 27 de antes salen igual, letra por letra).
-Ninguna palabra polaca empieza por *ą, ę, ń* o *y*: para esas vale que
-estén dentro de una palabra del día (*Ą jak wąż*, *Y jak ryby*), como la
-*x* en inglés. Al terminar el año tienen que estar las 32
-(`comprobar_trazo`, con el abecedario del `Perfil`).
+Ninguna palabra polaca empieza por *ą, ę, ń* o *y*, y casi ninguna por
+*ó* (*ósmy*): para esas vale que estén dentro de una palabra del día (*Ą
+jak wąż*, *Y jak ryby*, *Ó jak ołówek*), como la *x* en inglés. Al
+terminar el año tienen que estar las 32 (`comprobar_trazo`, con el
+abecedario del `Perfil`).
 
 En otoño: *ł* (*łapa*), *r* (*ryba*), *s* (*sowa*), *k* (*kora*), *p*
 (*papuga*) y *m* (*morele*). En invierno: *z* (*zima*), *b* (*bal*), *l*
@@ -129,7 +130,11 @@ En otoño: *ł* (*łapa*), *r* (*ryba*), *s* (*sowa*), *k* (*kora*), *p*
 martes de semana impar y el miércoles de la semana de las letras --: *ą*
 (*ząb*), *j* (*jajka*), *n* (*nasiona*), *u* (*upadek*), *f* (*foka*),
 *ś* (*śniadanie*), *c* (*cyfry*), *y* (*tygrys*), *t* (*tańczyć*) y *o*
-(*okulary*). Quedan nueve para el verano: *a, ć, e, ę, g, i, ń, ó, ź*.
+(*okulary*). Y en verano, las nueve que quedaban, una cada martes: *e*
+(*Ekstra wakacje!*), *ź* (*Źrebak skacze.*), *g* (*Gruby kot.*), *i*
+(*Idziemy do ogródka.*), *a* (*Arbuz na plaży.*), *ń* (*Dzień dobry,
+Martín!*), *ó* (*Nowy ołówek w piórniku.*), *ć* (*Dani ćwiczy
+czytanie.*) y *ę* (*Dani czyta piękne bajki.*).
 
 ## Lo que cambia en el motor
 
@@ -153,8 +158,10 @@ era antes.
 
 ## Las fases
 
-Un PR por fase, cada uno en verde antes del siguiente. El `Perfil` dice
-cuántos días están escritos (`dias_escritos`).
+Un PR por fase, cada uno en verde antes del siguiente. Mientras tanto,
+el `Perfil` decía cuántos días había escritos (`dias_escritos`), y se
+validaban exactamente esos; en la fase 3 se quitó, y el cuaderno volvió
+a la regla de siempre: los 260 días o nada.
 
 1. **El motor y el otoño** (días 1–65): `tools/sylaby.py`, el `Perfil`,
    `lang/pl.tex`, las páginas para el adulto, la clave, el diploma, las
@@ -165,4 +172,20 @@ cuántos días están escritos (`dias_escritos`).
    juntas (*smycz, zą-bek, szczo-tecz-ka, dżdżow-ni-ca, gą-sie-ni-ca*).
    Diecisiete letras más en *Pisz po śladzie*. **Hecho.**
 3. **El verano** (días 196–260), las 32 letras, el cuaderno de verano y
-   la muestra, y publicarlo.
+   la muestra, y publicarlo. Una frase al día, sin escalera de sílabas:
+   de dos palabras (*Toby czeka.*, *Bigotes śpi.*) las semanas 40–43, de
+   dos o tres (*Idzie burza.*, *Dani się boi.*) las 44–47, y de tres o
+   cuatro (*Martín szuka ślimaków.*, *Do widzenia, babciu Roso.*) desde
+   la 48; con *Tak czy nie?* (*Toby szczeka. / Toby lata.*) y parejas
+   escritas a mano en *Połącz* (animales y sus sonidos, contrarios,
+   rimas, dónde vive cada animal). Las nueve letras que faltaban en
+   *Pisz po śladzie* (ver arriba), con lo que están las 32. El cartel
+   del día 200, "Dwieście!", tiene el suyo para el cuaderno de verano
+   ("5 przeczytanych stron! Cały tydzień!", `banner_verano`, ver
+   `notes/07-ediciones.md`). El cuaderno de verano
+   (`ediciones/slowa-verano.tex`, con su página para el adulto, "Jak
+   korzystać z tego zeszytu na lato") y la muestra
+   (`ediciones/slowa-muestra.tex`), en color y en blanco y negro, y los
+   seis PDF en GitHub Pages
+   (`ucze-sie-czytac-slowa.pdf`, `ucze-sie-czytac-slowa-cz-b.pdf`,
+   `-lato`, `-probka`...) con los demás. **Hecho.**

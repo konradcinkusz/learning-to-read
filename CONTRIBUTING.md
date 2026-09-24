@@ -18,7 +18,7 @@ Lo que sí tiene sentido, y es bienvenido:
   en silencio; el arreglo está documentado en `preamble.tex` junto al
   código, como ejemplo del tipo de problema que merece un *issue* o un PR).
 - **Los generadores** (`tools/gen_days.py`, `tools/gen_palabras.py`,
-  `tools/lupa.py`, `tools/english.py`, `tools/fonetica.py`) y sus validaciones -- por ejemplo, si detectas un
+  `tools/lupa.py`, `tools/english.py`, `tools/fonetica.py`, `tools/sylaby.py`) y sus validaciones -- por ejemplo, si detectas un
   caso que debería fallar la validación y no lo hace, o al revés (una
   tabla lógica con dos soluciones que el generador no detecta, una ruta
   de mapa que llega a otra casilla...).
@@ -29,7 +29,9 @@ Lo que sí tiene sentido, y es bienvenido:
   mismo con el partido en sonidos del inglés (`tools/fonetica.py`): una
   palabra que `segmentar()` parte mal, o una trampa que no rechaza (una
   letra que no suena y que tendría botón), va a `EXCEPCIONES`, a
-  `PRUEBA` o a `PRUEBA_TRAMPAS`.
+  `PRUEBA` o a `PRUEBA_TRAMPAS`. Y con el silabeo del polaco
+  (`tools/sylaby.py`): una palabra que `podziel()` parte mal va a
+  `WYJATKI` y a `CASOS_PRUEBA`, con su porqué.
 - **`tools/check_pages.py`** y el invariante "1 día = 1 página" -- si
   encuentras un caso donde se rompe sin que el *build* lo detecte.
 - **CI** (`.github/workflows/`), el `Makefile`, o cualquier parte de la
@@ -43,32 +45,34 @@ Lo que sí tiene sentido, y es bienvenido:
 ## La vía principal: haz un fork
 
 El repositorio está deliberadamente construido para esto: el motor LaTeX
-(`preamble*.tex`, `lang/es.tex`, `lang/en.tex`, `tools/`) es independiente
-del contenido (`content/*.json`, `content/palabras/*.json`,
+(`preamble*.tex`, `lang/es.tex`, `lang/en.tex`, `lang/pl.tex`, `tools/`) es
+independiente del contenido (`content/*.json`, `content/palabras/*.json`,
 `content/lupa/*.json`, `content/english/*.json`,
-`content/firstwords/*.json`). Si
+`content/firstwords/*.json`, `content/slowa/*.json`). Si
 quieres un cuaderno parecido para otro niño o niña, haz un fork,
 sustituye `content/q1.json` a `q4.json` (frases), `content/palabras/q1.json`
 a `q4.json` (primeras palabras), `content/lupa/q1.json` a `q4.json`
 (Leo con lupa), `content/english/q1.json` a `q4.json` (Read and
-Draw, en inglés) y/o `content/firstwords/q1.json` a `q4.json` (First
-Words, en inglés) por tus propios personajes, frases y palabras, y
+Draw, en inglés), `content/firstwords/q1.json` a `q4.json` (First
+Words, en inglés) y/o `content/slowa/q1.json` a `q4.json` (Pierwsze
+słowa, en polaco) por tus propios personajes, frases y palabras, y
 conserva el resto tal cual -- es exactamente el reparto MIT/CC BY-NC-SA de `LICENSE`: el motor
 es tuyo para reutilizar, la historia concreta de esta familia no.
 
 ## Flujo de trabajo
 
 ```sh
-make generate       # content/q*.json, content/{palabras,lupa,english,firstwords}/q*.json -> .tex generados
+make generate       # content/q*.json, content/{palabras,lupa,english,firstwords,slowa}/q*.json -> .tex generados
 make build           # compila el cuaderno de frases en color (main.tex)
 make palabras        # genera, compila y comprueba el de primeras palabras (palabras.tex)
 make lupa            # genera, compila y comprueba Leo con lupa (lupa.tex)
 make english         # genera, compila y comprueba Read and Draw (english.tex)
 make firstwords      # genera, compila y comprueba First Words (firstwords.tex)
+make slowa           # genera, compila y comprueba Pierwsze słowa (slowa.tex)
 make check            # tools/checklog.py + tools/check_pages.py + tools/gen_days.py --check + tools/metricas.py
-make verano           # los cinco cuadernos de verano, color Y blanco-y-negro
-make muestra          # las cinco muestras gratuitas, color Y blanco-y-negro
-make all-formats      # los cinco cuadernos, sus cuadernos de verano y sus
+make verano           # los seis cuadernos de verano, color Y blanco-y-negro
+make muestra          # las seis muestras gratuitas, color Y blanco-y-negro
+make all-formats      # los seis cuadernos, sus cuadernos de verano y sus
                        # muestras, color Y blanco-y-negro -- ejecútalo antes de
                        # abrir un PR, es lo mismo que corre el CI
 ```
@@ -103,6 +107,14 @@ Las barreras duras que tienen que quedar en verde:
   generada de la misma escalera, sin ningún sonido sin ejemplo, y con
   cada uno de sus sonidos en alguna tarjeta antes de que acabe su
   estación.
+- **La escalera de sílabas del polaco** de Pierwsze słowa
+  (`tools/gen_palabras.py --libro slowa --check`, ver
+  `notes/08-pierwsze-slowa.md`): cada palabra escrita con sus sílabas
+  (`"ło-pa-ta"`) tiene que coincidir con `tools/sylaby.py`, y no usar lo
+  que su semana todavía no admite (una sílaba cerrada o blanda, un
+  dígrafo o una nasal en otoño); los nombres que se leen de un golpe
+  van enteros, y al terminar el año tienen que estar trazadas las 32
+  letras del abecedario polaco.
 - **Los dibujos para colorear** de First Words (el mismo `--check`): el
   `"dibujo"` de cada día existe en `diagrams/` y es el de una palabra que
   se lee ese día; ningún dibujo de `diagrams/firstwords/` se queda sin

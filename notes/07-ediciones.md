@@ -1,6 +1,6 @@
 # Las ediciones — el cuaderno de verano y la muestra gratuita
 
-Cada uno de los cinco cuadernos tiene 260 páginas, una por día laborable
+Cada uno de los seis cuadernos tiene 260 páginas, una por día laborable
 del año. Una **edición** es el mismo cuaderno con otra selección de
 días, y con lo que tiene que cambiar para que esa selección sea un
 cuaderno de verdad: su portada, su página para el adulto, su mapa, su
@@ -12,7 +12,7 @@ verano** y la **muestra gratuita**.
 El verano de cada cuaderno — sus últimas 13 semanas, del día 196 al 260
 — en un cuaderno aparte, para quien solo quiere leer un poco cada día
 de las vacaciones: 65 páginas, impresas como días 1 a 65 y semanas 1 a
-13, sin trimestre. Diez PDF, los cinco cuadernos en color y en blanco y
+13, sin trimestre. Doce PDF, los seis cuadernos en color y en blanco y
 negro: `ediciones/<raíz>-verano.tex` (`main-verano.tex`,
 `main-bw-verano.tex`, `palabras-verano.tex`...). `make verano` los
 compila y los comprueba; `make build-lupa-verano` o `make
@@ -21,10 +21,10 @@ check-lupa-verano`, uno.
 Lo que lleva, en orden:
 
 - **La portada del libro**, con una insignia debajo del título (un sol y
-  "Cuaderno de verano" / "Summer book", `\insigniaEdicion`). En el
-  cuaderno de primeras palabras y en *First Words* cambia también el
-  subtítulo: en verano ya no se lee una palabra al día, sino una frase
-  corta.
+  "Cuaderno de verano" / "Summer book" / "Zeszyt na lato",
+  `\insigniaEdicion`). En el cuaderno de primeras palabras, en *First
+  Words* y en *Pierwsze słowa* cambia también el subtítulo: en verano ya
+  no se lee una palabra al día, sino una frase corta.
 - **Una página para el adulto propia** (`frontmatter/verano.tex` y
   `frontmatter/<libro>/verano.tex`), en vez de "Cómo usar este cuaderno",
   que habla del año entero: para quién es el verano de ese cuaderno (lo
@@ -53,7 +53,7 @@ entero.
 ## La muestra gratuita
 
 Las cuatro primeras semanas de cada cuaderno (días 1 a 20), para probar
-con unas pocas páginas antes de imprimir el año entero. Diez PDF más:
+con unas pocas páginas antes de imprimir el año entero. Doce PDF más:
 `ediciones/<raíz>-muestra.tex`; `make muestra` los compila y los
 comprueba.
 
@@ -65,7 +65,8 @@ tenga cada uno (el carné de detective, "Who's who?", la tabla de
 sonidos). Lo que cambia:
 
 - **la portada**, con la insignia "Muestra gratuita: las cuatro primeras
-  semanas" / "Free sample: the first four weeks";
+  semanas" / "Free sample: the first four weeks" / "Bezpłatna próbka:
+  pierwsze cztery tygodnie";
 - **su parte de la clave**;
 - **la última página**, en vez del diploma (`\paginaFinMuestra`):
   "¿Seguimos leyendo?", dónde está el cuaderno entero — la página de los
@@ -100,10 +101,10 @@ páginas leídas!": el número de páginas leídas es siempre el del día, y
 que el cartel empieza de verdad por ese número). Si el resto del cartel
 habla del número o del año ("¡Doscientas!", "Un año entero leyendo con
 lupa"), la actividad lleva el suyo propio para la edición, en
-`banner_verano`: hay tres, en el día 200 del cuaderno de primeras
-palabras y de *First Words* y en el 260 de *Leo con lupa*. Un
-`banner_verano` en un día que no es del verano, o sin `banner`, es un
-error.
+`banner_verano`: hay cuatro, en el día 200 del cuaderno de primeras
+palabras, de *First Words* y de *Pierwsze słowa*, y en el 260 de *Leo
+con lupa*. Un `banner_verano` en un día que no es del verano, o sin
+`banner`, es un error.
 
 En la muestra, que no cambia los números, el cartel se queda como está.
 
@@ -136,9 +137,10 @@ también.
 - `make generate` escribe las ediciones con el libro entero, y los
   `--check` de los dos generadores comprueban que también las suyas
   están al día.
-- El CI compila los diez cuadernos de verano y las diez muestras con
+- El CI compila los doce cuadernos de verano y las doce muestras con
   los mismos pasos que los libros enteros (`.github/workflows/build.yml`:
   log limpio y un día por página), y Pages los publica junto a ellos
   (`aprendo-a-leer-verano.pdf`, `leo-con-lupa-verano-bn.pdf`,
-  `read-and-draw-summer.pdf`, `first-words-summer-bw.pdf`...;
-  `aprendo-a-leer-muestra.pdf`, `read-and-draw-sample-bw.pdf`...).
+  `read-and-draw-summer.pdf`, `first-words-summer-bw.pdf`,
+  `ucze-sie-czytac-slowa-lato.pdf`...; `aprendo-a-leer-muestra.pdf`,
+  `read-and-draw-sample-bw.pdf`, `ucze-sie-czytac-slowa-probka-cz-b.pdf`...).

@@ -7,11 +7,11 @@
 [![Hecho con](https://img.shields.io/badge/hecho%20con-LaTeX-2E7D32)](preamble.tex)
 
 Tres cuadernos diarios de lectura en español, uno por nivel, dos en
-inglés y, en obras, los de polaco, con la misma familia (los dos
-primeros cuentan el mismo año con los mismos temas semana a semana; el
-tercero, el año siguiente; los de inglés, ese mismo año siguiente,
-desde la casa de al lado, y también los dos con los mismos temas; el de
-polaco, el año de los dos primeros):
+inglés y uno en polaco, con la misma familia (los dos primeros cuentan
+el mismo año con los mismos temas semana a semana; el tercero, el año
+siguiente; los de inglés, ese mismo año siguiente, desde la casa de al
+lado, y también los dos con los mismos temas; el de polaco, el año de
+los dos primeros):
 
 - **Nivel 1 · Primeras palabras** (`palabras.tex`) -- para quien empieza
   a juntar sílabas: una palabra al día, partida en sílabas, y casi
@@ -31,9 +31,9 @@ polaco, el año de los dos primeros):
   día que se lee sonido a sonido (*c-a-t: cat*), con un "botón" debajo
   de cada sonido, y cada día un dibujo para colorear. Es el cuaderno de
   primeras palabras, en inglés. Ver "First Words" más abajo.
-- **Pierwsze słowa** (`slowa.tex`) -- en polaco, en obras: el cuaderno
-  de primeras palabras, con las sílabas del polaco (*ko·ło*, *ło·pa·ta*)
-  y los mismos temas, semana a semana. Ver "Pierwsze słowa" más abajo.
+- **Pierwsze słowa** (`slowa.tex`) -- en polaco: el cuaderno de
+  primeras palabras, con las sílabas del polaco (*ko·ło*, *ło·pa·ta*) y
+  los mismos temas, semana a semana. Ver "Pierwsze słowa" más abajo.
 
 Y de cada uno, un **cuaderno de verano**: su verano -- las últimas 13
 semanas, 65 páginas -- en un cuaderno aparte, para las vacaciones; y una
@@ -233,8 +233,9 @@ los dígrafos, las nasales (*rę·ka*) y dos consonantes juntas
 golpe, enteros. *Pisz po śladzie* traza las 32 letras del alfabeto
 polaco a lo largo del año.
 
-Se está escribiendo: del otoño a la primavera, días 1--195, ya está.
-Ver [`notes/08-pierwsze-slowa.md`](notes/08-pierwsze-slowa.md).
+Ver [`notes/08-pierwsze-slowa.md`](notes/08-pierwsze-slowa.md) para el
+diseño completo: las sílabas del polaco, la escalera, las 32 letras y
+las fases.
 
 ## Los cuadernos de verano y las muestras
 
@@ -287,6 +288,10 @@ Nivel 3, Leo con lupa:
 **[⬇ PDF (color)](https://konradcinkusz.github.io/learning-to-read/first-words.pdf)**
 · **[⬇ PDF (blanco y negro)](https://konradcinkusz.github.io/learning-to-read/first-words-bw.pdf)**
 
+*Pierwsze słowa*, en polaco:
+**[⬇ PDF (kolorowy)](https://konradcinkusz.github.io/learning-to-read/ucze-sie-czytac-slowa.pdf)**
+· **[⬇ PDF (czarno-biały)](https://konradcinkusz.github.io/learning-to-read/ucze-sie-czytac-slowa-cz-b.pdf)**
+
 Los cuadernos de verano (65 páginas cada uno):
 nivel 1, primeras palabras
 ([color](https://konradcinkusz.github.io/learning-to-read/aprendo-a-leer-palabras-verano.pdf) ·
@@ -302,7 +307,10 @@ nivel 3, Leo con lupa
 [blanco y negro](https://konradcinkusz.github.io/learning-to-read/read-and-draw-summer-bw.pdf));
 *First Words*
 ([color](https://konradcinkusz.github.io/learning-to-read/first-words-summer.pdf) ·
-[blanco y negro](https://konradcinkusz.github.io/learning-to-read/first-words-summer-bw.pdf)).
+[blanco y negro](https://konradcinkusz.github.io/learning-to-read/first-words-summer-bw.pdf));
+*Pierwsze słowa*
+([kolorowy](https://konradcinkusz.github.io/learning-to-read/ucze-sie-czytac-slowa-lato.pdf) ·
+[czarno-biały](https://konradcinkusz.github.io/learning-to-read/ucze-sie-czytac-slowa-lato-cz-b.pdf)).
 
 Las muestras gratuitas (las cuatro primeras semanas, 20 días):
 nivel 1, primeras palabras
@@ -319,7 +327,10 @@ nivel 3, Leo con lupa
 [blanco y negro](https://konradcinkusz.github.io/learning-to-read/read-and-draw-sample-bw.pdf));
 *First Words*
 ([color](https://konradcinkusz.github.io/learning-to-read/first-words-sample.pdf) ·
-[blanco y negro](https://konradcinkusz.github.io/learning-to-read/first-words-sample-bw.pdf)).
+[blanco y negro](https://konradcinkusz.github.io/learning-to-read/first-words-sample-bw.pdf));
+*Pierwsze słowa*
+([kolorowy](https://konradcinkusz.github.io/learning-to-read/ucze-sie-czytac-slowa-probka.pdf) ·
+[czarno-biały](https://konradcinkusz.github.io/learning-to-read/ucze-sie-czytac-slowa-probka-cz-b.pdf)).
 
 Enlaces fijos, publicados por GitHub Pages en cada push a `main` (ver
 `.github/workflows/pages.yml`). Las dos versiones tienen exactamente el
@@ -335,7 +346,8 @@ despliegue), los mismos PDF están también en la pestaña
 → el último run de *Build* → artefactos `pdf-color` / `pdf-bw` /
 `pdf-palabras-color` / `pdf-palabras-bw` / `pdf-lupa-color` /
 `pdf-lupa-bw` / `pdf-english-color` / `pdf-english-bw` /
-`pdf-firstwords-color` / `pdf-firstwords-bw`, los de verano
+`pdf-firstwords-color` / `pdf-firstwords-bw` / `pdf-slowa-color` /
+`pdf-slowa-bw`, los de verano
 `pdf-verano-color` / `pdf-verano-bw` / `pdf-palabras-verano-color`... y
 las muestras `pdf-muestra-color` / `pdf-palabras-muestra-bw`... (se
 guardan 30 días, hace falta estar identificado en GitHub para
@@ -355,10 +367,10 @@ make lupa         # lo mismo para Leo con lupa (color)
 make english      # lo mismo para Read and Draw, en inglés (color)
 make firstwords   # lo mismo para First Words, en inglés (color)
 make slowa        # lo mismo para Pierwsze słowa, en polaco (color)
-make verano       # los diez cuadernos de verano: los cinco, color Y blanco-y-negro
-make muestra      # las diez muestras gratuitas: los cinco, color Y blanco-y-negro
-make all-formats  # los treinta PDF: palabras, frases, lupa, english y firstwords, color Y blanco-y-negro, y sus ediciones
-make generate     # solo regenera los .tex de los cinco cuadernos desde el JSON
+make verano       # los doce cuadernos de verano: los seis, color Y blanco-y-negro
+make muestra      # las doce muestras gratuitas: los seis, color Y blanco-y-negro
+make all-formats  # los treinta y seis PDF: palabras, frases, lupa, english, firstwords y slowa, color Y blanco-y-negro, y sus ediciones
+make generate     # solo regenera los .tex de los seis cuadernos desde el JSON
 make build        # solo compila frases en color (asume que ya está generado)
 make build-bw     # solo compila frases en blanco y negro
 make build-palabras / build-palabras-bw   # lo mismo, primeras palabras
@@ -447,7 +459,7 @@ notes/03-nivel-palabras.md            -- diseño del cuaderno de primeras palabr
 notes/04-nivel-lupa.md                -- diseño de Leo con lupa (nivel 3): escalera, actividades, reparto y las 52 semanas
 notes/05-english.md                   -- diseño de Read and Draw (en inglés): escalera, actividades, reparto, las 52 semanas y las fases
 notes/06-first-words.md               -- diseño de First Words (primeras palabras en inglés): escalera de sonidos, botones, comprobaciones y las fases
-notes/07-ediciones.md                 -- las ediciones de los cinco cuadernos: el cuaderno de verano y la muestra gratuita
+notes/07-ediciones.md                 -- las ediciones de los cuadernos: el cuaderno de verano y la muestra gratuita
 notes/08-pierwsze-slowa.md            -- diseño de Pierwsze słowa (primeras palabras en polaco): las sílabas del polaco, la escalera, las 32 letras y las fases
 ```
 
@@ -525,20 +537,24 @@ generándolo idéntico byte a byte) con `tools/fonetica.py`. Compila en
 color y en blanco y negro con las mismas comprobaciones que los otros
 cuatro cuadernos, y se publica en GitHub Pages con ellos.
 
-**Pierwsze słowa (en polaco)**: en obras, un PR por fase. Del otoño a
-la primavera (días 1--195) está escrito y compila en color y en blanco
-y negro, con las mismas comprobaciones que los demás (1 día = 1 página,
-log limpio, cada palabra partida igual que la parte `tools/sylaby.py` y
-dentro de la escalera de su semana) y sus tres medallas. Falta el
-verano: ver `notes/08-pierwsze-slowa.md`.
+**Pierwsze słowa (en polaco)**: completo, los 260 días (las cuatro
+partes del año, con sus tres medallas, las 32 letras del alfabeto
+polaco en *Pisz po śladzie*, la clave de respuestas y el diploma),
+escrito en tres fases, una por PR (ver `notes/08-pierwsze-slowa.md`,
+"Las fases"). Todo está en polaco, también la portada, *Jak korzystać z
+tego zeszytu* y el mapa del año. Compila en color y en blanco y negro
+con las mismas comprobaciones que los demás (1 día = 1 página, log
+limpio, cada palabra partida igual que la parte `tools/sylaby.py` y
+dentro de la escalera de su semana), con su cuaderno de verano y su
+muestra, y se publica en GitHub Pages con ellos.
 
-**Los cuadernos de verano**: los cinco, en color y en blanco y negro --
+**Los cuadernos de verano**: los seis, en color y en blanco y negro --
 el verano de cada cuaderno, con su portada, su página para el adulto,
 su mapa del verano, su clave y su diploma. Compilan con las mismas
 comprobaciones que los libros enteros (1 día = 1 página, log limpio), y
 se publican en GitHub Pages con ellos. Ver `notes/07-ediciones.md`.
 
-**Las muestras gratuitas**: las cinco, en color y en blanco y negro --
+**Las muestras gratuitas**: las seis, en color y en blanco y negro --
 las cuatro primeras semanas de cada cuaderno, con una última página que
 dice dónde está el cuaderno entero. Las mismas comprobaciones, y
 también en GitHub Pages.

@@ -66,6 +66,10 @@ def ruta_edicion(ruta, edicion):
 PATRON_BANNER = {
     "es": re.compile(r"^¡(\d+) páginas leídas!"),
     "en": re.compile(r"^(\d+) pages read!"),
+    # "przeczytanych stron", el genitivo plural: vale para todos los
+    # carteles, que van de diez en diez (10, 20... 260) y, en el cuaderno
+    # de verano, de 5 en 5 desde el 5 (5, 15... 65).
+    "pl": re.compile(r"^(\d+) przeczytanych stron!"),
 }
 
 

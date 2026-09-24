@@ -260,6 +260,12 @@ jobs:
           - variant: firstwords-verano-bw
             root: firstwords-bw-verano
             tex: ediciones/firstwords-bw-verano.tex
+          - variant: slowa-verano-color
+            root: slowa-verano
+            tex: ediciones/slowa-verano.tex
+          - variant: slowa-verano-bw
+            root: slowa-bw-verano
+            tex: ediciones/slowa-bw-verano.tex
           # Las muestras gratuitas (ediciones/<raíz>-muestra.tex): las
           # cuatro primeras semanas de cada cuaderno, con sus páginas del
           # principio y, al final, dónde está el cuaderno entero. Igual que
@@ -294,6 +300,12 @@ jobs:
           - variant: firstwords-muestra-bw
             root: firstwords-bw-muestra
             tex: ediciones/firstwords-bw-muestra.tex
+          - variant: slowa-muestra-color
+            root: slowa-muestra
+            tex: ediciones/slowa-muestra.tex
+          - variant: slowa-muestra-bw
+            root: slowa-bw-muestra
+            tex: ediciones/slowa-bw-muestra.tex
     steps:
       - uses: actions/checkout@v4
 

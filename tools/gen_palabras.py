@@ -234,8 +234,8 @@ class Perfil:
     alfabeto: str = ALFABETO_ES
     # Las letras que ninguna palabra tiene al principio (en inglés, casi
     # ninguna que se pueda leer empieza por x; en polaco, ninguna empieza
-    # por ą, ę, ń o y): para trazarlas basta con que estén dentro de una
-    # palabra del día ("Ą jak wąż").
+    # por ą, ę, ń o y, y casi ninguna por ó): para trazarlas basta con
+    # que estén dentro de una palabra del día ("Ą jak wąż").
     letras_dentro: frozenset = frozenset()
     # La instrucción de la caja de lectura cuando lo único que se lee ese
     # día es un nombre que se lee de un golpe (sin sílabas ni sonidos que
@@ -301,9 +301,8 @@ SLOWA = Perfil(
     titulo_medalla="Medal za {}!",
     nombres_medalla={1: "jesień", 2: "zimę", 3: "wiosnę"},
     animo_medalla=r"Tak trzymaj, \rule{55mm}{0.4pt}!",
-    dias_escritos=195,
     alfabeto=ALFABETO_PL,
-    letras_dentro=frozenset("ąęńy"),
+    letras_dentro=frozenset("ąęńóy"),
     instruccion_nombre=r"\lblSlInstruccionNombre",
 )
 
