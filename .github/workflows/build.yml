@@ -46,7 +46,7 @@ jobs:
       # matplotlib/fonttools (eso solo hace falta para regenerarlo, ver
       # tools/gen_letras_puntos.py), así que este job no gana ninguna
       # dependencia pesada por esa actividad.
-      - name: Genera los .tex de los cinco cuadernos desde su JSON
+      - name: Genera los .tex de los cuadernos desde su JSON
         run: make generate
 
       - name: Valida el contenido (frases por trimestre, campos de actividad)
@@ -152,6 +152,29 @@ jobs:
             python3 tools/gen_palabras.py --libro firstwords --tabla
           } >> "$GITHUB_STEP_SUMMARY"
 
+      # «Pierwsze słowa», las primeras palabras en polaco
+      # (content/slowa/q*.json, ver notes/08-pierwsze-slowa.md): las mismas
+      # puertas que el cuaderno de primeras palabras en español, con las
+      # sílabas del polaco. Primero el silabeo automático contra casos
+      # conocidos (tools/sylaby.py: dígrafos, la i que ablanda, los grupos
+      # que no se separan); después el contenido -- cada palabra partida a
+      # mano igual que la parte tools/sylaby.py, y dentro de la escalera
+      # de su semana -- y un resumen semana a semana. Mientras se escribe
+      # por partes, su Perfil dice cuántos días tiene ya (dias_escritos).
+      - name: Comprueba el silabeo automático del polaco (casos conocidos)
+        run: python3 tools/sylaby.py --prueba
+
+      - name: Valida Pierwsze słowa (silabeo, escalera de sílabas del polaco)
+        run: python3 tools/gen_palabras.py --libro slowa --check
+
+      - name: Resume la escalera de Pierwsze słowa
+        run: |
+          {
+            echo '## Pierwsze słowa: escalera de sílabas por semana'
+            echo
+            python3 tools/gen_palabras.py --libro slowa --tabla
+          } >> "$GITHUB_STEP_SUMMARY"
+
   build:
     name: PDF (${{ matrix.variant }})
     needs: gates
@@ -193,6 +216,12 @@ jobs:
             root: firstwords
           - variant: firstwords-bw
             root: firstwords-bw
+          # «Pierwsze słowa» (slowa.tex), las primeras palabras en polaco:
+          # las mismas.
+          - variant: slowa-color
+            root: slowa
+          - variant: slowa-bw
+            root: slowa-bw
           # Los cuadernos de verano (ver notes/07-ediciones.md): cada uno es
           # su .tex raíz de siempre con \edicion fijado antes
           # (ediciones/<raíz>-verano.tex), y se compila desde la raíz del
@@ -273,7 +302,7 @@ jobs:
           python-version: '3.11'
 
       # Otro runner, otro checkout -- este job genera para sí mismo.
-      - name: Genera los .tex de los cinco cuadernos desde su JSON
+      - name: Genera los .tex de los cuadernos desde su JSON
         run: make generate
 
       # LuaLaTeX, no pdflatex: la letra es Andika (fonts/andika/, ver

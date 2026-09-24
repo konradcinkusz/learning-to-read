@@ -9,13 +9,16 @@ EN     = english
 ENBW   = english-bw
 FW     = firstwords
 FWBW   = firstwords-bw
+SL     = slowa
+SLBW   = slowa-bw
 
-.PHONY: all all-formats palabras lupa english firstwords verano muestra generate \
+.PHONY: all all-formats palabras lupa english firstwords slowa verano muestra generate \
         build build-bw build-palabras build-palabras-bw build-lupa build-lupa-bw \
         build-english build-english-bw build-firstwords build-firstwords-bw \
+        build-slowa build-slowa-bw \
         check check-bw check-palabras check-palabras-bw check-lupa check-lupa-bw \
         check-english check-english-bw check-firstwords check-firstwords-bw \
-        clean watch
+        check-slowa check-slowa-bw clean watch
 
 # Cinco cuadernos -- tres niveles en español y dos en inglés --, el
 # mismo motor:
@@ -30,7 +33,10 @@ FWBW   = firstwords-bw
 #     (content/english/q*.json, tools/gen_days.py --libro english);
 #   - firstwords.tex / firstwords-bw.tex -- «First Words», las primeras
 #     palabras en inglés, muy por debajo de "Read and Draw"
-#     (content/firstwords/q*.json, tools/gen_palabras.py --libro firstwords).
+#     (content/firstwords/q*.json, tools/gen_palabras.py --libro firstwords);
+#   - slowa.tex / slowa-bw.tex       -- «Pierwsze słowa», las primeras
+#     palabras en polaco, por sílabas, como el nivel 1 en español
+#     (content/slowa/q*.json, tools/gen_palabras.py --libro slowa).
 # El color y el blanco-y-negro de cada uno comparten body y contenido
 # generado -- lo único que cambia es \bookcolor, fijado antes de
 # \input{preamble} (ver preamble.tex).
@@ -50,11 +56,14 @@ english: generate build-english check-english
 
 firstwords: generate build-firstwords check-firstwords
 
+slowa: generate build-slowa check-slowa
+
 all-formats: generate build check build-bw check-bw \
              build-palabras check-palabras build-palabras-bw check-palabras-bw \
              build-lupa check-lupa build-lupa-bw check-lupa-bw \
              build-english check-english build-english-bw check-english-bw \
              build-firstwords check-firstwords build-firstwords-bw check-firstwords-bw \
+             build-slowa check-slowa build-slowa-bw check-slowa-bw \
              verano muestra
 
 generate:
@@ -63,6 +72,7 @@ generate:
 	python3 tools/gen_days.py --libro lupa
 	python3 tools/gen_days.py --libro english
 	python3 tools/gen_palabras.py --libro firstwords
+	python3 tools/gen_palabras.py --libro slowa
 
 build:
 	$(LATEX) $(MAIN).tex
@@ -93,6 +103,12 @@ build-firstwords:
 
 build-firstwords-bw:
 	$(LATEX) $(FWBW).tex
+
+build-slowa:
+	$(LATEX) $(SL).tex
+
+build-slowa-bw:
+	$(LATEX) $(SLBW).tex
 
 check:
 	python3 tools/checklog.py $(MAIN).log
@@ -144,6 +160,16 @@ check-firstwords-bw:
 	python3 tools/checklog.py $(FWBW).log
 	python3 tools/check_pages.py $(FWBW).aux
 
+check-slowa:
+	python3 tools/checklog.py $(SL).log
+	python3 tools/check_pages.py $(SL).aux
+	python3 tools/sylaby.py --prueba
+	python3 tools/gen_palabras.py --libro slowa --check
+
+check-slowa-bw:
+	python3 tools/checklog.py $(SLBW).log
+	python3 tools/check_pages.py $(SLBW).aux
+
 # Las ediciones (ver notes/07-ediciones.md), en color y en blanco y negro:
 # el cuaderno de verano de cada cuaderno y su muestra gratuita (las cuatro
 # primeras semanas). ediciones/<raíz>-<edición>.tex es el .tex raíz de
@@ -180,6 +206,8 @@ clean:
 	latexmk -C $(ENBW).tex
 	latexmk -C $(FW).tex
 	latexmk -C $(FWBW).tex
+	latexmk -C $(SL).tex
+	latexmk -C $(SLBW).tex
 	for r in $(RAICES); do latexmk -C ediciones/$$r-verano.tex; latexmk -C ediciones/$$r-muestra.tex; done
 	rm -f content/generated-*-verano.tex content/*/generated-*-verano.tex
 	rm -f content/generated-*-muestra.tex content/*/generated-*-muestra.tex
@@ -189,6 +217,7 @@ clean:
 	rm -f content/english/generated-days.tex content/english/generated-clave.tex
 	rm -f content/firstwords/generated-days.tex content/firstwords/generated-clave.tex \
 	      content/firstwords/generated-sonidos.tex
+	rm -f content/slowa/generated-days.tex content/slowa/generated-clave.tex
 
 watch:
 	$(LATEX) -pvc $(MAIN).tex

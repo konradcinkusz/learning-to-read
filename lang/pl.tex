@@ -1,0 +1,167 @@
+% lang/pl.tex
+% -----------------------------------------------------------------------
+% Las cadenas de texto de los cuadernos en polaco, las mismas que
+% lang/es.tex, una a una (\booklang = pl, ver preamble.tex): «Pierwsze
+% słowa» (slowa.tex) y, cuando lleguen, los otros niveles. Lo que cambia
+% cada día (las palabras, los enunciados, la clave) lo escribe el
+% generador de cada cuaderno.
+%
+% Lo que se le dice a la niña o al niño no tiene género ("umiesz",
+% "samodzielnie", "dla tych, którzy..."): el cuaderno vale para los dos.
+% -----------------------------------------------------------------------
+
+% Total de días del cuaderno: el generador comprueba que coincide con el
+% suyo (ver lang/es.tex).
+\newcommand{\totaldias}{260}
+
+\newcommand{\lblFecha}{Data}
+\newcommand{\lblNotas}{Uwagi}
+\newcommand{\lblDia}{Dzień}
+\newcommand{\lblSemana}{Tydzień}
+% "Część", como "Part" en inglés: cada parte del año es una estación.
+\newcommand{\lblTrimestre}{Część}
+\newcommand{\lblRespuesta}{Odpowiedź}
+
+% "Czytanie", y no "Przeczytane": la línea de la cabecera (\cabeceraDia,
+% preamble.tex) es la misma que en español, y con "samodzielnie" no cabía.
+\newcommand{\lblLeido}{Czytanie}
+\newcommand{\lblLeidoSola}{samodzielnie}
+\newcommand{\lblLeidoConAyuda}{z pomocą}
+\newcommand{\lblLeidoConDificultad}{z trudem}
+
+% Una instrucción de lectura por trimestre (ver lang/es.tex).
+\newcommand{\lblInstruccionLecturaUno}{Czytaj na głos, powoli, pokazując palcem każde słowo}
+\newcommand{\lblInstruccionLecturaDos}{Przeczytaj na głos -- dwa razy}
+\newcommand{\lblInstruccionLecturaTres}{Czytaj na głos, jak w teatrze}
+\newcommand{\lblInstruccionLecturaCuatro}{Najpierw przeczytaj po cichu, dla siebie. Potem na głos}
+
+\newcommand{\lblDibuja}{Narysuj}
+\newcommand{\lblCompleta}{Dokończ}
+\newcommand{\lblCopia}{Przepisz}
+\newcommand{\lblResponde}{Odpowiedz}
+\newcommand{\lblRelaciona}{Połącz}
+\newcommand{\lblAdivina}{Zgadnij}
+\newcommand{\lblCrea}{Wymyśl}
+\newcommand{\lblRepasa}{Powtórka}
+\newcommand{\lblRodea}{Zakreśl}
+\newcommand{\lblVerdaderoFalso}{Prawda czy fałsz}
+\newcommand{\lblBusca}{Znajdź}
+\newcommand{\lblOrdena}{Ułóż po kolei}
+\newcommand{\lblRelee}{Przeczytaj jeszcze raz}
+
+\newcommand{\lblVerdadero}{P}
+\newcommand{\lblFalso}{F}
+
+\newcommand{\lblInstruccionCopia}{Przepisz dzisiejsze zdanie na linii.}
+\newcommand{\lblInstruccionCompleta}{Zamień te linie w rysunek. Użyj wyobraźni!}
+\newcommand{\lblInstruccionRodea}{Zakreśl dobrą odpowiedź.}
+\newcommand{\lblInstruccionVerdaderoFalso}{Prawda czy fałsz? Zakreśl właściwą kratkę przy każdym zdaniu.}
+\newcommand{\lblInstruccionOrdena}{Te zdarzenia są pomieszane. Wpisz w kratki 1, 2 i 3, w takiej kolejności, w jakiej się wydarzyły.}
+\newcommand{\lblInstruccionRelee}{W tym tygodniu wszystko razem. Przeczytaj jeszcze raz, od początku do końca.}
+
+% "Traza": la letra, mayúscula y minúscula, con su palabra -- "M jak
+% mama", como en las cartillas polacas.
+\newcommand{\lblTraza}{Pisz po śladzie}
+\newcommand{\lblTrazoDe}{jak}
+\newcommand{\lblInstruccionTrazo}{Poprowadź palcem albo ołówkiem po kropkach. Potem napisz literę samodzielnie na linii.}
+
+\newcommand{\lblTituloPortada}{Uczę się czytać}
+\newcommand{\lblSubtituloPortada}{Codziennie nowy rozdział}
+\newcommand{\lblSubtituloPortadaMetodo}{Zeszyt do codziennego czytania, żeby czytać coraz płynniej -- a nie żeby uczyć się od zera}
+\newcommand{\lblPortadaNombre}{Imię}
+\newcommand{\lblPortadaCurso}{Klasa}
+
+% -----------------------------------------------------------------------
+% «Pierwsze słowa», el cuaderno de primeras palabras en polaco
+% (slowa.tex, ver preamble-palabras.tex y tools/gen_palabras.py --libro
+% slowa).
+% -----------------------------------------------------------------------
+
+% Instrucción de lectura (título de la caja verde), una por trimestre:
+% sílaba a sílaba al principio, de corrido al final.
+\newcommand{\lblPalInstruccionUno}{Przeczytaj słowo: najpierw sylabami, potem całe}
+\newcommand{\lblPalInstruccionDos}{Przeczytaj oba słowa: najpierw sylabami, potem całe}
+\newcommand{\lblPalInstruccionTres}{Przeczytaj trzy słowa: powoli, a potem płynnie}
+\newcommand{\lblPalInstruccionCuatro}{Przeczytaj zdanie, pokazując palcem każde słowo}
+\newcommand{\lblPalInstruccionSemana}{Słowa z tego tygodnia: przeczytaj je jeszcze raz}
+\newcommand{\lblPalInstruccionSemanaFrases}{Zdania z tego tygodnia: przeczytaj je jeszcze raz}
+\newcommand{\lblPalMarcaSemana}{Zaznacz każde, które już umiesz przeczytać.}
+% Cuando lo único que se lee ese día es un nombre que se lee de un golpe
+% (Lucía, Toby, Dani: ver PALABRAS_GLOBALES_PL en tools/gen_palabras.py).
+\newcommand{\lblSlInstruccionNombre}{Przeczytaj to imię od razu, całe -- jak swoje własne}
+
+\newcommand{\lblEscribe}{Napisz}
+\newcommand{\lblEncuentra}{Znajdź}
+\newcommand{\lblPalmadas}{Klaszcz}
+\newcommand{\lblUne}{Połącz}
+\newcommand{\lblSiNo}{Tak czy nie?}
+\newcommand{\lblSi}{Tak}
+\newcommand{\lblNo}{Nie}
+
+% Instrucciones de actividad: las lee un adulto en voz alta -- por eso
+% van en pequeño y en gris; lo que lee la niña o el niño va siempre
+% grande.
+\newcommand{\lblPalInstruccionCompleta}{Zamień te linie w rysunek.}
+\newcommand{\lblPalInstruccionEscribe}{Obwiedź słowo ołówkiem, powoli, w środku liter. Potem napisz je samodzielnie na linii.}
+\newcommand{\lblPalInstruccionEncuentra}{Zakreśl to słowo za każdym razem, kiedy je zobaczysz:}
+\newcommand{\lblPalInstruccionPalmadas}{Przeczytaj każde słowo i klaśnij przy każdej sylabie. Pokoloruj jedno kółko za każde klaśnięcie.}
+\newcommand{\lblPalInstruccionAdivina}{Dorosły czyta ci zagadkę. Narysuj odpowiedź.}
+\newcommand{\lblPalInstruccionAdivinaEscribe}{Dorosły czyta ci zagadkę. Narysuj odpowiedź i napisz na linii, co to jest.}
+\newcommand{\lblPalInstruccionUne}{Połącz linią każde słowo z tym samym słowem napisanym WIELKIMI LITERAMI.}
+\newcommand{\lblPalInstruccionSiNo}{Przeczytaj każde zdanie. Zakreśl \lblSi\ albo \lblNo.}
+\newcommand{\lblPalAhoraDibuja}{A teraz narysuj:}
+
+\newcommand{\lblPalTituloPortada}{Uczę się czytać}
+\newcommand{\lblPalNivelPortada}{Pierwsze słowa}
+% En el cuaderno de verano (\segunEdicion, preamble.tex) ya no se lee una
+% palabra al día, sino una frase corta.
+\newcommand{\lblPalSubtituloPortada}{\segunEdicion{Codziennie nowe słowo -- i rysunek}{Codziennie krótkie zdanie -- i rysunek}}
+\newcommand{\lblPalSubtituloPortadaMetodo}{\segunEdicion{Zeszyt do codziennego czytania dla tych, którzy zaczynają składać sylaby}{Zeszyt na lato dla tych, którzy czytają już słowa i zaczynają czytać zdania} -- krok przed zeszytem ze zdaniami}
+
+% -----------------------------------------------------------------------
+% El nivel 3 en polaco ("Leo con lupa", ver lang/es.tex): lo propio de
+% ese nivel.
+% -----------------------------------------------------------------------
+\newcommand{\lblLupaInstruccionUno}{Czytaj na głos, bez pośpiechu. Zwróć uwagę na każdy szczegół}
+\newcommand{\lblLupaInstruccionDos}{Przeczytaj dwa razy: najpierw dla siebie, a potem na głos}
+\newcommand{\lblLupaInstruccionTres}{Czytaj na głos, głosem każdej postaci}
+\newcommand{\lblLupaInstruccionCuatro}{Przeczytaj po cichu. Potem opowiedz to własnymi słowami}
+
+\newcommand{\lblDibujaConLupa}{Narysuj z lupą}
+\newcommand{\lblVinetas}{Komiks}
+\newcommand{\lblMapa}{Mapa}
+\newcommand{\lblLogica}{Tabela wskazówek}
+\newcommand{\lblCaso}{Rozwiąż zagadkę}
+\newcommand{\lblCodigo}{Tajna wiadomość}
+\newcommand{\lblErrores}{Wyłap błędy}
+\newcommand{\lblFicha}{Karta}
+\newcommand{\lblCompara}{Porównaj}
+
+\newcommand{\lblCompruebaDibujo}{Wróć do tekstu i sprawdź swój rysunek:}
+\newcommand{\lblInstruccionCaso}{Zakreśl odpowiedź. Potem wypisz wskazówki z tekstu, które ci to mówią.}
+\newcommand{\lblPistasCaso}{Wskazówki, które mi to mówią:}
+\newcommand{\lblCorrigeErrores}{Napisz, jak jest naprawdę:}
+\newcommand{\lblLupaInstruccionOrdena}[1]{Te zdarzenia są pomieszane. Wpisz w kratki #1, w takiej kolejności, w jakiej się wydarzyły.}
+\newcommand{\lblLupaInstruccionVerdaderoFalso}{Zaznacz P (prawda) albo F (fałsz). Jeśli to fałsz, napisz pod spodem, jak jest naprawdę.}
+\newcommand{\lblSalida}{START}
+\newcommand{\lblLosDos}{oboje}
+
+\newcommand{\lblLupaTituloPortada}{Czytam z lupą}
+\newcommand{\lblLupaNivelPortada}{Uczę się czytać \textperiodcentered\ poziom 3}
+\newcommand{\lblLupaSubtituloPortada}{Co tydzień nowa zagadka}
+\newcommand{\lblLupaSubtituloPortadaMetodo}{Zeszyt do codziennego czytania dla tych, którzy czytają już płynnie: długie zdania i codziennie coś do odkrycia w tekście}
+
+% -----------------------------------------------------------------------
+% Las ediciones (ver lang/es.tex): el cuaderno de verano y la muestra
+% gratuita.
+% -----------------------------------------------------------------------
+\newcommand{\lblInsigniaVerano}{Zeszyt na lato}
+\newcommand{\lblMapaVeranoTitulo}{Lato, tydzień po tygodniu}
+\newcommand{\lblMapaVeranoIntro}{Za każdy dzień czytania pokoloruj jedno słońce.}
+\newcommand{\lblMapaDias}{Dni}
+\newcommand{\lblMapaTema}{Co się dzieje}
+
+% La muestra gratuita (las cuatro primeras semanas).
+\newcommand{\lblInsigniaMuestra}{Bezpłatna próbka: pierwsze cztery tygodnie}
+\newcommand{\lblMuestraFinTitulo}{Czytamy dalej?}
+\newcommand{\lblMuestraFinTexto}[1]{To były pierwsze cztery tygodnie zeszytu \emph{#1}. Cały zeszyt ma \totaldias\ stron, po jednej na każdy dzień od poniedziałku do piątku przez cały rok, i można go pobrać za darmo, w kolorze albo w czerni i bieli, tutaj:}

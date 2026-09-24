@@ -20,6 +20,8 @@ content/english/generated-clave.tex
 content/firstwords/generated-days.tex
 content/firstwords/generated-clave.tex
 content/firstwords/generated-sonidos.tex
+content/slowa/generated-days.tex
+content/slowa/generated-clave.tex
 # ...y los de cada edición (tools/ediciones.py): el cuaderno de verano
 # (generated-days-verano.tex, generated-clave-verano.tex...) y la muestra.
 content/generated-*-verano.tex
