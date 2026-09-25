@@ -54,12 +54,27 @@ palabra. Algunas decisiones:
   noviembre, los Reyes, el Carnaval, la tortilla de patata. Solo se
   adapta lo que en polaco no se entendería: el *turrón* del mercado de
   Navidad son *pierniki* (lo que huele a Navidad en un mercado polaco),
-  y lo que le cantan a Lucía por su cumpleaños es *sto lat*.
+  lo que le cantan a Lucía por su cumpleaños es *sto lat*, y las
+  *torrijas* de Semana Santa son *słodkie grzanki* (como en *Pierwsze
+  słowa*). Y lo que en polaco es otro aprendizaje: las letras que Dani
+  todavía confunde no son la *g* y la *j* (en español, dos letras para
+  un sonido) sino la *b* y la *d*, y la primera palabra que junta él
+  solo no es *Sol* sino *Kot*.
+- **Donde el cuaderno en español no cuadra, el polaco sí**: el día 183
+  pregunta por el dato curioso que Marta cuenta sobre las mariposas, y
+  el texto español no lo dice (en polaco, *motyle czują smak nóżkami*);
+  las parejas del día 134 dicen que Mamá pregunta a la gente, y el texto
+  del 132 dice que es Papá (en polaco, las parejas dicen lo que dice el
+  texto).
 - **Lo que se le dice a la niña o al niño no tiene género**, como en
   *Pierwsze słowa*: *Narysuj obiad, który chcesz przygotować*, y no
   *który przygotowałbyś / przygotowałabyś*.
-- **El diálogo**, con raya (—), como en español: la plantilla sangra
-  las líneas que empiezan por ella.
+- **El diálogo**, con raya (—), pero como se escribe en polaco: entre
+  espacios (*— Niespodzianka! — krzyczy cała rodzina.*), y no pegada a
+  la palabra, como en español (*—¡Sorpresa! —grita*). La plantilla sangra
+  las líneas que empiezan por ella, y `tools/metricas.py` no cuenta la
+  raya suelta como una palabra (`palabras_de`; en los otros cuadernos no
+  hay puntuación suelta, así que cuentan igual que siempre).
 - **Los carteles de cada diez páginas**: *10 przeczytanych stron! Tak
   trzymaj!* El genitivo plural vale para todos los números del
   cuaderno (10, 20... 260, y 65, 130 y 195), y también para los del
@@ -84,9 +99,11 @@ que en polaco no se acortan); `nuevas_max`, el mismo, que es solo un
 aviso. Donde una traducción fiel quedaba muy por debajo del mínimo de
 su semana, la frase polaca recupera lo que dice la española (*llamada
 Luna*: *która nazywa się Luna*; *faltan pocos días*: *już za kilka
-dni*), en vez de bajar la escalera. Con eso, el otoño queda sin errores
-y con 18 días con aviso de vocabulario nuevo, los mismos que el otoño
-en español.
+dni*), en vez de bajar la escalera. Con eso, ningún día tiene
+errores, y los que tienen aviso son menos que en español: en otoño, 18 (en español, 20); en invierno, 31 (en
+español, 39); en primavera, 38 (en español, 41). Casi todos son de
+vocabulario nuevo; solo uno, el 192, queda por debajo de su mínimo, y
+también lo está en español.
 
 `tools/metricas.py --libro zdania` mide lo mismo que en el cuaderno de
 frases, con las palabras funcionales del polaco y una lematización
@@ -119,7 +136,13 @@ que cada letra que se traza es del abecedario polaco y que, con el
 libro entero, están las 32 (`comprobar_trazo`).
 
 En otoño: *a* (*arbuz*), *ą* (*ząb*), *b* (*babcia*), *c* (*cytryna*),
-*ć* (*ćma*), *d* (*Dani*), *e* (*elf*) y *ę* (*gęś*).
+*ć* (*ćma*), *d* (*Dani*), *e* (*elf*) y *ę* (*gęś*). En invierno: *f*
+(*foka*), *g* (*gruszka*), *h* (*huśtawka*), *i* (*indyk*), *j*
+(*jabłko*), *k* (*kot*), *l* (*Luna*) y *ł* (*łóżko*), con el día de más
+en el 106, la semana del viento. En primavera: *m* (*mama*), *n*
+(*nos*), *ń* (*koń*), *o* (*okno*), *ó* (*ósemka*), *p* (*pies*), *r*
+(*rower*) y *s* (*słońce*), con el día de más en el 156, la semana en la
+que Lucía aprende a ir en bici.
 
 ## Lo que cambia en el motor
 
@@ -153,6 +176,7 @@ exactamente esos.
    palabras polacas, las palabras de *Pisz po śladzie*, las páginas para
    el adulto, la clave, el diploma y los 65 días. **Hecho.**
 2. **El invierno y la primavera** (días 66–195): dos y tres frases al
-   día, y *Odpowiedz* desde el invierno.
+   día, *Odpowiedz* desde el invierno, las dieciséis letras de estas dos
+   partes y las dos medallas. **Hecho.**
 3. **El verano** (días 196–260), las 32 letras, el cuaderno de verano y
    la muestra, y publicarlo.

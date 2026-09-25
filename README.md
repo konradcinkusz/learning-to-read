@@ -254,8 +254,8 @@ en palabras polacas (`content/zdania/progresion.json`: la misma frase
 tiene en polaco menos palabras que en español), y *Pisz po śladzie*
 traza, en el orden del alfabeto, las 32 letras del polaco.
 
-Se está escribiendo: el otoño, días 1--65, ya está. Ver
-[`notes/09-zdania.md`](notes/09-zdania.md).
+Se está escribiendo: del otoño a la primavera, días 1--195, ya está.
+Ver [`notes/09-zdania.md`](notes/09-zdania.md).
 
 ## Los cuadernos de verano y las muestras
 
@@ -578,12 +578,12 @@ limpio, cada palabra partida igual que la parte `tools/sylaby.py` y
 dentro de la escalera de su semana), con su cuaderno de verano y su
 muestra, y se publica en GitHub Pages con ellos.
 
-**Zdania (en polaco)**: en obras, un PR por fase. El otoño (días
-1--65) está escrito y compila en color y en blanco y negro, con las
-mismas comprobaciones que los demás (1 día = 1 página, log limpio,
-frases por trimestre, letras del abecedario polaco, la escalera en
-palabras polacas) y su medalla. Faltan el invierno, la primavera y el
-verano: ver `notes/09-zdania.md`.
+**Zdania (en polaco)**: en obras, un PR por fase. Del otoño a la
+primavera (días 1--195) está escrito y compila en color y en blanco y
+negro, con las mismas comprobaciones que los demás (1 día = 1 página,
+log limpio, frases por trimestre, letras del abecedario polaco, la
+escalera en palabras polacas) y sus tres medallas. Falta el verano: ver
+`notes/09-zdania.md`.
 
 **Los cuadernos de verano**: los seis, en color y en blanco y negro --
 el verano de cada cuaderno, con su portada, su página para el adulto,
