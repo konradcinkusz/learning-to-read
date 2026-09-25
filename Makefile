@@ -48,9 +48,9 @@ ZDBW   = zdania-bw
 # `all` sigue siendo solo el cuaderno de frases en color, por
 # compatibilidad; `palabras`, `lupa`, `english`, `firstwords`, `slowa` y
 # `zdania` son lo mismo para los otros seis, `verano` y `muestra`
-# compilan y comprueban los doce cuadernos de verano y las doce muestras
-# (ver más abajo), y `all-formats` compila y comprueba los treinta y ocho
-# PDF -- es lo que corre el CI.
+# compilan y comprueban los catorce cuadernos de verano y las catorce
+# muestras (ver más abajo), y `all-formats` compila y comprueba los
+# cuarenta y dos PDF -- es lo que corre el CI.
 all: generate build check
 
 palabras: generate build-palabras check-palabras
@@ -201,9 +201,9 @@ check-zdania-bw:
 # siempre con \edicion fijado antes, y sus .tex generados los escribe
 # `make generate` a la vez que los del libro entero. `make
 # build-lupa-verano` compila uno, `make check-lupa-verano` lo compila y
-# lo comprueba, y `make verano` / `make muestra`, los doce de cada una.
+# lo comprueba, y `make verano` / `make muestra`, los catorce de cada una.
 RAICES        = $(MAIN) $(BW) $(PAL) $(PALBW) $(LUPA) $(LUPABW) $(EN) $(ENBW) $(FW) $(FWBW) \
-                $(SL) $(SLBW)
+                $(SL) $(SLBW) $(ZD) $(ZDBW)
 BUILD_VERANO  = $(RAICES:%=build-%-verano)
 CHECK_VERANO  = $(RAICES:%=check-%-verano)
 BUILD_MUESTRA = $(RAICES:%=build-%-muestra)

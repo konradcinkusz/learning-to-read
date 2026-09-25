@@ -73,8 +73,8 @@ make firstwords      # genera, compila y comprueba First Words (firstwords.tex)
 make slowa           # genera, compila y comprueba Pierwsze słowa (slowa.tex)
 make zdania          # genera, compila y comprueba Zdania (zdania.tex)
 make check            # tools/checklog.py + tools/check_pages.py + tools/gen_days.py --check + tools/metricas.py
-make verano           # los seis cuadernos de verano, color Y blanco-y-negro
-make muestra          # las seis muestras gratuitas, color Y blanco-y-negro
+make verano           # los siete cuadernos de verano, color Y blanco-y-negro
+make muestra          # las siete muestras gratuitas, color Y blanco-y-negro
 make all-formats      # los siete cuadernos, sus cuadernos de verano y sus
                        # muestras, color Y blanco-y-negro -- ejecútalo antes de
                        # abrir un PR, es lo mismo que corre el CI

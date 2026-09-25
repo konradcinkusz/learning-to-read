@@ -7,11 +7,11 @@
 [![Hecho con](https://img.shields.io/badge/hecho%20con-LaTeX-2E7D32)](preamble.tex)
 
 Tres cuadernos diarios de lectura en español, uno por nivel, dos en
-inglés y dos en polaco (el segundo, en obras), con la misma familia
-(los dos primeros cuentan el mismo año con los mismos temas semana a
-semana; el tercero, el año siguiente; los de inglés, ese mismo año
-siguiente, desde la casa de al lado, y también los dos con los mismos
-temas; los de polaco, el año de los dos primeros):
+inglés y dos en polaco, con la misma familia (los dos primeros cuentan
+el mismo año con los mismos temas semana a semana; el tercero, el año
+siguiente; los de inglés, ese mismo año siguiente, desde la casa de al
+lado, y también los dos con los mismos temas; los de polaco, el año de
+los dos primeros):
 
 - **Nivel 1 · Primeras palabras** (`palabras.tex`) -- para quien empieza
   a juntar sílabas: una palabra al día, partida en sílabas, y casi
@@ -34,9 +34,9 @@ temas; los de polaco, el año de los dos primeros):
 - **Pierwsze słowa** (`slowa.tex`) -- en polaco: el cuaderno de
   primeras palabras, con las sílabas del polaco (*ko·ło*, *ło·pa·ta*) y
   los mismos temas, semana a semana. Ver "Pierwsze słowa" más abajo.
-- **Zdania** (`zdania.tex`) -- en polaco, en obras: el cuaderno de
-  frases, día a día y frase a frase, el paso siguiente a *Pierwsze
-  słowa*. Ver "Zdania" más abajo.
+- **Zdania** (`zdania.tex`) -- en polaco: el cuaderno de frases, día a
+  día y frase a frase, el paso siguiente a *Pierwsze słowa*. Ver
+  "Zdania" más abajo.
 
 Y de cada uno, un **cuaderno de verano**: su verano -- las últimas 13
 semanas, 65 páginas -- en un cuaderno aparte, para las vacaciones; y una
@@ -254,8 +254,9 @@ en palabras polacas (`content/zdania/progresion.json`: la misma frase
 tiene en polaco menos palabras que en español), y *Pisz po śladzie*
 traza, en el orden del alfabeto, las 32 letras del polaco.
 
-Se está escribiendo: del otoño a la primavera, días 1--195, ya está.
-Ver [`notes/09-zdania.md`](notes/09-zdania.md).
+Ver [`notes/09-zdania.md`](notes/09-zdania.md) para el diseño completo:
+cómo se traduce, la escalera en palabras polacas, las 32 letras y las
+fases.
 
 ## Los cuadernos de verano y las muestras
 
@@ -312,6 +313,10 @@ Nivel 3, Leo con lupa:
 **[⬇ PDF (kolorowy)](https://konradcinkusz.github.io/learning-to-read/ucze-sie-czytac-slowa.pdf)**
 · **[⬇ PDF (czarno-biały)](https://konradcinkusz.github.io/learning-to-read/ucze-sie-czytac-slowa-cz-b.pdf)**
 
+*Zdania*, en polaco:
+**[⬇ PDF (kolorowy)](https://konradcinkusz.github.io/learning-to-read/ucze-sie-czytac-zdania.pdf)**
+· **[⬇ PDF (czarno-biały)](https://konradcinkusz.github.io/learning-to-read/ucze-sie-czytac-zdania-cz-b.pdf)**
+
 Los cuadernos de verano (65 páginas cada uno):
 nivel 1, primeras palabras
 ([color](https://konradcinkusz.github.io/learning-to-read/aprendo-a-leer-palabras-verano.pdf) ·
@@ -330,7 +335,10 @@ nivel 3, Leo con lupa
 [blanco y negro](https://konradcinkusz.github.io/learning-to-read/first-words-summer-bw.pdf));
 *Pierwsze słowa*
 ([kolorowy](https://konradcinkusz.github.io/learning-to-read/ucze-sie-czytac-slowa-lato.pdf) ·
-[czarno-biały](https://konradcinkusz.github.io/learning-to-read/ucze-sie-czytac-slowa-lato-cz-b.pdf)).
+[czarno-biały](https://konradcinkusz.github.io/learning-to-read/ucze-sie-czytac-slowa-lato-cz-b.pdf));
+*Zdania*
+([kolorowy](https://konradcinkusz.github.io/learning-to-read/ucze-sie-czytac-zdania-lato.pdf) ·
+[czarno-biały](https://konradcinkusz.github.io/learning-to-read/ucze-sie-czytac-zdania-lato-cz-b.pdf)).
 
 Las muestras gratuitas (las cuatro primeras semanas, 20 días):
 nivel 1, primeras palabras
@@ -350,7 +358,10 @@ nivel 3, Leo con lupa
 [blanco y negro](https://konradcinkusz.github.io/learning-to-read/first-words-sample-bw.pdf));
 *Pierwsze słowa*
 ([kolorowy](https://konradcinkusz.github.io/learning-to-read/ucze-sie-czytac-slowa-probka.pdf) ·
-[czarno-biały](https://konradcinkusz.github.io/learning-to-read/ucze-sie-czytac-slowa-probka-cz-b.pdf)).
+[czarno-biały](https://konradcinkusz.github.io/learning-to-read/ucze-sie-czytac-slowa-probka-cz-b.pdf));
+*Zdania*
+([kolorowy](https://konradcinkusz.github.io/learning-to-read/ucze-sie-czytac-zdania-probka.pdf) ·
+[czarno-biały](https://konradcinkusz.github.io/learning-to-read/ucze-sie-czytac-zdania-probka-cz-b.pdf)).
 
 Enlaces fijos, publicados por GitHub Pages en cada push a `main` (ver
 `.github/workflows/pages.yml`). Las dos versiones tienen exactamente el
@@ -388,9 +399,9 @@ make english      # lo mismo para Read and Draw, en inglés (color)
 make firstwords   # lo mismo para First Words, en inglés (color)
 make slowa        # lo mismo para Pierwsze słowa, en polaco (color)
 make zdania       # lo mismo para Zdania, en polaco (color)
-make verano       # los doce cuadernos de verano: los seis, color Y blanco-y-negro
-make muestra      # las doce muestras gratuitas: los seis, color Y blanco-y-negro
-make all-formats  # los treinta y ocho PDF: palabras, frases, lupa, english, firstwords, slowa y zdania, color Y blanco-y-negro, y sus ediciones
+make verano       # los catorce cuadernos de verano: los siete, color Y blanco-y-negro
+make muestra      # las catorce muestras gratuitas: los siete, color Y blanco-y-negro
+make all-formats  # los cuarenta y dos PDF: palabras, frases, lupa, english, firstwords, slowa y zdania, color Y blanco-y-negro, y sus ediciones
 make generate     # solo regenera los .tex de los siete cuadernos desde el JSON
 make build        # solo compila frases en color (asume que ya está generado)
 make build-bw     # solo compila frases en blanco y negro
@@ -578,20 +589,24 @@ limpio, cada palabra partida igual que la parte `tools/sylaby.py` y
 dentro de la escalera de su semana), con su cuaderno de verano y su
 muestra, y se publica en GitHub Pages con ellos.
 
-**Zdania (en polaco)**: en obras, un PR por fase. Del otoño a la
-primavera (días 1--195) está escrito y compila en color y en blanco y
-negro, con las mismas comprobaciones que los demás (1 día = 1 página,
-log limpio, frases por trimestre, letras del abecedario polaco, la
-escalera en palabras polacas) y sus tres medallas. Falta el verano: ver
-`notes/09-zdania.md`.
+**Zdania (en polaco)**: completo, los 260 días (cada uno, el mismo día
+del cuaderno de frases en español, en polaco, con sus tres medallas, las
+32 letras del alfabeto polaco en *Pisz po śladzie*, la clave de
+respuestas y el diploma), escrito en tres fases, una por PR (ver
+`notes/09-zdania.md`, "Las fases"). Todo está en polaco, también la
+portada, *Jak korzystać z tego zeszytu* y el mapa del año. Compila en
+color y en blanco y negro con las mismas comprobaciones que los demás
+(1 día = 1 página, log limpio, frases por trimestre, letras del
+abecedario polaco, la escalera en palabras polacas), con su cuaderno de
+verano y su muestra, y se publica en GitHub Pages con ellos.
 
-**Los cuadernos de verano**: los seis, en color y en blanco y negro --
+**Los cuadernos de verano**: los siete, en color y en blanco y negro --
 el verano de cada cuaderno, con su portada, su página para el adulto,
 su mapa del verano, su clave y su diploma. Compilan con las mismas
 comprobaciones que los libros enteros (1 día = 1 página, log limpio), y
 se publican en GitHub Pages con ellos. Ver `notes/07-ediciones.md`.
 
-**Las muestras gratuitas**: las seis, en color y en blanco y negro --
+**Las muestras gratuitas**: las siete, en color y en blanco y negro --
 las cuatro primeras semanas de cada cuaderno, con una última página que
 dice dónde está el cuaderno entero. Las mismas comprobaciones, y
 también en GitHub Pages.

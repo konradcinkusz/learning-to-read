@@ -297,9 +297,12 @@ ZDANIA = Libro(
         "babcia", "babci", "babcię", "babcią", "babciu",
         # el profesor de natación, en primavera
         "javier", "javiera", "javierowi", "javierem", "javierze",
+        # el pueblo, en verano: el vecino, su gato y el amigo de Dani
+        "andrés", "andrésa", "andrésowi", "andrésem", "andrésie",
+        "bigotes", "bigotesa", "bigotesowi", "bigotesem", "bigotesie",
+        "martín", "martína", "martínowi", "martínem", "martínie",
     }),
     idioma="pl",
-    dias_escritos=195,
     nombre_medalla={1: "jesień", 2: "zimę", 3: "wiosnę"},
     titulo_medalla="Medal za {}!",
     animo_medalla=r"Tak trzymaj, \rule{55mm}{0.4pt}!",

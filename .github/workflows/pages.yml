@@ -36,8 +36,8 @@ concurrency:
 jobs:
   publish:
     runs-on: ubuntu-latest
-    # Los treinta y seis PDF se compilan uno detrás de otro (con treinta,
-    # unos 20 minutos): 60 deja margen para un runner lento.
+    # Los cuarenta y dos PDF se compilan uno detrás de otro (con treinta y
+    # seis, unos 20 minutos): 60 deja margen para un runner lento.
     timeout-minutes: 60
     environment:
       name: github-pages
@@ -49,7 +49,7 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Genera los .tex de los seis cuadernos desde su JSON
+      - name: Genera los .tex de los siete cuadernos desde su JSON
         run: make generate
 
       - name: Valida el contenido antes de publicar nada
@@ -63,6 +63,7 @@ jobs:
           python3 tools/gen_palabras.py --libro firstwords --check
           python3 tools/sylaby.py --prueba
           python3 tools/gen_palabras.py --libro slowa --check
+          python3 tools/gen_days.py --libro zdania --check
 
       # Color y blanco-y-negro (main-bw.tex, ver preamble.tex \bookcolor):
       # los dos se compilan y se validan aquí, y Pages nunca publica uno
@@ -241,6 +242,34 @@ jobs:
       - name: Cada día ocupa exactamente una página (Pierwsze słowa, blanco y negro)
         run: python3 tools/check_pages.py slowa-bw.aux
 
+      # «Zdania» (zdania.tex), el cuaderno de frases en polaco: lo mismo,
+      # los dos formatos compilados y comprobados antes de publicar nada.
+      - name: Compila Zdania (color)
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: zdania.tex
+          latexmk_use_lualatex: true
+          args: -interaction=nonstopmode -file-line-error
+
+      - name: Lee el log correctamente (Zdania, color)
+        run: python3 tools/checklog.py zdania.log
+
+      - name: Cada día ocupa exactamente una página (Zdania, color)
+        run: python3 tools/check_pages.py zdania.aux
+
+      - name: Compila Zdania (blanco y negro)
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: zdania-bw.tex
+          latexmk_use_lualatex: true
+          args: -interaction=nonstopmode -file-line-error
+
+      - name: Lee el log correctamente (Zdania, blanco y negro)
+        run: python3 tools/checklog.py zdania-bw.log
+
+      - name: Cada día ocupa exactamente una página (Zdania, blanco y negro)
+        run: python3 tools/check_pages.py zdania-bw.aux
+
       # Los cuadernos de verano (ediciones/<raíz>-verano.tex, ver
       # notes/07-ediciones.md): el verano de cada cuaderno, en los dos
       # formatos. Se compilan desde la raíz del repositorio, así que cada
@@ -262,13 +291,16 @@ jobs:
             ediciones/firstwords-bw-verano.tex
             ediciones/slowa-verano.tex
             ediciones/slowa-bw-verano.tex
+            ediciones/zdania-verano.tex
+            ediciones/zdania-bw-verano.tex
           latexmk_use_lualatex: true
           args: -interaction=nonstopmode -file-line-error
 
       - name: Lee los logs y comprueba las páginas (cuadernos de verano)
         run: |
           for r in main main-bw palabras palabras-bw lupa lupa-bw \
-                   english english-bw firstwords firstwords-bw slowa slowa-bw; do
+                   english english-bw firstwords firstwords-bw slowa slowa-bw \
+                   zdania zdania-bw; do
             python3 tools/checklog.py "$r-verano.log"
             python3 tools/check_pages.py "$r-verano.aux"
           done
@@ -293,13 +325,16 @@ jobs:
             ediciones/firstwords-bw-muestra.tex
             ediciones/slowa-muestra.tex
             ediciones/slowa-bw-muestra.tex
+            ediciones/zdania-muestra.tex
+            ediciones/zdania-bw-muestra.tex
           latexmk_use_lualatex: true
           args: -interaction=nonstopmode -file-line-error
 
       - name: Lee los logs y comprueba las páginas (muestras gratuitas)
         run: |
           for r in main main-bw palabras palabras-bw lupa lupa-bw \
-                   english english-bw firstwords firstwords-bw slowa slowa-bw; do
+                   english english-bw firstwords firstwords-bw slowa slowa-bw \
+                   zdania zdania-bw; do
             python3 tools/checklog.py "$r-muestra.log"
             python3 tools/check_pages.py "$r-muestra.aux"
           done
@@ -320,6 +355,8 @@ jobs:
           cp firstwords-bw.pdf _site/first-words-bw.pdf
           cp slowa.pdf _site/ucze-sie-czytac-slowa.pdf
           cp slowa-bw.pdf _site/ucze-sie-czytac-slowa-cz-b.pdf
+          cp zdania.pdf _site/ucze-sie-czytac-zdania.pdf
+          cp zdania-bw.pdf _site/ucze-sie-czytac-zdania-cz-b.pdf
           cp main-verano.pdf _site/aprendo-a-leer-verano.pdf
           cp main-bw-verano.pdf _site/aprendo-a-leer-verano-bn.pdf
           cp palabras-verano.pdf _site/aprendo-a-leer-palabras-verano.pdf
@@ -332,6 +369,8 @@ jobs:
           cp firstwords-bw-verano.pdf _site/first-words-summer-bw.pdf
           cp slowa-verano.pdf _site/ucze-sie-czytac-slowa-lato.pdf
           cp slowa-bw-verano.pdf _site/ucze-sie-czytac-slowa-lato-cz-b.pdf
+          cp zdania-verano.pdf _site/ucze-sie-czytac-zdania-lato.pdf
+          cp zdania-bw-verano.pdf _site/ucze-sie-czytac-zdania-lato-cz-b.pdf
           cp main-muestra.pdf _site/aprendo-a-leer-muestra.pdf
           cp main-bw-muestra.pdf _site/aprendo-a-leer-muestra-bn.pdf
           cp palabras-muestra.pdf _site/aprendo-a-leer-palabras-muestra.pdf
@@ -344,6 +383,8 @@ jobs:
           cp firstwords-bw-muestra.pdf _site/first-words-sample-bw.pdf
           cp slowa-muestra.pdf _site/ucze-sie-czytac-slowa-probka.pdf
           cp slowa-bw-muestra.pdf _site/ucze-sie-czytac-slowa-probka-cz-b.pdf
+          cp zdania-muestra.pdf _site/ucze-sie-czytac-zdania-probka.pdf
+          cp zdania-bw-muestra.pdf _site/ucze-sie-czytac-zdania-probka-cz-b.pdf
 
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
