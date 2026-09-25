@@ -2,9 +2,11 @@
 análisis -- ver notes/04-nivel-lupa.md para el porqué de cada una.
 
 tools/gen_days.py llama a este módulo cuando el libro es "Leo con lupa"
-(`--libro lupa`): validar_texto() comprueba el texto de un día,
-pagina_dia() genera su página entera (caja de lectura + actividad) y
-entrada_clave() su línea en la clave de respuestas.
+(`--libro lupa`) o «Czytam z lupą», el mismo cuaderno en polaco
+(`--libro czytam`, ver notes/10-czytam-z-lupa.md): validar_texto()
+comprueba el texto de un día, pagina_dia() genera su página entera (caja
+de lectura + actividad) y entrada_clave() su línea en la clave de
+respuestas. Lo poco que cambia de un idioma a otro está en IDIOMAS.
 
 La diferencia con el cuaderno de frases (nivel 2) no es solo de longitud: aquí cada
 actividad obliga a volver al texto y analizarlo -- dibujar exactamente
@@ -41,6 +43,55 @@ from string import Template
 from comun import ErrorDeContenido, campos_requeridos, escapar
 
 # ---------------------------------------------------------------------
+# Lo que cambia de un idioma a otro (Libro.idioma)
+# ---------------------------------------------------------------------
+#
+# El abecedario del mensaje secreto -- en polaco, las 32 letras de su
+# abecedario, con ą, ć, ę, ł, ń, ó, ś, ź, ż y sin q, v ni x -- y el
+# código de las vocales (en polaco, las nueve: a, ą, e, ę, i, o, ó, u,
+# y), la «y» de «1, 2 y 3», las letras de verdadero y falso (las de
+# \lblVerdadero y \lblFalso en lang/), la comilla que cierra una cita
+# al final de un párrafo, la instrucción de "Relaciona" cuando el día no
+# trae la suya y las palabras de la clave de "Compara". Todo lo demás
+# (las instrucciones fijas, los títulos) son macros de lang/<idioma>.tex.
+IDIOMAS = {
+    "es": {
+        "alfabeto": "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ",
+        "vocales": {"A": "1", "E": "2", "I": "3", "O": "4", "U": "5"},
+        "y": " y ",
+        "verdadero": "V",
+        "falso": "F",
+        "cierre_cita": "»",
+        "relaciona": "Une con una línea cada cosa con la que le corresponde.",
+        "compara_solo": "Solo {}",
+        "compara_ambos": "Los dos",
+    },
+    "pl": {
+        "alfabeto": "AĄBCĆDEĘFGHIJKLŁMNŃOÓPRSŚTUWYZŹŻ",
+        "vocales": {
+            "A": "1", "Ą": "2", "E": "3", "Ę": "4", "I": "5", "O": "6",
+            "Ó": "7", "U": "8", "Y": "9",
+        },
+        "y": " i ",
+        "verdadero": "P",
+        "falso": "F",
+        "cierre_cita": "”",
+        "relaciona": "Połącz linią pary, które do siebie pasują.",
+        # «Psy: ... Wspólne: ... Koty: ...»: el nombre de cada lado, tal
+        # cual, al principio de su frase -- «Tylko Psy» llevaría una
+        # mayúscula en medio de la frase.
+        "compara_solo": "{}",
+        "compara_ambos": "Wspólne",
+    },
+}
+
+
+def idioma_de(libro):
+    """Los datos de IDIOMAS del idioma de un libro; sin libro, el
+    español, el de "Leo con lupa"."""
+    return IDIOMAS[libro.idioma if libro is not None else "es"]
+
+# ---------------------------------------------------------------------
 # El texto del día
 # ---------------------------------------------------------------------
 #
@@ -55,7 +106,9 @@ from comun import ErrorDeContenido, campos_requeridos, escapar
 # Dentro de un párrafo, "\n" es un salto de línea (poemas, direcciones
 # de una carta).
 
-FINALES_VALIDOS = (".", "!", "?", "…", "»", ":")
+# Cómo puede acabar un párrafo: con un signo de final de frase, o con la
+# comilla que cierra una cita (» en español, ” en polaco -- ver IDIOMAS).
+FINALES_VALIDOS = (".", "!", "?", "…", ":")
 
 
 def _lineas(texto):
@@ -108,7 +161,8 @@ def _cadenas(valor):
             yield from _cadenas(v)
 
 
-def validar_texto(num, d):
+def validar_texto(num, d, libro=None):
+    finales = FINALES_VALIDOS + (idioma_de(libro)["cierre_cita"],)
     texto = d.get("texto")
     if not isinstance(texto, list) or not texto:
         raise ErrorDeContenido(
@@ -126,20 +180,20 @@ def validar_texto(num, d):
             )
         if parrafo.startswith(("- ", "> ")):
             continue
-        if not parrafo.endswith(FINALES_VALIDOS):
+        if not parrafo.endswith(finales):
             raise ErrorDeContenido(
                 f"día {num}: el párrafo «...{parrafo[-40:]}» no termina en un "
                 "signo de puntuación final"
             )
     # Comillas rectas: ni en el texto ni en la actividad -- el diálogo va
-    # con raya y las citas con «», como en los libros infantiles de verdad
-    # (y la comilla recta es la que provocó el error de babel documentado
-    # en preamble.tex).
+    # con raya y las citas con «» (en polaco, con „”), como en los libros
+    # infantiles de verdad (y la comilla recta es la que provocó el error
+    # de babel documentado en preamble.tex).
     for cadena in _cadenas(d):
         if '"' in cadena:
             raise ErrorDeContenido(
                 f"día {num}: comilla recta en «{cadena[:50]}...» -- usa raya "
-                "para el diálogo y «» para citar"
+                "para el diálogo y «» (en polaco, „”) para citar"
             )
         if "  " in cadena:
             raise ErrorDeContenido(
@@ -258,12 +312,12 @@ def _lista_numerada(elementos):
     return "\\begin{listaNumerada}\n" + items + "\n\\end{listaNumerada}"
 
 
-def _y(elementos):
-    """['1', '2', '3'] -> '1, 2 y 3'."""
+def _y(elementos, idioma=IDIOMAS["es"]):
+    """['1', '2', '3'] -> '1, 2 y 3' (en polaco, '1, 2 i 3')."""
     elementos = [str(e) for e in elementos]
     if len(elementos) == 1:
         return elementos[0]
-    return ", ".join(elementos[:-1]) + " y " + elementos[-1]
+    return ", ".join(elementos[:-1]) + idioma["y"] + elementos[-1]
 
 
 # ---------------------------------------------------------------------
@@ -568,15 +622,13 @@ def render_errores(num, a, contexto):
 
 # --- codigo ----------------------------------------------------------
 
-ALFABETO = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ"
-VOCALES_NUMERO = {"A": "1", "E": "2", "I": "3", "O": "4", "U": "5"}
-
-
-def normalizar_mensaje(mensaje):
-    """Mayúsculas, sin tildes (pero con Ñ), solo letras y espacios."""
+def normalizar_mensaje(mensaje, alfabeto=IDIOMAS["es"]["alfabeto"]):
+    """Mayúsculas, solo letras y espacios, y sin tildes, salvo en las
+    letras que son del abecedario: la Ñ en español; en polaco, Ą, Ć, Ę,
+    Ł, Ń, Ó, Ś, Ź y Ż (y "Lucía" se queda en LUCIA)."""
     salida = []
     for c in mensaje.upper():
-        if c == "Ñ":
+        if c in alfabeto:
             salida.append(c)
             continue
         base = unicodedata.normalize("NFD", c)[0]
@@ -586,8 +638,10 @@ def normalizar_mensaje(mensaje):
 
 def render_codigo(num, a, contexto):
     campos_requeridos(num, a, ["instruccion", "mensaje", "cifrado"])
-    mensaje = normalizar_mensaje(a["mensaje"])
-    if any(c not in ALFABETO and c != " " for c in mensaje):
+    alfabeto = contexto["idioma"]["alfabeto"]
+    vocales = contexto["idioma"]["vocales"]
+    mensaje = normalizar_mensaje(a["mensaje"], alfabeto)
+    if any(c not in alfabeto and c != " " for c in mensaje):
         raise ErrorDeContenido(
             f"día {num}: el mensaje secreto solo puede llevar letras y espacios"
         )
@@ -601,21 +655,26 @@ def render_codigo(num, a, contexto):
                 f"día {num}: mensaje demasiado largo para el cifrado de números (máx. 26 letras)"
             )
         if a.get("mostrar_clave", True):
+            # La tabla, en dos filas: las 27 letras del español en filas de
+            # 14 (la columna que sobra, vacía), las 32 del polaco en filas
+            # de 16 -- \begin{tablaCodigo}[16], ver preamble-lupa.tex.
+            ancho = (len(alfabeto) + 1) // 2
             filas_tabla = []
-            for mitad in (ALFABETO[:14], ALFABETO[14:]):
+            for mitad in (alfabeto[:ancho], alfabeto[ancho:]):
                 letras = [rf"\textbf{{{c}}}" for c in mitad]
-                numeros = [str(ALFABETO.index(c) + 1) for c in mitad]
-                relleno = [""] * (14 - len(mitad))
+                numeros = [str(alfabeto.index(c) + 1) for c in mitad]
+                relleno = [""] * (ancho - len(mitad))
                 filas_tabla.append(" & ".join(letras + relleno) + r" \\")
                 filas_tabla.append(" & ".join(numeros + relleno) + r" \\ \hline")
+            columnas = "" if ancho == 14 else f"[{ancho}]"
             partes.append(
-                "\\begin{center}\\begin{tablaCodigo}\n\\hline\n"
+                "\\begin{center}\\begin{tablaCodigo}" + columnas + "\n\\hline\n"
                 + "\n".join(filas_tabla)
                 + "\n\\end{tablaCodigo}\\end{center}"
             )
         grupos = []
         for p in palabras:
-            celdas = "".join(rf"\celdaCodigo{{{ALFABETO.index(c) + 1}}}" for c in p)
+            celdas = "".join(rf"\celdaCodigo{{{alfabeto.index(c) + 1}}}" for c in p)
             grupos.append(r"\mbox{" + celdas + "}")
         partes.append(
             "\\begin{center}\n" + r"\hspace{7mm plus 3mm}".join(grupos) + "\n\\end{center}"
@@ -623,11 +682,13 @@ def render_codigo(num, a, contexto):
         abajo = ""
     elif cifrado == "vocales":
         cifrada = " ".join(
-            "".join(VOCALES_NUMERO.get(c, c) for c in p) for p in palabras
+            "".join(vocales.get(c, c) for c in p) for p in palabras
         )
         if a.get("mostrar_clave", False):
             partes.append(
-                r"\begin{center}\large A = 1 \quad E = 2 \quad I = 3 \quad O = 4 \quad U = 5\end{center}"
+                r"\begin{center}\large "
+                + r" \quad ".join(f"{v} = {n}" for v, n in vocales.items())
+                + r"\end{center}"
             )
         partes.append(r"\mensajeCifrado{" + escapar(cifrada) + "}")
         abajo = _lineas_escribir(2)
@@ -701,7 +762,7 @@ def render_ordena(num, a, contexto):
     filas = "\n".join(rf"\item \casillaNumero\ {escapar(s)}" for s in mezclados)
     arriba = (
         _instruccion_adulto(
-            rf"\lblLupaInstruccionOrdena{{{_y(range(1, len(sucesos) + 1))}}}"
+            rf"\lblLupaInstruccionOrdena{{{_y(range(1, len(sucesos) + 1), contexto['idioma'])}}}"
         )
         + "\n\\begin{listaOrdena}\n" + filas + "\n\\end{listaOrdena}"
     )
@@ -726,7 +787,7 @@ def render_relaciona(num, a, contexto):
     if a.get("cabeceras"):
         c1, c2 = a["cabeceras"]
         cabeceras = rf"\bfseries {escapar(c1)} & & \bfseries {escapar(c2)} \\[-2mm]" + "\n"
-    instruccion = escapar(a.get("instruccion", "Une con una línea cada cosa con la que le corresponde."))
+    instruccion = escapar(a.get("instruccion", contexto["idioma"]["relaciona"]))
     arriba = (
         _instruccion_adulto(instruccion) + "\n"
         + r"\renewcommand{\arraystretch}{2.3}" + "\n"
@@ -744,10 +805,14 @@ def render_verdadero_falso(num, a, contexto):
         raise ErrorDeContenido(
             f"día {num}: verdadero_falso necesita 3-5 afirmaciones y una respuesta por afirmación"
         )
+    # "V" o "F: corrección" -- en polaco, "P" (prawda) o "F" (fałsz), las
+    # letras de las casillas (\lblVerdadero y \lblFalso en lang/pl.tex).
+    verdadero, falso = contexto["idioma"]["verdadero"], contexto["idioma"]["falso"]
     for r in respuestas:
-        if not (r == "V" or r.startswith("F")):
+        if not (r == verdadero or r.startswith(falso)):
             raise ErrorDeContenido(
-                f"día {num}: cada respuesta de verdadero_falso empieza por 'V' o 'F': {r!r}"
+                f"día {num}: cada respuesta de verdadero_falso empieza por "
+                f"{verdadero!r} o {falso!r}: {r!r}"
             )
     corrige = a.get("corrige", True)
     filas = []
@@ -821,7 +886,10 @@ def pagina_dia(d, libro, semana):
     lo leído hasta hoy."""
     num = d["dia"]
     hasta_hoy = [x for x in semana if x["dia"] <= num]
-    contexto = {"texto_semana": " ".join(texto_plano(x["texto"]) for x in hasta_hoy)}
+    contexto = {
+        "texto_semana": " ".join(texto_plano(x["texto"]) for x in hasta_hoy),
+        "idioma": idioma_de(libro),
+    }
     trimestre = d["trimestre"]
     return PLANTILLA_DIA.substitute(
         dia=num,
@@ -835,7 +903,7 @@ def pagina_dia(d, libro, semana):
     )
 
 
-def _texto_clave(a):
+def _texto_clave(a, idioma):
     tipo = a["tipo"]
     if tipo in ("dibuja_detalle", "mapa", "caso"):
         return escapar(a["clave"])
@@ -856,10 +924,11 @@ def _texto_clave(a):
         )
     if tipo == "compara":
         s = a["solucion"]
+        solo = idioma["compara_solo"]
         return (
-            f"Solo {escapar(a['a'])}: {escapar(', '.join(s['a']))}. "
-            f"Los dos: {escapar(', '.join(s['ambos']))}. "
-            f"Solo {escapar(a['b'])}: {escapar(', '.join(s['b']))}."
+            f"{solo.format(escapar(a['a']))}: {escapar(', '.join(s['a']))}. "
+            f"{idioma['compara_ambos']}: {escapar(', '.join(s['ambos']))}. "
+            f"{solo.format(escapar(a['b']))}: {escapar(', '.join(s['b']))}."
         )
     if tipo == "responde":
         return " ".join(f"{i}) {escapar(r)}" for i, r in enumerate(a["respuestas"], start=1))
@@ -874,9 +943,9 @@ def _texto_clave(a):
     return None
 
 
-def entrada_clave(d):
+def entrada_clave(d, libro=None):
     a = d["actividad"]
-    texto = _texto_clave(a)
+    texto = _texto_clave(a, idioma_de(libro))
     if texto is None:
         return None
     return f"\\claveEntrada{{{d['dia']}}}{{{TITULO[a['tipo']]}}}{{{texto}}}\n"

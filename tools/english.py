@@ -157,7 +157,7 @@ def _comprobar_ingles(num, cadena):
             )
 
 
-def validar_texto(num, d):
+def validar_texto(num, d, libro=None):
     texto = d.get("texto")
     if not isinstance(texto, list) or not texto:
         raise ErrorDeContenido(
@@ -710,7 +710,7 @@ def _texto_clave(a):
     return None
 
 
-def entrada_clave(d):
+def entrada_clave(d, libro=None):
     a = d["actividad"]
     texto = _texto_clave(a)
     if texto is None:

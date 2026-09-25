@@ -7,11 +7,11 @@
 [![Hecho con](https://img.shields.io/badge/hecho%20con-LaTeX-2E7D32)](preamble.tex)
 
 Tres cuadernos diarios de lectura en español, uno por nivel, dos en
-inglés y dos en polaco, con la misma familia (los dos primeros cuentan
-el mismo año con los mismos temas semana a semana; el tercero, el año
-siguiente; los de inglés, ese mismo año siguiente, desde la casa de al
-lado, y también los dos con los mismos temas; los de polaco, el año de
-los dos primeros):
+inglés y tres en polaco (el tercero, en obras), con la misma familia
+(los dos primeros cuentan el mismo año con los mismos temas semana a
+semana; el tercero, el año siguiente; los de inglés, ese mismo año
+siguiente, desde la casa de al lado, y también los dos con los mismos
+temas; los de polaco, los mismos años que los tres en español):
 
 - **Nivel 1 · Primeras palabras** (`palabras.tex`) -- para quien empieza
   a juntar sílabas: una palabra al día, partida en sílabas, y casi
@@ -37,6 +37,9 @@ los dos primeros):
 - **Zdania** (`zdania.tex`) -- en polaco: el cuaderno de frases, día a
   día y frase a frase, el paso siguiente a *Pierwsze słowa*. Ver
   "Zdania" más abajo.
+- **Czytam z lupą** (`czytam.tex`) -- en polaco, en obras: *Leo con
+  lupa*, día a día y párrafo a párrafo, el paso siguiente a *Zdania*.
+  Ver "Czytam z lupą" más abajo.
 
 Y de cada uno, un **cuaderno de verano**: su verano -- las últimas 13
 semanas, 65 páginas -- en un cuaderno aparte, para las vacaciones; y una
@@ -258,6 +261,26 @@ Ver [`notes/09-zdania.md`](notes/09-zdania.md) para el diseño completo:
 cómo se traduce, la escalera en palabras polacas, las 32 letras y las
 fases.
 
+## Czytam z lupą (en polaco)
+
+*Leo con lupa* en polaco, el nivel 3 de la serie polaca, después de
+*Zdania*: para quien ya lee con soltura frases compuestas y ahora
+aprende a leer con atención. Cada día es el mismo día de *Leo con
+lupa*, traducido, con la misma actividad y los mismos casos del Club de
+la Lupa (*Klub Lupy*): el mismo generador (`tools/gen_days.py --libro
+czytam`, con `tools/lupa.py`), las mismas comprobaciones -- la tabla de
+pistas con una sola solución, las rutas del mapa, las correcciones que
+están en el texto de la semana, el mensaje secreto cifrado a máquina,
+con las 32 letras del alfabeto polaco y sus nueve vocales -- y todo en
+polaco, también la portada, *Jak korzystać z tego zeszytu*, *Jak czyta
+detektyw* con la legitymacja del club, el mapa del año, la clave y el
+diploma. Su escalera se mide en palabras polacas
+(`content/czytam/progresion.json`), con los nexos de subordinación del
+polaco (*że, bo, kiedy, jeśli, żeby, który*...).
+
+Se está escribiendo: el otoño, días 1--65, ya está. Ver
+[`notes/10-czytam-z-lupa.md`](notes/10-czytam-z-lupa.md).
+
 ## Los cuadernos de verano y las muestras
 
 El verano de cada cuaderno (sus últimas 13 semanas, del día 196 al 260)
@@ -378,7 +401,8 @@ despliegue), los mismos PDF están también en la pestaña
 `pdf-palabras-color` / `pdf-palabras-bw` / `pdf-lupa-color` /
 `pdf-lupa-bw` / `pdf-english-color` / `pdf-english-bw` /
 `pdf-firstwords-color` / `pdf-firstwords-bw` / `pdf-slowa-color` /
-`pdf-slowa-bw` / `pdf-zdania-color` / `pdf-zdania-bw`, los de verano
+`pdf-slowa-bw` / `pdf-zdania-color` / `pdf-zdania-bw` /
+`pdf-czytam-color` / `pdf-czytam-bw`, los de verano
 `pdf-verano-color` / `pdf-verano-bw` / `pdf-palabras-verano-color`... y
 las muestras `pdf-muestra-color` / `pdf-palabras-muestra-bw`... (se
 guardan 30 días, hace falta estar identificado en GitHub para
@@ -399,10 +423,11 @@ make english      # lo mismo para Read and Draw, en inglés (color)
 make firstwords   # lo mismo para First Words, en inglés (color)
 make slowa        # lo mismo para Pierwsze słowa, en polaco (color)
 make zdania       # lo mismo para Zdania, en polaco (color)
+make czytam       # lo mismo para Czytam z lupą, en polaco (color)
 make verano       # los catorce cuadernos de verano: los siete, color Y blanco-y-negro
 make muestra      # las catorce muestras gratuitas: los siete, color Y blanco-y-negro
-make all-formats  # los cuarenta y dos PDF: palabras, frases, lupa, english, firstwords, slowa y zdania, color Y blanco-y-negro, y sus ediciones
-make generate     # solo regenera los .tex de los siete cuadernos desde el JSON
+make all-formats  # los cuarenta y cuatro PDF: palabras, frases, lupa, english, firstwords, slowa, zdania y czytam, color Y blanco-y-negro, y sus ediciones
+make generate     # solo regenera los .tex de los ocho cuadernos desde el JSON
 make build        # solo compila frases en color (asume que ya está generado)
 make build-bw     # solo compila frases en blanco y negro
 make build-palabras / build-palabras-bw   # lo mismo, primeras palabras
@@ -419,6 +444,8 @@ make build-slowa / build-slowa-bw             # lo mismo, Pierwsze słowa
 make check-slowa / check-slowa-bw             # lo mismo, Pierwsze słowa (+ silabeo del polaco y su escalera)
 make build-zdania / build-zdania-bw           # lo mismo, Zdania
 make check-zdania / check-zdania-bw           # lo mismo, Zdania (+ actividades, abecedario polaco y escalera en palabras polacas)
+make build-czytam / build-czytam-bw           # lo mismo, Czytam z lupą
+make check-czytam / check-czytam-bw           # lo mismo, Czytam z lupą (+ actividades, abecedario polaco y escalera en palabras polacas)
 make build-lupa-verano / check-lupa-verano    # un cuaderno de verano (main, main-bw, palabras, lupa-bw...: <raíz>-verano)
 make build-lupa-muestra / check-lupa-muestra  # una muestra gratuita (<raíz>-muestra)
 make clean
@@ -434,6 +461,7 @@ english.tex, english-bw.tex           -- Read and Draw (en inglés), color y bla
 firstwords.tex, firstwords-bw.tex     -- First Words (primeras palabras en inglés), color y blanco-y-negro
 slowa.tex, slowa-bw.tex               -- Pierwsze słowa (primeras palabras en polaco), color y blanco-y-negro
 zdania.tex, zdania-bw.tex             -- Zdania (el cuaderno de frases en polaco), color y blanco-y-negro
+czytam.tex, czytam-bw.tex             -- Czytam z lupą (Leo con lupa en polaco), color y blanco-y-negro
 ediciones/<raíz>-verano.tex           -- los cuadernos de verano: cada .tex raíz de arriba con \edicion fijado antes
 ediciones/<raíz>-muestra.tex          -- las muestras gratuitas (las cuatro primeras semanas), igual
 preamble.tex, lang/es.tex             -- el motor LaTeX (la paleta de main-bw.tex está en preamble.tex)
@@ -443,7 +471,7 @@ preamble-palabras.tex                 -- lo propio del cuaderno de primeras pala
 preamble-lupa.tex                     -- lo propio de Leo con lupa (caja de actividad a toda página, mapas, tablas, códigos, la lupa)
 preamble-english.tex                  -- lo propio de Read and Draw (sobre preamble-lupa.tex: letra más grande, piezas de sus actividades, iconos)
 preamble-firstwords.tex               -- lo propio de First Words (sobre preamble-palabras.tex: la tarjeta con botones de sonido, la tabla de sonidos)
-body.tex, body-palabras.tex, body-lupa.tex, body-english.tex, body-firstwords.tex, body-slowa.tex, body-zdania.tex -- orden del documento de cada cuaderno
+body.tex, body-palabras.tex, body-lupa.tex, body-english.tex, body-firstwords.tex, body-slowa.tex, body-zdania.tex, body-czytam.tex -- orden del documento de cada cuaderno
 frontmatter/                          -- portada, instrucciones, mapa del curso (frontmatter/palabras/: nivel 1; frontmatter/lupa/: nivel 3, con "Cómo lee un detective" y el carné del club; frontmatter/english/: en inglés, con los iconos de las actividades y "Who's who?"; frontmatter/firstwords/: First Words, con la tabla de sonidos); verano.tex, en cada uno: la página para el adulto de su cuaderno de verano
 content/q1.json, q2.json, q3.json, q4.json  -- los 260 días, uno por trimestre, editados a mano
 content/generated-days.tex            -- GENERADO por tools/gen_days.py, no editar
@@ -468,6 +496,9 @@ content/zdania/q1.json ...            -- los días de Zdania, editados a mano (c
 content/zdania/progresion.json        -- la escalera de Zdania, en palabras polacas
 content/zdania/palabras-trazo.json    -- palabra de ejemplo de cada una de las 32 letras del polaco ("A jak arbuz")
 content/zdania/generated-*.tex        -- GENERADO por tools/gen_days.py --libro zdania, no editar
+content/czytam/q1.json ...            -- los días de Czytam z lupą, editados a mano (cada día, el mismo de content/lupa/q*.json en polaco)
+content/czytam/progresion.json        -- la escalera de Czytam z lupą, en palabras polacas
+content/czytam/generated-*.tex        -- GENERADO por tools/gen_days.py --libro czytam, no editar
 diagrams/                             -- dibujos de línea (TikZ) para las páginas "Completa"
 diagrams/english/                     -- dibujos para colorear y escenas donde dibujar, de Read and Draw
 backmatter/diploma.tex, clave-respuestas.tex -- diploma y clave de respuestas (backmatter/palabras/: nivel 1; backmatter/lupa/: nivel 3; backmatter/english/: Read and Draw; backmatter/firstwords/: First Words)
@@ -501,11 +532,12 @@ notes/06-first-words.md               -- diseño de First Words (primeras palabr
 notes/07-ediciones.md                 -- las ediciones de los cuadernos: el cuaderno de verano y la muestra gratuita
 notes/08-pierwsze-slowa.md            -- diseño de Pierwsze słowa (primeras palabras en polaco): las sílabas del polaco, la escalera, las 32 letras y las fases
 notes/09-zdania.md                    -- diseño de Zdania (el cuaderno de frases en polaco): cómo se traduce, la escalera en palabras polacas, las 32 letras y las fases
+notes/10-czytam-z-lupa.md             -- diseño de Czytam z lupą (Leo con lupa en polaco): cómo se traduce, el código de 32 letras y nueve vocales, la escalera en palabras polacas y las fases
 ```
 
 ## Licencia
 
-El motor -- LaTeX (`preamble*.tex`, `lang/*.tex`, `main*.tex`, `palabras*.tex`, `lupa*.tex`, `english*.tex`, `firstwords*.tex`, `slowa*.tex`, `zdania*.tex`, `body*.tex`, `ediciones/*.tex`),
+El motor -- LaTeX (`preamble*.tex`, `lang/*.tex`, `main*.tex`, `palabras*.tex`, `lupa*.tex`, `english*.tex`, `firstwords*.tex`, `slowa*.tex`, `zdania*.tex`, `czytam*.tex`, `body*.tex`, `ediciones/*.tex`),
 las herramientas Python (`tools/`), el `Makefile` y la configuración de CI
 (`.github/`) -- está bajo MIT ([`LICENSE-CODE`](LICENSE-CODE)): reutilízalo
 libremente, incluido un fork para otro niño o niña.
@@ -513,8 +545,8 @@ libremente, incluido un fork para otro niño o niña.
 El contenido narrativo -- las frases, las palabras, los nombres y la
 trama de `content/*.json`, `content/palabras/*.json`,
 `content/lupa/*.json`, `content/english/*.json`,
-`content/firstwords/*.json`, `content/slowa/*.json` y
-`content/zdania/*.json`, y lo que se
+`content/firstwords/*.json`, `content/slowa/*.json`,
+`content/zdania/*.json` y `content/czytam/*.json`, y lo que se
 genera de ahí a las páginas de los cuadernos --
 está bajo Creative Commons Atribución-NoComercial-CompartirIgual 4.0
 ([`LICENSE-CONTENT`](LICENSE-CONTENT)): se puede adaptar (por ejemplo,
@@ -599,6 +631,14 @@ color y en blanco y negro con las mismas comprobaciones que los demás
 (1 día = 1 página, log limpio, frases por trimestre, letras del
 abecedario polaco, la escalera en palabras polacas), con su cuaderno de
 verano y su muestra, y se publica en GitHub Pages con ellos.
+
+**Czytam z lupą (en polaco)**: en obras, un PR por fase. El otoño (días
+1--65) está escrito y compila en color y en blanco y negro, con las
+mismas comprobaciones que *Leo con lupa* (1 día = 1 página, log limpio,
+cada tabla de pistas con una sola solución, cada ruta del mapa, cada
+corrección en el texto, el mensaje secreto con el abecedario polaco, la
+escalera en palabras polacas) y su medalla. Faltan el invierno, la
+primavera y el verano: ver `notes/10-czytam-z-lupa.md`.
 
 **Los cuadernos de verano**: los siete, en color y en blanco y negro --
 el verano de cada cuaderno, con su portada, su página para el adulto,

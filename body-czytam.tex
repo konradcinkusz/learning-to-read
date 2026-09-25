@@ -1,0 +1,21 @@
+% body-czytam.tex -- «Czytam z lupą» ("Leo con lupa" en polaco) entero, en
+% el orden en que se imprime (ver body.tex para el cuaderno de verano y
+% la muestra). La portada es la de "Leo con lupa": solo lleva cadenas de
+% lang/, que lang/pl.tex tiene en polaco.
+\input{frontmatter/lupa/portada}
+\ifedicionverano
+  \input{frontmatter/czytam/verano}
+  \input{frontmatter/czytam/detective}
+  \mapaEdicion{content/czytam}
+\else
+  \input{frontmatter/czytam/como-usar}
+  \input{frontmatter/czytam/detective}
+  \input{frontmatter/czytam/mapa-del-curso}
+\fi
+\input{content/czytam/generated-days\sufijoEdicion}
+\input{backmatter/czytam/clave-respuestas}
+\ifedicionmuestra
+  \paginaFinMuestra{\lblLupaTituloPortada}
+\else
+  \input{backmatter/czytam/diploma}
+\fi
