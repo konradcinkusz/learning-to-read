@@ -20,8 +20,8 @@ SLBW   = slowa-bw
         check-english check-english-bw check-firstwords check-firstwords-bw \
         check-slowa check-slowa-bw clean watch
 
-# Cinco cuadernos -- tres niveles en español y dos en inglés --, el
-# mismo motor:
+# Seis cuadernos -- tres niveles en español, dos en inglés y uno en
+# polaco --, el mismo motor:
 #   - palabras.tex / palabras-bw.tex -- nivel 1, primeras palabras
 #     (content/palabras/q*.json, tools/gen_palabras.py);
 #   - main.tex / main-bw.tex         -- nivel 2, el cuaderno de frases
@@ -41,11 +41,11 @@ SLBW   = slowa-bw
 # generado -- lo único que cambia es \bookcolor, fijado antes de
 # \input{preamble} (ver preamble.tex).
 # `all` sigue siendo solo el cuaderno de frases en color, por
-# compatibilidad; `palabras`, `lupa`, `english` y `firstwords` son lo
-# mismo para los otros cuatro, `verano` y `muestra` compilan y
-# comprueban los diez cuadernos de verano y las diez muestras (ver más
-# abajo), y `all-formats` compila y comprueba los treinta PDF -- es lo que
-# corre el CI.
+# compatibilidad; `palabras`, `lupa`, `english`, `firstwords` y `slowa`
+# son lo mismo para los otros cinco, `verano` y `muestra` compilan y
+# comprueban los doce cuadernos de verano y las doce muestras (ver más
+# abajo), y `all-formats` compila y comprueba los treinta y seis PDF --
+# es lo que corre el CI.
 all: generate build check
 
 palabras: generate build-palabras check-palabras
@@ -176,8 +176,9 @@ check-slowa-bw:
 # siempre con \edicion fijado antes, y sus .tex generados los escribe
 # `make generate` a la vez que los del libro entero. `make
 # build-lupa-verano` compila uno, `make check-lupa-verano` lo compila y
-# lo comprueba, y `make verano` / `make muestra`, los diez de cada una.
-RAICES        = $(MAIN) $(BW) $(PAL) $(PALBW) $(LUPA) $(LUPABW) $(EN) $(ENBW) $(FW) $(FWBW)
+# lo comprueba, y `make verano` / `make muestra`, los doce de cada una.
+RAICES        = $(MAIN) $(BW) $(PAL) $(PALBW) $(LUPA) $(LUPABW) $(EN) $(ENBW) $(FW) $(FWBW) \
+                $(SL) $(SLBW)
 BUILD_VERANO  = $(RAICES:%=build-%-verano)
 CHECK_VERANO  = $(RAICES:%=check-%-verano)
 BUILD_MUESTRA = $(RAICES:%=build-%-muestra)

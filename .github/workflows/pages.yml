@@ -36,7 +36,9 @@ concurrency:
 jobs:
   publish:
     runs-on: ubuntu-latest
-    timeout-minutes: 40
+    # Los treinta y seis PDF se compilan uno detrás de otro (con treinta,
+    # unos 20 minutos): 60 deja margen para un runner lento.
+    timeout-minutes: 60
     environment:
       name: github-pages
       url: ${{ steps.deploy.outputs.page_url }}
@@ -47,7 +49,7 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Genera los .tex de los cinco cuadernos desde su JSON
+      - name: Genera los .tex de los seis cuadernos desde su JSON
         run: make generate
 
       - name: Valida el contenido antes de publicar nada
@@ -59,6 +61,8 @@ jobs:
           python3 tools/gen_days.py --libro english --check
           python3 tools/fonetica.py --prueba
           python3 tools/gen_palabras.py --libro firstwords --check
+          python3 tools/sylaby.py --prueba
+          python3 tools/gen_palabras.py --libro slowa --check
 
       # Color y blanco-y-negro (main-bw.tex, ver preamble.tex \bookcolor):
       # los dos se compilan y se validan aquí, y Pages nunca publica uno
@@ -208,6 +212,35 @@ jobs:
       - name: Cada día ocupa exactamente una página (First Words, blanco y negro)
         run: python3 tools/check_pages.py firstwords-bw.aux
 
+      # «Pierwsze słowa» (slowa.tex), las primeras palabras en polaco: lo
+      # mismo, los dos formatos compilados y comprobados antes de publicar
+      # nada.
+      - name: Compila Pierwsze słowa (color)
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: slowa.tex
+          latexmk_use_lualatex: true
+          args: -interaction=nonstopmode -file-line-error
+
+      - name: Lee el log correctamente (Pierwsze słowa, color)
+        run: python3 tools/checklog.py slowa.log
+
+      - name: Cada día ocupa exactamente una página (Pierwsze słowa, color)
+        run: python3 tools/check_pages.py slowa.aux
+
+      - name: Compila Pierwsze słowa (blanco y negro)
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: slowa-bw.tex
+          latexmk_use_lualatex: true
+          args: -interaction=nonstopmode -file-line-error
+
+      - name: Lee el log correctamente (Pierwsze słowa, blanco y negro)
+        run: python3 tools/checklog.py slowa-bw.log
+
+      - name: Cada día ocupa exactamente una página (Pierwsze słowa, blanco y negro)
+        run: python3 tools/check_pages.py slowa-bw.aux
+
       # Los cuadernos de verano (ediciones/<raíz>-verano.tex, ver
       # notes/07-ediciones.md): el verano de cada cuaderno, en los dos
       # formatos. Se compilan desde la raíz del repositorio, así que cada
@@ -227,13 +260,15 @@ jobs:
             ediciones/english-bw-verano.tex
             ediciones/firstwords-verano.tex
             ediciones/firstwords-bw-verano.tex
+            ediciones/slowa-verano.tex
+            ediciones/slowa-bw-verano.tex
           latexmk_use_lualatex: true
           args: -interaction=nonstopmode -file-line-error
 
       - name: Lee los logs y comprueba las páginas (cuadernos de verano)
         run: |
           for r in main main-bw palabras palabras-bw lupa lupa-bw \
-                   english english-bw firstwords firstwords-bw; do
+                   english english-bw firstwords firstwords-bw slowa slowa-bw; do
             python3 tools/checklog.py "$r-verano.log"
             python3 tools/check_pages.py "$r-verano.aux"
           done
@@ -256,13 +291,15 @@ jobs:
             ediciones/english-bw-muestra.tex
             ediciones/firstwords-muestra.tex
             ediciones/firstwords-bw-muestra.tex
+            ediciones/slowa-muestra.tex
+            ediciones/slowa-bw-muestra.tex
           latexmk_use_lualatex: true
           args: -interaction=nonstopmode -file-line-error
 
       - name: Lee los logs y comprueba las páginas (muestras gratuitas)
         run: |
           for r in main main-bw palabras palabras-bw lupa lupa-bw \
-                   english english-bw firstwords firstwords-bw; do
+                   english english-bw firstwords firstwords-bw slowa slowa-bw; do
             python3 tools/checklog.py "$r-muestra.log"
             python3 tools/check_pages.py "$r-muestra.aux"
           done
@@ -281,6 +318,8 @@ jobs:
           cp english-bw.pdf _site/read-and-draw-bw.pdf
           cp firstwords.pdf _site/first-words.pdf
           cp firstwords-bw.pdf _site/first-words-bw.pdf
+          cp slowa.pdf _site/ucze-sie-czytac-slowa.pdf
+          cp slowa-bw.pdf _site/ucze-sie-czytac-slowa-cz-b.pdf
           cp main-verano.pdf _site/aprendo-a-leer-verano.pdf
           cp main-bw-verano.pdf _site/aprendo-a-leer-verano-bn.pdf
           cp palabras-verano.pdf _site/aprendo-a-leer-palabras-verano.pdf
@@ -291,6 +330,8 @@ jobs:
           cp english-bw-verano.pdf _site/read-and-draw-summer-bw.pdf
           cp firstwords-verano.pdf _site/first-words-summer.pdf
           cp firstwords-bw-verano.pdf _site/first-words-summer-bw.pdf
+          cp slowa-verano.pdf _site/ucze-sie-czytac-slowa-lato.pdf
+          cp slowa-bw-verano.pdf _site/ucze-sie-czytac-slowa-lato-cz-b.pdf
           cp main-muestra.pdf _site/aprendo-a-leer-muestra.pdf
           cp main-bw-muestra.pdf _site/aprendo-a-leer-muestra-bn.pdf
           cp palabras-muestra.pdf _site/aprendo-a-leer-palabras-muestra.pdf
@@ -301,6 +342,8 @@ jobs:
           cp english-bw-muestra.pdf _site/read-and-draw-sample-bw.pdf
           cp firstwords-muestra.pdf _site/first-words-sample.pdf
           cp firstwords-bw-muestra.pdf _site/first-words-sample-bw.pdf
+          cp slowa-muestra.pdf _site/ucze-sie-czytac-slowa-probka.pdf
+          cp slowa-bw-muestra.pdf _site/ucze-sie-czytac-slowa-probka-cz-b.pdf
 
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
