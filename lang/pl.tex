@@ -2,9 +2,9 @@
 % -----------------------------------------------------------------------
 % Las cadenas de texto de los cuadernos en polaco, las mismas que
 % lang/es.tex, una a una (\booklang = pl, ver preamble.tex): «Pierwsze
-% słowa» (slowa.tex) y, cuando lleguen, los otros niveles. Lo que cambia
-% cada día (las palabras, los enunciados, la clave) lo escribe el
-% generador de cada cuaderno.
+% słowa» (slowa.tex), «Zdania» (zdania.tex) y, cuando llegue, el nivel
+% 3. Lo que cambia cada día (las palabras, los enunciados, la clave) lo
+% escribe el generador de cada cuaderno.
 %
 % Lo que se le dice a la niña o al niño no tiene género ("umiesz",
 % "samodzielnie", "dla tych, którzy..."): el cuaderno vale para los dos.
@@ -117,6 +117,18 @@
 % palabra al día, sino una frase corta.
 \newcommand{\lblPalSubtituloPortada}{\segunEdicion{Codziennie nowe słowo -- i rysunek}{Codziennie krótkie zdanie -- i rysunek}}
 \newcommand{\lblPalSubtituloPortadaMetodo}{\segunEdicion{Zeszyt do codziennego czytania dla tych, którzy zaczynają składać sylaby}{Zeszyt na lato dla tych, którzy czytają już słowa i zaczynają czytać zdania} -- krok przed zeszytem ze zdaniami}
+
+% -----------------------------------------------------------------------
+% «Zdania», el cuaderno de frases en polaco (zdania.tex, ver ZDANIA en
+% tools/libros.py): usa las cadenas de arriba, las del cuaderno de
+% frases. Aquí, las dos que el cuaderno en español no tiene: el nombre
+% del nivel en la portada (el de frases es "Aprendo a leer" a secas) y
+% la instrucción de "Połącz" (en español la escribe el generador, ver
+% Libro.instruccion_relaciona). Las parejas no siempre son un nombre y
+% quién es ("Po kolacji" -- "wszyscy śpiewają kolędy"): por eso, pary.
+% -----------------------------------------------------------------------
+\newcommand{\lblZdNivelPortada}{Zdania}
+\newcommand{\lblInstruccionRelaciona}{Połącz linią pary, które do siebie pasują.}
 
 % -----------------------------------------------------------------------
 % El nivel 3 en polaco ("Leo con lupa", ver lang/es.tex): lo propio de

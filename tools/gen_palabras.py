@@ -77,7 +77,7 @@ from string import Template
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import fonetica  # noqa: E402
 import sylaby  # noqa: E402
-from libros import ENGLISH, FRASES  # noqa: E402
+from libros import ALFABETO_EN, ALFABETO_ES, ALFABETO_PL, ENGLISH, FRASES  # noqa: E402
 from ediciones import (  # noqa: E402
     comprobar_campos, comprobar_preamble, ediciones_completas, ruta_edicion,
     salidas_ediciones,
@@ -202,12 +202,6 @@ ESCALERA_PL = [
 PALABRAS_GLOBALES_PL = frozenset({
     "lucía", "toby", "dani", "sofía", "andrés", "martín",
 })
-
-# Las letras del abecedario que traza cada cuaderno ("traza"): las 27
-# del español, las 26 del inglés y las 32 del polaco.
-ALFABETO_ES = "abcdefghijklmnñopqrstuvwxyz"
-ALFABETO_EN = "abcdefghijklmnopqrstuvwxyz"
-ALFABETO_PL = "aąbcćdeęfghijklłmnńoóprsśtuwyzźż"
 
 
 @dataclass(frozen=True)

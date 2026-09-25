@@ -48,31 +48,34 @@ El repositorio está deliberadamente construido para esto: el motor LaTeX
 (`preamble*.tex`, `lang/es.tex`, `lang/en.tex`, `lang/pl.tex`, `tools/`) es
 independiente del contenido (`content/*.json`, `content/palabras/*.json`,
 `content/lupa/*.json`, `content/english/*.json`,
-`content/firstwords/*.json`, `content/slowa/*.json`). Si
+`content/firstwords/*.json`, `content/slowa/*.json`,
+`content/zdania/*.json`). Si
 quieres un cuaderno parecido para otro niño o niña, haz un fork,
 sustituye `content/q1.json` a `q4.json` (frases), `content/palabras/q1.json`
 a `q4.json` (primeras palabras), `content/lupa/q1.json` a `q4.json`
 (Leo con lupa), `content/english/q1.json` a `q4.json` (Read and
 Draw, en inglés), `content/firstwords/q1.json` a `q4.json` (First
-Words, en inglés) y/o `content/slowa/q1.json` a `q4.json` (Pierwsze
-słowa, en polaco) por tus propios personajes, frases y palabras, y
+Words, en inglés), `content/slowa/q1.json` a `q4.json` (Pierwsze
+słowa, en polaco) y/o `content/zdania/q1.json` a `q4.json` (Zdania, en
+polaco) por tus propios personajes, frases y palabras, y
 conserva el resto tal cual -- es exactamente el reparto MIT/CC BY-NC-SA de `LICENSE`: el motor
 es tuyo para reutilizar, la historia concreta de esta familia no.
 
 ## Flujo de trabajo
 
 ```sh
-make generate       # content/q*.json, content/{palabras,lupa,english,firstwords,slowa}/q*.json -> .tex generados
+make generate       # content/q*.json, content/{palabras,lupa,english,firstwords,slowa,zdania}/q*.json -> .tex generados
 make build           # compila el cuaderno de frases en color (main.tex)
 make palabras        # genera, compila y comprueba el de primeras palabras (palabras.tex)
 make lupa            # genera, compila y comprueba Leo con lupa (lupa.tex)
 make english         # genera, compila y comprueba Read and Draw (english.tex)
 make firstwords      # genera, compila y comprueba First Words (firstwords.tex)
 make slowa           # genera, compila y comprueba Pierwsze słowa (slowa.tex)
+make zdania          # genera, compila y comprueba Zdania (zdania.tex)
 make check            # tools/checklog.py + tools/check_pages.py + tools/gen_days.py --check + tools/metricas.py
 make verano           # los seis cuadernos de verano, color Y blanco-y-negro
 make muestra          # las seis muestras gratuitas, color Y blanco-y-negro
-make all-formats      # los seis cuadernos, sus cuadernos de verano y sus
+make all-formats      # los siete cuadernos, sus cuadernos de verano y sus
                        # muestras, color Y blanco-y-negro -- ejecútalo antes de
                        # abrir un PR, es lo mismo que corre el CI
 ```
@@ -115,6 +118,13 @@ Las barreras duras que tienen que quedar en verde:
   dígrafo o una nasal en otoño); los nombres que se leen de un golpe
   van enteros, y al terminar el año tienen que estar trazadas las 32
   letras del abecedario polaco.
+- **Zdania** (`tools/gen_days.py --libro zdania --check` y
+  `tools/metricas.py --libro zdania`, ver `notes/09-zdania.md`): las
+  mismas reglas que el cuaderno de frases, y su escalera medida en
+  palabras polacas (`content/zdania/progresion.json`); cada letra de
+  *Pisz po śladzie* es del abecedario polaco, tiene su palabra de
+  ejemplo (`content/zdania/palabras-trazo.json`) y, con el libro
+  entero, están las 32.
 - **Los dibujos para colorear** de First Words (el mismo `--check`): el
   `"dibujo"` de cada día existe en `diagrams/` y es el de una palabra que
   se lee ese día; ningún dibujo de `diagrams/firstwords/` se queda sin

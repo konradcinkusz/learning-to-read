@@ -1,7 +1,8 @@
 """Los cuadernos que genera tools/gen_days.py -- uno por nivel.
 
-El repositorio tiene tres cuadernos en español, uno por nivel, y uno en
-inglés, con los mismos personajes:
+El repositorio tiene tres cuadernos en español, uno por nivel, y otros
+en inglés y en polaco, con los mismos personajes. Los que genera este
+script:
 
   - nivel 1, "Primeras palabras" (palabras.tex): tiene su propio
     generador, tools/gen_palabras.py, y no pasa por aquí.
@@ -18,18 +19,22 @@ inglés, con los mismos personajes:
     that...), y cada día un análisis muy sencillo de lo leído: casi
     siempre dibujar exactamente lo que dice el texto. Ver
     notes/05-english.md.
+  - «Zdania» (zdania.tex, content/zdania/q*.json): el cuaderno de
+    frases en polaco -- los mismos 260 días, frase a frase, con los
+    mismos temas, y con su propia escalera, medida en palabras
+    polacas. Ver notes/09-zdania.md.
 
-Los tres últimos comparten generador (tools/gen_days.py), escalera
+Los cuatro últimos comparten generador (tools/gen_days.py), escalera
 (tools/metricas.py) y página; todo lo que distingue a uno de otro vive
 aquí, en un solo sitio: dónde está su contenido, qué ficheros genera,
 qué escalera sigue, en qué idioma está, cuántas frases lleva una página
 (o si su texto va en párrafos, y qué módulo genera entonces sus
 actividades), qué tipos de actividad admite, qué instrucción de lectura
 y qué tamaño de letra lleva cada trimestre. gen_days.py, metricas.py y
-check_pages.py reciben `--libro frases`, `--libro lupa` o `--libro
-english`; sin la opción, `frases` -- así `python3 tools/gen_days.py` a
-secas sigue haciendo exactamente lo mismo que antes de que existiera
-"Leo con lupa".
+check_pages.py reciben `--libro frases`, `--libro lupa`, `--libro
+english` o `--libro zdania`; sin la opción, `frases` -- así `python3
+tools/gen_days.py` a secas sigue haciendo exactamente lo mismo que
+antes de que existiera "Leo con lupa".
 """
 
 from dataclasses import dataclass
@@ -42,6 +47,14 @@ CONTENT_DIR = ROOT / "content"
 # trimestres de 13 semanas que son las cuatro estaciones del año (ver
 # notes/02-revision-y-plan.md, punto 1).
 RANGO_TRIMESTRE = {1: (1, 65), 2: (66, 130), 3: (131, 195), 4: (196, 260)}
+
+# Las letras del abecedario de cada idioma, las que se trazan ("traza"):
+# las 27 del español, las 26 del inglés y las 32 del polaco (sin q, v ni
+# x, que en polaco solo salen en palabras de fuera). Las usan los dos
+# generadores, tools/gen_days.py y tools/gen_palabras.py.
+ALFABETO_ES = "abcdefghijklmnñopqrstuvwxyz"
+ALFABETO_EN = "abcdefghijklmnopqrstuvwxyz"
+ALFABETO_PL = "aąbcćdeęfghijklłmnńoóprsśtuwyzźż"
 
 # Medalla de fin de trimestre (T1-T3) -- el trimestre 4 termina en el
 # diploma final de cada cuaderno (ver PLANTILLA_MEDALLA en tools/gen_days.py).
@@ -100,6 +113,16 @@ class Libro:
     # escribir el nombre.
     titulo_medalla: str = "¡Medalla de {}!"
     animo_medalla: str = r"¡Sigue así, \rule{55mm}{0.4pt}!"
+    # "Relaciona" (PLANTILLA_RELACIONA en tools/gen_days.py): la
+    # instrucción que va encima de las parejas, en el idioma del cuaderno.
+    instruccion_relaciona: str = "Une cada nombre con quién es, con una línea."
+    # "Traza": la palabra de ejemplo de cada letra ("M de Mamá", "M jak
+    # mama"), editada a mano, y el abecedario del cuaderno. Con
+    # abecedario, tools/gen_days.py comprueba además que cada letra que
+    # se traza es suya y que, con el libro entero, se trazan todas; sin
+    # él (None), solo que la letra tiene contorno y palabra, como siempre.
+    palabras_trazo: Path = CONTENT_DIR / "palabras-trazo.json"
+    alfabeto: str = None
 
     def __post_init__(self):
         if self.rango_trimestre is None:
@@ -235,7 +258,55 @@ ENGLISH = Libro(
     }),
 )
 
-LIBROS = {libro.nombre: libro for libro in (FRASES, LUPA, ENGLISH)}
+ZDANIA = Libro(
+    nombre="zdania",
+    # El cuaderno de frases, en polaco (ver notes/09-zdania.md): los mismos
+    # días, frase a frase, las mismas actividades y las mismas reglas --
+    # de una frase al día en otoño a cuatro en verano, y sin "responde" en
+    # otoño --; lo que cambia es el idioma, la escalera (las frases
+    # polacas tienen menos palabras: no hay artículos, y el sujeto a
+    # menudo no se dice) y las letras de "Pisz po śladzie", que en polaco
+    # son 32.
+    nivel=2,
+    dir_contenido=CONTENT_DIR / "zdania",
+    salida_dias=CONTENT_DIR / "zdania" / "generated-days.tex",
+    salida_clave=CONTENT_DIR / "zdania" / "generated-clave.tex",
+    progresion=CONTENT_DIR / "zdania" / "progresion.json",
+    # Las mismas macros que el cuaderno de frases: lang/pl.tex las tiene
+    # en polaco.
+    instruccion_lectura=FRASES.instruccion_lectura,
+    fuente_trimestre=FRASES.fuente_trimestre,
+    tipos_validos=FRASES.tipos_validos,
+    frases_por_trimestre=FRASES.frases_por_trimestre,
+    trimestres_sin_responde=FRASES.trimestres_sin_responde,
+    # En polaco, los nombres se declinan: cada forma que sale en el
+    # cuaderno cuenta como el nombre, no como una palabra nueva (ver
+    # lematizar_pl en tools/metricas.py). Lucía y Sofía conservan la í
+    # en todas sus formas; Toby, el apóstrofo (Toby'ego, Toby'emu).
+    nombres_propios=frozenset({
+        "lucía", "lucíi", "lucíę", "lucíą", "lucío",
+        "dani", "daniego", "daniemu", "danim",
+        "toby",
+        "rosa", "rosy", "rosie", "rosę", "rosą", "roso",
+        "marta", "marty", "marcie", "martę", "martą", "marto",
+        "sofía", "sofíi", "sofíę", "sofíą", "sofío",
+        "pedro", "pedra", "pedrowi", "pedrem", "pedrze",
+        "luna", "luny", "lunie", "lunę", "luną",
+        "mama", "mamy", "mamie", "mamę", "mamą", "mamo",
+        "tata", "taty", "tacie", "tatę", "tatą", "tato",
+        "babcia", "babci", "babcię", "babcią", "babciu",
+    }),
+    idioma="pl",
+    dias_escritos=65,
+    nombre_medalla={1: "jesień", 2: "zimę", 3: "wiosnę"},
+    titulo_medalla="Medal za {}!",
+    animo_medalla=r"Tak trzymaj, \rule{55mm}{0.4pt}!",
+    instruccion_relaciona=r"\lblInstruccionRelaciona",
+    palabras_trazo=CONTENT_DIR / "zdania" / "palabras-trazo.json",
+    alfabeto=ALFABETO_PL,
+)
+
+LIBROS = {libro.nombre: libro for libro in (FRASES, LUPA, ENGLISH, ZDANIA)}
 
 
 def libro_desde_argv(argv):

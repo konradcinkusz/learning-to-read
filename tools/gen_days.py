@@ -7,6 +7,9 @@ content/generated-days.tex y content/generated-clave.tex.
 content/lupa/generated-days.tex y content/lupa/generated-clave.tex.
 "Read and Draw" (en inglés, `--libro english`): content/english/q*.json
 -> content/english/generated-days.tex y generated-clave.tex.
+«Zdania» (el cuaderno de frases en polaco, `--libro zdania`):
+content/zdania/q*.json -> content/zdania/generated-days.tex y
+generated-clave.tex.
 Qué distingue un libro de otro (rutas, reglas, idioma, tipos de
 actividad) está en tools/libros.py; las plantillas y validaciones
 propias de "Leo con lupa", en tools/lupa.py, y las de "Read and Draw",
@@ -21,6 +24,7 @@ Uso:
     python3 tools/gen_days.py                    # regenera el cuaderno de frases
     python3 tools/gen_days.py --libro lupa       # regenera "Leo con lupa"
     python3 tools/gen_days.py --libro english    # regenera "Read and Draw"
+    python3 tools/gen_days.py --libro zdania     # regenera «Zdania»
     python3 tools/gen_days.py [--libro X] --check
                                   # solo valida, no escribe nada; falla
                                   # (exit 1) si algo no cuadra o si el
@@ -41,7 +45,8 @@ from ediciones import comprobar_campos, comprobar_preamble, salidas_ediciones
 from libros import CONTENT_DIR, FRASES, ROOT, libro_desde_argv
 
 LETRAS_TRAZO_FILE = CONTENT_DIR / "letras-trazo.json"
-PALABRAS_TRAZO_FILE = CONTENT_DIR / "palabras-trazo.json"
+# La palabra de ejemplo de cada letra es de cada cuaderno:
+# Libro.palabras_trazo (content/palabras-trazo.json en el de frases).
 
 # El módulo que genera la página de un libro con el texto en párrafos
 # (Libro.motor, ver tools/libros.py). Los dos tienen la misma forma:
@@ -169,7 +174,7 @@ $pregunta
 
 PLANTILLA_RELACIONA = Template(
     r"""\actividadRelaciona{%
-\footnotesize\color{colorGris}Une cada nombre con quién es, con una línea.
+\footnotesize\color{colorGris}$instruccion
 \par\vspace{3mm}\normalfont\normalsize\color{black}
 \renewcommand{\arraystretch}{2.7}
 \begin{tabularx}{\linewidth}{@{}X >{\centering\arraybackslash}p{3.4cm} X@{}}
@@ -332,24 +337,27 @@ def _cargar_json(ruta):
 
 
 _letras_trazo = None
-_palabras_trazo = None
+_palabras_trazo = {}
 
 
-def datos_trazo():
+def datos_trazo(libro=FRASES):
     """Carga (una vez, con caché de módulo) los dos ficheros de datos
     de 'traza': el contorno de cada letra (generado, ver
-    tools/gen_letras_puntos.py) y la palabra de ejemplo de cada letra
-    (editada a mano). Deliberadamente solo biblioteca estándar -- a
-    diferencia de tools/gen_letras_puntos.py, esto NO necesita
+    tools/gen_letras_puntos.py), el mismo para todos los cuadernos, y
+    la palabra de ejemplo de cada letra (editada a mano), la del
+    cuaderno (Libro.palabras_trazo: "M de Mamá", "M jak mama").
+    Deliberadamente solo biblioteca estándar -- a diferencia de
+    tools/gen_letras_puntos.py, esto NO necesita
     matplotlib/numpy/fonttools, así que `make generate` y el job
     `gates` de CI no ganan una dependencia pesada por esta actividad."""
-    global _letras_trazo, _palabras_trazo
+    global _letras_trazo
     if _letras_trazo is None:
         datos = _cargar_json(LETRAS_TRAZO_FILE)
         datos.pop("_comentario", None)
         _letras_trazo = datos
-        _palabras_trazo = _cargar_json(PALABRAS_TRAZO_FILE)["palabras"]
-    return _letras_trazo, _palabras_trazo
+    if libro.palabras_trazo not in _palabras_trazo:
+        _palabras_trazo[libro.palabras_trazo] = _cargar_json(libro.palabras_trazo)["palabras"]
+    return _letras_trazo, _palabras_trazo[libro.palabras_trazo]
 
 
 def puntos_tikz_letra(entrada_mayus, entrada_minus):
@@ -377,9 +385,9 @@ def puntos_tikz_letra(entrada_mayus, entrada_minus):
     return " ".join(piezas)
 
 
-def render_actividad(dia_num, actividad):
+def render_actividad(dia_num, actividad, libro=FRASES):
     tipo = actividad.get("tipo")
-    if tipo not in TIPOS_VALIDOS:
+    if tipo not in libro.tipos_validos:
         raise ErrorDeContenido(
             f"día {dia_num}: tipo de actividad desconocido: {tipo!r}"
         )
@@ -423,7 +431,9 @@ def render_actividad(dia_num, actividad):
             for i, d in zip(izquierda, derecha_mezclada)
         )
         filas += " \\\\"
-        return PLANTILLA_RELACIONA.substitute(filas=filas)
+        return PLANTILLA_RELACIONA.substitute(
+            instruccion=libro.instruccion_relaciona, filas=filas
+        )
 
     if tipo == "adivina":
         # "respuesta" no se imprime en la página del día -- la niña
@@ -444,7 +454,7 @@ def render_actividad(dia_num, actividad):
     if tipo == "traza":
         _campos_requeridos(dia_num, actividad, ["letra"])
         letra = actividad["letra"]
-        letras, palabras = datos_trazo()
+        letras, palabras = datos_trazo(libro)
         if letra not in letras:
             raise ErrorDeContenido(
                 f"día {dia_num}: 'traza' pide la letra {letra!r}, que no "
@@ -453,7 +463,7 @@ def render_actividad(dia_num, actividad):
         if letra not in palabras:
             raise ErrorDeContenido(
                 f"día {dia_num}: la letra {letra!r} no tiene palabra de "
-                f"ejemplo en {PALABRAS_TRAZO_FILE.name}"
+                f"ejemplo en {_ruta_legible(libro.palabras_trazo)}"
             )
         entrada = letras[letra]
         return PLANTILLA_TRAZA.substitute(
@@ -751,7 +761,7 @@ def paginas_dia(dias, libro=FRASES):
         return paginas
 
     for d in dias:
-        actividad_tex = render_actividad(d["dia"], d["actividad"])
+        actividad_tex = render_actividad(d["dia"], d["actividad"], libro)
         if d["actividad"]["tipo"] == "relee":
             oraciones_dia = texto_semana(dias_por_semana, d)
         else:
@@ -828,6 +838,36 @@ def generar_ediciones(dias, libro=FRASES):
     )
 
 
+def comprobar_trazo(dias, libro):
+    """Con abecedario (Libro.alfabeto, en «Zdania»): cada letra de un día
+    "traza" es del abecedario del cuaderno (en polaco no hay ñ, q, v ni
+    x) y, con el libro entero, están todas -- 32 en polaco: ver
+    notes/09-zdania.md. Sin abecedario, nada: el cuaderno de frases
+    traza las suyas como siempre."""
+    if not libro.alfabeto:
+        return
+    trazadas = set()
+    for d in dias:
+        actividad = d["actividad"]
+        if actividad.get("tipo") != "traza":
+            continue
+        letra = actividad.get("letra")
+        if letra not in libro.alfabeto:
+            raise ErrorDeContenido(
+                f"día {d['dia']}: 'traza' pide la letra {letra!r}, que no es "
+                f"del abecedario del cuaderno «{libro.nombre}»"
+            )
+        trazadas.add(letra)
+    if libro.dias_escritos:
+        return
+    faltan = [c for c in libro.alfabeto if c not in trazadas]
+    if faltan:
+        raise ErrorDeContenido(
+            f"el cuaderno «{libro.nombre}» no traza estas letras en ningún "
+            f"día: {', '.join(faltan)}"
+        )
+
+
 def comprobar_totaldias(libro):
     """lang/es.tex (o el lang/ del idioma del libro) promete que
     \\totaldias (el pie de página y el diploma) y el total de días del
@@ -856,6 +896,7 @@ def main():
         validar_dias(dias, libro)
         for d in dias:
             comprobar_campos(d)
+        comprobar_trazo(dias, libro)
         tex = generar_tex(dias, libro)
         clave = generar_clave(dias, libro)
         ediciones = generar_ediciones(dias, libro)

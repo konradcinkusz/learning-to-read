@@ -1,0 +1,18 @@
+% body-zdania.tex -- «Zdania» (el cuaderno de frases en polaco) entero,
+% en el orden en que se imprime (ver body.tex para el cuaderno de verano
+% y la muestra).
+\input{frontmatter/zdania/portada}
+\ifedicionverano
+  \input{frontmatter/zdania/verano}
+  \mapaEdicion{content/zdania}
+\else
+  \input{frontmatter/zdania/como-usar}
+  \input{frontmatter/zdania/mapa-del-curso}
+\fi
+\input{content/zdania/generated-days\sufijoEdicion}
+\input{backmatter/zdania/clave-respuestas}
+\ifedicionmuestra
+  \paginaFinMuestra{\lblTituloPortada\ \textperiodcentered\ \lblZdNivelPortada}
+\else
+  \input{backmatter/zdania/diploma}
+\fi

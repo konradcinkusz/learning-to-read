@@ -1,0 +1,30 @@
+% frontmatter/zdania/portada.tex -- página de título de «Zdania», el
+% cuaderno de frases en polaco: la del cuaderno en español
+% (frontmatter/portada.tex), con las cadenas de lang/pl.tex y, debajo
+% del título, el nombre del nivel, como en «Pierwsze słowa»: en polaco,
+% la serie tiene dos cuadernos con el mismo título. Mismo icono.
+\begin{center}
+\vspace*{3.5cm}
+
+\begin{tikzpicture}[line width=1.6pt, line cap=round, line join=round, color=colorLectura]
+  \draw (-1.6,0) -- (0,0.35) -- (1.6,0) -- (1.6,-1.9) -- (0,-1.55) -- (-1.6,-1.9) -- cycle;
+  \draw (0,0.35) -- (0,-1.55);
+  \draw (-1.25,-0.3) -- (-0.25,-0.15);
+  \draw (-1.25,-0.7) -- (-0.25,-0.55);
+  \draw (0.25,-0.15) -- (1.25,-0.3);
+  \draw (0.25,-0.55) -- (1.25,-0.7);
+\end{tikzpicture}
+
+\vspace{10mm}
+{\fontsize{44}{50}\selectfont\bfseries\color{colorLectura} \lblTituloPortada}\\[5mm]
+{\fontsize{28}{34}\selectfont\color{colorLectura} \lblZdNivelPortada}\\[7mm]
+{\Large\color{colorGris} \lblSubtituloPortada}\\[4mm]
+{\normalsize\color{colorGris} \lblSubtituloPortadaMetodo}
+\insigniaEdicion
+
+\vspace{18mm}
+{\large \lblPortadaNombre:\ \rule{75mm}{0.4pt}}\\[6mm]
+{\large \lblPortadaCurso:\ \rule{75mm}{0.4pt}}
+\end{center}
+\vspace*{\fill}
+\newpage

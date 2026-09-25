@@ -1,0 +1,10 @@
+% zdania-bw.tex -- «Zdania» sin color, igual que main-bw.tex respecto a
+% main.tex: mismo body-zdania.tex, mismo preámbulo; solo cambia
+% \bookcolor, fijado ANTES de \input{preamble}.
+\documentclass[11pt]{article}
+\def\bookcolor{bw}
+\def\booklang{pl}
+\input{preamble}
+\begin{document}
+\input{body-zdania}
+\end{document}
