@@ -1,0 +1,1056 @@
+{
+  "_comentario": "Datos de origen para tools/gen_days.py --libro zdania: «Zdania», el cuaderno de frases en polaco, día a día el de content/q1.json. Este fichero SI se edita a mano; content/zdania/generated-days.tex NO (se regenera con `make generate`). Trimestre 1: días 1-65 (semanas 1-13), una frase al día. Ver notes/09-zdania.md.",
+  "personajes": {
+    "Lucía": "bohaterka, 6 lat",
+    "Dani": "jej młodszy brat, 4 lata",
+    "Toby": "pies rodziny",
+    "Babcia Rosa": "babcia ze strony mamy",
+    "Pedro": "sąsiad, ma kotkę",
+    "Luna": "kotka Pedra"
+  },
+  "dias": [
+    {
+      "dia": 1,
+      "semana": 1,
+      "trimestre": 1,
+      "tema": "Rodzina Lucíi",
+      "oraciones": [
+        "Lucía ma sześć lat i uwielbia czytać."
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Narysuj Lucíę, jak czyta swoją ulubioną bajkę."
+      }
+    },
+    {
+      "dia": 2,
+      "semana": 1,
+      "trimestre": 1,
+      "tema": "Rodzina Lucíi",
+      "oraciones": [
+        "Dani, jej młodszy brat, chce się bawić."
+      ],
+      "actividad": {
+        "tipo": "completa",
+        "diagrama": "lineas-ondas"
+      }
+    },
+    {
+      "dia": 3,
+      "semana": 1,
+      "trimestre": 1,
+      "tema": "Rodzina Lucíi",
+      "oraciones": [
+        "Toby to brązowy pies z długimi uszami."
+      ],
+      "actividad": {
+        "tipo": "copia"
+      }
+    },
+    {
+      "dia": 4,
+      "semana": 1,
+      "trimestre": 1,
+      "tema": "Rodzina Lucíi",
+      "oraciones": [
+        "W każdą niedzielę jadą do babci."
+      ],
+      "actividad": {
+        "tipo": "relaciona",
+        "pares": [
+          [
+            "Lucía",
+            "dziewczynka"
+          ],
+          [
+            "Dani",
+            "mały chłopiec"
+          ],
+          [
+            "Toby",
+            "pies"
+          ],
+          [
+            "Babcia Rosa",
+            "babcia"
+          ]
+        ]
+      }
+    },
+    {
+      "dia": 5,
+      "semana": 1,
+      "trimestre": 1,
+      "tema": "Rodzina Lucíi",
+      "oraciones": [
+        "Lucía bardzo kocha swoją rodzinę."
+      ],
+      "actividad": {
+        "tipo": "crea",
+        "prompt": "Narysuj swoją rodzinę. Opowiedz dorosłemu, co najbardziej lubicie robić razem."
+      }
+    },
+    {
+      "dia": 6,
+      "semana": 2,
+      "trimestre": 1,
+      "tema": "Toby, wesoły piesek",
+      "oraciones": [
+        "Toby bardzo szybko biega za swoją piłką."
+      ],
+      "actividad": {
+        "tipo": "traza",
+        "letra": "a"
+      }
+    },
+    {
+      "dia": 7,
+      "semana": 2,
+      "trimestre": 1,
+      "tema": "Toby, wesoły piesek",
+      "oraciones": [
+        "Dani i Toby bawią się razem w ogrodzie."
+      ],
+      "actividad": {
+        "tipo": "completa",
+        "diagrama": "lineas-circulo"
+      }
+    },
+    {
+      "dia": 8,
+      "semana": 2,
+      "trimestre": 1,
+      "tema": "Toby, wesoły piesek",
+      "oraciones": [
+        "Czasem Toby chowa się pod łóżkiem."
+      ],
+      "actividad": {
+        "tipo": "copia"
+      }
+    },
+    {
+      "dia": 9,
+      "semana": 2,
+      "trimestre": 1,
+      "tema": "Toby, wesoły piesek",
+      "oraciones": [
+        "Lucía daje Toby'emu smaczną kość."
+      ],
+      "actividad": {
+        "tipo": "adivina",
+        "adivinanza": "Mam cztery łapy, macham ogonem i głośno szczekam. Kim jestem?",
+        "respuesta": "Pies."
+      }
+    },
+    {
+      "dia": 10,
+      "semana": 2,
+      "trimestre": 1,
+      "tema": "Toby, wesoły piesek",
+      "oraciones": [
+        "Toby jest najlepszym przyjacielem całej rodziny."
+      ],
+      "actividad": {
+        "tipo": "repasa",
+        "checklist": [
+          "Wiem, jak wygląda Toby.",
+          "Wiem, gdzie Toby czasem się chowa.",
+          "Wiem, kto daje Toby'emu kość."
+        ],
+        "prompt": "Narysuj swoje zwierzątko, prawdziwe albo wymyślone.",
+        "banner": "10 przeczytanych stron! Tak trzymaj!"
+      }
+    },
+    {
+      "dia": 11,
+      "semana": 3,
+      "trimestre": 1,
+      "tema": "Szkoła Lucíi",
+      "oraciones": [
+        "Lucía idzie do szkoły z niebieskim plecakiem."
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Narysuj Lucíę w drodze do szkoły, z plecakiem."
+      }
+    },
+    {
+      "dia": 12,
+      "semana": 3,
+      "trimestre": 1,
+      "tema": "Szkoła Lucíi",
+      "oraciones": [
+        "Jej pani, Marta, zaczyna lekcję od bajki."
+      ],
+      "actividad": {
+        "tipo": "completa",
+        "diagrama": "lineas-ondas"
+      }
+    },
+    {
+      "dia": 13,
+      "semana": 3,
+      "trimestre": 1,
+      "tema": "Szkoła Lucíi",
+      "oraciones": [
+        "Lucía bawi się z Sofíą, swoją nową koleżanką."
+      ],
+      "actividad": {
+        "tipo": "copia"
+      }
+    },
+    {
+      "dia": 14,
+      "semana": 3,
+      "trimestre": 1,
+      "tema": "Szkoła Lucíi",
+      "oraciones": [
+        "Lucía wiesza swój płaszcz na wieszaku."
+      ],
+      "actividad": {
+        "tipo": "relaciona",
+        "pares": [
+          [
+            "Lucía",
+            "ma niebieski plecak"
+          ],
+          [
+            "Marta",
+            "jest panią w szkole"
+          ],
+          [
+            "Sofía",
+            "to nowa koleżanka"
+          ],
+          [
+            "Dani",
+            "to młodszy brat"
+          ]
+        ]
+      }
+    },
+    {
+      "dia": 15,
+      "semana": 3,
+      "trimestre": 1,
+      "tema": "Szkoła Lucíi",
+      "oraciones": [
+        "Po szkole Lucía wszystko opowiada mamie."
+      ],
+      "actividad": {
+        "tipo": "crea",
+        "prompt": "Narysuj swoją klasę albo opowiedz dorosłemu, co najbardziej lubisz w szkole."
+      }
+    },
+    {
+      "dia": 16,
+      "semana": 4,
+      "trimestre": 1,
+      "tema": "Osiedle i park",
+      "oraciones": [
+        "Lucía i Dani idą do parku z Tobym."
+      ],
+      "actividad": {
+        "tipo": "traza",
+        "letra": "ą"
+      }
+    },
+    {
+      "dia": 17,
+      "semana": 4,
+      "trimestre": 1,
+      "tema": "Osiedle i park",
+      "oraciones": [
+        "W parku jest bardzo wysoka zjeżdżalnia."
+      ],
+      "actividad": {
+        "tipo": "busca",
+        "instruccion": "Znajdź w tekście słowo, które mówi, co jest w parku."
+      }
+    },
+    {
+      "dia": 18,
+      "semana": 4,
+      "trimestre": 1,
+      "tema": "Osiedle i park",
+      "oraciones": [
+        "Toby bawi się z innymi psami z osiedla."
+      ],
+      "actividad": {
+        "tipo": "verdadero_falso",
+        "afirmaciones": [
+          "Toby bawi się z innymi psami.",
+          "Lucía zostaje w domu.",
+          "Park jest pusty."
+        ]
+      }
+    },
+    {
+      "dia": 19,
+      "semana": 4,
+      "trimestre": 1,
+      "tema": "Osiedle i park",
+      "oraciones": [
+        "Dani huśta się na huśtawce i głośno się śmieje."
+      ],
+      "actividad": {
+        "tipo": "adivina",
+        "adivinanza": "Latam bez skrzydeł, w górę i w dół, ale nigdy nie odlatuję daleko. Czym jestem?",
+        "respuesta": "Huśtawka."
+      }
+    },
+    {
+      "dia": 20,
+      "semana": 4,
+      "trimestre": 1,
+      "tema": "Osiedle i park",
+      "oraciones": [
+        "Kiedy wracają do domu, wszyscy są zmęczeni."
+      ],
+      "actividad": {
+        "tipo": "repasa",
+        "checklist": [
+          "Wiem, co jest w parku.",
+          "Wiem, z kim bawi się Toby.",
+          "Wiem, kto huśta się na huśtawce."
+        ],
+        "prompt": "Narysuj swój ulubiony park.",
+        "banner": "20 przeczytanych stron! Znasz już osiedle Lucíi."
+      }
+    },
+    {
+      "dia": 21,
+      "semana": 5,
+      "trimestre": 1,
+      "tema": "Jedzenie w domu",
+      "oraciones": [
+        "Lucía bardzo lubi hiszpańską tortillę z ziemniakami."
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Narysuj danie, które ty lubisz najbardziej."
+      }
+    },
+    {
+      "dia": 22,
+      "semana": 5,
+      "trimestre": 1,
+      "tema": "Jedzenie w domu",
+      "oraciones": [
+        "Dani za to wcale nie lubi szpinaku."
+      ],
+      "actividad": {
+        "tipo": "completa",
+        "diagrama": "lineas-circulo"
+      }
+    },
+    {
+      "dia": 23,
+      "semana": 5,
+      "trimestre": 1,
+      "tema": "Jedzenie w domu",
+      "oraciones": [
+        "W niedziele babcia gotuje bardzo pyszny gulasz."
+      ],
+      "actividad": {
+        "tipo": "rodea",
+        "pregunta": "Kto w niedziele gotuje gulasz?",
+        "opciones": [
+          "Babcia",
+          "Mama",
+          "Toby"
+        ]
+      }
+    },
+    {
+      "dia": 24,
+      "semana": 5,
+      "trimestre": 1,
+      "tema": "Jedzenie w domu",
+      "oraciones": [
+        "Toby zawsze czeka pod stołem na okruszki."
+      ],
+      "actividad": {
+        "tipo": "relaciona",
+        "pares": [
+          [
+            "Lucía",
+            "tortilla z ziemniakami"
+          ],
+          [
+            "Dani",
+            "nie lubi szpinaku"
+          ],
+          [
+            "Toby",
+            "czeka pod stołem"
+          ],
+          [
+            "Babcia Rosa",
+            "gotuje w niedziele"
+          ]
+        ]
+      }
+    },
+    {
+      "dia": 25,
+      "semana": 5,
+      "trimestre": 1,
+      "tema": "Jedzenie w domu: cały tydzień",
+      "actividad": {
+        "tipo": "relee",
+        "prompt": "Narysuj obiad, który chcesz przygotować dla całej rodziny."
+      }
+    },
+    {
+      "dia": 26,
+      "semana": 6,
+      "trimestre": 1,
+      "tema": "Nadchodzi jesień",
+      "oraciones": [
+        "Liście na drzewach robią się pomarańczowe."
+      ],
+      "actividad": {
+        "tipo": "traza",
+        "letra": "b"
+      }
+    },
+    {
+      "dia": 27,
+      "semana": 6,
+      "trimestre": 1,
+      "tema": "Nadchodzi jesień",
+      "oraciones": [
+        "Po południu zaczyna wiać zimny wiatr."
+      ],
+      "actividad": {
+        "tipo": "busca",
+        "instruccion": "Znajdź w tekście słowo, które mówi, co zaczyna wiać."
+      }
+    },
+    {
+      "dia": 28,
+      "semana": 6,
+      "trimestre": 1,
+      "tema": "Nadchodzi jesień",
+      "oraciones": [
+        "Lucía wyjmuje z szafy płaszcz i szalik."
+      ],
+      "actividad": {
+        "tipo": "verdadero_falso",
+        "afirmaciones": [
+          "Lucía wyjmuje płaszcz.",
+          "Jest bardzo gorąco.",
+          "Liście są jeszcze zielone."
+        ]
+      }
+    },
+    {
+      "dia": 29,
+      "semana": 6,
+      "trimestre": 1,
+      "tema": "Nadchodzi jesień",
+      "oraciones": [
+        "Dani usypuje kupkę liści i skacze w nią."
+      ],
+      "actividad": {
+        "tipo": "adivina",
+        "adivinanza": "Spadam z drzewa, jestem pomarańczowy albo brązowy i szeleszczę, kiedy na mnie nadepniesz. Czym jestem?",
+        "respuesta": "Liść."
+      }
+    },
+    {
+      "dia": 30,
+      "semana": 6,
+      "trimestre": 1,
+      "tema": "Nadchodzi jesień",
+      "oraciones": [
+        "Jesień widać już na całym osiedlu."
+      ],
+      "actividad": {
+        "tipo": "repasa",
+        "checklist": [
+          "Wiem, jakiego koloru są liście.",
+          "Wiem, co Lucía wyjmuje z szafy.",
+          "Wiem, co Dani robi z liśćmi."
+        ],
+        "prompt": "Narysuj swoje ulubione miejsce jesienią.",
+        "banner": "30 przeczytanych stron! Jesień już tu jest."
+      }
+    },
+    {
+      "dia": 31,
+      "semana": 7,
+      "trimestre": 1,
+      "tema": "Zabawki Daniego",
+      "oraciones": [
+        "Dani ma pudło pełne małych autek."
+      ],
+      "actividad": {
+        "tipo": "traza",
+        "letra": "c"
+      }
+    },
+    {
+      "dia": 32,
+      "semana": 7,
+      "trimestre": 1,
+      "tema": "Zabawki Daniego",
+      "oraciones": [
+        "Jego ulubione autko jest czerwone i bardzo szybkie."
+      ],
+      "actividad": {
+        "tipo": "completa",
+        "diagrama": "lineas-ondas"
+      }
+    },
+    {
+      "dia": 33,
+      "semana": 7,
+      "trimestre": 1,
+      "tema": "Zabawki Daniego",
+      "oraciones": [
+        "Czasem Dani rozrzuca autka po całym pokoju."
+      ],
+      "actividad": {
+        "tipo": "rodea",
+        "pregunta": "Gdzie Dani czasem rozrzuca autka?",
+        "opciones": [
+          "Po całym pokoju",
+          "W ogrodzie",
+          "W szkole"
+        ]
+      }
+    },
+    {
+      "dia": 34,
+      "semana": 7,
+      "trimestre": 1,
+      "tema": "Zabawki Daniego",
+      "oraciones": [
+        "Przed kolacją Lucía pomaga mu je posprzątać."
+      ],
+      "actividad": {
+        "tipo": "relaciona",
+        "pares": [
+          [
+            "Dani",
+            "ma małe autka"
+          ],
+          [
+            "Ulubione autko",
+            "jest czerwone i szybkie"
+          ],
+          [
+            "Lucía",
+            "pomaga sprzątać"
+          ],
+          [
+            "Toby",
+            "też chce się bawić"
+          ]
+        ]
+      }
+    },
+    {
+      "dia": 35,
+      "semana": 7,
+      "trimestre": 1,
+      "tema": "Zabawki Daniego: cały tydzień",
+      "actividad": {
+        "tipo": "relee",
+        "prompt": "Narysuj zabawkę, którą chcesz podarować Daniemu."
+      }
+    },
+    {
+      "dia": 36,
+      "semana": 8,
+      "trimestre": 1,
+      "tema": "Kasztany i Wszystkich Świętych",
+      "oraciones": [
+        "Pierwszego listopada rodzina je pieczone kasztany."
+      ],
+      "actividad": {
+        "tipo": "traza",
+        "letra": "ć"
+      }
+    },
+    {
+      "dia": 37,
+      "semana": 8,
+      "trimestre": 1,
+      "tema": "Kasztany i Wszystkich Świętych",
+      "oraciones": [
+        "Tata piecze je na dworze, na patelni z dziurkami."
+      ],
+      "actividad": {
+        "tipo": "busca",
+        "instruccion": "Znajdź w tekście słowa, które mówią, gdzie tata piecze kasztany."
+      }
+    },
+    {
+      "dia": 38,
+      "semana": 8,
+      "trimestre": 1,
+      "tema": "Kasztany i Wszystkich Świętych",
+      "oraciones": [
+        "Kasztany parzą, więc trzeba chwilę poczekać."
+      ],
+      "actividad": {
+        "tipo": "verdadero_falso",
+        "afirmaciones": [
+          "Na początku kasztany parzą.",
+          "Trzeba je jeść zamrożone.",
+          "Tata piecze je w samochodzie."
+        ]
+      }
+    },
+    {
+      "dia": 39,
+      "semana": 8,
+      "trimestre": 1,
+      "tema": "Kasztany i Wszystkich Świętych",
+      "oraciones": [
+        "Dani brudzi sobie palce i bardzo się śmieje."
+      ],
+      "actividad": {
+        "tipo": "adivina",
+        "adivinanza": "Z wierzchu jestem brązowy, w środku biały, a w listopadzie grzeję ci ręce. Czym jestem?",
+        "respuesta": "Kasztan."
+      }
+    },
+    {
+      "dia": 40,
+      "semana": 8,
+      "trimestre": 1,
+      "tema": "Kasztany i Wszystkich Świętych",
+      "oraciones": [
+        "Tego wieczoru cały dom pachnie kasztanami."
+      ],
+      "actividad": {
+        "tipo": "repasa",
+        "checklist": [
+          "Wiem, którego dnia jedzą kasztany.",
+          "Wiem, gdzie piecze je tata.",
+          "Wiem, dlaczego trzeba chwilę poczekać."
+        ],
+        "prompt": "Narysuj swój ulubiony jesienny podwieczorek.",
+        "banner": "40 przeczytanych stron! Na całym osiedlu pachnie kasztanami."
+      }
+    },
+    {
+      "dia": 41,
+      "semana": 9,
+      "trimestre": 1,
+      "tema": "Urodziny Lucíi",
+      "oraciones": [
+        "Jutro Lucía ma urodziny i bardzo się cieszy."
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Narysuj, jak wyobrażasz sobie przyjęcie Lucíi."
+      }
+    },
+    {
+      "dia": 42,
+      "semana": 9,
+      "trimestre": 1,
+      "tema": "Urodziny Lucíi",
+      "oraciones": [
+        "Dziś Lucía ma urodziny i kończy siedem lat."
+      ],
+      "actividad": {
+        "tipo": "completa",
+        "diagrama": "lineas-circulo"
+      }
+    },
+    {
+      "dia": 43,
+      "semana": 9,
+      "trimestre": 1,
+      "tema": "Urodziny Lucíi",
+      "oraciones": [
+        "Mama piecze dla niej ulubiony tort truskawkowy."
+      ],
+      "actividad": {
+        "tipo": "rodea",
+        "pregunta": "Jaki tort piecze mama?",
+        "opciones": [
+          "Truskawkowy",
+          "Czekoladowy",
+          "Cytrynowy"
+        ]
+      }
+    },
+    {
+      "dia": 44,
+      "semana": 9,
+      "trimestre": 1,
+      "tema": "Urodziny Lucíi",
+      "oraciones": [
+        "Sofía i Marta przychodzą i śpiewają jej sto lat."
+      ],
+      "actividad": {
+        "tipo": "relaciona",
+        "pares": [
+          [
+            "Lucía",
+            "kończy siedem lat"
+          ],
+          [
+            "Sofía",
+            "przychodzi na przyjęcie"
+          ],
+          [
+            "Marta",
+            "przychodzi na przyjęcie"
+          ],
+          [
+            "Mama",
+            "piecze tort"
+          ]
+        ]
+      }
+    },
+    {
+      "dia": 45,
+      "semana": 9,
+      "trimestre": 1,
+      "tema": "Urodziny Lucíi: cały tydzień",
+      "actividad": {
+        "tipo": "relee",
+        "prompt": "Narysuj tort urodzinowy, jaki chcesz mieć."
+      }
+    },
+    {
+      "dia": 46,
+      "semana": 10,
+      "trimestre": 1,
+      "tema": "Zwierzęta z osiedla",
+      "oraciones": [
+        "Sąsiad Pedro ma białą kotkę, która nazywa się Luna."
+      ],
+      "actividad": {
+        "tipo": "traza",
+        "letra": "d"
+      }
+    },
+    {
+      "dia": 47,
+      "semana": 10,
+      "trimestre": 1,
+      "tema": "Zwierzęta z osiedla",
+      "oraciones": [
+        "Luna zawsze wskakuje na mur w ogrodzie Pedra."
+      ],
+      "actividad": {
+        "tipo": "busca",
+        "instruccion": "Znajdź w tekście słowo, które mówi, na co wskakuje Luna."
+      }
+    },
+    {
+      "dia": 48,
+      "semana": 10,
+      "trimestre": 1,
+      "tema": "Zwierzęta z osiedla",
+      "oraciones": [
+        "Toby i Luna jeszcze nie bardzo się lubią."
+      ],
+      "actividad": {
+        "tipo": "verdadero_falso",
+        "afirmaciones": [
+          "Toby i Luna nie bardzo się lubią.",
+          "Luna jest psem.",
+          "Pedro jest sąsiadem Lucíi."
+        ]
+      }
+    },
+    {
+      "dia": 49,
+      "semana": 10,
+      "trimestre": 1,
+      "tema": "Zwierzęta z osiedla",
+      "oraciones": [
+        "W parku ptaki śpiewają co rano, bardzo wcześnie."
+      ],
+      "actividad": {
+        "tipo": "adivina",
+        "adivinanza": "Mam skrzydła, buduję gniazdo i śpiewam rano. Kim jestem?",
+        "respuesta": "Ptak."
+      }
+    },
+    {
+      "dia": 50,
+      "semana": 10,
+      "trimestre": 1,
+      "tema": "Zwierzęta z osiedla",
+      "oraciones": [
+        "Lucía bardzo lubi wszystkie zwierzęta z osiedla."
+      ],
+      "actividad": {
+        "tipo": "repasa",
+        "checklist": [
+          "Wiem, jak ma na imię kotka Pedra.",
+          "Wiem, na co wskakuje Luna.",
+          "Wiem, jakie zwierzęta śpiewają w parku."
+        ],
+        "prompt": "Narysuj swoje ulubione zwierzę z okolicy.",
+        "banner": "50 przeczytanych stron! Znasz już całe osiedle."
+      }
+    },
+    {
+      "dia": 51,
+      "semana": 11,
+      "trimestre": 1,
+      "tema": "Deszczowy dzień",
+      "oraciones": [
+        "Dziś mocno pada i nie można iść do parku."
+      ],
+      "actividad": {
+        "tipo": "traza",
+        "letra": "e"
+      }
+    },
+    {
+      "dia": 52,
+      "semana": 11,
+      "trimestre": 1,
+      "tema": "Deszczowy dzień",
+      "oraciones": [
+        "Lucía zakłada kalosze i żółtą kurtkę przeciwdeszczową."
+      ],
+      "actividad": {
+        "tipo": "completa",
+        "diagrama": "lineas-ondas"
+      }
+    },
+    {
+      "dia": 53,
+      "semana": 11,
+      "trimestre": 1,
+      "tema": "Deszczowy dzień",
+      "oraciones": [
+        "Dani woli zostać w domu i bawić się autkami."
+      ],
+      "actividad": {
+        "tipo": "rodea",
+        "pregunta": "Co woli robić Dani, kiedy pada?",
+        "opciones": [
+          "Zostać w domu i się bawić",
+          "Wyjść na dwór",
+          "Iść do parku"
+        ]
+      }
+    },
+    {
+      "dia": 54,
+      "semana": 11,
+      "trimestre": 1,
+      "tema": "Deszczowy dzień",
+      "oraciones": [
+        "Toby nie lubi moknąć i chowa się pod stołem."
+      ],
+      "actividad": {
+        "tipo": "relaciona",
+        "pares": [
+          [
+            "Lucía",
+            "zakłada kalosze i kurtkę"
+          ],
+          [
+            "Dani",
+            "bawi się autkami"
+          ],
+          [
+            "Toby",
+            "chowa się pod stołem"
+          ],
+          [
+            "Deszcz",
+            "nie pozwala iść do parku"
+          ]
+        ]
+      }
+    },
+    {
+      "dia": 55,
+      "semana": 11,
+      "trimestre": 1,
+      "tema": "Deszczowy dzień: cały tydzień",
+      "actividad": {
+        "tipo": "relee",
+        "prompt": "Narysuj, co lubisz robić w domu, kiedy pada deszcz."
+      }
+    },
+    {
+      "dia": 56,
+      "semana": 12,
+      "trimestre": 1,
+      "tema": "Na targu z mamą",
+      "oraciones": [
+        "W sobotę Lucía idzie z mamą i Danim na targ."
+      ],
+      "actividad": {
+        "tipo": "traza",
+        "letra": "ę"
+      }
+    },
+    {
+      "dia": 57,
+      "semana": 12,
+      "trimestre": 1,
+      "tema": "Na targu z mamą",
+      "oraciones": [
+        "Na targu pachnie mandarynkami, piernikami i świeżym chlebem."
+      ],
+      "actividad": {
+        "tipo": "busca",
+        "instruccion": "Znajdź w tekście słowa, które mówią, czym pachnie na targu."
+      }
+    },
+    {
+      "dia": 58,
+      "semana": 12,
+      "trimestre": 1,
+      "tema": "Na targu z mamą",
+      "oraciones": [
+        "Mama kupuje mandarynki, pierniki i ładne lampki na choinkę."
+      ],
+      "actividad": {
+        "tipo": "verdadero_falso",
+        "afirmaciones": [
+          "Mama kupuje na targu pierniki.",
+          "Jest już lato.",
+          "Mama kupuje lampki na choinkę."
+        ]
+      }
+    },
+    {
+      "dia": 59,
+      "semana": 12,
+      "trimestre": 1,
+      "tema": "Na targu z mamą",
+      "oraciones": [
+        "Dani prosi o nową zabawkę, ale mama mówi, żeby poczekał."
+      ],
+      "actividad": {
+        "tipo": "adivina",
+        "adivinanza": "Jestem w grudniu, mam mnóstwo światełek i cała rodzina na mnie czeka. Co to jest?",
+        "respuesta": "Boże Narodzenie."
+      }
+    },
+    {
+      "dia": 60,
+      "semana": 12,
+      "trimestre": 1,
+      "tema": "Na targu z mamą",
+      "oraciones": [
+        "Kiedy wracają do domu, na osiedlu pachnie już świętami."
+      ],
+      "actividad": {
+        "tipo": "repasa",
+        "checklist": [
+          "Wiem, czym pachnie na targu.",
+          "Wiem, co kupuje mama.",
+          "Wiem, o co Dani prosi mamę."
+        ],
+        "prompt": "Narysuj swoje ulubione stoisko na targu.",
+        "banner": "60 przeczytanych stron! Już prawie święta."
+      }
+    },
+    {
+      "dia": 61,
+      "semana": 13,
+      "trimestre": 1,
+      "tema": "Wigilia",
+      "oraciones": [
+        "Już za kilka dni Wigilia, więc wszyscy stroją dom."
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Narysuj choinkę w domu Lucíi."
+      }
+    },
+    {
+      "dia": 62,
+      "semana": 13,
+      "trimestre": 1,
+      "tema": "Wigilia",
+      "oraciones": [
+        "Lucía i Dani wieszają na choince czerwone i złote bombki."
+      ],
+      "actividad": {
+        "tipo": "completa",
+        "diagrama": "lineas-circulo"
+      }
+    },
+    {
+      "dia": 63,
+      "semana": 13,
+      "trimestre": 1,
+      "tema": "Wigilia",
+      "oraciones": [
+        "Babcia Rosa przyjeżdża, żeby spędzić Wigilię z całą rodziną."
+      ],
+      "actividad": {
+        "tipo": "rodea",
+        "pregunta": "Kto przyjeżdża na Wigilię?",
+        "opciones": [
+          "Babcia Rosa",
+          "Pani Marta",
+          "Sofía"
+        ]
+      }
+    },
+    {
+      "dia": 64,
+      "semana": 13,
+      "trimestre": 1,
+      "tema": "Wigilia",
+      "oraciones": [
+        "Wszyscy razem jedzą kolację, a potem śpiewają kolędy."
+      ],
+      "actividad": {
+        "tipo": "relaciona",
+        "pares": [
+          [
+            "Babcia Rosa",
+            "przyjeżdża na Wigilię"
+          ],
+          [
+            "Lucía i Dani",
+            "wieszają bombki"
+          ],
+          [
+            "Cała rodzina",
+            "je razem kolację"
+          ],
+          [
+            "Po kolacji",
+            "wszyscy śpiewają kolędy"
+          ]
+        ]
+      }
+    },
+    {
+      "dia": 65,
+      "semana": 13,
+      "trimestre": 1,
+      "tema": "Koniec jesieni",
+      "oraciones": [
+        "Lucía myśli, że to była piękna, nowa jesień."
+      ],
+      "actividad": {
+        "tipo": "repasa",
+        "checklist": [
+          "Wiem, co rodzina jadła pierwszego listopada.",
+          "Wiem, ile lat skończyła Lucía.",
+          "Wiem, jak ma na imię kotka sąsiada Pedra.",
+          "Wiem, kto przyjeżdża na Wigilię."
+        ],
+        "prompt": "Narysuj swoje najpiękniejsze wspomnienie z tej jesieni.",
+        "banner": "65 przeczytanych stron! Koniec jesieni -- wesołych świąt!"
+      }
+    }
+  ]
+}

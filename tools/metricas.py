@@ -49,11 +49,22 @@ vocabulario nuevo se cuenta contra content/english/vocabulario-base.json:
 las palabras que se dan por sabidas del inglés del colegio (colores,
 números, animales, la familia...).
 
+«Zdania», el cuaderno de frases en polaco (`--libro zdania`,
+content/zdania/q*.json contra content/zdania/progresion.json): las mismas
+métricas que el cuaderno de frases, con las palabras funcionales del
+polaco (ver *_PL más abajo) y una lematización igual de sencilla, pero
+para una lengua que declina: se quita una terminación (de caso, de
+número o de verbo) y se corta a unas pocas letras, así que "kot", "kota"
+y "kotem" son la misma palabra, y "czyta", "czytają" y "czytać" también.
+Los nombres del reparto cuentan en todas sus formas (Lucíi, Daniego,
+babci...: ver ZDANIA.nombres_propios en tools/libros.py).
+
 Uso:
     python3 tools/metricas.py            # informe por día + resumen; exit 1 si hay errores
     python3 tools/metricas.py --tabla    # tabla en Markdown por semana (para GITHUB_STEP_SUMMARY)
     python3 tools/metricas.py --libro lupa [--tabla]
     python3 tools/metricas.py --libro english [--tabla]
+    python3 tools/metricas.py --libro zdania [--tabla]
 """
 
 import json
@@ -204,6 +215,77 @@ IRREGULARES_EN = {
     "better": "good", "best": "good", "worse": "bad", "worst": "bad",
 }
 
+# --- polaco («Zdania») ------------------------------------------------
+
+# Palabras funcionales del polaco, en todas las formas que salen en un
+# cuaderno para niños: pronombres y posesivos (declinados), demostrativos,
+# preposiciones, conjunciones, partículas, interrogativos y "być".
+PALABRAS_FUNCIONALES_PL = {
+    "ja", "mnie", "mi", "mną", "ty", "ciebie", "cię", "tobie", "ci", "tobą",
+    "on", "jego", "go", "niego", "jemu", "mu", "niemu", "nim", "ona", "jej",
+    "niej", "ją", "nią", "ono", "my", "nas", "nam", "nami", "wy", "was",
+    "wam", "wami", "oni", "one", "ich", "nich", "im", "nimi", "je",
+    "się", "siebie", "sobie", "sobą",
+    "mój", "moja", "moje", "mojego", "mojej", "mojemu", "moim", "moją",
+    "moich", "twój", "twoja", "twoje", "twojego", "twojej", "twoim",
+    "twoją", "twoich", "swój", "swoja", "swoje", "swojego", "swojej",
+    "swojemu", "swoim", "swoją", "swoich", "swoimi", "nasz", "nasza",
+    "nasze", "naszego", "naszej", "naszemu", "naszym", "naszą", "naszych",
+    "wasz", "wasza", "wasze",
+    "ten", "ta", "to", "te", "tego", "tej", "temu", "tym", "tę", "tą",
+    "tych", "tymi", "tamten", "tamta", "tamto", "taki", "taka", "takie",
+    "w", "we", "na", "z", "ze", "do", "od", "ode", "o", "po", "przy", "pod",
+    "nad", "za", "przed", "między", "bez", "dla", "u", "przez", "ku",
+    "obok", "koło", "wokół", "zamiast", "podczas", "oprócz", "wśród",
+    "spod", "znad", "zza",
+    "i", "a", "ale", "lub", "albo", "czy", "że", "bo", "gdy", "kiedy",
+    "jeśli", "jeżeli", "żeby", "aby", "więc", "oraz", "ani", "niż", "jak",
+    "ponieważ", "chociaż", "choć", "zanim",
+    "nie", "tak", "już", "jeszcze", "też", "także", "tylko", "nawet",
+    "bardzo", "może", "no", "oto", "właśnie", "chyba", "zawsze", "nigdy",
+    "często", "czasem", "teraz", "potem", "dziś", "dzisiaj", "wczoraj",
+    "jutro", "tu", "tutaj", "tam", "gdzie", "wtedy", "zaraz", "trochę",
+    "dużo", "mało", "bardziej", "więcej", "mniej",
+    "kto", "kogo", "komu", "kim", "co", "czego", "czemu", "czym", "jaki",
+    "jaka", "jakie", "który", "która", "które", "którego", "której",
+    "dlaczego", "ile",
+    "wszystko", "wszyscy", "wszystkie", "wszystkich", "każdy", "każda",
+    "każde",
+    "być", "jest", "są", "był", "była", "było", "byli", "były", "będzie",
+    "będą", "jestem", "jesteś", "jesteśmy",
+}
+
+# Las terminaciones que quita lematizar_pl, de la más larga a la más
+# corta: de caso y de número (kot-a, kot-em, dom-ami), de verbo (czyt-ać,
+# czyt-ają, czyta-ła) y de adjetivo (mał-ego, duż-ymi).
+FINALES_PL = (
+    "iami", "ami", "ach", "ego", "emu", "owi", "ymi", "imi", "ych", "ich",
+    "ają", "eją", "iła", "ała", "ało", "ały", "ali", "ić", "ać", "eć",
+    "yć", "uć", "ów", "om", "em", "ie", "ią", "ię", "ej", "ym", "im",
+    "ą", "ę", "a", "e", "i", "o", "u", "y", "ł",
+)
+LETRAS_LEMA_PL = 5
+
+
+def lematizar_pl(palabra, nombres_propios=frozenset()):
+    """El lema aproximado de una palabra polaca: sin la parte de detrás
+    del apóstrofo (Toby'ego), sin una terminación (FINALES_PL, dejando
+    al menos tres letras) y cortada a LETRAS_LEMA_PL letras. No es un
+    lematizador de verdad, igual que el del español y el del inglés:
+    sirve para vigilar cuántas palabras nuevas trae cada día."""
+    p = palabra.strip(".,;:!?\"„”«»()…—–-").lower().replace("’", "'")
+    p = p.split("'")[0]
+    if not p or not p.isalpha():
+        return None
+    if p in PALABRAS_FUNCIONALES_PL or p in nombres_propios:
+        return None
+    for final in FINALES_PL:
+        if p.endswith(final) and len(p) - len(final) >= 3:
+            p = p[:-len(final)]
+            break
+    return p[:LETRAS_LEMA_PL]
+
+
 IDIOMAS = {
     "es": {"funcionales": PALABRAS_FUNCIONALES, "subordinantes": SUBORDINANTES,
            "fin_de_frase": _FIN_DE_FRASE},
@@ -228,6 +310,8 @@ def cargar_familias():
 def lematizar(palabra, familias, nombres_propios=NOMBRES_PROPIOS, idioma="es"):
     if idioma == "en":
         return lematizar_en(palabra, nombres_propios)
+    if idioma == "pl":
+        return lematizar_pl(palabra, nombres_propios)
     p = palabra.strip(".,;:!¡?¿\"«»—-").lower()
     if not p:
         return None
