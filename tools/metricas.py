@@ -298,9 +298,10 @@ def lematizar_pl(palabra, nombres_propios=frozenset()):
 
 # «Czytam z lupą»: lo que abre una subordinada en polaco -- las
 # conjunciones (że, bo, ponieważ, gdy, kiedy, jeśli, żeby, chociaż,
-# zanim...), el relativo który en todas sus formas y co, gdzie, jak, czy,
-# kto y dlaczego, que abren una relativa o una interrogativa indirecta
-# («wie, gdzie jest Toby»). Cuando abren una pregunta directa («Gdzie
+# zanim...), también żeby, aby, gdyby y jakby con la persona pegada
+# (żebyśmy, gdybyś...), el relativo który en todas sus formas y co,
+# gdzie, jak, czy, kto y dlaczego, que abren una relativa o una
+# interrogativa indirecta («wie, gdzie jest Toby»). Cuando abren una pregunta directa («Gdzie
 # jest Toby?»), no cuentan: como en inglés, es la primera palabra de una
 # frase que acaba en «?» (ver contar_subordinantes). Igual de aproximado
 # que en español, donde «como» y «que» cuentan siempre.
@@ -308,8 +309,11 @@ SUBORDINANTES_PL = {
     "że", "bo", "ponieważ", "gdyż", "gdy", "kiedy", "jeśli", "jeżeli",
     "żeby", "aby", "chociaż", "choć", "zanim", "dopóki", "odkąd", "skoro",
     "gdyby", "jakby",
-    "który", "która", "które", "którego", "której", "któremu", "którym",
-    "którą", "których", "którymi",
+    "żebym", "żebyś", "żebyśmy", "żebyście", "abym", "abyś", "abyśmy",
+    "abyście", "gdybym", "gdybyś", "gdybyśmy", "gdybyście", "jakbym",
+    "jakbyś", "jakbyśmy", "jakbyście",
+    "który", "która", "które", "którzy", "którego", "której", "któremu",
+    "którym", "którą", "których", "którymi",
     "co", "gdzie", "jak", "czy", "kto", "dlaczego",
 }
 

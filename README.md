@@ -278,8 +278,8 @@ diploma. Su escalera se mide en palabras polacas
 (`content/czytam/progresion.json`), con los nexos de subordinación del
 polaco (*że, bo, kiedy, jeśli, żeby, który*...).
 
-Se está escribiendo: el otoño, días 1--65, ya está. Ver
-[`notes/10-czytam-z-lupa.md`](notes/10-czytam-z-lupa.md).
+Se está escribiendo: del otoño a la primavera, días 1--195, ya está.
+Ver [`notes/10-czytam-z-lupa.md`](notes/10-czytam-z-lupa.md).
 
 ## Los cuadernos de verano y las muestras
 
@@ -632,13 +632,13 @@ color y en blanco y negro con las mismas comprobaciones que los demás
 abecedario polaco, la escalera en palabras polacas), con su cuaderno de
 verano y su muestra, y se publica en GitHub Pages con ellos.
 
-**Czytam z lupą (en polaco)**: en obras, un PR por fase. El otoño (días
-1--65) está escrito y compila en color y en blanco y negro, con las
-mismas comprobaciones que *Leo con lupa* (1 día = 1 página, log limpio,
-cada tabla de pistas con una sola solución, cada ruta del mapa, cada
-corrección en el texto, el mensaje secreto con el abecedario polaco, la
-escalera en palabras polacas) y su medalla. Faltan el invierno, la
-primavera y el verano: ver `notes/10-czytam-z-lupa.md`.
+**Czytam z lupą (en polaco)**: en obras, un PR por fase. Del otoño a
+la primavera (días 1--195) está escrito y compila en color y en blanco
+y negro, con las mismas comprobaciones que *Leo con lupa* (1 día = 1
+página, log limpio, cada tabla de pistas con una sola solución, cada
+ruta del mapa, cada corrección en el texto, el mensaje secreto con el
+abecedario polaco, la escalera en palabras polacas) y sus tres
+medallas. Falta el verano: ver `notes/10-czytam-z-lupa.md`.
 
 **Los cuadernos de verano**: los siete, en color y en blanco y negro --
 el verano de cada cuaderno, con su portada, su página para el adulto,
