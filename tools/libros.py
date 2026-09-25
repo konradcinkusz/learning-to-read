@@ -348,13 +348,34 @@ CZYTAM = Libro(
         "hugo", "huga", "hugowi", "hugiem", "hugu",
         "paco",
         "tomás", "tomása", "tomásowi", "tomásem", "tomásie",
+        # la compañera de clase que llega en invierno, y la tortuga de
+        # Hugo: Rayo, que en polaco es Piorun (el chiste de llamar
+        # «Rayo» a una tortuga, en polaco)
+        "nora", "nory", "norze", "norę", "norą", "noro",
+        "piorun", "pioruna", "piorunowi", "piorunem", "piorunie",
+        # la primavera: los compañeros del Día del Libro; pani Pilar, la
+        # maestra de Marta, y pan Luis, el director de entonces; Elena,
+        # Jorge y Nacho, los niños de la foto de la cápsula; y pan Julián,
+        # el granjero de la granja escuela, con Lola, su cabra. Pilar e
+        # Irene no se declinan, como en polaco los nombres de mujer de
+        # fuera que no acaban en -a.
+        "leo", "lea", "leowi", "leem",
+        "irene",
+        "álex", "álexa", "álexowi", "álexem", "álexie",
+        "pilar",
+        "luis", "luisa", "luisowi", "luisem", "luisie",
+        "elena", "eleny", "elenie", "elenę", "eleną", "eleno",
+        "jorge", "jorgego", "jorgemu", "jorgem",
+        "nacho", "nacha", "nachowi", "nachem", "nachu",
+        "julián", "juliána", "juliánowi", "juliánem", "juliánie",
+        "lola", "loli", "lolę", "lolą", "lolo",
     }),
     idioma="pl",
     motor="lupa",
     nombre_medalla=ZDANIA.nombre_medalla,
     titulo_medalla=ZDANIA.titulo_medalla,
     animo_medalla=ZDANIA.animo_medalla,
-    dias_escritos=65,
+    dias_escritos=195,
     libro_previo="zdania",
 )
 

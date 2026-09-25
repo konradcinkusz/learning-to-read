@@ -1,0 +1,1780 @@
+{
+  "_comentario": "«Czytam z lupą» (nivel 3 en polaco): 'Leo con lupa', día a día el de content/lupa/q2.json. Datos de origen para tools/gen_days.py --libro czytam. Este fichero SI se edita a mano; content/czytam/generated-days.tex NO (se regenera con `make generate`). Trimestre 2 (invierno): días 66-130, semanas 14-26, narración en pasado (el diálogo, en presente). Hilo: el mapa de la abuela Rosa, que Lucía encuentra en Wigilia (semana 15) y que se resolverá en verano (T4). Géneros nuevos: carta (semanas 17 y 23), texto informativo (semanas 16, 24, 25 y 26) e instrucciones (semana 19). -- ver notes/10-czytam-z-lupa.md y notes/04-nivel-lupa.md.",
+  "dias": [
+    {
+      "dia": 66,
+      "semana": 14,
+      "trimestre": 2,
+      "tema": "Wędrujący Królowie",
+      "texto": [
+        "Czytelnik X to były dwie osoby: tata, który pisał liściki, i Dani, który wymyślał zagadki.",
+        "Tamtego ranka, kiedy Lucía zeszła na śniadanie, szopka nie wyglądała już tak samo.",
+        "Stała na najwyższej półce regału w salonie. Po prawej stronie była stajenka z gwiazdą nad dachem, a na środku płynęła rzeka ze srebrnego papieru.",
+        "Poprzedniego wieczoru Trzej Królowie stali po lewej stronie, obok palmy. Teraz stali przy rzece, o szerokość dłoni bliżej stajenki."
+      ],
+      "actividad": {
+        "tipo": "dibuja_detalle",
+        "prompt": "Narysuj szopkę tak, jak zobaczyła ją Lucía tamtego ranka, z Królami w nowym miejscu.",
+        "comprueba": [
+          "Gdzie jest stajenka i co jest nad nią?",
+          "Co jest na środku i z czego to jest?",
+          "Co jest po lewej?",
+          "Gdzie teraz stoją Trzej Królowie?"
+        ],
+        "clave": "Po prawej stajenka z gwiazdą nad dachem; na środku rzeka ze srebrnego papieru; po lewej palma; Trzej Królowie przy rzece, o szerokość dłoni bliżej stajenki."
+      }
+    },
+    {
+      "dia": 67,
+      "semana": 14,
+      "trimestre": 2,
+      "tema": "Wędrujący Królowie",
+      "texto": [
+        "We wtorek Królowie byli o kolejną szerokość dłoni bliżej stajenki, więc Lucía zwołała klub.",
+        "Najpierw sprawdzili, czy Dani sięga do półki z szopką. Chociaż wszedł na krzesło, nie dosięgnął nawet palmy.",
+        "Potem Sofía przypomniała sobie o Tobym, który zawsze szczekał, kiedy w nocy wchodził ktoś obcy. Ale tamtej nocy ani razu nie zaszczekał.",
+        "— W takim razie ten, kto przesuwa Królów, jest z domu — szepnął Hugo."
+      ],
+      "actividad": {
+        "tipo": "verdadero_falso",
+        "afirmaciones": [
+          "We wtorek Królowie byli o kolejną szerokość dłoni bliżej stajenki.",
+          "Kiedy Dani wszedł na krzesło, dosięgnął palmy w szopce.",
+          "Toby zawsze szczekał, kiedy w nocy wchodził ktoś obcy.",
+          "Tamtej nocy Toby szczekał wiele razy."
+        ],
+        "respuestas": [
+          "P",
+          "F: chociaż wszedł na krzesło, nie dosięgnął nawet palmy.",
+          "P",
+          "F: ani razu nie zaszczekał."
+        ]
+      }
+    },
+    {
+      "dia": 68,
+      "semana": 14,
+      "trimestre": 2,
+      "tema": "Wędrujący Królowie",
+      "texto": [
+        "W środę klub przesłuchał w domku podejrzanych, jednego po drugim.",
+        "Mama, która miała okropny katar, kładła się bardzo wcześnie z termoforem.",
+        "Tata odpowiedział, że czytał do bardzo późna w fotelu, obok regału z szopką.",
+        "— Królowie chodzą sami, bo są czarodziejami! — zapewnił Dani.",
+        "Lucía zapisała wszystko w zeszycie detektywa, chociaż wiedziała, że figurki z szopki same nie chodzą."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "preguntas": [
+          "Dlaczego Królów nie może przesuwać Dani? Przeczytaj jeszcze raz stronę z wtorku.",
+          "Kto nie spał w nocy blisko szopki? Skąd to wiesz?"
+        ],
+        "respuestas": [
+          "Bo nie sięga do półki z szopką: chociaż wszedł na krzesło, nie dosięgnął nawet palmy.",
+          "Tata: sam powiedział, że czytał do bardzo późna w fotelu, obok regału z szopką."
+        ]
+      }
+    },
+    {
+      "dia": 69,
+      "semana": 14,
+      "trimestre": 2,
+      "tema": "Wędrujący Królowie",
+      "texto": [
+        "W czwartek obok Królów pojawił się mały liścik, który był napisany okrągłym, starannym pismem:",
+        "> Co noc o szerokość dłoni, aż do stajenki.",
+        "Lucía chciała wiedzieć, kto nie śpi w nocy, więc zapytała, o której kładą się mama, tata i Dani.",
+        "Mama z tym swoim katarem kładła się przed wszystkimi. Dani, który zasypiał na kanapie, nigdy nie wytrzymywał do dwunastej.",
+        "Jedno kładło się o dziewiątej, drugie o wpół do dziesiątej, a trzecie o dwunastej."
+      ],
+      "actividad": {
+        "tipo": "logica",
+        "instruccion": "Skorzystaj ze wskazówek z tekstu, żeby odkryć, o której kładło się spać każde z nich. Postaw ✓ tam, gdzie tak, i ✗ tam, gdzie nie.",
+        "filas": [
+          "Mama",
+          "Dani",
+          "Tata"
+        ],
+        "columnas": [
+          "o dziewiątej",
+          "o wpół do dziesiątej",
+          "o dwunastej"
+        ],
+        "restricciones": [
+          [
+            "si",
+            "Mama",
+            "o dziewiątej"
+          ],
+          [
+            "no",
+            "Dani",
+            "o dwunastej"
+          ]
+        ],
+        "solucion": {
+          "Mama": "o dziewiątej",
+          "Dani": "o wpół do dziesiątej",
+          "Tata": "o dwunastej"
+        },
+        "pregunta": "Kto najdłużej nie spał?",
+        "respuesta_pregunta": "Tata, który kładł się o dwunastej."
+      }
+    },
+    {
+      "dia": 70,
+      "semana": 14,
+      "trimestre": 2,
+      "tema": "Wędrujący Królowie: zagadka",
+      "texto": [
+        "W piątek klub zebrał się w domku, żeby zamknąć sprawę Królów.",
+        "Sofía położyła liścik z szopki obok starego liściku Czytelnika X. Na obu pismo było tak samo okrągłe i staranne.",
+        "Hugo przeczytał na głos wskazówki, które mieli zapisane, podczas gdy Lucía w milczeniu patrzyła na szopkę.",
+        "— Już wiem, kto przesuwa Królów — szepnęła w końcu — ale zanim to powiem, chcę mieć pewność.",
+        "A ty? Jak myślisz, kto to jest?"
+      ],
+      "actividad": {
+        "tipo": "caso",
+        "pregunta": "Kto co noc przesuwał Królów w szopce?",
+        "opciones": [
+          "Dani",
+          "Mama",
+          "Tata",
+          "Toby"
+        ],
+        "solucion": "Tata",
+        "clave": "Tata: szopka stoi na najwyższej półce, a Dani nie sięga do niej nawet z krzesła, Toby tym bardziej (poniedziałek i wtorek); Toby nie szczekał, więc to był ktoś z domu (wtorek); mama z katarem kładła się przed wszystkimi, a tata czytał do dwunastej obok regału z szopką (środa i czwartek); a liścik ma okrągłe, staranne pismo liścików Czytelnika X, które pisał tata (poniedziałek, czwartek i piątek).",
+        "banner": "70 przeczytanych stron! Sprawa Królów rozwiązana."
+      }
+    },
+    {
+      "dia": 71,
+      "semana": 15,
+      "trimestre": 2,
+      "tema": "Wigilia i mapa",
+      "texto": [
+        "Królów przesuwał tata, tak jak podejrzewała Lucía.",
+        "W Wigilię Lucía znalazła w szafie babci mapę, która leżała w starym szkolnym zeszycie.",
+        "Po lewej stronie była rzeka, która płynęła z góry na dół, z małym mostkiem. Na górze, nad rzeką, stał młyn z kołem.",
+        "Na środku była studnia z wiadrem. Po prawej stronie rosły w rzędzie trzy topole, a obok nich leżał duży kamień, który wyglądał jak żółw. Pod kamieniem było czerwone X."
+      ],
+      "actividad": {
+        "tipo": "dibuja_detalle",
+        "prompt": "Narysuj mapę, którą znalazła Lucía, z każdą rzeczą na swoim miejscu. Rysuj starannie: jeszcze ci się przyda!",
+        "comprueba": [
+          "Gdzie jest rzeka i którędy można ją przejść?",
+          "Gdzie stoi młyn i co ma?",
+          "Co jest na środku?",
+          "Ile jest topoli i jak rosną?",
+          "Co leży obok topoli? A co jest pod tym?"
+        ],
+        "clave": "Rzeka po lewej, płynie z góry na dół, z małym mostkiem; młyn z kołem na górze, nad rzeką; na środku studnia z wiadrem; po prawej trzy topole w rzędzie, a obok nich duży kamień w kształcie żółwia, z czerwonym X pod spodem."
+      }
+    },
+    {
+      "dia": 72,
+      "semana": 15,
+      "trimestre": 2,
+      "tema": "Wigilia i mapa",
+      "texto": [
+        "Kiedy Lucía odwróciła mapę, zobaczyła kilka linijek napisanych ołówkiem:",
+        "> Od studni dziesięć kroków w stronę topoli. Skarb jest pod kamieniem, który wygląda jak żółw.\nRosa, 8 lat.",
+        "Lucía pobiegła z zeszytem do salonu. Babcia założyła okulary, spojrzała na mapę i przez chwilę milczała.",
+        "— To moja mapa skarbu! — powiedziała w końcu. — Narysowałam ją na wsi jakieś sześćdziesiąt lat temu, kiedy miałam osiem lat."
+      ],
+      "actividad": {
+        "tipo": "errores",
+        "instruccion": "W tym streszczeniu są trzy błędy. Zakreśl je i napisz pod spodem, jak jest naprawdę. Jeśli trzeba, przeczytaj jeszcze raz wczorajszą stronę.",
+        "relato": "W Wigilię Lucía znalazła mapę w blaszanym pudełku. Na odwrocie było napisane flamastrem: „Od studni dwadzieścia kroków w stronę topoli”. Babcia narysowała ją, kiedy miała osiem lat.",
+        "errores": [
+          [
+            "w blaszanym pudełku",
+            "w starym szkolnym zeszycie"
+          ],
+          [
+            "flamastrem",
+            "ołówkiem"
+          ],
+          [
+            "dwadzieścia kroków",
+            "dziesięć kroków"
+          ]
+        ]
+      }
+    },
+    {
+      "dia": 73,
+      "semana": 15,
+      "trimestre": 2,
+      "tema": "Wigilia i mapa",
+      "texto": [
+        "Po wigilijnej kolacji babcia opowiedziała im historię mapy.",
+        "— Kiedy miałam osiem lat, zakopałam blaszane pudełko z moimi najukochańszymi rzeczami — wyjaśniła. — Potem narysowałam mapę, żeby nie zapomnieć, gdzie ono jest.",
+        "Z czasem babcia przeprowadziła się do miasta i zapomniała o zeszycie. Chociaż jako dorosła wróciła na wieś poszukać pudełka, nie pamiętała już, gdzie było.",
+        "— A co było w środku? — zapytał Dani.",
+        "— I to jest najciekawsze: już dobrze nie pamiętam — zaśmiała się babcia."
+      ],
+      "actividad": {
+        "tipo": "ordena",
+        "sucesos": [
+          "Ośmioletnia Rosa zakopała blaszane pudełko ze swoimi najukochańszymi rzeczami.",
+          "Rosa narysowała mapę, żeby nie zapomnieć, gdzie jest pudełko.",
+          "Rosa przeprowadziła się do miasta i zapomniała o zeszycie.",
+          "Jako dorosła Rosa wróciła na wieś poszukać pudełka, ale nie pamiętała miejsca.",
+          "W Wigilię Lucía znalazła mapę w szafie babci."
+        ]
+      }
+    },
+    {
+      "dia": 74,
+      "semana": 15,
+      "trimestre": 2,
+      "tema": "Wigilia i mapa",
+      "texto": [
+        "W Boże Narodzenie Lucía wciąż myślała o dziewczynce, która narysowała mapę.",
+        "Ona i Rosa były bardzo podobne: obie miały osiem lat i obie trzymały sekrety w zeszycie.",
+        "Ale Rosa mieszkała na wsi, gdzie była rzeka i młyn, a Lucía mieszkała w mieście. Rosa chowała skarby, a Lucía szukała wskazówek z lupą, którą dostała od babci.",
+        "— Kiedyś znajdziemy twoje pudełko, babciu — obiecała Lucía."
+      ],
+      "actividad": {
+        "tipo": "compara",
+        "instruccion": "Napisz po bokach to, co tekst mówi tylko o małej Rosie albo tylko o Lucíi, a w środku to, co wspólne.",
+        "a": "Mała Rosa",
+        "b": "Lucía",
+        "solucion": {
+          "a": [
+            "mieszkała na wsi z rzeką i młynem",
+            "chowała skarby"
+          ],
+          "ambos": [
+            "miały osiem lat",
+            "trzymały sekrety w zeszycie"
+          ],
+          "b": [
+            "mieszkała w mieście",
+            "szukała wskazówek z lupą"
+          ]
+        }
+      }
+    },
+    {
+      "dia": 75,
+      "semana": 15,
+      "trimestre": 2,
+      "tema": "Wigilia i mapa",
+      "texto": [
+        "Kiedy się żegnały, babcia dała mapę Lucíi.",
+        "— Ty ją przechowaj, pani detektyw. Latem, kiedy pojedziemy na wieś, poszukamy pudełka.",
+        "Dani też chciał pomóc, więc wymyślił zagadkę, jak wtedy, kiedy był Czytelnikiem X:",
+        "> Mam wodę, lecz nie jestem rzeką,\nmam wiadro, choć do plaży daleko,\ni stoję w samym środku mapy.\nCzym jestem?",
+        "Babcia zgadła od razu, ale Lucía potrzebowała trochę więcej czasu."
+      ],
+      "actividad": {
+        "tipo": "adivina",
+        "adivinanza": "Rozwiąż zagadkę Daniego. Jeśli nie wiesz, przeczytaj jeszcze raz stronę z poniedziałku.\nMam wodę, lecz nie jestem rzeką,\nmam wiadro, choć do plaży daleko,\ni stoję w samym środku mapy.\nCzym jestem?",
+        "respuesta": "Studnia: na środku mapy jest studnia z wiadrem."
+      }
+    },
+    {
+      "dia": 76,
+      "semana": 16,
+      "trimestre": 2,
+      "tema": "Dwanaście winogron",
+      "texto": [
+        "W sylwestra o wpół do szóstej mama przygotowała winogrona na szczęście.",
+        "Postawiła na stole w jadalni okrągłą tacę, na której były cztery miseczki. Czerwona była taty, niebieska mamy, zielona Lucíi, a żółta Daniego.",
+        "W każdej miseczce było dwanaście fioletowych winogron, takich z pestkami. Potem przykryła tacę ściereczką i powiedziała, że nikomu nie wolno jej dotykać aż do północy.",
+        "— W tym roku zjem wszystkie dwanaście! — oznajmił Dani, który rok wcześniej zjadł tylko trzy."
+      ],
+      "actividad": {
+        "tipo": "dibuja_detalle",
+        "prompt": "Narysuj tacę z winogronami tak, jak przygotowała ją mama.",
+        "comprueba": [
+          "Jaki kształt ma taca?",
+          "Ile jest miseczek?",
+          "Jakiego koloru jest miseczka Daniego? A taty?",
+          "Ile winogron jest w każdej miseczce i jakiego są koloru?"
+        ],
+        "clave": "Okrągła taca z czterema miseczkami: czerwona (tata), niebieska (mama), zielona (Lucía) i żółta (Dani); w każdej miseczce dwanaście fioletowych winogron."
+      }
+    },
+    {
+      "dia": 77,
+      "semana": 16,
+      "trimestre": 2,
+      "tema": "Dwanaście winogron",
+      "texto": [
+        "Czy wiesz, że w Hiszpanii w sylwestra je się dwanaście winogron?",
+        "Je się jedno przy każdym uderzeniu zegara o północy, a każde winogrono to jeden miesiąc nowego roku. Mówi się, że jeśli zdążysz zjeść wszystkie, przez cały rok będziesz mieć szczęście.",
+        "Trzeba szybko gryźć, bo między jednym uderzeniem a drugim mijają tylko mniej więcej trzy sekundy.",
+        "Uwaga! Winogrona są niebezpieczne dla psów: nawet jedno może bardzo im zaszkodzić. Dlatego w domu Lucíi winogrona zawsze stały z dala od Toby'ego."
+      ],
+      "actividad": {
+        "tipo": "ficha",
+        "instruccion": "Uzupełnij kartę tym, co mówi tekst.",
+        "titulo": "Dwanaście winogron",
+        "campos": [
+          "Kiedy je się winogrona",
+          "Ile je się przy każdym uderzeniu",
+          "Czym jest każde winogrono",
+          "Ile czasu mija między uderzeniami",
+          "Dlaczego nie są dla Toby'ego"
+        ],
+        "respuestas": [
+          "W sylwestra, o północy, przy uderzeniach zegara.",
+          "Jedno.",
+          "Jednym miesiącem nowego roku.",
+          "Mniej więcej trzy sekundy.",
+          "Bo są niebezpieczne dla psów: nawet jedno może bardzo im zaszkodzić."
+        ]
+      }
+    },
+    {
+      "dia": 78,
+      "semana": 16,
+      "trimestre": 2,
+      "tema": "Dwanaście winogron",
+      "texto": [
+        "O siódmej mama zdjęła ściereczkę, bo chciała zrobić zdjęcie winogron. W żółtej miseczce zostało tylko dziewięć.",
+        "— Ktoś zjadł trzy winogrona Daniego! — zawołała.",
+        "Tata i Toby byli poza domem od piątej do ósmej, bo oglądali światełka w centrum. Lucía całe popołudnie była z mamą w kuchni, podczas gdy Dani bawił się sam w jadalni.",
+        "— Ja nic nie widziałem — powiedział Dani, który miał buzię i piżamę poplamione na fioletowo."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "preguntas": [
+          "Dlaczego ani tata, ani Toby nie mogli zjeść winogron? Przeczytaj też jeszcze raz stronę z poniedziałku.",
+          "Gdzie w tym czasie byli Lucía i Dani?"
+        ],
+        "respuestas": [
+          "Bo byli poza domem od piątej do ósmej, a mama przygotowała winogrona o wpół do szóstej: o siódmej już brakowało trzech.",
+          "Lucía była z mamą w kuchni; Dani bawił się sam w jadalni, gdzie stały winogrona."
+        ]
+      }
+    },
+    {
+      "dia": 79,
+      "semana": 16,
+      "trimestre": 2,
+      "tema": "Dwanaście winogron",
+      "texto": [
+        "Przed kolacją Lucía zbadała jadalnię przez lupę.",
+        "Pod stołem stały kapcie Daniego, a w jednym z nich były pestki winogron. Lucía schowała pestki do woreczka, bo detektyw nie wyrzuca żadnej wskazówki.",
+        "O północy Dani połknął swoje dziewięć winogron tak szybko, że zostały mu jeszcze trzy uderzenia zegara.",
+        "Potem Lucía napisała wiadomość dla klubu szyfrem liczb. Ponieważ było już bardzo późno, postanowiła wysłać ją rano."
+      ],
+      "actividad": {
+        "tipo": "codigo",
+        "instruccion": "Odczytaj wiadomość Lucíi szyfrem liczb: znajdź każdą liczbę w tabeli i wpisz jej literę do kratki.",
+        "mensaje": "Szczęśliwego Nowego Roku",
+        "cifrado": "numeros"
+      }
+    },
+    {
+      "dia": 80,
+      "semana": 16,
+      "trimestre": 2,
+      "tema": "Dwanaście winogron: zagadka",
+      "texto": [
+        "Drugiego stycznia klub zebrał się w domku, żeby zacząć nowy rok od zagadki.",
+        "Lucía opowiedziała im o winogronach i położyła na stole woreczek z pestkami.",
+        "Hugo zapisał na tablicy, gdzie był każdy z domowników, podczas gdy Sofía czytała notatki Lucíi.",
+        "Nagle Sofía wybuchnęła śmiechem, bo przeczytała, co powiedział Dani, kiedy mama przygotowała winogrona.",
+        "— Pamiętajcie o drugiej zasadzie: nie oskarżamy bez dowodów — powiedziała Lucía, chociaż sama też się uśmiechała."
+      ],
+      "actividad": {
+        "tipo": "caso",
+        "pregunta": "Kto zjadł trzy winogrona z miseczki Daniego?",
+        "opciones": [
+          "Tata",
+          "Mama",
+          "Toby",
+          "Dani"
+        ],
+        "solucion": "Dani",
+        "clave": "Dani: tata i Toby byli poza domem od piątej do ósmej, a mama i Lucía w kuchni, kiedy Dani bawił się sam w jadalni, gdzie stały winogrona, i miał buzię i piżamę poplamione na fioletowo (środa); w jego kapciu, pod stołem, były pestki winogron (czwartek). Chciał zdążyć zjeść wszystkie dwanaście (poniedziałek): trenował.",
+        "banner": "80 przeczytanych stron! Sprawa winogron rozwiązana."
+      }
+    },
+    {
+      "dia": 81,
+      "semana": 17,
+      "trimestre": 2,
+      "tema": "Roscón Trzech Króli",
+      "texto": [
+        "Winogrona zjadł Dani, który trenował przed sylwestrem.",
+        "Kilka dni później Lucía pomogła Daniemu napisać list do Trzech Króli, bo on wciąż mylił niektóre litery:",
+        "> Kochani Trzej Królowie!\nW tym roku prawie zawsze byłem grzeczny.\nDla siebie chcę latarkę, żeby być detektywem jak Lucía.\nDla Lucíi zeszyt, bo jej zeszyt jest już pełen wskazówek.\nDla mamy syrop, bo bardzo kaszle.\nDla Toby'ego czerwoną piłkę, bo jego jest pogryziona.\nBuziaki,\nDani"
+      ],
+      "actividad": {
+        "tipo": "relaciona",
+        "instruccion": "Połącz linią każdą rzecz, o którą prosi Dani, z powodem, który podaje w liście.",
+        "cabeceras": [
+          "O co prosi",
+          "Dlaczego albo po co"
+        ],
+        "pares": [
+          [
+            "latarka dla siebie",
+            "żeby być detektywem"
+          ],
+          [
+            "zeszyt dla Lucíi",
+            "bo jej zeszyt jest pełen"
+          ],
+          [
+            "syrop dla mamy",
+            "bo bardzo kaszle"
+          ],
+          [
+            "piłka dla Toby'ego",
+            "bo jego jest pogryziona"
+          ]
+        ]
+      }
+    },
+    {
+      "dia": 82,
+      "semana": 17,
+      "trimestre": 2,
+      "tema": "Roscón Trzech Króli",
+      "texto": [
+        "Kiedy nadszedł wieczór piątego stycznia, Lucía i Dani wszystko przygotowali dla Trzech Króli.",
+        "Pod oknem w salonie postawili po jednym bucie każdego z domowników, w rzędzie, od największego do najmniejszego.",
+        "Na stole zostawili trzy szklanki mleka i talerz z sześcioma kruchymi ciasteczkami, po dwa dla każdego Króla. Przy drzwiach do ogrodu Dani postawił wiadro wody dla wielbłądów, które zawsze przychodziły spragnione.",
+        "Potem poszli spać tacy podekscytowani, że długo nie mogli zasnąć."
+      ],
+      "actividad": {
+        "tipo": "dibuja_detalle",
+        "prompt": "Narysuj, jak Lucía i Dani przygotowali salon w noc Trzech Króli.",
+        "comprueba": [
+          "Gdzie stoją buty i ile ich jest?",
+          "W jakiej kolejności są ustawione?",
+          "Co jest na stole? Ile szklanek i ile ciasteczek?",
+          "Co stoi przy drzwiach do ogrodu?"
+        ],
+        "clave": "Pod oknem w salonie cztery buty w rzędzie (po jednym każdego z domowników), od największego do najmniejszego; na stole trzy szklanki mleka i talerz z sześcioma kruchymi ciasteczkami; przy drzwiach do ogrodu wiadro wody dla wielbłądów."
+      }
+    },
+    {
+      "dia": 83,
+      "semana": 17,
+      "trimestre": 2,
+      "tema": "Roscón Trzech Króli",
+      "texto": [
+        "W święto Trzech Króli Dani znalazł latarkę, Lucía nowy zeszyt, a Toby czerwoną piłkę.",
+        "W południe przyszła babcia i przyniosła ogromny roscón, okrągłe ciasto Trzech Króli, z kolorowymi owocami i czerwoną wisienką.",
+        "— Kto znajdzie figurkę, będzie królem albo królową — wyjaśniła. — A kto znajdzie fasolkę, kupuje roscón w przyszłym roku.",
+        "Przy krojeniu kawałka z wisienką nóż zrobił „stuk!”, bo w środku było coś twardego. Figurkę znalazła Lucía, która bardzo zadowolona włożyła koronę."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "preguntas": [
+          "Co się dzieje, kiedy trafi ci się figurka z rosconu? A kiedy fasolka?",
+          "Co się stało przy krojeniu kawałka z wisienką i dlaczego?"
+        ],
+        "respuestas": [
+          "Z figurką zostajesz królem albo królową; z fasolką kupujesz roscón w przyszłym roku.",
+          "Nóż zrobił „stuk!”, bo w środku było coś twardego."
+        ]
+      }
+    },
+    {
+      "dia": 84,
+      "semana": 17,
+      "trimestre": 2,
+      "tema": "Roscón Trzech Króli",
+      "texto": [
+        "Najpierw babcia dała po kawałku Lucíi i Daniemu. Potem rozdała trzy kolejne dorosłym: jeden z wisienką, drugi z pomarańczą, a trzeci z migdałami.",
+        "Mama nie chciała wisienki, bo mówiła, że smakuje jak syrop. Tata też jej nie chciał, a poza tym nie tknął migdałów, bo kleiły mu się do zębów.",
+        "Kiedy skończyli jeść, nikt nie powiedział ani słowa o fasolce, chociaż wszyscy patrzyli na siebie podejrzliwie.",
+        "— Mamy zagadkę — szepnęła Lucía i wyjęła zeszyt detektywa."
+      ],
+      "actividad": {
+        "tipo": "logica",
+        "instruccion": "Skorzystaj ze wskazówek z tekstu, żeby odkryć, który kawałek zjadł każdy z dorosłych. Postaw ✓ tam, gdzie tak, i ✗ tam, gdzie nie.",
+        "filas": [
+          "Tata",
+          "Mama",
+          "Babcia"
+        ],
+        "columnas": [
+          "z wisienką",
+          "z pomarańczą",
+          "z migdałami"
+        ],
+        "restricciones": [
+          [
+            "no",
+            "Mama",
+            "z wisienką"
+          ],
+          [
+            "no",
+            "Tata",
+            "z wisienką"
+          ],
+          [
+            "no",
+            "Tata",
+            "z migdałami"
+          ]
+        ],
+        "solucion": {
+          "Tata": "z pomarańczą",
+          "Mama": "z migdałami",
+          "Babcia": "z wisienką"
+        },
+        "pregunta": "Kto zjadł kawałek z wisienką?",
+        "respuesta_pregunta": "Babcia."
+      }
+    },
+    {
+      "dia": 85,
+      "semana": 17,
+      "trimestre": 2,
+      "tema": "Roscón Trzech Króli: zagadka",
+      "texto": [
+        "W piątek Lucía opowiedziała wszystko klubowi w domku.",
+        "Hugo zapisał na tablicy sprawę noża, który zrobił „stuk!” w kawałku z wisienką. Sofía w tym czasie przepisała tabelę z kawałkami.",
+        "— Kto ma fasolkę, musi kupić roscón — powiedziała Sofía. — Dlatego nikt nic nie mówi.",
+        "Lucía przypomniała sobie, że babcia, która zawsze lubiła żartować, całe popołudnie zaśmiewała się do łez.",
+        "A ty? Jak myślisz, kto ma fasolkę?"
+      ],
+      "actividad": {
+        "tipo": "caso",
+        "pregunta": "Kto ma fasolkę?",
+        "opciones": [
+          "Tata",
+          "Mama",
+          "Babcia",
+          "Dani"
+        ],
+        "solucion": "Babcia",
+        "clave": "Babcia: przy krojeniu kawałka z wisienką nóż trafił na coś twardego, a to nie była figurka, bo tę znalazła Lucía (środa); więc fasolka była w tym kawałku, który dostał ktoś z dorosłych; ani mama, ani tata nie chcieli wisienki, więc zjadła ją babcia (czwartek)."
+      }
+    },
+    {
+      "dia": 86,
+      "semana": 18,
+      "trimestre": 2,
+      "tema": "Poranny bałwan",
+      "texto": [
+        "Fasolkę miała babcia, która schowała ją do kieszeni, żeby nie kupować rosconu.",
+        "W poniedziałek, kiedy dzieci przyszły do szkoły, podwórko było białe od śniegu. Na środku stał bałwan z trzech kul, wysoki jak dorosły człowiek.",
+        "Miał dwa czarne kamyki zamiast oczu, marchewkę zamiast nosa i trzy czerwone guziki na brzuchu.",
+        "Nosił szalik w zielone i białe paski, a po jego lewej stronie w śniegu tkwiła miotła."
+      ],
+      "actividad": {
+        "tipo": "dibuja_detalle",
+        "prompt": "Narysuj bałwana z podwórka ze wszystkim, o czym mówi tekst.",
+        "comprueba": [
+          "Z ilu kul jest zrobiony?",
+          "Co ma zamiast oczu? A zamiast nosa?",
+          "Ile ma guzików i jakiego są koloru?",
+          "Jaki jest jego szalik?",
+          "Co jest po lewej?"
+        ],
+        "clave": "Trzy kule śniegu; dwa czarne kamyki zamiast oczu i marchewka zamiast nosa; trzy czerwone guziki na brzuchu; szalik w zielone i białe paski; po lewej miotła wbita w śnieg."
+      }
+    },
+    {
+      "dia": 87,
+      "semana": 18,
+      "trimestre": 2,
+      "tema": "Poranny bałwan",
+      "texto": [
+        "Na przerwie klub zbadał przez lupę śnieg wokół bałwana.",
+        "Za bałwanem, gdzie nikt jeszcze nie chodził, znaleźli ślady dużych butów, które prowadziły od portierni. Nie było małych śladów, więc nie wyglądało na to, żeby ulepiło go jakieś dziecko.",
+        "Sofía przyjrzała się szalikowi: był z grubej wełny i pachniał kawą.",
+        "— Ktoś, kto ulepił tego bałwana, wstał bardzo wcześnie — powiedziała Lucía, kiedy oglądała szalik przez lupę."
+      ],
+      "actividad": {
+        "tipo": "errores",
+        "instruccion": "W tym streszczeniu są trzy błędy. Zakreśl je i napisz pod spodem, jak jest naprawdę.",
+        "relato": "Na przerwie klub zbadał śnieg. Za bałwanem były ślady małych kapci, które prowadziły od sali gimnastycznej. Szalik był z grubej wełny i pachniał czekoladą.",
+        "errores": [
+          [
+            "małych kapci",
+            "dużych butów"
+          ],
+          [
+            "od sali gimnastycznej",
+            "od portierni"
+          ],
+          [
+            "czekoladą",
+            "kawą"
+          ]
+        ]
+      }
+    },
+    {
+      "dia": 88,
+      "semana": 18,
+      "trimestre": 2,
+      "tema": "Poranny bałwan",
+      "texto": [
+        "W środę klub sprawdził, o której kto przychodził do szkoły.",
+        "Pani Marta powiedziała, że w poniedziałek przyszła o wpół do dziewiątej i bałwan już stał na podwórku. Dzieci wchodziły do szkoły o dziewiątej, więc żadne z nich nie mogło go ulepić.",
+        "Pan Paco, woźny, przychodził codziennie o siódmej, bo otwierał drzwi. Zawsze trzymał w ręce kubek kawy.",
+        "Tamtej środy pan Paco kichał bez przerwy i chociaż było bardzo zimno, miał gołą szyję."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "preguntas": [
+          "Dlaczego bałwana nie mogła ulepić pani Marta? A dzieci?",
+          "Kto przychodził do szkoły przed wszystkimi i dlaczego?"
+        ],
+        "respuestas": [
+          "Pani Marta przyszła o wpół do dziewiątej, a bałwan już stał na podwórku; dzieci wchodziły o dziewiątej, jeszcze później.",
+          "Pan Paco, woźny, o siódmej, bo otwierał drzwi."
+        ]
+      }
+    },
+    {
+      "dia": 89,
+      "semana": 18,
+      "trimestre": 2,
+      "tema": "Poranny bałwan",
+      "texto": [
+        "W czwartek Hugo narysował na papierze w kratkę plan podwórka z drogą, którą prowadziły ślady.",
+        "Ślady zaczynały się przy portierni, która była obok drzwi szkoły, i schodziły dwie kratki w dół. Tam skręcały o jedną kratkę w prawo i kończyły się dokładnie tam, gdzie stał bałwan.",
+        "Potem wracały tą samą drogą, więc ten, kto ulepił bałwana, wrócił do portierni.",
+        "Tymczasem bałwan powoli się topił, bo słońce już grzało."
+      ],
+      "actividad": {
+        "tipo": "mapa",
+        "instruccion": "Narysuj na planie drogę śladów od portierni i zaznacz krzyżykiem kratkę z bałwanem.",
+        "columnas": 7,
+        "filas": 4,
+        "lugares": {
+          "C1": "portiernia",
+          "D1": "drzwi i zegar",
+          "E1": "fontanna",
+          "A3": "platan",
+          "D3": "piaskow- nica",
+          "G3": "platan",
+          "D4": "brama"
+        },
+        "salida": "C1",
+        "comprobar": [
+          {
+            "desde": "C1",
+            "pasos": [
+              "abajo 2",
+              "derecha 1"
+            ],
+            "hasta": "D3"
+          }
+        ],
+        "preguntas": [
+          "W której kratce stał bałwan? Co jest w tej kratce, kiedy nie ma śniegu?"
+        ],
+        "clave": "Ślady prowadzą od portierni (C1) do C3 i skręcają do D3: bałwan stał na środku podwórka, na piaskownicy (D3). Potem wracały do portierni."
+      }
+    },
+    {
+      "dia": 90,
+      "semana": 18,
+      "trimestre": 2,
+      "tema": "Poranny bałwan: zagadka",
+      "texto": [
+        "W piątek na przerwie klub zebrał się przy bałwanie, który był już w połowie roztopiony.",
+        "Sofía powtórzyła na głos wskazówki: duże buty, szalik, który pachniał kawą, i godziny przyjścia do szkoły.",
+        "— Nie możemy nikogo oskarżać bez dowodów — przypomniał Hugo. — Musimy mieć pewność.",
+        "Lucía spojrzała w stronę okna portierni, gdzie ktoś kichał bez przerwy, i się uśmiechnęła.",
+        "A ty? Wiesz już, kto tak wcześnie wstał?"
+      ],
+      "actividad": {
+        "tipo": "caso",
+        "pregunta": "Kto ulepił bałwana?",
+        "opciones": [
+          "pani Marta",
+          "pan Paco",
+          "szóstoklasiści"
+        ],
+        "solucion": "pan Paco",
+        "clave": "Pan Paco: bałwan jest wysoki jak dorosły człowiek (poniedziałek); ślady dużych butów prowadziły od portierni i do niej wracały (wtorek i czwartek); szalik pachniał kawą, a pan Paco zawsze trzymał w ręce kubek kawy (wtorek i środa); pani Marta przyszła o wpół do dziewiątej, kiedy bałwan już stał, a dzieci wchodziły o dziewiątej, ale pan Paco przychodził o siódmej (środa); i pan Paco kichał z gołą szyją: jego szalik nosił bałwan (środa i piątek).",
+        "banner": "90 przeczytanych stron! Sprawa bałwana rozwiązana."
+      }
+    },
+    {
+      "dia": 91,
+      "semana": 19,
+      "trimestre": 2,
+      "tema": "Peryskop Huga",
+      "texto": [
+        "Bałwana ulepił pan Paco, który chciał zrobić dzieciom niespodziankę.",
+        "Tamtego poniedziałku Hugo przyszedł do domku z wynalazkiem: peryskopem, który zbudował sam.",
+        "Było to długie i wąskie pudło, pomalowane na granatowo, z żółtym żółwiem narysowanym z boku. Na górze miało kwadratowe okienko, które patrzyło do przodu, a na dole drugie, które patrzyło do tyłu.",
+        "— Dzięki niemu można zajrzeć ponad różne rzeczy, nie wychylając się — wyjaśnił Hugo z dumą."
+      ],
+      "actividad": {
+        "tipo": "dibuja_detalle",
+        "prompt": "Narysuj peryskop Huga dokładnie tak, jak opisuje go tekst.",
+        "comprueba": [
+          "Jaki ma kształt i na jaki kolor jest pomalowany?",
+          "Co jest narysowane z boku i jakiego to jest koloru?",
+          "Co ma na górze i w którą stronę to patrzy?",
+          "Co ma na dole i w którą stronę to patrzy?"
+        ],
+        "clave": "Długie i wąskie pudło pomalowane na granatowo, z żółtym żółwiem z boku; na górze kwadratowe okienko, które patrzy do przodu; na dole drugie, które patrzy do tyłu."
+      }
+    },
+    {
+      "dia": 92,
+      "semana": 19,
+      "trimestre": 2,
+      "tema": "Peryskop Huga",
+      "texto": [
+        "Hugo przepisał instrukcję z książki, którą pożyczył mu pan Tomás:",
+        "- Potrzebujesz dwóch kartonów po mleku, dwóch małych lusterek i taśmy klejącej.",
+        "- Najpierw poproś dorosłego, żeby odciął górę kartonów.",
+        "- Potem zrób kwadratowe okienko przy dnie każdego kartonu.",
+        "- W każdym kartonie przyklej ukośnie lusterko, dokładnie naprzeciwko okienka.",
+        "- Na koniec połącz kartony otwartymi końcami, tak żeby okienka patrzyły w przeciwne strony.",
+        "Hugo pracował nad tym całe popołudnie, bo lusterka ciągle odpadały."
+      ],
+      "actividad": {
+        "tipo": "ordena",
+        "sucesos": [
+          "Dorosły odcina górę obu kartonów.",
+          "W każdym kartonie robi się kwadratowe okienko przy dnie.",
+          "Naprzeciwko każdego okienka przykleja się ukośnie lusterko.",
+          "Łączy się oba kartony otwartymi końcami."
+        ]
+      }
+    },
+    {
+      "dia": 93,
+      "semana": 19,
+      "trimestre": 2,
+      "tema": "Peryskop Huga",
+      "texto": [
+        "W środę Hugo przyniósł peryskop w rękach, bo nie zmieścił się w plecaku.",
+        "— Światło wpada górą, odbija się od lusterka i leci w dół do drugiego, które kieruje je do oka — wyjaśnił.",
+        "Żeby go wypróbować, Sofía schowała się za żywopłotem z kartką, na której napisała każde słowo od tyłu. Lucía podniosła peryskop ponad gałęzie i chociaż trochę jej to zajęło, udało jej się przeczytać napis.",
+        "— Działa! — krzyknęła tak radośnie, że Toby podskoczył i uciekł."
+      ],
+      "actividad": {
+        "tipo": "codigo",
+        "instruccion": "Odczytaj kartkę Sofíi: każde słowo jest napisane od tyłu, od ostatniej litery do pierwszej.",
+        "mensaje": "Cześć zza żywopłotu",
+        "cifrado": "reves"
+      }
+    },
+    {
+      "dia": 94,
+      "semana": 19,
+      "trimestre": 2,
+      "tema": "Peryskop Huga",
+      "texto": [
+        "W czwartek klub wykonał z peryskopem swoją pierwszą misję obserwacyjną.",
+        "Schowali się za żywopłotem i po kolei każde z nich patrzyło przez pięć minut i zapisywało, co zobaczyło.",
+        "Jedno zobaczyło Lunę na murze, drugie kosa na kasztanie, a trzecie Toby'ego, który chował skarpetkę.",
+        "Luna zapatrzyła się w peryskop akurat wtedy, kiedy była kolej Huga, który mało nie przewrócił się ze strachu. Lucía nie zobaczyła żadnego ptaka, chociaż cały czas bardzo uważała."
+      ],
+      "actividad": {
+        "tipo": "logica",
+        "instruccion": "Skorzystaj ze wskazówek z tekstu, żeby odkryć, co każde z nich zobaczyło przez peryskop. Postaw ✓ tam, gdzie tak, i ✗ tam, gdzie nie.",
+        "filas": [
+          "Lucía",
+          "Sofía",
+          "Hugo"
+        ],
+        "columnas": [
+          "Lunę",
+          "kosa",
+          "Toby'ego"
+        ],
+        "restricciones": [
+          [
+            "si",
+            "Hugo",
+            "Lunę"
+          ],
+          [
+            "no",
+            "Lucía",
+            "kosa"
+          ]
+        ],
+        "solucion": {
+          "Lucía": "Toby'ego",
+          "Sofía": "kosa",
+          "Hugo": "Lunę"
+        },
+        "pregunta": "Kto zobaczył kosa?",
+        "respuesta_pregunta": "Sofía."
+      }
+    },
+    {
+      "dia": 95,
+      "semana": 19,
+      "trimestre": 2,
+      "tema": "Peryskop Huga",
+      "texto": [
+        "W piątek klub powiesił peryskop na ścianie domku, obok tablicy.",
+        "Hugo powiedział, że służy do oglądania ptaków i kotów, ale nie do szpiegowania ludzi, i wszyscy się zgodzili.",
+        "Potem Sofía, która bardzo ładnie rysowała, namalowała obok żółtego żółwia małego żółwika. Nazwała go Piorun, tak jak żółwia Huga.",
+        "Dani też popatrzył i powiedział, że wszystko wygląda bardzo dziwnie, ale to dlatego, że trzymał peryskop do góry nogami."
+      ],
+      "actividad": {
+        "tipo": "vinetas",
+        "instruccion": "Narysuj trzy chwile z tygodnia z peryskopem. Pod każdym obrazkiem masz napisane, co się dzieje.",
+        "pies": [
+          "Hugo przychodzi do domku ze swoim granatowym peryskopem.",
+          "Lucía czyta przez peryskop kartkę Sofíi.",
+          "Dani patrzy przez peryskop... do góry nogami!"
+        ]
+      }
+    },
+    {
+      "dia": 96,
+      "semana": 20,
+      "trimestre": 2,
+      "tema": "Dzień Pokoju",
+      "texto": [
+        "W poniedziałek Sofía namalowała nowy szyld na zielone drzwi domku, bo stary był bardzo zniszczony.",
+        "Był to biały karton, na którym czerwonymi literami było napisane „Klub Lupy”. Na środku miał ogromną lupę, a w każdym rogu niebieską gwiazdkę.",
+        "Przykleiła go kawałkiem starej taśmy klejącej, bo tylko taką znalazła.",
+        "— Ja go przykleiłam, bo w końcu to ja jestem szefową — powiedziała Sofía.",
+        "— Szefową? — zaprotestował Hugo. — Tu nikt nie rządzi."
+      ],
+      "actividad": {
+        "tipo": "dibuja_detalle",
+        "prompt": "Narysuj nowy szyld klubu, przyklejony na drzwiach domku.",
+        "comprueba": [
+          "Jakiego koloru jest karton? A litery?",
+          "Co jest napisane na szyldzie?",
+          "Co jest na środku?",
+          "Co jest w rogach i jakiego to jest koloru?",
+          "Jakiego koloru są drzwi?"
+        ],
+        "clave": "Biały karton z napisem „Klub Lupy” czerwonymi literami, z ogromną lupą na środku i niebieską gwiazdką w każdym rogu, przyklejony starą taśmą klejącą na zielonych drzwiach domku."
+      }
+    },
+    {
+      "dia": 97,
+      "semana": 20,
+      "trimestre": 2,
+      "tema": "Dzień Pokoju",
+      "texto": [
+        "We wtorek kłótnia w domku trwała dalej, bo nikt nie chciał ustąpić.",
+        "Sofía mówiła, że to ona powinna rządzić, bo jest najodważniejsza. Hugo mówił, że rządzić powinien on, bo więcej wie o mapach i szyfrach.",
+        "O szóstej oboje poszli do domu bez pożegnania, a Lucía została sama i smutna. Kiedy o siódmej zamykała domek, szyld wciąż wisiał na drzwiach.",
+        "Tamtej nocy wiał tak silny wiatr, że drżały szyby w oknach."
+      ],
+      "actividad": {
+        "tipo": "verdadero_falso",
+        "afirmaciones": [
+          "Sofía chciała rządzić, bo więcej wiedziała o mapach i szyfrach.",
+          "O szóstej Sofía i Hugo poszli do domu bez pożegnania.",
+          "Kiedy Lucía o siódmej zamykała domek, szyldu już nie było.",
+          "Tamtej nocy wiał bardzo silny wiatr."
+        ],
+        "respuestas": [
+          "F: tak mówił Hugo; Sofía mówiła, że jest najodważniejsza.",
+          "P",
+          "F: szyld wciąż wisiał na drzwiach.",
+          "P"
+        ]
+      }
+    },
+    {
+      "dia": 98,
+      "semana": 20,
+      "trimestre": 2,
+      "tema": "Dzień Pokoju",
+      "texto": [
+        "W środę rano szyldu nie było już na drzwiach domku.",
+        "Lucía znalazła go w głębi ogrodu, zaczepiony o krzak róży, z oderwanym rogiem, ale bez śladów zębów. Ogród był pełen liści i gałęzi, które połamał wiatr.",
+        "Z tyłu wciąż miał taśmę, która była cała, chociaż już zupełnie nie kleiła.",
+        "— To Hugo, bo wczoraj poszedł obrażony! — powiedziała Sofía na przerwie.",
+        "Ale Lucía przypomniała jej drugą zasadę klubu: „Nie oskarżać nikogo bez dowodów”."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "preguntas": [
+          "Dlaczego szyldu nie mógł zdjąć Hugo? Przeczytaj jeszcze raz stronę z wtorku.",
+          "Dlaczego Lucía nie pozwala Sofíi oskarżyć Huga?"
+        ],
+        "respuestas": [
+          "Bo Hugo poszedł do domu o szóstej, a o siódmej, kiedy Lucía zamykała domek, szyld wciąż wisiał na drzwiach.",
+          "Bo druga zasada klubu mówi, że nie wolno nikogo oskarżać bez dowodów."
+        ]
+      }
+    },
+    {
+      "dia": 99,
+      "semana": 20,
+      "trimestre": 2,
+      "tema": "Dzień Pokoju",
+      "texto": [
+        "W czwartek był Dzień Pokoju. Na lekcji pani Marta zaproponowała zabawę: pomyśleć o jakiejś kłótni i spojrzeć na nią z dwóch stron.",
+        "Lucía pomyślała o Sofíi i o Hugu, którzy wciąż ze sobą nie rozmawiali. Oboje chcieli rządzić i oboje bardzo kochali klub.",
+        "Ale Sofía była odważna i bardzo ładnie rysowała, podczas gdy Hugo znał się na mapach i szyfrach.",
+        "Wtedy Lucía wpadła na pomysł: jeśli każde z nich da z siebie to, co umie najlepiej, klub będzie najlepszy."
+      ],
+      "actividad": {
+        "tipo": "compara",
+        "instruccion": "Napisz po bokach to, co tekst mówi tylko o Sofíi albo tylko o Hugu, a w środku to, co wspólne.",
+        "a": "Sofía",
+        "b": "Hugo",
+        "solucion": {
+          "a": [
+            "była odważna",
+            "bardzo ładnie rysowała"
+          ],
+          "ambos": [
+            "chcieli rządzić",
+            "bardzo kochali klub",
+            "wciąż ze sobą nie rozmawiali"
+          ],
+          "b": [
+            "znał się na mapach",
+            "znał się na szyfrach"
+          ]
+        }
+      }
+    },
+    {
+      "dia": 100,
+      "semana": 20,
+      "trimestre": 2,
+      "tema": "Dzień Pokoju: zagadka",
+      "texto": [
+        "W piątek Lucía zwołała klub do domku, chociaż Sofía i Hugo na siebie nie patrzyli.",
+        "Na stole położyła podarty szyld, starą taśmę i zdjęcie ogrodu pełnego gałęzi. Opowiedziała im też, że tamtego ranka pan Pedro znalazł swój kosz na śmieci na środku ulicy.",
+        "— Zanim kogoś oskarżymy, trzeba obejrzeć wszystkie wskazówki — powiedziała Lucía.",
+        "Sofía popatrzyła najpierw na szyld, potem na zdjęcie i zrobiła się czerwona jak pomidor."
+      ],
+      "actividad": {
+        "tipo": "caso",
+        "pregunta": "Kto zdjął szyld z drzwi domku?",
+        "opciones": [
+          "Hugo",
+          "Sofía",
+          "Toby",
+          "wiatr"
+        ],
+        "solucion": "wiatr",
+        "clave": "Nikt: to był wiatr. Taśma była stara (poniedziałek) i chociaż wciąż była cała, już nie kleiła (środa); Hugo i Sofía poszli o szóstej, a o siódmej szyld wciąż wisiał na drzwiach (wtorek); tamtej nocy wiał bardzo silny wiatr, który zasypał ogród gałęziami i zostawił szyld na krzaku róży, bez śladów zębów Toby'ego (wtorek i środa), a kosz pana Pedra wylądował na środku ulicy (piątek).",
+        "banner": "100 przeczytanych stron! Sto dni czytania z lupą!"
+      }
+    },
+    {
+      "dia": 101,
+      "semana": 21,
+      "trimestre": 2,
+      "tema": "Urodziny taty",
+      "texto": [
+        "Szyld zerwał wiatr, więc nikt nie był winny. Od tej pory w klubie co tydzień rządził ktoś inny, na zmianę.",
+        "Ponieważ w sobotę tata miał urodziny, dzieci przygotowały dla niego poszukiwanie skarbu, takie jak te Czytelnika X.",
+        "Lucía narysowała plan domu i napisała liścik z drogą, która prowadziła do prezentu:",
+        "> Stań przy drzwiach na ulicę i przejdź dwie kratki w lewo. Zejdź dwie kratki w dół i przejdź jeszcze dwie w prawo. Twój prezent jest pod spodem."
+      ],
+      "actividad": {
+        "tipo": "mapa",
+        "instruccion": "Przejdź na planie drogę z liściku od drzwi na ulicę i zaznacz krzyżykiem kratkę, w której się kończy.",
+        "columnas": 5,
+        "filas": 4,
+        "lugares": {
+          "A1": "kuchnia",
+          "B1": "korytarz",
+          "C1": "korytarz",
+          "D1": "korytarz",
+          "E1": "drzwi na ulicę",
+          "A3": "łazienka",
+          "B4": "regał",
+          "E3": "kanapa",
+          "E4": "telewizor"
+        },
+        "salida": "E1",
+        "comprobar": [
+          {
+            "desde": "E1",
+            "pasos": [
+              "izquierda 2",
+              "abajo 2",
+              "derecha 2"
+            ],
+            "hasta": "E3"
+          }
+        ],
+        "preguntas": [
+          "Pod czym jest schowany prezent taty?"
+        ],
+        "clave": "Od drzwi na ulicę (E1) do C1, w dół do C3 i w prawo do E3: prezent jest pod kanapą."
+      }
+    },
+    {
+      "dia": 102,
+      "semana": 21,
+      "trimestre": 2,
+      "tema": "Urodziny taty",
+      "texto": [
+        "We wtorek mama, Lucía i Dani podzielili się zadaniami przy niespodziance.",
+        "Mama miała upiec tort truskawkowy u pana Pedra, gdzie tata nie mógł go zobaczyć. Lucía zajęła się balonami, które schowała w domku klubu.",
+        "Prezentem była mała lampka do czytania, bo tata zawsze czytał do późna. Dani zapakował ją w niebieski papier, chociaż zużył prawie całą rolkę taśmy.",
+        "I najważniejsze: nikt nie mógł nic powiedzieć tacie."
+      ],
+      "actividad": {
+        "tipo": "errores",
+        "instruccion": "W tym streszczeniu są trzy błędy. Zakreśl je i napisz pod spodem, jak jest naprawdę.",
+        "relato": "We wtorek podzielili się zadaniami. Mama miała upiec tort u babci. Lucía schowała balony w swojej szafie. Prezentem była lampka do czytania, zapakowana w czerwony papier.",
+        "errores": [
+          [
+            "u babci",
+            "u pana Pedra"
+          ],
+          [
+            "w swojej szafie",
+            "w domku klubu"
+          ],
+          [
+            "czerwony papier",
+            "niebieski papier"
+          ]
+        ]
+      }
+    },
+    {
+      "dia": 103,
+      "semana": 21,
+      "trimestre": 2,
+      "tema": "Urodziny taty",
+      "texto": [
+        "W środę przy kolacji tata zapytał, co chcą robić w sobotę.",
+        "— W sobotę nie możemy nigdzie iść, bo mama będzie piekła tort u...! — zaczął Dani.",
+        "Lucía zatkała mu usta ręką tak szybko, że Dani mało nie zakrztusił się groszkiem.",
+        "— U kogo? — zapytał tata i uniósł brew.",
+        "— U nikogo! — powiedzieli oboje naraz, podczas gdy mama śmiała się za serwetką.",
+        "Tamtego wieczoru Lucía postanowiła, że wiadomości o niespodziance będą szyfrowane."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "preguntas": [
+          "Co prawie powiedział Dani? Skąd to wiesz? Przeczytaj jeszcze raz stronę z wtorku.",
+          "Dlaczego Lucía postanowiła, że wiadomości o niespodziance będą szyfrowane?"
+        ],
+        "respuestas": [
+          "Że mama będzie piekła urodzinowy tort u pana Pedra: we wtorek podzielili się zadaniami, a tort miał powstać tam, żeby tata go nie zobaczył.",
+          "Bo Dani prawie zdradził niespodziankę i tata zaczął coś podejrzewać: jeśli wiadomości są szyfrowane, tata ich nie zrozumie, nawet jeśli je zobaczy."
+        ]
+      }
+    },
+    {
+      "dia": 104,
+      "semana": 21,
+      "trimestre": 2,
+      "tema": "Urodziny taty",
+      "texto": [
+        "W czwartek Lucía zostawiła mamie tajną wiadomość pod kubkiem ze śniadania.",
+        "Napisała ją szyfrem klubu, który zamieniał każdą samogłoskę na cyfrę, bo wtedy tata nie mógł jej przeczytać.",
+        "Mama, która nauczyła się szyfru specjalnie na tę niespodziankę, przeczytała wiadomość w mgnieniu oka i odpowiedziała mrugnięciem. Tata też zobaczył kartkę, ale ponieważ nie znał szyfru, nic nie zrozumiał.",
+        "— To lista zakupów? — zapytał tak zdziwiony, że Lucía prawie się roześmiała."
+      ],
+      "actividad": {
+        "tipo": "codigo",
+        "instruccion": "Odczytaj wiadomość Lucíi szyfrem klubu: każda cyfra to samogłoska.",
+        "mensaje": "Pan Pedro przyniesie tort o piątej",
+        "cifrado": "vocales",
+        "mostrar_clave": true
+      }
+    },
+    {
+      "dia": 105,
+      "semana": 21,
+      "trimestre": 2,
+      "tema": "Urodziny taty",
+      "texto": [
+        "W sobotę tata przeszedł drogę z planu, kratka po kratce, aż doszedł do kanapy.",
+        "Pod nią znalazł swój prezent, czerwoną piłkę Toby'ego i skarpetkę, która od tygodni była zgubiona.",
+        "Kiedy się odwrócił, pan Pedro wszedł z tortem truskawkowym, a Lucía i Dani wypuścili balony.",
+        "— Niespodzianka! — krzyknęli wszyscy, podczas gdy Toby szczekał i bez przerwy machał ogonem.",
+        "Tata zapalił nową lampkę przy swoim fotelu i powiedział, że to najlepszy prezent na świecie."
+      ],
+      "actividad": {
+        "tipo": "crea",
+        "prompt": "Napisz życzenia urodzinowe dla kogoś z twojej rodziny. Schowaj w nich zagadkę, tak jak robił Czytelnik X.",
+        "lineas": 4
+      }
+    },
+    {
+      "dia": 106,
+      "semana": 22,
+      "trimestre": 2,
+      "tema": "Karnawał",
+      "texto": [
+        "W poniedziałek Lucía przymierzyła kostium, w którym miała iść na karnawałową paradę.",
+        "Przebrała się oczywiście za detektywa, bo to lubiła najbardziej. Miała czapkę w brązową kratę i długi beżowy płaszcz z paskiem i dwiema dużymi kieszeniami.",
+        "Na szyi wisiała jej lupa babci, zawieszona na czerwonym sznurku. Pod nosem przykleiła sobie czarne wąsy, które ją łaskotały.",
+        "— Wyglądasz jak detektyw z filmu — powiedział Dani bardzo poważnie, kiedy przyglądał się jej wąsom."
+      ],
+      "actividad": {
+        "tipo": "dibuja_detalle",
+        "prompt": "Narysuj Lucíę w kostiumie detektywa, ze wszystkim, o czym mówi tekst.",
+        "comprueba": [
+          "Jaka jest czapka?",
+          "Jaki jest płaszcz i co ma?",
+          "Co wisi jej na szyi i na czym?",
+          "Co ma pod nosem?"
+        ],
+        "clave": "Czapka w brązową kratę; długi beżowy płaszcz z paskiem i dwiema dużymi kieszeniami; lupa babci na czerwonym sznurku na szyi; czarne wąsy pod nosem."
+      }
+    },
+    {
+      "dia": 107,
+      "semana": 22,
+      "trimestre": 2,
+      "tema": "Karnawał",
+      "texto": [
+        "We wtorek przed paradą wszystkie klasy zebrały się w sali gimnastycznej, gdzie zrobiono im zdjęcie.",
+        "Potem wyszły na podwórko, z panią Martą na przedzie, i obeszły je, podczas gdy muzyka grała na cały regulator. Kiedy skończyły, druga klasa weszła na scenę i zaśpiewała piosenkę.",
+        "Na koniec, kiedy wracali do klasy, Lucía znalazła na ziemi maskę, obok schodków na scenę.",
+        "— Ktoś ją zgubił — powiedziała Sofía z piracką opaską na oku. — Mamy zagadkę!"
+      ],
+      "actividad": {
+        "tipo": "ordena",
+        "sucesos": [
+          "Wszystkim klasom zrobiono zdjęcie w sali gimnastycznej.",
+          "Klasy wyszły na podwórko i obeszły je przy muzyce.",
+          "Druga klasa zaśpiewała piosenkę na scenie.",
+          "Lucía znalazła maskę obok schodków na scenę."
+        ]
+      }
+    },
+    {
+      "dia": 108,
+      "semana": 22,
+      "trimestre": 2,
+      "tema": "Karnawał",
+      "texto": [
+        "W domku Lucía zbadała maskę przez lupę.",
+        "Była fioletowa, ze srebrnymi cekinami i białym piórkiem, które wystawało z lewej strony. Kiedy Lucía ją przymierzyła, gumka była tak długa, że maska zsunęła jej się aż na szyję.",
+        "Na paradzie maski miały cztery osoby. Pani Marta była motylem z fioletowo-srebrnymi skrzydłami. Pan Tomás był czarodziejem w fioletowej pelerynie, na której błyszczały srebrne gwiazdy.",
+        "Nora, koleżanka z klasy, była fioletową czarownicą, a pan Paco był piratem w czarno-czerwonym stroju."
+      ],
+      "actividad": {
+        "tipo": "ficha",
+        "instruccion": "Uzupełnij kartę zgubionej rzeczy tym, co mówi tekst. Przeczytaj też jeszcze raz wczorajszą stronę.",
+        "titulo": "Zgubiona rzecz: maska",
+        "campos": [
+          "Kolor",
+          "Ozdoby",
+          "Gdzie się znalazła",
+          "Dziecka czy dorosłego?",
+          "Skąd to wiesz?"
+        ],
+        "respuestas": [
+          "Fioletowa.",
+          "Srebrne cekiny i białe piórko z lewej strony.",
+          "Na ziemi, obok schodków na scenę.",
+          "Dorosłego.",
+          "Gumka jest tak długa, że Lucíi maska zsunęła się aż na szyję."
+        ]
+      }
+    },
+    {
+      "dia": 109,
+      "semana": 22,
+      "trimestre": 2,
+      "tema": "Karnawał",
+      "texto": [
+        "W czwartek Hugo narysował na planie podwórka trasę drugiej klasy, która szła za panią Martą.",
+        "Wyszli z drzwi sali gimnastycznej, przeszli cztery kratki w prawo i dwie w górę, aż do sceny.",
+        "Tam pani Marta weszła na scenę pierwsza, a pan Paco też wszedł, żeby naprawić mikrofon, który nie działał. Nora, jak cała klasa, śpiewała na scenie.",
+        "Za to pan Tomás nie wszedł na scenę, bo całe przedpołudnie stał przy stoisku z książkami, obok wejścia."
+      ],
+      "actividad": {
+        "tipo": "mapa",
+        "instruccion": "Przejdź na planie trasę drugiej klasy od drzwi sali gimnastycznej i zaznacz krzyżykiem scenę.",
+        "columnas": 7,
+        "filas": 4,
+        "lugares": {
+          "C1": "portiernia",
+          "D1": "drzwi i zegar",
+          "E1": "fontanna",
+          "C2": "książki",
+          "A3": "platan",
+          "D3": "piaskow- nica",
+          "G3": "platan",
+          "A4": "sala gimna- styczna",
+          "D4": "brama"
+        },
+        "salida": "A4",
+        "comprobar": [
+          {
+            "desde": "A4",
+            "pasos": [
+              "derecha 4",
+              "arriba 2"
+            ],
+            "hasta": "E2"
+          }
+        ],
+        "preguntas": [
+          "W której kratce jest scena?"
+        ],
+        "clave": "Od drzwi sali gimnastycznej (A4) przechodzą cztery kratki do E4 i dwie w górę: scena jest w E2. Stoisko z książkami, przy którym stał pan Tomás, jest w C2, obok drzwi szkoły."
+      }
+    },
+    {
+      "dia": 110,
+      "semana": 22,
+      "trimestre": 2,
+      "tema": "Karnawał: zagadka",
+      "texto": [
+        "W piątek klub powiesił na ścianie domku listę czterech podejrzanych, którzy mieli na paradzie maski.",
+        "Obok przypięli trzy wskazówki: długą gumkę, kolory maski i dokładne miejsce, w którym się znalazła.",
+        "— Każda wskazówka kogoś wyklucza — wyjaśniła Lucía. — Jest tylko jedna osoba, która pasuje do wszystkich.",
+        "Sofía, która zdjęła już piracką opaskę, przejechała palcem po liście, imię po imieniu.",
+        "A ty? Jak myślisz, kto zgubił maskę?"
+      ],
+      "actividad": {
+        "tipo": "caso",
+        "pregunta": "Czyja jest zgubiona maska?",
+        "opciones": [
+          "pani Marty",
+          "pana Tomása",
+          "pana Paco",
+          "Nory"
+        ],
+        "solucion": "pani Marty",
+        "clave": "Pani Marty: gumka jest tak długa, że maska jest dorosłego, więc nie jest Nory (środa); jest fioletowo-srebrna, a pan Paco miał czarno-czerwony strój (środa); znalazła się obok schodków na scenę (wtorek), a pan Tomás przez całe przedpołudnie nie wszedł na scenę (czwartek). Tylko pani Marta pasuje do wszystkich trzech wskazówek: była fioletowo-srebrnym motylem i weszła na scenę pierwsza.",
+        "banner": "110 przeczytanych stron! Sprawa maski rozwiązana."
+      }
+    },
+    {
+      "dia": 111,
+      "semana": 23,
+      "trimestre": 2,
+      "tema": "List ze wsi",
+      "texto": [
+        "Maska była pani Marty, która zdjęła ją na scenie, żeby lepiej śpiewać.",
+        "Tamtego poniedziałku przyszedł do Daniego list ze wsi. Był od Martína, kolegi, którego Dani tam miał, a w środku był też rysunek.",
+        "Po lewej stronie był młyn z kołem, a przed nim rusztowanie, na którym pracowało dwóch robotników. Po prawej, w ogrodzie przy młynie, Martín narysował duży kamień w kształcie żółwia.",
+        "Lucía patrzyła na niego z otwartą buzią, bo ten kamień znała bardzo dobrze."
+      ],
+      "actividad": {
+        "tipo": "dibuja_detalle",
+        "prompt": "Narysuj po swojemu rysunek Martína, ze wszystkim, o czym mówi tekst.",
+        "comprueba": [
+          "Gdzie jest młyn i co ma?",
+          "Co jest przed młynem? Ilu jest robotników?",
+          "Co jest po prawej i gdzie?"
+        ],
+        "clave": "Po lewej młyn z kołem; przed nim rusztowanie, na którym pracuje dwóch robotników; po prawej, w ogrodzie przy młynie, duży kamień w kształcie żółwia."
+      }
+    },
+    {
+      "dia": 112,
+      "semana": 23,
+      "trimestre": 2,
+      "tema": "List ze wsi",
+      "texto": [
+        "Lucía przeczytała Daniemu list na głos:",
+        "> Drogi Dani!\nTu jest bardzo zimno, a rano dachy są białe od szronu. Pszczoły pana Andrésa śpią w ulach, dopóki nie przyjdzie wiosna. Bigotes nie odchodzi od pieca, bo jest wielkim zmarzluchem.\nRemontują stary młyn, żeby zrobić w nim małe muzeum. I przenieśli duży kamień, który wygląda jak żółw, z łąki do ogrodu przy młynie. Teraz każdy będzie mógł go zobaczyć.\nCzekam na ciebie latem!\nMartín"
+      ],
+      "actividad": {
+        "tipo": "verdadero_falso",
+        "afirmaciones": [
+          "Pszczoły pana Andrésa nie śpią przez całą zimę.",
+          "Remontują stary młyn, żeby zrobić w nim małe muzeum.",
+          "Kamień, który wygląda jak żółw, wciąż leży na łące."
+        ],
+        "respuestas": [
+          "F: śpią w ulach, dopóki nie przyjdzie wiosna.",
+          "P",
+          "F: przenieśli go z łąki do ogrodu przy młynie."
+        ]
+      }
+    },
+    {
+      "dia": 113,
+      "semana": 23,
+      "trimestre": 2,
+      "tema": "List ze wsi",
+      "texto": [
+        "Na odwrocie listu było jeszcze postscriptum z zagadką, bo Martín wiedział, że Dani je uwielbia:",
+        "> PS Mam koło, choć nie jestem autem,\nobraca mnie rzeczna woda,\na wkrótce będzie we mnie muzeum,\nwięc czeka cię przygoda!\nCzym jestem?",
+        "Dani od razu znał odpowiedź, chociaż potem bardzo się zamyślił.",
+        "— A ten kamień w kształcie żółwia to nie ten z mapy babci? — zapytał.",
+        "Lucía nie odpowiedziała, bo już biegła do swojego pokoju po mapę."
+      ],
+      "actividad": {
+        "tipo": "adivina",
+        "adivinanza": "Rozwiąż zagadkę Martína. Jeśli trzeba, przeczytaj jeszcze raz strony z poniedziałku i wtorku.\nMam koło, choć nie jestem autem,\nobraca mnie rzeczna woda,\na wkrótce będzie we mnie muzeum,\nwięc czeka cię przygoda!\nCzym jestem?",
+        "respuesta": "Młyn: ma koło, które obraca rzeka, i remontują go, żeby zrobić w nim muzeum."
+      }
+    },
+    {
+      "dia": 114,
+      "semana": 23,
+      "trimestre": 2,
+      "tema": "List ze wsi",
+      "texto": [
+        "Lucía rozłożyła mapę na kuchennym stole. Czerwone X było pod kamieniem, którego nie było już na łące.",
+        "— I jak teraz znajdziemy ten skarb? — westchnęła.",
+        "Wtedy odwróciła mapę i jeszcze raz przeczytała, co Rosa napisała ołówkiem:",
+        "> Od studni dziesięć kroków w stronę topoli.",
+        "— Kroki! — zawołała. — Studnia się nie rusza, więc wciąż możemy znaleźć to miejsce.",
+        "Ponieważ to była bardzo ważna wiadomość, napisała do klubu liścik szyfrem samogłosek."
+      ],
+      "actividad": {
+        "tipo": "codigo",
+        "instruccion": "Odczytaj wiadomość Lucíi szyfrem klubu: każda cyfra to samogłoska.",
+        "mensaje": "Kamień się przesunął ale studnia nie",
+        "cifrado": "vocales",
+        "mostrar_clave": true
+      }
+    },
+    {
+      "dia": 115,
+      "semana": 23,
+      "trimestre": 2,
+      "tema": "List ze wsi",
+      "texto": [
+        "W piątek Dani chciał od razu odpisać Martínowi, a Lucía pomogła mu z trudnymi słowami.",
+        "Opisali mu zimowe zagadki, chociaż Dani pominął sprawę winogron, bo było mu wstyd.",
+        "Zapytali go też, jak udało się przenieść z łąki tak wielki kamień, który musiał ważyć więcej niż słoń.",
+        "Na koniec Dani podpisał się i narysował Toby'ego z jego nową czerwoną piłką.",
+        "— Teraz tylko czekać na lato — powiedziała Lucía, kiedy zaklejała kopertę."
+      ],
+      "actividad": {
+        "tipo": "crea",
+        "prompt": "Napisz też krótki list do kolegi albo koleżanki. Zacznij od „Drogi” albo „Droga”, opowiedz coś o tej zimie i podpisz się swoim imieniem.",
+        "lineas": 4
+      }
+    },
+    {
+      "dia": 116,
+      "semana": 24,
+      "trimestre": 2,
+      "tema": "Zwiędłe rośliny",
+      "texto": [
+        "W klasie pani Marty było duże okno, które miało srebrną zasuwkę, a na parapecie stały w rzędzie cztery doniczki.",
+        "Od lewej do prawej stały: pelargonia z czerwonymi kwiatami, fiołek, bazylia i paproć. Paproć miała liście tak długie, że prawie dotykały szyby.",
+        "Ale tamtego poniedziałku, kiedy przyszli, wszystkie cztery były zwiędłe, z opadniętymi, miękkimi liśćmi.",
+        "— Co się z nimi dzieje? — zapytała zmartwiona pani Marta. — W piątek były piękne.",
+        "Lucía wyjęła lupę, bo to wyglądało na zagadkę dla klubu."
+      ],
+      "actividad": {
+        "tipo": "dibuja_detalle",
+        "prompt": "Narysuj okno w klasie pani Marty z czterema doniczkami, każdą na swoim miejscu.",
+        "comprueba": [
+          "Co ma okno i jakiego to jest koloru?",
+          "Ile jest doniczek i gdzie stoją?",
+          "Która roślina stoi zupełnie po lewej? A która zupełnie po prawej?",
+          "Co jest szczególnego w roślinie po prawej?"
+        ],
+        "clave": "Duże okno ze srebrną zasuwką; na parapecie cztery doniczki w rzędzie: od lewej pelargonia z czerwonymi kwiatami, fiołek, bazylia i paproć z liśćmi tak długimi, że prawie dotykają szyby (wszystkie zwiędłe)."
+      }
+    },
+    {
+      "dia": 117,
+      "semana": 24,
+      "trimestre": 2,
+      "tema": "Zwiędłe rośliny",
+      "texto": [
+        "Czy wiesz, że rośliny potrzebują do życia czterech rzeczy?",
+        "Pierwsza to światło, bo dzięki niemu wytwarzają w liściach pokarm. Druga to woda, którą piją korzeniami.",
+        "Potrzebują też powietrza i przyjemnej temperatury, ani za zimnej, ani za gorącej.",
+        "Wiele roślin doniczkowych pochodzi z ciepłych krajów, więc nie znosi zimna. Jeśli spędzą mroźną noc, ich liście robią się miękkie i opadają.",
+        "I uwaga: jeśli dasz im za dużo wody, korzenie zgniją."
+      ],
+      "actividad": {
+        "tipo": "ficha",
+        "instruccion": "Uzupełnij kartę tym, co mówi tekst.",
+        "titulo": "Czego potrzebują rośliny",
+        "campos": [
+          "Ilu rzeczy potrzebują do życia",
+          "Do czego służy im światło",
+          "Czym piją wodę",
+          "Co się z nimi dzieje po mroźnej nocy",
+          "Co się dzieje, kiedy dostają za dużo wody"
+        ],
+        "respuestas": [
+          "Czterech: światła, wody, powietrza i przyjemnej temperatury.",
+          "Do wytwarzania pokarmu w liściach.",
+          "Korzeniami.",
+          "Ich liście robią się miękkie i opadają.",
+          "Korzenie gniją."
+        ]
+      }
+    },
+    {
+      "dia": 118,
+      "semana": 24,
+      "trimestre": 2,
+      "tema": "Zwiędłe rośliny",
+      "texto": [
+        "W środę klub zbadał przez lupę rośliny z parapetu, jedną po drugiej.",
+        "Ziemia była wilgotna, ale nie mokra, bo pani Marta podlewała je trochę w każdy piątek. Nie brakowało im też światła, ponieważ słońce świeciło przez okno przez całe przedpołudnie.",
+        "Najdziwniejsze było to, że zawsze więdły w poniedziałki, a w ciągu tygodnia trochę dochodziły do siebie.",
+        "Poza tym w poniedziałki rano w klasie było lodowato, bo w weekend nie włączano ogrzewania."
+      ],
+      "actividad": {
+        "tipo": "relaciona",
+        "instruccion": "Połącz każdą rzecz, którą odkrył klub, z tym, co ona znaczy. Przeczytaj też jeszcze raz stronę z wtorku.",
+        "cabeceras": [
+          "Co odkrył klub",
+          "Co to znaczy"
+        ],
+        "pares": [
+          [
+            "Ziemia była wilgotna, ale nie mokra.",
+            "Nie brakowało im wody ani nie miały jej za dużo."
+          ],
+          [
+            "Przez całe przedpołudnie świeciło słońce.",
+            "Nie brakowało im światła."
+          ],
+          [
+            "Więdły w poniedziałki.",
+            "Coś działo się z nimi w weekend."
+          ],
+          [
+            "W weekend nie włączano ogrzewania.",
+            "W poniedziałki w klasie było lodowato."
+          ]
+        ]
+      }
+    },
+    {
+      "dia": 119,
+      "semana": 24,
+      "trimestre": 2,
+      "tema": "Zwiędłe rośliny",
+      "texto": [
+        "W czwartek Hugo przyjrzał się roślinie, która stała na biurku pani Marty i wyglądała pięknie.",
+        "Była to druga pelargonia, podlewana w piątki, tak samo jak te z parapetu, ale stała obok kaloryfera.",
+        "Wtedy Lucía obejrzała okno przez lupę i odkryła, że zasuwka jest zepsuta. Chociaż okno wyglądało na zamknięte, wystarczył lekki wiatr, żeby samo się otworzyło.",
+        "Pan Paco powiedział im, że w niektóre poniedziałki, kiedy przychodził o siódmej, zastawał je otwarte na oścież."
+      ],
+      "actividad": {
+        "tipo": "compara",
+        "instruccion": "Porównaj rośliny z parapetu z pelargonią z biurka pani Marty. Przeczytaj też jeszcze raz strony z poniedziałku i środy.",
+        "a": "Rośliny z parapetu",
+        "b": "Pelargonia z biurka",
+        "solucion": {
+          "a": [
+            "były zwiędłe",
+            "stały przy szybie, przy zepsutej zasuwce"
+          ],
+          "ambos": [
+            "były podlewane w piątki",
+            "stały w klasie pani Marty"
+          ],
+          "b": [
+            "była piękna",
+            "stała obok kaloryfera"
+          ]
+        }
+      }
+    },
+    {
+      "dia": 120,
+      "semana": 24,
+      "trimestre": 2,
+      "tema": "Zwiędłe rośliny: zagadka",
+      "texto": [
+        "W piątek klub przedstawił pani Marcie swoje wskazówki, wypisane na kartonie.",
+        "Hugo przepisał, czego rośliny potrzebują do życia, a Sofía narysowała okno z zepsutą zasuwką. Lucía zapisała, co działo się w poniedziałki i w weekendy.",
+        "— Zanim coś postanowimy, czytamy wszystko dwa razy — powiedziała Lucía, która pamiętała o pierwszej zasadzie klubu.",
+        "Pani Marta przeczytała karton bardzo powoli, a kiedy skończyła, spojrzała na okno z miną kogoś, kto wszystko zrozumiał.",
+        "A ty? Wiesz już, co się działo z roślinami?"
+      ],
+      "actividad": {
+        "tipo": "caso",
+        "pregunta": "Dlaczego rośliny z parapetu więdły?",
+        "opciones": [
+          "brakowało im wody",
+          "brakowało im światła",
+          "marzły",
+          "miały za dużo wody"
+        ],
+        "solucion": "marzły",
+        "clave": "Marzły: zasuwka była zepsuta i przy lekkim wietrze okno samo się otwierało; w niektóre poniedziałki pan Paco zastawał je otwarte na oścież (czwartek), a w weekend ogrzewanie było wyłączone (środa). Po mroźnej nocy liście robią się miękkie i opadają (wtorek). Nie brakowało im wody ani nie miały jej za dużo, a słońce miały przez całe przedpołudnie (środa); pelargonia z biurka, obok kaloryfera, była piękna (czwartek).",
+        "banner": "120 przeczytanych stron! Sprawa roślin rozwiązana."
+      }
+    },
+    {
+      "dia": 121,
+      "semana": 25,
+      "trimestre": 2,
+      "tema": "Planetarium",
+      "texto": [
+        "Rośliny marzły przez zepsutą zasuwkę, którą pan Paco od razu naprawił.",
+        "Tamtego poniedziałku klasa pani Marty pojechała na wycieczkę do planetarium.",
+        "Sala była okrągła, a sufit był ogromną kopułą, na której widać było nocne niebo. Na środku świeciło Słońce, a wokół niego krążyło osiem planet, każda po swojej orbicie.",
+        "Dzieci położyły się na fotelach, które odchylały się do tyłu, a Hugo cały czas się uśmiechał.",
+        "— Kiedyś polecę na jedną z nich — szepnął, kiedy patrzył na nie bez mrugnięcia."
+      ],
+      "actividad": {
+        "tipo": "dibuja_detalle",
+        "prompt": "Narysuj salę planetarium tak, jak zobaczyła ją klasa pani Marty.",
+        "comprueba": [
+          "Jaki kształt ma sala? A sufit?",
+          "Co jest na środku kopuły?",
+          "Ile jest planet i co robią?",
+          "Jakie są fotele?"
+        ],
+        "clave": "Okrągła sala z ogromną kopułą, na której widać nocne niebo; na środku Słońce; wokół niego osiem planet, które krążą, każda po swojej orbicie; fotele, które odchylają się do tyłu."
+      }
+    },
+    {
+      "dia": 122,
+      "semana": 25,
+      "trimestre": 2,
+      "tema": "Planetarium",
+      "texto": [
+        "Czy wiesz, że wokół Słońca krąży osiem planet?",
+        "Merkury jest najbliżej Słońca, ale najgorętsza jest Wenus, chociaż jest dalej. Ziemia to jedyna planeta, o której wiemy, że jest na niej życie.",
+        "Mars jest czerwony, bo jego grunt jest pełen rdzy, jak stary gwóźdź, i ma dwa małe księżyce.",
+        "Jowisz jest największy ze wszystkich, tak wielki, że zmieściłoby się w nim ponad tysiąc Ziem.",
+        "Saturn ma ogromne pierścienie z lodu i skał. Uran i Neptun są tak daleko, że panuje na nich straszne zimno."
+      ],
+      "actividad": {
+        "tipo": "verdadero_falso",
+        "afirmaciones": [
+          "Wokół Słońca krąży dziewięć planet.",
+          "Najgorętszą planetą jest Merkury.",
+          "Mars jest czerwony, bo jego grunt jest pełen rdzy.",
+          "W Jowiszu zmieściłoby się ponad tysiąc Ziem."
+        ],
+        "respuestas": [
+          "F: krąży osiem.",
+          "F: to Wenus, chociaż jest dalej od Słońca.",
+          "P",
+          "P"
+        ]
+      }
+    },
+    {
+      "dia": 123,
+      "semana": 25,
+      "trimestre": 2,
+      "tema": "Planetarium",
+      "texto": [
+        "W środę pani Marta ogłosiła, że każde dziecko zrobi plakat o jednej planecie.",
+        "Lucía wybrała Saturna, ze względu na pierścienie, a Sofía Jowisza, bo lubiła ogromne rzeczy. Hugo za to powiedział, że jego planeta to tajemnica, chociaż da im wskazówki.",
+        "— Pierwsza wskazówka: moja planeta nie jest ani najgorętsza, ani największa — oznajmił bardzo tajemniczo.",
+        "Po południu Sofía zobaczyła Huga w sklepie papierniczym, kiedy kupował czerwony karton.",
+        "Tego wieczoru Lucía powtórzyła, co wiedziała o planetach, i zapisała w zeszycie wskazówki Huga."
+      ],
+      "actividad": {
+        "tipo": "vinetas",
+        "instruccion": "Narysuj trzy chwile z tego tygodnia. Pod każdym obrazkiem masz napisane, co się dzieje.",
+        "pies": [
+          "Klasa pani Marty ogląda planety, leżąc w planetarium.",
+          "Lucía wybiera Saturna, a Sofía Jowisza.",
+          "Hugo kupuje czerwony karton w sklepie papierniczym."
+        ]
+      }
+    },
+    {
+      "dia": 124,
+      "semana": 25,
+      "trimestre": 2,
+      "tema": "Planetarium",
+      "texto": [
+        "W czwartek Lucía znalazła w ławce drugą wskazówkę Huga, zapisaną szyfrem liczb klubu.",
+        "Sofía też miała kopię i na przerwie obie zabrały się do jej odczytywania, podczas gdy Hugo pogwizdywał, jakby nigdy nic.",
+        "— Jeśli połączymy tę wskazówkę z tym, czego dowiedziałyśmy się w planetarium, to już wiemy — powiedziała Sofía.",
+        "Ale Lucía wolała to sprawdzić, bo pierwsza zasada klubu mówiła, że zawsze trzeba czytać dwa razy. Wyjęła więc lupę i jeszcze raz, bardzo powoli, przeczytała obie wskazówki Huga."
+      ],
+      "actividad": {
+        "tipo": "codigo",
+        "instruccion": "Odczytaj drugą wskazówkę Huga szyfrem liczb: znajdź każdą liczbę w tabeli i wpisz jej literę do kratki.",
+        "mensaje": "Ma dwa małe księżyce",
+        "cifrado": "numeros"
+      }
+    },
+    {
+      "dia": 125,
+      "semana": 25,
+      "trimestre": 2,
+      "tema": "Planetarium: zagadka",
+      "texto": [
+        "W piątek każdy powiesił swój plakat na korytarzu, oprócz Huga, który swój zasłonił prześcieradłem.",
+        "— Zanim go odsłonię, klub musi zgadnąć, która to planeta — powiedział z ogromnym uśmiechem.",
+        "Lucía i Sofía powtórzyły wskazówki: to, co Hugo powiedział w środę, karton, który kupił, i zaszyfrowaną wiadomość.",
+        "Potem jeszcze raz przeczytały, co wiedziały o każdej planecie, a na koniec spojrzały na siebie i uśmiechnęły się jednocześnie.",
+        "A ty? Jak myślisz, którą planetę wybrał Hugo?"
+      ],
+      "actividad": {
+        "tipo": "caso",
+        "pregunta": "Którą planetę wybrał Hugo na swój plakat?",
+        "opciones": [
+          "Wenus",
+          "Marsa",
+          "Jowisza",
+          "Saturna"
+        ],
+        "solucion": "Marsa",
+        "clave": "Marsa: jego planeta nie jest ani najgorętsza, ani największa, więc to nie Wenus ani Jowisz (środa, razem z tym, co mówi wtorek); Hugo kupił czerwony karton, a czerwona planeta to Mars (środa i wtorek); a jego zaszyfrowana wskazówka mówi, że ma dwa małe księżyce, jak Mars (czwartek i wtorek). Saturn to ten z pierścieniami i wybrała go Lucía."
+      }
+    },
+    {
+      "dia": 126,
+      "semana": 26,
+      "trimestre": 2,
+      "tema": "Gniazdo w ogrodzie",
+      "texto": [
+        "Hugo wybrał Marsa, czerwoną planetę z dwoma księżycami, tak jak zgadł klub.",
+        "W tamtym tygodniu przyszła wiosna, a babcia przyjechała na kilka dni do Lucíi.",
+        "Po południu robiła na drutach w ogrodzie, siedząc na ławce, która stała pod kasztanem. Obok stawiała koszyk z kłębkami włóczki w trzech kolorach: czerwonym, żółtym i niebieskim.",
+        "Kiedy kończyła, wkładała do koszyka kawałeczki włóczki, które jej zostały.",
+        "W głębi, przed murem porośniętym bluszczem, stał domek klubu z zielonymi drzwiami."
+      ],
+      "actividad": {
+        "tipo": "dibuja_detalle",
+        "prompt": "Narysuj ogród Lucíi tak, jak opisuje go tekst, z babcią, która robi na drutach.",
+        "comprueba": [
+          "Gdzie stoi ławka?",
+          "Co stoi obok ławki? Jakiego koloru są kłębki?",
+          "Co jest w głębi i jakiego koloru ma drzwi?",
+          "Co jest za tym i czym jest porośnięte?"
+        ],
+        "clave": "Ławka pod kasztanem, a na niej babcia, która robi na drutach; obok koszyk z czerwonym, żółtym i niebieskim kłębkiem; w głębi domek klubu z zielonymi drzwiami, przed murem porośniętym bluszczem."
+      }
+    },
+    {
+      "dia": 127,
+      "semana": 26,
+      "trimestre": 2,
+      "tema": "Gniazdo w ogrodzie",
+      "texto": [
+        "Czy wiesz, że kosy śpiewają od samego świtu?",
+        "Samiec jest czarny, z pomarańczowym dziobem, a samica brązowa.",
+        "Wiosną budują gniazdo, które ma kształt miseczki, z gałązek, trawy i błota. Od środka wyściełają je czymś miękkim, na przykład mchem, sierścią albo włóczką.",
+        "Lubią chować je w żywopłotach albo w bluszczu, gdzie nikt go nie widzi. Samica składa od trzech do pięciu niebieskawych jajek w brązowe kropeczki.",
+        "A jeśli zobaczysz gniazdo, nie dotykaj go: kosy się przestraszą i mogą je porzucić."
+      ],
+      "actividad": {
+        "tipo": "ficha",
+        "instruccion": "Uzupełnij kartę tym, co mówi tekst.",
+        "titulo": "Kos",
+        "campos": [
+          "Jak wygląda samiec",
+          "Jak wygląda samica",
+          "Z czego robią gniazdo",
+          "Czym je wyściełają od środka",
+          "Gdzie je chowają"
+        ],
+        "respuestas": [
+          "Jest czarny, z pomarańczowym dziobem.",
+          "Jest brązowa.",
+          "Z gałązek, trawy i błota, w kształcie miseczki.",
+          "Czymś miękkim, na przykład mchem, sierścią albo włóczką.",
+          "W żywopłotach albo w bluszczu."
+        ]
+      }
+    },
+    {
+      "dia": 128,
+      "semana": 26,
+      "trimestre": 2,
+      "tema": "Gniazdo w ogrodzie",
+      "texto": [
+        "Od poniedziałku każdego ranka w koszyku babci brakowało kawałeczków włóczki.",
+        "W środę przed snem babcia je policzyła i okazało się, że jest ich dwanaście. Ponieważ nie padało, zostawiła koszyk na ławce na całą noc.",
+        "O ósmej rano zostało tylko dziewięć: brakowało dwóch czerwonych i jednego żółtego.",
+        "Luna nie wychodziła z domu pana Pedra, bo miała zabandażowaną łapkę. Toby nie spał w żadnym łóżku, a Dani przez całą noc nie zajrzał do salonu.",
+        "O świcie w ogrodzie słychać było tylko ptaki, które śpiewały w bluszczu."
+      ],
+      "actividad": {
+        "tipo": "logica",
+        "instruccion": "Skorzystaj ze wskazówek z tekstu, żeby odkryć, gdzie spędziło noc każde z nich. Postaw ✓ tam, gdzie tak, i ✗ tam, gdzie nie.",
+        "filas": [
+          "Luna",
+          "Toby",
+          "Dani"
+        ],
+        "columnas": [
+          "u pana Pedra",
+          "pod kanapą",
+          "w swoim łóżku"
+        ],
+        "restricciones": [
+          [
+            "si",
+            "Luna",
+            "u pana Pedra"
+          ],
+          [
+            "no",
+            "Toby",
+            "w swoim łóżku"
+          ],
+          [
+            "no",
+            "Dani",
+            "pod kanapą"
+          ]
+        ],
+        "solucion": {
+          "Luna": "u pana Pedra",
+          "Toby": "pod kanapą",
+          "Dani": "w swoim łóżku"
+        },
+        "pregunta": "Czy któreś z nich wychodziło tej nocy do ogrodu?",
+        "respuesta_pregunta": "Nie: wszyscy troje spędzili noc w domu."
+      }
+    },
+    {
+      "dia": 129,
+      "semana": 26,
+      "trimestre": 2,
+      "tema": "Gniazdo w ogrodzie: zagadka",
+      "texto": [
+        "W czwartek, gdy tylko babcia policzyła kawałeczki, które zostały, klub zbadał ogród przez lupę.",
+        "Na ławce, obok koszyka, Sofía znalazła brązowe piórko, małe i miękkie. Hugo odkrył czerwoną nitkę, która zwisała z bluszczu tak wysoko, że nawet tata nie sięgnąłby bez drabiny.",
+        "I właśnie wtedy czarny ptak z pomarańczowym dziobem usiadł na murze i zaczął śpiewać.",
+        "— Nie oskarżajmy jeszcze nikogo — powiedziała Lucía. — Najpierw powtórzmy wszystko, co już wiemy."
+      ],
+      "actividad": {
+        "tipo": "caso",
+        "pregunta": "Kto zabierał kawałeczki włóczki babci?",
+        "opciones": [
+          "Luna",
+          "Toby",
+          "Dani",
+          "kosy"
+        ],
+        "solucion": "kosy",
+        "clave": "Kosy: wyściełają gniazdo czymś miękkim, na przykład włóczką, chowają je w bluszczu i śpiewają od świtu (wtorek); włóczka znikała w nocy albo o świcie, kiedy Luna była u pana Pedra, Toby pod kanapą, a Dani w swoim łóżku, a w bluszczu śpiewały ptaki (środa); na ławce leżało brązowe piórko, jak piórka samicy; z bluszczu, bardzo wysoko, zwisała czerwona nitka, a na murze śpiewał samiec kosa, czarny z pomarańczowym dziobem (czwartek)."
+      }
+    },
+    {
+      "dia": 130,
+      "semana": 26,
+      "trimestre": 2,
+      "tema": "Gniazdo w ogrodzie",
+      "texto": [
+        "Kawałeczki włóczki zabierała para kosów, tak jak wydedukował klub.",
+        "Hugo podniósł peryskop ponad bluszcz, nie dotykając go, i wszyscy po kolei popatrzyli.",
+        "Tam było gniazdo, okrągłe jak miseczka i wyścielone czerwoną i żółtą włóczką, a w nim cztery niebieskawe jajka.",
+        "Babcia śmiała się tak bardzo, że spadły jej okulary.",
+        "— Od dziś kawałeczki, które mi zostaną, będą dla kosów — powiedziała. — Ale nikt nie podchodzi do gniazda, dobrze?",
+        "Tak skończyła się zima klubu: kolorowym gniazdem."
+      ],
+      "actividad": {
+        "tipo": "repasa",
+        "checklist": [
+          "Czytam historie opowiadane w czasie przeszłym: „zeszła”, „była”, „zrobił”, „przyniosła”.",
+          "Umiem przeczytać list: kto go pisze, do kogo i o czym opowiada.",
+          "Wypisuję informacje z tekstu „Czy wiesz, że...?”, żeby uzupełnić kartę.",
+          "Wykonuję instrukcję krok po kroku.",
+          "Odczytuję wiadomości zapisane liczbami, samogłoskami i od tyłu.",
+          "Łączę wskazówki z całego tygodnia i nie oskarżam nikogo bez dowodów."
+        ],
+        "prompt": "Która zimowa zagadka podobała ci się najbardziej? Opowiedz o niej komuś z rodziny i wyjaśnij, która wskazówka dała ci rozwiązanie.",
+        "banner": "130 przeczytanych stron! Wszystkie zimowe zagadki rozwiązane."
+      }
+    }
+  ]
+}

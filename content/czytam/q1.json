@@ -151,13 +151,13 @@
         "We wtorek Hugowi spada piórnik, a Lucía pomaga mu pozbierać ołówki.",
         "W piórniku jest biała muszelka, mała i w paski.",
         "— Znalazłem ją na plaży u dziadka — mówi Hugo bardzo cicho.",
-        "Kiedy wychodzą na boisko, Hugo bierze głęboki oddech i mówi, że tutaj powietrze nie pachnie solą.",
+        "Kiedy wychodzą na podwórko, Hugo bierze głęboki oddech i mówi, że tutaj powietrze nie pachnie solą.",
         "Lucía zapisuje wszystko w swoim zeszycie, bo czuje, że kryje się w tym jakaś tajemnica."
       ],
       "actividad": {
         "tipo": "errores",
         "instruccion": "W tym streszczeniu są trzy błędy. Zakreśl je i napisz pod spodem, jak jest naprawdę.",
-        "relato": "We wtorek Hugowi spada plecak. W środku jest czarny kamyk, mały i w paski. Na boisku Hugo mówi, że tutaj powietrze nie pachnie kwiatami.",
+        "relato": "We wtorek Hugowi spada plecak. W środku jest czarny kamyk, mały i w paski. Na podwórku Hugo mówi, że tutaj powietrze nie pachnie kwiatami.",
         "errores": [
           [
             "plecak",

@@ -57,7 +57,16 @@ de este cuaderno:
   declina bien en polaco (*Paca* se leería con *c* de *cebula*), así
   que no se declina: el caso lo dice *pan* (*pana Paco, z panem Paco*),
   como se hace en polaco con los nombres de fuera. *Lector X* es
-  *Czytelnik X*, y *el Club de la Lupa*, *Klub Lupy*.
+  *Czytelnik X*, y *el Club de la Lupa*, *Klub Lupy*. Cuando Lucía se
+  hace pasar por *la Lectora X* (día 171), es *Czytelniczka X*, y el
+  chiste de Dani sale igual: *Jak Czytelnik X, tylko że dziewczyna!*
+- **Los que llegan en invierno y en primavera**, igual: Nora; *Piorun*,
+  la tortuga de Hugo (*Rayo*: el chiste de llamar así a una tortuga
+  funciona igual en polaco); *pani Pilar*, la maestra de Marta, y *pan
+  Luis*, el director de entonces; *pan Julián*, el granjero, y Lola, su
+  cabra; y Elena, Jorge y Nacho, los niños de la foto de la cápsula.
+  Pilar e Irene no se declinan, como en polaco los nombres de mujer de
+  fuera que no acaban en *-a*.
 - **La historia sigue en España**, como en *Zdania*: las castañas
   asadas, los Reyes, las doce uvas, el Carnaval. Solo se adapta lo que
   en polaco no se entendería o engañaría: *la función de Navidad* del
@@ -65,12 +74,33 @@ de este cuaderno:
   también con su estrella que guía a los pastores), y la hoja del
   *castaño* es la del *kasztan jadalny*, el castaño de verdad, porque en
   polaco *kasztan* hace pensar en el castaño de Indias, cuya hoja parece
-  una mano abierta -- que es justo la pista de la hoja del arce.
+  una mano abierta -- que es justo la pista de la hoja del arce. Las
+  *torrijas* son *słodkie grzanki*, como en *Pierwsze słowa* y
+  *Zdania*, y *la granja escuela* es *zielona szkoła*, los días de
+  campo con la clase de los colegios polacos, en una granja
+  (*gospodarstwo*, y el granjero, *gospodarz*).
+- **El patio del colegio es *podwórko***, en todo el cuaderno: es donde
+  está la cápsula del tiempo, con su *piaskownica* (el arenero), su
+  *fontanna z głową lwa* y sus dos *platany*. Por eso el día 7, que en
+  el otoño decía *boisko*, dice ahora también *podwórko*. En el plano
+  del patio, *piaskownica* no cabe en una casilla de siete columnas, y
+  va partida en dos líneas por donde se parte en polaco (*piaskow-
+  nica*).
 - **Las adivinanzas riman en polaco**: la cama (*Mam cztery nogi, lecz
   nie chodzę wcale, / a nocą przynoszę ci sny wspaniałe*) y el reloj,
   con el juego de palabras que en polaco dan las agujas, que se llaman
   *wskazówki*, como las pistas (*Mam wskazówki, lecz drogi nie
-  wskazuję*).
+  wskazuję*); y las de la búsqueda del tesoro de Dani, la lavadora
+  (*Mam okrągłą buzię / i w brzuchu się kręcę*) y la nevera (*Choć na
+  dworze słońce praży, / w moim brzuchu mróz i chłód*).
+- **La pista de la carta sin firma** (día 193) es la misma: en español,
+  quien la escribió era una niña porque pone *nerviosísima* y no
+  *nerviosísimo*; en polaco, *zdenerwowana* y no *zdenerwowany*.
+- **Donde el cuaderno en español no cuadra, el polaco sí**: el día 195,
+  a Marta se le quiebra la voz «cuando llegó a la última frase» de su
+  carta, y la frase que se cita es la penúltima (la última es la
+  pregunta, *Y tú, ¿qué quieres ser?*); en polaco, cuando llega a la
+  frase del colegio (*Kiedy doszła do zdania o szkole*).
 - **Las citas**, entre „ ”, como se escribe en polaco (en español,
   «»): `tools/lupa.py` acepta que un párrafo acabe en ” en un cuaderno
   en polaco, y » en uno en español.
@@ -120,17 +150,29 @@ ocho días del otoño (el 1, el 2, el 27, el 28, el 31, el 49, el 52 y el
 63) quitan en polaco una palabra que sobraba o dicen lo mismo con una
 frase más corta, el 13 lleva el código en una nota (ver arriba), y dos
 (el 31 y el 64) ganan la subordinada que les faltaba (*To był pan
-Pedro, który używał liści...*). Con eso, el otoño no tiene
-ningún error, y solo dos días con aviso, de vocabulario nuevo (en
-español, cuatro).
+Pedro, który używał liści...*). En invierno y en primavera, lo mismo:
+trece días del invierno y quince de la primavera se salían, casi
+siempre por una frase más larga que la de su semana (se parte en dos)
+o por una subordinada de menos -- en español cuentan siempre *como*,
+*si* y *mientras*, también en *como si*, *por si acaso* o *mientras
+tanto*, y su traducción polaca es un solo nexo (*jakby*) o ninguno (*na
+wszelki wypadek*, *tymczasem*): se dice con una subordinada de verdad
+(*z taką miną, jakby nic się nie stało*). Y tres
+días que en polaco se quedaban a una o tres palabras del mínimo de su
+semana (el 114, el 129 y el 150) las ganan (*co już wiemy*). Con eso,
+ningún día tiene errores, y los que tienen aviso, todos de vocabulario
+nuevo, son menos que en español: en otoño, dos (en español, cuatro);
+en invierno, tres (en español, ocho), y en primavera, uno (en español,
+dos).
 
 `tools/metricas.py --libro czytam` mide lo mismo que en *Leo con lupa*,
 con el polaco de *Zdania* (sus palabras funcionales y su lematización)
 y, además:
 
 - **Los nexos de subordinación del polaco** (`SUBORDINANTES_PL`): *że,
-  bo, ponieważ, gdy, kiedy, jeśli, żeby, chociaż, zanim*…, el relativo
-  *który* en todas sus formas, y *co, gdzie, jak, czy, kto* y
+  bo, ponieważ, gdy, kiedy, jeśli, żeby, chociaż, zanim*… (y *żeby,
+  aby, gdyby* y *jakby* con la persona pegada: *żebyśmy, gdybyś*…), el
+  relativo *który* en todas sus formas, y *co, gdzie, jak, czy, kto* y
   *dlaczego*, que abren una relativa o una interrogativa indirecta. Si
   abren una pregunta directa (*Gdzie jest Toby?*), no cuentan, como en
   inglés: es la primera palabra de una frase que acaba en *?* -- en
@@ -141,6 +183,17 @@ y, además:
 - **El vocabulario nuevo** se cuenta contra todo lo ya leído en
   *Zdania*, como el de *Leo con lupa* contra el cuaderno de frases:
   `Libro.libro_previo`.
+
+## Una página por día
+
+El polaco ocupa más que el español, y ocho días de la primavera (el
+132, el 149, el 154, el 175, el 181, el 182, el 187 y el 195), con de
+un 2 a un 10 % más letras que en español, no cabían en su página: la
+actividad pasaba entera a la siguiente, y `tools/check_pages.py` lo
+paraba. Cada uno se acorta lo justo, sin salirse de la escalera y sin
+perder ninguna pista: un párrafo cuya última línea eran una o dos
+palabras las pierde (*na zakończenie roku*, sin *szkolnego*), o una
+frase de la actividad que ocupaba dos líneas cabe en una.
 
 ## Lo que cambia en el motor
 
@@ -155,6 +208,8 @@ y, además:
 - `tools/metricas.py`: el polaco de "Leo con lupa" (`SUBORDINANTES_PL`,
   `_FIN_DE_FRASE_PL`), la pregunta directa también en polaco, y el
   vocabulario del nivel anterior de cada libro (`libro_previo`).
+  `SUBORDINANTES_PL` solo se usa en este cuaderno (en *Zdania* no se
+  cuentan subordinadas).
 - `tools/libros.py`: el `Libro` `CZYTAM` y el campo `libro_previo` (en
   *Leo con lupa*, `"frases"`, lo de siempre).
 - `lang/pl.tex`: `\lblLosDos` es *wspólne*.
@@ -175,5 +230,6 @@ exactamente esos.
    *Czytelnik X*. **Hecho.**
 2. **El invierno y la primavera** (días 66–195): la narración en pasado,
    el mapa de la abuela Rosa, la cápsula del tiempo y las dos medallas.
+   **Hecho.**
 3. **El verano** (días 196–260), el tesoro de Rosa, el cuaderno de
    verano y la muestra, y publicarlo en GitHub Pages con los demás.
