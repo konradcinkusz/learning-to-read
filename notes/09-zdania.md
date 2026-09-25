@@ -10,7 +10,8 @@ en polaco y empieza a leer frases enteras. Todo está en polaco: las
 frases, las actividades, la portada, la página para el adulto, el mapa
 del año, la clave y el diploma.
 
-Ficheros: `zdania.tex` / `zdania-bw.tex`, `body-zdania.tex`,
+Ficheros: `zdania.tex` / `zdania-bw.tex` (y sus ediciones,
+`ediciones/zdania-*.tex`), `body-zdania.tex`,
 `frontmatter/zdania/`, `backmatter/zdania/`, `content/zdania/q1.json`…,
 `content/zdania/progresion.json`, `content/zdania/palabras-trazo.json`,
 y el mismo generador que el cuaderno en español, `tools/gen_days.py
@@ -64,8 +65,11 @@ palabra. Algunas decisiones:
   pregunta por el dato curioso que Marta cuenta sobre las mariposas, y
   el texto español no lo dice (en polaco, *motyle czują smak nóżkami*);
   las parejas del día 134 dicen que Mamá pregunta a la gente, y el texto
-  del 132 dice que es Papá (en polaco, las parejas dicen lo que dice el
-  texto).
+  del 132 dice que es Papá, y la lista del día 200, que Dani pregunta en
+  el coche, cuando el texto dice que la noche antes (en polaco, las dos
+  dicen lo que dice el texto); y el día 213 los peces del río "nadan
+  siempre contra la corriente" (en polaco, lo que es verdad: se ponen
+  de cara a la corriente).
 - **Lo que se le dice a la niña o al niño no tiene género**, como en
   *Pierwsze słowa*: *Narysuj obiad, który chcesz przygotować*, y no
   *który przygotowałbyś / przygotowałabyś*.
@@ -101,8 +105,8 @@ su semana, la frase polaca recupera lo que dice la española (*llamada
 Luna*: *która nazywa się Luna*; *faltan pocos días*: *już za kilka
 dni*), en vez de bajar la escalera. Con eso, ningún día tiene
 errores, y los que tienen aviso son menos que en español: en otoño, 18 (en español, 20); en invierno, 31 (en
-español, 39); en primavera, 38 (en español, 41). Casi todos son de
-vocabulario nuevo; solo uno, el 192, queda por debajo de su mínimo, y
+español, 39); en primavera, 38 (en español, 41), y en verano, 34 (en
+español, 49). Casi todos son de vocabulario nuevo; solo uno, el 192, queda por debajo de su mínimo, y
 también lo está en español.
 
 `tools/metricas.py --libro zdania` mide lo mismo que en el cuaderno de
@@ -142,7 +146,10 @@ En otoño: *a* (*arbuz*), *ą* (*ząb*), *b* (*babcia*), *c* (*cytryna*),
 en el 106, la semana del viento. En primavera: *m* (*mama*), *n*
 (*nos*), *ń* (*koń*), *o* (*okno*), *ó* (*ósemka*), *p* (*pies*), *r*
 (*rower*) y *s* (*słońce*), con el día de más en el 156, la semana en la
-que Lucía aprende a ir en bici.
+que Lucía aprende a ir en bici. Y en verano: *ś* (*śnieg*), *t* (*tata*),
+*u* (*ul*), *w* (*wakacje*), *y* (*motyl*), *z* (*zamek*), *ź*
+(*źrebak*) y *ż* (*żaba*), con el día de más en el 221, la semana de la
+tormenta.
 
 ## Lo que cambia en el motor
 
@@ -169,8 +176,9 @@ era antes.
 ## Las fases
 
 Un PR por fase, cada uno en verde antes del siguiente. Mientras tanto,
-`ZDANIA.dias_escritos` dice cuántos días hay escritos, y se validan
-exactamente esos.
+`ZDANIA.dias_escritos` decía cuántos días había escritos, y se
+validaban exactamente esos; en la fase 3 se quitó, y el cuaderno volvió
+a la regla de siempre: los 260 días o nada.
 
 1. **El motor y el otoño** (días 1–65): `ZDANIA`, la escalera en
    palabras polacas, las palabras de *Pisz po śladzie*, las páginas para
@@ -179,4 +187,12 @@ exactamente esos.
    día, *Odpowiedz* desde el invierno, las dieciséis letras de estas dos
    partes y las dos medallas. **Hecho.**
 3. **El verano** (días 196–260), las 32 letras, el cuaderno de verano y
-   la muestra, y publicarlo.
+   la muestra, y publicarlo. Cuatro frases al día, con más diálogo; las
+   ocho letras que faltaban, con lo que están las 32 (`comprobar_trazo`,
+   con el libro entero); Andrés, Bigotes y Martín entre los nombres del
+   reparto. El cuaderno de verano (`ediciones/zdania-verano.tex`, con su
+   página para el adulto, "Jak korzystać z tego zeszytu na lato") y la
+   muestra (`ediciones/zdania-muestra.tex`), en color y en blanco y
+   negro, y los seis PDF en GitHub Pages (`ucze-sie-czytac-zdania.pdf`,
+   `ucze-sie-czytac-zdania-cz-b.pdf`, `-lato`, `-probka`...) con los
+   demás. **Hecho.**

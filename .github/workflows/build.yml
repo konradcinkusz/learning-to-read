@@ -290,6 +290,12 @@ jobs:
           - variant: slowa-verano-bw
             root: slowa-bw-verano
             tex: ediciones/slowa-bw-verano.tex
+          - variant: zdania-verano-color
+            root: zdania-verano
+            tex: ediciones/zdania-verano.tex
+          - variant: zdania-verano-bw
+            root: zdania-bw-verano
+            tex: ediciones/zdania-bw-verano.tex
           # Las muestras gratuitas (ediciones/<raíz>-muestra.tex): las
           # cuatro primeras semanas de cada cuaderno, con sus páginas del
           # principio y, al final, dónde está el cuaderno entero. Igual que
@@ -330,6 +336,12 @@ jobs:
           - variant: slowa-muestra-bw
             root: slowa-bw-muestra
             tex: ediciones/slowa-bw-muestra.tex
+          - variant: zdania-muestra-color
+            root: zdania-muestra
+            tex: ediciones/zdania-muestra.tex
+          - variant: zdania-muestra-bw
+            root: zdania-bw-muestra
+            tex: ediciones/zdania-bw-muestra.tex
     steps:
       - uses: actions/checkout@v4
 
