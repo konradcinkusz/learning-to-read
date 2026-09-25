@@ -54,9 +54,9 @@ CZBW   = czytam-bw
 # `all` sigue siendo solo el cuaderno de frases en color, por
 # compatibilidad; `palabras`, `lupa`, `english`, `firstwords`, `slowa`,
 # `zdania` y `czytam` son lo mismo para los otros siete, `verano` y
-# `muestra` compilan y comprueban los catorce cuadernos de verano y las
-# catorce muestras (ver más abajo), y `all-formats` compila y comprueba
-# los cuarenta y cuatro PDF -- es lo que corre el CI.
+# `muestra` compilan y comprueban los dieciséis cuadernos de verano y
+# las dieciséis muestras (ver más abajo), y `all-formats` compila y
+# comprueba los cuarenta y ocho PDF -- es lo que corre el CI.
 all: generate build check
 
 palabras: generate build-palabras check-palabras
@@ -227,9 +227,9 @@ check-czytam-bw:
 # siempre con \edicion fijado antes, y sus .tex generados los escribe
 # `make generate` a la vez que los del libro entero. `make
 # build-lupa-verano` compila uno, `make check-lupa-verano` lo compila y
-# lo comprueba, y `make verano` / `make muestra`, los catorce de cada una.
+# lo comprueba, y `make verano` / `make muestra`, los dieciséis de cada una.
 RAICES        = $(MAIN) $(BW) $(PAL) $(PALBW) $(LUPA) $(LUPABW) $(EN) $(ENBW) $(FW) $(FWBW) \
-                $(SL) $(SLBW) $(ZD) $(ZDBW)
+                $(SL) $(SLBW) $(ZD) $(ZDBW) $(CZ) $(CZBW)
 BUILD_VERANO  = $(RAICES:%=build-%-verano)
 CHECK_VERANO  = $(RAICES:%=check-%-verano)
 BUILD_MUESTRA = $(RAICES:%=build-%-muestra)

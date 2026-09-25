@@ -375,7 +375,6 @@ CZYTAM = Libro(
     nombre_medalla=ZDANIA.nombre_medalla,
     titulo_medalla=ZDANIA.titulo_medalla,
     animo_medalla=ZDANIA.animo_medalla,
-    dias_escritos=195,
     libro_previo="zdania",
 )
 
