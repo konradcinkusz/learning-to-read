@@ -50,7 +50,9 @@ LETRAS_TRAZO_FILE = CONTENT_DIR / "letras-trazo.json"
 
 # El módulo que genera la página de un libro con el texto en párrafos
 # (Libro.motor, ver tools/libros.py). Los dos tienen la misma forma:
-# validar_texto(num, d), pagina_dia(d, libro, semana) y entrada_clave(d).
+# validar_texto(num, d, libro), pagina_dia(d, libro, semana) y
+# entrada_clave(d, libro) -- el libro, para lo que cambia de un idioma a
+# otro (IDIOMAS en tools/lupa.py).
 MOTORES = {"lupa": lupa, "english": english}
 
 
@@ -607,7 +609,7 @@ def validar_dia(num, d, libro=FRASES):
         )
 
     if libro.parrafos:
-        motor(libro).validar_texto(num, d)
+        motor(libro).validar_texto(num, d, libro)
         return
 
     if tipo_actividad == "relee":
@@ -801,7 +803,7 @@ def entradas_clave(dias, libro=FRASES):
     entradas = []
     if libro.parrafos:
         for d in dias:
-            entrada = motor(libro).entrada_clave(d)
+            entrada = motor(libro).entrada_clave(d, libro)
             if entrada:
                 entradas.append((d, entrada))
         return entradas

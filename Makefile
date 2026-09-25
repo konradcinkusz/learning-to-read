@@ -13,16 +13,19 @@ SL     = slowa
 SLBW   = slowa-bw
 ZD     = zdania
 ZDBW   = zdania-bw
+CZ     = czytam
+CZBW   = czytam-bw
 
-.PHONY: all all-formats palabras lupa english firstwords slowa zdania verano muestra generate \
+.PHONY: all all-formats palabras lupa english firstwords slowa zdania czytam verano muestra generate \
         build build-bw build-palabras build-palabras-bw build-lupa build-lupa-bw \
         build-english build-english-bw build-firstwords build-firstwords-bw \
-        build-slowa build-slowa-bw build-zdania build-zdania-bw \
+        build-slowa build-slowa-bw build-zdania build-zdania-bw build-czytam build-czytam-bw \
         check check-bw check-palabras check-palabras-bw check-lupa check-lupa-bw \
         check-english check-english-bw check-firstwords check-firstwords-bw \
-        check-slowa check-slowa-bw check-zdania check-zdania-bw clean watch
+        check-slowa check-slowa-bw check-zdania check-zdania-bw check-czytam check-czytam-bw \
+        clean watch
 
-# Siete cuadernos -- tres niveles en español, dos en inglés y dos en
+# Ocho cuadernos -- tres niveles en español, dos en inglés y tres en
 # polaco --, el mismo motor:
 #   - palabras.tex / palabras-bw.tex -- nivel 1, primeras palabras
 #     (content/palabras/q*.json, tools/gen_palabras.py);
@@ -41,16 +44,19 @@ ZDBW   = zdania-bw
 #     (content/slowa/q*.json, tools/gen_palabras.py --libro slowa);
 #   - zdania.tex / zdania-bw.tex     -- «Zdania», el cuaderno de frases
 #     en polaco, día a día el de main.tex
-#     (content/zdania/q*.json, tools/gen_days.py --libro zdania).
+#     (content/zdania/q*.json, tools/gen_days.py --libro zdania);
+#   - czytam.tex / czytam-bw.tex     -- «Czytam z lupą», "Leo con lupa"
+#     en polaco, día a día el de lupa.tex
+#     (content/czytam/q*.json, tools/gen_days.py --libro czytam).
 # El color y el blanco-y-negro de cada uno comparten body y contenido
 # generado -- lo único que cambia es \bookcolor, fijado antes de
 # \input{preamble} (ver preamble.tex).
 # `all` sigue siendo solo el cuaderno de frases en color, por
-# compatibilidad; `palabras`, `lupa`, `english`, `firstwords`, `slowa` y
-# `zdania` son lo mismo para los otros seis, `verano` y `muestra`
-# compilan y comprueban los catorce cuadernos de verano y las catorce
-# muestras (ver más abajo), y `all-formats` compila y comprueba los
-# cuarenta y dos PDF -- es lo que corre el CI.
+# compatibilidad; `palabras`, `lupa`, `english`, `firstwords`, `slowa`,
+# `zdania` y `czytam` son lo mismo para los otros siete, `verano` y
+# `muestra` compilan y comprueban los catorce cuadernos de verano y las
+# catorce muestras (ver más abajo), y `all-formats` compila y comprueba
+# los cuarenta y cuatro PDF -- es lo que corre el CI.
 all: generate build check
 
 palabras: generate build-palabras check-palabras
@@ -65,6 +71,8 @@ slowa: generate build-slowa check-slowa
 
 zdania: generate build-zdania check-zdania
 
+czytam: generate build-czytam check-czytam
+
 all-formats: generate build check build-bw check-bw \
              build-palabras check-palabras build-palabras-bw check-palabras-bw \
              build-lupa check-lupa build-lupa-bw check-lupa-bw \
@@ -72,6 +80,7 @@ all-formats: generate build check build-bw check-bw \
              build-firstwords check-firstwords build-firstwords-bw check-firstwords-bw \
              build-slowa check-slowa build-slowa-bw check-slowa-bw \
              build-zdania check-zdania build-zdania-bw check-zdania-bw \
+             build-czytam check-czytam build-czytam-bw check-czytam-bw \
              verano muestra
 
 generate:
@@ -82,6 +91,7 @@ generate:
 	python3 tools/gen_palabras.py --libro firstwords
 	python3 tools/gen_palabras.py --libro slowa
 	python3 tools/gen_days.py --libro zdania
+	python3 tools/gen_days.py --libro czytam
 
 build:
 	$(LATEX) $(MAIN).tex
@@ -124,6 +134,12 @@ build-zdania:
 
 build-zdania-bw:
 	$(LATEX) $(ZDBW).tex
+
+build-czytam:
+	$(LATEX) $(CZ).tex
+
+build-czytam-bw:
+	$(LATEX) $(CZBW).tex
 
 check:
 	python3 tools/checklog.py $(MAIN).log
@@ -195,6 +211,16 @@ check-zdania-bw:
 	python3 tools/checklog.py $(ZDBW).log
 	python3 tools/check_pages.py $(ZDBW).aux
 
+check-czytam:
+	python3 tools/checklog.py $(CZ).log
+	python3 tools/check_pages.py $(CZ).aux
+	python3 tools/gen_days.py --libro czytam --check
+	python3 tools/metricas.py --libro czytam
+
+check-czytam-bw:
+	python3 tools/checklog.py $(CZBW).log
+	python3 tools/check_pages.py $(CZBW).aux
+
 # Las ediciones (ver notes/07-ediciones.md), en color y en blanco y negro:
 # el cuaderno de verano de cada cuaderno y su muestra gratuita (las cuatro
 # primeras semanas). ediciones/<raíz>-<edición>.tex es el .tex raíz de
@@ -236,6 +262,8 @@ clean:
 	latexmk -C $(SLBW).tex
 	latexmk -C $(ZD).tex
 	latexmk -C $(ZDBW).tex
+	latexmk -C $(CZ).tex
+	latexmk -C $(CZBW).tex
 	for r in $(RAICES); do latexmk -C ediciones/$$r-verano.tex; latexmk -C ediciones/$$r-muestra.tex; done
 	rm -f content/generated-*-verano.tex content/*/generated-*-verano.tex
 	rm -f content/generated-*-muestra.tex content/*/generated-*-muestra.tex
@@ -247,6 +275,7 @@ clean:
 	      content/firstwords/generated-sonidos.tex
 	rm -f content/slowa/generated-days.tex content/slowa/generated-clave.tex
 	rm -f content/zdania/generated-days.tex content/zdania/generated-clave.tex
+	rm -f content/czytam/generated-days.tex content/czytam/generated-clave.tex
 
 watch:
 	$(LATEX) -pvc $(MAIN).tex

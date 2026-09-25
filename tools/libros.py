@@ -23,8 +23,12 @@ script:
     frases en polaco -- los mismos 260 días, frase a frase, con los
     mismos temas, y con su propia escalera, medida en palabras
     polacas. Ver notes/09-zdania.md.
+  - «Czytam z lupą» (czytam.tex, content/czytam/q*.json): "Leo con
+    lupa" en polaco -- los mismos 260 días, párrafo a párrafo, con las
+    mismas actividades y los mismos casos, y su propia escalera. Ver
+    notes/10-czytam-z-lupa.md.
 
-Los cuatro últimos comparten generador (tools/gen_days.py), escalera
+Los cinco últimos comparten generador (tools/gen_days.py), escalera
 (tools/metricas.py) y página; todo lo que distingue a uno de otro vive
 aquí, en un solo sitio: dónde está su contenido, qué ficheros genera,
 qué escalera sigue, en qué idioma está, cuántas frases lleva una página
@@ -32,9 +36,9 @@ qué escalera sigue, en qué idioma está, cuántas frases lleva una página
 actividades), qué tipos de actividad admite, qué instrucción de lectura
 y qué tamaño de letra lleva cada trimestre. gen_days.py, metricas.py y
 check_pages.py reciben `--libro frases`, `--libro lupa`, `--libro
-english` o `--libro zdania`; sin la opción, `frases` -- así `python3
-tools/gen_days.py` a secas sigue haciendo exactamente lo mismo que
-antes de que existiera "Leo con lupa".
+english`, `--libro zdania` o `--libro czytam`; sin la opción, `frases`
+-- así `python3 tools/gen_days.py` a secas sigue haciendo exactamente lo
+mismo que antes de que existiera "Leo con lupa".
 """
 
 from dataclasses import dataclass
@@ -123,6 +127,12 @@ class Libro:
     # él (None), solo que la letra tiene contorno y palabra, como siempre.
     palabras_trazo: Path = CONTENT_DIR / "palabras-trazo.json"
     alfabeto: str = None
+    # El cuaderno del nivel anterior en el mismo idioma (su `nombre`), si
+    # lo hay: tools/metricas.py da por leído todo su vocabulario, y solo
+    # cuenta como nuevo lo que no salió allí -- "Leo con lupa" después del
+    # cuaderno de frases, «Czytam z lupą» después de «Zdania». None: el
+    # vocabulario se cuenta desde cero.
+    libro_previo: str = None
 
     def __post_init__(self):
         if self.rango_trimestre is None:
@@ -208,6 +218,7 @@ LUPA = Libro(
         "julián", "lola",
     }),
     motor="lupa",
+    libro_previo="frases",
 )
 
 ENGLISH = Libro(
@@ -311,7 +322,43 @@ ZDANIA = Libro(
     alfabeto=ALFABETO_PL,
 )
 
-LIBROS = {libro.nombre: libro for libro in (FRASES, LUPA, ENGLISH, ZDANIA)}
+CZYTAM = Libro(
+    nombre="czytam",
+    # "Leo con lupa", en polaco (ver notes/10-czytam-z-lupa.md): los mismos
+    # días, párrafo a párrafo, las mismas actividades, los mismos casos y
+    # las mismas reglas; lo que cambia es el idioma (IDIOMAS en
+    # tools/lupa.py: el abecedario y las vocales del mensaje secreto, las
+    # letras de prawda/fałsz...) y la escalera, medida en palabras polacas.
+    nivel=3,
+    dir_contenido=CONTENT_DIR / "czytam",
+    salida_dias=CONTENT_DIR / "czytam" / "generated-days.tex",
+    salida_clave=CONTENT_DIR / "czytam" / "generated-clave.tex",
+    progresion=CONTENT_DIR / "czytam" / "progresion.json",
+    # Las mismas macros que "Leo con lupa": lang/pl.tex las tiene en
+    # polaco.
+    instruccion_lectura=LUPA.instruccion_lectura,
+    fuente_trimestre=LUPA.fuente_trimestre,
+    tipos_validos=LUPA.tipos_validos,
+    # Todas las formas de los nombres del reparto, como en «Zdania»
+    # (ZDANIA.nombres_propios), más los que llegan en este cuaderno. Pan
+    # Paco, el conserje, no se declina: el caso lo dice «pan» (pana Paco,
+    # z panem Paco), como se hace en polaco con los nombres de fuera que
+    # no se dejan declinar bien.
+    nombres_propios=ZDANIA.nombres_propios | frozenset({
+        "hugo", "huga", "hugowi", "hugiem", "hugu",
+        "paco",
+        "tomás", "tomása", "tomásowi", "tomásem", "tomásie",
+    }),
+    idioma="pl",
+    motor="lupa",
+    nombre_medalla=ZDANIA.nombre_medalla,
+    titulo_medalla=ZDANIA.titulo_medalla,
+    animo_medalla=ZDANIA.animo_medalla,
+    dias_escritos=65,
+    libro_previo="zdania",
+)
+
+LIBROS = {libro.nombre: libro for libro in (FRASES, LUPA, ENGLISH, ZDANIA, CZYTAM)}
 
 
 def libro_desde_argv(argv):

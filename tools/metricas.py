@@ -59,12 +59,22 @@ y "kotem" son la misma palabra, y "czyta", "czytają" y "czytać" también.
 Los nombres del reparto cuentan en todas sus formas (Lucíi, Daniego,
 babci...: ver ZDANIA.nombres_propios en tools/libros.py).
 
+«Czytam z lupą», "Leo con lupa" en polaco (`--libro czytam`,
+content/czytam/q*.json contra content/czytam/progresion.json): las
+métricas de "Leo con lupa" con el polaco de «Zdania», más los nexos de
+subordinación del polaco (że, bo, kiedy, jeśli, żeby, chociaż, który...;
+ver SUBORDINANTES_PL) y su forma de acabar una frase (la raya del
+diálogo, entre espacios; las citas, entre „ ”). El vocabulario nuevo se
+cuenta contra todo lo ya leído en «Zdania», como el de "Leo con lupa"
+contra el cuaderno de frases (Libro.libro_previo).
+
 Uso:
     python3 tools/metricas.py            # informe por día + resumen; exit 1 si hay errores
     python3 tools/metricas.py --tabla    # tabla en Markdown por semana (para GITHUB_STEP_SUMMARY)
     python3 tools/metricas.py --libro lupa [--tabla]
     python3 tools/metricas.py --libro english [--tabla]
     python3 tools/metricas.py --libro zdania [--tabla]
+    python3 tools/metricas.py --libro czytam [--tabla]
 """
 
 import json
@@ -75,7 +85,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from gen_days import cargar_dias  # noqa: E402
 from gen_days import texto_semana  # noqa: E402
-from libros import CONTENT_DIR, FRASES, libro_desde_argv  # noqa: E402
+from libros import CONTENT_DIR, FRASES, LIBROS, libro_desde_argv  # noqa: E402
 from lupa import texto_plano  # noqa: E402
 
 FAMILIAS_FILE = CONTENT_DIR / "familias.json"
@@ -286,11 +296,36 @@ def lematizar_pl(palabra, nombres_propios=frozenset()):
     return p[:LETRAS_LEMA_PL]
 
 
+# «Czytam z lupą»: lo que abre una subordinada en polaco -- las
+# conjunciones (że, bo, ponieważ, gdy, kiedy, jeśli, żeby, chociaż,
+# zanim...), el relativo który en todas sus formas y co, gdzie, jak, czy,
+# kto y dlaczego, que abren una relativa o una interrogativa indirecta
+# («wie, gdzie jest Toby»). Cuando abren una pregunta directa («Gdzie
+# jest Toby?»), no cuentan: como en inglés, es la primera palabra de una
+# frase que acaba en «?» (ver contar_subordinantes). Igual de aproximado
+# que en español, donde «como» y «que» cuentan siempre.
+SUBORDINANTES_PL = {
+    "że", "bo", "ponieważ", "gdyż", "gdy", "kiedy", "jeśli", "jeżeli",
+    "żeby", "aby", "chociaż", "choć", "zanim", "dopóki", "odkąd", "skoro",
+    "gdyby", "jakby",
+    "który", "która", "które", "którego", "której", "któremu", "którym",
+    "którą", "których", "którymi",
+    "co", "gdzie", "jak", "czy", "kto", "dlaczego",
+}
+
+# Fin de frase en polaco: . ! ? … (y la comilla que cierra una cita, ”,
+# o la raya), seguido de espacio y de algo que empieza una frase nueva:
+# una mayúscula (también las de los nombres del reparto, Álex), una
+# comilla que abre („) o la raya de un diálogo.
+_FIN_DE_FRASE_PL = re.compile(r"(?<=[.!?…])[”»—]?\s+(?=[„«—A-ZĄĆĘŁŃÓŚŹŻÁÉÍÚ])")
+
 IDIOMAS = {
     "es": {"funcionales": PALABRAS_FUNCIONALES, "subordinantes": SUBORDINANTES,
            "fin_de_frase": _FIN_DE_FRASE},
     "en": {"funcionales": PALABRAS_FUNCIONALES_EN, "subordinantes": SUBORDINANTES_EN,
            "fin_de_frase": _FIN_DE_FRASE_EN},
+    "pl": {"funcionales": PALABRAS_FUNCIONALES_PL, "subordinantes": SUBORDINANTES_PL,
+           "fin_de_frase": _FIN_DE_FRASE_PL},
 }
 
 
@@ -384,14 +419,19 @@ def contar_subordinantes(oraciones, idioma="es"):
     total = 0
     for oracion in oraciones:
         tokens = oracion.split()
-        # En inglés, "Where is Pip?" o "Who is it?": la palabra que abre
-        # una pregunta es interrogativa, no un nexo (en español lo dice
-        # la tilde: dónde, quién).
-        pregunta = idioma == "en" and oracion.rstrip("”’ ").endswith("?")
+        # En inglés, "Where is Pip?" o "Who is it?", y en polaco, «Gdzie
+        # jest Toby?»: la palabra que abre una pregunta es interrogativa,
+        # no un nexo (en español lo dice la tilde: dónde, quién). Es la
+        # primera PALABRA: en polaco, delante puede ir la raya del
+        # diálogo, suelta («— Gdzie jest Toby?»).
+        pregunta = idioma in ("en", "pl") and oracion.rstrip("”’ ").endswith("?")
+        primera = next(
+            (i for i, t in enumerate(tokens) if any(c.isalnum() for c in t)), None
+        )
         for i, token in enumerate(tokens):
-            if pregunta and i == 0:
+            if pregunta and i == primera:
                 continue
-            if token.strip(".,;:!¡?¿\"«»“”‘’—-()").lower() in subordinantes:
+            if token.strip(".,;:!¡?¿\"«»„“”‘’—-()").lower() in subordinantes:
                 total += 1
     return total
 
@@ -603,8 +643,8 @@ def main():
     vistos_previos = None
     if libro.idioma == "en":
         vistos_previos = vocabulario_base_en(libro)
-    elif libro.parrafos:
-        vistos_previos = lemas_de_libro(FRASES, familias)
+    elif libro.libro_previo:
+        vistos_previos = lemas_de_libro(LIBROS[libro.libro_previo], familias)
     filas = metricas_por_dia(dias, familias, libro, vistos_previos)
     evaluar(filas, progresion)
 

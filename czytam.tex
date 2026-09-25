@@ -1,0 +1,13 @@
+% czytam.tex -- «Czytam z lupą», "Leo con lupa" en polaco (ver
+% notes/10-czytam-z-lupa.md): el nivel 3 de la serie polaca, después de
+% «Pierwsze słowa» y «Zdania». Mismo motor que lupa.tex: \booklang elige
+% el idioma (babel y lang/pl.tex) antes de \input{preamble}, y encima lo
+% propio de este nivel (preamble-lupa.tex).
+\documentclass[11pt]{article}
+\def\bookcolor{color}
+\def\booklang{pl}
+\input{preamble}
+\input{preamble-lupa}
+\begin{document}
+\input{body-czytam}
+\end{document}

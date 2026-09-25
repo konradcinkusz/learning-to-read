@@ -1,0 +1,1723 @@
+{
+  "_comentario": "«Czytam z lupą» (nivel 3 en polaco): 'Leo con lupa', día a día el de content/lupa/q1.json. Datos de origen para tools/gen_days.py --libro czytam. Este fichero SI se edita a mano; content/czytam/generated-days.tex NO (se regenera con `make generate`). Trimestre 1 (otoño): días 1-65, semanas 1-13, en presente. Hilo: ¿quién es Czytelnik X (Lector X)? -- ver notes/10-czytam-z-lupa.md y notes/04-nivel-lupa.md.",
+  "personajes": {
+    "Lucía": "bohaterka, 7 lat (w 9. tygodniu kończy 8), druga klasa",
+    "Dani": "jej brat, 5 lat",
+    "Toby": "pies rodziny",
+    "Babcia Rosa": "babcia; jej tata był zegarmistrzem",
+    "Sofía": "najlepsza przyjaciółka Lucíi",
+    "Hugo": "nowy kolega z klasy, przyjechał z miasta nad morzem",
+    "Pani Marta": "wychowawczyni",
+    "Pan Paco": "woźny w szkole",
+    "Pan Tomás": "bibliotekarz z osiedlowej biblioteki",
+    "Pan Pedro": "sąsiad",
+    "Luna": "kotka pana Pedra"
+  },
+  "dias": [
+    {
+      "dia": 1,
+      "semana": 1,
+      "trimestre": 1,
+      "tema": "Lupa babci",
+      "texto": [
+        "W pewną wrześniową sobotę babcia Rosa przychodzi z małą paczką, która pachnie starą szafą.",
+        "W środku jest okrągła lupa ze złotym brzegiem. Rączka jest z ciemnego drewna i ma trzy wyryte kreski.",
+        "— Należała do mojego taty, który naprawiał zegarki — wyjaśnia babcia. — Dzięki niej widział nawet najmniejsze części.",
+        "Lucía ogląda przez lupę swoją dłoń i odkrywa drobne linie, których nigdy wcześniej nie widziała."
+      ],
+      "actividad": {
+        "tipo": "dibuja_detalle",
+        "prompt": "Narysuj lupę babci dokładnie tak, jak opisuje ją tekst.",
+        "comprueba": [
+          "Jaki kształt ma lupa?",
+          "Jakiego koloru jest brzeg?",
+          "Z czego jest rączka i jakiego jest koloru?",
+          "Ile kresek ma rączka?"
+        ],
+        "clave": "Okrągła lupa ze złotym brzegiem; rączka z ciemnego drewna, z trzema wyrytymi kreskami."
+      }
+    },
+    {
+      "dia": 2,
+      "semana": 1,
+      "trimestre": 1,
+      "tema": "Lupa babci",
+      "texto": [
+        "W niedzielę Lucía nie odkłada lupy nawet przy śniadaniu.",
+        "Najpierw ogląda liść z ogrodu i widzi na nim ścieżki, jak na maleńkiej mapie. Potem ogląda nos Toby'ego, który jest wilgotny i pełen maleńkich grudek.",
+        "Toby kicha i odchodzi, bo nie lubi, kiedy ogląda się go z bliska.",
+        "Dani też chce lupę, ale Lucía mówi, że najpierw musi się nauczyć o nią dbać."
+      ],
+      "actividad": {
+        "tipo": "verdadero_falso",
+        "afirmaciones": [
+          "Przez lupę liść wygląda jak maleńka mapa.",
+          "Nos Toby'ego jest suchy i gładki.",
+          "Toby siedzi spokojnie, żeby Lucía mogła go obejrzeć.",
+          "Lucía mówi Daniemu, że najpierw musi się nauczyć dbać o lupę."
+        ],
+        "respuestas": [
+          "P",
+          "F: jest wilgotny i pełen maleńkich grudek.",
+          "F: kicha i odchodzi, bo nie lubi, kiedy ogląda się go z bliska.",
+          "P"
+        ]
+      }
+    },
+    {
+      "dia": 3,
+      "semana": 1,
+      "trimestre": 1,
+      "tema": "Lupa babci",
+      "texto": [
+        "Po południu babcia opowiada, że jej tata miał warsztat zegarmistrzowski.",
+        "Warsztat był tak mały, że mieściły się w nim tylko stół, krzesło i kot. Tata babci naprawiał tam zegarki kieszonkowe, zegary ścienne, a nawet zegar na wieży kościoła.",
+        "Ponieważ części były malutkie, pracował z lupą przy samym oku.",
+        "— Mówił, że dobry zegarmistrz zwraca uwagę na wszystko — wspomina babcia z uśmiechem."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "preguntas": [
+          "Dlaczego tata babci pracował z lupą przy samym oku?",
+          "Jakie trzy rzeczy mieściły się w jego warsztacie?"
+        ],
+        "respuestas": [
+          "Bo części zegarków były malutkie.",
+          "Stół, krzesło i kot."
+        ]
+      }
+    },
+    {
+      "dia": 4,
+      "semana": 1,
+      "trimestre": 1,
+      "tema": "Lupa babci",
+      "texto": [
+        "Tego wieczoru Lucía znajduje w swojej książce złożoną kartkę, która pachnie truskawką. Jest na niej okrągłe i bardzo staranne pismo, jak u dorosłego.",
+        "> Dobry czytelnik zwraca uwagę na wszystko.\nMam cztery nogi, lecz nie chodzę wcale,\na nocą przynoszę ci sny wspaniałe.\nSzukaj pode mną.\nCzytelnik X",
+        "Lucía pokazuje kartkę mamie, która czyta ją dwa razy i uśmiecha się bez słowa."
+      ],
+      "actividad": {
+        "tipo": "adivina",
+        "adivinanza": "Rozwiąż zagadkę z liściku Czytelnika X.\nMa cztery nogi, lecz nie chodzi wcale,\na nocą przynosi sny wspaniałe.\nCo to jest? Gdzie Lucía ma szukać?",
+        "respuesta": "Łóżko: Lucía ma szukać pod swoim łóżkiem."
+      }
+    },
+    {
+      "dia": 5,
+      "semana": 1,
+      "trimestre": 1,
+      "tema": "Lupa babci",
+      "texto": [
+        "Rano Lucía zagląda pod swoje łóżko i znajduje zeszyt w zielonej okładce. Na pierwszej stronie jest napisane: „Zeszyt detektywa”.",
+        "Lucía postanawia, że będzie w nim zapisywać wszystko, co odkryje dzięki swojej lupie.",
+        "Chociaż nie wie, kim jest Czytelnik X, jednego jest pewna: dowie się tego.",
+        "Toby, który patrzy na nią od drzwi, macha ogonem, jakby już to wiedział."
+      ],
+      "actividad": {
+        "tipo": "crea",
+        "prompt": "Ty też należysz do klubu detektywów. Napisz trzy rzeczy, które robi dobry detektyw, kiedy czyta.",
+        "lineas": 3
+      }
+    },
+    {
+      "dia": 6,
+      "semana": 2,
+      "trimestre": 1,
+      "tema": "Nowy kolega",
+      "texto": [
+        "W poniedziałek pani Marta przedstawia nowego ucznia, który ma na imię Hugo.",
+        "Hugo nosi okrągłe niebieskie okulary i sweter w szare i białe paski. Z jego plecaka, który jest żółty, zwisa breloczek w kształcie żółwia.",
+        "Siada obok Lucíi i przez całe przedpołudnie prawie się nie odzywa.",
+        "Kiedy inni bawią się na przerwie, on coś rysuje w zeszycie."
+      ],
+      "actividad": {
+        "tipo": "dibuja_detalle",
+        "prompt": "Narysuj Huga w pierwszym dniu w szkole, ze wszystkim, o czym mówi tekst.",
+        "comprueba": [
+          "Jaki kształt i jaki kolor mają jego okulary?",
+          "Jaki jest jego sweter?",
+          "Jakiego koloru jest jego plecak i co z niego zwisa?"
+        ],
+        "clave": "Okrągłe niebieskie okulary; sweter w szare i białe paski; żółty plecak z breloczkiem w kształcie żółwia."
+      }
+    },
+    {
+      "dia": 7,
+      "semana": 2,
+      "trimestre": 1,
+      "tema": "Nowy kolega",
+      "texto": [
+        "We wtorek Hugowi spada piórnik, a Lucía pomaga mu pozbierać ołówki.",
+        "W piórniku jest biała muszelka, mała i w paski.",
+        "— Znalazłem ją na plaży u dziadka — mówi Hugo bardzo cicho.",
+        "Kiedy wychodzą na boisko, Hugo bierze głęboki oddech i mówi, że tutaj powietrze nie pachnie solą.",
+        "Lucía zapisuje wszystko w swoim zeszycie, bo czuje, że kryje się w tym jakaś tajemnica."
+      ],
+      "actividad": {
+        "tipo": "errores",
+        "instruccion": "W tym streszczeniu są trzy błędy. Zakreśl je i napisz pod spodem, jak jest naprawdę.",
+        "relato": "We wtorek Hugowi spada plecak. W środku jest czarny kamyk, mały i w paski. Na boisku Hugo mówi, że tutaj powietrze nie pachnie kwiatami.",
+        "errores": [
+          [
+            "plecak",
+            "piórnik"
+          ],
+          [
+            "czarny kamyk",
+            "biała muszelka"
+          ],
+          [
+            "kwiatami",
+            "solą"
+          ]
+        ]
+      }
+    },
+    {
+      "dia": 8,
+      "semana": 2,
+      "trimestre": 1,
+      "tema": "Nowy kolega",
+      "texto": [
+        "W środę Lucía w końcu widzi, co Hugo rysuje na przerwie.",
+        "To wysoka latarnia morska w czerwone paski, obok portu pełnego łodzi rybackich. W tle są fale i mewy, a także dom z niebieskim dachem.",
+        "— Tam wcześniej mieszkałem — wyjaśnia Hugo, a jego głos robi się smutny.",
+        "Lucía myśli, że Hugo tęskni za swoim domem, chociaż tego nie mówi."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "preguntas": [
+          "Co Hugo rysuje na przerwie? Napisz trzy rzeczy.",
+          "Skąd Lucía wie, że Hugo tęskni za swoim domem?"
+        ],
+        "respuestas": [
+          "Latarnię morską w czerwone paski, port z łodziami rybackimi, fale, mewy i dom z niebieskim dachem.",
+          "Bo kiedy mówi, że tam wcześniej mieszkał, jego głos robi się smutny."
+        ]
+      }
+    },
+    {
+      "dia": 9,
+      "semana": 2,
+      "trimestre": 1,
+      "tema": "Nowy kolega",
+      "texto": [
+        "W czwartek na przerwie Lucía i Sofía siadają z Hugiem, żeby zjeść drugie śniadanie.",
+        "Każde z nich ma coś innego: kanapkę, jabłko albo jogurt. Sofía, która nie znosi owoców, nie ma jabłka.",
+        "Hugo prosi panią Martę o łyżeczkę, bo jego drugiego śniadania nie da się zjeść bez niej.",
+        "Kiedy jedzą, Hugo opowiada im, że z okien jego dawnej szkoły było widać morze."
+      ],
+      "actividad": {
+        "tipo": "logica",
+        "instruccion": "Skorzystaj ze wskazówek z tekstu, żeby odkryć, co każde z nich ma na drugie śniadanie. Postaw ✓ tam, gdzie tak, i ✗ tam, gdzie nie.",
+        "filas": [
+          "Lucía",
+          "Sofía",
+          "Hugo"
+        ],
+        "columnas": [
+          "kanapka",
+          "jabłko",
+          "jogurt"
+        ],
+        "restricciones": [
+          [
+            "no",
+            "Sofía",
+            "jabłko"
+          ],
+          [
+            "si",
+            "Hugo",
+            "jogurt"
+          ]
+        ],
+        "solucion": {
+          "Lucía": "jabłko",
+          "Sofía": "kanapka",
+          "Hugo": "jogurt"
+        }
+      }
+    },
+    {
+      "dia": 10,
+      "semana": 2,
+      "trimestre": 1,
+      "tema": "Nowy kolega: zagadka",
+      "texto": [
+        "W piątek Lucía przegląda z Sofíą swój zeszyt detektywa, strona po stronie.",
+        "— Hugo nie jest stąd, to jasne — mówi Sofía. — Ale skąd przyjechał?",
+        "Lucía się uśmiecha, bo chyba już wie. Zanim zapyta o to Huga, chce mieć pewność, że się nie myli.",
+        "A ty? Czy udało ci się wyłapać wszystkie wskazówki z tego tygodnia?"
+      ],
+      "actividad": {
+        "tipo": "caso",
+        "pregunta": "Skąd przyjechał Hugo?",
+        "opciones": [
+          "z gór",
+          "z miasta nad morzem",
+          "z wioski nad rzeką"
+        ],
+        "solucion": "z miasta nad morzem",
+        "clave": "Z miasta nad morzem: ma muszelkę z plaży dziadka i mówi, że tutaj powietrze nie pachnie solą (wtorek); rysuje latarnię morską, port z łodziami i mewy (środa); z jego dawnej szkoły było widać morze (czwartek).",
+        "banner": "10 przeczytanych stron! Witaj w klubie detektywów!"
+      }
+    },
+    {
+      "dia": 11,
+      "semana": 3,
+      "trimestre": 1,
+      "tema": "Klub Lupy",
+      "texto": [
+        "Hugo przyjechał z miasta nad morzem, tak jak zgadła Lucía.",
+        "W tym tygodniu Lucía, Sofía i Hugo postanawiają założyć klub detektywów. Spotykają się w domku w ogrodzie Lucíi, który ma zielone drzwi i okrągłe okienko.",
+        "W środku jest stół i trzy skrzynki po owocach, które służą za krzesła. Na tylnej ścianie tata powiesił im małą tablicę."
+      ],
+      "actividad": {
+        "tipo": "dibuja_detalle",
+        "prompt": "Narysuj domek klubu dokładnie tak, jak opisuje go tekst.",
+        "comprueba": [
+          "Jakiego koloru są drzwi?",
+          "Jaki kształt ma okienko?",
+          "Co służy za krzesła i ile ich jest?",
+          "Co wisi na tylnej ścianie?"
+        ],
+        "clave": "Zielone drzwi; okrągłe okienko; stół i trzy skrzynki po owocach zamiast krzeseł; mała tablica na tylnej ścianie."
+      }
+    },
+    {
+      "dia": 12,
+      "semana": 3,
+      "trimestre": 1,
+      "tema": "Klub Lupy",
+      "texto": [
+        "Każde z nich pisze na kartce nazwę dla klubu i wrzuca ją do słoika.",
+        "Wypada kartka Lucíi: Klub Lupy, bo lupa babci będzie jego znakiem.",
+        "Potem piszą na tablicy trzy zasady, żeby nikt o nich nie zapomniał:",
+        "- Zawsze czytać dwa razy.",
+        "- Nie oskarżać nikogo bez dowodów.",
+        "- Dochowywać tajemnic klubu."
+      ],
+      "actividad": {
+        "tipo": "verdadero_falso",
+        "afirmaciones": [
+          "Nazwę klubu wylosowano ze słoika.",
+          "Znakiem klubu jest lupa.",
+          "Jedna zasada mówi, że zawsze trzeba czytać trzy razy.",
+          "Zasady zapisują w zeszycie."
+        ],
+        "respuestas": [
+          "P",
+          "P",
+          "F: zawsze trzeba czytać dwa razy.",
+          "F: piszą je na tablicy."
+        ]
+      }
+    },
+    {
+      "dia": 13,
+      "semana": 3,
+      "trimestre": 1,
+      "tema": "Klub Lupy",
+      "texto": [
+        "Hugo wymyśla tajny szyfr, żeby nikt poza klubem nie mógł czytać jego wiadomości.",
+        "To bardzo proste: każdą samogłoskę zamienia się na cyfrę, po kolei, jak w alfabecie. Hugo zapisuje szyfr na tablicy:",
+        "> A=1 Ą=2 E=3\nĘ=4 I=5 O=6\nÓ=7 U=8 Y=9",
+        "Tak więc „lupa” zapisuje się jako „l8p1”. Sofía potrzebuje chwili, żeby to zrozumieć, ale potem pisze wiadomość za wiadomością."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "preguntas": [
+          "Po co Hugo wymyśla tajny szyfr?",
+          "Jak zapisać szyfrem klubu słowo „kot”? A słowo „ryba”?"
+        ],
+        "respuestas": [
+          "Żeby nikt poza klubem nie mógł czytać jego wiadomości.",
+          "K6T; R9B1."
+        ]
+      }
+    },
+    {
+      "dia": 14,
+      "semana": 3,
+      "trimestre": 1,
+      "tema": "Klub Lupy",
+      "texto": [
+        "W czwartek Lucía znajduje w swojej ławce kartkę zapisaną szyfrem klubu.",
+        "Od razu poznaje pismo Huga, który zawsze pisze wielkimi literami. Sofía też ma taką kartkę, chociaż jej wiadomość jest krótsza.",
+        "Obie patrzą na siebie i się uśmiechają, bo wiedzą, że to pierwsza misja klubu.",
+        "Zanim Lucía odczyta wiadomość, przypomina sobie pierwszą zasadę: zawsze trzeba czytać dwa razy."
+      ],
+      "actividad": {
+        "tipo": "codigo",
+        "instruccion": "Odczytaj wiadomość Huga szyfrem klubu. Jeśli go nie pamiętasz, przeczytaj jeszcze raz wczorajszą stronę.",
+        "mensaje": "Przynieś lupę w sobotę",
+        "cifrado": "vocales"
+      }
+    },
+    {
+      "dia": 15,
+      "semana": 3,
+      "trimestre": 1,
+      "tema": "Klub Lupy",
+      "texto": [
+        "W sobotę, kiedy klub przychodzi do domku, na stole leży koperta.",
+        "W środku jest kolejny liścik od Czytelnika X, który pachnie truskawką, tak jak pierwszy:",
+        "> Prawdziwy detektyw widzi to, czego inni nie widzą.\nIle okien ma twój dom?\nCzytelnik X",
+        "— No to trzeba je policzyć — mówi Hugo i wybiega do ogrodu."
+      ],
+      "actividad": {
+        "tipo": "crea",
+        "prompt": "Wymyśl wiadomość dla Klubu Lupy i zapisz ją szyfrem samogłosek.",
+        "lineas": 2
+      }
+    },
+    {
+      "dia": 16,
+      "semana": 4,
+      "trimestre": 1,
+      "tema": "Sprawa ciasteczek",
+      "texto": [
+        "W kuchni u Lucíi stoi drewniany regał z trzema półkami.",
+        "Na górnej półce stoją słoiczki z przyprawami, a na środkowej szklanki. Na dolnej stoi niebieski słoik na ciastka, który ma czerwoną, luźną pokrywkę.",
+        "Kiedyś stał na górze, ale mama przestawiła go niżej, bo zawsze musiała wchodzić na krzesło."
+      ],
+      "actividad": {
+        "tipo": "dibuja_detalle",
+        "prompt": "Narysuj kuchenny regał ze wszystkim, co stoi na każdej półce.",
+        "comprueba": [
+          "Ile ma półek?",
+          "Co stoi na górnej półce? A na środkowej?",
+          "Na której półce stoi słoik na ciastka i jakie ma kolory?"
+        ],
+        "clave": "Trzy półki: na górze słoiczki z przyprawami; w środku szklanki; na dole niebieski słoik na ciastka z czerwoną pokrywką."
+      }
+    },
+    {
+      "dia": 17,
+      "semana": 4,
+      "trimestre": 1,
+      "tema": "Sprawa ciasteczek",
+      "texto": [
+        "We wtorek mama znajduje słoik na ciastka pusty, a pokrywkę na podłodze.",
+        "Od kuchni aż do salonu ciągnie się ścieżka okruszków, która kończy się przy kanapie. Lucía wyjmuje lupę i między okruszkami znajduje krótki, brązowy włos.",
+        "— Tym musi się zająć klub — mówi bardzo poważnie.",
+        "Mama się śmieje, chociaż też chce wiedzieć, kto to zrobił."
+      ],
+      "actividad": {
+        "tipo": "errores",
+        "instruccion": "W tym streszczeniu sprawy są trzy błędy. Zakreśl je i napisz pod spodem, jak jest naprawdę.",
+        "relato": "We wtorek tata znajduje pusty słoik na ciastka. Od kuchni aż do łazienki ciągnie się ścieżka okruszków. Przez lupę Lucía znajduje długi, jasny włos.",
+        "errores": [
+          [
+            "tata",
+            "mama"
+          ],
+          [
+            "łazienki",
+            "salonu"
+          ],
+          [
+            "długi, jasny",
+            "krótki, brązowy"
+          ]
+        ]
+      }
+    },
+    {
+      "dia": 18,
+      "semana": 4,
+      "trimestre": 1,
+      "tema": "Sprawa ciasteczek",
+      "texto": [
+        "Klub przesłuchuje w domku podejrzanych, jednego po drugim.",
+        "Dani mówi, że o tej porze był w łazience, a mama to potwierdza. Tata zapewnia, że nie spróbował ani jednego ciastka, bo wrócił z pracy o siódmej.",
+        "Według mamy o szóstej słoik był już pusty.",
+        "Toby oczywiście nic nie mówi: śpi pod kanapą."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "preguntas": [
+          "Dlaczego tata nie mógł zjeść ciastek?",
+          "Gdzie był Dani i kto to potwierdza?"
+        ],
+        "respuestas": [
+          "Bo wrócił o siódmej, a o szóstej słoik był już pusty.",
+          "Był w łazience, a potwierdza to mama."
+        ]
+      }
+    },
+    {
+      "dia": 19,
+      "semana": 4,
+      "trimestre": 1,
+      "tema": "Sprawa ciasteczek",
+      "texto": [
+        "W czwartek Hugo rysuje na tablicy klubu plan domu Lucíi.",
+        "Z lupą w ręku przeszli kratka po kratce ścieżkę okruszków, która biegnie przez cały dom.",
+        "Okruszki zaczynają się w kuchni i biegną korytarzem trzy kratki w prawo. Potem schodzą dwie kratki w dół i kończą się tuż obok kanapy, pod którą śpi Toby."
+      ],
+      "actividad": {
+        "tipo": "mapa",
+        "instruccion": "Narysuj na planie ścieżkę okruszków od kuchni i zaznacz krzyżykiem kratkę, w której się kończą.",
+        "columnas": 5,
+        "filas": 4,
+        "lugares": {
+          "A1": "kuchnia",
+          "B1": "korytarz",
+          "C1": "korytarz",
+          "D1": "korytarz",
+          "E1": "drzwi na ulicę",
+          "A3": "łazienka",
+          "B4": "regał",
+          "E3": "kanapa",
+          "E4": "telewizor"
+        },
+        "salida": "A1",
+        "comprobar": [
+          {
+            "desde": "A1",
+            "pasos": [
+              "derecha 3",
+              "abajo 2"
+            ],
+            "hasta": "D3"
+          }
+        ],
+        "preguntas": [
+          "W której kratce kończą się okruszki? Co jest tuż obok?"
+        ],
+        "clave": "Okruszki biegną korytarzem z A1 do D1, schodzą do D3 i tam się kończą, tuż obok kanapy (E3)."
+      }
+    },
+    {
+      "dia": 20,
+      "semana": 4,
+      "trimestre": 1,
+      "tema": "Sprawa ciasteczek: zagadka",
+      "texto": [
+        "W piątek klub zbiera się, żeby zamknąć sprawę ciasteczek.",
+        "Sofía czyta na głos wszystkie wskazówki, a Hugo zapisuje je na tablicy.",
+        "Lucía patrzy na słoik, potem na dolną półkę, a na koniec na kanapę. Nagle się uśmiecha, bo już wie, kto to zrobił.",
+        "Toby ziewa pod kanapą, jakby cała ta sprawa wcale go nie dotyczyła."
+      ],
+      "actividad": {
+        "tipo": "caso",
+        "pregunta": "Kto zjadł ciastka?",
+        "opciones": [
+          "Dani",
+          "Tata",
+          "Mama",
+          "Toby"
+        ],
+        "solucion": "Toby",
+        "clave": "Toby: słoik stał na dolnej półce, na jego wysokości, i miał luźną pokrywkę (poniedziałek); włos jest krótki i brązowy jak jego sierść, a okruszki prowadzą do kanapy, pod którą śpi (wtorek i czwartek); Dani był w łazience, a tata wrócił o siódmej, kiedy słoik był już pusty (środa).",
+        "banner": "20 przeczytanych stron! Sprawa ciasteczek rozwiązana."
+      }
+    },
+    {
+      "dia": 21,
+      "semana": 5,
+      "trimestre": 1,
+      "tema": "Ślady w cemencie",
+      "texto": [
+        "Sprawa ciasteczek jest zamknięta: to był Toby.",
+        "W tym tygodniu robotnicy naprawiają chodnik przed domem sąsiada, pana Pedra. Otaczają świeży cement taśmą w czerwone i białe paski, żeby nikt po nim nie chodził.",
+        "Ale następnego dnia, kiedy wychodzi do szkoły, Lucía widzi w rogu pięć śladów.",
+        "Każdy ślad ma cztery okrągłe palce, a pod nimi dużą poduszeczkę, ale ani jednego odcisku pazurów."
+      ],
+      "actividad": {
+        "tipo": "dibuja_detalle",
+        "prompt": "Narysuj w dużym powiększeniu jeden ze śladów w cemencie, tak jak widać go przez lupę.",
+        "comprueba": [
+          "Ile ma palców?",
+          "Jaki kształt mają palce?",
+          "Co jest pod palcami?",
+          "Czy widać odciski pazurów?"
+        ],
+        "clave": "Cztery okrągłe palce, a pod nimi duża poduszeczka; ani jednego odcisku pazurów."
+      }
+    },
+    {
+      "dia": 22,
+      "semana": 5,
+      "trimestre": 1,
+      "tema": "Ślady w cemencie",
+      "texto": [
+        "Tego popołudnia klub szuka w książce z biblioteki, jak rozpoznać ślady zwierząt.",
+        "Psy zostawiają ślad czterech palców, a przed każdym palcem odcisk pazura, którego nie potrafią schować.",
+        "Koty też mają cztery palce, ale kiedy chodzą, chowają pazury, więc nie zostawiają odcisków.",
+        "Gołębie zostawiają trzy długie palce skierowane do przodu i jeden krótki do tyłu."
+      ],
+      "actividad": {
+        "tipo": "ficha",
+        "instruccion": "Uzupełnij kartę tym, co mówi tekst: jak wygląda ślad każdego zwierzęcia?",
+        "titulo": "Ślady zwierząt",
+        "campos": [
+          "Pies",
+          "Kot",
+          "Gołąb"
+        ],
+        "respuestas": [
+          "cztery palce, z odciskiem pazura przed każdym palcem",
+          "cztery palce, bez odcisków pazurów, bo chowa je, kiedy chodzi",
+          "trzy długie palce do przodu i jeden krótki do tyłu"
+        ]
+      }
+    },
+    {
+      "dia": 23,
+      "semana": 5,
+      "trimestre": 1,
+      "tema": "Ślady w cemencie",
+      "texto": [
+        "W środę klub znowu ogląda ślady w cemencie, który jest już twardy.",
+        "Teraz wiedzą, że nie zostawił ich gołąb, bo mają cztery palce, a nie trzy. Nie wyglądają też na ślady Toby'ego, ponieważ nie ma na nich żadnych odcisków pazurów.",
+        "— W takim razie to zwierzę, które chowa pazury — mówi Sofía.",
+        "Lucía patrzy na mur pana Pedra, po którym powoli przesuwa się coś białego."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "preguntas": [
+          "Dlaczego to nie są ślady gołębia?",
+          "Dlaczego nie wyglądają na ślady Toby'ego?"
+        ],
+        "respuestas": [
+          "Bo mają cztery palce, a gołębie zostawiają trzy palce do przodu i jeden do tyłu.",
+          "Bo nie ma na nich odcisków pazurów, a psy zostawiają odcisk pazura przed każdym palcem."
+        ]
+      }
+    },
+    {
+      "dia": 24,
+      "semana": 5,
+      "trimestre": 1,
+      "tema": "Ślady w cemencie",
+      "texto": [
+        "W czwartek pan Pedro zaprasza klub na podwieczorek do swojego ogrodu, w którym mieszka jego kotka Luna.",
+        "Luna jest biała, ma jedno oko zielone, a drugie niebieskie, i nosi obróżkę z dzwoneczkiem.",
+        "Kiedy jedzą podwieczorek, Luna chodzi po szczycie muru i nie robi przy tym żadnego hałasu. Za to Toby szczeka po drugiej stronie i stuka pazurami o ziemię."
+      ],
+      "actividad": {
+        "tipo": "compara",
+        "instruccion": "Porównaj psy i koty według tekstów z tego tygodnia: po bokach to, co mają tylko jedne albo tylko drugie; w środku to, co wspólne.",
+        "a": "Psy",
+        "b": "Koty",
+        "solucion": {
+          "a": [
+            "zostawiają odciski pazurów",
+            "szczekają",
+            "stukają pazurami o ziemię"
+          ],
+          "ambos": [
+            "cztery palce w każdym śladzie"
+          ],
+          "b": [
+            "chowają pazury, kiedy chodzą",
+            "chodzą bez hałasu"
+          ]
+        }
+      }
+    },
+    {
+      "dia": 25,
+      "semana": 5,
+      "trimestre": 1,
+      "tema": "Ślady w cemencie: zagadka",
+      "texto": [
+        "W piątek po południu pan Pedro mówi im coś, o czym nie wiedzieli.",
+        "W poniedziałek w nocy Luna nie spała w domu, bo została zamknięta na dworze.",
+        "— Rano miała szare łapki, jakby chodziła po pyle — wspomina pan Pedro.",
+        "Lucía, Sofía i Hugo patrzą na siebie, bo mają już wszystkie potrzebne wskazówki. A ty? Wiesz już, kto chodził po cemencie?"
+      ],
+      "actividad": {
+        "tipo": "caso",
+        "pregunta": "Kto chodził po świeżym cemencie?",
+        "opciones": [
+          "Toby",
+          "Luna",
+          "gołąb"
+        ],
+        "solucion": "Luna",
+        "clave": "Luna, kotka pana Pedra: ślady mają cztery palce, więc nie zostawił ich gołąb, i nie ma na nich odcisków pazurów, więc nie zostawił ich pies (koty chowają pazury, kiedy chodzą). Poza tym Luna spędziła poniedziałkową noc na dworze, a rano miała szare łapki."
+      }
+    },
+    {
+      "dia": 26,
+      "semana": 6,
+      "trimestre": 1,
+      "tema": "Wtorkowy liść",
+      "texto": [
+        "Po cemencie chodziła Luna, tak jak odkrył klub.",
+        "Osiedlowa biblioteka jest mała, ale Lucía zna ją na pamięć. Na lewo od drzwi stoi biurko pana Tomása, bibliotekarza, a na nim roślinka i pieczątka.",
+        "Regały są kolorowe: niebieskie to zwierzęta, zielone to bajki, a żółte to nauka.",
+        "W głębi leży okrągły dywan z czterema poduszkami, na którym czyta się bez butów."
+      ],
+      "actividad": {
+        "tipo": "dibuja_detalle",
+        "prompt": "Narysuj osiedlową bibliotekę dokładnie tak, jak opisuje ją tekst.",
+        "comprueba": [
+          "Gdzie stoi biurko pana Tomása i co na nim jest?",
+          "Jakiego koloru są regały z bajkami? A te o zwierzętach?",
+          "Co jest w głębi i ile ma poduszek?"
+        ],
+        "clave": "Biurko pana Tomása na lewo od drzwi, na nim roślinka i pieczątka; regały niebieskie (zwierzęta), zielone (bajki) i żółte (nauka); w głębi okrągły dywan z czterema poduszkami."
+      }
+    },
+    {
+      "dia": 27,
+      "semana": 6,
+      "trimestre": 1,
+      "tema": "Wtorkowy liść",
+      "texto": [
+        "Pan Tomás pokazuje im ogromną książkę, która nazywa się „Wielka księga drzew”.",
+        "— Ktoś oddaje ją w każdy wtorek z suchym liściem w środku — wyjaśnia. — I nigdy nie widzę, kto to jest.",
+        "W zeszły wtorek był to liść kasztana jadalnego, a tydzień wcześniej liść dębu.",
+        "Lucía postanawia, że w przyszły wtorek klub będzie pilnował biblioteki, nawet jeśli ominie ją podwieczorek."
+      ],
+      "actividad": {
+        "tipo": "verdadero_falso",
+        "afirmaciones": [
+          "Ktoś oddaje „Wielką księgę drzew” w każdy wtorek.",
+          "W książce zawsze jest suchy kwiatek.",
+          "Pan Tomás wie, kto oddaje książkę.",
+          "W zeszły wtorek był to liść kasztana jadalnego."
+        ],
+        "respuestas": [
+          "P",
+          "F: zawsze jest w niej suchy liść.",
+          "F: nigdy nie widzi, kto to jest.",
+          "P"
+        ]
+      }
+    },
+    {
+      "dia": 28,
+      "semana": 6,
+      "trimestre": 1,
+      "tema": "Wtorkowy liść",
+      "texto": [
+        "Klub zapisuje na tablicy, kto przychodzi do biblioteki we wtorki.",
+        "Pan Tomás jest tam cały dzień i je kanapkę przy biurku, bo nie może zostawić biblioteki bez opieki.",
+        "Pani Marta przychodzi tylko w piątki, kiedy przyprowadza klasę, żeby wymienić książki.",
+        "Pan Pedro przychodzi w każdy wtorek o szóstej na klub czytelniczy dla dorosłych. Zawsze przychodzi pieszo przez park."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "preguntas": [
+          "Dlaczego to nie może być pani Marta?",
+          "Dlaczego pan Tomás nie może chodzić do parku po liście?"
+        ],
+        "respuestas": [
+          "Bo przychodzi tylko w piątki, a książka wraca we wtorki.",
+          "Bo jest w bibliotece przez cały dzień i nie może zostawić jej bez opieki."
+        ]
+      }
+    },
+    {
+      "dia": 29,
+      "semana": 6,
+      "trimestre": 1,
+      "tema": "Wtorkowy liść",
+      "texto": [
+        "W czwartek Hugo i Lucía idą z lupą do parku, żeby zbadać liście drzew.",
+        "Odkrywają, że liść kasztana jadalnego jest długi i ma brzeg pełen ząbków. Liść dębu jest mniejszy i ma falisty brzeg, jak chmurka.",
+        "Liść klonu wygląda jak otwarta dłoń z pięcioma czubkami.",
+        "Wszystkie trzy drzewa rosną przy ścieżce, która przecina park."
+      ],
+      "actividad": {
+        "tipo": "relaciona",
+        "instruccion": "Połącz każde drzewo z tym, jak wygląda jego liść.",
+        "cabeceras": [
+          "Drzewo",
+          "Jego liść"
+        ],
+        "pares": [
+          [
+            "kasztan jadalny",
+            "długi, z brzegiem pełnym ząbków"
+          ],
+          [
+            "dąb",
+            "mniejszy, z falistym brzegiem"
+          ],
+          [
+            "klon",
+            "jak otwarta dłoń z pięcioma czubkami"
+          ]
+        ]
+      }
+    },
+    {
+      "dia": 30,
+      "semana": 6,
+      "trimestre": 1,
+      "tema": "Wtorkowy liść: zagadka",
+      "texto": [
+        "W następny wtorek klub obserwuje wejście do biblioteki zza biurka pana Tomása.",
+        "Punktualnie o szóstej ktoś wrzuca księgę drzew do skrzynki na zwroty. Kiedy Hugo otwiera skrzynkę, znajduje w środku liść w kształcie otwartej dłoni.",
+        "Na wycieraczce przy drzwiach leży drugi taki sam, który spadł komuś z buta.",
+        "— Już wiem, kto to jest — szepcze Lucía — ale najpierw chcę jeszcze jednego dowodu."
+      ],
+      "actividad": {
+        "tipo": "caso",
+        "pregunta": "Kto w każdy wtorek zostawia liść w księdze drzew?",
+        "opciones": [
+          "pan Tomás",
+          "pani Marta",
+          "pan Pedro"
+        ],
+        "solucion": "pan Pedro",
+        "clave": "Pan Pedro: w każdy wtorek o szóstej chodzi na klub czytelniczy i przychodzi pieszo przez park (środa), ścieżką, przy której rosną kasztan jadalny, dąb i klon (czwartek); książka wraca we wtorek o szóstej z liściem klonu (piątek). Pan Tomás nie może wyjść z biblioteki, a pani Marta przychodzi tylko w piątki (środa).",
+        "banner": "30 przeczytanych stron! Sprawa wtorkowego liścia rozwiązana."
+      }
+    },
+    {
+      "dia": 31,
+      "semana": 7,
+      "trimestre": 1,
+      "tema": "Stukanie na strychu",
+      "texto": [
+        "To był pan Pedro, który używał liści z parku jako zakładek i zapominał je w książce.",
+        "W tym tygodniu mama jest w podróży służbowej, a tata wieczorem piecze kasztany.",
+        "Kiedy kończą kolację, Lucía wchodzi na strych, który ma skośny sufit i okrągłe okno. Przy oknie stoi kufer ze złotymi zamkami, a za nim stos trzech walizek, od największej do najmniejszej.",
+        "W głębi czeka lampa stojąca bez żarówki."
+      ],
+      "actividad": {
+        "tipo": "dibuja_detalle",
+        "prompt": "Narysuj strych ze wszystkim, o czym mówi tekst.",
+        "comprueba": [
+          "Jaki jest sufit? A okno?",
+          "Co stoi przy oknie i jakie ma zamki?",
+          "Ile jest walizek i jak są ułożone?",
+          "Co jest w głębi?"
+        ],
+        "clave": "Skośny sufit i okrągłe okno; przy oknie kufer ze złotymi zamkami; za nim stos trzech walizek, od największej do najmniejszej; w głębi lampa stojąca bez żarówki."
+      }
+    },
+    {
+      "dia": 32,
+      "semana": 7,
+      "trimestre": 1,
+      "tema": "Stukanie na strychu",
+      "texto": [
+        "Tej nocy, kiedy wszyscy śpią, na strychu słychać jakiś dźwięk: stuk, stuk, stuk.",
+        "Dani budzi się przestraszony i mówi, że to duch, który puka, żeby go wpuścić. Tata idzie na górę z latarką, ale nie widzi nic dziwnego, a dźwięk zaraz cichnie.",
+        "Następnej nocy, która jest bardzo spokojna, nic nie słychać.",
+        "Ale w środę znowu wieje wiatr, a razem z nim wraca stuk, stuk, stuk."
+      ],
+      "actividad": {
+        "tipo": "verdadero_falso",
+        "afirmaciones": [
+          "Dźwięk ze strychu brzmi tak: stuk, stuk, stuk.",
+          "Dani myśli, że to mysz.",
+          "W spokojną noc dźwięk jest głośniejszy niż kiedykolwiek.",
+          "Dźwięk wraca w środę, kiedy wieje wiatr."
+        ],
+        "respuestas": [
+          "P",
+          "F: myśli, że to duch, który puka, żeby go wpuścić.",
+          "F: tej nocy nic nie słychać.",
+          "P"
+        ]
+      }
+    },
+    {
+      "dia": 33,
+      "semana": 7,
+      "trimestre": 1,
+      "tema": "Stukanie na strychu",
+      "texto": [
+        "W środę po południu klub bada strych w świetle dnia.",
+        "Najpierw Hugo zauważa, że w kurzu na podłodze nie ma ani jednego śladu. Potem Sofía odkrywa cienkie rysy na szybie okrągłego okna.",
+        "Na koniec Lucía otwiera kufer i znajduje w nim liścik od Czytelnika X, który pachnie truskawką.",
+        "W rogu kartki jest maleńki dinozaur, którego ktoś narysował w pośpiechu."
+      ],
+      "actividad": {
+        "tipo": "ordena",
+        "sucesos": [
+          "Dźwięk budzi Daniego.",
+          "Tata idzie na górę z latarką i nie widzi nic dziwnego.",
+          "Hugo zauważa, że w kurzu na podłodze nie ma ani jednego śladu.",
+          "Sofía odkrywa rysy na szybie okna.",
+          "Lucía znajduje w kufrze liścik od Czytelnika X."
+        ]
+      }
+    },
+    {
+      "dia": 34,
+      "semana": 7,
+      "trimestre": 1,
+      "tema": "Stukanie na strychu",
+      "texto": [
+        "Tego wieczoru Lucía czyta przez lupę liścik Czytelnika X, słowo po słowie:",
+        "> Mam wskazówki, lecz drogi nie wskazuję,\nmam cyfry, lecz nigdy nic nie rachuję.\nSzukaj za mną.\nCzytelnik X",
+        "Lucía myśli, że Czytelnikiem X nie może być mama, bo od poniedziałku jest w podróży. Mimo to zapisuje to w zeszycie ze znakiem zapytania.",
+        "Toby, który nie odstępuje jej na krok, kładzie jej głowę na kolanach."
+      ],
+      "actividad": {
+        "tipo": "adivina",
+        "adivinanza": "Rozwiąż zagadkę Czytelnika X:\nma wskazówki, lecz drogi nie wskazuje,\nma cyfry, lecz nigdy nic nie rachuje.\nCo to jest? Gdzie Lucía ma szukać?",
+        "respuesta": "Zegar: Lucía ma szukać za zegarem."
+      }
+    },
+    {
+      "dia": 35,
+      "semana": 7,
+      "trimestre": 1,
+      "tema": "Stukanie na strychu: zagadka",
+      "texto": [
+        "W piątek wieje bardzo silny wiatr, więc klub postanawia spędzić popołudnie na strychu.",
+        "Przez okrągłe okno widać kasztan w ogrodzie, który kołysze się na wszystkie strony. Jedna z jego gałęzi jest tak długa, że prawie dotyka szyby.",
+        "Nagle znowu słychać: stuk, stuk, stuk.",
+        "Dani, który przyszedł z nimi na górę, zasłania oczy, ale Lucía się uśmiecha."
+      ],
+      "actividad": {
+        "tipo": "caso",
+        "pregunta": "Co stuka na strychu?",
+        "opciones": [
+          "duch",
+          "mysz",
+          "gałąź kasztana",
+          "Toby"
+        ],
+        "solucion": "gałąź kasztana",
+        "clave": "Gałąź kasztana: dźwięk słychać tylko wtedy, kiedy wieje wiatr (wtorek); na szybie okna są cienkie rysy, a w kurzu na podłodze nie ma śladów żadnego zwierzęcia (środa); jedna gałąź jest tak długa, że prawie dotyka szyby (piątek)."
+      }
+    },
+    {
+      "dia": 36,
+      "semana": 8,
+      "trimestre": 1,
+      "tema": "Lista zakupów",
+      "texto": [
+        "Stukała gałąź kasztana, którą tata już przyciął.",
+        "W sobotę tata idzie na targ z Lucíą i Danim. Ma listę zakupów napisaną swoim okrągłym, starannym pismem.",
+        "Najpierw idą do stoiska z owocami, które jest tuż na prawo od wejścia. Potem przechodzą o jedno stoisko dalej w prawo, do chleba.",
+        "Stamtąd schodzą jedno stoisko w dół i docierają do ryb, gdzie Dani długo przygląda się rybkom w akwarium."
+      ],
+      "actividad": {
+        "tipo": "mapa",
+        "instruccion": "Narysuj na planie targu drogę, którą idą tata, Lucía i Dani, i zaznacz krzyżykiem stoisko, przy którym Dani przygląda się rybkom.",
+        "columnas": 5,
+        "filas": 3,
+        "lugares": {
+          "A1": "wejście",
+          "B1": "owoce",
+          "C1": "chleb",
+          "D1": "ser",
+          "E1": "kawa",
+          "B2": "mięso",
+          "C2": "ryby",
+          "D2": "jajka",
+          "A3": "kwiaty",
+          "C3": "oliwki",
+          "E3": "tylne wyjście"
+        },
+        "salida": "A1",
+        "comprobar": [
+          {
+            "desde": "A1",
+            "pasos": [
+              "derecha",
+              "derecha",
+              "abajo"
+            ],
+            "hasta": "C2"
+          }
+        ],
+        "preguntas": [
+          "W której kratce jest stoisko, przy którym Dani przygląda się rybkom?"
+        ],
+        "clave": "Wejście (A1), owoce (B1), chleb (C1) i ryby (C2): Dani przygląda się rybkom w C2."
+      }
+    },
+    {
+      "dia": 37,
+      "semana": 8,
+      "trimestre": 1,
+      "tema": "Lista zakupów",
+      "texto": [
+        "Kiedy tata robi zakupy, Dani ozdabia listę swoimi nowymi flamastrami, które pachną owocami. Czerwony pachnie truskawką, a żółty cytryną.",
+        "Dani rysuje słońce w każdym rogu, chociaż tata prosi go, żeby nie pobrudził listy. Na liście jest napisane:",
+        "- Kilogram pomarańczy.",
+        "- Bochenek chleba.",
+        "- Sześć jajek.",
+        "Kiedy wracają do domu, Lucía zauważa, że brakuje czegoś bardzo ważnego: chleba!"
+      ],
+      "actividad": {
+        "tipo": "errores",
+        "instruccion": "Zakreśl trzy błędy w tym streszczeniu i napisz pod spodem, jak jest naprawdę.",
+        "relato": "Dani ozdabia listę swoimi starymi kredkami. Czerwona kredka pachnie wiśnią. W domu Lucía zauważa, że brakuje sera.",
+        "errores": [
+          [
+            "starymi kredkami",
+            "nowymi flamastrami"
+          ],
+          [
+            "wiśnią",
+            "truskawką"
+          ],
+          [
+            "sera",
+            "chleba"
+          ]
+        ]
+      }
+    },
+    {
+      "dia": 38,
+      "semana": 8,
+      "trimestre": 1,
+      "tema": "Lista zakupów",
+      "texto": [
+        "Klub przesłuchuje Daniego, który niósł płócienną torbę z chlebem.",
+        "Dani pamięta, że trzymał ją w ręce, kiedy odchodzili od stoiska z chlebem. Pamięta też, że przy rybach potrzebował obu rąk, żeby oprzeć się o akwarium.",
+        "Potem nic już nie pamięta, bo rybki były przepiękne.",
+        "Tata mówi, że zapłacił za chleb, ale ani przez chwilę go nie niósł."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "preguntas": [
+          "Kto niósł torbę z chlebem?",
+          "Jak myślisz, dlaczego Dani odłożył torbę przy stoisku z rybami?"
+        ],
+        "respuestas": [
+          "Dani.",
+          "Bo potrzebował obu rąk, żeby oprzeć się o akwarium i oglądać rybki."
+        ]
+      }
+    },
+    {
+      "dia": 39,
+      "semana": 8,
+      "trimestre": 1,
+      "tema": "Lista zakupów",
+      "texto": [
+        "W drodze do domu każde z nich niesie jedną rzecz: koszyk, plecak albo papierową torbę.",
+        "Tata nie niesie plecaka, bo trochę boli go kręgosłup. Papierowa torba waży tak mało, że dostaje ją Dani, który jest z tego bardzo zadowolony.",
+        "Po drodze Lucía myśli o chlebie i o akwarium przy stoisku z rybami.",
+        "Toby czeka na nich przed domem i macha ogonem."
+      ],
+      "actividad": {
+        "tipo": "logica",
+        "instruccion": "Skorzystaj ze wskazówek z tekstu, żeby odkryć, co niesie każde z nich. Postaw ✓ tam, gdzie tak, i ✗ tam, gdzie nie.",
+        "filas": [
+          "Tata",
+          "Lucía",
+          "Dani"
+        ],
+        "columnas": [
+          "koszyk",
+          "plecak",
+          "papierowa torba"
+        ],
+        "restricciones": [
+          [
+            "no",
+            "Tata",
+            "plecak"
+          ],
+          [
+            "si",
+            "Dani",
+            "papierowa torba"
+          ]
+        ],
+        "solucion": {
+          "Tata": "koszyk",
+          "Lucía": "plecak",
+          "Dani": "papierowa torba"
+        }
+      }
+    },
+    {
+      "dia": 40,
+      "semana": 8,
+      "trimestre": 1,
+      "tema": "Lista zakupów: zagadka",
+      "texto": [
+        "W piątek klub odtwarza na tablicy sobotnią drogę, stoisko po stoisku.",
+        "Chleb był w płóciennej torbie, kiedy odchodzili od stoiska z chlebem. Kiedy wrócili do domu, już go nie było, a nikt się po niego nie wracał.",
+        "— Tylko nie wiem, czy wciąż tam jest — mówi Hugo.",
+        "Lucía bierze plan, bo już wie, dokąd muszą iść. Tym razem Dani chce iść z nimi."
+      ],
+      "actividad": {
+        "tipo": "caso",
+        "pregunta": "Gdzie została torba z chlebem?",
+        "opciones": [
+          "przy stoisku z chlebem",
+          "przy stoisku z owocami",
+          "przy stoisku z rybami",
+          "u babci"
+        ],
+        "solucion": "przy stoisku z rybami",
+        "clave": "Przy stoisku z rybami: Dani niósł torbę, kiedy odchodzili od stoiska z chlebem, a przy rybach potrzebował obu rąk, żeby oprzeć się o akwarium (środa); potem nic już nie pamięta. Na planie ryby są tuż pod chlebem (poniedziałek).",
+        "banner": "40 przeczytanych stron! Sprawa chleba rozwiązana."
+      }
+    },
+    {
+      "dia": 41,
+      "semana": 9,
+      "trimestre": 1,
+      "tema": "Osiem lat",
+      "texto": [
+        "Torba z chlebem leżała przy stoisku z rybami, obok akwarium.",
+        "Dziś Lucía kończy osiem lat, a mama upiekła tort, który wygląda jak dzieło sztuki. Jest okrągły i czekoladowy, a przy jego brzegu stoi w kółku osiem świeczek.",
+        "Na środku leżą trzy truskawki, na których mama położyła lupę z ciastka.",
+        "Jej imię, które jest napisane białymi literami, zajmuje wolne miejsce pod truskawkami."
+      ],
+      "actividad": {
+        "tipo": "dibuja_detalle",
+        "prompt": "Narysuj urodzinowy tort Lucíi ze wszystkimi szczegółami.",
+        "comprueba": [
+          "Jaki ma kształt i z czego jest?",
+          "Ile ma świeczek i jak są ustawione?",
+          "Co jest na środku, a co leży na wierzchu?",
+          "Gdzie jest napisane jej imię i jakim kolorem?"
+        ],
+        "clave": "Okrągły tort czekoladowy; osiem świeczek w kółku przy brzegu; na środku trzy truskawki, a na nich lupa z ciastka; jej imię białymi literami pod truskawkami."
+      }
+    },
+    {
+      "dia": 42,
+      "semana": 9,
+      "trimestre": 1,
+      "tema": "Osiem lat",
+      "texto": [
+        "Po południu przychodzą goście i każdy przynosi inny prezent.",
+        "Sofía daje jej obrazek klubu, który namalowała akwarelami. Hugo daje jej mały kompas, żeby klub nigdy się nie zgubił.",
+        "Dani daje jej kamień w kształcie serca, który znalazł w parku.",
+        "Babcia może przyjechać dopiero w sobotę, bo jest na wsi i opiekuje się swoją siostrą."
+      ],
+      "actividad": {
+        "tipo": "relaciona",
+        "instruccion": "Połącz każdego gościa z prezentem, który daje Lucíi.",
+        "cabeceras": [
+          "Kto",
+          "Co daje"
+        ],
+        "pares": [
+          [
+            "Sofía",
+            "obrazek klubu namalowany akwarelami"
+          ],
+          [
+            "Hugo",
+            "mały kompas"
+          ],
+          [
+            "Dani",
+            "kamień w kształcie serca"
+          ]
+        ]
+      }
+    },
+    {
+      "dia": 43,
+      "semana": 9,
+      "trimestre": 1,
+      "tema": "Osiem lat",
+      "texto": [
+        "Tego wieczoru, kiedy Lucía kładzie się do łóżka, słyszy szelest pod poduszką.",
+        "To liścik od Czytelnika X, który pachnie truskawką i ma w rogu dinozaura:",
+        "> Wszystkiego najlepszego, pani detektyw!\nTwój prezent śpi tam, gdzie śpi\nktoś, kto nigdy nie przeczytał książki.\nCzytelnik X",
+        "Lucía myśli, że Czytelnikiem X nie może być babcia, bo przez cały tydzień jest na wsi."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "preguntas": [
+          "Dlaczego Lucía myśli, że Czytelnikiem X nie może być babcia?",
+          "Jakie dwie rzeczy ma ten liścik, które miały już inne liściki Czytelnika X?"
+        ],
+        "respuestas": [
+          "Bo babcia przez cały tydzień jest na wsi i opiekuje się swoją siostrą.",
+          "Pachnie truskawką i ma w rogu narysowanego dinozaura."
+        ]
+      }
+    },
+    {
+      "dia": 44,
+      "semana": 9,
+      "trimestre": 1,
+      "tema": "Osiem lat",
+      "texto": [
+        "Przy podwieczorku Lucía, Sofía i Hugo zakładają urodzinowe czapeczki w trzech kolorach: czerwoną, niebieską i zieloną.",
+        "Hugo wybiera niebieską, bo przypomina mu morze. Sofía nie chce zielonej, chociaż to jej ulubiony kolor, bo ma już na sobie zieloną sukienkę.",
+        "Dani nie chce swojej czapeczki, bo go drapie, więc zakłada ją Toby'emu.",
+        "Lucía śmieje się na ten widok tak bardzo, że czapeczka prawie wpada jej do lemoniady."
+      ],
+      "actividad": {
+        "tipo": "logica",
+        "instruccion": "Skorzystaj ze wskazówek z tekstu, żeby odkryć, jakiego koloru czapeczkę ma każde z nich. Postaw ✓ tam, gdzie tak, i ✗ tam, gdzie nie.",
+        "filas": [
+          "Lucía",
+          "Sofía",
+          "Hugo"
+        ],
+        "columnas": [
+          "czerwona",
+          "niebieska",
+          "zielona"
+        ],
+        "restricciones": [
+          [
+            "si",
+            "Hugo",
+            "niebieska"
+          ],
+          [
+            "no",
+            "Sofía",
+            "zielona"
+          ]
+        ],
+        "solucion": {
+          "Lucía": "zielona",
+          "Sofía": "czerwona",
+          "Hugo": "niebieska"
+        }
+      }
+    },
+    {
+      "dia": 45,
+      "semana": 9,
+      "trimestre": 1,
+      "tema": "Osiem lat",
+      "texto": [
+        "W sobotę w końcu przyjeżdża babcia Rosa, z domowym ciastem cytrynowym i mnóstwem całusów.",
+        "Lucía pokazuje jej liścik Czytelnika X, który babcia czyta dwa razy, bardzo uważnie.",
+        "— To nie ja, kochanie, chociaż to wspaniały pomysł — mówi z uśmiechem.",
+        "Przed podwieczorkiem Lucía kładzie się na podłodze w salonie, bo już wie, gdzie szukać prezentu."
+      ],
+      "actividad": {
+        "tipo": "adivina",
+        "adivinanza": "Przeczytaj jeszcze raz środowy liścik Czytelnika X:\n„Twój prezent śpi tam, gdzie śpi\nktoś, kto nigdy nie przeczytał książki”.\nKto nigdy nie przeczytał książki? Gdzie jest prezent?",
+        "respuesta": "Toby, który nigdy nie przeczytał książki i śpi pod kanapą: prezent jest pod kanapą w salonie."
+      }
+    },
+    {
+      "dia": 46,
+      "semana": 10,
+      "trimestre": 1,
+      "tema": "Gdzie jest Luna?",
+      "texto": [
+        "Prezent od Czytelnika X, który leżał pod kanapą, to była zakładka w kształcie lupy.",
+        "W poniedziałek pan Pedro, bardzo zmartwiony, puka do drzwi, bo Luna nie wróciła od niedzieli.",
+        "Hugo rysuje plan ulicy, żeby klub szukał po kolei. Dom Lucíi jest na górze po lewej, a dom pana Pedra tuż na prawo od niego.",
+        "Ogród Lucíi jest pod jej domem, a domek klubu pod ogrodem."
+      ],
+      "actividad": {
+        "tipo": "mapa",
+        "instruccion": "Wpisz na planie, gdzie są dom Lucíi, dom pana Pedra, ogród Lucíi i domek klubu, tak jak mówi tekst.",
+        "columnas": 5,
+        "filas": 4,
+        "lugares": {
+          "C1": "garaż",
+          "E1": "park",
+          "C3": "śmietnik",
+          "E4": "szkoła"
+        },
+        "preguntas": [
+          "W której kratce jest domek klubu?"
+        ],
+        "clave": "Dom Lucíi: A1. Dom pana Pedra: B1. Ogród Lucíi: A2. Domek klubu: A3."
+      }
+    },
+    {
+      "dia": 47,
+      "semana": 10,
+      "trimestre": 1,
+      "tema": "Gdzie jest Luna?",
+      "texto": [
+        "Klub robi plakat, żeby powiesić go na wszystkich latarniach na ulicy:",
+        "> ZAGINĘŁA KOTKA\nBiała kotka o imieniu Luna.\nMa jedno oko zielone, a drugie niebieskie.\nNosi czerwoną obróżkę z dzwoneczkiem.\nJeśli ją zobaczycie, dajcie znać panu Pedrowi, który mieszka pod numerem 3.",
+        "Sofía rysuje Lunę na środku plakatu i wychodzi jej tak ładnie, że wygląda jak zdjęcie.",
+        "Tego popołudnia Hugo rozwiesza plakaty na osiedlu, podczas gdy Lucía wypytuje sąsiadów."
+      ],
+      "actividad": {
+        "tipo": "ficha",
+        "instruccion": "Uzupełnij kartę Luny danymi z plakatu.",
+        "titulo": "Karta Luny",
+        "campos": [
+          "Kolor",
+          "Oczy",
+          "Obróżka",
+          "Właściciel"
+        ],
+        "respuestas": [
+          "biała",
+          "jedno zielone, a drugie niebieskie",
+          "czerwona, z dzwoneczkiem",
+          "pan Pedro, który mieszka pod numerem 3"
+        ]
+      }
+    },
+    {
+      "dia": 48,
+      "semana": 10,
+      "trimestre": 1,
+      "tema": "Gdzie jest Luna?",
+      "texto": [
+        "Ponieważ tej nocy Lucía nie może zasnąć, wygląda przez okno swojego pokoju.",
+        "Nagle słyszy dzwoneczek, bardzo blisko, gdzieś w swoim własnym ogrodzie.",
+        "Rano znajdują białe włoski na okrągłym okienku domku, które jest otwarte od soboty. Poza tym w domku babcia trzyma pudełko z kłębkami włóczki.",
+        "— Luna jest tak ciekawska, że wejdzie wszędzie — mówi pan Pedro."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "preguntas": [
+          "Co Lucía słyszy tej nocy i gdzie?",
+          "Jak myślisz, dlaczego Luna mogła wejść do domku?"
+        ],
+        "respuestas": [
+          "Dzwoneczek, bardzo blisko, w swoim własnym ogrodzie.",
+          "Bo okrągłe okienko domku jest otwarte od soboty, a są na nim białe włoski."
+        ]
+      }
+    },
+    {
+      "dia": 49,
+      "semana": 10,
+      "trimestre": 1,
+      "tema": "Gdzie jest Luna?",
+      "texto": [
+        "W czwartek Hugo zostawia w skrzynce na listy u Lucíi wiadomość zapisaną nowym szyfrem, który sam wymyślił.",
+        "Zamiast zamieniać tylko samogłoski, zamienia każdą literę na jej numer w alfabecie. A to 1, Ą to 2, B to 3… i tak aż do Ż, która ma numer 32.",
+        "— Tak jest trudniej to odczytać — wyjaśnia z dumą.",
+        "Lucía bierze ołówek i zabiera się do pracy, zanim zrobi się ciemno."
+      ],
+      "actividad": {
+        "tipo": "codigo",
+        "instruccion": "Odczytaj wiadomość Huga: pod każdą liczbą napisz jej literę. Pomoże ci tabela.",
+        "mensaje": "Dziś w nocy pilnujemy domku",
+        "cifrado": "numeros"
+      }
+    },
+    {
+      "dia": 50,
+      "semana": 10,
+      "trimestre": 1,
+      "tema": "Gdzie jest Luna?: zagadka",
+      "texto": [
+        "W piątek klub zbiera się w ogrodzie Lucíi, przed domkiem.",
+        "Hugo powtarza na głos wskazówki: dzwoneczek, białe włoski i otwarte okienko. Sofía chce szukać w garażu pana Pedra, który zawsze jest otwarty, ale Lucía prosi ją, żeby chwilę poczekała.",
+        "Powoli podchodzi do zielonych drzwi, bo wydaje jej się, że słyszy mruczenie.",
+        "— Pamiętajcie o pierwszej zasadzie — szepcze. — Zawsze czytać dwa razy, zanim się coś postanowi."
+      ],
+      "actividad": {
+        "tipo": "caso",
+        "pregunta": "Gdzie jest Luna?",
+        "opciones": [
+          "w garażu pana Pedra",
+          "w parku",
+          "w domku klubu",
+          "na dachu"
+        ],
+        "solucion": "w domku klubu",
+        "clave": "W domku klubu, śpi w pudełku z włóczką babci: Lucía słyszała w nocy dzwoneczek we własnym ogrodzie; na okrągłym okienku domku, które jest otwarte od soboty, były białe włoski; a w środku babcia trzyma pudełko z kłębkami włóczki (środa).",
+        "banner": "50 przeczytanych stron! Sprawa zaginionej kotki rozwiązana."
+      }
+    },
+    {
+      "dia": 51,
+      "semana": 11,
+      "trimestre": 1,
+      "tema": "Muzeum dinozaurów",
+      "texto": [
+        "Luna spała w pudełku z włóczką babci, zwinięta jak jeszcze jeden kłębek.",
+        "W tym tygodniu klasa Lucíi jedzie na wycieczkę do muzeum przyrodniczego. W dużej sali stoi szkielet diplodoka, który jest tak długi, że prawie dotyka obu ścian.",
+        "Głowę ma po lewej stronie, małą jak walizka, a ogon po prawej, cienki jak bat.",
+        "Pod jego brzuchem, w szklanej gablocie, leżą trzy jaja dinozaura."
+      ],
+      "actividad": {
+        "tipo": "dibuja_detalle",
+        "prompt": "Narysuj dużą salę muzeum ze szkieletem diplodoka.",
+        "comprueba": [
+          "Po której stronie ma głowę i jak jest duża?",
+          "Jaki jest ogon i po której stronie?",
+          "Co jest pod jego brzuchem i ile tego jest?"
+        ],
+        "clave": "Diplodok z głową po lewej, małą jak walizka, i ogonem po prawej, cienkim jak bat; pod brzuchem szklana gablota z trzema jajami dinozaura."
+      }
+    },
+    {
+      "dia": 52,
+      "semana": 11,
+      "trimestre": 1,
+      "tema": "Muzeum dinozaurów",
+      "texto": [
+        "Przewodniczka w muzeum opowiada im przy szkielecie, jak żył diplodok.",
+        "Był długi jak trzy autobusy ustawione jeden za drugim, ale jadł tylko rośliny. Swoją bardzo długą szyją sięgał do liści najwyższych drzew.",
+        "Żył około stu pięćdziesięciu milionów lat temu, kiedy nie było jeszcze ludzi.",
+        "Lucía zapisuje to w zeszycie, bo chce opowiedzieć o tym Daniemu, który został w domu i jej zazdrości."
+      ],
+      "actividad": {
+        "tipo": "ficha",
+        "instruccion": "Uzupełnij kartę diplodoka danymi z tekstu.",
+        "titulo": "Karta diplodoka",
+        "campos": [
+          "Wielkość",
+          "Co jadł",
+          "Jak sięgał do jedzenia",
+          "Kiedy żył"
+        ],
+        "respuestas": [
+          "długi jak trzy autobusy ustawione jeden za drugim",
+          "tylko rośliny",
+          "swoją bardzo długą szyją sięgał do liści najwyższych drzew",
+          "około stu pięćdziesięciu milionów lat temu"
+        ]
+      }
+    },
+    {
+      "dia": 53,
+      "semana": 11,
+      "trimestre": 1,
+      "tema": "Muzeum dinozaurów",
+      "texto": [
+        "Zwiedzanie ma cztery części, które pani Marta wypisała każdemu na kartce.",
+        "Najpierw oglądają salę dinozaurów, a potem salę minerałów, które świecą w ciemności. Przed obiadem idą do planetarium, gdzie sufit wypełnia się gwiazdami.",
+        "Na koniec, zanim wrócą do szkoły, zaglądają do muzealnego sklepiku, gdzie Lucía kupuje pocztówkę dla Daniego.",
+        "Hugo cały czas zadaje pytania, chociaż w klasie prawie nigdy się nie odzywa."
+      ],
+      "actividad": {
+        "tipo": "ordena",
+        "sucesos": [
+          "Oglądają salę dinozaurów.",
+          "Oglądają salę minerałów.",
+          "Idą do planetarium.",
+          "Zaglądają do muzealnego sklepiku."
+        ]
+      }
+    },
+    {
+      "dia": 54,
+      "semana": 11,
+      "trimestre": 1,
+      "tema": "Muzeum dinozaurów",
+      "texto": [
+        "W innej sali stoi tyranozaur, którego wszyscy nazywają T. rex.",
+        "W odróżnieniu od diplodoka chodził na dwóch nogach i jadł mięso. Miał krótkie łapki i ogromny pysk, pełen zębów jak banany.",
+        "Diplodok za to chodził na czterech nogach i miał małą głowę.",
+        "Oba żyły miliony lat temu i były ogromne. Lucía myśli, że Daniemu bardzo by się tu podobało, chociaż na pewno trochę by się bał."
+      ],
+      "actividad": {
+        "tipo": "compara",
+        "instruccion": "Porównaj diplodoka i T. rexa według tekstów z tego tygodnia: po bokach to, co ma tylko jeden z nich; w środku to, co wspólne.",
+        "a": "Diplodok",
+        "b": "T. rex",
+        "solucion": {
+          "a": [
+            "jadł rośliny",
+            "chodził na czterech nogach",
+            "miał małą głowę i bardzo długą szyję"
+          ],
+          "ambos": [
+            "żyły miliony lat temu",
+            "były ogromne"
+          ],
+          "b": [
+            "jadł mięso",
+            "chodził na dwóch nogach",
+            "miał krótkie łapki i ogromny pysk pełen zębów"
+          ]
+        }
+      }
+    },
+    {
+      "dia": 55,
+      "semana": 11,
+      "trimestre": 1,
+      "tema": "Muzeum dinozaurów: zagadka",
+      "texto": [
+        "W piątek rano Lucía znajduje na kuchennym stole kolejny liścik od Czytelnika X. Jest na nim tylko: „Wkrótce się dowiesz, kim jestem”.",
+        "Toby śpi w salonie, pod kanapą, i szczeka na każdego, kto w nocy wchodzi do domu.",
+        "A jednak mama, która ma bardzo lekki sen, mówi, że tej nocy Toby ani razu nie zaszczekał.",
+        "Lucía zapisuje to w zeszycie i długo się nad tym zastanawia."
+      ],
+      "actividad": {
+        "tipo": "caso",
+        "pregunta": "Kto zostawił liścik w kuchni: ktoś obcy czy ktoś z domu?",
+        "opciones": [
+          "ktoś obcy",
+          "ktoś z domu"
+        ],
+        "solucion": "ktoś z domu",
+        "clave": "Ktoś z domu: Toby szczeka na każdego, kto w nocy wchodzi do domu, a tej nocy ani razu nie zaszczekał; gdyby wszedł ktoś obcy, na pewno by szczekał."
+      }
+    },
+    {
+      "dia": 56,
+      "semana": 12,
+      "trimestre": 1,
+      "tema": "Jasełka",
+      "texto": [
+        "Czytelnik X to ktoś z domu, bo tamtej nocy Toby nie szczekał.",
+        "W szkole klasa Lucíi przygotowuje jasełka na świąteczną uroczystość. Na scenie, po lewej stronie, stoją trzy drzewa z tektury. Po prawej jest domek z czerwonymi drzwiami.",
+        "Nad domkiem świeci złota gwiazda, która jest tak duża, że wygląda jak otwarty parasol.",
+        "Pan Paco, woźny, pomalował podłogę na biało, żeby wyglądała jak śnieg."
+      ],
+      "actividad": {
+        "tipo": "dibuja_detalle",
+        "prompt": "Narysuj scenę jasełek dokładnie tak, jak opisuje ją tekst.",
+        "comprueba": [
+          "Co stoi po lewej i ile tego jest?",
+          "Co jest po prawej i jakiego koloru ma drzwi?",
+          "Co jest nad domkiem i jak jest duże?",
+          "Jakiego koloru jest podłoga i dlaczego?"
+        ],
+        "clave": "Po lewej trzy drzewa z tektury; po prawej domek z czerwonymi drzwiami; nad domkiem złota gwiazda duża jak otwarty parasol; podłoga pomalowana na biało, żeby wyglądała jak śnieg."
+      }
+    },
+    {
+      "dia": 57,
+      "semana": 12,
+      "trimestre": 1,
+      "tema": "Jasełka",
+      "texto": [
+        "We wtorek, kiedy przychodzą na próbę, złotej gwiazdy nie ma już nad domkiem.",
+        "Pani Marta szuka jej w całej auli, ale nigdzie jej nie ma. Sofía pamięta, że w poniedziałek gwiazda spadła i zostawili ją na krześle w pierwszym rzędzie.",
+        "W poniedziałek po południu pan Paco posprzątał aulę, jak zawsze po próbach.",
+        "Bez gwiazdy przedstawienie nie ma sensu, bo to ona prowadzi pasterzy."
+      ],
+      "actividad": {
+        "tipo": "errores",
+        "instruccion": "W tym streszczeniu są trzy błędy. Zakreśl je i napisz pod spodem, jak jest naprawdę.",
+        "relato": "We wtorek srebrnej gwiazdy nie ma już nad domkiem. Sofía pamięta, że w poniedziałek zostawili ją na krześle w ostatnim rzędzie. Po południu pani Marta posprzątała aulę.",
+        "errores": [
+          [
+            "srebrnej",
+            "złotej"
+          ],
+          [
+            "ostatnim rzędzie",
+            "pierwszym rzędzie"
+          ],
+          [
+            "pani Marta posprzątała",
+            "pan Paco posprzątał"
+          ]
+        ]
+      }
+    },
+    {
+      "dia": 58,
+      "semana": 12,
+      "trimestre": 1,
+      "tema": "Jasełka",
+      "texto": [
+        "Klub idzie do pana Paco, do portierni przy wejściu do szkoły.",
+        "Pan Paco wyjaśnia im, że kiedy sprząta, małe rzeczy wkłada do pudła z rzeczami znalezionymi. Za to duże rzeczy, które nie mieszczą się w pudle, zanosi do magazynku przy sali gimnastycznej.",
+        "— Gwiazda? Szczerze mówiąc, nie pamiętam — mówi i drapie się w głowę.",
+        "Lucía patrzy na Huga, bo oboje myślą o tym samym."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "preguntas": [
+          "Gdzie pan Paco chowa małe rzeczy, które znajduje? A duże?",
+          "Jak duża jest gwiazda? Przeczytaj jeszcze raz stronę z poniedziałku."
+        ],
+        "respuestas": [
+          "Małe do pudła z rzeczami znalezionymi, a duże do magazynku przy sali gimnastycznej.",
+          "Tak duża, że wygląda jak otwarty parasol."
+        ]
+      }
+    },
+    {
+      "dia": 59,
+      "semana": 12,
+      "trimestre": 1,
+      "tema": "Jasełka",
+      "texto": [
+        "Pani Marta rozdziela między Lucíę, Sofíę i Huga trzy role: narratora, pasterza i wilka.",
+        "Hugo, który jest bardzo nieśmiały, nie chce być narratorem, bo musiałby mówić najwięcej ze wszystkich. Wilk potrzebuje niskiego głosu, a Sofía ma najniższy głos w całej klasie.",
+        "Tego wieczoru w domu Lucía znajduje pod swoim talerzem kolejny liścik od Czytelnika X.",
+        "Tym razem podpis jest napisany ogromnymi, krzywymi literami, jak u małego dziecka."
+      ],
+      "actividad": {
+        "tipo": "logica",
+        "instruccion": "Skorzystaj ze wskazówek z tekstu, żeby odkryć, jaką rolę gra każde z nich. Postaw ✓ tam, gdzie tak, i ✗ tam, gdzie nie.",
+        "filas": [
+          "Lucía",
+          "Sofía",
+          "Hugo"
+        ],
+        "columnas": [
+          "narrator",
+          "pasterz",
+          "wilk"
+        ],
+        "restricciones": [
+          [
+            "no",
+            "Hugo",
+            "narrator"
+          ],
+          [
+            "si",
+            "Sofía",
+            "wilk"
+          ]
+        ],
+        "solucion": {
+          "Lucía": "narrator",
+          "Sofía": "wilk",
+          "Hugo": "pasterz"
+        }
+      }
+    },
+    {
+      "dia": 60,
+      "semana": 12,
+      "trimestre": 1,
+      "tema": "Jasełka: zagadka",
+      "texto": [
+        "W piątek jest próba generalna, a gwiazdy wciąż nie ma.",
+        "Pani Marta już chce zrobić nową gwiazdę z folii aluminiowej i brokatu.",
+        "— Proszę chwilę poczekać — prosi Lucía. — Chyba wiem, gdzie ona jest, i nie trzeba iść daleko.",
+        "Hugo powtarza na głos wszystko, co wiedzą, wskazówka po wskazówce. Pan Paco wyjmuje pęk kluczy i się uśmiecha, bo on też zaczyna rozumieć."
+      ],
+      "actividad": {
+        "tipo": "caso",
+        "pregunta": "Gdzie jest gwiazda?",
+        "opciones": [
+          "w pudle z rzeczami znalezionymi",
+          "w magazynku przy sali gimnastycznej",
+          "w klasie Lucíi",
+          "w domku na scenie"
+        ],
+        "solucion": "w magazynku przy sali gimnastycznej",
+        "clave": "W magazynku przy sali gimnastycznej: gwiazda została na krześle w pierwszym rzędzie, a w poniedziałek po południu pan Paco posprzątał aulę (wtorek); pan Paco wkłada małe rzeczy do pudła z rzeczami znalezionymi, ale duże, które się w nim nie mieszczą, zanosi do magazynku (środa); a gwiazda jest tak duża, że wygląda jak otwarty parasol (poniedziałek).",
+        "banner": "60 przeczytanych stron! Sprawa gwiazdy rozwiązana."
+      }
+    },
+    {
+      "dia": 61,
+      "semana": 13,
+      "trimestre": 1,
+      "tema": "Czytelnik X zdemaskowany!",
+      "texto": [
+        "Gwiazda była w magazynku, a jasełka okazały się wielkim sukcesem.",
+        "W poniedziałek klub wiesza w domku wszystkie liściki Czytelnika X, w rzędzie i po kolei. Jest ich sześć: pięć z białego papieru i jeden z żółtego, który jest ostatni.",
+        "Hugo, który lubi porządek, łączy je czerwoną włóczką, a pod spodem zapisuje kredą wskazówki.",
+        "Lupa babci wisi na gwoździu nad pierwszym liścikiem, żeby nikt jej nie zgubił."
+      ],
+      "actividad": {
+        "tipo": "dibuja_detalle",
+        "prompt": "Narysuj tablicę ze wskazówkami klubu dokładnie tak, jak opisuje ją tekst.",
+        "comprueba": [
+          "Ile jest liścików i jakiego koloru jest każdy?",
+          "Czym są połączone i jakiego koloru?",
+          "Co jest napisane pod spodem i czym?",
+          "Gdzie wisi lupa?"
+        ],
+        "clave": "Sześć liścików w rzędzie: pięć białych i ostatni żółty; połączone czerwoną włóczką; pod spodem wskazówki zapisane kredą; lupa na gwoździu tuż nad pierwszym liścikiem."
+      }
+    },
+    {
+      "dia": 62,
+      "semana": 13,
+      "trimestre": 1,
+      "tema": "Czytelnik X zdemaskowany!",
+      "texto": [
+        "Lucía czyta na głos wskazówki, które zapisali pod liścikami:",
+        "- Liściki pachną truskawką.",
+        "- Pismo jest okrągłe i staranne, jak u dorosłego.",
+        "- Na niektórych liścikach jest dinozaur narysowany w pośpiechu.",
+        "- Kiedy pojawił się trzeci, mama była w podróży.",
+        "- Kiedy pojawił się czwarty, babcia była na wsi.",
+        "- W noc piątego liściku Toby nie szczekał.",
+        "- Podpis na szóstym ma krzywe litery, jak u małego dziecka."
+      ],
+      "actividad": {
+        "tipo": "verdadero_falso",
+        "afirmaciones": [
+          "Liściki Czytelnika X pachną cytryną.",
+          "Pismo na liścikach wygląda jak pismo dorosłego.",
+          "Kiedy pojawił się trzeci liścik, mama była w domu.",
+          "W noc piątego liściku Toby nie szczekał."
+        ],
+        "respuestas": [
+          "F: pachną truskawką.",
+          "P",
+          "F: mama była w podróży.",
+          "P"
+        ]
+      }
+    },
+    {
+      "dia": 63,
+      "semana": 13,
+      "trimestre": 1,
+      "tema": "Czytelnik X zdemaskowany!",
+      "texto": [
+        "— Jeśli to pismo dorosłego, Czytelnikiem X nie może być Dani — mówi Sofía.",
+        "— Ale dinozaury i krzywe litery narysowało małe dziecko — odpowiada Hugo.",
+        "Lucía przez chwilę milczy i patrzy na lupę pradziadka. Wtedy przypomina sobie słowa zegarmistrza: trzeba zwracać uwagę na wszystko, także na to, co nie pasuje.",
+        "Nagle przychodzi jej do głowy, że może obie rzeczy są prawdą jednocześnie."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "preguntas": [
+          "Która wskazówka mówi, że Czytelnik X jest dorosły? Które mówią, że jest małym dzieckiem?",
+          "Jak myślisz, co przyszło Lucíi do głowy?"
+        ],
+        "respuestas": [
+          "Że jest dorosły: okrągłe, staranne pismo. Że jest małym dzieckiem: dinozaury narysowane w pośpiechu i podpis z krzywymi literami.",
+          "Że Czytelnik X to nie jedna osoba, tylko dwie: małe dziecko, które wymyśla liściki, i dorosły, który je pisze."
+        ]
+      }
+    },
+    {
+      "dia": 64,
+      "semana": 13,
+      "trimestre": 1,
+      "tema": "Czytelnik X zdemaskowany!",
+      "texto": [
+        "W czwartek po południu klub spotyka się ostatni raz przed przerwą świąteczną.",
+        "Sofía przegląda listę podejrzanych: mama, tata, babcia Rosa i Dani. Hugo dopisuje kredą wskazówkę, o której zapomnieli: flamastry Daniego, które pachną owocami.",
+        "Potem Lucía kładzie obok liścików listę zakupów, którą zabrali na targ. Litery są identyczne.",
+        "Przez dłuższą chwilę nikt nic nie mówi, aż w końcu Sofía gwiżdże z wrażenia."
+      ],
+      "actividad": {
+        "tipo": "caso",
+        "pregunta": "Kim jest Czytelnik X?",
+        "opciones": [
+          "Mama",
+          "Babcia Rosa",
+          "Tata",
+          "Dani",
+          "Tata i Dani"
+        ],
+        "solucion": "Tata i Dani",
+        "lineas": 4,
+        "clave": "Tata i Dani: pismo na liścikach jest identyczne jak na liście zakupów, którą napisał tata (tygodnie 8 i 13); zapach truskawki to zapach czerwonego flamastra Daniego (tydzień 8), a dinozaury i krzywy podpis narysowało małe dziecko (tygodnie 7, 9 i 12). To nie może być mama, która była w podróży (tydzień 7), ani babcia, która była na wsi (tydzień 9); i to ktoś z domu, bo Toby nie szczekał (tydzień 11)."
+      }
+    },
+    {
+      "dia": 65,
+      "semana": 13,
+      "trimestre": 1,
+      "tema": "Czytelnik X zdemaskowany!",
+      "texto": [
+        "Tego wieczoru Lucía zostawia na poduszce Daniego liścik: „Już wiem, kim jesteś, Czytelniku X”.",
+        "Następnego ranka Dani i tata przychodzą do jej pokoju z ogromnymi uśmiechami.",
+        "— Ja wymyślałem zagadki, a tata je zapisywał — przyznaje się Dani — bo ja jeszcze bardzo wolno piszę.",
+        "Dani chciał podziękować Lucíi, która nauczyła go czytać. Lucía przytula ich obu, a Toby, który nie chce, żeby go pominięto, wskakuje na łóżko."
+      ],
+      "actividad": {
+        "tipo": "repasa",
+        "checklist": [
+          "Wiem, kim jest Hugo i skąd przyjechał.",
+          "Umiem zapisać wiadomość szyfrem klubu.",
+          "Umiem odróżnić ślady psa od śladów kota.",
+          "Wiem, które wskazówki doprowadziły klub do Czytelnika X."
+        ],
+        "prompt": "Narysuj Klub Lupy, który świętuje rozwiązanie zagadki Czytelnika X.",
+        "banner": "65 przeczytanych stron! Czytelnik X zdemaskowany!"
+      }
+    }
+  ]
+}

@@ -138,10 +138,12 @@
 }
 \newcommand{\salidaMapa}{\textcolor{colorRelaciona}{\bfseries\lblSalida}}
 
-% Mensaje secreto.
-\newenvironment{tablaCodigo}{%
+% Mensaje secreto. La tabla del código de números va en dos filas: de 14
+% columnas para las 27 letras del español, de 16 para las 32 del polaco
+% (\begin{tablaCodigo}[16], ver render_codigo en tools/lupa.py).
+\newenvironment{tablaCodigo}[1][14]{%
   \normalsize\setlength{\tabcolsep}{1.9mm}\renewcommand{\arraystretch}{1.3}%
-  \begin{tabular}{|*{14}{c|}}%
+  \begin{tabular}{|*{#1}{c|}}%
 }{\end{tabular}}
 \newcommand{\celdaCodigo}[1]{%
   \begin{tabular}[t]{@{}c@{}}{\normalsize #1}\\[0.3mm]\framebox[9mm]{\rule{0pt}{8mm}}\end{tabular}\hspace{0.6mm}}

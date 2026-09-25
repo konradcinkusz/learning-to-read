@@ -193,6 +193,26 @@ jobs:
             python3 tools/metricas.py --libro zdania --tabla
           } >> "$GITHUB_STEP_SUMMARY"
 
+      # «Czytam z lupą», "Leo con lupa" en polaco (content/czytam/q*.json,
+      # ver notes/10-czytam-z-lupa.md): las mismas puertas que "Leo con
+      # lupa" -- la tabla de pistas con una sola solución, las rutas del
+      # mapa, las correcciones de los errores en el texto de la semana, el
+      # mensaje secreto cifrado con el abecedario polaco -- y su propia
+      # escalera, medida en palabras polacas, que también exige oraciones
+      # subordinadas (że, bo, kiedy, jeśli, żeby, który...) en cada texto.
+      # Mientras se escribe por partes, tools/libros.py dice cuántos días
+      # tiene ya (dias_escritos) y se valida exactamente eso.
+      - name: Valida Czytam z lupą (actividades de análisis, abecedario polaco)
+        run: python3 tools/gen_days.py --libro czytam --check
+
+      - name: Mide la progresión de Czytam z lupą (palabras, frase, subordinadas)
+        run: |
+          {
+            echo '## Czytam z lupą: escalera por semana'
+            echo
+            python3 tools/metricas.py --libro czytam --tabla
+          } >> "$GITHUB_STEP_SUMMARY"
+
   build:
     name: PDF (${{ matrix.variant }})
     needs: gates
@@ -246,6 +266,12 @@ jobs:
             root: zdania
           - variant: zdania-bw
             root: zdania-bw
+          # «Czytam z lupą» (czytam.tex), "Leo con lupa" en polaco: las
+          # mismas.
+          - variant: czytam-color
+            root: czytam
+          - variant: czytam-bw
+            root: czytam-bw
           # Los cuadernos de verano (ver notes/07-ediciones.md): cada uno es
           # su .tex raíz de siempre con \edicion fijado antes
           # (ediciones/<raíz>-verano.tex), y se compila desde la raíz del

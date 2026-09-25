@@ -24,6 +24,8 @@ content/slowa/generated-days.tex
 content/slowa/generated-clave.tex
 content/zdania/generated-days.tex
 content/zdania/generated-clave.tex
+content/czytam/generated-days.tex
+content/czytam/generated-clave.tex
 # ...y los de cada edición (tools/ediciones.py): el cuaderno de verano
 # (generated-days-verano.tex, generated-clave-verano.tex...) y la muestra.
 content/generated-*-verano.tex

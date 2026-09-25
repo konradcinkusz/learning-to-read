@@ -1,0 +1,11 @@
+% czytam-bw.tex -- «Czytam z lupą» sin color, igual que lupa-bw.tex: mismo
+% body-czytam.tex, mismos preambles; solo cambia \bookcolor, fijado ANTES
+% de \input{preamble}.
+\documentclass[11pt]{article}
+\def\bookcolor{bw}
+\def\booklang{pl}
+\input{preamble}
+\input{preamble-lupa}
+\begin{document}
+\input{body-czytam}
+\end{document}
