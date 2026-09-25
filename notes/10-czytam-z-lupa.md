@@ -101,6 +101,27 @@ de este cuaderno:
   carta, y la frase que se cita es la penúltima (la última es la
   pregunta, *Y tú, ¿qué quieres ser?*); en polaco, cuando llega a la
   frase del colegio (*Kiedy doszła do zdania o szkole*).
+- **El verano**, igual: *la era* de Rosa es *łąka za kościołem*, la
+  pradera de la familia de pan Andrés, la misma *łąka* del mapa del
+  invierno; *la Osa Mayor* es *Wielki Wóz*, el nombre que le dan en
+  polaco, aunque la abuela la explica como en español, como un cazo
+  (*rondel*) con su mango; y *las lágrimas de San Lorenzo* son *łzy
+  świętego Wawrzyńca*, como también se las llama en polaco. La
+  adivinanza de la carta de Rosa es la del reloj, la misma de Czytelnik
+  X y de pan Paco (en español también es la misma las tres veces), y
+  riman en polaco las nuevas: las estrellas, el faro (*nocą otwieram
+  oko / i dziękują mi rybacy*) y el poema de la lupa del concurso.
+  *Querido diario* es *Drogi pamiętniku!*, y la carta de Hugo empieza
+  *Droga Lucío!*, con el vocativo, como se escribe una carta en polaco.
+- **La gorra y el gorro.** En español, Dani lee tan deprisa la lista de
+  la maleta que no mira la última letra, y mete el *gorro* de lana en
+  vez de la *gorra*. En polaco, las dos cosas son *czapka*: la de la
+  lista es *czapka z daszkiem*, y Dani no lee la línea hasta el final
+  (*nie doczytał jej do końca*): se queda en *czapka* y coge la de lana.
+- **El código de números** del día 229: en español, Lucía y Dani ven
+  que el 20 se repite mucho, y es la S; en polaco, la S es el 24, y lo
+  que más se repite en el mensaje de Hugo (*Policz swoje własne kroki*)
+  es la O, que es justamente el 20.
 - **Las citas**, entre „ ”, como se escribe en polaco (en español,
   «»): `tools/lupa.py` acepta que un párrafo acabe en ” en un cuaderno
   en polaco, y » en uno en español.
@@ -157,13 +178,16 @@ o por una subordinada de menos -- en español cuentan siempre *como*,
 *si* y *mientras*, también en *como si*, *por si acaso* o *mientras
 tanto*, y su traducción polaca es un solo nexo (*jakby*) o ninguno (*na
 wszelki wypadek*, *tymczasem*): se dice con una subordinada de verdad
-(*z taką miną, jakby nic się nie stało*). Y tres
-días que en polaco se quedaban a una o tres palabras del mínimo de su
-semana (el 114, el 129 y el 150) las ganan (*co już wiemy*). Con eso,
-ningún día tiene errores, y los que tienen aviso, todos de vocabulario
-nuevo, son menos que en español: en otoño, dos (en español, cuatro);
-en invierno, tres (en español, ocho), y en primavera, uno (en español,
-dos).
+(*z taką miną, jakby nic się nie stało*), a menudo la misma del
+español, traducida más de cerca (*mientras Dani lo coloreaba todo*:
+*podczas gdy Dani wszystko kolorował*). En verano, diez días con una
+subordinada de menos, y así. Y cinco días que en polaco se quedaban a
+unas pocas palabras del mínimo de su semana (el 114, el 129, el 150, el
+199 y el 247) las ganan (*co już wiemy*). Con eso, ningún día tiene
+errores, y los que tienen aviso, todos de vocabulario nuevo, son menos
+que en español: en otoño, dos (en español, cuatro); en invierno, tres
+(en español, ocho); en primavera, uno (en español, dos), y en verano,
+ninguno, como en español.
 
 `tools/metricas.py --libro czytam` mide lo mismo que en *Leo con lupa*,
 con el polaco de *Zdania* (sus palabras funcionales y su lematización)
@@ -193,7 +217,10 @@ actividad pasaba entera a la siguiente, y `tools/check_pages.py` lo
 paraba. Cada uno se acorta lo justo, sin salirse de la escalera y sin
 perder ninguna pista: un párrafo cuya última línea eran una o dos
 palabras las pierde (*na zakończenie roku*, sin *szkolnego*), o una
-frase de la actividad que ocupaba dos líneas cabe en una.
+frase de la actividad que ocupaba dos líneas cabe en una. En verano,
+solo el día 200: sus cuatro opciones (*o czapce z daszkiem*...) no
+cabían en una línea, y la pregunta se dice de otra manera para que sean
+más cortas (*Co Dani zapomniał spakować?*: *czapkę z daszkiem*...).
 
 ## Lo que cambia en el motor
 
@@ -233,3 +260,9 @@ exactamente esos.
    **Hecho.**
 3. **El verano** (días 196–260), el tesoro de Rosa, el cuaderno de
    verano y la muestra, y publicarlo en GitHub Pages con los demás.
+   **Hecho.** Sin `dias_escritos`: los 260 días o nada. El cuaderno de
+   verano lleva su página para el adulto
+   (`frontmatter/czytam/verano.tex`), y los seis PDF se publican como
+   `czytam-z-lupa.pdf`, `czytam-z-lupa-cz-b.pdf`,
+   `czytam-z-lupa-lato.pdf`, `czytam-z-lupa-lato-cz-b.pdf`,
+   `czytam-z-lupa-probka.pdf` y `czytam-z-lupa-probka-cz-b.pdf`.

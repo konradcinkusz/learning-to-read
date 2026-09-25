@@ -7,7 +7,7 @@
 [![Hecho con](https://img.shields.io/badge/hecho%20con-LaTeX-2E7D32)](preamble.tex)
 
 Tres cuadernos diarios de lectura en español, uno por nivel, dos en
-inglés y tres en polaco (el tercero, en obras), con la misma familia
+inglés y tres en polaco, con la misma familia
 (los dos primeros cuentan el mismo año con los mismos temas semana a
 semana; el tercero, el año siguiente; los de inglés, ese mismo año
 siguiente, desde la casa de al lado, y también los dos con los mismos
@@ -37,9 +37,9 @@ temas; los de polaco, los mismos años que los tres en español):
 - **Zdania** (`zdania.tex`) -- en polaco: el cuaderno de frases, día a
   día y frase a frase, el paso siguiente a *Pierwsze słowa*. Ver
   "Zdania" más abajo.
-- **Czytam z lupą** (`czytam.tex`) -- en polaco, en obras: *Leo con
-  lupa*, día a día y párrafo a párrafo, el paso siguiente a *Zdania*.
-  Ver "Czytam z lupą" más abajo.
+- **Czytam z lupą** (`czytam.tex`) -- en polaco: *Leo con lupa*, día a
+  día y párrafo a párrafo, el paso siguiente a *Zdania*. Ver "Czytam z
+  lupą" más abajo.
 
 Y de cada uno, un **cuaderno de verano**: su verano -- las últimas 13
 semanas, 65 páginas -- en un cuaderno aparte, para las vacaciones; y una
@@ -278,8 +278,9 @@ diploma. Su escalera se mide en palabras polacas
 (`content/czytam/progresion.json`), con los nexos de subordinación del
 polaco (*że, bo, kiedy, jeśli, żeby, który*...).
 
-Se está escribiendo: del otoño a la primavera, días 1--195, ya está.
-Ver [`notes/10-czytam-z-lupa.md`](notes/10-czytam-z-lupa.md).
+Ver [`notes/10-czytam-z-lupa.md`](notes/10-czytam-z-lupa.md) para el
+diseño completo: cómo se traduce, el mensaje secreto con el abecedario
+polaco, la escalera en palabras polacas y las fases.
 
 ## Los cuadernos de verano y las muestras
 
@@ -340,6 +341,10 @@ Nivel 3, Leo con lupa:
 **[⬇ PDF (kolorowy)](https://konradcinkusz.github.io/learning-to-read/ucze-sie-czytac-zdania.pdf)**
 · **[⬇ PDF (czarno-biały)](https://konradcinkusz.github.io/learning-to-read/ucze-sie-czytac-zdania-cz-b.pdf)**
 
+*Czytam z lupą*, en polaco:
+**[⬇ PDF (kolorowy)](https://konradcinkusz.github.io/learning-to-read/czytam-z-lupa.pdf)**
+· **[⬇ PDF (czarno-biały)](https://konradcinkusz.github.io/learning-to-read/czytam-z-lupa-cz-b.pdf)**
+
 Los cuadernos de verano (65 páginas cada uno):
 nivel 1, primeras palabras
 ([color](https://konradcinkusz.github.io/learning-to-read/aprendo-a-leer-palabras-verano.pdf) ·
@@ -361,7 +366,10 @@ nivel 3, Leo con lupa
 [czarno-biały](https://konradcinkusz.github.io/learning-to-read/ucze-sie-czytac-slowa-lato-cz-b.pdf));
 *Zdania*
 ([kolorowy](https://konradcinkusz.github.io/learning-to-read/ucze-sie-czytac-zdania-lato.pdf) ·
-[czarno-biały](https://konradcinkusz.github.io/learning-to-read/ucze-sie-czytac-zdania-lato-cz-b.pdf)).
+[czarno-biały](https://konradcinkusz.github.io/learning-to-read/ucze-sie-czytac-zdania-lato-cz-b.pdf));
+*Czytam z lupą*
+([kolorowy](https://konradcinkusz.github.io/learning-to-read/czytam-z-lupa-lato.pdf) ·
+[czarno-biały](https://konradcinkusz.github.io/learning-to-read/czytam-z-lupa-lato-cz-b.pdf)).
 
 Las muestras gratuitas (las cuatro primeras semanas, 20 días):
 nivel 1, primeras palabras
@@ -384,7 +392,10 @@ nivel 3, Leo con lupa
 [czarno-biały](https://konradcinkusz.github.io/learning-to-read/ucze-sie-czytac-slowa-probka-cz-b.pdf));
 *Zdania*
 ([kolorowy](https://konradcinkusz.github.io/learning-to-read/ucze-sie-czytac-zdania-probka.pdf) ·
-[czarno-biały](https://konradcinkusz.github.io/learning-to-read/ucze-sie-czytac-zdania-probka-cz-b.pdf)).
+[czarno-biały](https://konradcinkusz.github.io/learning-to-read/ucze-sie-czytac-zdania-probka-cz-b.pdf));
+*Czytam z lupą*
+([kolorowy](https://konradcinkusz.github.io/learning-to-read/czytam-z-lupa-probka.pdf) ·
+[czarno-biały](https://konradcinkusz.github.io/learning-to-read/czytam-z-lupa-probka-cz-b.pdf)).
 
 Enlaces fijos, publicados por GitHub Pages en cada push a `main` (ver
 `.github/workflows/pages.yml`). Las dos versiones tienen exactamente el
@@ -424,9 +435,9 @@ make firstwords   # lo mismo para First Words, en inglés (color)
 make slowa        # lo mismo para Pierwsze słowa, en polaco (color)
 make zdania       # lo mismo para Zdania, en polaco (color)
 make czytam       # lo mismo para Czytam z lupą, en polaco (color)
-make verano       # los catorce cuadernos de verano: los siete, color Y blanco-y-negro
-make muestra      # las catorce muestras gratuitas: los siete, color Y blanco-y-negro
-make all-formats  # los cuarenta y cuatro PDF: palabras, frases, lupa, english, firstwords, slowa, zdania y czytam, color Y blanco-y-negro, y sus ediciones
+make verano       # los dieciséis cuadernos de verano: los ocho, color Y blanco-y-negro
+make muestra      # las dieciséis muestras gratuitas: los ocho, color Y blanco-y-negro
+make all-formats  # los cuarenta y ocho PDF: palabras, frases, lupa, english, firstwords, slowa, zdania y czytam, color Y blanco-y-negro, y sus ediciones
 make generate     # solo regenera los .tex de los ocho cuadernos desde el JSON
 make build        # solo compila frases en color (asume que ya está generado)
 make build-bw     # solo compila frases en blanco y negro
@@ -632,21 +643,25 @@ color y en blanco y negro con las mismas comprobaciones que los demás
 abecedario polaco, la escalera en palabras polacas), con su cuaderno de
 verano y su muestra, y se publica en GitHub Pages con ellos.
 
-**Czytam z lupą (en polaco)**: en obras, un PR por fase. Del otoño a
-la primavera (días 1--195) está escrito y compila en color y en blanco
-y negro, con las mismas comprobaciones que *Leo con lupa* (1 día = 1
-página, log limpio, cada tabla de pistas con una sola solución, cada
-ruta del mapa, cada corrección en el texto, el mensaje secreto con el
-abecedario polaco, la escalera en palabras polacas) y sus tres
-medallas. Falta el verano: ver `notes/10-czytam-z-lupa.md`.
+**Czytam z lupą (en polaco)**: completo, los 260 días (cada uno, el
+mismo día de *Leo con lupa* en polaco, con sus mismos casos del Club de
+la Lupa, sus tres medallas, la clave de respuestas y el diploma),
+escrito en tres fases, una por PR (ver `notes/10-czytam-z-lupa.md`,
+"Las fases"). Todo está en polaco, también la portada, *Jak korzystać z
+tego zeszytu*, *Jak czyta detektyw* y el mapa del año. Compila en color
+y en blanco y negro con las mismas comprobaciones que *Leo con lupa* (1
+día = 1 página, log limpio, cada tabla de pistas con una sola solución,
+cada ruta del mapa, cada corrección en el texto, el mensaje secreto con
+el abecedario polaco, la escalera en palabras polacas), con su cuaderno
+de verano y su muestra, y se publica en GitHub Pages con ellos.
 
-**Los cuadernos de verano**: los siete, en color y en blanco y negro --
+**Los cuadernos de verano**: los ocho, en color y en blanco y negro --
 el verano de cada cuaderno, con su portada, su página para el adulto,
 su mapa del verano, su clave y su diploma. Compilan con las mismas
 comprobaciones que los libros enteros (1 día = 1 página, log limpio), y
 se publican en GitHub Pages con ellos. Ver `notes/07-ediciones.md`.
 
-**Las muestras gratuitas**: las siete, en color y en blanco y negro --
+**Las muestras gratuitas**: las ocho, en color y en blanco y negro --
 las cuatro primeras semanas de cada cuaderno, con una última página que
 dice dónde está el cuaderno entero. Las mismas comprobaciones, y
 también en GitHub Pages.

@@ -180,8 +180,6 @@ jobs:
       # frases -- frases por trimestre, campos de actividad, las letras de
       # "Pisz po śladzie" del abecedario polaco -- y su propia escalera,
       # medida en palabras polacas (content/zdania/progresion.json).
-      # Mientras se escribe por partes, tools/libros.py dice cuántos días
-      # tiene ya (dias_escritos) y se valida exactamente eso.
       - name: Valida Zdania (frases por trimestre, actividades, abecedario polaco)
         run: python3 tools/gen_days.py --libro zdania --check
 
@@ -200,8 +198,6 @@ jobs:
       # mensaje secreto cifrado con el abecedario polaco -- y su propia
       # escalera, medida en palabras polacas, que también exige oraciones
       # subordinadas (że, bo, kiedy, jeśli, żeby, który...) en cada texto.
-      # Mientras se escribe por partes, tools/libros.py dice cuántos días
-      # tiene ya (dias_escritos) y se valida exactamente eso.
       - name: Valida Czytam z lupą (actividades de análisis, abecedario polaco)
         run: python3 tools/gen_days.py --libro czytam --check
 
@@ -322,6 +318,12 @@ jobs:
           - variant: zdania-verano-bw
             root: zdania-bw-verano
             tex: ediciones/zdania-bw-verano.tex
+          - variant: czytam-verano-color
+            root: czytam-verano
+            tex: ediciones/czytam-verano.tex
+          - variant: czytam-verano-bw
+            root: czytam-bw-verano
+            tex: ediciones/czytam-bw-verano.tex
           # Las muestras gratuitas (ediciones/<raíz>-muestra.tex): las
           # cuatro primeras semanas de cada cuaderno, con sus páginas del
           # principio y, al final, dónde está el cuaderno entero. Igual que
@@ -368,6 +370,12 @@ jobs:
           - variant: zdania-muestra-bw
             root: zdania-bw-muestra
             tex: ediciones/zdania-bw-muestra.tex
+          - variant: czytam-muestra-color
+            root: czytam-muestra
+            tex: ediciones/czytam-muestra.tex
+          - variant: czytam-muestra-bw
+            root: czytam-bw-muestra
+            tex: ediciones/czytam-bw-muestra.tex
     steps:
       - uses: actions/checkout@v4
 

@@ -1,6 +1,6 @@
 # Las ediciones — el cuaderno de verano y la muestra gratuita
 
-Cada uno de los siete cuadernos tiene 260 páginas, una por día laborable
+Cada uno de los ocho cuadernos tiene 260 páginas, una por día laborable
 del año. Una **edición** es el mismo cuaderno con otra selección de
 días, y con lo que tiene que cambiar para que esa selección sea un
 cuaderno de verdad: su portada, su página para el adulto, su mapa, su
@@ -12,8 +12,8 @@ verano** y la **muestra gratuita**.
 El verano de cada cuaderno — sus últimas 13 semanas, del día 196 al 260
 — en un cuaderno aparte, para quien solo quiere leer un poco cada día
 de las vacaciones: 65 páginas, impresas como días 1 a 65 y semanas 1 a
-13, sin trimestre. Catorce PDF, los siete cuadernos en color y en blanco
-y negro: `ediciones/<raíz>-verano.tex` (`main-verano.tex`,
+13, sin trimestre. Dieciséis PDF, los ocho cuadernos en color y en
+blanco y negro: `ediciones/<raíz>-verano.tex` (`main-verano.tex`,
 `main-bw-verano.tex`, `palabras-verano.tex`...). `make verano` los
 compila y los comprueba; `make build-lupa-verano` o `make
 check-lupa-verano`, uno.
@@ -53,7 +53,7 @@ entero.
 ## La muestra gratuita
 
 Las cuatro primeras semanas de cada cuaderno (días 1 a 20), para probar
-con unas pocas páginas antes de imprimir el año entero. Catorce PDF más:
+con unas pocas páginas antes de imprimir el año entero. Dieciséis PDF más:
 `ediciones/<raíz>-muestra.tex`; `make muestra` los compila y los
 comprueba.
 
@@ -137,12 +137,13 @@ también.
 - `make generate` escribe las ediciones con el libro entero, y los
   `--check` de los dos generadores comprueban que también las suyas
   están al día.
-- El CI compila los catorce cuadernos de verano y las catorce muestras
-  con los mismos pasos que los libros enteros
+- El CI compila los dieciséis cuadernos de verano y las dieciséis
+  muestras con los mismos pasos que los libros enteros
   (`.github/workflows/build.yml`: log limpio y un día por página), y
   Pages los publica junto a ellos (`aprendo-a-leer-verano.pdf`,
   `leo-con-lupa-verano-bn.pdf`, `read-and-draw-summer.pdf`,
   `first-words-summer-bw.pdf`, `ucze-sie-czytac-slowa-lato.pdf`,
-  `ucze-sie-czytac-zdania-lato.pdf`...; `aprendo-a-leer-muestra.pdf`,
-  `read-and-draw-sample-bw.pdf`,
-  `ucze-sie-czytac-slowa-probka-cz-b.pdf`...).
+  `ucze-sie-czytac-zdania-lato.pdf`, `czytam-z-lupa-lato.pdf`...;
+  `aprendo-a-leer-muestra.pdf`, `read-and-draw-sample-bw.pdf`,
+  `ucze-sie-czytac-slowa-probka-cz-b.pdf`,
+  `czytam-z-lupa-probka.pdf`...).
