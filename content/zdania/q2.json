@@ -1,0 +1,1061 @@
+{
+  "_comentario": "Datos de origen para tools/gen_days.py --libro zdania: «Zdania», el cuaderno de frases en polaco, día a día el de content/q2.json. Este fichero SI se edita a mano; content/zdania/generated-days.tex NO (se regenera con `make generate`). Trimestre 2: días 66-130 (semanas 14-26), dos frases al día. Ver notes/09-zdania.md.",
+  "dias": [
+    {
+      "dia": 66,
+      "semana": 14,
+      "trimestre": 2,
+      "tema": "Styczniowy mróz",
+      "oraciones": [
+        "Zaczyna się zima i jest zimno.",
+        "Lucía zakłada szalik od babci."
+      ],
+      "actividad": {
+        "tipo": "traza",
+        "letra": "f"
+      }
+    },
+    {
+      "dia": 67,
+      "semana": 14,
+      "trimestre": 2,
+      "tema": "Styczniowy mróz",
+      "oraciones": [
+        "Dani lubi śnieg, ale nie lubi zimna.",
+        "Dlatego nosi rękawiczki."
+      ],
+      "actividad": {
+        "tipo": "completa",
+        "diagrama": "lineas-ondas"
+      }
+    },
+    {
+      "dia": 68,
+      "semana": 14,
+      "trimestre": 2,
+      "tema": "Styczniowy mróz",
+      "oraciones": [
+        "Toby śpi przy kominku, bo jest ciepło.",
+        "Lucía woła, Toby nie wstaje."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "pregunta": "Dlaczego Toby śpi przy kominku?"
+      }
+    },
+    {
+      "dia": 69,
+      "semana": 14,
+      "trimestre": 2,
+      "tema": "Styczniowy mróz",
+      "oraciones": [
+        "Dani chce nauczyć się czytać jak Lucía.",
+        "Lucía pomaga mu po południu."
+      ],
+      "actividad": {
+        "tipo": "relaciona",
+        "pares": [
+          [
+            "Lucía",
+            "czyta już sama"
+          ],
+          [
+            "Dani",
+            "dopiero się uczy"
+          ],
+          [
+            "Toby",
+            "nie umie czytać"
+          ],
+          [
+            "Babcia Rosa",
+            "czyta im bajki"
+          ]
+        ]
+      }
+    },
+    {
+      "dia": 70,
+      "semana": 14,
+      "trimestre": 2,
+      "tema": "Styczniowy mróz",
+      "oraciones": [
+        "W sobotę spada pierwszy śnieg.",
+        "Lucía i Dani lepią bałwana."
+      ],
+      "actividad": {
+        "tipo": "crea",
+        "prompt": "Narysuj swojego bałwana. Z czego zrobisz mu nos?"
+      }
+    },
+    {
+      "dia": 71,
+      "semana": 15,
+      "trimestre": 2,
+      "tema": "Urodziny taty",
+      "oraciones": [
+        "Dziś są urodziny taty.",
+        "Mama piecze mu pyszny tort czekoladowy."
+      ],
+      "actividad": {
+        "tipo": "traza",
+        "letra": "g"
+      }
+    },
+    {
+      "dia": 72,
+      "semana": 15,
+      "trimestre": 2,
+      "tema": "Urodziny taty",
+      "oraciones": [
+        "Dani chowa balony pod stołem.",
+        "Toby goni balon po całym pokoju."
+      ],
+      "actividad": {
+        "tipo": "completa",
+        "diagrama": "lineas-circulo"
+      }
+    },
+    {
+      "dia": 73,
+      "semana": 15,
+      "trimestre": 2,
+      "tema": "Urodziny taty",
+      "oraciones": [
+        "Tata otwiera drzwi i wchodzi do domu.",
+        "— Niespodzianka! — krzyczy cała rodzina."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "pregunta": "Co krzyczy rodzina, kiedy tata otwiera drzwi?"
+      }
+    },
+    {
+      "dia": 74,
+      "semana": 15,
+      "trimestre": 2,
+      "tema": "Urodziny taty",
+      "oraciones": [
+        "Prezent od Daniego to rysunek.",
+        "Tata mówi, że to piękny prezent."
+      ],
+      "actividad": {
+        "tipo": "adivina",
+        "adivinanza": "Raz do roku przychodzę, świeczki i tort przynoszę. Co to jest?",
+        "respuesta": "Urodziny."
+      }
+    },
+    {
+      "dia": 75,
+      "semana": 15,
+      "trimestre": 2,
+      "tema": "Urodziny taty",
+      "oraciones": [
+        "Wieczorem Lucía pisze w swoim zeszycie.",
+        "Pisze, że zima dobrze się zaczyna."
+      ],
+      "actividad": {
+        "tipo": "repasa",
+        "checklist": [
+          "Wiem, dlaczego Toby śpi przy kominku.",
+          "Wiem, jaki tort upiekła mama dla taty.",
+          "Wiem, kiedy Lucía pomaga Daniemu czytać."
+        ],
+        "prompt": "Narysuj swoje ulubione wspomnienie z tych dwóch tygodni.",
+        "banner": "75 przeczytanych stron! Jesteś już w drugiej części."
+      }
+    },
+    {
+      "dia": 76,
+      "semana": 16,
+      "trimestre": 2,
+      "tema": "Karnawałowy strój",
+      "oraciones": [
+        "W piątek jest karnawałowa parada.",
+        "Lucía chce przebrać się za motyla z kolorowymi skrzydłami."
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Narysuj Lucíę przebraną za motyla, z kolorowymi skrzydłami."
+      }
+    },
+    {
+      "dia": 77,
+      "semana": 16,
+      "trimestre": 2,
+      "tema": "Karnawałowy strój",
+      "oraciones": [
+        "Babcia Rosa szyje Lucíi skrzydła.",
+        "Dani też chce mieć przebranie."
+      ],
+      "actividad": {
+        "tipo": "completa",
+        "diagrama": "lineas-ondas"
+      }
+    },
+    {
+      "dia": 78,
+      "semana": 16,
+      "trimestre": 2,
+      "tema": "Karnawałowy strój",
+      "oraciones": [
+        "Lucía przymierza swoje nowe skrzydła.",
+        "— Wyglądasz jak prawdziwy motyl! — mówi tata."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "pregunta": "Co mówi tata, kiedy widzi Lucíę w skrzydłach?"
+      }
+    },
+    {
+      "dia": 79,
+      "semana": 16,
+      "trimestre": 2,
+      "tema": "Karnawałowy strój",
+      "oraciones": [
+        "Nadchodzi piątek: Dani jest zielonym smokiem.",
+        "Toby ma na szyi chustkę w paski."
+      ],
+      "actividad": {
+        "tipo": "relaciona",
+        "pares": [
+          [
+            "Lucía",
+            "jest motylem"
+          ],
+          [
+            "Dani",
+            "jest smokiem"
+          ],
+          [
+            "Toby",
+            "ma chustkę w paski"
+          ],
+          [
+            "Babcia Rosa",
+            "szyje skrzydła"
+          ]
+        ]
+      }
+    },
+    {
+      "dia": 80,
+      "semana": 16,
+      "trimestre": 2,
+      "tema": "Karnawałowy strój",
+      "oraciones": [
+        "Na paradzie wszyscy śpiewają i tańczą.",
+        "Pani daje każdemu dziecku lizaka."
+      ],
+      "actividad": {
+        "tipo": "crea",
+        "prompt": "Narysuj swoje przebranie. Za kogo chcesz się przebrać?"
+      }
+    },
+    {
+      "dia": 81,
+      "semana": 17,
+      "trimestre": 2,
+      "tema": "Dzień Pokoju",
+      "oraciones": [
+        "Dziś szkoła świętuje Dzień Pokoju.",
+        "Pani Marta uczy, jak robić papierowe gołębie."
+      ],
+      "actividad": {
+        "tipo": "traza",
+        "letra": "h"
+      }
+    },
+    {
+      "dia": 82,
+      "semana": 17,
+      "trimestre": 2,
+      "tema": "Dzień Pokoju",
+      "oraciones": [
+        "Każde dziecko maluje gołębia na inny kolor.",
+        "Dani maluje swojego na niebiesko."
+      ],
+      "actividad": {
+        "tipo": "completa",
+        "diagrama": "lineas-ondas"
+      }
+    },
+    {
+      "dia": 83,
+      "semana": 17,
+      "trimestre": 2,
+      "tema": "Dzień Pokoju",
+      "oraciones": [
+        "Na koniec wieszają gołębie na korytarzu.",
+        "Korytarz robi się biały, jakby spadł śnieg."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "pregunta": "Jakiego koloru jest na koniec korytarz?"
+      }
+    },
+    {
+      "dia": 84,
+      "semana": 17,
+      "trimestre": 2,
+      "tema": "Dzień Pokoju",
+      "oraciones": [
+        "Pokój to spokojny i szczęśliwy dzień.",
+        "Dbamy o niego, kiedy pomagamy innym."
+      ],
+      "actividad": {
+        "tipo": "adivina",
+        "adivinanza": "Nie można go kupić ani sprzedać, a cała klasa go rozumie. Co to jest?",
+        "respuesta": "Pokój."
+      }
+    },
+    {
+      "dia": 85,
+      "semana": 17,
+      "trimestre": 2,
+      "tema": "Dzień Pokoju: cały tydzień",
+      "oraciones": null,
+      "actividad": {
+        "tipo": "relee",
+        "prompt": "Narysuj coś miłego, co możesz zrobić dla pokoju."
+      }
+    },
+    {
+      "dia": 86,
+      "semana": 18,
+      "trimestre": 2,
+      "tema": "Lucía jest chora",
+      "oraciones": [
+        "Lucía budzi się z zatkanym nosem i kaszlem.",
+        "Mama mierzy jej temperaturę: ma gorączkę."
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Narysuj Lucíę w łóżku, z szalikiem na szyi."
+      }
+    },
+    {
+      "dia": 87,
+      "semana": 18,
+      "trimestre": 2,
+      "tema": "Lucía jest chora",
+      "oraciones": [
+        "Lucía cały dzień zostaje w łóżku.",
+        "Tata robi jej ciepły sok pomarańczowy."
+      ],
+      "actividad": {
+        "tipo": "busca",
+        "instruccion": "Znajdź w tekście, co tata robi dla Lucíi."
+      }
+    },
+    {
+      "dia": 88,
+      "semana": 18,
+      "trimestre": 2,
+      "tema": "Lucía jest chora",
+      "oraciones": [
+        "Dani pożycza jej swoją ulubioną przytulankę.",
+        "Lucía się uśmiecha, choć przez kaszel trudno jej mówić."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "pregunta": "Co Dani pożycza Lucíi, żeby szybciej wyzdrowiała?"
+      }
+    },
+    {
+      "dia": 89,
+      "semana": 18,
+      "trimestre": 2,
+      "tema": "Lucía jest chora",
+      "oraciones": [
+        "Lucía czuje się coraz lepiej.",
+        "W piątek może już wstać i chwilę się pobawić."
+      ],
+      "actividad": {
+        "tipo": "relaciona",
+        "pares": [
+          [
+            "Mama",
+            "mierzy temperaturę"
+          ],
+          [
+            "Tata",
+            "robi sok"
+          ],
+          [
+            "Dani",
+            "pożycza przytulankę"
+          ],
+          [
+            "Lucía",
+            "zostaje w łóżku"
+          ]
+        ]
+      }
+    },
+    {
+      "dia": 90,
+      "semana": 18,
+      "trimestre": 2,
+      "tema": "Lucía jest chora",
+      "oraciones": [
+        "W sobotę Lucía jest już całkiem zdrowa.",
+        "Idzie z Tobym do parku i biega z radością."
+      ],
+      "actividad": {
+        "tipo": "repasa",
+        "checklist": [
+          "Wiem, co dolegało Lucíi, kiedy była chora.",
+          "Wiem, co zrobił jej tata.",
+          "Wiem, co pożyczył jej Dani."
+        ],
+        "prompt": "Narysuj zdrową już Lucíę, jak bawi się z Tobym w parku.",
+        "banner": "90 przeczytanych stron! Brawo, czytaj tak dalej codziennie."
+      }
+    },
+    {
+      "dia": 91,
+      "semana": 19,
+      "trimestre": 2,
+      "tema": "Niedziela z babcią i robótkami",
+      "oraciones": [
+        "W niedzielę babcia Rosa przynosi kolorową włóczkę.",
+        "Chce nauczyć Lucíę robić na drutach."
+      ],
+      "actividad": {
+        "tipo": "traza",
+        "letra": "i"
+      }
+    },
+    {
+      "dia": 92,
+      "semana": 19,
+      "trimestre": 2,
+      "tema": "Niedziela z babcią i robótkami",
+      "oraciones": [
+        "Lucía bierze dwa druty i niebieski kłębek.",
+        "Na początku nitki bardzo jej się plączą."
+      ],
+      "actividad": {
+        "tipo": "completa",
+        "diagrama": "lineas-ondas"
+      }
+    },
+    {
+      "dia": 93,
+      "semana": 19,
+      "trimestre": 2,
+      "tema": "Niedziela z babcią i robótkami",
+      "oraciones": [
+        "Dani woli robić miękkie kuleczki z włóczki.",
+        "Babcia się śmieje i pomaga mu je robić."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "pregunta": "Co woli robić Dani, kiedy Lucía robi na drutach?"
+      }
+    },
+    {
+      "dia": 94,
+      "semana": 19,
+      "trimestre": 2,
+      "tema": "Niedziela z babcią i robótkami",
+      "oraciones": [
+        "Pod koniec dnia Lucía ma mały szalik.",
+        "Jest krzywy, ale i tak bardzo jej się podoba."
+      ],
+      "actividad": {
+        "tipo": "adivina",
+        "adivinanza": "Zrobiony na drutach z włóczki, grzeję ci szyję w zimne dni. Czym jestem?",
+        "respuesta": "Szalik."
+      }
+    },
+    {
+      "dia": 95,
+      "semana": 19,
+      "trimestre": 2,
+      "tema": "Niedziela z babcią i robótkami: cały tydzień",
+      "oraciones": null,
+      "actividad": {
+        "tipo": "relee",
+        "prompt": "Narysuj szalik, który Lucía chce zrobić następnym razem."
+      }
+    },
+    {
+      "dia": 96,
+      "semana": 20,
+      "trimestre": 2,
+      "tema": "Osiedlowa biblioteka",
+      "oraciones": [
+        "Niedaleko domu jest mała, cicha biblioteka.",
+        "Lucía chodzi tam w każdą sobotę wymieniać książki."
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Narysuj osiedlową bibliotekę Lucíi."
+      }
+    },
+    {
+      "dia": 97,
+      "semana": 20,
+      "trimestre": 2,
+      "tema": "Osiedlowa biblioteka",
+      "oraciones": [
+        "Pan bibliotekarz zna Lucíę po imieniu.",
+        "Odkłada dla niej książki o zwierzętach, jej ulubione."
+      ],
+      "actividad": {
+        "tipo": "busca",
+        "instruccion": "Znajdź w tekście, jakie książki odkłada dla Lucíi pan bibliotekarz."
+      }
+    },
+    {
+      "dia": 98,
+      "semana": 20,
+      "trimestre": 2,
+      "tema": "Osiedlowa biblioteka",
+      "oraciones": [
+        "W tę sobotę Lucía szuka książki dla Daniego.",
+        "Chce taką z dużymi obrazkami, bo on jeszcze nie czyta."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "pregunta": "Dlaczego Lucía szuka dla Daniego książki z dużymi obrazkami?"
+      }
+    },
+    {
+      "dia": 99,
+      "semana": 20,
+      "trimestre": 2,
+      "tema": "Osiedlowa biblioteka",
+      "oraciones": [
+        "Znajduje książkę o psie, który wraca do domu.",
+        "Dani na pewno ją pokocha, bo pomyśli o Tobym."
+      ],
+      "actividad": {
+        "tipo": "relaciona",
+        "pares": [
+          [
+            "Lucía",
+            "szuka książki dla Daniego"
+          ],
+          [
+            "Pan bibliotekarz",
+            "odkłada książki o zwierzętach"
+          ],
+          [
+            "Książka",
+            "jest o psie"
+          ],
+          [
+            "Dani",
+            "jeszcze nie czyta"
+          ]
+        ]
+      }
+    },
+    {
+      "dia": 100,
+      "semana": 20,
+      "trimestre": 2,
+      "tema": "Osiedlowa biblioteka",
+      "oraciones": [
+        "Dani przytula nową książkę, jak tylko ją widzi.",
+        "Wieczorem Lucía czyta mu ją całą przed snem."
+      ],
+      "actividad": {
+        "tipo": "repasa",
+        "checklist": [
+          "Wiem, jakie książki lubi Lucía.",
+          "Wiem, jaką książkę znalazła dla Daniego.",
+          "Wiem, o czym była ta książka."
+        ],
+        "prompt": "Narysuj okładkę książki, którą chcesz komuś podarować.",
+        "banner": "100 przeczytanych stron! To już jak cała książka!"
+      }
+    },
+    {
+      "dia": 101,
+      "semana": 21,
+      "trimestre": 2,
+      "tema": "Urodziny Toby'ego",
+      "oraciones": [
+        "Dziś mija rok, odkąd Toby zamieszkał z rodziną.",
+        "Tata mówi, że trzeba to uczcić małym przyjęciem."
+      ],
+      "actividad": {
+        "tipo": "traza",
+        "letra": "j"
+      }
+    },
+    {
+      "dia": 102,
+      "semana": 21,
+      "trimestre": 2,
+      "tema": "Urodziny Toby'ego",
+      "oraciones": [
+        "Lucía robi mu z tektury koronę z uszami.",
+        "Toby nie może usiedzieć i od razu ją zrzuca."
+      ],
+      "actividad": {
+        "tipo": "completa",
+        "diagrama": "lineas-circulo"
+      }
+    },
+    {
+      "dia": 103,
+      "semana": 21,
+      "trimestre": 2,
+      "tema": "Urodziny Toby'ego",
+      "oraciones": [
+        "Dani daje mu swoją ukochaną czerwoną piłkę.",
+        "Toby od razu chowa ją pod kanapę, jak zawsze."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "pregunta": "Co Dani daje Toby'emu na urodziny?"
+      }
+    },
+    {
+      "dia": 104,
+      "semana": 21,
+      "trimestre": 2,
+      "tema": "Urodziny Toby'ego",
+      "oraciones": [
+        "Po południu mama daje mu specjalne psie ciastko.",
+        "Toby macha ogonem tak mocno, że zrzuca poduszkę."
+      ],
+      "actividad": {
+        "tipo": "adivina",
+        "adivinanza": "Macham ogonem, kiedy się cieszę, i głośno szczekam, kiedy ktoś puka do drzwi. Kim jestem?",
+        "respuesta": "Pies."
+      }
+    },
+    {
+      "dia": 105,
+      "semana": 21,
+      "trimestre": 2,
+      "tema": "Urodziny Toby'ego: cały tydzień",
+      "oraciones": null,
+      "actividad": {
+        "tipo": "relee",
+        "prompt": "Narysuj urodzinowe przyjęcie Toby'ego, z koroną i ciastkiem."
+      }
+    },
+    {
+      "dia": 106,
+      "semana": 22,
+      "trimestre": 2,
+      "tema": "Bardzo wietrzny dzień",
+      "oraciones": [
+        "Dziś rano na całym osiedlu wieje bardzo silny wiatr.",
+        "Liście i papiery fruwają po ulicy."
+      ],
+      "actividad": {
+        "tipo": "traza",
+        "letra": "k"
+      }
+    },
+    {
+      "dia": 107,
+      "semana": 22,
+      "trimestre": 2,
+      "tema": "Bardzo wietrzny dzień",
+      "oraciones": [
+        "Wiatr prawie porywa Lucíi nową czapkę.",
+        "Łapie ją w ostatniej chwili, zanim całkiem odleci."
+      ],
+      "actividad": {
+        "tipo": "busca",
+        "instruccion": "Znajdź w tekście, co Lucía prawie gubi."
+      }
+    },
+    {
+      "dia": 108,
+      "semana": 22,
+      "trimestre": 2,
+      "tema": "Bardzo wietrzny dzień",
+      "oraciones": [
+        "W parku wiatr mocno buja pustymi huśtawkami.",
+        "Dani mówi, że huśta je chyba duch."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "pregunta": "Kto według Daniego huśta huśtawki?"
+      }
+    },
+    {
+      "dia": 109,
+      "semana": 22,
+      "trimestre": 2,
+      "tema": "Bardzo wietrzny dzień",
+      "oraciones": [
+        "Toby szczeka na wiatr, jakby to było niewidzialne zwierzę.",
+        "Wszyscy się śmieją i wracają do domu potargani."
+      ],
+      "actividad": {
+        "tipo": "relaciona",
+        "pares": [
+          [
+            "Lucía",
+            "prawie gubi czapkę"
+          ],
+          [
+            "Dani",
+            "mówi o duchu"
+          ],
+          [
+            "Toby",
+            "szczeka na wiatr"
+          ],
+          [
+            "Wszyscy",
+            "wracają potargani"
+          ]
+        ]
+      }
+    },
+    {
+      "dia": 110,
+      "semana": 22,
+      "trimestre": 2,
+      "tema": "Bardzo wietrzny dzień",
+      "oraciones": [
+        "Wieczorem wiatr wreszcie całkiem się uspokaja.",
+        "Lucía pisze w zeszycie: dziś był szalony dzień."
+      ],
+      "actividad": {
+        "tipo": "repasa",
+        "checklist": [
+          "Wiem, co Lucía prawie zgubiła przez wiatr.",
+          "Wiem, co Dani powiedział o huśtawkach.",
+          "Wiem, co zrobił Toby, kiedy wiało."
+        ],
+        "prompt": "Narysuj swój wietrzny dzień: co fruwa w powietrzu?",
+        "banner": "110 przeczytanych stron! Czytasz coraz dłuższe zdania."
+      }
+    },
+    {
+      "dia": 111,
+      "semana": 23,
+      "trimestre": 2,
+      "tema": "Roślinny projekt pani Marty",
+      "oraciones": [
+        "W szkole pani Marta daje każdemu dziecku małą doniczkę.",
+        "Każde sadzi w ziemi trzy nasiona fasoli."
+      ],
+      "actividad": {
+        "tipo": "traza",
+        "letra": "l"
+      }
+    },
+    {
+      "dia": 112,
+      "semana": 23,
+      "trimestre": 2,
+      "tema": "Roślinny projekt pani Marty",
+      "oraciones": [
+        "Lucía podlewa doniczkę co rano i nie zapomina ani razu.",
+        "Zawsze stawia ją na oknie, gdzie świeci słońce."
+      ],
+      "actividad": {
+        "tipo": "completa",
+        "diagrama": "lineas-ondas"
+      }
+    },
+    {
+      "dia": 113,
+      "semana": 23,
+      "trimestre": 2,
+      "tema": "Roślinny projekt pani Marty",
+      "oraciones": [
+        "Po kilku dniach z ziemi wyrasta mały zielony kiełek.",
+        "Lucía z wielką dumą pokazuje go Daniemu."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "pregunta": "Co wyrasta w doniczce Lucíi po kilku dniach?"
+      }
+    },
+    {
+      "dia": 114,
+      "semana": 23,
+      "trimestre": 2,
+      "tema": "Roślinny projekt pani Marty",
+      "oraciones": [
+        "Dani też chce coś posadzić we własnej doniczce.",
+        "Babcia daje mu na próbę kilka pestek słonecznika."
+      ],
+      "actividad": {
+        "tipo": "adivina",
+        "adivinanza": "Jestem mała i zielona, a jeśli o mnie dbasz, co miesiąc rosnę do nieba. Czym jestem?",
+        "respuesta": "Roślina."
+      }
+    },
+    {
+      "dia": 115,
+      "semana": 23,
+      "trimestre": 2,
+      "tema": "Roślinny projekt pani Marty: cały tydzień",
+      "oraciones": null,
+      "actividad": {
+        "tipo": "relee",
+        "prompt": "Narysuj, jak będzie wyglądać twoja roślina za miesiąc."
+      }
+    },
+    {
+      "dia": 116,
+      "semana": 24,
+      "trimestre": 2,
+      "tema": "Dani psuje dinozaura Lucíi",
+      "oraciones": [
+        "Dani bawi się ulubionym dinozaurem Lucíi bez pytania.",
+        "Dinozaur spada na podłogę i odpada mu łapa."
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Narysuj dinozaura Lucíi, zanim odpadła mu łapa."
+      }
+    },
+    {
+      "dia": 117,
+      "semana": 24,
+      "trimestre": 2,
+      "tema": "Dani psuje dinozaura Lucíi",
+      "oraciones": [
+        "Lucía bardzo się złości i krzyczy na brata.",
+        "Dani robi się bardzo smutny i cicho płacze."
+      ],
+      "actividad": {
+        "tipo": "busca",
+        "instruccion": "Znajdź w tekście, co robi Dani, kiedy Lucía na niego krzyczy."
+      }
+    },
+    {
+      "dia": 118,
+      "semana": 24,
+      "trimestre": 2,
+      "tema": "Dani psuje dinozaura Lucíi",
+      "oraciones": [
+        "Mama tłumaczy, że zepsucie czegoś to nic strasznego.",
+        "Ważne jest, żeby przeprosić i razem to naprawić."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "pregunta": "Co mama mówi o psuciu rzeczy?"
+      }
+    },
+    {
+      "dia": 119,
+      "semana": 24,
+      "trimestre": 2,
+      "tema": "Dani psuje dinozaura Lucíi",
+      "oraciones": [
+        "Lucía i Dani razem przyklejają łapę odrobiną kleju.",
+        "Dani obiecuje, że następnym razem najpierw zapyta o pozwolenie."
+      ],
+      "actividad": {
+        "tipo": "relaciona",
+        "pares": [
+          [
+            "Dani",
+            "psuje dinozaura"
+          ],
+          [
+            "Lucía",
+            "złości się i krzyczy"
+          ],
+          [
+            "Mama",
+            "mówi, że trzeba przeprosić"
+          ],
+          [
+            "Oboje",
+            "przyklejają łapę"
+          ]
+        ]
+      }
+    },
+    {
+      "dia": 120,
+      "semana": 24,
+      "trimestre": 2,
+      "tema": "Dani psuje dinozaura Lucíi",
+      "oraciones": [
+        "Wieczorem Lucía i Dani już się pogodzili.",
+        "Śpią razem w jednym pokoju, jak kiedy byli mniejsi."
+      ],
+      "actividad": {
+        "tipo": "repasa",
+        "checklist": [
+          "Wiem, co odpadło dinozaurowi.",
+          "Wiem, co powiedziała im mama.",
+          "Wiem, jak razem naprawili dinozaura."
+        ],
+        "prompt": "Narysuj, jak Lucía i Dani się godzą.",
+        "banner": "120 przeczytanych stron! Kto umie wybaczać, ten jest już duży."
+      }
+    },
+    {
+      "dia": 121,
+      "semana": 25,
+      "trimestre": 2,
+      "tema": "Pachnie wiosną",
+      "oraciones": [
+        "W sobotę na spacerze Lucía czuje, że powietrze pachnie inaczej.",
+        "Migdałowce w parku są pełne białych kwiatów."
+      ],
+      "actividad": {
+        "tipo": "traza",
+        "letra": "ł"
+      }
+    },
+    {
+      "dia": 122,
+      "semana": 25,
+      "trimestre": 2,
+      "tema": "Pachnie wiosną",
+      "oraciones": [
+        "Dani zbiera kilka opadłych płatków i daje je Lucíi.",
+        "Lucía ostrożnie chowa je w swoim zeszycie do czytania."
+      ],
+      "actividad": {
+        "tipo": "completa",
+        "diagrama": "lineas-circulo"
+      }
+    },
+    {
+      "dia": 123,
+      "semana": 25,
+      "trimestre": 2,
+      "tema": "Pachnie wiosną",
+      "oraciones": [
+        "Widzą też pierwsze jaskółki, które latają wysoko na niebie.",
+        "Toby patrzy na nie i głośno szczeka, ale nigdy ich nie dogoni."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "pregunta": "Co robi Toby, kiedy widzi jaskółki?"
+      }
+    },
+    {
+      "dia": 124,
+      "semana": 25,
+      "trimestre": 2,
+      "tema": "Pachnie wiosną",
+      "oraciones": [
+        "W drodze powrotnej liczą, ile nowych kwiatów widzieli.",
+        "Lucía mówi, że wiosna to jej ulubiona pora roku."
+      ],
+      "actividad": {
+        "tipo": "adivina",
+        "adivinanza": "Przynoszę kwiaty i słońce, a kiedy przychodzę, wracają jaskółki. Kim jestem?",
+        "respuesta": "Wiosna."
+      }
+    },
+    {
+      "dia": 125,
+      "semana": 25,
+      "trimestre": 2,
+      "tema": "Pachnie wiosną: cały tydzień",
+      "oraciones": null,
+      "actividad": {
+        "tipo": "relee",
+        "prompt": "Narysuj swój ulubiony znak, że przyszła wiosna."
+      }
+    },
+    {
+      "dia": 126,
+      "semana": 26,
+      "trimestre": 2,
+      "tema": "Do widzenia, zimo",
+      "oraciones": [
+        "W niedzielę cała rodzina idzie na spacer do dużego parku.",
+        "Nie jest już tak zimno i słońce trochę grzeje."
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Narysuj rodzinę na wiosennym spacerze w parku."
+      }
+    },
+    {
+      "dia": 127,
+      "semana": 26,
+      "trimestre": 2,
+      "tema": "Do widzenia, zimo",
+      "oraciones": [
+        "Lucía myśli o wszystkim, co wydarzyło się tej zimy.",
+        "Była chora, nauczyła się robić na drutach i świętowała rok z Tobym."
+      ],
+      "actividad": {
+        "tipo": "busca",
+        "instruccion": "Znajdź w tekście, czego Lucía nauczyła się tej zimy."
+      }
+    },
+    {
+      "dia": 128,
+      "semana": 26,
+      "trimestre": 2,
+      "tema": "Do widzenia, zimo",
+      "oraciones": [
+        "Dani jest bardzo dumny: prawie sam nauczył się czytać.",
+        "Lucía mówi, że niedługo będą razem czytać tę samą książkę."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "pregunta": "Co według Lucíi będą mogli niedługo robić razem z Danim?"
+      }
+    },
+    {
+      "dia": 129,
+      "semana": 26,
+      "trimestre": 2,
+      "tema": "Do widzenia, zimo",
+      "oraciones": [
+        "Toby wesoło biega między drzewami i wącha nowe kwiaty.",
+        "Tata mówi, że następna część roku będzie najpiękniejsza ze wszystkich."
+      ],
+      "actividad": {
+        "tipo": "relaciona",
+        "pares": [
+          [
+            "Lucía",
+            "nauczyła się robić na drutach"
+          ],
+          [
+            "Dani",
+            "prawie sam czyta"
+          ],
+          [
+            "Toby",
+            "biega między drzewami"
+          ],
+          [
+            "Tata",
+            "mówi o następnej części roku"
+          ]
+        ]
+      }
+    },
+    {
+      "dia": 130,
+      "semana": 26,
+      "trimestre": 2,
+      "tema": "Koniec zimy",
+      "oraciones": [
+        "Przed wyjściem wszyscy siadają na chwilę pod dużym drzewem.",
+        "Lucía myśli, że właśnie zaczyna się wiosna, a z nią coś nowego."
+      ],
+      "actividad": {
+        "tipo": "repasa",
+        "checklist": [
+          "Wiem, co przydarzyło się Lucíi tej zimy.",
+          "Wiem, czego prawie nauczył się Dani.",
+          "Wiem, jaka pora roku teraz się zaczyna."
+        ],
+        "prompt": "Narysuj swoje najpiękniejsze wspomnienie z tej zimy.",
+        "banner": "130 przeczytanych stron! Koniec zimy -- zaczyna się wiosna!"
+      }
+    }
+  ]
+}

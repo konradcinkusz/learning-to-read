@@ -429,6 +429,15 @@ def vocabulario_base_en(libro):
     return vistos
 
 
+def palabras_de(oracion):
+    """Las palabras de una frase: lo que va entre espacios, sin contar la
+    puntuación suelta -- en polaco, la raya del diálogo va entre espacios
+    ("— Niespodzianka! — krzyczy cała rodzina."), y no es una palabra. En
+    los demás cuadernos no hay puntuación suelta: cuentan igual que
+    siempre."""
+    return [t for t in oracion.split() if any(c.isalnum() for c in t)]
+
+
 def metricas_por_dia(dias, familias, libro=FRASES, vistos_previos=None):
     """Devuelve una lista de dicts, uno por día, con sus métricas y la
     lista de lemas de contenido NUEVOS ese día (cumulativo, en orden de
@@ -444,8 +453,8 @@ def metricas_por_dia(dias, familias, libro=FRASES, vistos_previos=None):
     filas = []
     for d in dias:
         oraciones = oraciones_del_dia(d, dias_por_semana, libro)
-        palabras = sum(len(o.split()) for o in oraciones)
-        frase_max_dia = max(len(o.split()) for o in oraciones)
+        palabras = sum(len(palabras_de(o)) for o in oraciones)
+        frase_max_dia = max(len(palabras_de(o)) for o in oraciones)
 
         lemas_dia = []
         for oracion in oraciones:

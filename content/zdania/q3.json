@@ -1,0 +1,1131 @@
+{
+  "_comentario": "Datos de origen para tools/gen_days.py --libro zdania: «Zdania», el cuaderno de frases en polaco, día a día el de content/q3.json. Este fichero SI se edita a mano; content/zdania/generated-days.tex NO (se regenera con `make generate`). Trimestre 3: días 131-195 (semanas 27-39), tres frases al día. Ver notes/09-zdania.md.",
+  "dias": [
+    {
+      "dia": 131,
+      "semana": 27,
+      "trimestre": 3,
+      "tema": "Toby gubi się w parku",
+      "oraciones": [
+        "W sobotę rodzina idzie do parku.",
+        "Toby biega swobodnie między drzewami.",
+        "Nagle Toby znika w krzakach i nikt go nie widzi."
+      ],
+      "actividad": {
+        "tipo": "traza",
+        "letra": "m"
+      }
+    },
+    {
+      "dia": 132,
+      "semana": 27,
+      "trimestre": 3,
+      "tema": "Toby gubi się w parku",
+      "oraciones": [
+        "Lucía i Dani szukają Toby'ego w całym parku.",
+        "Tata zagląda za ławki i pyta ludzi.",
+        "Nikt nie widział brązowego psa z długimi uszami."
+      ],
+      "actividad": {
+        "tipo": "completa",
+        "diagrama": "lineas-ondas"
+      }
+    },
+    {
+      "dia": 133,
+      "semana": 27,
+      "trimestre": 3,
+      "tema": "Toby gubi się w parku",
+      "oraciones": [
+        "Lucía ma pomysł: gwiżdże piosenkę Toby'ego.",
+        "Z daleka słychać dobrze znane szczekanie.",
+        "Toby utknął między dwoma dużymi kamieniami."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "pregunta": "Jak Lucía znajduje Toby'ego?"
+      }
+    },
+    {
+      "dia": 134,
+      "semana": 27,
+      "trimestre": 3,
+      "tema": "Toby gubi się w parku",
+      "oraciones": [
+        "Tata wyciąga Toby'ego spomiędzy kamieni.",
+        "Toby bardzo szybko i wesoło macha ogonem.",
+        "Cała rodzina bardzo mocno go przytula."
+      ],
+      "actividad": {
+        "tipo": "relaciona",
+        "pares": [
+          [
+            "Lucía",
+            "gwiżdże piosenkę"
+          ],
+          [
+            "Tata",
+            "wyciąga Toby'ego spomiędzy kamieni"
+          ],
+          [
+            "Toby",
+            "utknął między kamieniami"
+          ],
+          [
+            "Dani",
+            "szuka Toby'ego z Lucíą"
+          ]
+        ]
+      }
+    },
+    {
+      "dia": 135,
+      "semana": 27,
+      "trimestre": 3,
+      "tema": "Toby gubi się w parku",
+      "oraciones": [
+        "Od tego dnia Toby zawsze chodzi na nowej smyczy.",
+        "Lucía mówi, że nigdy tak się nie bała.",
+        "Ale kiedy go znaleźli, była bardzo szczęśliwa."
+      ],
+      "actividad": {
+        "tipo": "crea",
+        "prompt": "Opowiedz albo narysuj: co zrobisz, jeśli zgubi się twoje zwierzątko?"
+      }
+    },
+    {
+      "dia": 136,
+      "semana": 28,
+      "trimestre": 3,
+      "tema": "Daniemu wypada ząbek",
+      "oraciones": [
+        "Dani je jabłko i czuje coś dziwnego.",
+        "Jeden ząb się rusza i Dani bardzo się boi.",
+        "Mama tłumaczy mu, że to normalne i dobre."
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Narysuj Daniego z jabłkiem i ruszającym się ząbkiem."
+      }
+    },
+    {
+      "dia": 137,
+      "semana": 28,
+      "trimestre": 3,
+      "tema": "Daniemu wypada ząbek",
+      "oraciones": [
+        "Tego wieczoru ząb Daniego w końcu wypada.",
+        "Lucía mówi: połóż go pod poduszką.",
+        "Dani nie jest pewien, czy chce to zrobić."
+      ],
+      "actividad": {
+        "tipo": "completa",
+        "diagrama": "lineas-circulo"
+      }
+    },
+    {
+      "dia": 138,
+      "semana": 28,
+      "trimestre": 3,
+      "tema": "Daniemu wypada ząbek",
+      "oraciones": [
+        "Lucíi też kiedyś wypadały mleczne zęby.",
+        "Mała myszka zamienia je na monety.",
+        "Dani trochę się boi, ale kładzie ząb pod poduszką."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "pregunta": "Co Lucía mówi Daniemu o wypadających zębach?"
+      }
+    },
+    {
+      "dia": 139,
+      "semana": 28,
+      "trimestre": 3,
+      "tema": "Daniemu wypada ząbek",
+      "oraciones": [
+        "Rano Dani od razu zagląda pod swoją poduszkę.",
+        "Znajduje tam piękną, błyszczącą monetę.",
+        "Bardzo dumny biegnie pokazać ją całej rodzinie."
+      ],
+      "actividad": {
+        "tipo": "adivina",
+        "adivinanza": "Przychodzę nocą bez hałasu, zabieram ząbek i zostawiam coś błyszczącego. Kim jestem?",
+        "respuesta": "Myszka Pérez."
+      }
+    },
+    {
+      "dia": 140,
+      "semana": 28,
+      "trimestre": 3,
+      "tema": "Daniemu wypada ząbek",
+      "oraciones": [
+        "W sobotę Dani opowiada wszystko babci.",
+        "Jej też to się kiedyś przydarzyło, dawno temu.",
+        "Dani chce, żeby wypadł mu następny ząb."
+      ],
+      "actividad": {
+        "tipo": "repasa",
+        "checklist": [
+          "Wiem, dlaczego Dani na początku się przestraszył.",
+          "Wiem, co Lucía powiedziała o wypadających zębach.",
+          "Wiem, co Dani znalazł pod poduszką."
+        ],
+        "prompt": "Narysuj myszkę, która zabiera zęby, tak jak ją sobie wyobrażasz.",
+        "banner": "140 przeczytanych stron! Jesteś już w drugiej połowie roku."
+      }
+    },
+    {
+      "dia": 141,
+      "semana": 29,
+      "trimestre": 3,
+      "tema": "Dzień Książki",
+      "oraciones": [
+        "Szkoła świętuje Dzień Książki wielką zabawą.",
+        "Każdy uczeń przynosi książkę z domu.",
+        "Lucía szuka idealnej książki w prezencie dla Daniego."
+      ],
+      "actividad": {
+        "tipo": "traza",
+        "letra": "n"
+      }
+    },
+    {
+      "dia": 142,
+      "semana": 29,
+      "trimestre": 3,
+      "tema": "Dzień Książki",
+      "oraciones": [
+        "Lucía ogląda stosy książek w szkolnej bibliotece.",
+        "Jedne wydają jej się trudne, inne nudne.",
+        "Kiedy już prawie się poddaje, widzi nową półkę."
+      ],
+      "actividad": {
+        "tipo": "completa",
+        "diagrama": "lineas-ondas"
+      }
+    },
+    {
+      "dia": 143,
+      "semana": 29,
+      "trimestre": 3,
+      "tema": "Dzień Książki",
+      "oraciones": [
+        "Pani bibliotekarka podchodzi i pyta, czego szuka.",
+        "— Łatwej bajki z obrazkami, dla mojego brata — tłumaczy Lucía.",
+        "Bibliotekarka się uśmiecha i pokazuje jej książkę."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "pregunta": "O co Lucía prosi panią bibliotekarkę?"
+      }
+    },
+    {
+      "dia": 144,
+      "semana": 29,
+      "trimestre": 3,
+      "tema": "Dzień Książki",
+      "oraciones": [
+        "Lucía starannie pakuje książkę w kolorowy papier.",
+        "Robi też zakładkę z wyciętą sylwetką Toby'ego.",
+        "Tego samego popołudnia daje prezent młodszemu bratu."
+      ],
+      "actividad": {
+        "tipo": "relaciona",
+        "pares": [
+          [
+            "Lucía",
+            "pakuje książkę"
+          ],
+          [
+            "Dani",
+            "dostaje prezent"
+          ],
+          [
+            "Pani bibliotekarka",
+            "poleca bajkę"
+          ],
+          [
+            "Toby",
+            "jest na zakładce"
+          ]
+        ]
+      }
+    },
+    {
+      "dia": 145,
+      "semana": 29,
+      "trimestre": 3,
+      "tema": "Dzień Książki",
+      "oraciones": [
+        "Dani bardzo ostrożnie otwiera swoją nową książkę.",
+        "Siada obok Lucíi i razem czytają pierwszą stronę.",
+        "Smok już jest jego ulubionym bohaterem."
+      ],
+      "actividad": {
+        "tipo": "crea",
+        "prompt": "Narysuj zakładkę, jaką chcesz zrobić. Jaki będzie na niej obrazek?"
+      }
+    },
+    {
+      "dia": 146,
+      "semana": 30,
+      "trimestre": 3,
+      "tema": "Zaczyna się Wielki Tydzień",
+      "oraciones": [
+        "Przed Wielkanocą szkoła jest zamknięta przez cały tydzień.",
+        "Lucía i Dani wstają późno, bez żadnego pośpiechu.",
+        "Babcia Rosa przyjeżdża do nich na kilka dni."
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Narysuj babcię Rosę, jak przyjeżdża na święta do rodziny."
+      }
+    },
+    {
+      "dia": 147,
+      "semana": 30,
+      "trimestre": 3,
+      "tema": "Zaczyna się Wielki Tydzień",
+      "oraciones": [
+        "Babcia przywozi koszyk pełen wczorajszego chleba.",
+        "Nauczy ich robić słodkie grzanki, swój ulubiony deser.",
+        "Lucía nigdy ich nie jadła i bardzo chce spróbować."
+      ],
+      "actividad": {
+        "tipo": "busca",
+        "instruccion": "Znajdź w tekście, jaki deser babcia nauczy ich robić."
+      }
+    },
+    {
+      "dia": 148,
+      "semana": 30,
+      "trimestre": 3,
+      "tema": "Zaczyna się Wielki Tydzień",
+      "oraciones": [
+        "Maczają chleb w mleku z cynamonem i cukrem.",
+        "Potem ostrożnie smażą go na dużej patelni.",
+        "Przez całe popołudnie w kuchni pachnie cynamonem."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "pregunta": "W czym maczają chleb, żeby zrobić grzanki?"
+      }
+    },
+    {
+      "dia": 149,
+      "semana": 30,
+      "trimestre": 3,
+      "tema": "Zaczyna się Wielki Tydzień",
+      "oraciones": [
+        "Dani ma całą buzię w cukrze i cynamonie.",
+        "Tata mówi, że Dani zjadł więcej grzanek niż ktokolwiek.",
+        "Wszyscy się śmieją i proszą babcię o jeszcze."
+      ],
+      "actividad": {
+        "tipo": "adivina",
+        "adivinanza": "Robią mnie z czerstwego chleba, z mlekiem, cynamonem i cukrem. Czym jestem?",
+        "respuesta": "Słodka grzanka (torrija)."
+      }
+    },
+    {
+      "dia": 150,
+      "semana": 30,
+      "trimestre": 3,
+      "tema": "Zaczyna się Wielki Tydzień",
+      "oraciones": [
+        "W niedzielę święta się kończą i wszystko wraca do normy.",
+        "Lucía zapisuje przepis w swoim zeszycie.",
+        "Mówi, że za rok zrobi grzanki sama."
+      ],
+      "actividad": {
+        "tipo": "repasa",
+        "checklist": [
+          "Wiem, co babcia przywiozła.",
+          "Wiem, w czym maczają chleb.",
+          "Wiem, kto zjadł najwięcej grzanek."
+        ],
+        "prompt": "Narysuj swoją grzankę, z dużą ilością cynamonu na wierzchu.",
+        "banner": "150 przeczytanych stron! To już ponad połowa zeszytu."
+      }
+    },
+    {
+      "dia": 151,
+      "semana": 31,
+      "trimestre": 3,
+      "tema": "Szkolny ogródek",
+      "oraciones": [
+        "Po powrocie do szkoły pani Marta ma dla klasy niespodziankę.",
+        "Na podwórku powstał mały ogródek ze świeżą ziemią.",
+        "Każde dziecko przesadzi do niego swoją roślinkę z doniczki."
+      ],
+      "actividad": {
+        "tipo": "traza",
+        "letra": "ń"
+      }
+    },
+    {
+      "dia": 152,
+      "semana": 31,
+      "trimestre": 3,
+      "tema": "Szkolny ogródek",
+      "oraciones": [
+        "Lucía bardzo ostrożnie wyjmuje swoją fasolkę.",
+        "Korzenie są już długie i białe jak nitki.",
+        "Wkłada ją do dołka w świeżej, ciemnej ziemi."
+      ],
+      "actividad": {
+        "tipo": "completa",
+        "diagrama": "lineas-ondas"
+      }
+    },
+    {
+      "dia": 153,
+      "semana": 31,
+      "trimestre": 3,
+      "tema": "Szkolny ogródek",
+      "oraciones": [
+        "Pani Marta tłumaczy, że teraz roślina będzie miała więcej miejsca.",
+        "Będzie też potrzebować słońca, wody i dużo cierpliwości.",
+        "Lucía obiecuje podlewać ją co rano przed lekcjami."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "pregunta": "Jakich trzech rzeczy według pani Marty potrzebuje roślina?"
+      }
+    },
+    {
+      "dia": 154,
+      "semana": 31,
+      "trimestre": 3,
+      "tema": "Szkolny ogródek",
+      "oraciones": [
+        "Każde dziecko wbija obok roślinki patyczek ze swoim imieniem.",
+        "Dzięki temu wszyscy wiedzą, która roślinka jest czyja.",
+        "Dani pyta, czy on też niedługo coś posadzi."
+      ],
+      "actividad": {
+        "tipo": "relaciona",
+        "pares": [
+          [
+            "Lucía",
+            "przesadza fasolkę"
+          ],
+          [
+            "Pani Marta",
+            "zakłada ogródek"
+          ],
+          [
+            "Każda roślinka",
+            "ma patyczek z imieniem"
+          ],
+          [
+            "Dani",
+            "też chce coś posadzić"
+          ]
+        ]
+      }
+    },
+    {
+      "dia": 155,
+      "semana": 31,
+      "trimestre": 3,
+      "tema": "Szkolny ogródek: cały tydzień",
+      "oraciones": null,
+      "actividad": {
+        "tipo": "relee",
+        "prompt": "Narysuj, jak będzie wyglądał ogródek za kilka tygodni."
+      }
+    },
+    {
+      "dia": 156,
+      "semana": 32,
+      "trimestre": 3,
+      "tema": "Lucía uczy się jeździć na rowerze",
+      "oraciones": [
+        "W sobotę tata odkręca boczne kółka od roweru Lucíi.",
+        "Lucía trochę się denerwuje, kiedy widzi rower bez nich.",
+        "Tata obiecuje, że cały czas będzie ją trzymał."
+      ],
+      "actividad": {
+        "tipo": "traza",
+        "letra": "o"
+      }
+    },
+    {
+      "dia": 157,
+      "semana": 32,
+      "trimestre": 3,
+      "tema": "Lucía uczy się jeździć na rowerze",
+      "oraciones": [
+        "Na początku Lucía kilka razy z rzędu się przewraca.",
+        "Za każdym razem wstaje, choć trochę bolą ją kolana.",
+        "Tata ją pociesza, że tak uczą się wszystkie dzieci."
+      ],
+      "actividad": {
+        "tipo": "busca",
+        "instruccion": "Znajdź w tekście, co trochę boli Lucíę."
+      }
+    },
+    {
+      "dia": 158,
+      "semana": 32,
+      "trimestre": 3,
+      "tema": "Lucía uczy się jeździć na rowerze",
+      "oraciones": [
+        "Nagle tata puszcza siodełko, a Lucía tego nie zauważa.",
+        "Lucía sama jedzie przez kilka metrów.",
+        "Kiedy się ogląda i widzi go daleko, prawie spada ze zdziwienia."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "pregunta": "Co robi tata, kiedy Lucía tego nie widzi?"
+      }
+    },
+    {
+      "dia": 159,
+      "semana": 32,
+      "trimestre": 3,
+      "tema": "Lucía uczy się jeździć na rowerze",
+      "oraciones": [
+        "Tego popołudnia Lucía jeździ w kółko po całym parku.",
+        "Toby biegnie obok i wesoło szczeka.",
+        "Dani klaszcze za każdym razem, kiedy siostra go mija."
+      ],
+      "actividad": {
+        "tipo": "adivina",
+        "adivinanza": "Mam dwa koła i dzwonek, a kiedy świeci słońce, kręcisz moimi pedałami. Czym jestem?",
+        "respuesta": "Rower."
+      }
+    },
+    {
+      "dia": 160,
+      "semana": 32,
+      "trimestre": 3,
+      "tema": "Lucía uczy się jeździć na rowerze",
+      "oraciones": [
+        "Wieczorem Lucía opowiada całej rodzinie, jak się nauczyła.",
+        "Tata daje jej nowy dzwonek do roweru.",
+        "Lucía mówi, że jutro chce pojechać rowerem do szkoły."
+      ],
+      "actividad": {
+        "tipo": "repasa",
+        "checklist": [
+          "Wiem, co tata odkręcił od roweru Lucíi.",
+          "Wiem, co ją trochę bolało na początku.",
+          "Wiem, co tata dał jej na koniec."
+        ],
+        "prompt": "Narysuj Lucíę, jak sama jedzie na rowerze.",
+        "banner": "160 przeczytanych stron! Co tydzień czytasz trochę lepiej."
+      }
+    },
+    {
+      "dia": 161,
+      "semana": 33,
+      "trimestre": 3,
+      "tema": "Lucía zapisuje się na basen",
+      "oraciones": [
+        "W tym miesiącu Lucía zaczyna naukę pływania we wtorki i czwartki.",
+        "Na początku trochę się boi zanurzyć głowę w wodzie.",
+        "Mama mówi, że wszystkie dzieci tak zaczynają."
+      ],
+      "actividad": {
+        "tipo": "traza",
+        "letra": "ó"
+      }
+    },
+    {
+      "dia": 162,
+      "semana": 33,
+      "trimestre": 3,
+      "tema": "Lucía zapisuje się na basen",
+      "oraciones": [
+        "Trener pływania ma na imię Javier i jest bardzo cierpliwy.",
+        "Najpierw uczy ją unosić się na plecach, bez strachu.",
+        "Lucía połyka trochę wody i śmieje się z siebie."
+      ],
+      "actividad": {
+        "tipo": "completa",
+        "diagrama": "lineas-circulo"
+      }
+    },
+    {
+      "dia": 163,
+      "semana": 33,
+      "trimestre": 3,
+      "tema": "Lucía zapisuje się na basen",
+      "oraciones": [
+        "Umie już dobrze ruszać w wodzie rękami i nogami.",
+        "Javier opowiada, że ryby oddychają skrzelami, a nie nosem.",
+        "Lucía myśli, że kiedyś chce pływać jak ryba."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "pregunta": "Jaką ciekawostkę o rybach opowiada Javier?"
+      }
+    },
+    {
+      "dia": 164,
+      "semana": 33,
+      "trimestre": 3,
+      "tema": "Lucía zapisuje się na basen",
+      "oraciones": [
+        "Po dwóch miesiącach Lucía przepływa już sama cały basen.",
+        "Javier daje jej za wysiłek naklejkę z gwiazdką.",
+        "Bardzo dumna nakleja ją na torbę na basen."
+      ],
+      "actividad": {
+        "tipo": "relaciona",
+        "pares": [
+          [
+            "Javier",
+            "jest trenerem pływania"
+          ],
+          [
+            "Lucía",
+            "uczy się pływać sama"
+          ],
+          [
+            "Naklejka",
+            "ma gwiazdkę"
+          ],
+          [
+            "Mama",
+            "dodaje jej odwagi"
+          ]
+        ]
+      }
+    },
+    {
+      "dia": 165,
+      "semana": 33,
+      "trimestre": 3,
+      "tema": "Lucía zapisuje się na basen: cały tydzień",
+      "oraciones": null,
+      "actividad": {
+        "tipo": "relee",
+        "prompt": "Narysuj Lucíę, jak pływa w basenie, już bez strachu."
+      }
+    },
+    {
+      "dia": 166,
+      "semana": 34,
+      "trimestre": 3,
+      "tema": "Dzień Matki",
+      "oraciones": [
+        "W niedzielę jest Dzień Matki i trzeba przygotować coś wyjątkowego.",
+        "Lucía i Dani postanawiają zrobić mamie wspólny prezent.",
+        "Tata pomaga im kupić brystol i kolorowe farby."
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Narysuj prezent, który Lucía i Dani przygotowują dla mamy."
+      }
+    },
+    {
+      "dia": 167,
+      "semana": 34,
+      "trimestre": 3,
+      "tema": "Dzień Matki",
+      "oraciones": [
+        "Dani rysuje całą rodzinę, razem z Tobym, bardzo dużą.",
+        "Pod rysunkiem brata Lucía pisze ładne, miłe zdanie.",
+        "Razem składają brystol, żeby wyszła z niego kartka."
+      ],
+      "actividad": {
+        "tipo": "busca",
+        "instruccion": "Znajdź w tekście, co Lucía pisze pod rysunkiem Daniego."
+      }
+    },
+    {
+      "dia": 168,
+      "semana": 34,
+      "trimestre": 3,
+      "tema": "Dzień Matki",
+      "oraciones": [
+        "W niedzielę rano mama budzi się ze śniadaniem do łóżka.",
+        "Tata niesie tacę, a dzieci idą za nim z prezentem.",
+        "Mama bardzo się wzrusza, kiedy otwiera ręcznie zrobioną kartkę."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "pregunta": "Co czeka na mamę w niedzielę rano, kiedy się budzi?"
+      }
+    },
+    {
+      "dia": 169,
+      "semana": 34,
+      "trimestre": 3,
+      "tema": "Dzień Matki",
+      "oraciones": [
+        "Mama od razu wiesza rysunek Daniego na drzwiach lodówki.",
+        "Mówi, że to najpiękniejszy prezent, jaki kiedykolwiek dostała.",
+        "Toby też dostaje mocnego przytulasa, bo jest na rysunku."
+      ],
+      "actividad": {
+        "tipo": "adivina",
+        "adivinanza": "Opiekuję się tobą, kocham cię i codziennie uczę cię czytać. Kim jestem?",
+        "respuesta": "Mama."
+      }
+    },
+    {
+      "dia": 170,
+      "semana": 34,
+      "trimestre": 3,
+      "tema": "Dzień Matki",
+      "oraciones": [
+        "Po południu rodzina je obiad w ogrodzie babci.",
+        "Lucía myśli, że mama zasługuje na dobry dzień codziennie.",
+        "Przed snem daje jej o jednego buziaka więcej niż zwykle."
+      ],
+      "actividad": {
+        "tipo": "repasa",
+        "checklist": [
+          "Wiem, jaki prezent zrobili Lucía i Dani.",
+          "Wiem, gdzie mama powiesiła rysunek.",
+          "Wiem, gdzie rodzina jadła obiad."
+        ],
+        "prompt": "Narysuj najpiękniejsze wspomnienie z mamą albo z kimś, kto się tobą opiekuje.",
+        "banner": "170 przeczytanych stron! Każdego dnia uczysz się czegoś nowego."
+      }
+    },
+    {
+      "dia": 171,
+      "semana": 35,
+      "trimestre": 3,
+      "tema": "Dani zna już prawie wszystkie litery",
+      "oraciones": [
+        "Po południu Lucía gra z Danim w grę w litery.",
+        "Pokazuje mu kartkę, a on mówi, jaka to litera.",
+        "Za każdym razem zgaduje szybciej, prawie bez zastanowienia."
+      ],
+      "actividad": {
+        "tipo": "traza",
+        "letra": "p"
+      }
+    },
+    {
+      "dia": 172,
+      "semana": 35,
+      "trimestre": 3,
+      "tema": "Dani zna już prawie wszystkie litery",
+      "oraciones": [
+        "Dani zna już prawie wszystkie litery całego alfabetu.",
+        "Jeszcze trochę mylą mu się tylko litery b i d.",
+        "Lucía mówi, że jej też na początku było z nimi trudno."
+      ],
+      "actividad": {
+        "tipo": "completa",
+        "diagrama": "lineas-ondas"
+      }
+    },
+    {
+      "dia": 173,
+      "semana": 35,
+      "trimestre": 3,
+      "tema": "Dani zna już prawie wszystkie litery",
+      "oraciones": [
+        "Pewnego popołudnia Dani bierze bajkę i powoli składa litery.",
+        "Lucía siada obok, ale jeszcze mu nie pomaga.",
+        "Dani sam składa pierwsze słowo: — Kot — mówi i nie może uwierzyć."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "pregunta": "Jakie słowo Dani sam składa po raz pierwszy?"
+      }
+    },
+    {
+      "dia": 174,
+      "semana": 35,
+      "trimestre": 3,
+      "tema": "Dani zna już prawie wszystkie litery",
+      "oraciones": [
+        "Wieczorem Dani z dumą opowiada tacie, co zrobił.",
+        "Tata mocno go przytula i mówi, że będzie wielkim czytelnikiem.",
+        "Lucía myśli, że niedługo będą razem czytać tę samą książkę."
+      ],
+      "actividad": {
+        "tipo": "relaciona",
+        "pares": [
+          [
+            "Dani",
+            "czyta pierwsze słowo"
+          ],
+          [
+            "Lucía",
+            "uczy go liter"
+          ],
+          [
+            "Tata",
+            "jest bardzo dumny"
+          ],
+          [
+            "Mama",
+            "słucha ich z kuchni"
+          ]
+        ]
+      }
+    },
+    {
+      "dia": 175,
+      "semana": 35,
+      "trimestre": 3,
+      "tema": "Dani zna już prawie wszystkie litery: cały tydzień",
+      "oraciones": null,
+      "actividad": {
+        "tipo": "relee",
+        "prompt": "Narysuj Daniego, jak sam czyta swoje pierwsze słowo."
+      }
+    },
+    {
+      "dia": 176,
+      "semana": 36,
+      "trimestre": 3,
+      "tema": "Zbliża się koniec roku szkolnego",
+      "oraciones": [
+        "W szkole pani Marta ogłasza, że rok szkolny prawie się kończy.",
+        "Klasa zorganizuje małe przyjęcie na pożegnanie.",
+        "Każde dziecko ma przygotować coś na ten ostatni, wyjątkowy dzień."
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Narysuj, jak wyobrażasz sobie przyjęcie Lucíi na koniec roku."
+      }
+    },
+    {
+      "dia": 177,
+      "semana": 36,
+      "trimestre": 3,
+      "tema": "Zbliża się koniec roku szkolnego",
+      "oraciones": [
+        "Sofía i Lucía postanawiają razem przygotować całkiem prosty taniec.",
+        "Ćwiczą co popołudnie w dużym pokoju w domu Lucíi.",
+        "Toby siedzi i patrzy, a przy każdym obrocie szczeka."
+      ],
+      "actividad": {
+        "tipo": "busca",
+        "instruccion": "Znajdź w tekście, kto pomaga Lucíi przygotować taniec."
+      }
+    },
+    {
+      "dia": 178,
+      "semana": 36,
+      "trimestre": 3,
+      "tema": "Zbliża się koniec roku szkolnego",
+      "oraciones": [
+        "Dani też chce wystąpić, choć jest jeszcze za mały na taniec.",
+        "Pani Marta daje mu specjalne zadanie: otworzy przyjęcie.",
+        "Dani bardzo się cieszy ze swojego ważnego zadania."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "pregunta": "Jakie specjalne zadanie pani Marta daje Daniemu?"
+      }
+    },
+    {
+      "dia": 179,
+      "semana": 36,
+      "trimestre": 3,
+      "tema": "Zbliża się koniec roku szkolnego",
+      "oraciones": [
+        "Pani prosi wszystkie rodziny, żeby przyniosły coś do jedzenia.",
+        "Mama postanawia upiec dla wszystkich swój słynny tort czekoladowy.",
+        "Lucía skreśla w małym kalendarzu dni, które jeszcze zostały."
+      ],
+      "actividad": {
+        "tipo": "adivina",
+        "adivinanza": "Przychodzi co roku w czerwcu, z uściskami i piosenkami, i żegna kolejny rok szkolny. Co to jest?",
+        "respuesta": "Koniec roku szkolnego."
+      }
+    },
+    {
+      "dia": 180,
+      "semana": 36,
+      "trimestre": 3,
+      "tema": "Zbliża się koniec roku szkolnego",
+      "oraciones": [
+        "Do przyjęcia na koniec roku został już tylko tydzień.",
+        "Lucía i Sofía ostatni raz ćwiczą taniec, bardzo zdenerwowane.",
+        "Dani powtarza swoje zdanie w kółko, żeby go nie zapomnieć."
+      ],
+      "actividad": {
+        "tipo": "repasa",
+        "checklist": [
+          "Wiem, co przygotowują Lucía i Sofía.",
+          "Wiem, jakie zadanie pani Marta dała Daniemu.",
+          "Wiem, co mama przyniesie na przyjęcie."
+        ],
+        "prompt": "Narysuj taniec, który przygotowują Lucía i Sofía.",
+        "banner": "180 przeczytanych stron! Rok szkolny prawie się kończy."
+      }
+    },
+    {
+      "dia": 181,
+      "semana": 37,
+      "trimestre": 3,
+      "tema": "Gąsienica zmienia się w motyla",
+      "oraciones": [
+        "W klasie Lucía i jej koledzy opiekują się małą zieloną gąsienicą.",
+        "Każdego ranka ostrożnie dają jej świeże liście.",
+        "Pewnego dnia gąsienica przestaje się ruszać i zwisa głową w dół."
+      ],
+      "actividad": {
+        "tipo": "traza",
+        "letra": "r"
+      }
+    },
+    {
+      "dia": 182,
+      "semana": 37,
+      "trimestre": 3,
+      "tema": "Gąsienica zmienia się w motyla",
+      "oraciones": [
+        "— Tworzy się poczwarka — tłumaczy pani Marta całej klasie.",
+        "W środku ciało gąsienicy zaczyna się zmieniać, krok po kroku.",
+        "Z zewnątrz poczwarka przez kilka dni wcale się nie rusza."
+      ],
+      "actividad": {
+        "tipo": "completa",
+        "diagrama": "lineas-circulo"
+      }
+    },
+    {
+      "dia": 183,
+      "semana": 37,
+      "trimestre": 3,
+      "tema": "Gąsienica zmienia się w motyla",
+      "oraciones": [
+        "Pani Marta opowiada ciekawostkę: motyle czują smak nóżkami.",
+        "Lucía co popołudnie zagląda do słoika, czekając na coś nowego.",
+        "Pewnego majowego ranka w środku wreszcie coś się rusza."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "pregunta": "Jaką ciekawostkę o motylach opowiada pani Marta?"
+      }
+    },
+    {
+      "dia": 184,
+      "semana": 37,
+      "trimestre": 3,
+      "tema": "Gąsienica zmienia się w motyla",
+      "oraciones": [
+        "Z poczwarki wychodzi pomarańczowo-czarny motyl z pomiętymi skrzydłami.",
+        "— Wykluł się, wykluł! — woła Lucía i przywołuje wszystkich kolegów.",
+        "Jego mokre skrzydła muszą schnąć w słońcu przez kilka godzin."
+      ],
+      "actividad": {
+        "tipo": "relaciona",
+        "pares": [
+          [
+            "Gąsienica",
+            "zwisa i robi poczwarkę"
+          ],
+          [
+            "Pani Marta",
+            "tłumaczy wszystko klasie"
+          ],
+          [
+            "Motyl",
+            "ma pomięte skrzydła"
+          ],
+          [
+            "Lucía",
+            "widzi go pierwsza"
+          ]
+        ]
+      }
+    },
+    {
+      "dia": 185,
+      "semana": 37,
+      "trimestre": 3,
+      "tema": "Gąsienica zmienia się w motyla: cały tydzień",
+      "oraciones": null,
+      "actividad": {
+        "tipo": "relee",
+        "prompt": "Narysuj trzy etapy: gąsienicę, poczwarkę i motyla."
+      }
+    },
+    {
+      "dia": 186,
+      "semana": 38,
+      "trimestre": 3,
+      "tema": "Kiermasz książek na koniec roku",
+      "oraciones": [
+        "Na koniec roku szkoła organizuje kiermasz książek.",
+        "Każde dziecko przynosi ulubioną bajkę, żeby pokazać ją innym.",
+        "Dani, który zna już wiele słów, też chce w tym roku wziąć udział."
+      ],
+      "actividad": {
+        "tipo": "dibuja",
+        "prompt": "Narysuj stół z książkami na szkolnym kiermaszu."
+      }
+    },
+    {
+      "dia": 187,
+      "semana": 38,
+      "trimestre": 3,
+      "tema": "Kiermasz książek na koniec roku",
+      "oraciones": [
+        "Tego ranka Lucía pomaga Daniemu wybrać krótką i łatwą bajkę.",
+        "Szkolna biblioteka ma ponad dwa tysiące różnych książek.",
+        "Lucía nigdy wcześniej nie myślała, ile z nich może przeczytać."
+      ],
+      "actividad": {
+        "tipo": "busca",
+        "instruccion": "Znajdź w tekście, ile książek ma szkolna biblioteka."
+      }
+    },
+    {
+      "dia": 188,
+      "semana": 38,
+      "trimestre": 3,
+      "tema": "Kiermasz książek na koniec roku",
+      "oraciones": [
+        "— Czytałabym je wszystkie prawie czterdzieści lat — liczy głośno Lucía.",
+        "Dani głośno się śmieje i mówi, że chce zacząć od razu.",
+        "Pani Marta tłumaczy, że właśnie po to jest dzisiejszy kiermasz."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "pregunta": "Ile lat Lucía czytałaby wszystkie książki z biblioteki?"
+      }
+    },
+    {
+      "dia": 189,
+      "semana": 38,
+      "trimestre": 3,
+      "tema": "Kiermasz książek na koniec roku",
+      "oraciones": [
+        "Wszyscy po kolei opowiadają swoje bajki przed całą klasą.",
+        "Lucía jest ostatnia i prawie nie ma czasu się przygotować.",
+        "Bierze głęboki oddech, patrzy na klasę i zaczyna czytać."
+      ],
+      "actividad": {
+        "tipo": "adivina",
+        "adivinanza": "Ma strony, a nie liście, i opowiada historie, choć nie mówi. Co to jest?",
+        "respuesta": "Książka (bajka)."
+      }
+    },
+    {
+      "dia": 190,
+      "semana": 38,
+      "trimestre": 3,
+      "tema": "Kiermasz książek na koniec roku",
+      "oraciones": [
+        "Klasa głośno bije brawo, a pani Marta puszcza do Lucíi oko.",
+        "Wieczorem Lucía opowiada całej rodzinie, jak było na kiermaszu.",
+        "Tata mówi, że jest bardzo dumny, bo Lucía czyta już tak dobrze."
+      ],
+      "actividad": {
+        "tipo": "repasa",
+        "checklist": [
+          "Wiem, jaki kiermasz organizuje szkoła.",
+          "Wiem, jaką bajkę wybrał Dani.",
+          "Wiem, co tata powiedział Lucíi wieczorem."
+        ],
+        "prompt": "Narysuj okładkę książki, którą chcesz przeczytać przed całą klasą.",
+        "banner": "190 przeczytanych stron! Czytasz już tak dobrze jak Lucía."
+      }
+    },
+    {
+      "dia": 191,
+      "semana": 39,
+      "trimestre": 3,
+      "tema": "Ostatni dzień szkoły",
+      "oraciones": [
+        "Wreszcie nadchodzi ostatni dzień szkoły w tym roku szkolnym.",
+        "Lucía budzi się wcześnie, pełna radości, ale też trochę smutna.",
+        "Dziś Lucía żegna się już ze swoją pierwszą klasą podstawówki."
+      ],
+      "actividad": {
+        "tipo": "traza",
+        "letra": "s"
+      }
+    },
+    {
+      "dia": 192,
+      "semana": 39,
+      "trimestre": 3,
+      "tema": "Ostatni dzień szkoły",
+      "oraciones": [
+        "W klasie pani Marta rozdaje koperty ze świadectwami.",
+        "Oprócz tego każde dziecko dostaje dyplom na koniec roku.",
+        "Lucía bardzo starannie chowa swój dyplom do plecaka."
+      ],
+      "actividad": {
+        "tipo": "completa",
+        "diagrama": "lineas-ondas"
+      }
+    },
+    {
+      "dia": 193,
+      "semana": 39,
+      "trimestre": 3,
+      "tema": "Ostatni dzień szkoły",
+      "oraciones": [
+        "Wracając do domu, Lucía myśli o wszystkim, czego się w tym roku nauczyła.",
+        "W domu z dumą pokazuje mamie swój dyplom.",
+        "Mama wiesza go na drzwiach lodówki, obok innych."
+      ],
+      "actividad": {
+        "tipo": "responde",
+        "pregunta": "Gdzie mama wiesza dyplom Lucíi?"
+      }
+    },
+    {
+      "dia": 194,
+      "semana": 39,
+      "trimestre": 3,
+      "tema": "Ostatni dzień szkoły",
+      "oraciones": [
+        "Po południu mama wyjmuje starą fotografię Lucíi sprzed roku.",
+        "Lucía widzi, jaka była mała, i porównuje, jak urosła.",
+        "Myśli, że teraz czyta dużo lepiej, szybciej biega i umie pływać."
+      ],
+      "actividad": {
+        "tipo": "relaciona",
+        "pares": [
+          [
+            "Lucía",
+            "czyta dużo lepiej"
+          ],
+          [
+            "Dani",
+            "prawie sam czyta"
+          ],
+          [
+            "Mama",
+            "ma zdjęcie sprzed roku"
+          ],
+          [
+            "Toby",
+            "jest na wszystkich zdjęciach"
+          ]
+        ]
+      }
+    },
+    {
+      "dia": 195,
+      "semana": 39,
+      "trimestre": 3,
+      "tema": "Koniec wiosny",
+      "oraciones": [
+        "Wieczorem cała rodzina razem je kolację w ogrodzie babci Rosy.",
+        "Lucía myśli, że ta wiosna była najpiękniejsza ze wszystkich.",
+        "Teraz czeka na nich całe, bardzo długie lato pełne zabawy."
+      ],
+      "actividad": {
+        "tipo": "repasa",
+        "checklist": [
+          "Wiem, co Lucía dostała ostatniego dnia szkoły.",
+          "Wiem, co Lucía zobaczyła na zdjęciu sprzed roku.",
+          "Wiem, jaka pora roku teraz się zaczyna."
+        ],
+        "prompt": "Narysuj swoje najpiękniejsze wspomnienie z tej wiosny.",
+        "banner": "195 przeczytanych stron! Koniec wiosny -- witaj, lato!"
+      }
+    }
+  ]
+}
