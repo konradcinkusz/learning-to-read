@@ -311,6 +311,18 @@ páginas del principio del libro, los 20 días con su número de siempre
 vez del diploma, una página que dice dónde está el cuaderno entero, con
 un código QR. Se hace con el mismo motor (`ediciones/<raíz>-muestra.tex`).
 
+## La familia de cuadernos
+
+*Aprendo a leer* tiene dos hermanos, del mismo autor y con el mismo
+formato de cuaderno diario (260 días, 52 semanas, en español, inglés y
+polaco):
+
+- **[learning-to-count](https://github.com/konradcinkusz/learning-to-count)**
+  (*Poznaję liczby* en polaco) -- el cuaderno de números.
+- **[learning-economics](https://github.com/konradcinkusz/learning-economics)**
+  (*Poznaję ekonomię* en polaco) -- el cuaderno de dinero y economía
+  cotidiana.
+
 ## Descargar el PDF sin instalar nada
 
 Nivel 1, primeras palabras:
