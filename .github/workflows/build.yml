@@ -38,32 +38,17 @@ jobs:
         with:
           python-version: '3.11'
 
-      # Nada generado está comprometido en git (content/generated-days.tex
-      # es GENERADO, no se sube), así que un checkout limpio tiene que
-      # generarlo antes de poder validar nada. content/letras-trazo.json
-      # (el contorno de cada letra para la actividad "traza") SÍ está en
-      # git -- tools/gen_days.py lo lee directamente, sin depender de
-      # matplotlib/fonttools (eso solo hace falta para regenerarlo, ver
-      # tools/gen_letras_puntos.py), así que este job no gana ninguna
-      # dependencia pesada por esa actividad.
-      - name: Genera los .tex de los cuadernos desde su JSON
-        run: make generate
+      - name: Instala las dependencias de los tests
+        run: python3 -m pip install -r requirements.txt
 
-      - name: Valida el contenido (frases por trimestre, campos de actividad)
-        run: python3 tools/gen_days.py --check
-
-      # El cuaderno de primeras palabras (content/palabras/q*.json):
-      # primero el silabeo automático contra casos conocidos -- si alguien
-      # rompe una regla de tools/silabas.py, que se vea aquí y no como
-      # cientos de palabras "mal silabeadas" de golpe --, después el
-      # contenido (cada palabra partida a mano igual que la parte
-      # tools/silabas.py, y dentro de la escalera de sílabas de su
-      # semana), y un resumen de la escalera en el resumen del job.
-      - name: Comprueba el silabeo automático (casos conocidos)
-        run: python3 tools/silabas.py --prueba
-
-      - name: Valida el cuaderno de primeras palabras (silabeo, escalera de sílabas)
-        run: python3 tools/gen_palabras.py --check
+      # Todas las comprobaciones en Python puro (ver `gates` en el Makefile):
+      # genera los .tex desde el JSON (no están en git), valida el contenido
+      # de los ocho cuadernos, corre los casos conocidos del silabeo
+      # (silabas, fonetica, sylaby), mide la progresión (palabras/página y
+      # frase más larga son límites duros) y los tests de tests/.
+      # Los pasos de abajo solo añaden resúmenes al job.
+      - name: Comprobaciones en Python (make gates)
+        run: make gates
 
       - name: Resume la escalera del cuaderno de primeras palabras
         run: |
@@ -85,18 +70,6 @@ jobs:
             python3 tools/metricas.py --tabla
           } >> "$GITHUB_STEP_SUMMARY"
 
-      # "Leo con lupa", el nivel 3 (content/lupa/q*.json, ver
-      # notes/04-nivel-lupa.md): las mismas puertas con su propio
-      # contenido y su propia escalera, que añade un mínimo de oraciones
-      # subordinadas por texto. tools/gen_days.py --libro lupa comprueba
-      # además lo que se puede comprobar a máquina en sus actividades: que
-      # cada tabla lógica tenga una sola solución, que cada ruta de un mapa
-      # llegue a donde dice, que cada corrección de "Caza los errores" esté
-      # en el texto de la semana, que el libro tenga sus 260 días... (ver
-      # la cabecera de tools/lupa.py).
-      - name: Valida Leo con lupa (actividades, tablas, mapas, 260 días)
-        run: python3 tools/gen_days.py --libro lupa --check
-
       - name: Mide la progresión de Leo con lupa (palabras, frase, subordinadas)
         run: |
           {
@@ -104,18 +77,6 @@ jobs:
             echo
             python3 tools/metricas.py --libro lupa --tabla
           } >> "$GITHUB_STEP_SUMMARY"
-
-      # "Read and Draw", el cuaderno en inglés (content/english/q*.json, ver
-      # notes/05-english.md): las mismas puertas que "Leo con lupa", con
-      # las comprobaciones propias de tools/english.py -- cada frase de
-      # "The missing words" y de "Match the halves" está tal cual en el
-      # texto de la semana, cada palabra de "Word hunt" en el del día, el
-      # texto en inglés británico y sin rastros del español -- y su propia
-      # escalera, que también exige oraciones subordinadas en cada texto.
-      # Mientras se escribe por trimestres, tools/libros.py dice cuántos
-      # días tiene ya (dias_escritos) y se valida exactamente eso.
-      - name: Valida Read and Draw (inglés, actividades, frases del texto)
-        run: python3 tools/gen_days.py --libro english --check
 
       - name: Mide la progresión de Read and Draw (palabras, frase, subordinadas)
         run: |
@@ -125,25 +86,6 @@ jobs:
             python3 tools/metricas.py --libro english --tabla
           } >> "$GITHUB_STEP_SUMMARY"
 
-      # «First Words», las primeras palabras en inglés
-      # (content/firstwords/q*.json, ver notes/06-first-words.md): las
-      # mismas puertas que el cuaderno de primeras palabras en español,
-      # con sonidos en vez de sílabas. Primero el partido automático en
-      # sonidos contra casos conocidos (tools/fonetica.py: grafemas, e
-      # mágica, rr, las trampas que tiene que rechazar); después el
-      # contenido -- cada palabra partida a mano igual que la parte
-      # tools/fonetica.py, dentro de la escalera de sonidos de su semana,
-      # sin tricky words en las tarjetas, y en verano solo palabras ya
-      # leídas --, la tabla de sonidos del principio generada de la
-      # misma escalera, y un resumen semana a semana. Mientras se escribe
-      # por partes, su Perfil (tools/gen_palabras.py) dice cuántos días
-      # tiene ya (dias_escritos) y se valida exactamente eso.
-      - name: Comprueba el partido en sonidos del inglés (casos conocidos)
-        run: python3 tools/fonetica.py --prueba
-
-      - name: Valida First Words (sonidos, escalera, tabla de sonidos)
-        run: python3 tools/gen_palabras.py --libro firstwords --check
-
       - name: Resume la escalera de First Words
         run: |
           {
@@ -151,21 +93,6 @@ jobs:
             echo
             python3 tools/gen_palabras.py --libro firstwords --tabla
           } >> "$GITHUB_STEP_SUMMARY"
-
-      # «Pierwsze słowa», las primeras palabras en polaco
-      # (content/slowa/q*.json, ver notes/08-pierwsze-slowa.md): las mismas
-      # puertas que el cuaderno de primeras palabras en español, con las
-      # sílabas del polaco. Primero el silabeo automático contra casos
-      # conocidos (tools/sylaby.py: dígrafos, la i que ablanda, los grupos
-      # que no se separan); después el contenido -- cada palabra partida a
-      # mano igual que la parte tools/sylaby.py, y dentro de la escalera
-      # de su semana -- y un resumen semana a semana. Mientras se escribe
-      # por partes, su Perfil dice cuántos días tiene ya (dias_escritos).
-      - name: Comprueba el silabeo automático del polaco (casos conocidos)
-        run: python3 tools/sylaby.py --prueba
-
-      - name: Valida Pierwsze słowa (silabeo, escalera de sílabas del polaco)
-        run: python3 tools/gen_palabras.py --libro slowa --check
 
       - name: Resume la escalera de Pierwsze słowa
         run: |
@@ -175,14 +102,6 @@ jobs:
             python3 tools/gen_palabras.py --libro slowa --tabla
           } >> "$GITHUB_STEP_SUMMARY"
 
-      # «Zdania», el cuaderno de frases en polaco (content/zdania/q*.json,
-      # ver notes/09-zdania.md): las mismas puertas que el cuaderno de
-      # frases -- frases por trimestre, campos de actividad, las letras de
-      # "Pisz po śladzie" del abecedario polaco -- y su propia escalera,
-      # medida en palabras polacas (content/zdania/progresion.json).
-      - name: Valida Zdania (frases por trimestre, actividades, abecedario polaco)
-        run: python3 tools/gen_days.py --libro zdania --check
-
       - name: Mide la progresión de Zdania (palabras/página, frase, vocabulario nuevo)
         run: |
           {
@@ -190,16 +109,6 @@ jobs:
             echo
             python3 tools/metricas.py --libro zdania --tabla
           } >> "$GITHUB_STEP_SUMMARY"
-
-      # «Czytam z lupą», "Leo con lupa" en polaco (content/czytam/q*.json,
-      # ver notes/10-czytam-z-lupa.md): las mismas puertas que "Leo con
-      # lupa" -- la tabla de pistas con una sola solución, las rutas del
-      # mapa, las correcciones de los errores en el texto de la semana, el
-      # mensaje secreto cifrado con el abecedario polaco -- y su propia
-      # escalera, medida en palabras polacas, que también exige oraciones
-      # subordinadas (że, bo, kiedy, jeśli, żeby, który...) en cada texto.
-      - name: Valida Czytam z lupą (actividades de análisis, abecedario polaco)
-        run: python3 tools/gen_days.py --libro czytam --check
 
       - name: Mide la progresión de Czytam z lupą (palabras, frase, subordinadas)
         run: |

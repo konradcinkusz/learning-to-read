@@ -1,0 +1,12 @@
+# Mantiene al día las acciones de los workflows y las pocas dependencias de
+# Python (requirements*.txt). Solo abre PR; nada se fusiona solo.
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+  - package-ecosystem: pip
+    directory: /
+    schedule:
+      interval: monthly

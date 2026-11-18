@@ -1,5 +1,18 @@
 # Revisión del cuaderno y plan de desarrollo — "Aprendo a leer"
 
+> **Instantánea histórica (no se mantiene).** Esta nota es la revisión y el
+> plan de desarrollo de cuando solo existía el cuaderno de frases, con
+> sus 60 primeras páginas escritas. Se conserva tal cual como registro de
+> las decisiones; las rutas y el estado que describe ya no coinciden con
+> el repositorio. En concreto, estos ficheros **ya no existen** (se
+> retiraron al acabar la Etapa 3, ver más abajo): `content/muestra/*`,
+> `tools/gen_muestra.py` y `main-muestra.tex`; y `content/familias.json`
+> es opcional (`tools/metricas.py` lo lee si existe) y no se creó. Hoy la
+> muestra gratuita y el cuaderno de verano los genera `tools/ediciones.py`
+> (ver `notes/07-ediciones.md`); el estado actual de cada cuaderno está
+> en el apartado "Estado" del `README.md`, y las comprobaciones, en
+> `make gates`.
+
 ## Contexto y alcance
 
 Esta nota recoge la revisión completa del cuaderno — lectura de las 60

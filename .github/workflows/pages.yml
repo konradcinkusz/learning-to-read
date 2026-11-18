@@ -49,22 +49,14 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Genera los .tex de los ocho cuadernos desde su JSON
-        run: make generate
+      - name: Instala las dependencias de los tests
+        run: python3 -m pip install -r requirements.txt
 
-      - name: Valida el contenido antes de publicar nada
-        run: |
-          python3 tools/gen_days.py --check
-          python3 tools/silabas.py --prueba
-          python3 tools/gen_palabras.py --check
-          python3 tools/gen_days.py --libro lupa --check
-          python3 tools/gen_days.py --libro english --check
-          python3 tools/fonetica.py --prueba
-          python3 tools/gen_palabras.py --libro firstwords --check
-          python3 tools/sylaby.py --prueba
-          python3 tools/gen_palabras.py --libro slowa --check
-          python3 tools/gen_days.py --libro zdania --check
-          python3 tools/gen_days.py --libro czytam --check
+      # `make gates` (ver el Makefile) genera los .tex de los ocho cuadernos
+      # desde su JSON y corre todas las comprobaciones en Python antes de
+      # publicar nada -- la misma lista que el job `gates` de build.yml.
+      - name: Genera los .tex y valida el contenido antes de publicar nada
+        run: make gates
 
       # Color y blanco-y-negro (main-bw.tex, ver preamble.tex \bookcolor):
       # los dos se compilan y se validan aquí, y Pages nunca publica uno

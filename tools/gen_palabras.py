@@ -77,6 +77,7 @@ from string import Template
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import fonetica  # noqa: E402
 import sylaby  # noqa: E402
+from comun import clasificar_salidas  # noqa: E402
 from libros import ALFABETO_EN, ALFABETO_ES, ALFABETO_PL, ENGLISH, FRASES  # noqa: E402
 from ediciones import (  # noqa: E402
     comprobar_campos, comprobar_preamble, ediciones_completas, ruta_edicion,
@@ -1953,15 +1954,22 @@ def main():
         return 0
 
     if check_only:
-        for ruta, contenido in salidas:
-            actual = ruta.read_text(encoding="utf-8") if ruta.exists() else None
-            if actual != contenido:
-                print(
-                    f"DESACTUALIZADO: {ruta} no coincide con "
-                    f"{PERFIL.ruta}/q*.json -- ejecuta `make generate`.",
-                    file=sys.stderr,
-                )
-                return 1
+        faltan, desactualizados = clasificar_salidas(salidas)
+        if faltan:
+            print(
+                f"FALTAN FICHEROS GENERADOS ({len(faltan)}): {faltan[0]}"
+                f"{' y otros' if len(faltan) > 1 else ''} no existe(n) -- "
+                "aún no se ha generado nada; ejecuta `make generate`.",
+                file=sys.stderr,
+            )
+            return 1
+        if desactualizados:
+            print(
+                f"DESACTUALIZADO: {desactualizados[0]} no coincide con "
+                f"{PERFIL.ruta}/q*.json -- ejecuta `make generate`.",
+                file=sys.stderr,
+            )
+            return 1
         obras = ""
         if PERFIL.dias_escritos:
             obras = f" (en obras: {len(dias)} de {TOTAL_DIAS} días escritos)"
