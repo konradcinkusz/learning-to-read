@@ -40,7 +40,7 @@ from string import Template
 
 import english
 import lupa
-from comun import ErrorDeContenido, escapar
+from comun import ErrorDeContenido, clasificar_salidas, escapar
 from ediciones import comprobar_campos, comprobar_preamble, salidas_ediciones
 from libros import CONTENT_DIR, FRASES, ROOT, libro_desde_argv
 
@@ -909,15 +909,23 @@ def main():
     salidas = [(libro.salida_dias, tex), (libro.salida_clave, clave)] + ediciones
 
     if check_only:
-        for ruta, contenido in salidas:
-            actual = ruta.read_text(encoding="utf-8") if ruta.exists() else None
-            if actual != contenido:
-                print(
-                    f"DESACTUALIZADO: {_ruta_legible(ruta)} no coincide con "
-                    f"{origen_json(libro)} -- ejecuta `make generate`.",
-                    file=sys.stderr,
-                )
-                return 1
+        faltan, desactualizados = clasificar_salidas(salidas)
+        if faltan:
+            print(
+                f"FALTAN FICHEROS GENERADOS ({len(faltan)}): "
+                f"{_ruta_legible(faltan[0])}"
+                f"{' y otros' if len(faltan) > 1 else ''} no existe(n) -- "
+                "aún no se ha generado nada; ejecuta `make generate`.",
+                file=sys.stderr,
+            )
+            return 1
+        if desactualizados:
+            print(
+                f"DESACTUALIZADO: {_ruta_legible(desactualizados[0])} no coincide con "
+                f"{origen_json(libro)} -- ejecuta `make generate`.",
+                file=sys.stderr,
+            )
+            return 1
         en_obras = ""
         if libro.dias_escritos:
             en_obras = f" (en obras: {len(dias)} de {libro.total_dias} días escritos)"

@@ -9,6 +9,25 @@ class ErrorDeContenido(Exception):
     """Un día no cumple las reglas -- el mensaje ya dice cuál y por qué."""
 
 
+def clasificar_salidas(salidas):
+    """Para `--check`: separa "no se ha generado todavía" de "está
+    desactualizado". Recibe [(ruta, contenido_esperado), ...] y devuelve
+    (faltan, desactualizados), dos listas de rutas.
+
+    Los .tex generados no están en git (ver .gitignore), así que en un
+    checkout limpio faltan TODOS: eso no es contenido que se haya movido
+    sin regenerar, es que aún no se ha corrido `make generate`, y el
+    mensaje tiene que decirlo así.
+    """
+    faltan, desactualizados = [], []
+    for ruta, contenido in salidas:
+        if not ruta.exists():
+            faltan.append(ruta)
+        elif ruta.read_text(encoding="utf-8") != contenido:
+            desactualizados.append(ruta)
+    return faltan, desactualizados
+
+
 def escapar(texto):
     """Escapa los caracteres especiales de LaTeX en texto libre (JSON)."""
     if texto is None:
