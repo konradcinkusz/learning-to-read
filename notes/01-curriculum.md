@@ -217,7 +217,7 @@ historias de varios sucesos encadenados, del Trimestre 3 en adelante.
 ## Estructura técnica (resumen; ver el propio código para el detalle)
 
 ```
-main.tex, main-bw.tex, preamble.tex, lang/es.tex   -- el motor LaTeX (pdflatex + babel[spanish])
+main.tex, main-bw.tex, preamble.tex, lang/es.tex   -- el motor LaTeX (LuaLaTeX + babel[spanish]; ver el Makefile)
 body.tex                              -- portada + cómo-usar + mapa + días + diploma
 content/q1.json, q2.json, ...         -- UN fichero por trimestre, editado a mano
 content/generated-days.tex            -- GENERADO, no tocar a mano
@@ -262,4 +262,11 @@ existió un mecanismo aparte (`content/muestra/`, `tools/gen_muestra.py`,
 continuidad 1..260 que exige el libro real. Se retiró en cuanto dejó de
 hacer falta, tal como decía su propia cabecera: con los cuatro
 trimestres completos, comparar el nivel de un trimestre a otro es tan
-simple como abrir `main.pdf` por las páginas 1, 66, 131 y 196.
+simple como abrir `main.pdf` por las páginas 1, 66, 131 y 196. La muestra
+gratuita y el cuaderno de verano de hoy son otra cosa: los genera
+`tools/ediciones.py` (ver `notes/07-ediciones.md`).
+
+Este fichero describe solo el cuaderno de frases (nivel 2). El estado de
+los otros siete cuadernos está en el apartado "Estado" del `README.md` y
+en `notes/03-nivel-palabras.md` a `notes/10-czytam-z-lupa.md`; las
+comprobaciones en Python de todos ellos se corren juntas con `make gates`.
