@@ -1,0 +1,4 @@
+# Dependencias para `make gates` (las comprobaciones en Python, sin TeX).
+# Los generadores y validadores de tools/ solo usan la biblioteca estándar;
+# lo único que se instala es el ejecutor de tests de tests/.
+pytest==9.1.1
