@@ -1,6 +1,6 @@
 # SOLO para regenerar content/letras-trazo.json con tools/gen_letras_puntos.py
 # (a mano, si cambia la fuente o el conjunto de letras). No hace falta para
 # `make generate`, `make gates` ni el CI: el JSON resultante va en git.
-numpy==2.5.3
+numpy==2.5.4
 matplotlib==3.10.8
 fonttools==4.62.1
