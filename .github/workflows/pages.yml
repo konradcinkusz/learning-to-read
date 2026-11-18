@@ -67,7 +67,7 @@ jobs:
       # acción añade -lualatex, y -pdf fuerza pdflatex, así que los dos
       # juntos se pisan.
       - name: Compila el cuaderno (color)
-        uses: xu-cheng/latex-action@v3
+        uses: xu-cheng/latex-action@v4
         with:
           root_file: main.tex
           latexmk_use_lualatex: true
@@ -80,7 +80,7 @@ jobs:
         run: python3 tools/check_pages.py main.aux
 
       - name: Compila el cuaderno (blanco y negro)
-        uses: xu-cheng/latex-action@v3
+        uses: xu-cheng/latex-action@v4
         with:
           root_file: main-bw.tex
           latexmk_use_lualatex: true
@@ -95,7 +95,7 @@ jobs:
       # El cuaderno de primeras palabras (palabras.tex): las mismas dos
       # versiones y las mismas comprobaciones antes de publicar.
       - name: Compila el cuaderno de primeras palabras (color)
-        uses: xu-cheng/latex-action@v3
+        uses: xu-cheng/latex-action@v4
         with:
           root_file: palabras.tex
           latexmk_use_lualatex: true
@@ -108,7 +108,7 @@ jobs:
         run: python3 tools/check_pages.py palabras.aux
 
       - name: Compila el cuaderno de primeras palabras (blanco y negro)
-        uses: xu-cheng/latex-action@v3
+        uses: xu-cheng/latex-action@v4
         with:
           root_file: palabras-bw.tex
           latexmk_use_lualatex: true
@@ -123,7 +123,7 @@ jobs:
       # "Leo con lupa" (lupa.tex), el nivel 3: la misma promesa --
       # compilado y comprobado en los dos formatos antes de publicar nada.
       - name: Compila Leo con lupa (color)
-        uses: xu-cheng/latex-action@v3
+        uses: xu-cheng/latex-action@v4
         with:
           root_file: lupa.tex
           latexmk_use_lualatex: true
@@ -136,7 +136,7 @@ jobs:
         run: python3 tools/check_pages.py lupa.aux
 
       - name: Compila Leo con lupa (blanco y negro)
-        uses: xu-cheng/latex-action@v3
+        uses: xu-cheng/latex-action@v4
         with:
           root_file: lupa-bw.tex
           latexmk_use_lualatex: true
@@ -152,7 +152,7 @@ jobs:
       # otros tres, los dos formatos compilados y comprobados antes de
       # publicar nada.
       - name: Compila Read and Draw (color)
-        uses: xu-cheng/latex-action@v3
+        uses: xu-cheng/latex-action@v4
         with:
           root_file: english.tex
           latexmk_use_lualatex: true
@@ -165,7 +165,7 @@ jobs:
         run: python3 tools/check_pages.py english.aux
 
       - name: Compila Read and Draw (blanco y negro)
-        uses: xu-cheng/latex-action@v3
+        uses: xu-cheng/latex-action@v4
         with:
           root_file: english-bw.tex
           latexmk_use_lualatex: true
@@ -181,7 +181,7 @@ jobs:
       # lo mismo, los dos formatos compilados y comprobados antes de
       # publicar nada.
       - name: Compila First Words (color)
-        uses: xu-cheng/latex-action@v3
+        uses: xu-cheng/latex-action@v4
         with:
           root_file: firstwords.tex
           latexmk_use_lualatex: true
@@ -194,7 +194,7 @@ jobs:
         run: python3 tools/check_pages.py firstwords.aux
 
       - name: Compila First Words (blanco y negro)
-        uses: xu-cheng/latex-action@v3
+        uses: xu-cheng/latex-action@v4
         with:
           root_file: firstwords-bw.tex
           latexmk_use_lualatex: true
@@ -210,7 +210,7 @@ jobs:
       # mismo, los dos formatos compilados y comprobados antes de publicar
       # nada.
       - name: Compila Pierwsze słowa (color)
-        uses: xu-cheng/latex-action@v3
+        uses: xu-cheng/latex-action@v4
         with:
           root_file: slowa.tex
           latexmk_use_lualatex: true
@@ -223,7 +223,7 @@ jobs:
         run: python3 tools/check_pages.py slowa.aux
 
       - name: Compila Pierwsze słowa (blanco y negro)
-        uses: xu-cheng/latex-action@v3
+        uses: xu-cheng/latex-action@v4
         with:
           root_file: slowa-bw.tex
           latexmk_use_lualatex: true
@@ -238,7 +238,7 @@ jobs:
       # «Zdania» (zdania.tex), el cuaderno de frases en polaco: lo mismo,
       # los dos formatos compilados y comprobados antes de publicar nada.
       - name: Compila Zdania (color)
-        uses: xu-cheng/latex-action@v3
+        uses: xu-cheng/latex-action@v4
         with:
           root_file: zdania.tex
           latexmk_use_lualatex: true
@@ -251,7 +251,7 @@ jobs:
         run: python3 tools/check_pages.py zdania.aux
 
       - name: Compila Zdania (blanco y negro)
-        uses: xu-cheng/latex-action@v3
+        uses: xu-cheng/latex-action@v4
         with:
           root_file: zdania-bw.tex
           latexmk_use_lualatex: true
@@ -266,7 +266,7 @@ jobs:
       # «Czytam z lupą» (czytam.tex), "Leo con lupa" en polaco: lo mismo,
       # los dos formatos compilados y comprobados antes de publicar nada.
       - name: Compila Czytam z lupą (color)
-        uses: xu-cheng/latex-action@v3
+        uses: xu-cheng/latex-action@v4
         with:
           root_file: czytam.tex
           latexmk_use_lualatex: true
@@ -279,7 +279,7 @@ jobs:
         run: python3 tools/check_pages.py czytam.aux
 
       - name: Compila Czytam z lupą (blanco y negro)
-        uses: xu-cheng/latex-action@v3
+        uses: xu-cheng/latex-action@v4
         with:
           root_file: czytam-bw.tex
           latexmk_use_lualatex: true
@@ -297,7 +297,7 @@ jobs:
       # PDF, log y .aux sale aquí (<raíz>-verano.pdf...), y los dieciséis
       # se comprueban igual que los libros enteros antes de publicar nada.
       - name: Compila los cuadernos de verano
-        uses: xu-cheng/latex-action@v3
+        uses: xu-cheng/latex-action@v4
         with:
           root_file: |
             ediciones/main-verano.tex
@@ -333,7 +333,7 @@ jobs:
       # verano -- compiladas desde la raíz, y comprobadas antes de
       # publicar nada.
       - name: Compila las muestras gratuitas
-        uses: xu-cheng/latex-action@v3
+        uses: xu-cheng/latex-action@v4
         with:
           root_file: |
             ediciones/main-muestra.tex
