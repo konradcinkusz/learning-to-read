@@ -20,7 +20,7 @@ CZBW   = czytam-bw
         build build-bw build-palabras build-palabras-bw build-lupa build-lupa-bw \
         build-english build-english-bw build-firstwords build-firstwords-bw \
         build-slowa build-slowa-bw build-zdania build-zdania-bw build-czytam build-czytam-bw \
-        check check-bw check-palabras check-palabras-bw check-lupa check-lupa-bw \
+        gates check check-bw check-palabras check-palabras-bw check-lupa check-lupa-bw \
         check-english check-english-bw check-firstwords check-firstwords-bw \
         check-slowa check-slowa-bw check-zdania check-zdania-bw check-czytam check-czytam-bw \
         clean watch
@@ -92,6 +92,30 @@ generate:
 	python3 tools/gen_palabras.py --libro slowa
 	python3 tools/gen_days.py --libro zdania
 	python3 tools/gen_days.py --libro czytam
+
+# Todas las comprobaciones en Python puro, sin TeX: es lo que corren el
+# job `gates` de build.yml y el paso previo de pages.yml, y lo que se
+# puede correr en local sin tener LaTeX. Depende de `generate` porque los
+# .tex generados no están en git. Para los tests: pip install -r
+# requirements.txt.
+gates: generate
+	python3 tools/gen_days.py --check
+	python3 tools/silabas.py --prueba
+	python3 tools/gen_palabras.py --check
+	python3 tools/gen_days.py --libro lupa --check
+	python3 tools/gen_days.py --libro english --check
+	python3 tools/fonetica.py --prueba
+	python3 tools/gen_palabras.py --libro firstwords --check
+	python3 tools/sylaby.py --prueba
+	python3 tools/gen_palabras.py --libro slowa --check
+	python3 tools/gen_days.py --libro zdania --check
+	python3 tools/gen_days.py --libro czytam --check
+	python3 tools/metricas.py
+	python3 tools/metricas.py --libro lupa
+	python3 tools/metricas.py --libro english
+	python3 tools/metricas.py --libro zdania
+	python3 tools/metricas.py --libro czytam
+	python3 -m pytest tests -q
 
 build:
 	$(LATEX) $(MAIN).tex
