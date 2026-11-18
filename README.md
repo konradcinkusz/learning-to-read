@@ -454,6 +454,7 @@ make generate     # solo regenera los .tex de los ocho cuadernos desde el JSON
 make build        # solo compila frases en color (asume que ya está generado)
 make build-bw     # solo compila frases en blanco y negro
 make build-palabras / build-palabras-bw   # lo mismo, primeras palabras
+make gates        # SIN TeX: genera y corre todas las comprobaciones en Python + los tests (pip install -r requirements.txt)
 make check        # lee main.log + 1 día = 1 página (lee main.aux) + valida el JSON
 make check-bw     # lo mismo, sobre main-bw.log / main-bw.aux
 make check-palabras / check-palabras-bw   # lo mismo, primeras palabras (+ silabeo)
@@ -537,6 +538,8 @@ tools/silabas.py                      -- silabeo automático del español y rasg
 tools/fonetica.py                     -- partido automático del inglés en sonidos (grafemas, e mágica), trampas, tricky words (First Words)
 tools/sylaby.py                       -- silabeo automático del polaco y rasgos de cada sílaba (Pierwsze słowa)
 tools/gen_letras_puntos.py            -- fuente -> contorno de cada letra (matplotlib/fonttools; no forma parte de `make`)
+tests/                                -- pytest: fixturas sintéticas negativas de checklog.py y check_pages.py (`make gates`)
+requirements.txt                      -- dependencias de `make gates` (solo pytest); requirements-letras.txt, las de gen_letras_puntos.py
 tools/check_pages.py                  -- comprueba que cada día ocupa una sola página
 tools/checklog.py                     -- lee el .log de LuaLaTeX correctamente (nunca grep '^!')
 tools/metricas.py                     -- mide palabras/frase/vocabulario nuevo contra content/progresion.json (y subordinadas, con --libro lupa o --libro english)
@@ -544,6 +547,7 @@ docs/index.html                       -- la página que publica .github/workflow
 assets/logo.tex, logo.png, logo.svg   -- logo del repositorio (standalone TikZ, reutiliza el icono de portada.tex)
 LICENSE, LICENSE-CODE, LICENSE-CONTENT -- ver "Licencia" más abajo
 CONTRIBUTING.md                       -- cómo colaborar (o hacer tu propio fork)
+.github/dependabot.yml                -- actualizaciones semanales de las acciones, mensuales de las dependencias de Python
 .github/workflows/build.yml           -- compila (color + blanco-y-negro) y valida en cada push/PR
 .github/workflows/pages.yml           -- publica los dos PDF en GitHub Pages en cada push a main
 notes/01-curriculum.md                -- el plan del curso completo
