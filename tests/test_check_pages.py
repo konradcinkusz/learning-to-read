@@ -48,6 +48,21 @@ def test_quarter_end_medal_page_is_expected(tmp_path):
     assert run_tool("check_pages.py", write_aux(tmp_path, days)).returncode == 0
 
 
+import pytest
+
+
+@pytest.mark.parametrize("dia", [65, 130, 195])
+def test_every_quarter_end_expects_a_medal_page(tmp_path, dia):
+    # Each quarter ends with a medal page: a jump of 1 after it must fail,
+    # a jump of 2 must pass.
+    sin_medalla = {dia - 1: 100, dia: 101, dia + 1: 102}
+    r = run_tool("check_pages.py", write_aux(tmp_path, sin_medalla))
+    assert r.returncode == 1
+    assert f"día {dia}" in r.stderr
+    con_medalla = {dia - 1: 100, dia: 101, dia + 1: 103}
+    assert run_tool("check_pages.py", write_aux(tmp_path, con_medalla)).returncode == 0
+
+
 def test_quarter_end_without_medal_page_fails(tmp_path):
     days = {64: 100, 65: 101, 66: 102}
     r = run_tool("check_pages.py", write_aux(tmp_path, days))
